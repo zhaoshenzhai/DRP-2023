@@ -1,0 +1,59 @@
+\usepackage[T1]{fontenc}                             % make fonts work? not sure
+\usepackage[hidelinks]{hyperref}                     % links
+\usepackage[side]{footmisc}                          % footnotes
+\usepackage{geometry}                                % page layout
+\usepackage{fancyhdr}                                % headers and footers
+\usepackage{titlesec}                                % title page
+\usepackage{tocloft}                                 % custom table of contents
+\usepackage{amsfonts, amsmath, amssymb, amsthm}      % basic maths commands
+\usepackage{mathtools}                               % more maths commands
+\usepackage{mathrsfs}                                % more math commands
+\usepackage{mdframed}                                % framed environments
+\usepackage{graphicx}                                % images and other graphics
+\usepackage{tikz}                                    % maths figures
+\usepackage{tikz-3dplot}                             % needed by tikz
+\usepackage{tikzpagenodes}                           % needed by tikz
+\usepackage{pgfplots}\pgfplotsset{compat=1.7}        % plots
+\usepackage{contour}                                 % underlining
+\usepackage{ulem}                                    % needed by contour
+\usepackage{xcolor}                                  % more colors
+\usepackage{caption}                                 % captions outside float
+\usepackage{enumitem}                                % enumerate and itemize indents
+\usepackage{nicematrix}                              % matrices and tables
+\usepackage{bm}                                      % bold math
+\usepackage{esint}                                   % integrals
+\usepackage{marginnote}                              % margin notes
+
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usetikzlibrary{patterns}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{math}
+\usetikzlibrary{cd}
+
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-20pt}{40pt}
+\synctex=1
+\setlength{\cftsecindent}{10pt}
+\makeatletter\newcommand*{\toccontents}{\@starttoc{toc}}\makeatother
+
+\definecolor{gray}{rgb}{0.8, 0.8, 0.8}
+\definecolor{lightGray}{rgb}{0.9, 0.9, 0.9}
+\mdfdefinestyle{defstyle}{backgroundcolor = lightGray, innertopmargin = -2pt, linewidth = 1pt}
+\newmdtheoremenv[style = defstyle]{theorem}{Theorem}[chapter]
+\newmdtheoremenv[style = defstyle]{axiom}[theorem]{Axiom}
+\newmdtheoremenv[style = defstyle]{definition}[theorem]{Definition}
+\newmdtheoremenv[style = defstyle]{defprop}[theorem]{Definition/Proposition}
+\newmdtheoremenv[style = defstyle]{proposition}[theorem]{Proposition}
+\newmdtheoremenv[style = defstyle]{lemmath}[theorem]{Lemma}
+\newmdtheoremenv[style = defstyle]{corollary}{Corollary}[theorem]
+\theoremstyle{definition}\newmdtheoremenv[style = defstyle]{exercise}{Exercise}
+\newmdtheoremenv[style = defstyle]{lemmaex}{Lemma}[exercise]
+\theoremstyle{definition}\newtheorem{example}[theorem]{Example}
+\theoremstyle{definition}\newtheorem*{remark}{Remark}
+\theoremstyle{remark}\newtheorem*{solution}{Solution}
+\makeatletter\renewenvironment{proof}[1][\proofname]{\par\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\itshape#1\@addpunct{.}]\ignorespaces}{\endtrivlist\@endpefalse}\renewcommand\qedhere{}\makeatother
