@@ -8,7 +8,7 @@ We assume that the reader is familiar with the basic notions of real manifolds. 
     \end{equation*}
     is biholomorphic. A \uldef{$d$-dimensional complex atlas on $M$} is a collection $\ms{A}\coloneqq\l\{\l(U_i,\phi_i\r)\r\}_{i\in I}$ of $d$-dimensional complex charts such that every two charts $\l(U_i,\phi_i\r)$ and $\l(U_j,\phi_j\r)$ are holomorphically compatible and $M=\bigcup_{i\in I}U_i$.
 \end{definition}
-\sides[-1.38in]{Charts provide us a way of making $M$ $\textrm{`}$look like$\textrm{'}$ an open set in $\C^d$. Indeed, they provide local coordinates for every point in $M$ in such a way that the $\textrm{`}$change of coordinates$\textrm{'}$ map $\phi_2\circ\phi_1^{-1}$ ensures that local notions of functions in $\C^d$ are well-defined on $M$ too.
+\side[-1.31in]{Charts provide us a way of making $M$ $\textrm{`}$look like$\textrm{'}$ an open set in $\C^d$. Indeed, they provide local coordinates for every point in $M$ in such a way that the $\textrm{`}$change of coordinates$\textrm{'}$ map $\phi_2\circ\phi_1^{-1}$ ensures that local notions of functions in $\C^d$ are well-defined on $M$ too.
     \begin{equation*}
         \begin{tikzcd}[ampersand replacement=\&, column sep=0.1in]
             \& U_1\cap U_2 \ar[dl, "\phi_1"'] \ar[dr, "\phi_2"] \\
@@ -22,11 +22,11 @@ It is clear that one only needs $\phi_2\circ\phi_1^{-1}$ to be holomorphic for i
 \begin{definition}
     Let $M$ be a second-countable Hausdorff space. A \uldef{$d$-dimensional complex} \uldef{structure} on $M$ is a $d$-dimensional maximal atlas $\mf{U}$ on $M$, or, equivalently, an equivalence class of $d$-dimensional complex atlases on $M$. The pair $\tpl{M,\mf{U}}$ is then called a \uldef{$d$-dimensional} \uldef{complex manifold}.
 \end{definition}
-\sides[-0.61in]{To give a complex structure $\mf{U}$ to $M$, it suffices to give $M$ a complex atlas since it extends to a \textit{unique} complex structure.}
+\side[-0.54in]{To give a complex structure $\mf{U}$ to $M$, it suffices to give $M$ a complex atlas since it extends to a \textit{unique} complex structure.}
 \begin{definition}
     A \uldef{Riemann surface} is a connected $1$-dimensional complex manifold.
 \end{definition}
-\begin{example}\sides[-0.22in]{Every Riemann surface can be regarded as a (connected) $2$-dimensional real manifold by $\textrm{`}$forgetting$\textrm{'}$ its complex structure; indeed all holomorphic maps are real $\mc{C}^\infty$ functions.}
+\begin{example}\side[-0.15in]{Every Riemann surface can be regarded as a (connected) $2$-dimensional real manifold by $\textrm{`}$forgetting$\textrm{'}$ its complex structure; indeed all holomorphic maps are real $\mc{C}^\infty$ functions.}
     Some elementary examples of Riemann surfaces.
     \begin{itemize}
         \item The complex plane $\C$, equipped with its standard topology, can be given a complex structure $\mf{U}$ by choosing the atlas containing a single chart $\tpl{\C,\id_\C}$. We may, however, also give $\C$ a different complex structure $\mf{U}'$ by choosing the chart map $\phi:z\mapsto\bar{z}$ instead. Indeed, $\mf{U}\neq\mf{U}'$ since the map $\phi\circ\id_\C^{-1}=\phi$ is not holomorphic and hence the atlases $\l\{\tpl{\C,\id_\C}\r\}$ and $\l\{\tpl{\C,\phi}\r\}$ are not equivalent. This example generalizes to any domain $D\subseteq\C$.
@@ -34,9 +34,9 @@ It is clear that one only needs $\phi_2\circ\phi_1^{-1}$ to be holomorphic for i
     \end{itemize}
 \end{example}
 \subsection{The Riemann Sphere}
-A particularly important Riemann surface is the Riemann sphere\sides{The fact that they are all holomorphic (in the sense of Definition $\ref{1:def:holomorphic_maps}$) is non-trivial, and the first goal of this paper will be to show that every Riemann surface homeomorphic to $\RS$ is in fact holomorphic to $\RS$.} $\RS$, which admits several constructions. Here, we give three constructions.
+A particularly important Riemann surface is the Riemann sphere\side{The fact that they are all holomorphic (in the sense of Definition $\ref{1:def:holomorphic_maps}$) is non-trivial, and the first goal of this paper will be to show that every Riemann surface homeomorphic to $\RS$ is in fact biholomorphic to $\RS$.} $\RS$, which admits several constructions. Here, we give three constructions.
 \begin{example}[One-point Compactification of $\C$]
-    Let $\infty$ be a symbol not belonging to $\C$ and set $\RS\coloneqq\C\cup\l\{\infty\r\}$. We declare a set $U\subseteq\RS$ to be open if either $U\subseteq\C$ is open or $U=K^c\cup\l\{\infty\r\}$ where $K\subseteq\C$ is compact.\sides{This makes $\RS$, equipped with the collection $\mc{T}$ of all such open sets, a second-countable Hausdorff space. Indeed, the fact that $\mc{T}$ is a topology on $\RS$ follows from De Morgan's Laws and the Heine-Borel Theorem. It is trivially Hausdorff, and it is second-countable since we may append, to any countable basis for the standard topology of $\C$, the countable collection $\l\{B_r\l(0\r)^c\cup\l\{\infty\r\}\r\}_{r\in\Q^+}$.} We employ two charts
+    Let $\infty$ be a symbol not belonging to $\C$ and set $\RS\coloneqq\C\cup\l\{\infty\r\}$. We declare a set $U\subseteq\RS$ to be open if either $U\subseteq\C$ is open or $U=K^c\cup\l\{\infty\r\}$ where $K\subseteq\C$ is compact.\side{This makes $\RS$, equipped with the collection $\mc{T}$ of all such open sets, a second-countable Hausdorff space. Indeed, the fact that $\mc{T}$ is a topology on $\RS$ follows from De Morgan's Laws and the Heine-Borel Theorem. It is trivially Hausdorff, and it is second-countable since we may append, to any countable basis for the standard topology of $\C$, the countable collection $\l\{B_r\l(0\r)^c\cup\l\{\infty\r\}\r\}_{r\in\Q^+}$.} We employ two charts
     \begin{equation*}
         \begin{alignedat}{2}
             U_1&\coloneqq\RS\comp\l\{\infty\r\}=\C\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ &&\phi_1:U_1\to\C:z\mapsto z\ \ \ \ \l(\phi_1\coloneqq\id_\C\r) \\
@@ -72,9 +72,33 @@ A particularly important Riemann surface is the Riemann sphere\sides{The fact th
     Observe that $U_1\cap U_2=S^2\comp\l\{\tpl{0,0,\pm1}\r\}$ and $\phi_2\circ\phi_1^{-1}:\C^\ast\to\C^\ast:z\mapsto1/z$, which is holomorphic, so the atlas $\l\{\tpl{U_1,\phi_1},\tpl{U_2,\phi_2}\r\}$ defines a complex structure on $\RS$.\exqed
 \end{example}
 \begin{example}[Complex Projective Line]
-    Consider the equivalence relation $\sim$ on $\C^2\comp\l\{\tpl{0,0}\r\}$ defined by $\tpl{z_1,w_1}\sim\tpl{z_2,w_2}$ iff $\tpl{z_1,w_1}=\lambda\tpl{z_2,w_2}$ for some $\lambda\in\C^\ast$. Set $\RS\coloneqq\l(\C^2\comp\l\{\tpl{0,0}\r\}\r)/\!\sim$ and equip it with the quotient topology. Since $\sim$ is an open equivalence relation whose graph is closed in $\l(\C^2\comp\l\{\tpl{0,0}\r\}\r)^2$, we see that $\RS$ is a second-countable Hausdorff space. \sides{See \cite[][section 7.5]{tu}.}
+    Consider the equivalence relation $\sim$ on $\C^2\comp\l\{\tpl{0,0}\r\}$ defined by $\tpl{z_1,w_1}\sim\tpl{z_2,w_2}$ iff $\tpl{z_1,w_1}=\lambda\tpl{z_2,w_2}$ for some $\lambda\in\C^\ast$. Set $\RS\coloneqq\l(\C^2\comp\l\{\tpl{0,0}\r\}\r)/\!\sim$ and equip it with the quotient topology. Since $\sim$ is an open equivalence relation whose graph is closed in $\l(\C^2\comp\l\{\tpl{0,0}\r\}\r)^2$, we see that $\RS$ is a second-countable Hausdorff space.\side{See \cite[][section 7.5]{tu}.} Denoting the equivalence class of $\tpl{z,w}$ by $\proje{z:w}$, we employ the charts
+    \begin{equation*}
+        \begin{alignedat}{2}
+            U_1&\coloneqq\l\{\proje{z:w}\mid z\neq0\r\}\ \ \ \ \ \ \ \ \ \ \ \ &&\phi_1:U_1\to\C:\proje{z:w}\mapsto w/z \\
+            U_2&\coloneqq\l\{\proje{z:w}\mid w\neq0\r\}&&\phi_2:U_2\to\C:\proje{z:w}\mapsto z/w.
+        \end{alignedat}
+    \end{equation*}
+    Clearly $\phi_2$ and $\phi_2$ are continuous, and it is easily verified that they are invertible with continuous inverses
+    \begin{equation*}
+        \phi_1^{-1}\!\l(z\r)\coloneqq\proje{1:z}\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ \phi_2^{-1}\!\l(z\r)\coloneqq\proje{z:1}.
+    \end{equation*}
+    Furthermore, $\phi_2\circ\phi_1^{-1}:\C^\ast\to\C^\ast:1\mapsto1/z$ is holomorphic, so the atlas $\l\{\tpl{U_1,\phi_1},\tpl{U_2,\phi_2}\r\}$ defines a complex structure on $\RS$.\exqed
 \end{example}
 \subsection{Complex Tori}
+The next nontrivial class of examples of Riemann surfaces are complex tori\side[0.01in]{Topologically, a torus is any manifold homeomorphic to $T^2\coloneqq S^1\times S^1$, which admits a representation as a quotient $\C/\Gamma$ by the lattice $\Gamma\coloneqq\Z\oplus\Z$. Thus (by definition) there is only one torus up to homeomorphism, but it turns out that we can equip it with many different complex structures. They manifest by quotienting $\C$ by different lattices, and we shall derive a criterion on $\Gamma_1\coloneqq\Z\omega_1\oplus\Z\omega_2$ and $\Gamma_2\coloneqq\Z\eta_1\oplus\Z\eta_2$ for the tori $\C/\Gamma_1$ and $\C/\Gamma_2$ to be biholomorphic.}, which, from the name, suggests that there are many.
+\begin{example}[Complex Tori]
+    Let $\omega_1,\omega_2\in\C$ be linearly independent over $\R$ and consider the lattice $\Gamma\coloneqq\Z\omega_1\oplus\Z\omega_2$. Then the quotient $\C/\Gamma$ is a torus in the topological sense since the map
+    \begin{equation*}
+        \phi:\C/\Gamma\to T^2\ \ \ \ \ \ \ \ \textrm{mapping}\ \ \ \ \ \ \ \ \l[z\r]\mapsto\tpl{e^{2\pi i\lambda_1},e^{2\pi i\lambda_2}},
+    \end{equation*}
+    where $z=\lambda_1\omega_1+\lambda_2\omega_2$ for unique $\lambda_1,\lambda_2\in\R$, is a homeomorphism. Indeed, $\phi$ is well-defined since for any $\lambda_1\omega_1+\lambda_2\omega_2\sim\mu_1\omega_1+\mu_2\omega_2$ in $\C$, we have $\l(\lambda_1-\mu_1\r)\omega_1+\l(\lambda_2-\mu_2\r)\omega_2\in\Gamma$ and so $\lambda_i-\mu_i\in\Z$ for $i=1,2$. The fact that it is a homeomorphism is clear. This makes $\C/\Gamma$ a second-countable Hausdorff space, which we now employ with the following complex structure.\\\ \\
+    Since $\Gamma$ is discrete, there exists some $\epsilon>0$ such that $\epsilon<\l|\omega\r|/2$ for every non-zero $\omega\in\Gamma$.\side{This exposition follows \cite[][section I.2]{miranda}.} Fix any such $\epsilon$, which ensures that no two points in any open ball with radius $\epsilon$ can be equivalent. Indeed, take any $z\in\C$ and $w_1,w_2\in B\l(z,\epsilon\r)\eqqcolon V_z$. For $\omega_1\sim\omega_2$, we need some $n,m\in\Z$ such that $w_1-w_2=n\omega_1+m\omega_2$. But
+    \begin{equation*}
+        \l|w_1-w_2\r|\leq\l|z-w_1\r|+\l|z-w_2\r|<2\epsilon<\l|n\omega_1+m\omega_2\r|
+    \end{equation*}
+    for any $n,m\in\Z$, so this is impossible. Fixing any such $\epsilon$, this gives us a family $\l\{V_z\r\}_{z\in\C}$ of open sets in $\C$ for which the projections $\l.\pi\r|_{V_z}:V_z\to\pi\l(V_z\r)$ are homeomorphisms.\side{The choice of $\epsilon$ ensures that no two points in $V_z$ are equivalent, which make all such projections injective. They are clearly continuous (under the quotient topology).} Letting $U_z\coloneqq\pi\l(V_z\r)$ and $\phi_z:U_z\to V_z$ be the inverse of $\l.\pi\r|_{V_z}$, we obtain an atlas $\l\{\tpl{U_z,\phi_z}\r\}_{z\in\C}$ of $\C/\Gamma$.
+\end{example}
 \section{Holomorphic Maps}
 \begin{definition}\label{1:def:holomorphic_maps}
 
