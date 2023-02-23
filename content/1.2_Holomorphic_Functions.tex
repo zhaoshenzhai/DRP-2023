@@ -3,13 +3,13 @@
     \section{Holomorphic and Meromorphic Maps}
     \subsection{Holomorphic Functions and Maps}
     \begin{definition}
-        Let $X$ be a Riemann surface and let $W\subseteq X$ be open. For a fixed $p\in W$, a function $f:W\to\C$ is said to be \uldef{holomorphic at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ is holomorphic at $\phi\l(p\r)$. If $f$ is holomorphic at every point of $W$, then $f$ is said to be \uldef{holomorphic on $W$}.
+        Let $X$ be a Riemann surface and let $W\subseteq X$ be open. For a fixed $p\in W$, a function $f:W\to\C$ is said to be \uldef{holomorphic at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ is holomorphic at $\phi\l(p\r)$. If $f$ is holomorphic at every point of $W$, then $f$ is said to be \uldef{holomorphic on $W$}. If $f:X\to\C$ is holomorphic, then it is also said to be a \uldef{holomorphism}.
     \end{definition}
-    \begin{remark}\side[-0.57in]{Defining some property $P$ of $f$ using charts by transporting $f$ to a function $f\circ\phi^{-1}$ on a subset of $\C$, and borrowing $P$ from $f\circ\phi^{-1}$, will be a common theme. However, one must check that $P$ is \textit{independent of charts}; that is, if $f\circ\phi^{-1}$ satisfies $P$, then so does $f\circ\psi^{-1}$ for any other chart $\tpl{V,\psi}$.}
+    \begin{remark}\side[-0.69in]{Defining some property $P$ of $f$ using charts by transporting $f$ to a function $f\circ\phi^{-1}$ on a subset of $\C$, and borrowing $P$ from $f\circ\phi^{-1}$, will be a common theme. However, one must check that $P$ is \textit{independent of charts}; that is, if $f\circ\phi^{-1}$ satisfies $P$, then so does $f\circ\psi^{-1}$ for any other chart $\tpl{V,\psi}$.}
         It must be checked that $\textrm{`}$being holomorphic$\textrm{'}$ does not depend on the choice of chart. This is indeed the case, for if $\tpl{V,\psi}$ is another chart containing $p$, then, since
         \begin{equation*}
             f\circ\psi^{-1}=f\circ\l(\phi^{-1}\circ\phi\r)\circ\psi^{-1}=\l(f\circ\phi^{-1}\r)\circ\l(\phi\circ\psi^{-1}\r):\psi\l(U\cap V\r)\to\C
-        \end{equation*}\side[-0.4in]{
+        \end{equation*}\side[-0.5in]{
             \begin{equation*}
                 \begin{tikzcd}[ampersand replacement=\&, column sep = 0.1in]
                     \phi\l(U\cap V\r) \ar[drrrr, "f\circ\phi^{-1}", bend left = 20] \\
@@ -18,18 +18,18 @@
                 \end{tikzcd}
             \end{equation*}
         }
-        on the intersection $U\cap V$, we see that $f\circ\psi^{-1}:\psi\l(V\r)\to\C$ is also holomorphic at $p$.
+        on the intersection $U\cap V$, we see that $f\circ\psi^{-1}:\psi\l(V\r)\to\C$ is also holomorphic at $p$.\exqed
     \end{remark}
     \begin{example}
         Some elementary examples of holomorphic functions.
         \begin{itemize}
             \item Any holomorphic function $f:W\to\C$ from an open set $W\subseteq\C$, considering $\C$ as a Riemann surface, is holomorphic in the classical sense.
             \item Any chart map $\phi:U\to\C$ of a Riemann surface is holomorphic in the above sense.
-            \item If $f,g:W\to\C$ are both holomorphic at some $p\in W$, then\side{This makes the set $\ms{O}\l(W\r)$ of all holomorphic maps $f:W\to\C$ into a $\C$-algebra.} so are $f\pm g$ and $f\cdot g$. If $g\l(p\r)\neq0$, then so is $f/g$.\exqed
+            \item If $f,g:W\to\C$ are both holomorphic at some $p\in W$, then\side{This makes the set $\mc{O}\l(W\r)$ of all holomorphic maps $f:W\to\C$ into a $\C$-algebra.} so are $f\pm g$ and $f\cdot g$. If $g\l(p\r)\neq0$, then so is $f/g$.\exqed
         \end{itemize}
     \end{example}
     \begin{definition}
-        Let $X$ and $Y$ be Riemann surfaces and let $W\subseteq X$ be open. For a fixed $p\in W$, a mapping $F:W\to Y$ is said to be \uldef{holomorphic at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ and a chart $\tpl{V,\psi}$ of $Y$ containing $F\l(p\r)$ such that $\psi\circ F\circ\phi^{-1}\!\!:\phi\l(U\r)\to\psi\l(V\r)$ is holomorphic at $\phi\l(p\r)$. If $F$ is holomorphic at every point of $W$, then $F$ is \uldef{holomorphic on $W$}.
+        Let $X$ and $Y$ be Riemann surfaces and let $W\subseteq X$ be open. For a fixed $p\in W$, a mapping $F:W\to Y$ is said to be \uldef{holomorphic at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ and a chart $\tpl{V,\psi}$ of $Y$ containing $F\l(p\r)$ such that $\psi\circ F\circ\phi^{-1}\!\!:\phi\l(U\r)\to\psi\l(V\r)$ is holomorphic at $\phi\l(p\r)$. If $F$ is holomorphic at every point of $W$, then $F$ is \uldef{holomorphic on $W$}. If $F:X\to Y$ is holomorphic, then it is also said to be a \uldef{holomorphism}.
     \end{definition}\side[-0.7in]{For $Y\coloneqq\C$ regarded as a Riemann surface, this definition agrees with the above. Again, we must check that $\textrm{`}$being holomorphic$\textrm{'}$ is well-defined, but it follows from the commutativity of the diagram below.
         \begin{equation*}
             \begin{tikzcd}[ampersand replacement=\&, column sep = 0.05in]
@@ -38,7 +38,13 @@
                 \phi_2\!\l(U_1\cap U_2\r) \ar[rrrrrrr, "\psi_2\circ F\circ\phi_2^{-1}"', bend right = 10] \& \& \& \& \& \& \& \psi_2\!\l(V_1\cap V_2\r)
             \end{tikzcd}
         \end{equation*}}
+    \begin{example}
+        It is easy to show that the identity map $\id_X$ on a Riemann surface $X$ is a holomorphism. Furthermore, for all Riemann surfaces $X$, $Y$ and $Z$ and holomorphisms $F:X\to Y$ and $G:Y\to Z$, their composite $G\circ F:X\to Z$ is also a holomorphism. This shows that the collection of all Riemann surfaces is a \textit{category}.\exqed
+    \end{example}
     \begin{definition}\label{1.2:def:biholomorphic_Riemann_surfaces}
         Let $X$ and $Y$ be Riemann surfaces. A \uldef{biholomorphism between $X$ and $Y$} is an invertible holomorphic map $F:X\to Y$ whose inverse $F^{-1}:Y\to X$ is also holomorphic. Two Riemann surfaces $X$ and $Y$ are said to be \uldef{biholomorphic} if there exists a biholomorphism $F:X\to Y$.
     \end{definition}
+    \begin{example}[Biholomorphisms between Riemann spheres]
+        Let $\C_\infty$, $S^2$, and $\P^1$ denote the three constructions for the Riemann sphere $\RS$ presented in Examples \ref{1.1:one_point_compactification_of_C}, \ref{1.1:stereographic_projection}, and \ref{1.1:complex_projective_line}, respectively.
+    \end{example}
 \end{document}

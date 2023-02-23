@@ -36,7 +36,7 @@
     \end{example}
     \subsection{The Riemann Sphere}
     A particularly important Riemann surface is the Riemann sphere\side{The fact that they are all biholomorphic (in the sense of Definition $\ref{1.2:def:biholomorphic_Riemann_surfaces}$) is non-trivial, and the first goal of this paper will be to show that every Riemann surface homeomorphic to $\RS$ is in fact biholomorphic to $\RS$.} $\RS$, which admits several constructions. Here, we give three constructions.
-    \begin{example}[One-point Compactification of $\C$]
+    \begin{example}[One-point Compactification of $\C$]\label{1.1:one_point_compactification_of_C}
         Let $\infty$ be a symbol not belonging to $\C$ and set $\RS\coloneqq\C\cup\l\{\infty\r\}$. We declare a set $U\subseteq\RS$ to be open if either $U\subseteq\C$ is open or $U=K^c\cup\l\{\infty\r\}$ where $K\subseteq\C$ is compact.\side{This makes $\RS$, equipped with the collection $\mc{T}$ of all such open sets, a second-countable Hausdorff space. Indeed, the fact that $\mc{T}$ is a topology on $\RS$ follows from De Morgan's Laws and the Heine-Borel Theorem. It is trivially Hausdorff, and it is second-countable since we may append, to any countable basis for the standard topology of $\C$, the countable collection $\l\{B_r\l(0\r)^c\cup\l\{\infty\r\}\r\}_{r\in\Q^+}$.} We employ two charts
         \begin{equation*}
             \begin{alignedat}{2}
@@ -58,7 +58,7 @@
         \end{equation*}
         is holomorphic, so the atlas $\l\{\tpl{U_1,\phi_1},\tpl{U_2,\phi_2}\r\}$ defines a complex structure on $\RS$.\exqed
     \end{example}
-    \begin{example}[Stereographic Projection]
+    \begin{example}[Stereographic Projection]\label{1.1:stereographic_projection}
         Consider the unit sphere $\RS\coloneqq S^2\subseteq\R^3$ as a topological subspace of $\R^3$, which makes it a second-countable Hausdorff space. Identifying the plane $w=0$ as $\C$, we employ the charts
         \begin{equation*}
             \begin{alignedat}{2}
@@ -72,7 +72,7 @@
         \end{equation*}
         Observe that $U_1\cap U_2=S^2\comp\l\{\tpl{0,0,\pm1}\r\}$ and $\phi_2\circ\phi_1^{-1}:\C^\ast\to\C^\ast:z\mapsto1/z$, which is holomorphic, so the atlas $\l\{\tpl{U_1,\phi_1},\tpl{U_2,\phi_2}\r\}$ defines a complex structure on $\RS$.\exqed
     \end{example}
-    \begin{example}[Complex Projective Line]
+    \begin{example}[Complex Projective Line]\label{1.1:complex_projective_line}
         Consider the equivalence relation $\sim$ on $\C^2\comp\l\{\tpl{0,0}\r\}$ defined by $\tpl{z_1,w_1}\sim\tpl{z_2,w_2}$ iff $\tpl{z_1,w_1}=\lambda\tpl{z_2,w_2}$ for some $\lambda\in\C^\ast$. Set $\RS\coloneqq\l(\C^2\comp\l\{\tpl{0,0}\r\}\r)/\!\sim$ and equip it with the quotient topology. Since $\sim$ is an open equivalence relation whose graph is closed in $\l(\C^2\comp\l\{\tpl{0,0}\r\}\r)^2$, we see that $\RS$ is a second-countable Hausdorff space.\side{See \cite[][section 7.5]{tu}.} Denoting the equivalence class of $\tpl{z,w}$ by $\proje{z:w}$, we employ the charts
         \begin{equation*}
             \begin{alignedat}{2}
