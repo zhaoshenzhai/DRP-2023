@@ -2,6 +2,13 @@
 \begin{document}
     \section{Holomorphic Functions}
     \begin{definition}
-        Let $M$ be a Riemann surface
+        Let $X$ be a Riemann surface and let $p\in W\subseteq X$ be open. A function $f:W\to\C$ is said to be \uldef{holomorphic at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ is holomorphic at $\phi\l(p\r)$. If $f$ is holomorphic at every point of $W$, then $f$ is said to be \uldef{holomorphic on $W$}.
     \end{definition}
+    \begin{remark}\side[-0.57in]{Defining some property $P$ of $f$ using charts by transporting $f$ to a function $f\circ\phi^{-1}$ on a subset of $\C$, and borrowing $P$ from $f\circ\phi^{-1}$, will be a common theme. However, one must check that $P$ is \textit{independent of charts}; that is, if $f\circ\phi^{-1}$ satisfies $P$, then so does $f\circ\psi^{-1}$ for any other chart $\tpl{V,\psi}$.}
+        It must be checked that $\textrm{`}$being holomorphic$\textrm{'}$ does not depend on the choice of chart. This is indeed the case, for if $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ is holomorphic for some chart $\tpl{U,\phi}$, then
+        \begin{equation*}
+            f\circ\psi^{-1}=f\circ\l(\phi^{-1}\circ\phi\r)\circ\psi^{-1}=\l(f\circ\phi^{-1}\r)\circ\l(\phi\circ\psi^{-1}\r):\psi\l(V\r)\to\C
+        \end{equation*}
+        is holomorphic for any other chart $\tpl{V,\psi}$ containing $p$.\exqed
+    \end{remark}
 \end{document}
