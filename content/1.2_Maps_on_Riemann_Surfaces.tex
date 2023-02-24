@@ -45,7 +45,7 @@
         Let $X$ and $Y$ be Riemann surfaces. A \uldef{biholomorphism between $X$ and $Y$} is an invertible holomorphic map $F:X\to Y$ whose inverse $F^{-1}:Y\to X$ is also holomorphic. Two Riemann surfaces $X$ and $Y$ are said to be \uldef{biholomorphic} if there exists a biholomorphism $F:X\to Y$.
     \end{definition}
     \begin{example}[Biholomorphisms between Riemann spheres]
-        Let $\C_\infty$, $S^2$, and $\P^1$ denote the three constructions for the Riemann sphere $\RS$ presented in Examples \ref{1.1:one_point_compactification_of_C}, \ref{1.1:stereographic_projection}, and \ref{1.1:complex_projective_line}, respectively. We shall show that the maps
+        Let $\C_\infty$, $S^2$, and $\P^1$ denote the three constructions for the Riemann sphere $\RS$ presented in Examples \ref{1.1:one_point_compactification_of_C}, \ref{1.1:stereographic_projection}, and \ref{1.1:complex_projective_line}, respectively. We shall show that the maps\side[0.28in]{Take $G\l(0,0,1\r)\coloneqq\infty$.}
         \begin{equation*}
             F:S^2\to\P^1:\tpl{x,y,w}\mapsto\proje{1+w:x-iy}\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ G:S^2\to\C_\infty:\tpl{x,y,w}\mapsto\frac{x+iy}{1-w}
         \end{equation*}
@@ -56,7 +56,14 @@
                 V&\coloneqq\P^1\comp\l\{\proje{0:w}\mid w\in\C\r\}&&\psi:V\to\C:\proje{z:w}\mapsto\frac{w}{z},
             \end{alignedat}
         \end{equation*}
-        we see that
+        we see that\side{A similar calculation shows that $G$ is biholomorphic. Indeed, we choose the same chart $\tpl{U,\phi}$, and choose $V\coloneqq\C_\infty\comp\l\{\infty\r\}=\C$ with $\psi\coloneqq\id_\C$. Then $\l(\psi\circ G\circ\phi^{-1}\r)\!\l(z\r)=z$ for all $z\in\phi\l(U\r)=\C$, and $G$ is invertible with inverse
+            \begin{equation*}
+                G^{-1}\!\l(z\r)\coloneqq
+                \begin{dcases}
+                    \phi^{-1}\!\l(z\r) & \textrm{if }z\in\C \\
+                    \tpl{0,0,1} & \textrm{else.}
+                \end{dcases}
+            \end{equation*}}
         \begin{equation*}
             \begin{aligned}
                 \l(\psi\circ F\circ\phi^{-1}\r)\l(z\r)&=\psi\l(F\l(\frac{2\Re z}{\l|z\r|^2+1},\frac{2\Im z}{\l|z\r|^2+1},\frac{\l|z\r|^2-1}{\l|z\r|^2+1}\r)\r) \\
@@ -69,7 +76,7 @@
         \begin{equation*}
             F^{-1}\l(\proje{z:w}\r)\coloneqq\frac{\tpl{2\Re\l(z\bar{w}\r),2\Im\l(z\bar{w}\r),\l|z\r|^2-\l|w\r|^2}}{\l|z\r|^2+\l|w\r|^2},
         \end{equation*}
-        which is well-defined, and since $\l(\psi\circ F\circ\phi^{-1}\r)^{-1}=\phi\circ F^{-1}\circ\psi^{-1}$, we see that $F^{-1}$ is holomorphic too.
+        which is well-defined, and since $\l(\psi\circ F\circ\phi^{-1}\r)^{-1}=\phi\circ F^{-1}\circ\psi^{-1}$, we see that $F^{-1}$ is holomorphic too.\exqed
     \end{example}
     \subsection{Singularities of Functions}
     Throughout this section, let $X$ be a Riemann surface, let $W\subseteq X$ be open, and for a fixed $p\in W$, let $f:W\to\C$ be holomorphic in a punctured neighborhood of $p$.\side[0.01in]{That is, let $f$ be holomorphic on $B\l(p,\epsilon\r)\comp\l\{p\r\}$ for some $\epsilon>0$.} As above, we can transport the behaviour of $f$ at $p$ from its chart representation $f\circ\phi^{-1}$.
