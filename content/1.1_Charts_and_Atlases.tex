@@ -76,8 +76,8 @@
         Consider the equivalence relation $\sim$ on $\C^2\comp\l\{\tpl{0,0}\r\}$ defined by $\tpl{z_1,w_1}\sim\tpl{z_2,w_2}$ iff $\tpl{z_1,w_1}=\lambda\tpl{z_2,w_2}$ for some $\lambda\in\C^\ast$. Set $\RS\coloneqq\l(\C^2\comp\l\{\tpl{0,0}\r\}\r)/\!\sim$ and equip it with the quotient topology. Since $\sim$ is an open equivalence relation whose graph is closed in $\l(\C^2\comp\l\{\tpl{0,0}\r\}\r)^2$, we see that $\RS$ is a second-countable Hausdorff space.\side{See \cite[][section 7.5]{tu}.} Denoting the equivalence class of $\tpl{z,w}$ by $\proje{z:w}$, we employ the charts
         \begin{equation*}
             \begin{alignedat}{2}
-                U_1&\coloneqq\l\{\proje{z:w}\mid z\neq0\r\}\ \ \ \ \ \ \ \ \ \ \ \ &&\phi_1:U_1\to\C:\proje{z:w}\mapsto w/z \\
-                U_2&\coloneqq\l\{\proje{z:w}\mid w\neq0\r\}&&\phi_2:U_2\to\C:\proje{z:w}\mapsto z/w.
+                U_1&\coloneqq\RS\comp\l\{\proje{0:w}\mid w\in\C\r\}\ \ \ \ \ \ \ \ \ \ \ \ &&\phi_1:U_1\to\C:\proje{z:w}\mapsto w/z \\
+                U_2&\coloneqq\RS\comp\l\{\proje{z:0}\mid z\in\C\r\}&&\phi_2:U_2\to\C:\proje{z:w}\mapsto z/w.
             \end{alignedat}
         \end{equation*}
         Clearly $\phi_2$ and $\phi_2$ are continuous, and it is easily verified that they are invertible with continuous inverses

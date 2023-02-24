@@ -1,0 +1,91 @@
+\documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
+\begin{document}
+    \section{Maps on Riemann Surfaces}
+    \subsection{Holomorphic Functions and Maps}
+    \begin{definition}
+        Let $X$ be a Riemann surface and let $W\subseteq X$ be open. For a fixed $p\in W$, a function $f:W\to\C$ is said to be \uldef{holomorphic at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ is holomorphic at $\phi\l(p\r)$. If $f$ is holomorphic at every point of $W$, then $f$ is said to be \uldef{holomorphic on $W$}.
+    \end{definition}
+    \begin{remark}\side[-0.57in]{Defining some property $P$ of $f$ using charts by transporting $f$ to a function $f\circ\phi^{-1}$ on a subset of $\C$, and borrowing $P$ from $f\circ\phi^{-1}$, will be a common theme. However, one must check that $P$ is \textit{independent of charts}; that is, if $f\circ\phi^{-1}$ satisfies $P$, then so does $f\circ\psi^{-1}$ for any other chart $\tpl{V,\psi}$.}
+        It must be checked that $\textrm{`}$being holomorphic$\textrm{'}$ does not depend on the choice of chart. This is indeed the case, for if $\tpl{V,\psi}$ is another chart containing $p$, then, since
+        \begin{equation}\label{1.2:eqn:holomorphic_function_well_defined}
+            f\circ\psi^{-1}=f\circ\l(\phi^{-1}\circ\phi\r)\circ\psi^{-1}=\l(f\circ\phi^{-1}\r)\circ\l(\phi\circ\psi^{-1}\r):\psi\l(U\cap V\r)\to\C
+        \end{equation}\side[-0.45in]{
+            \begin{equation*}
+                \begin{tikzcd}[ampersand replacement=\&, column sep = 0.1in]
+                    \phi\l(U\cap V\r) \ar[drrrr, "f\circ\phi^{-1}", bend left = 20] \\
+                    \& U\cap V \ar[ul, "\phi"'] \ar[dl, "\psi"] \ar[rrr, "f"] \& \& \& \C \\
+                    \psi\l(U\cap V\r) \ar [urrrr, "f\circ\psi^{-1}"', bend right = 20]
+                \end{tikzcd}
+            \end{equation*}
+        }
+        on the intersection $U\cap V$, we see that $f\circ\psi^{-1}:\psi\l(V\r)\to\C$ is also holomorphic at $p$.\exqed
+    \end{remark}
+    \begin{example}\label{1.2:exa:elementary_holomorphic_functions}
+        Some elementary examples of holomorphic functions.
+        \begin{itemize}
+            \item Any holomorphic function $f:W\to\C$ from an open set $W\subseteq\C$, considering $\C$ as a Riemann surface, is holomorphic in the classical sense.
+            \item Any chart map $\phi:U\to\C$ of a Riemann surface is holomorphic in the above sense.
+            \item If $f,g:W\to\C$ are both holomorphic at some $p\in W$, then\side{This makes the set $\mc{O}\l(W\r)$ of all holomorphic functions $f:W\to\C$ into a $\C$-algebra.} so are $f\pm g$ and $f\cdot g$. If $g\l(p\r)\neq0$, then so is $f/g$.\exqed
+        \end{itemize}
+    \end{example}
+    \begin{definition}
+        Let $X$ and $Y$ be Riemann surfaces and let $W\subseteq X$ be open. For a fixed $p\in W$, a mapping $F:W\to Y$ is said to be \uldef{holomorphic at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ and a chart $\tpl{V,\psi}$ of $Y$ containing $F\l(p\r)$ such that $\psi\circ F\circ\phi^{-1}\!\!:\phi\l(U\r)\to\psi\l(V\r)$ is holomorphic at $\phi\l(p\r)$. If $F$ is holomorphic at every point of $W$, then $F$ is \uldef{holomorphic on $W$}.
+    \end{definition}\side[-0.7in]{For $Y\coloneqq\C$ regarded as a Riemann surface, this definition agrees with the above. Again, we must check that $\textrm{`}$being holomorphic$\textrm{'}$ is well-defined, but it follows from the commutativity of the diagram below.
+        \begin{equation*}
+            \begin{tikzcd}[ampersand replacement=\&, column sep = 0.05in]
+                \phi_1\!\l(U_1\cap U_2\r) \ar[rrrrrrr, "\psi_1\circ F\circ\phi_1^{-1}", bend left = 10] \ar[dd, "\phi_2\circ\phi_1^{-1}"'] \& \& \& \& \& \& \& \psi_1\!\l(V_1\cap V_2\r) \ar[dd, "\psi_2\circ\psi_1^{-1}"] \\
+                \& \hspace{-0.23in}U_1\cap U_2 \ar[ul, "\phi_1"'] \ar [dl, "\phi_2"] \ar[rrrrr, "F"] \& \& \& \& \& V_1\cap V_2\hspace{-0.23in} \ar[ur, "\psi_1"] \ar[dr, "\psi_2"'] \\
+                \phi_2\!\l(U_1\cap U_2\r) \ar[rrrrrrr, "\psi_2\circ F\circ\phi_2^{-1}"', bend right = 10] \& \& \& \& \& \& \& \psi_2\!\l(V_1\cap V_2\r)
+            \end{tikzcd}
+        \end{equation*}}
+    \begin{example}
+        It is easy to show that the identity map $\id_X$ on a Riemann surface $X$ is a holomorphic map. Furthermore, for all Riemann surfaces $X$, $Y$ and $Z$ and holomorphic maps $F:X\to Y$ and $G:Y\to Z$, their composite $G\circ F:X\to Z$ is also a holomorphic map. This shows that the collection of all Riemann surfaces is a \textit{category}.\exqed
+    \end{example}
+    \begin{definition}\label{1.2:def:biholomorphic_Riemann_surfaces}
+        Let $X$ and $Y$ be Riemann surfaces. A \uldef{biholomorphism between $X$ and $Y$} is an invertible holomorphic map $F:X\to Y$ whose inverse $F^{-1}:Y\to X$ is also holomorphic. Two Riemann surfaces $X$ and $Y$ are said to be \uldef{biholomorphic} if there exists a biholomorphism $F:X\to Y$.
+    \end{definition}
+    \begin{example}[Biholomorphisms between Riemann spheres]
+        Let $\C_\infty$, $S^2$, and $\P^1$ denote the three constructions for the Riemann sphere $\RS$ presented in Examples \ref{1.1:one_point_compactification_of_C}, \ref{1.1:stereographic_projection}, and \ref{1.1:complex_projective_line}, respectively. We shall show that the maps
+        \begin{equation*}
+            F:S^2\to\P^1:\tpl{x,y,w}\mapsto\proje{1+w:x-iy}\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ G:S^2\to\C_\infty:\tpl{x,y,w}\mapsto\frac{x+iy}{1-w}
+        \end{equation*}
+        are biholomorphisms, which shows that all three constructions are biholomorphic.\side{Since the collection of Riemann surfaces form a category, the $\textrm{`}$is isomorphic to$\textrm{'}$ relation is an equivalence relation.} Indeed $F$ is holomorphic since with the charts
+        \begin{equation*}
+            \begin{alignedat}{2}
+                U&\coloneqq S^2\comp\l\{\l(0,0,1\r)\r\}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ &&\phi:U\to\C:\tpl{x,y,w}\mapsto\frac{x+iy}{1-w} \\
+                V&\coloneqq\P^1\comp\l\{\proje{0:w}\mid w\in\C\r\}&&\psi:V\to\C:\proje{z:w}\mapsto\frac{w}{z},
+            \end{alignedat}
+        \end{equation*}
+        we see that
+        \begin{equation*}
+            \begin{aligned}
+                \l(\psi\circ F\circ\phi^{-1}\r)\l(z\r)&=\psi\l(F\l(\frac{2\Re z}{\l|z\r|^2+1},\frac{2\Im z}{\l|z\r|^2+1},\frac{\l|z\r|^2-1}{\l|z\r|^2+1}\r)\r) \\
+                                                      &=\psi\l(\proje{1-\frac{\l|z\r|^2-1}{\l|z\r|^2+1}:\frac{2z}{\l|z\r|^2+1}}\r) \\
+                                                      &=\psi\l(\proje{1:z}\r) \\
+                                                      &=z
+            \end{aligned}
+        \end{equation*}
+        for all $z\in\phi\l(U\r)=\C$, which is clearly holomorphic. Furthermore, it can be checked that $F$ is invertible with inverse\side{}
+        \begin{equation*}
+            F^{-1}\l(\proje{z:w}\r)\coloneqq\frac{\tpl{2\Re\l(z\bar{w}\r),2\Im\l(z\bar{w}\r),\l|z\r|^2-\l|w\r|^2}}{\l|z\r|^2+\l|w\r|^2},
+        \end{equation*}
+        which is well-defined, and since $\l(\psi\circ F\circ\phi^{-1}\r)^{-1}=\phi\circ F^{-1}\circ\psi^{-1}$, we see that $F^{-1}$ is holomorphic too.
+    \end{example}
+    \subsection{Singularities of Functions}
+    Throughout this section, let $X$ be a Riemann surface, let $W\subseteq X$ be open, and for a fixed $p\in W$, let $f:W\to\C$ be holomorphic in a punctured neighborhood of $p$.\side[0.01in]{That is, let $f$ be holomorphic on $B\l(p,\epsilon\r)\comp\l\{p\r\}$ for some $\epsilon>0$.} As above, we can transport the behaviour of $f$ at $p$ from its chart representation $f\circ\phi^{-1}$.
+    \begin{definition}
+        Let $f:W\to\C$ be a holomorphic function in a punctured neighborhood of $p$. We say that $f$ has a \uldef{removable singularity} (resp. \uldef{pole}, \uldef{essential singularity}) \uldef{at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ has a removable singularity (resp. pole, essential singularity) at $\phi\l(p\r)$.
+    \end{definition}\side[-0.56in]{Equation (\ref{1.2:eqn:holomorphic_function_well_defined}) shows that those notions are chart independent; the composition of $f\circ\phi^{-1}$ having a singularity at $p$ with a transition map that is holomorphic at $p$ yields a function with the same type of singularity at $p$.}
+    \begin{remark}
+        Functions having an essential singularity at $p$ are very ill-behaved. Indeed, this occurs iff the limit of $\l|f\l(x\r)\r|$ as $x\to p$ does not exist. Other singularities behave much better:
+        \begin{itemize}
+            \item A removable singularity occurs iff $\l|f\l(x\r)\r|$ is bounded in a neighborhood of $p$, and can be $\textrm{`}$filled in$\textrm{'}$ by defining $f\l(p\r)\coloneqq\lim\limits_{x\to p}f\l(x\r)$. This makes $f:W\to\C$ into a holomorphic function.
+            \vspace{-0.08in}
+            \item A pole occurs iff $\l|f\l(x\r)\r|\to\infty$ as $x\to p$
+        \end{itemize}
+        We thus make the following definition.\exqed
+    \end{remark}
+    \begin{definition}
+        A function $f:W\to\C$ is said to be \uldef{meromorphic at $p$} if it does not have an essential singularity at $p$; that is, if it is either holomorphic, has a removable singularity, or has a pole at $p$. If $f$ is meromorphic at every point of $W$, then $f$ is \uldef{meromorphic on $W$}.
+    \end{definition}\side[-0.44in]{As in Example \ref{1.2:exa:elementary_holomorphic_functions}, if $f,g:W\to\C$ are both meromorphic at $p$, then so are $f\pm g$ and $f\cdot g$. If $g$ is not identically $0$, then so is $f/g$. This makes the set $\mc{M}\l(W\r)$ of all meromorphic functions $f:W\to\C$ into a $\C$-algebra.}
+\end{document}
