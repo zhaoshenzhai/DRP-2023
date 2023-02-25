@@ -79,20 +79,31 @@
         which is well-defined, and since $\l(\psi\circ F\circ\phi^{-1}\r)^{-1}=\phi\circ F^{-1}\circ\psi^{-1}$, we see that $F^{-1}$ is holomorphic too.\exqed
     \end{example}
     \subsection{Singularities of Functions}
-    Throughout this section, let $X$ be a Riemann surface, let $W\subseteq X$ be open, and for a fixed $p\in W$, let $f:W\to\C$ be holomorphic in a punctured neighborhood of $p$.\side[0.01in]{That is, let $f$ be holomorphic on $B\l(p,\epsilon\r)\comp\l\{p\r\}$ for some $\epsilon>0$.} As above, we can transport the behaviour of $f$ at $p$ from its chart representation $f\circ\phi^{-1}$.
+    Throughout this section, let $X$ be a Riemann surface, let $p\in X$, and let $f:W\to\C$ be defined and holomorphic on a punctured neighborhood $W$ of $p$.\side[0.01in]{That is, let $f$ be defined and holomorphic on $B\l(p,\epsilon\r)\comp\l\{p\r\}$ for some $\epsilon>0$.} As above, we can transport the behaviour of $f$ at $p$ from its chart representation $f\circ\phi^{-1}$.
     \begin{definition}
         Let $f:W\to\C$ be a holomorphic function in a punctured neighborhood of $p$. We say that $f$ has a \uldef{removable singularity} (resp. \uldef{pole}, \uldef{essential singularity}) \uldef{at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ has a removable singularity (resp. pole, essential singularity) at $\phi\l(p\r)$.
     \end{definition}\side[-0.56in]{Equation (\ref{1.2:eqn:holomorphic_function_well_defined}) shows that those notions are chart independent; the composition of $f\circ\phi^{-1}$ having a singularity at $p$ with a transition map that is holomorphic at $p$ yields a function with the same type of singularity at $p$.}
-    \begin{remark}
+    \begin{remark}\label{1.2:rem:nice_singularities}
         Functions having an essential singularity at $p$ are very ill-behaved. Indeed, this occurs iff the limit of $\l|f\l(x\r)\r|$ as $x\to p$ does not exist. Other singularities behave much better:
         \begin{itemize}
-            \item A removable singularity occurs iff $\l|f\l(x\r)\r|$ is bounded in a neighborhood of $p$, and can be $\textrm{`}$filled in$\textrm{'}$ by defining $f\l(p\r)\coloneqq\lim\limits_{x\to p}f\l(x\r)$. This makes $f:W\to\C$ into a holomorphic function.
+            \item A removable singularity occurs iff $\l|f\l(x\r)\r|$ is bounded in a neighborhood of $p$, and can be $\textrm{`}$filled in$\textrm{'}$ by defining $\tilde{f}\l(p\r)\coloneqq\lim\limits_{x\to p}f\l(x\r)$. This makes $\tilde{f}:\tilde{W}\to\C$ into\side{$\tilde{W}\coloneqq W\cup\l\{p\r\}$.} a holomorphic function.
             \vspace{-0.08in}
-            \item A pole occurs iff $\l|f\l(x\r)\r|\to\infty$ as $x\to p$
+            \item A pole occurs iff $\l|f\l(x\r)\r|\to\infty$ as $x\to p$, which can also be $\textrm{`}$filled in$\textrm{'}$ by defining the map
+                \begin{equation*}
+                    F:W\to\RS\ \ \ \ \ \ \ \ \textrm{mapping}\ \ \ \ \ \ \ \ x\mapsto
+                    \begin{dcases}
+                        f\l(x\r) & \textrm{if }x\neq p \\
+                        \infty & \textrm{else}
+                    \end{dcases}
+                \end{equation*}
+                that extends the codomain of $f$ to the Riemann sphere $\RS$;\side{Here, we consider $\RS=\C_\infty$.} it is clear that $F$ is holomorphic.
         \end{itemize}
-        We thus make the following definition.\exqed
+        Thus we see that every such function $f:W\to\C$ having either a removable singularity or a pole at $p$ can be holomorphically extended to a map $F:\tilde{W}\to\RS$. Conversely, every holomorphic map $F:W\to\RS$ (that is not identically zero) can be regarded as a function $f:W\to\C$ that is holomorphic everywhere except where $F\l(x\r)=\infty$, in which case it either has a pole. This motivates the following definition.\exqed
     \end{remark}
     \begin{definition}
         A function $f:W\to\C$ is said to be \uldef{meromorphic at $p$} if it does not have an essential singularity at $p$; that is, if it is either holomorphic, has a removable singularity, or has a pole at $p$. If $f$ is meromorphic at every point of $W$, then $f$ is \uldef{meromorphic on $W$}.
     \end{definition}\side[-0.44in]{As in Example \ref{1.2:exa:elementary_holomorphic_functions}, if $f,g:W\to\C$ are both meromorphic at $p$, then so are $f\pm g$ and $f\cdot g$. If $g$ is not identically $0$, then so is $f/g$. This makes the set $\mc{M}\l(W\r)$ of all meromorphic functions $f:W\to\C$ into a $\C$-algebra.}
+    \begin{remark}
+        Remark \ref{1.2:rem:nice_singularities} can now be rephrased by saying that the set of all meromorphic functions $f:W\to\C$ are in one-to-one correspondence with the set of all holomorphic maps $F:W\to\RS$ (which are not identically zero). That is, meromorphic functions are the holomorphic maps to the Riemann sphere.\exqed
+    \end{remark}
 \end{document}
