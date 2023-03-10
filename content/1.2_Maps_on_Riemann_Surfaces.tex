@@ -128,7 +128,7 @@
             \ord_p\!\l(f\r)\coloneqq\min\l\{n\in\Z\mid0\neq\l(z-z_0\r)^n\!f_\phi\!\l(z\r)\in\mc{O}\l(W\r)\r\}.
         \end{equation*}
     \end{definition}
-    \side[-0.53in]{Note that $f$, being meromorphic, ensures that its Laurent series has finitely-many negative terms. Thus the set $\l\{n\in\Z\mid c_n\neq0\r\}$ achieves its minimum, so the definition makes sense. Of course, it still remains to show that $\ord_p\!\l(f\r)$ is independent of the local coordinate defining the Laurent series.\\\ \\
+    \side[-0.53in]{Note that $f$, being meromorphic, ensures that its Laurent series has finitely-many negative terms. Thus the set $\l\{n\in\Z\mid c_n\neq0\r\}$ achieves its minimum, so the definition makes sense. If $f$ is not meromorphic, we take $\ord_p\!\l(f\r)\coloneqq\infty$.\\\ \\
         The arithmetic of $\ord_p$ is straightforward. Indeed, if $f,g:W\to\C$ are meromorphic at $p$, then
         \begin{itemize}
             \item $\ord_p\!\l(fg\r)=\ord_p\!\l(f\r)+\ord_p\!\l(g\r)$.
@@ -138,21 +138,21 @@
         \end{itemize}
     }\vspace{-0.05in}
     \begin{proof}
-        (Well-defined). Let $\l(U,\phi\r)$ give the local coordinates of $z$ and suppose that $\l(V,\psi\r)$ is another chart with $w_0\coloneqq\psi\l(p\r)$ giving another local coordinate $w$. Then the transition function $T:\phi\circ\psi^{-1}$ is holomorphic, so it admits a power series representation
+        (Well-defined). Let $z$ be the local coordinates given by $\l(U,\phi\r)$ and suppose that $\l(V,\psi\r)$ is another chart with $w_0\coloneqq\psi\l(p\r)$ giving another local coordinate $w$. Then the transition function $T:\phi\circ\psi^{-1}$ is holomorphic, so it admits a power series representation
         \begin{equation*}
             z=T\l(w\r)=\sum_{n\geq0}a_n\l(w-w_0\r)^n=z_0+\sum_{n\geq1}a_n\l(w-w_0\r)^n.
         \end{equation*}
-        Since $T'\l(w_0\r)\neq0$, we see that $a_1\neq0$. Suppose now that the Laurent series of $f$ at $p$ in the coordinate $z$ is $c_{n_0}\l(z-z_0\r)^{n_0}+$ higher order terms, so that the order of $f$ at $p$ computed by employing $z$ is $n_0$. Then the Laurent series of $f$ at $p$ in the coordinate $w$ is
+        Since $T'\l(w_0\r)\neq0$, we see that $a_1\neq0$. Suppose now that the Laurent series of $f$ at $p$ in the coordinate $z$ is $c_{-n_0}\l(z-z_0\r)^{-n_0}+$ higher order terms, so that the order of $f$ at $p$ computed by employing $z$ is $n_0$. Then the Laurent series of $f$ at $p$ in the coordinate $w$ is
         \begin{equation*}
-            c_{n_0}\l(\sum_{n\geq1}a_n\l(w-w_0\r)^n\r)^{n_0}+\textrm{ higher order terms},
+            c_{-n_0}\l(\sum_{n\geq1}a_n\l(w-w_0\r)^n\r)^{-n_0}+\textrm{ higher order terms},
         \end{equation*}
-        whose lowest order term is $c_{n_0}a_1^{n_0}\l(w-w_0\r)^{n_0}$. Observe that $a_{n_0}=c_{n_0}a_1^{n_0}\neq0$, so the order of $f$ at $p$ computed via $w$ is also $n_0$.\qed
+        whose lowest order term is $c_{-n_0}a_1^{-n_0}\l(w-w_0\r)^{-n_0}$. Observe that $b_{-n_0}\coloneqq c_{-n_0}a_1^{-n_0}\neq0$, so the order of $f$ at $p$ computed via $w$ is also $n_0$.\qed
     \end{proof}
     \begin{remark}
-        The order $\ord_p\!\l(f\r)$ can be used to classify the behaviour of $f$ at $p$. Indeed, it is readily verified that $f$ is holomorphic at $p$ iff $\ord_p\!\l(f\r)\geq0$, in which case $f\l(p\r)=0$ iff $\ord_p\!\l(f\r)>0$. Similarly, $f$ has a pole at $p$ iff $\ord_p\!\l(f\r)<0$, so $f$ has neither a zero nor a pole at $p$ iff $\ord_p\!\l(f\r)=0$. This motivates the following definition.\exqed
+        The order $\ord_p\!\l(f\r)$ can be used to classify the behaviour of $f$ at $p$. Indeed, it is readily verified that $f$ is holomorphic at $p$ iff $\ord_p\!\l(f\r)\leq0$, in which case $f\l(p\r)=0$ iff $\ord_p\!\l(f\r)<0$. Similarly, $f$ has a pole at $p$ iff $\ord_p\!\l(f\r)>0$, so $f$ has neither a zero nor a pole at $p$ iff $\ord_p\!\l(f\r)=0$. This motivates the following definition.\exqed
     \end{remark}
     \begin{definition}
-        Let $f:W\to\C$ be meromorphic at $p$. We say that $f$ has a \uldef{zero} (resp. \uldef{pole}) \uldef{of order $n$ at $p$} if $\ord_p\!\l(f\r)=n>0$ (resp. $n<0$).
+        Let $f:W\to\C$ be meromorphic at $p$. We say that $f$ has a \uldef{zero} (resp. \uldef{pole}) \uldef{of order $n$ at $p$} if $\ord_p\!\l(f\r)=n<0$ (resp. $n>0$).
     \end{definition}
     \subsection{Meromorphic Functions on $\RS$}
     \begin{example}
