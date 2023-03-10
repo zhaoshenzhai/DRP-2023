@@ -112,12 +112,30 @@
     \begin{remark}
         Remark \ref{1.2:rem:nice_singularities} can now be rephrased by saying that the set of all meromorphic functions $f:W\to\C$ are in one-to-one correspondence with the set of all holomorphic maps $F:W\to\RS$ (which are not identically zero). That is, meromorphic functions are the holomorphic maps to the Riemann sphere.\exqed
     \end{remark}
+    \begin{definition}
+        Let $f:W\to\C$ be meromorphic at $p$ and consider its Laurent series $\sum_{n}c_n\l(z-z_0\r)^n$ in some local coordinate $z$ with $z_0\coloneqq\phi\l(p\r)$. The \uldef{order of $f$ at $p$} is
+        \begin{equation*}
+            \ord_p\!\l(f\r)\coloneqq\min\l\{n\in\Z\mid c_n\neq0\r\}.
+        \end{equation*}
+    \end{definition}
+    \side[-0.53in]{Note that $f$, being meromorphic, ensures that its Laurent series has finitely-many negative terms. Thus the set $\l\{n\in\Z\mid c_n\neq0\r\}$ achieves its minimum, so the definition makes sense. Of course, it still remains to show that $\ord_p\!\l(f\r)$ is independent of the local coordinate defining the Laurent series.}\vspace{-0.1in}
+    \begin{proof}
+        (Well-defined). Let $\l(U,\phi\r)$ give the local coordinates of $z$ and suppose that $\l(V,\psi\r)$ is another chart with $w_0\coloneqq\psi\l(p\r)$ giving another local coordinate $w$. Then the transition function $T:\phi\circ\psi^{-1}$ is holomorphic, so it admits a power series representation
+        \begin{equation*}
+            z=T\l(w\r)=\sum_{n\geq0}a_n\l(w-w_0\r)^n=z_0+\sum_{n\geq1}a_n\l(w-w_0\r)^n.
+        \end{equation*}
+        Since $T'\l(w_0\r)\neq0$, we see that $a_1\neq0$. Suppose now that the Laurent series of $f$ at $p$ in the coordinate $z$ is $c_{n_0}\l(z-z_0\r)^{n_0}+$ higher order terms, so that the order of $f$ at $p$ computed by employing $z$ is $n_0$. Then the Laurent series of $f$ at $p$ in the coordinate $w$ is
+        \begin{equation*}
+            c_{n_0}\l(\sum_{n\geq1}a_n\l(w-w_0\r)^n\r)^{n_0}+\textrm{ higher order terms},
+        \end{equation*}
+        whose lowest order term is $c_{n_0}a_1^{n_0}\l(w-w_0\r)^{n_0}$. Observe that $a_{n_0}=c_{n_0}a_1^{n_0}\neq0$, so the order of $f$ at $p$ computed via $w$ is also $n_0$.\qed
+    \end{proof}
     \subsection{Local Normal Form of Holomorphic Maps}
     \begin{theorem}[Local Normal Form]
         Let $X$ and $Y$ be Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. Then, for every $p\in X$, there exists a unique $m\geq1$ such that for any chart $\tpl{U_2,\phi_2}$ of $Y$ centered at $F\l(p\r)$, there exists a chart $\tpl{U_1,\phi_1}$ of $X$ centered at $p$ such that $\phi_2\circ F\circ\phi_1^{-1}:z\mapsto z^m$ for all $z\in\phi_1\l(U_1\r)$.
     \end{theorem}
     \side[-0.57in]{That is, $F$ looks like a power map $z\mapsto z^m$ locally around $p$. Since such an integer $m\geq1$ is unique, we call it the \ul{multiplicity of $F$ at $p$}, denoted $\mult_p\!\l(F\r)$.\\\ \\
-        This theorem also give easy proofs of some elementary properties of holomorphic maps, which we collect here; see \cite{miranda} for details. Throughout, $X$ and $Y$ are Riemann surfaces and $F:X\to Y$ is a non-constant holomorphic map.
+        This theorem also give easy proofs of some elementary properties of holomorphic maps, which we collect here; see \cite[][section 1.2]{otto} for details. Throughout, $F:X\to Y$ is a non-constant holomorphic map between Riemann surfaces $X$ and $Y$.
         \begin{itemize}
             \item $F$ is an open map.
             \item If $F$ is injective, then it is biholomorphic onto its image.
@@ -126,11 +144,11 @@
         \end{itemize}
         Together, the last two claims give an alternative proof for Theorem \ref{1.2:thm:holomorphic_compact_constant}.}\vspace{-0.1in}
     \begin{proof}
-        Let $\tpl{U_2,\phi_2}$ be a chart of $Y$ centered at $F\l(p\r)$ and consider any chart $\tpl{V,\psi}$ of $X$ centered at $p$. Then the function $f\coloneqq\phi_2\circ F\circ\psi^{-1}$ is holomorphic, so it admits a power series representation $f\l(z\r)=\sum_{i=0}^{\infty}c_iz^i$ for all $z\in\psi\l(V\r)$. Note that $f\l(0\r)=\phi_2\l(F\l(p\r)\r)=0$, so $c_0=0$. Let $m\geq1$ be the smallest integer such that $c_m\neq0$, so
+        Let $\tpl{U_2,\phi_2}$ be a chart of $Y$ centered at $F\l(p\r)$ and consider any chart $\tpl{V,\psi}$ of $X$ centered at $p$. Then the function $f\coloneqq\phi_2\circ F\circ\psi^{-1}$ is holomorphic, so it admits a power series representation $f\l(w\r)=\sum_{i=0}^{\infty}c_iw^i$ for all $w\in\psi\l(V\r)$. Note that $f\l(0\r)=\phi_2\l(F\l(p\r)\r)=0$, so $c_0=0$. Let $m\geq1$ be the smallest integer such that $c_m\neq0$, so
         \begin{equation*}
-            f\l(z\r)=\sum_{i=m}^{\infty}c_iz^i=z^m\sum_{i=0}^{\infty}c_{i-m}z^i\eqqcolon z^mg\l(z\r).
+            f\l(w\r)=\sum_{i=m}^{\infty}c_iw^i=w^m\sum_{i=0}^{\infty}c_{i-m}w^i\eqqcolon w^mg\l(w\r).
         \end{equation*}
-        Then $g$ is holomorphic at $0$ with $g\l(0\r)=c_m\neq0$, so there is a function $h$ holomorphic on some neighborhood $W$ of $0$ such that $\l(h\l(z\r)\r)^m=g\l(z\r)$ for all $z\in W$. Thus $f\l(z\r)=\l(zh\l(z\r)\r)^m$, so set $\eta\l(z\r)\coloneqq zh\l(z\r)$ for all $z\in W$. Note that $\eta'\l(0\r)=h\l(0\r)\neq0$, so $\eta$ is invertible on some neighborhood $W'\subseteq W$ of $0$. Set $U_1\coloneqq\psi^{-1}\l(W'\r)$ and $\phi_1\coloneqq\eta\circ\psi$. Then $\l(U_1,\phi_1\r)$ is a chart of $X$ centered at $p$ such that
+        Then $g$ is holomorphic at $0$ with $g\l(0\r)=c_m\neq0$, so there is a function $h$ holomorphic on some neighborhood $W$ of $0$ such that $\l(h\l(w\r)\r)^m=g\l(w\r)$ for all $w\in W$. Thus $f\l(w\r)=\l(wh\l(w\r)\r)^m$, so set $\eta\l(w\r)\coloneqq wh\l(w\r)$ for all $w\in W$. Note that $\eta'\l(0\r)=h\l(0\r)\neq0$, so $\eta$ is invertible on some neighborhood $W'\subseteq W$ of $0$. Set $U_1\coloneqq\psi^{-1}\l(W'\r)$ and $\phi_1\coloneqq\eta\circ\psi$. Then $\l(U_1,\phi_1\r)$ is a chart of $X$ centered at $p$ such that
         \begin{equation*}
             \l(\phi_2\circ F\circ\phi_1^{-1}\r)\l(z\r)=\l(\phi_2\circ F\circ\psi^{-1}\circ\eta^{-1}\r)\l(z\r)=f\l(\eta^{-1}\l(z\r)\r)=\l[\eta\l(\eta^{-1}\l(z\r)\r)\r]^m=z^m
         \end{equation*}
