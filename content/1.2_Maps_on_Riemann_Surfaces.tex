@@ -45,7 +45,7 @@
         Let $X$ and $Y$ be Riemann surfaces. A \uldef{biholomorphism between $X$ and $Y$} is an invertible holomorphic map $F:X\to Y$ whose inverse $F^{-1}:Y\to X$ is also holomorphic. Two Riemann surfaces $X$ and $Y$ are said to be \uldef{biholomorphic} if there exists a biholomorphism $F:X\to Y$.
     \end{definition}
     \begin{example}[Biholomorphisms between Riemann spheres]\label{1.2:exa:biholomorphisms_between_Riemann_spheres}
-        Let $\C_\infty$, $S^2$, and $\P^1$ denote the three constructions for the Riemann sphere $\RS$ presented in Examples \ref{1.1:one_point_compactification_of_C}, \ref{1.1:stereographic_projection}, and \ref{1.1:complex_projective_line}, respectively. We claim that the maps\side[0.28in]{Take $G\l(0,0,1\r)\coloneqq\infty$.}
+        Let $\C_\infty$, $S^2$, and $\P^1$ denote the three constructions for the Riemann sphere $\RS$ presented in Examples \ref{1.1:exa:one_point_compactification_of_C}, \ref{1.1:exa:stereographic_projection}, and \ref{1.1:exa:complex_projective_line}, respectively. We claim that the maps\side[0.28in]{Take $G\l(0,0,1\r)\coloneqq\infty$.}
         \begin{equation*}
             F:S^2\to\P^1:\tpl{x,y,w}\mapsto\proje{1-w:x+iy}\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ G:S^2\to\C_\infty:\tpl{x,y,w}\mapsto\frac{x+iy}{1-w}
         \end{equation*}
@@ -126,7 +126,7 @@
             \item $\ord_p\!\l(1/f\r)=-\ord_p\!\l(f\r)$, if $f\neq0$.
             \item $\ord_p\!\l(f\pm g\r)\geq\min\l\{\ord_p\!\l(f\r),\ord_p\!\l(g\r)\r\}$.
         \end{itemize}
-    }\vspace{-0.1in}
+    }\vspace{-0.05in}
     \begin{proof}
         (Well-defined). Let $\l(U,\phi\r)$ give the local coordinates of $z$ and suppose that $\l(V,\psi\r)$ is another chart with $w_0\coloneqq\psi\l(p\r)$ giving another local coordinate $w$. Then the transition function $T:\phi\circ\psi^{-1}$ is holomorphic, so it admits a power series representation
         \begin{equation*}
@@ -144,8 +144,9 @@
     \begin{definition}
         Let $f:W\to\C$ be meromorphic at $p$. We say that $f$ has a \uldef{zero} (resp. \uldef{pole}) \uldef{of order $n$ at $p$} if $\ord_p\!\l(f\r)=n>0$ (resp. $n<0$).
     \end{definition}
+    \subsection{Meromorphic Functions on $\RS$}
     \begin{example}
-        Let $f:W\subseteq\RS\to\C$ be a non-zero rational function $f\l(z\r)\coloneqq p\l(z\r)/q\l(z\r)$. Then $f$ is holomorphic at all points $z\in\C$ such that $q\l(z\r)\neq0$, and has a pole otherwise. Also, $f\l(\infty\r)=c_n/d_m$ if $\deg p=\deg q$, vanishes if $\deg p<\deg q$, and has a pole otherwise. In any case, $f$ is meromorphic on $\RS$. To compute $\ord_z\!\l(f\r)$ at all $z\in\RS$, we split $p$ and $q$ into linear factors to write $f$ uniquely as
+        Let $f:W\subseteq\RS\to\C$ be a non-zero rational function $f\l(z\r)\coloneqq p\l(z\r)/q\l(z\r)$. Then $f$ is holomorphic at all points $z\in\C$ such that $q\l(z\r)\neq0$, and has a pole otherwise. Also, $f\l(\infty\r)=c_n/d_m$ if $\deg p=\deg q$, vanishes if $\deg p<\deg q$, and has a pole otherwise. In any case, $f$ is meromorphic on $\RS$\side{In fact, \textit{any} meromorphic function on the Riemann sphere is a rational function; see Theorem \ref{1.2:thm:meromorphic_Riemann_sphere_rational}.}. To compute $\ord_z\!\l(f\r)$ at all $z\in\RS$, we split $p$ and $q$ into linear factors to write $f$ uniquely as
         \begin{equation*}
             f\l(z\r)=c\prod\l(z-\lambda_i\r)^{\alpha_i}
         \end{equation*}
@@ -159,28 +160,17 @@
         \end{equation*}
         Lastly, it is clear that $\ord_z\!\l(f\r)=0$ for all $z\neq \lambda_i,\infty$.\exqed
     \end{example}
-    \subsection{Local Normal Form of Holomorphic Maps}
-    \begin{theorem}[Local Normal Form]
-        Let $X$ and $Y$ be Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. Then, for every $p\in X$, there exists a unique $m\geq1$ such that for any chart $\tpl{U_2,\phi_2}$ of $Y$ centered at $F\l(p\r)$, there exists a chart $\tpl{U_1,\phi_1}$ of $X$ centered at $p$ such that $\phi_2\circ F\circ\phi_1^{-1}:z\mapsto z^m$ for all $z\in\phi_1\l(U_1\r)$.
+    \begin{theorem}\label{1.2:thm:meromorphic_Riemann_sphere_rational}
+        Any meromorphic function on the Riemann sphere is a rational function.
     \end{theorem}
-    \side[-0.57in]{That is, $F$ looks like a power map $z\mapsto z^m$ locally around $p$. Since such an integer $m\geq1$ is unique, we call it the \ul{multiplicity of $F$ at $p$}, denoted $\mult_p\!\l(F\r)$.\\\ \\
-        This theorem also give easy proofs of some elementary properties of holomorphic maps, which we collect here; see \cite[][section 1.2]{otto} for details. Throughout, $F:X\to Y$ is a non-constant holomorphic map between Riemann surfaces $X$ and $Y$.
-        \begin{itemize}
-            \item $F$ is an open map.
-            \item If $F$ is injective, then it is biholomorphic onto its image.
-            \item If $Y=\C$, then $\l|F\r|$ does not attain its maximum.
-            \item If $X$ is compact, then $F$ is surjective and $Y$ is compact.
-        \end{itemize}
-        Together, the last two claims give an alternative proof for Theorem \ref{1.2:thm:holomorphic_compact_constant}.}\vspace{-0.1in}
     \begin{proof}
-        Let $\tpl{U_2,\phi_2}$ be a chart of $Y$ centered at $F\l(p\r)$ and consider any chart $\tpl{V,\psi}$ of $X$ centered at $p$. Then the function $f\coloneqq\phi_2\circ F\circ\psi^{-1}$ is holomorphic, so it admits a power series representation $f\l(w\r)=\sum_{i=0}^{\infty}c_iw^i$ for all $w\in\psi\l(V\r)$. Note that $f\l(0\r)=\phi_2\l(F\l(p\r)\r)=0$, so $c_0=0$. Let $m\geq1$ be the smallest integer such that $c_m\neq0$, so
+        Let $f:\RS\to\C$ be meromorphic. Since $\RS$ is compact, it has finitely-many poles.\side[0.01in]{Otherwise, the set of poles would have a limit point, contradicting the discreteness of poles.} W.l.o.g., assume that $\infty$ is not a pole of $f$ (since we may consider $1/f$ instead). Now, for each pole $\lambda_i\in\C$ of $f$, consider its principle part
         \begin{equation*}
-            f\l(w\r)=\sum_{i=m}^{\infty}c_iw^i=w^m\sum_{i=0}^{\infty}c_{i-m}w^i\eqqcolon w^mg\l(w\r).
+            h_i\!\l(z\r)=\sum_{\mathclap{j=-m_i}}^{-1}c_{ij}\l(z-\lambda_i\r)^j
         \end{equation*}
-        Then $g$ is holomorphic at $0$ with $g\l(0\r)=c_m\neq0$, so there is a function $h$ holomorphic on some neighborhood $W$ of $0$ such that $\l(h\l(w\r)\r)^m=g\l(w\r)$ for all $w\in W$. Thus $f\l(w\r)=\l(wh\l(w\r)\r)^m$, so set $\eta\l(w\r)\coloneqq wh\l(w\r)$ for all $w\in W$. Note that $\eta'\l(0\r)=h\l(0\r)\neq0$, so $\eta$ is invertible on some neighborhood $W'\subseteq W$ of $0$. Set $U_1\coloneqq\psi^{-1}\l(W'\r)$ and $\phi_1\coloneqq\eta\circ\psi$. Then $\l(U_1,\phi_1\r)$ is a chart of $X$ centered at $p$ such that
-        \begin{equation*}
-            \l(\phi_2\circ F\circ\phi_1^{-1}\r)\l(z\r)=\l(\phi_2\circ F\circ\psi^{-1}\circ\eta^{-1}\r)\l(z\r)=f\l(\eta^{-1}\l(z\r)\r)=\l[\eta\l(\eta^{-1}\l(z\r)\r)\r]^m=z^m
-        \end{equation*}
-        for all $z\in\phi_1\l(U_1\r)$. To show uniqueness, it suffices to show that such an $m$ is chart-independent. But this is clear, for if a different chart $U_2'$ is chosen such that $F$ acts as $z\mapsto z^n$ for some neighborhood $U_1'$ of $p$, then $z^n=z^m$ on $\phi_1\l(U_1\r)\cap\phi_1'\l(U_1'\r)$ forces $n=m$.\qed
+        for some $m_i>1$. Then the function $g\coloneqq f-\sum_ih_i$ is holomorphic function on $\RS$, and since $\RS$ is compact, it is constant by Theorem \ref{1.2:thm:holomorphic_compact_constant}. Thus $f=g+\sum_ih_i$, which is a rational function.\qed
     \end{proof}
+    \begin{remark}
+        Together with the above computation, this shows that if $f$ is a meromorphic function on $\RS$, then $\sum_{z\in\RS}\ord_z\!\l(f\r)=0$.\exqed
+    \end{remark}
 \end{document}
