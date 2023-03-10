@@ -118,7 +118,15 @@
             \ord_p\!\l(f\r)\coloneqq\min\l\{n\in\Z\mid c_n\neq0\r\}.
         \end{equation*}
     \end{definition}
-    \side[-0.53in]{Note that $f$, being meromorphic, ensures that its Laurent series has finitely-many negative terms. Thus the set $\l\{n\in\Z\mid c_n\neq0\r\}$ achieves its minimum, so the definition makes sense. Of course, it still remains to show that $\ord_p\!\l(f\r)$ is independent of the local coordinate defining the Laurent series.}\vspace{-0.1in}
+    \side[-0.53in]{Note that $f$, being meromorphic, ensures that its Laurent series has finitely-many negative terms. Thus the set $\l\{n\in\Z\mid c_n\neq0\r\}$ achieves its minimum, so the definition makes sense. Of course, it still remains to show that $\ord_p\!\l(f\r)$ is independent of the local coordinate defining the Laurent series.\\\ \\
+        The arithmetic of $\ord_p$ is straightforward. Indeed, if $f,g:W\to\C$ are meromorphic at $p$, then
+        \begin{itemize}
+            \item $\ord_p\!\l(fg\r)=\ord_p\!\l(f\r)+\ord_p\!\l(g\r)$.
+            \item $\ord_p\!\l(f/g\r)=\ord_p\!\l(f\r)-\ord_p\!\l(g\r)$, if $g\neq0$.
+            \item $\ord_p\!\l(1/f\r)=-\ord_p\!\l(f\r)$, if $f\neq0$.
+            \item $\ord_p\!\l(f\pm g\r)\geq\min\l\{\ord_p\!\l(f\r),\ord_p\!\l(g\r)\r\}$.
+        \end{itemize}
+    }\vspace{-0.1in}
     \begin{proof}
         (Well-defined). Let $\l(U,\phi\r)$ give the local coordinates of $z$ and suppose that $\l(V,\psi\r)$ is another chart with $w_0\coloneqq\psi\l(p\r)$ giving another local coordinate $w$. Then the transition function $T:\phi\circ\psi^{-1}$ is holomorphic, so it admits a power series representation
         \begin{equation*}
@@ -130,6 +138,27 @@
         \end{equation*}
         whose lowest order term is $c_{n_0}a_1^{n_0}\l(w-w_0\r)^{n_0}$. Observe that $a_{n_0}=c_{n_0}a_1^{n_0}\neq0$, so the order of $f$ at $p$ computed via $w$ is also $n_0$.\qed
     \end{proof}
+    \begin{remark}
+        The order $\ord_p\!\l(f\r)$ can be used to classify the behaviour of $f$ at $p$. Indeed, it is readily verified that $f$ is holomorphic at $p$ iff $\ord_p\!\l(f\r)\geq0$, in which case $f\l(p\r)=0$ iff $\ord_p\!\l(f\r)>0$. Similarly, $f$ has a pole at $p$ iff $\ord_p\!\l(f\r)<0$, so $f$ has neither a zero nor a pole at $p$ iff $\ord_p\!\l(f\r)=0$. This motivates the following definition.\exqed
+    \end{remark}
+    \begin{definition}
+        Let $f:W\to\C$ be meromorphic at $p$. We say that $f$ has a \uldef{zero} (resp. \uldef{pole}) \uldef{of order $n$ at $p$} if $\ord_p\!\l(f\r)=n>0$ (resp. $n<0$).
+    \end{definition}
+    \begin{example}
+        Let $f:W\subseteq\RS\to\C$ be a non-zero rational function $f\l(z\r)\coloneqq p\l(z\r)/q\l(z\r)$. Then $f$ is holomorphic at all points $z\in\C$ such that $q\l(z\r)\neq0$, and has a pole otherwise. Also, $f\l(\infty\r)=c_n/d_m$ if $\deg p=\deg q$, vanishes if $\deg p<\deg q$, and has a pole otherwise. In any case, $f$ is meromorphic on $\RS$. To compute $\ord_z\!\l(f\r)$ at all $z\in\RS$, we split $p$ and $q$ into linear factors to write $f$ uniquely as
+        \begin{equation*}
+            f\l(z\r)=c\prod\l(z-\lambda_i\r)^{\alpha_i}
+        \end{equation*}
+        where $c\neq0$ and each $\lambda_i$ is distinct. Fix $i$. Setting $g_j\!\l(z\r)\coloneqq\l(z-\lambda_j\r)^{\alpha_j}$ for all $j$, we see that $\ord_{\lambda_i}\!\l(g_i\r)=\alpha_i$ and $\ord_{\lambda_j}\!\l(g_i\r)=0$ for all $i\neq j$. Thus
+        \begin{equation*}
+            \ord_{\lambda_i}\!\l(f\r)=\sum_j\ord_{\lambda_i}\!\l(g_j\r)=\alpha_i.
+        \end{equation*}
+        Moreover\side{Note that $\sum_{z\in\RS}\ord_z\!\l(f\r)=0$, which, as we shall see, holds for all compact Riemann surfaces.}, if $\alpha_i>0$ (resp. $\alpha_i<0$), then $g_i$ has a pole (resp. zero) of order $\l|\alpha_i\r|$ at $\infty$. It follows then that $\ord_\infty\!\l(g_i\r)=-\alpha_i$, so
+        \begin{equation*}
+            \ord_\infty\!\l(f\r)=\sum_i\ord_\infty\!\l(g_i\r)=-\sum_i\alpha_i.
+        \end{equation*}
+        Lastly, it is clear that $\ord_z\!\l(f\r)=0$ for all $z\neq \lambda_i,\infty$.\exqed
+    \end{example}
     \subsection{Local Normal Form of Holomorphic Maps}
     \begin{theorem}[Local Normal Form]
         Let $X$ and $Y$ be Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. Then, for every $p\in X$, there exists a unique $m\geq1$ such that for any chart $\tpl{U_2,\phi_2}$ of $Y$ centered at $F\l(p\r)$, there exists a chart $\tpl{U_1,\phi_1}$ of $X$ centered at $p$ such that $\phi_2\circ F\circ\phi_1^{-1}:z\mapsto z^m$ for all $z\in\phi_1\l(U_1\r)$.
