@@ -14,13 +14,13 @@
         \end{itemize}
         Together, the last two claims give an alternative proof for Theorem \ref{1.2:thm:holomorphic_compact_constant}.}\vspace{-0.05in}
     \begin{proof}
-        Let $\tpl{U_2,\phi_2}$ be a chart of $Y$ centered at $F\l(p\r)$ and consider any chart $\tpl{V,\psi}$ of $X$ centered at $p$. Then the function $f\coloneqq\phi_2\circ F\circ\psi^{-1}$ is holomorphic, so it admits a power series representation $f\l(w\r)=\sum_{i=0}^{\infty}c_iw^i$ for all $w\in\psi\l(V\r)$. Note that $f\l(0\r)=\phi_2\l(F\l(p\r)\r)=0$, so $c_0=0$. Let $m\geq1$ be the smallest integer such that $c_m\neq0$, so
+        Let $\tpl{U_2,\phi_2}$ be a chart of $Y$ centered at $F\l(p\r)$ and consider any chart $\tpl{V,\psi}$ of $X$ centered at $p$. Then the function $h\coloneqq\phi_2\circ F\circ\psi^{-1}$ is holomorphic, so it admits a power series representation $h\l(w\r)=\sum_{i=0}^{\infty}c_iw^i$ for all $w\in\psi\l(V\r)$. Note that $h\l(0\r)=\phi_2\l(F\l(p\r)\r)=0$, so $c_0=0$. Let $m\geq1$ be the smallest integer such that $c_m\neq0$, so
         \begin{equation*}
-            f\l(w\r)=\sum_{i=m}^{\infty}c_iw^i=w^m\sum_{i=0}^{\infty}c_{i-m}w^i\eqqcolon w^mg\l(w\r).
+            h\l(w\r)=\sum_{i\geq m}c_iw^i=w^m\sum_{i\geq0}c_{i-m}w^i\eqqcolon w^mg\l(w\r).
         \end{equation*}
-        Then $g$ is holomorphic at $0$ with $g\l(0\r)=c_m\neq0$, so there is a function $h$ holomorphic on some neighborhood $W$ of $0$ such that $\l(h\l(w\r)\r)^m=g\l(w\r)$ for all $w\in W$. Thus $f\l(w\r)=\l(wh\l(w\r)\r)^m$, so set $\eta\l(w\r)\coloneqq wh\l(w\r)$ for all $w\in W$. Note that $\eta'\l(0\r)=h\l(0\r)\neq0$, so $\eta$ is invertible on some neighborhood $W'\subseteq W$ of $0$. Set $U_1\coloneqq\psi^{-1}\l(W'\r)$ and $\phi_1\coloneqq\eta\circ\psi$. Then $\l(U_1,\phi_1\r)$ is a chart of $X$ centered at $p$ such that
+        Then $g$ is holomorphic at $0$ with $g\l(0\r)=c_m\neq0$, so there is a function $h$ holomorphic on some neighborhood $W$ of $0$ such that $\l(h\l(w\r)\r)^m=g\l(w\r)$ for all $w\in W$. Thus $h\l(w\r)=\l(wh\l(w\r)\r)^m$, so set $\eta\l(w\r)\coloneqq wh\l(w\r)$ for all $w\in W$. Note that $\eta'\l(0\r)=h\l(0\r)\neq0$, so $\eta$ is invertible on some neighborhood $W'\subseteq W$ of $0$. Set $U_1\coloneqq\psi^{-1}\l(W'\r)$ and $\phi_1\coloneqq\eta\circ\psi$. Then $\l(U_1,\phi_1\r)$ is a chart of $X$ centered at $p$ such that
         \begin{equation*}
-            \l(\phi_2\circ F\circ\phi_1^{-1}\r)\l(z\r)=\l(\phi_2\circ F\circ\psi^{-1}\circ\eta^{-1}\r)\l(z\r)=f\l(\eta^{-1}\l(z\r)\r)=\l[\eta\l(\eta^{-1}\l(z\r)\r)\r]^m=z^m
+            \l(\phi_2\circ F\circ\phi_1^{-1}\r)\l(z\r)=\l(\phi_2\circ F\circ\psi^{-1}\circ\eta^{-1}\r)\l(z\r)=h\l(\eta^{-1}\l(z\r)\r)=\l[\eta\l(\eta^{-1}\l(z\r)\r)\r]^m=z^m
         \end{equation*}
         for all $z\in\phi_1\l(U_1\r)$. To show uniqueness, it suffices to show that such an $m$ is chart-independent. But this is clear, for if a different chart $U_2'$ is chosen such that $F$ acts as $z\mapsto z^n$ for some neighborhood $U_1'$ of $p$, then $z^n=z^m$ on $\phi_1\l(U_1\r)\cap\phi_1'\l(U_1'\r)$ forces $n=m$.\qed
     \end{proof}
@@ -28,6 +28,17 @@
         With the above notation, the unique $m\geq1$ such that there are local coordinates around $p$ and $F\l(p\r)$ where $F$ acts like $z\mapsto z^m$ is called the \uldef{multiplicity of $f$ at $p$}, denoted $\mult_p\!\l(f\r)$.
     \end{definition}
     \begin{remark}
-        
+        We give a simple way of computing $\mult_p\!\l(F\r)$ that does not involve casting $F$ into Local Normal Form, or even having to find local coordinates centered at $p$ and $F\l(p\r)$. Indeed, let $\tpl{U_1,\phi_1}$ and $\tpl{U_2,\phi_2}$ be charts around $p$ and $F\l(p\r)$, say with $z_0\coloneqq\phi_1\l(p\r)$ and $w_0\coloneqq\phi_2\l(F\l(p\r)\r)$. Letting $f\coloneqq\phi_2\circ F\circ\phi_1^{-1}$, we see that $f\l(z_0\r)=w_0$ and hence its power series representation has the form
+        \begin{equation*}
+            f\l(z\r)=f\l(z_0\r)+\sum_{i\geq m}c_i\l(z-z_0\r)^i
+        \end{equation*}
+        for some $m\geq1$ with $c_m\neq0$. Then, since $z-z_0$ and $w-w_0=f\l(z\r)-f\l(z_0\r)$ are local coordinates centered at $p$ and $F\l(p\r)$, respectively, we see from the above proof that $\mult_p\!\l(F\r)=m$. But also
+        \begin{equation*}
+            \frac{\d f}{\d z}=\sum_{i\geq m}ic_i\l(z-z_0\r)^{i-1},
+        \end{equation*}
+        so $d_{m-1}\coloneqq mc_m$ is the minimal non-zero coefficient its Laurent series. Thus $\ord_p\!\l(\d f/\d z\r)=m-1$, so
+        \begin{equation*}
+            \mult_p\!\l(F\r)=1+\ord_p\!\l(\frac{\d f}{\d z}\r).\exqedin
+        \end{equation*}
     \end{remark}
 \end{document}
