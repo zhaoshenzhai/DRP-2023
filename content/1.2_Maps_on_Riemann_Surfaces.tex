@@ -23,8 +23,8 @@
     \begin{example}\label{1.2:exa:elementary_holomorphic_functions}
         Some elementary examples of holomorphic functions.
         \begin{itemize}
-            \item Any holomorphic function $f:W\to\C$ from an open set $W\subseteq\C$, considering $\C$ as a Riemann surface, is holomorphic in the classical sense.
-            \item Any chart map $\phi:U\to\C$ of a Riemann surface is holomorphic in the above sense.
+            \item Any holomorphic function $f:W\to\C$ from an open set $W\subseteq\C$, considering $\C$ as a Riemann surface with the standard chart $\l(\C,\id_\C\r)$, is holomorphic in the classical sense.
+            \item Any chart map $\phi:U\to\C$ of a Riemann surface is (tautologically) holomorphic in the above sense.
             \item If $f,g:W\to\C$ are both holomorphic at some $p\in W$, then\side{This makes the set $\mc{O}\l(W\r)$ of all holomorphic functions $f:W\to\C$ into a $\C$-algebra.} so are $f\pm g$ and $f\cdot g$. If $g\l(p\r)\neq0$, then so is $f/g$.\exqed
         \end{itemize}
     \end{example}
@@ -88,18 +88,28 @@
     Throughout this section, let $X$ be a Riemann surface, let $p\in X$, and let $f:W\to\C$ be defined and holomorphic on a punctured neighborhood $W$ of $p$.\side[0.01in]{That is, let $f$ be defined and holomorphic on $B\l(p,\epsilon\r)\comp\l\{p\r\}$ for some $\epsilon>0$.} As above, we can transport the behaviour of $f$ at $p$ from its chart representation $f\circ\phi^{-1}$.
     \begin{definition}
         Let $f:W\to\C$ be a holomorphic function in a punctured neighborhood of $p$. We say that $f$ has a \uldef{removable singularity} (resp. \uldef{pole}, \uldef{essential singularity}) \uldef{at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ has a removable singularity (resp. pole, essential singularity) at $\phi\l(p\r)$.
-    \end{definition}\side[-0.56in]{Equation (\ref{1.2:eqn:holomorphic_function_well_defined}) shows that those notions are chart independent; the composition of $f\circ\phi^{-1}$ having a singularity at $p$ with a transition map that is holomorphic at $p$ yields a function with the same type of singularity at $p$.}
-    \begin{remark}\label{1.2:rem:nice_singularities}
-        Functions having an essential singularity at $p$ are very ill-behaved. Indeed, this occurs iff the limit of $\l|f\l(x\r)\r|$ as $x\to p$ does not exist. Other singularities behave much better:
+    \end{definition}\side[-0.56in]{We recall those notions from complex analysis. Let $f:W\subseteq\C\to\C$ be a holomorphic function (in the regular sense) in a punctured neighborhood of $p$. Suppose that $f$ is not holomorphic at $p$.
         \begin{itemize}
-            \item A removable singularity occurs iff $\l|f\l(x\r)\r|$ is bounded in a neighborhood of $p$, and can be $\textrm{`}$filled in$\textrm{'}$ by defining $\tilde{f}\l(p\r)\coloneqq\lim\limits_{x\to p}f\l(x\r)$. This makes $\tilde{f}:\tilde{W}\to\C$ into\side{$\tilde{W}\coloneqq W\cup\l\{p\r\}$.} a holomorphic function.
+            \item If $\lim_{z\to p}f\l(z\r)$ exists, then $f$ has a \ul{removable singularity at $p$}.
+            \item If $\lim_{z\to p}f\l(z\r)=\pm\infty$, then $f$ has a \ul{pole at $p$}. This is equivalent to the existence of some $n>0$ such that the limit $\lim_{z\to p}\l(z-p\r)^nf\l(z\r)$ exists. See Definition \ref{1.2:def:order}.
+            \item Otherwise, $f$ has an \ul{essential singularity} \ul{at $p$}.
+        \end{itemize}
+    }
+    \vspace{-0.05in}
+    \begin{proof}
+        (Well-defined): Equation (\ref{1.2:eqn:holomorphic_function_well_defined}) shows that those notions are chart independent; the composition of $f\circ\phi^{-1}$ having a singularity at $p$ with a transition map that is holomorphic at $p$ yields a function with the same type of singularity at $p$.\qed
+    \end{proof}
+    \begin{remark}\label{1.2:rem:nice_singularities}
+        Functions having an essential singularity at $p$ are very ill-behaved. Indeed, this occurs iff $\l|f\l(x\r)\r|$ has a non-zero oscillation near $p$. Other singularities behave much better:
+        \begin{itemize}
+            \item A removable singularity occurs iff $\l|f\l(x\r)\r|$ is bounded in a neighborhood of $p$, and can be $\textrm{`}$filled in$\textrm{'}$ by defining $\tilde{f}\l(p\r)\coloneqq\lim_{x\to p}f\l(x\r)$. This makes $\tilde{f}:\tilde{W}\to\C$ into\side{$\tilde{W}\coloneqq W\cup\l\{p\r\}$.} a holomorphic function.
             \vspace{-0.08in}
             \item A pole occurs iff $\l|f\l(x\r)\r|\to\infty$ as $x\to p$, which can also be $\textrm{`}$filled in$\textrm{'}$ by defining the map
                 \begin{equation*}
                     F:W\to\RS\ \ \ \ \ \ \ \ \textrm{mapping}\ \ \ \ \ \ \ \ x\mapsto
                     \begin{dcases}
-                        f\l(x\r) & \textrm{if }x\neq p \\
-                        \infty & \textrm{else}
+                        \infty & \textrm{if }x=p \\
+                        f\l(x\r) & \textrm{else}
                     \end{dcases}
                 \end{equation*}
                 that extends the codomain of $f$ to the Riemann sphere $\RS$;\side{Here, we consider $\RS=\C_\infty$.} it is clear that $F$ is holomorphic.
@@ -112,10 +122,10 @@
     \begin{remark}
         Remark \ref{1.2:rem:nice_singularities} can now be rephrased by saying that the set of all meromorphic functions $f:W\to\C$ are in one-to-one correspondence with the set of all holomorphic maps $F:W\to\RS$ (which are not identically zero). That is, meromorphic functions are the holomorphic maps to the Riemann sphere.\exqed
     \end{remark}
-    \begin{definition}
-        Let $f:W\to\C$ be meromorphic at $p$ and consider its Laurent series $\sum_{n}c_n\l(z-z_0\r)^n$ in some local coordinate $z$ with $z_0\coloneqq\phi\l(p\r)$. The \uldef{order of $f$ at $p$} is
+    \begin{definition}\label{1.2:def:order}
+        Let $f:W\to\C$ be meromorphic at $p$ and consider its Laurent series $f_\phi\!\l(z\r)\coloneqq\sum_{i}c_i\l(z-z_0\r)^i$ under a chart $\l(U,\phi\r)$ of $X$ with $z_0\coloneqq\phi\l(p\r)$. The \uldef{order of $f$ at $p$} is
         \begin{equation*}
-            \ord_p\!\l(f\r)\coloneqq\min\l\{n\in\Z\mid c_n\neq0\r\}.
+            \ord_p\!\l(f\r)\coloneqq\min\l\{n\in\Z\mid0\neq\l(z-z_0\r)^n\!f_\phi\!\l(z\r)\in\mc{O}\l(W\r)\r\}.
         \end{equation*}
     \end{definition}
     \side[-0.53in]{Note that $f$, being meromorphic, ensures that its Laurent series has finitely-many negative terms. Thus the set $\l\{n\in\Z\mid c_n\neq0\r\}$ achieves its minimum, so the definition makes sense. Of course, it still remains to show that $\ord_p\!\l(f\r)$ is independent of the local coordinate defining the Laurent series.\\\ \\
@@ -154,7 +164,7 @@
         \begin{equation*}
             \ord_{\lambda_i}\!\l(f\r)=\sum_j\ord_{\lambda_i}\!\l(g_j\r)=\alpha_i.
         \end{equation*}
-        Moreover\side{Note that $\sum_{z\in\RS}\ord_z\!\l(f\r)=0$, which, as we shall see, holds for all compact Riemann surfaces.}, if $\alpha_i>0$ (resp. $\alpha_i<0$), then $g_i$ has a pole (resp. zero) of order $\l|\alpha_i\r|$ at $\infty$. It follows then that $\ord_\infty\!\l(g_i\r)=-\alpha_i$, so
+        Moreover, if $\alpha_i>0$ (resp. $\alpha_i<0$), then $g_i$ has a pole (resp. zero) of order $\l|\alpha_i\r|$ at $\infty$. It follows then that $\ord_\infty\!\l(g_i\r)=-\alpha_i$, so
         \begin{equation*}
             \ord_\infty\!\l(f\r)=\sum_i\ord_\infty\!\l(g_i\r)=-\sum_i\alpha_i.
         \end{equation*}
@@ -171,6 +181,6 @@
         for some $m_i>1$. Then the function $g\coloneqq f-\sum_ih_i$ is holomorphic function on $\RS$, and since $\RS$ is compact, it is constant by Theorem \ref{1.2:thm:holomorphic_compact_constant}. Thus $f=g+\sum_ih_i$, which is a rational function.\qed
     \end{proof}
     \begin{remark}
-        Together with the above computation, this shows that if $f$ is a meromorphic function on $\RS$, then $\sum_{z\in\RS}\ord_z\!\l(f\r)=0$.\exqed
+        Together with the above computation, this shows that if $f$ is a meromorphic function on $\RS$, then $\sum_{z\in\RS}\ord_z\!\l(f\r)=0$. As we shall see, this is a general fact for all compact Riemann surfaces.\exqed
     \end{remark}
 \end{document}
