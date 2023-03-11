@@ -25,34 +25,62 @@
         for all $z\in\phi_1\l(U_1\r)$. To show uniqueness, it suffices to show that such an $m$ is chart-independent. But this is clear, for if a different chart $U_2'$ is chosen such that $F$ acts as $z\mapsto z^n$ for some neighborhood $U_1'$ of $p$, then $z^n=z^m$ on $\phi_1\l(U_1\r)\cap\phi_1'\l(U_1'\r)$ forces $n=m$.\qed
     \end{proof}
     \begin{definition}
-        With the above notation, the unique $m\geq1$ such that there are local coordinates around $p$ and $F\l(p\r)$ where $F$ acts like $z\mapsto z^m$ is called the \uldef{multiplicity of $f$ at $p$}, denoted $\mult_p\!\l(f\r)$.
+        With the above notation, the unique $m\geq1$ such that there are local coordinates around $p$ and $F\l(p\r)$ where $F$ acts like $z\mapsto z^m$ is called the \uldef{multiplicity of $F$ at $p$}, denoted $\mult_p\!\l(F\r)$.
     \end{definition}
-    \begin{remark}
-        We give a simple way of computing $\mult_p\!\l(F\r)$ that does not involve casting $F$ into Local Normal Form, or even having to find local coordinates centered at $p$ and $F\l(p\r)$. Indeed, let $\tpl{U_1,\phi_1}$ and $\tpl{U_2,\phi_2}$ be charts around $p$ and $F\l(p\r)$, say with $z_0\coloneqq\phi_1\l(p\r)$ and $w_0\coloneqq\phi_2\l(F\l(p\r)\r)$. Letting $f\coloneqq\phi_2\circ F\circ\phi_1^{-1}$, we see that $f\l(z_0\r)=w_0$ and hence its power series representation has the form
-        \begin{equation*}
-            f\l(z\r)=f\l(z_0\r)+\sum_{i\geq m}c_i\l(z-z_0\r)^i
-        \end{equation*}
-        for some $m\geq1$ with $c_m\neq0$. Then, since $z-z_0$ and $w-w_0=f\l(z\r)-f\l(z_0\r)$ are local coordinates centered at $p$ and $F\l(p\r)$, respectively, we see from the above proof that $\mult_p\!\l(F\r)=m$. But also
-        \begin{equation*}
-            \frac{\d f}{\d z}=\sum_{i\geq m}ic_i\l(z-z_0\r)^{i-1},
-        \end{equation*}
-        so $d_{m-1}\coloneqq mc_m$ is the minimal non-zero coefficient its Laurent series. Thus $\ord_p\!\l(\d f/\d z\r)=m-1$, so
-        \begin{equation*}
-            \mult_p\!\l(F\r)=1+\ord_p\!\l(\frac{\d f}{\d z}\r).\exqedin
-        \end{equation*}
-    \end{remark}
+    \side[-0.44in]{We give a simple way of computing $\mult_p\!\l(F\r)$ that does not involve casting $F$ into Local Normal Form, or even having to find local coordinates centered at $p$ and $F\l(p\r)$. Indeed, let $\tpl{U_1,\phi_1}$ and $\tpl{U_2,\phi_2}$ be charts around $p$ and $F\l(p\r)$, say with $z_0\coloneqq\phi_1\l(p\r)$ and $w_0\coloneqq\phi_2\l(F\l(p\r)\r)$. Letting $f\coloneqq\phi_2\circ F\circ\phi_1^{-1}$, we see that $f\l(z_0\r)=w_0$ and hence its power series representation has the form
+    \begin{equation*}
+        f\l(z\r)=f\l(z_0\r)+\sum_{i\geq m}c_i\l(z-z_0\r)^i
+    \end{equation*}
+    for some $m\geq1$ with $c_m\neq0$. Then, since $z-z_0$ and $w-w_0=f\l(z\r)-f\l(z_0\r)$ are local coordinates centered at $p$ and $F\l(p\r)$, respectively, we see from the above proof that $\mult_p\!\l(F\r)=m$. Thus to compute $\mult_p\!\l(F\r)$, it suffices to case $F$ into local coordinates $\l(U_1,\phi_1\r)$ around $p$ and $\l(U_2,\phi_2\r)$ around $F\l(p\r)$ and find the lowest non-zero power of the Taylor series of its local representation $f\coloneqq\phi_2\circ F\circ\phi_1^{-1}$.}
+    % But also
+    % \begin{equation*}
+    %     \frac{\d f}{\d z}=\sum_{i\geq m}ic_i\l(z-z_0\r)^{i-1}=\l(z-z_0\r)^{m-1}\sum_{i\geq0}\l(i+m\r)c_{i+m}\l(z-z_0\r)^i,
+    % \end{equation*}
+    % so $\ord_p\!\l(\d f/\d z\r)=m-1$ and thus
+    % \begin{equation*}
+    %     \mult_p\!\l(F\r)=1+\ord_p\!\l(\frac{\d f}{\d z}\r).\exqedin
+    % \end{equation*}
     % \begin{remark}
     %     The above remark tells us more. Since $\d f/\d z$ is holomorphic, it has no poles and its set of zeros form a discrete set. Note that $\mult_p\!\l(F\r)>1$ iff $\l.\d f/\d z\r|_p=0$, so the set of all $p\in X$ such that $\mult_p\!\l(F\r)>1$ is a discrete set.\exqed
     % \end{remark}
     \begin{theorem}
         Let $f$ be a meromorphic function on a Riemann surface $X$ and let $F:X\to\RS$ be its associated holomorphic map. Fix $p\in X$.
         \begin{itemize}
-            \item If $p$ is a not a pole of $f$, then $\mult_p\!\l(F\r)=\ord_p\!\l(f-f\l(p\r)\r)$.
+            \item If $p$ is a not a pole of $f$, then $\mult_p\!\l(F\r)=-\ord_p\!\l(f-f\l(p\r)\r)$.
             \vspace{-0.05in}
-            \item If $p$ is a pole of $f$, then $\mult_p\!\l(F\r)=-\ord_p\!\l(f\r)$.
+            \item If $p$ is a pole of $f$, then $\mult_p\!\l(F\r)=\ord_p\!\l(f\r)$.
         \end{itemize}
     \end{theorem}
     \begin{proof}
-        Suppose that $p$ is not a pole of $f$.
+        Suppose that $p$ is not a pole of $f$, so $f\l(p\r)=F\l(p\r)\in\C$. Since the set of all poles of a meromorphic function forms a discrete set, let $p\in U\subseteq X$ be small enough so that $\l.f\r|_U$ is holomorphic. Let $\tpl{U,\phi}$ be a chart of $X$ and consider the chart $\l(\C,\psi\r)$ of $\RS$ around $F\l(p\r)$ defined by $\psi\l(z\r)\coloneqq z-F\l(p\r)$. Then $f-f\l(p\r)=\psi\circ F$ on $U$, so
+        \begin{equation*}
+            \l(f-f\l(p\r)\r)_\phi\!\coloneqq\l(f-f\l(p\r)\r)\circ\phi^{-1}=\psi\circ F\circ\phi^{-1}
+        \end{equation*}
+        on $\phi\l(U\r)$. Expanding in power series around $z_0\coloneqq\phi\l(p\r)\in\phi\l(U\r)$, we see that
+        \begin{equation*}
+            \l(\psi\circ F\circ\phi^{-1}\r)\l(z\r)=\l(f-f\l(p\r)\r)_\phi\!\l(z\r)=\sum_{i\geq m}c_i\l(z-z_0\r)^i
+        \end{equation*}
+        for some $m\in\N$ with $c_m\neq0$. Note that $\l(f-f\l(p\r)\r)_\phi\!\l(z_0\r)=\l(f-f\l(p\r)\r)\l(p\r)=0$, so $m>0$ and hence $\mult_p\!\l(F\r)=m$. But $m$ is also the smallest integer such that
+        \begin{equation*}
+            0\neq\l(z-z_0\r)^{-m}\!\l(f-f\l(p\r)\r)_\phi\!\l(z\r)\in\mc{O}\l(U\r),
+        \end{equation*}
+        so $\ord_p\!\l(f-f\l(p\r)\r)=-m$.\\\ \\
+        Suppose now that $p$ is a pole of $f$, so $F\l(p\r)=\infty$. Since $\lim_{z\to p}1/f\l(z\r)=0$, we may let $p\in U\subseteq X$ be small enough so that the function $\tilde{f}:U\to\C$ defined by
+        \begin{equation*}
+            \tilde{f}\l(x\r)\coloneqq
+            \begin{dcases}
+                0 & \textrm{if }x=p \\
+                1/f\l(x\r) & \textrm{else}
+            \end{dcases}
+        \end{equation*}
+        is holomorphic. Let $\tpl{U,\phi}$ be a chart of $X$ and consider the chart $\tpl{\RS\comp\l\{0\r\},\psi}$ of $\RS$ defined by\side{
+        \begin{equation*}
+            \psi\l(z\r)\coloneqq
+            \begin{dcases}
+                0 & \textrm{if }z=\infty \\
+                1/z & \textrm{else.}
+            \end{dcases}
+        \end{equation*}
+        } $\psi\l(z\r)\coloneqq1/z$. Then $\tilde{f}=\psi\circ F$ on $U$, so $\tilde{f}_\phi\!\coloneqq\tilde{f}\circ\phi^{-1}=\psi\circ F\circ\phi^{-1}$ on $\phi\l(U\r)$. By the same argument as above, we see that $\mult_p\!\l(F\r)=-\ord_p(\tilde{f})$. Now $\ord_p\l(f\r)=-\ord_p(\tilde{f})$, so the result follows.\qed
     \end{proof}
 \end{document}
