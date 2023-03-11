@@ -156,17 +156,17 @@
     \end{definition}
     \subsection{Meromorphic Functions on $\RS$}
     \begin{example}
-        Let $f:W\subseteq\RS\to\C$ be a non-zero rational function $f\l(z\r)\coloneqq p\l(z\r)/q\l(z\r)$. Then $f$ is holomorphic at all points $z\in\C$ such that $q\l(z\r)\neq0$, and has a pole otherwise. Also, $f\l(\infty\r)=c_n/d_m$ if $\deg p=\deg q$, vanishes if $\deg p<\deg q$, and has a pole otherwise. In any case, $f$ is meromorphic on $\RS$\side{In fact, \textit{any} meromorphic function on the Riemann sphere is a rational function; see Theorem \ref{1.2:thm:meromorphic_Riemann_sphere_rational}.}. To compute $\ord_z\!\l(f\r)$ at all $z\in\RS$, we split $p$ and $q$ into linear factors to write $f$ uniquely as
+        Let $f:W\subseteq\RS\to\C$ be a non-zero rational function $f\l(z\r)\coloneqq p\l(z\r)/q\l(z\r)$. Then $f$ is holomorphic at all points $z\in\C$ such that $q\l(z\r)\neq0$, and has a pole otherwise. Also, $f\l(\infty\r)\in\C$ if $\deg p=\deg q$, vanishes if $\deg p<\deg q$, and has a pole otherwise. In any case, $f$ is meromorphic on $\RS$\side{In fact, \textit{any} meromorphic function on the Riemann sphere is a rational function; see Theorem \ref{1.2:thm:meromorphic_Riemann_sphere_rational}.}. To compute $\ord_z\!\l(f\r)$ at all $z\in\RS$, we split $p$ and $q$ into linear factors to write $f$ uniquely as
         \begin{equation*}
             f\l(z\r)=c\prod\l(z-\lambda_i\r)^{\alpha_i}
         \end{equation*}
-        where $c\neq0$ and each $\lambda_i$ is distinct. Fix $i$. Setting $g_j\!\l(z\r)\coloneqq\l(z-\lambda_j\r)^{\alpha_j}$ for all $j$, we see that $\ord_{\lambda_i}\!\l(g_i\r)=\alpha_i$ and $\ord_{\lambda_j}\!\l(g_i\r)=0$ for all $i\neq j$. Thus
+        where $c\neq0$ and each $\lambda_i$ is distinct. Fix $i$. Setting $g_j\!\l(z\r)\coloneqq\l(z-\lambda_j\r)^{\alpha_j}$ for all $j$, we see that $\ord_{\lambda_i}\!\l(g_i\r)=-\alpha_i$ and $\ord_{\lambda_j}\!\l(g_i\r)=0$ for all $i\neq j$. Thus
         \begin{equation*}
-            \ord_{\lambda_i}\!\l(f\r)=\sum_j\ord_{\lambda_i}\!\l(g_j\r)=\alpha_i.
+            \ord_{\lambda_i}\!\l(f\r)=\sum_j\ord_{\lambda_i}\!\l(g_j\r)=-\alpha_i.
         \end{equation*}
-        Moreover, if $\alpha_i>0$ (resp. $\alpha_i<0$), then $g_i$ has a pole (resp. zero) of order $\l|\alpha_i\r|$ at $\infty$. It follows then that $\ord_\infty\!\l(g_i\r)=-\alpha_i$, so
+        Moreover, if $\alpha_i>0$ (resp. $\alpha_i<0$), then $g_i$ has a pole (resp. zero) of order $\l|\alpha_i\r|$ at $\infty$. It follows then that $\ord_\infty\!\l(g_i\r)=\alpha_i$, so
         \begin{equation*}
-            \ord_\infty\!\l(f\r)=\sum_i\ord_\infty\!\l(g_i\r)=-\sum_i\alpha_i.
+            \ord_\infty\!\l(f\r)=\sum_i\ord_\infty\!\l(g_i\r)=\sum_i\alpha_i.
         \end{equation*}
         Lastly, it is clear that $\ord_z\!\l(f\r)=0$ for all $z\neq \lambda_i,\infty$.\exqed
     \end{example}
