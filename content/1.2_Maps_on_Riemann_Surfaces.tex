@@ -99,7 +99,7 @@
     \begin{proof}
         (Well-defined): Equation (\ref{1.2:eqn:holomorphic_function_well_defined}) shows that those notions are chart independent; the composition of $f\circ\phi^{-1}$ having a singularity at $p$ with a transition map that is holomorphic at $p$ yields a function with the same type of singularity at $p$.\qed
     \end{proof}
-    \begin{remark}\label{1.2:rem:nice_singularities}
+    \begin{remark}
         Functions having an essential singularity at $p$ are very ill-behaved. Indeed, this occurs iff $\l|f\l(x\r)\r|$ has a non-zero oscillation near $p$. Other singularities behave much better:
         \begin{itemize}
             \item A removable singularity occurs iff $\l|f\l(x\r)\r|$ is bounded in a neighborhood of $p$, and can be $\textrm{`}$filled in$\textrm{'}$ by defining $\tilde{f}\l(p\r)\coloneqq\lim_{x\to p}f\l(x\r)$. This makes $\tilde{f}:\tilde{W}\to\C$ into\side{$\tilde{W}\coloneqq W\cup\l\{p\r\}$.} a holomorphic function.
@@ -120,7 +120,7 @@
         A function $f:W\to\C$ is said to be \uldef{meromorphic at $p$} if it does not have an essential singularity at $p$; that is, if it is either holomorphic, has a removable singularity, or has a pole at $p$. If $f$ is meromorphic at every point of $W$, then $f$ is \uldef{meromorphic on $W$}.
     \end{definition}\side[-0.44in]{As in Example \ref{1.2:exa:elementary_holomorphic_functions}, if $f,g:W\to\C$ are both meromorphic at $p$, then so are $f\pm g$ and $f\cdot g$. If $g$ is not identically $0$, then so is $f/g$. This makes the set $\mc{M}\l(W\r)$ of all meromorphic functions $f:W\to\C$ into a $\C$-algebra.}
     \begin{remark}
-        Remark \ref{1.2:rem:nice_singularities} can now be rephrased by saying that the set of all meromorphic functions $f:W\to\C$ are in one-to-one correspondence with the set of all holomorphic maps $F:W\to\RS$ (which are not identically zero). That is, meromorphic functions are the holomorphic maps to the Riemann sphere.\exqed
+        The previous remark can now be rephrased by saying that the set of all meromorphic functions $f:W\to\C$ are in one-to-one correspondence with the set of all holomorphic maps $F:W\to\RS$ (which are not identically zero). That is, meromorphic functions are the holomorphic maps to the Riemann sphere.\exqed
     \end{remark}
     \begin{definition}\label{1.2:def:order}
         Let $f:W\to\C$ be meromorphic at $p$ and consider its Laurent series $f_\phi\!\l(z\r)\coloneqq\l(f\circ\phi^{-1}\r)\l(z\r)=\sum_{i}c_i\l(z-z_0\r)^i$ under a chart $\l(U,\phi\r)$ of $X$ with $z_0\coloneqq\phi\l(p\r)$. The \uldef{order of $f$ at $p$} is

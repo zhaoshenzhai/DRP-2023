@@ -1,0 +1,78 @@
+\documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
+\begin{document}
+    \section{Moduli Space of $T^2$}
+    In this section, we show that the moduli space of the torus $T^2$ is $\H/\PSL{2}{\Z}$ where $\H$ is the upper-half plane of $\C$ and $\PSL{2}{\Z}$ is the \textit{modular group} consisting of all functions $\gamma:\H\to\H$ mapping
+    \begin{equation*}
+        \tau\mapsto\frac{a\tau+b}{c\tau+d}
+    \end{equation*}
+    where $a,b,c,d\in\Z$ with $ad-bc=1$.
+    \begin{lemma}\label{2.1:lem:moduli_space_torus_1}
+        Let $\Gamma,\Gamma'\subseteq\C$ be two lattices and suppose $\alpha\Gamma\subseteq\Gamma'$ for some $\alpha\in\C^\ast$. Then $z\mapsto\alpha z$ descends to a holomorphic map $\phi:\C/\Gamma\to\C/\Gamma'$, which is biholomorphic iff $\alpha\Gamma\subseteq\Gamma'$.
+    \end{lemma}\side[-0.3in]{This gives a simple criterion for when two tori are biholomorphic.}\vspace{-0.08in}
+    \begin{proof}
+        Let $\Gamma\coloneqq\Z\omega_1\oplus\Z\omega_2$ and $\Gamma'\coloneqq\Z\omega_1'\oplus\Z\omega_2'$. Define $\phi\l(z+\Gamma\r)\coloneqq\alpha z+\Gamma'$ for all $z\in\C$, which is clearly holomorphic if it is well-defined in the first place. To verify, take $z_1,z_2\in\C$ such that $z_1+\Gamma=z_2+\Gamma$. Then $z_1-z_2\in\Gamma$, so $z_1-z_2=m\omega_1+n\omega_2$ for some $n,m\in\Z$. Observe that
+        \begin{equation*}
+            \alpha z_1-\alpha z_2=\alpha\l(z_1-z_2\r)=m\l(\alpha\omega_1\r)+n\l(\alpha\omega_2\r)\in\alpha\Gamma\subseteq\Gamma',
+        \end{equation*}
+        so $\alpha z_1+\Gamma'=\alpha z_2+\Gamma'$. This shows that $\phi$ is well-defined. Furthermore, it is invertible with holomorphic inverse
+        \begin{equation*}
+            \phi^{-1}\!\l(z+\Gamma'\r)\coloneqq z/\alpha+\Gamma
+        \end{equation*}
+        iff $\phi^{-1}$ is well-defined, in which case $\phi$ is a biholomorphism. We claim that this occurs iff $\alpha\Gamma=\Gamma'$.
+        \begin{itemize}
+            \item ($\Rightarrow$): It suffices to show that $\Gamma'\subseteq\alpha\Gamma$, so take $m\omega_1'+n\omega_2'\in\Gamma'$. Then
+                \begin{equation*}
+                    \phi^{-1}\!\l(m\omega_1'+n\omega_2'+\Gamma'\r)=\l(m\omega_1'+n\omega_2'\r)\!/\alpha+\Gamma,
+                \end{equation*}
+                but since $m\omega_1'+n\omega_2'+\Gamma'=0+\Gamma'$ and $\phi^{-1}\!\l(0+\Gamma'\r)=0+\Gamma$, we see that $\l(m\omega_1'+n\omega_2'\r)\!/\alpha\in\Gamma$.
+            \item ($\Leftarrow$): Take $z_1,z_2\in\C$ such that $z_1+\Gamma'=z_2+\Gamma'$, so $z_1-z_2\in\Gamma'\subseteq\alpha\Gamma$ and hence
+                \begin{equation*}
+                    z_1/\alpha-z_2/\alpha=\l(z_1-z_2\r)\!/\alpha\in\Gamma.
+                \end{equation*}
+                Then $z_1/\alpha+\Gamma=z_2/\alpha+\Gamma$, so $\phi^{-1}$ is well-defined.\qed
+        \end{itemize}
+    \end{proof}
+    \begin{lemma}
+        Any torus $\C/\Gamma$ is biholomorphic to $X_\tau\!\coloneqq\C/\l(\Z+\tau\Z\r)$ for some $\tau\in\H$.
+    \end{lemma}\side[-0.17in]{This reduces the analysis to just tori of the form $X_\tau$, which allows us to leverage Lemma \ref{2.1:lem:moduli_space_torus_3}.}\vspace{-0.08in}
+    \begin{proof}
+        Let $\Gamma\coloneqq\Z\omega_1\oplus\Z\omega_2$ and set $\alpha\coloneqq1/\omega_1$ and $\tau\coloneqq\omega_2/\omega_1$. Then $\Im\tau\neq0$, lest $\omega_1,\omega_2$ be linearly dependent over $\R$. Without loss of generality, suppose that $\Im\tau>0$; if not, take $\tau\coloneqq\bar{\omega_2}/\omega_1$. Then, since
+        \begin{equation*}
+            \alpha\l(m\omega_1+n\omega_2\r)=\alpha\omega_1\l(m+n\omega_2/\omega_1\r)=m+n\tau
+        \end{equation*}
+        for all $m,n\in\Z$, we see that $\alpha\Gamma=\Z\oplus\Z\tau$. By Lemma \ref{2.1:lem:moduli_space_torus_1}, we see that the map $z\mapsto\alpha z$ descends to a biholomorphism $\phi:\C/\Gamma\to\C/\l(\Z\oplus\Z\tau\r)=X_\tau$, so $\C/\Gamma\iso X_\tau$.\qed
+    \end{proof}
+    \begin{lemma}\label{2.1:lem:moduli_space_torus_3}
+        For any $\tau,\tau'\in\H$, the tori $X_{\tau}$ and $X_{\tau'}$ are biholomorphic iff there exists some $\gamma\in\PSL{2}{\Z}$ such that $\tau'=\gamma\l(\tau\r)$.
+    \end{lemma}
+    \begin{proof}
+        The backwards direction is relatively straightforward. Indeed, note that
+        \begin{equation*}
+            \tau'=\frac{a\tau+b}{c\tau+d}\ \ \ \ \ \ \ \ \Rightarrow\ \ \ \ \ \ \ \ \tau=\frac{b-d\tau'}{c\tau'-a}
+        \end{equation*}
+        for any $a,b,c,d\in\Z$ with $ad-bc=1$, so let $\alpha\coloneqq c\tau'-a$. Then, with $\Gamma\coloneqq\Z\oplus\Z\tau$ and $\Gamma'\coloneqq\Z\oplus\Z\tau'$, we proceed by proving that $\alpha\Gamma=\Gamma'$, from which the result follows from Lemma \ref{2.1:lem:moduli_space_torus_1}.
+        \begin{itemize}
+            \item ($\subseteq$): For any $m,n\in\Z$, our choice of $\alpha$ shows that
+                \begin{equation*}
+                    m\alpha+n\alpha\tau=m\l(c\tau'-a\r)+n\l(b-d\tau'\r)=\l(nb-ma\r)+\l(mc-nd\r)\tau'\in\Z\oplus\Z\tau',
+                \end{equation*}
+                so $\alpha\l(\Z\oplus\Z\tau\r)\subseteq\Z\oplus\Z\tau'$.
+            \item ($\supseteq$): For any $m,n\in\Z$, the condition that $ad-bc=1$ shows that
+                \begin{equation*}
+                    \l(m+n\tau'\r)\!/\alpha=\frac{\l(na-mc\r)\tau+\l(nb-md\r)}{a\l(c\tau+d\r)-c\l(a\tau+b\r)}=\l(nb-md\r)+\l(na-mc\r)\tau\in\Z\oplus\Z\tau,
+                \end{equation*}
+                so $\Z\oplus\Z\tau'\subseteq\alpha\l(\Z\oplus\Z\tau\r)$.
+        \end{itemize}
+        For the forward direction, let $\phi:X_{\tau'}\to X_\tau$ be a biholomorphism, which lifts\side{This is a standard result in algebraic topology. For a proof, see \cite[][Theorem 3.4]{i&t}.} to a biholomorphic mapping $\tilde{\phi}:\C\to\C$ between their universal covering spaces such that
+        \begin{equation*}
+            \begin{tikzcd}
+                \C \ar[r, "\tilde{\phi}"] \ar[d, "\pi"'] & \C \ar[d, "\pi'"] \\
+                \C/\Gamma \ar[r, "\phi"] & \C/\Gamma'
+            \end{tikzcd}           
+        \end{equation*}
+        commutes. Then $\tilde{\phi}$ is a meromorphic function on the Riemann sphere with a pole at $\infty$, so, by Theorem \ref{1.2:thm:meromorphic_Riemann_sphere_rational}, $\tilde{\phi}$ is a rational function. Noting that $\tilde{\phi}$ is defined on all of $\C$, we see that $\tilde{\phi}$ must be a polynomial. If $\deg\tilde{\phi}>1$, then, by the Fundamental Theorem of Algebra, the equation $\tilde{\phi}\l(z\r)=0$ has more than one solution, contradicting the fact that $\tilde{\phi}$ is a bijection.
+    \end{proof}
+    \begin{theorem}
+        The moduli space of $T^2$ is $\H/\PSL{2}{\Z}$.
+    \end{theorem}
+\end{document}
