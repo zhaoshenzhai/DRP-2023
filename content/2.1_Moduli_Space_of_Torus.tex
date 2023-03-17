@@ -34,7 +34,7 @@
     \end{proof}
     \begin{lemma}
         Any torus $\C/\Gamma$ is biholomorphic to $X_\tau\!\coloneqq\C/\l(\Z+\tau\Z\r)$ for some $\tau\in\H$.
-    \end{lemma}\side[-0.17in]{This reduces the analysis to just tori of the form $X_\tau$, which allows us to leverage Lemma \ref{2.1:lem:moduli_space_torus_3}.}\vspace{-0.08in}
+    \end{lemma}\side[-0.17in]{This reduces the analysis to just tori of the form $X_\tau$, which is considerably more simpler.}\vspace{-0.08in}
     \begin{proof}
         Let $\Gamma\coloneqq\Z\omega_1\oplus\Z\omega_2$ and set $\alpha\coloneqq1/\omega_1$ and $\tau\coloneqq\omega_2/\omega_1$. Then $\Im\tau\neq0$, lest $\omega_1,\omega_2$ be linearly dependent over $\R$. Without loss of generality, suppose that $\Im\tau>0$; if not, take $\tau\coloneqq\bar{\omega_2}/\omega_1$. Then, since
         \begin{equation*}
@@ -42,9 +42,9 @@
         \end{equation*}
         for all $m,n\in\Z$, we see that $\alpha\Gamma=\Z\oplus\Z\tau$. By Lemma \ref{2.1:lem:moduli_space_torus_1}, we see that the map $z\mapsto\alpha z$ descends to a biholomorphism $\phi:\C/\Gamma\to\C/\l(\Z\oplus\Z\tau\r)=X_\tau$, so $\C/\Gamma\iso X_\tau$.\qed
     \end{proof}
-    \begin{lemma}\label{2.1:lem:moduli_space_torus_3}
+    \begin{theorem}
         For any $\tau,\tau'\in\H$, the tori $X_{\tau}$ and $X_{\tau'}$ are biholomorphic iff there exists some $\gamma\in\PSL{2}{\Z}$ such that $\tau'=\gamma\l(\tau\r)$.
-    \end{lemma}
+    \end{theorem}
     \begin{proof}
         The backwards direction is relatively straightforward. Indeed, note that
         \begin{equation*}
@@ -63,16 +63,53 @@
                 \end{equation*}
                 so $\Z\oplus\Z\tau'\subseteq\alpha\l(\Z\oplus\Z\tau\r)$.
         \end{itemize}
-        For the forward direction, let $\phi:X_{\tau'}\to X_\tau$ be a biholomorphism, which lifts\side{This is a standard result in algebraic topology. For a proof, see \cite[][Theorem 3.4]{i&t}.} to a biholomorphic mapping $\tilde{\phi}:\C\to\C$ between their universal covering spaces such that
+        For the forward direction, let $\phi:X_\tau\to X_{\tau'}$ be a biholomorphism, which lifts\side{This is a standard result in algebraic topology. For a proof, see \cite[][Theorem 3.4]{i&t}.} to a biholomorphic mapping $\tilde{\phi}:\C\to\C$ between their universal covering spaces such that
         \begin{equation*}
             \begin{tikzcd}
                 \C \ar[r, "\tilde{\phi}"] \ar[d, "\pi"'] & \C \ar[d, "\pi'"] \\
                 \C/\Gamma \ar[r, "\phi"] & \C/\Gamma'
             \end{tikzcd}           
         \end{equation*}
-        commutes. Then $\tilde{\phi}$ is a meromorphic function on the Riemann sphere with a pole at $\infty$, so, by Theorem \ref{1.2:thm:meromorphic_Riemann_sphere_rational}, $\tilde{\phi}$ is a rational function. Noting that $\tilde{\phi}$ is defined on all of $\C$, we see that $\tilde{\phi}$ must be a polynomial. If $\deg\tilde{\phi}>1$, then, by the Fundamental Theorem of Algebra, the equation $\tilde{\phi}\l(z\r)=0$ has more than one solution, contradicting the fact that $\tilde{\phi}$ is a bijection.
+        commutes. Then $\tilde{\phi}$ is a meromorphic function on the Riemann sphere with a pole at $\infty$, so, by Theorem \ref{1.2:thm:meromorphic_Riemann_sphere_rational}, $\tilde{\phi}$ is a rational function.
+            \begin{itemize}
+                \item Noting that $\tilde{\phi}$ is defined on all of $\C$, we see that $\tilde{\phi}$ must be a polynomial. But if $\deg\tilde{\phi}>1$, then, by the Fundamental Theorem of Algebra, the equation $\tilde{\phi}\l(z\r)=\tilde{\phi}\l(z_0\r)$ has more than one solution for some $\tilde{\phi}\l(z_0\r)\in\C$, contradicting the fact that $\tilde{\phi}$ is a bijection.
+            \end{itemize}
+        Thus $\tilde{\phi}\l(z\r)=\alpha z+\beta$ for some $\alpha,\beta\in\C$. Without loss of generality, assume that $\phi\l(0\r)=0$, so the commutativity of the diagram shows that $\beta=0$.\side{$\phi\l(0+\Gamma\r)=\tilde{\phi}\l(0\r)+\Gamma'=\beta+\Gamma'$.} We now claim that $\alpha\Gamma=\Gamma'$.
+        \begin{itemize}
+            \item Indeed, for all $z\in\alpha\Gamma$, we have $z/\alpha\in\Gamma$ and so $z/\alpha+\Gamma=0+\Gamma$. Applying $\phi$ to both sides and comparing gives
+                \begin{equation*}
+                    0+\Gamma'=\phi\l(0+\Gamma\r)=\phi\l(z/\alpha+\Gamma\r)=\tilde{\phi}\l(z/\alpha\r)+\Gamma'=z+\Gamma',
+                \end{equation*}
+                so $z\in\Gamma'$. The converse is similar.
+        \end{itemize}
+        Observe then that $\tilde{\phi}\l(\tau\r)=\alpha\tau=b-d\tau'$ and $\tilde{\phi}\l(1\r)=\alpha=c\tau'-a$ for some $a,b,c,d\in\Z$, so
+        \begin{equation*}
+            \tau=\frac{b-d\tau'}{c\tau'-a}\ \ \ \ \ \ \ \ \textrm{and hence}\ \ \ \ \ \ \ \ \tau'=\frac{a\tau+b}{c\tau+d}.
+        \end{equation*}
+        A computation now shows that $\alpha=-\l(ad-bc\r)/\l(c\tau+d\r)$, so $ad-bc\neq0$. Then, since
+        \begin{equation*}
+            \begin{bmatrix}
+                \alpha\tau \\ \alpha
+            \end{bmatrix}=
+            \begin{bmatrix}
+                b & -d \\
+                -a & c
+            \end{bmatrix}
+            \begin{bmatrix}
+                1 \\ \tau'
+            \end{bmatrix},
+        \end{equation*}
+        we solve for $\tau'$ to obtain
+        \begin{equation*}
+            \tau'=-\frac{b\alpha+a\alpha\tau}{ad-bc}=\l(\frac{-b}{ad-bc}\r)\alpha+\l(\frac{-a}{ad-bc}\r)\alpha\tau
+        \end{equation*}
+        But $\tau'\in\alpha\Gamma$, which forces $ad-bc=\pm1$. A little algebra now shows that\side{Let $\tau\coloneqq e+fi$ and $\tau'\coloneqq g+hi$ and expand.}
+        \begin{equation*}
+            \Im\tau'=\frac{ad-bc}{\l|c\tau+d\r|^2}\l(\Im\tau\r)>0,
+        \end{equation*}
+        so $ad-bc=1$.\qed
     \end{proof}
-    \begin{theorem}
+    \begin{corollary}
         The moduli space of $T^2$ is $\H/\PSL{2}{\Z}$.
-    \end{theorem}
+    \end{corollary}
 \end{document}
