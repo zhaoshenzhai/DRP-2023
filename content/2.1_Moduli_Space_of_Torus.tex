@@ -5,7 +5,7 @@
     \begin{equation*}
         \tau\mapsto\frac{a\tau+b}{c\tau+d}
     \end{equation*}
-    where $a,b,c,d\in\Z$ with $ad-bc=1$.
+    for some $a,b,c,d\in\Z$ with $ad-bc=1$.
     \begin{lemma}\label{2.1:lem:moduli_space_torus_1}
         Let $\Gamma,\Gamma'\subseteq\C$ be two lattices and suppose $\alpha\Gamma\subseteq\Gamma'$ for some $\alpha\in\C^\ast$. Then $z\mapsto\alpha z$ descends to a holomorphic map $\phi:\C/\Gamma\to\C/\Gamma'$, which is biholomorphic iff $\alpha\Gamma\subseteq\Gamma'$.
     \end{lemma}\side[-0.3in]{This gives a simple criterion for when two tori are biholomorphic.}\vspace{-0.08in}
@@ -63,18 +63,14 @@
                 \end{equation*}
                 so $\Z\oplus\Z\tau'\subseteq\alpha\l(\Z\oplus\Z\tau\r)$.
         \end{itemize}
-        For the forward direction, let $\phi:X_\tau\to X_{\tau'}$ be a biholomorphism, which lifts\side{This is a standard result in algebraic topology. For a proof, see \cite[][Theorem 3.4]{i&t}.} to a biholomorphic mapping $\tilde{\phi}:\C\to\C$ between their universal covering spaces such that
+        For the forward direction, let $\phi:X_\tau\to X_{\tau'}$ be a biholomorphism, which lifts\side{This is a standard result in algebraic topology. For a proof, see \cite[][Theorem 3.4]{i&t}.} to a biholomorphic mapping $\tilde{\phi}:\C\to\C$ such that
         \begin{equation*}
             \begin{tikzcd}
                 \C \ar[r, "\tilde{\phi}"] \ar[d, "\pi"'] & \C \ar[d, "\pi'"] \\
                 \C/\Gamma \ar[r, "\phi"] & \C/\Gamma'
             \end{tikzcd}           
         \end{equation*}
-        commutes. Then $\tilde{\phi}$ is a meromorphic function on the Riemann sphere with a pole at $\infty$, so, by Theorem \ref{1.2:thm:meromorphic_Riemann_sphere_rational}, $\tilde{\phi}$ is a rational function.
-            \begin{itemize}
-                \item Noting that $\tilde{\phi}$ is defined on all of $\C$, we see that $\tilde{\phi}$ must be a polynomial. But if $\deg\tilde{\phi}>1$, then, by the Fundamental Theorem of Algebra, the equation $\tilde{\phi}\l(z\r)=\tilde{\phi}\l(z_0\r)$ has more than one solution for some $\tilde{\phi}\l(z_0\r)\in\C$, contradicting the fact that $\tilde{\phi}$ is a bijection.
-            \end{itemize}
-        Thus $\tilde{\phi}\l(z\r)=\alpha z+\beta$ for some $\alpha,\beta\in\C$. Without loss of generality, assume that $\phi\l(0\r)=0$, so the commutativity of the diagram shows that $\beta=0$.\side{$\phi\l(0+\Gamma\r)=\tilde{\phi}\l(0\r)+\Gamma'=\beta+\Gamma'$.} We now claim that $\alpha\Gamma=\Gamma'$.
+        commutes. Fix\side{This proof follows \cite[][Proposition 1.3.2]{diamond}.} $\lambda\in\Gamma$ and consider the map $f_\lambda\!\l(z\r)\coloneqq\tilde{\phi}\l(z+\lambda\r)-\tilde{\phi}\l(z\r)$. Then, since $z+\lambda+\Gamma=z+\Gamma$, we see that $\phi\l(z+\lambda+\Gamma\r)=\phi\l(z+\Gamma\r)$ and hence the commutativity of the diagram forces $\tilde{\phi}\l(z+\lambda\r)+\Gamma'=\tilde{\phi}\l(z\r)+\Gamma'$. Thus $f_\lambda\!\l(z\r)\in\Gamma'$ for all $z\in\C$, so, since $f_\lambda$ is a continuous map into a discrete set, it must be constant. Differentiating gives us $f_\lambda'\l(z\r)=\tilde{\phi}'\l(z+\lambda\r)-\tilde{\phi}'\l(z\r)=0$, so $\tilde{\phi}'\l(z+\lambda\r)=\tilde{\phi}'\l(z\r)$ for all $z\in\C$. But $\lambda\in\Gamma$ is arbitrary, so $\tilde{\phi}'$ is $\Gamma$-periodic. Thus $\tilde{\phi}'$ is a bounded entire function and hence is constant by Liouville's Theorem. This shows that $\tilde{\phi}\l(z\r)=\alpha z+\beta$ for some $\alpha,\beta\in\C$, where we may, without loss of generality, assume that $\alpha\neq0$ and $\beta=0$. We now claim that $\alpha\Gamma=\Gamma'$.
         \begin{itemize}
             \item Indeed, for all $z\in\alpha\Gamma$, we have $z/\alpha\in\Gamma$ and so $z/\alpha+\Gamma=0+\Gamma$. Applying $\phi$ to both sides and comparing gives
                 \begin{equation*}
