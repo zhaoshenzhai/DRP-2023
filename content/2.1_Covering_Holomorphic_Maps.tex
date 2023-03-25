@@ -1,7 +1,7 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
+    This chapter assumes that the reader is familiar with the basic notions of liftings and homotopy of curves from algebraic topology, for which we refer the reader to \cite[][Sections 3 and 4.7]{otto}.
     \section{Covering Holomorphic Maps}
-    This section assumes that the reader is familiar with the basic notions of homotopic curves and liftings from algebraic topology, for which we refer the reader to \cite[][Sections 4.7]{otto}.
     \subsection{Unbranched Holomorphic Maps}
     \begin{definition}
         Let $X$ and $Y$ be Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. A point $p\in X$ is said to be a \uldef{ramification point of $F$} if $\l.F\r|_U$ is not injective for any neighborhood $U$ of $p$, in which case $F\l(p\r)\in X$ is said to be a \uldef{branch point of $F$}. If $F$ has no ramification points, then $f$ is said to be an \uldef{unbranched holomorphic map}.
@@ -74,16 +74,5 @@
             \item For each $x\in F^{-1}\l(y\r)$, there exist neighborhoods $W_x$ of $x$ and $V$ of $y$ such that $\l.F\r|_{W_x}:W_x\to V$ is a homeomorphism. Then the sets $W_x$ must be disjoint, for if $x'\in W_x$ for some $x'\neq x$, then $\l.F\r|_{W_x}\!\l(x\r)=y=\l.F\r|_{W_x}\!\l(x'\r)$, contradicting that $\l.F\r|_{W_x}$ is a homeomorphism. Thus $F^{-1}\l(y\r)$ must be finite, lest the cover $\l\{W_x\r\}$ admits no finite subcover.
         \end{itemize}
         Thus $F^{-1}\l(y\r)=\l\{x_1,\dots,x_n\r\}$ for some $x_j\in X$. Letting $W_j\coloneqq W_{x_j}$ as above, we see that $\bigcup_{j=1}^{n}W_j$ is a neighborhood of $F^{-1}\l(y\r)$. By Lemma \ref{1.3:lem:lemma_for_proper_covering}, there is a neighborhood $V$ of $y$ such that $F^{-1}\l(V\r)\subseteq\bigcup_{j=1}^{n}W_j$, so $F^{-1}\l(V\r)=\bigcup_{j=1}^{n}U_j$ where the sets $U_j\coloneqq W_j\cap F^{-1}\l(V\r)$ are all disjoint and each $\l.F\r|_{U_j}:U_j\to V$ is a homeomorphism.\qed
-    \end{proof}
-    \subsection{Degree of Proper Holomorphic Maps}\label{1.3}
-    \begin{defthm}
-        Let $X$ and $Y$ be compact Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. For each $y\in Y$, define the number
-        \begin{equation*}
-            d_y\!\l(F\r)\coloneqq\sum_{p\in F^{-1}\l(y\r)}\mult_p\!\l(F\r).
-        \end{equation*}
-        Then $d_y\!\l(F\r)\in\Z$ is independent of $y$, and we define the \uldef{degree of $F$} as $\deg F\coloneqq d_y\!\l(F\r)$ for any $y\in Y$.
-    \end{defthm}
-    \begin{proof}
-        
     \end{proof}
 \end{document}
