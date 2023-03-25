@@ -1,48 +1,88 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
     \section{Covering Holomorphic Maps}
-    This section assumes that the reader is familiar with the basic notions of homotopic curves and liftings from algebraic topology, which we refer the reader to \cite[][Sections 4.7 $-$ 4.10]{otto}.
+    This section assumes that the reader is familiar with the basic notions of homotopic curves and liftings from algebraic topology, for which we refer the reader to \cite[][Sections 4.7]{otto}.
     \subsection{Unbranched Holomorphic Maps}
-    \subsection{Proper and Covering Maps}
     \begin{definition}
-        Let $X$ and $Y$ be locally compact topological spaces. A map $f:X\to Y$ is said to be \uldef{proper} if the preimage of every compact set is compact.
+        Let $X$ and $Y$ be Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. A point $p\in X$ is said to be a \uldef{ramification point of $F$} if $\l.F\r|_U$ is not injective for any neighborhood $U$ of $p$, in which case $F\l(p\r)\in X$ is said to be a \uldef{branch point of $F$}. If $F$ has no ramification points, then $f$ is said to be an \uldef{unbranched holomorphic map}.
+    \end{definition}
+    \side[-0.56in]{It is immediate that $F$ is unbranched iff it is a local homeomorphism. Indeed, if $F$ is unbranched, then for every $p\in X$ there exists a neighborhood $U$ of $p$ such that $\l.F\r|_U$ is injective. By the Open Mapping Theorem, $F$ is open and hence $\l.F\r|_U$ maps $U$ homeomorphically to the open set $F\l(U\r)$. Conversely, if $F$ is a local homeomorphism, then for every $p\in X$ there exists a neighborhood $U$ of $p$ that is mapped homeomorphically onto an open set in $Y$. In particular, $\l.F\r|_U$ is injective, so $F$ is unbranched at $p$.}
+    \begin{proposition}
+        Let $X$ and $Y$ be Riemann surfaces and fix $p\in X$. A non-constant holomorphic map $F:X\to Y$ has a ramification point at $p$ iff $\mult_p\!\l(F\r)\geq2$.
+    \end{proposition}
+    \begin{proof}
+        By Theorem \ref{1.2:thm:local_normal_form}, there exist charts $\tpl{U,\phi}$ centered at $p$ and $\tpl{V,\psi}$ centered at $F\l(p\r)$ such that $f\coloneqq\psi\circ F\circ\phi^{-1}$ is the power map $z\mapsto z^m$ where $m\coloneqq\mult_p\!\l(F\r)$. Since $\phi$ and $\psi$ are, in particular, injections, we see that $F$ is locally injective at $p$ iff $f$ is locally injective at $0$. But this occurs precisely when $m=\mult_p\!\l(F\r)<2$, so the result follows.\qed
+    \end{proof}
+    \begin{example}
+        For any lattice $\Gamma\subseteq\C$ the projection $\pi:\C\to\C/\Gamma$ is an unbranched holomorphic map. This follows from our construction of complex tori in Example \ref{1.1:exa:tori}.\exqed
+    \end{example}
+    \begin{proposition}
+        Let $X$, $Y$ and $Z$ be Riemann surfaces and let $F:X\to Y$ be a holomorphic map. Then any lifting $\tilde{F}:X\to Z$ of $F$ w.r.t. an unbranched holomorphic map $P:Z\to Y$ is a holomorphic map.
+    \end{proposition}
+    \side[-0.44in]{Recall that $\tilde{F}$ is a \ul{lifting of $F$ w.r.t. $P$} if the diagram
+        \begin{equation*}
+            \begin{tikzcd}[ampersand replacement=\&]
+                \& Z \ar[d, "P"] \\
+                X \ar[ur, "\tilde{F}"] \ar[r, "F"'] \& Y
+            \end{tikzcd}
+        \end{equation*}
+        commutes.}
+    \vspace{-0.1in}
+    \begin{proof}
+        Take $p\in X$ and set $r\coloneqq\tilde{F}\l(p\r)$ and $q\coloneqq P\l(r\r)=F\l(p\r)$. Since $P$ is unbranched, there exists a neighborhood $W$ of $r$ such that $\l.P\r|_W:W\to Y$ is holomorphic, so it is biholomorphic onto its image $V\coloneqq P\l(W\r)$. Let $Q\coloneqq\l.P\r|_W^{-1}:V\to W $. Since $\tilde{F}$ is continuous, its inverse image $U\coloneqq\tilde{F}^{-1}\l(W\r)$ is open. Observe that
+        \begin{equation*}
+            \l.F\r|_U=(P\circ\tilde{F})|_U=\l.P\r|_W\circ\tilde{F}|_U,
+        \end{equation*}
+        so $\tilde{F}|_U=Q\circ\l.F\r|_U$. Then $p\in U$ and $\tilde{F}|_U$ is a composition of two holomorphic maps, so $\tilde{F}$ is holomorphic at $p$.\qed
+    \end{proof}
+    \subsection{Proper and Covering Maps}
+    In this section, we gather some basic results on the theory of covering maps from topology.
+    \begin{definition}
+        Let $X$ and $Y$ be locally compact topological spaces. A map $F:X\to Y$ is said to be \uldef{proper} if the preimage of every compact set is compact.
     \end{definition}
     \side[-0.28in]{The assumption that $X$ and $Y$ are locally compact ensures that all proper maps are closed; that is, then send closed sets to closed sets.}
     \begin{lemma}\label{1.3:lem:lemma_for_proper_covering}
-        Let $X$ and $Y$ be locally compact topological spaces and let $f:X\to Y$ be a proper map. Then for every $y\in Y$ and every neighborhood $U$ of $f^{-1}\l(y\r)$, there exists a neighborhood $V$ of $y$ such that $f^{-1}\!\l(V\r)\subseteq U$.
+        Let $X$ and $Y$ be locally compact topological spaces and let $F:X\to Y$ be a proper map. Then for every $y\in Y$ and every neighborhood $U$ of $F^{-1}\l(y\r)$, there exists a neighborhood $V$ of $y$ such that $F^{-1}\!\l(V\r)\subseteq U$.
     \end{lemma}
     \begin{proof}
-        Since $U$ is open, the set $X\comp U$ is closed. Since $f$ is proper, it is closed and hence $f\l(X\comp U\r)$ is closed too. Clearly $y\not\in f\l(X\comp U\r)\eqqcolon W$, so $V\coloneqq X\comp W$ is a neighborhood of $y$; we claim that $f^{-1}\l(V\r)\subseteq U$. Indeed, for all $f\l(x\r)\in V$, we see that $f\l(x\r)\not\in f\l(X\comp U\r)$ and so $x\not\in X\comp U$.\qed
+        Since $U$ is open, the set $X\comp U$ is closed. Since $F$ is proper, it is closed and hence $F\l(X\comp U\r)$ is closed too. Clearly $y\not\in F\l(X\comp U\r)\eqqcolon W$, so $V\coloneqq X\comp W$ is a neighborhood of $y$; we claim that $F^{-1}\l(V\r)\subseteq U$. Indeed, for all $F\l(x\r)\in V$, we see that $F\l(x\r)\not\in F\l(X\comp U\r)$ and so $x\not\in X\comp U$.\qed
     \end{proof}
     \begin{definition}
-        Let $X$ and $Y$ be locally compact topological spaces. A map $f:X\to Y$ is said to be a \uldef{covering map} if every point $y\in Y$ has a neighborhood $V$ such that $f^{-1}\l(V\r)=\bigcup_{j\in J}U_j$ where $U_j$ are disjoint open sets in $X$, each homeomorphic to $V$ via $\l.f\r|_{U_j}$.
+        Let $X$ and $Y$ be locally compact topological spaces. A map $F:X\to Y$ is said to be a \uldef{covering map} if every point $y\in Y$ has a neighborhood $V$ such that $F^{-1}\l(V\r)=\bigcup_{j\in J}U_j$ where $U_j$ are disjoint open sets in $X$, each homeomorphic to $V$ via $\l.F\r|_{U_j}$.
     \end{definition}
-    \begin{example}\label{1.3:exa:covering_map_power}
-        Let $m\geq2$ be a natural number and consider the power map $h:\C^\ast\to\C^\ast$ mapping $z\mapsto z^m$. We claim that $h$ is a covering map, so take $b\in\C^\ast$ and let $a\in\C^\ast$ be any one of its $m^\textrm{th}$ roots. Since $h$ is a local homeomorphism, there exist neighborhoods $U_0$ of $a$ and $V$ of $b$ such that $\l.h\r|_{U_0}:U_0\to V$ is a homeomorphism. It is clear then that\side{Indeed, for all $c\in h^{-1}\l(V\r)$, $h\l(c\r)\in V$ and so there exists some $a'\in U_0$ such that $h\l(a'\r)=h\l(c\r)$. Then $c=\omega^ja'$ for some $0\leq j\leq m-1$, so $c\in\omega^jU_0$. Conversely, if $\in\omega^jU_0$ for some $0\leq j\leq m-1$, then $c=\omega^ja'$ for some $a'\in U_0$ and hence $h\l(c\r)=h\l(\omega^ja'\r)=h\l(a'\r)\in V$.}
+    \begin{example}
+        Let $m\geq2$ be a natural number and consider the power map $f:\C^\ast\to\C^\ast$ mapping $z\mapsto z^m$. We claim that $f$ is a covering map, so take $b\in\C^\ast$ and let $a\in\C^\ast$ be any one of its $m^\textrm{th}$ roots. Since $f$ is a local homeomorphism, there exist neighborhoods $U_0$ of $a$ and $V$ of $b$ such that $\l.f\r|_{U_0}:U_0\to V$ is a homeomorphism. It is clear then that\side{Indeed, for all $c\in f^{-1}\l(V\r)$, $f\l(c\r)\in V$ and so there exists some $a'\in U_0$ such that $f\l(a'\r)=f\l(c\r)$. Then $c=\omega^ja'$ for some $0\leq j\leq m-1$, so $c\in\omega^jU_0$. Conversely, if $\in\omega^jU_0$ for some $0\leq j\leq m-1$, then $c=\omega^ja'$ for some $a'\in U_0$ and hence $f\l(c\r)=f\l(\omega^ja'\r)=f\l(a'\r)\in V$.}
         \vspace{-0.05in}
         \begin{equation*}
-            h^{-1}\l(V\r)=\bigcup_{j=0}^{m-1}\omega^jU_0,
+            f^{-1}\l(V\r)=\bigcup_{j=0}^{m-1}\omega^jU_0,
         \end{equation*}
-        where $\omega$ is an $m^\textrm{th}$ root of unity, and since $h^{-1}\l(b\r)$ is discrete, the sets $U_j\coloneqq\omega^jU_0$ can be made small enough so that they are pairwise disjoint. Then each $\l.h\r|_{U_j}:U_j\to V$ is a homeomorphism, as desired.\exqed
+        where $\omega$ is an $m^\textrm{th}$ root of unity, and since $f^{-1}\l(b\r)$ is discrete, the sets $U_j\coloneqq\omega^jU_0$ can be made small enough so that they are pairwise disjoint. Then each $\l.f\r|_{U_j}:U_j\to V$ is a homeomorphism, as desired.\exqed
     \end{example}
-    \begin{proposition}
+    \begin{example}
+        For any lattice $\Gamma\subseteq\C$, the projection $\pi:\C\to\C/\Gamma$ is a covering map. Indeed, take $z+\Gamma\in\C/\Gamma$ and let $w\in\C$ be such that $\pi\l(w\r)=z+\Gamma$. Since $\pi$ is unbranched, there exist neighborhoods $U$ of $w$ and $V$ of $z+\Gamma$ such that $\l.\pi\r|_{U}:U\to V$ is a homeomorphism. Then clearly
+        \begin{equation*}
+            \pi^{-1}\l(V\r)=\bigcup_{\lambda\in\Gamma}\l(\lambda+U\r)
+        \end{equation*}
+        where the sets $U_\lambda\coloneqq\lambda+U$ are all disjoint and each $\l.\pi\r|_{U_\lambda}:U_\lambda\to V$ is a homeomorphism.\exqed
+    \end{example}
+    \begin{theorem}
         Let $X$ and $Y$ be locally compact topological surfaces. Then any proper local homeomorphism is a covering map.
-    \end{proposition}
+    \end{theorem}
     \begin{proof}
-        Let $f:X\to Y$ be a proper local homeomorphism and take $y\in Y$. We claim that $f^{-1}\l(y\r)$ is finite.
+        Let $F:X\to Y$ be a proper local homeomorphism and take $y\in Y$. We claim that $F^{-1}\l(y\r)$ is finite.
         \begin{itemize}
-            \item For each $x\in f^{-1}\l(y\r)$, there exist neighborhoods $W_x$ of $x$ and $V$ of $y$ such that $\l.f\r|_{W_x}:W_x\to V$ is a homeomorphism. Then the sets $W_x$ must be disjoint, for if $x'\in W_x$ for some $x'\neq x$, then $\l.f\r|_{W_x}\!\l(x\r)=y=\l.f\r|_{W_x}\!\l(x'\r)$, contradicting that $\l.f\r|_{W_x}$ is a homeomorphism. Thus $f^{-1}\l(y\r)$ must be finite, lest the cover $\l\{W_x\r\}$ admits no finite subcover.
+            \item For each $x\in F^{-1}\l(y\r)$, there exist neighborhoods $W_x$ of $x$ and $V$ of $y$ such that $\l.F\r|_{W_x}:W_x\to V$ is a homeomorphism. Then the sets $W_x$ must be disjoint, for if $x'\in W_x$ for some $x'\neq x$, then $\l.F\r|_{W_x}\!\l(x\r)=y=\l.F\r|_{W_x}\!\l(x'\r)$, contradicting that $\l.F\r|_{W_x}$ is a homeomorphism. Thus $F^{-1}\l(y\r)$ must be finite, lest the cover $\l\{W_x\r\}$ admits no finite subcover.
         \end{itemize}
-        Thus $f^{-1}\l(y\r)=\l\{x_1,\dots,x_n\r\}$ for some $x_j\in X$. Letting $W_j\coloneqq W_{x_j}$ as above, we see that $\bigcup_{j=1}^{n}W_j$ is a neighborhood of $f^{-1}\l(y\r)$. By Lemma \ref{1.3:lem:lemma_for_proper_covering}, there is a neighborhood $V$ of $y$ such that $f^{-1}\l(V\r)\subseteq\bigcup_{j=1}^{n}W_j$, so $f^{-1}\l(V\r)=\bigcup_{j=1}^{n}U_j$ where the sets $U_j\coloneqq W_j\cap f^{-1}\l(V\r)$ are all disjoint and each $\l.f\r|_{U_j}:U_j\to V$ is a homeomorphism.\qed
+        Thus $F^{-1}\l(y\r)=\l\{x_1,\dots,x_n\r\}$ for some $x_j\in X$. Letting $W_j\coloneqq W_{x_j}$ as above, we see that $\bigcup_{j=1}^{n}W_j$ is a neighborhood of $F^{-1}\l(y\r)$. By Lemma \ref{1.3:lem:lemma_for_proper_covering}, there is a neighborhood $V$ of $y$ such that $F^{-1}\l(V\r)\subseteq\bigcup_{j=1}^{n}W_j$, so $F^{-1}\l(V\r)=\bigcup_{j=1}^{n}U_j$ where the sets $U_j\coloneqq W_j\cap F^{-1}\l(V\r)$ are all disjoint and each $\l.F\r|_{U_j}:U_j\to V$ is a homeomorphism.\qed
     \end{proof}
-    \subsection{Degree of Proper Holomorphic Maps}
-    \begin{defprop}
+    \subsection{Degree of Proper Holomorphic Maps}\label{1.3}
+    \begin{defthm}
         Let $X$ and $Y$ be compact Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. For each $y\in Y$, define the number
         \begin{equation*}
             d_y\!\l(F\r)\coloneqq\sum_{p\in F^{-1}\l(y\r)}\mult_p\!\l(F\r).
         \end{equation*}
         Then $d_y\!\l(F\r)\in\Z$ is independent of $y$, and we define the \uldef{degree of $F$} as $\deg F\coloneqq d_y\!\l(F\r)$ for any $y\in Y$.
-    \end{defprop}
+    \end{defthm}
     \begin{proof}
         
     \end{proof}
