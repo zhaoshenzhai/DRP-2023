@@ -1,20 +1,21 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
     This chapter assumes that the reader is familiar with the basic notions of liftings and homotopy of curves from algebraic topology, for which we refer the reader to \cite[][Sections 3 and 4.7]{otto}.
-    \section{Covering Holomorphic Maps}
-    \subsection{Unbranched Holomorphic Maps}
+    \section{Degree of Proper Holomorphic Maps}
+    We devote this section to develop the tools necessary to define the \textit{degree} of a proper holomorphic map, which, intuitively, is the \textit{number of sheets} in which it covers its image. However, there are points in the image which are not covered `correctly', and they must be taken care of separately.
+    \subsection{Ramification and Critical Points}
     \begin{definition}
-        Let $X$ and $Y$ be Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. A point $p\in X$ is said to be a \uldef{ramification point of $F$} if $\l.F\r|_U$ is not injective for any neighborhood $U$ of $p$, in which case $F\l(p\r)\in X$ is said to be a \uldef{branch point of $F$}. If $F$ has no ramification points, then $f$ is said to be an \uldef{unbranched holomorphic map}.
+        Let $X$ and $Y$ be Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. A point $p\in X$ is said to be a \uldef{ramification point of $F$} if $\l.F\r|_U$ is not injective for any neighborhood $U$ of $p$, in which case $F\l(p\r)\in X$ is said to be a \uldef{critical value of $F$}. If $F$ has no ramification points, then $F$ is said to be an \uldef{unbranched holomorphic map}.
     \end{definition}
     \side[-0.56in]{It is immediate that $F$ is unbranched iff it is a local homeomorphism. Indeed, if $F$ is unbranched, then for every $p\in X$ there exists a neighborhood $U$ of $p$ such that $\l.F\r|_U$ is injective. By the Open Mapping Theorem, $F$ is open and hence $\l.F\r|_U$ maps $U$ homeomorphically to the open set $F\l(U\r)$. Conversely, if $F$ is a local homeomorphism, then for every $p\in X$ there exists a neighborhood $U$ of $p$ that is mapped homeomorphically onto an open set in $Y$. In particular, $\l.F\r|_U$ is injective, so $F$ is unbranched at $p$.}
-    \begin{proposition}
+    \begin{proposition}\label{2.1:prp:ramification_off_mult_2}
         Let $X$ and $Y$ be Riemann surfaces and fix $p\in X$. A non-constant holomorphic map $F:X\to Y$ has a ramification point at $p$ iff $\mult_p\!\l(F\r)\geq2$.
     \end{proposition}
     \begin{proof}
         By Theorem \ref{1.2:thm:local_normal_form}, there exist charts $\tpl{U,\phi}$ centered at $p$ and $\tpl{V,\psi}$ centered at $F\l(p\r)$ such that $f\coloneqq\psi\circ F\circ\phi^{-1}$ is the power map $z\mapsto z^m$ where $m\coloneqq\mult_p\!\l(F\r)$. Since $\phi$ and $\psi$ are, in particular, injections, we see that $F$ is locally injective at $p$ iff $f$ is locally injective at $0$. But this occurs precisely when $m=\mult_p\!\l(F\r)<2$, so the result follows.\qed
     \end{proof}
     \begin{example}
-        For any lattice $\Gamma\subseteq\C$ the projection $\pi:\C\to\C/\Gamma$ is an unbranched holomorphic map. This follows from our construction of complex tori in Example \ref{1.1:exa:tori}.\exqed
+        For any lattice $\Gamma\subseteq\C$ the projection $\pi:\C\to\C/\Gamma$ is an unbranched holomorphic map. This follows from our construction of complex tori in Example \ref{1.1:exa:tori} where for every $z\in\C$ a small enough neighborhood $U$ was found so that $\l.\pi\r|_U$ is injective.\exqed
     \end{example}
     \begin{proposition}
         Let $X$, $Y$ and $Z$ be Riemann surfaces and let $F:X\to Y$ be a holomorphic map. Then any lifting $\tilde{F}:X\to Z$ of $F$ w.r.t. an unbranched holomorphic map $P:Z\to Y$ is a holomorphic map.
@@ -36,21 +37,21 @@
         so $\tilde{F}|_U=Q\circ\l.F\r|_U$. Then $p\in U$ and $\tilde{F}|_U$ is a composition of two holomorphic maps, so $\tilde{F}$ is holomorphic at $p$.\qed
     \end{proof}
     \subsection{Proper and Covering Maps}
-    In this section, we gather some basic results on the theory of covering maps from topology. Throughout this section and the next, $E$ and $X$ are locally-compact topological spaces.\side{The assumption that $E$ and $X$ are locally compact ensures that all proper maps are closed; that is, then send closed sets to closed sets.}
+    In this section, we gather some basic results on the theory of covering maps from topology. Throughout this section and the next, $E$ and $X$ are locally-compact topological spaces.\side[0.28in]{The assumption that $E$ and $X$ are locally compact ensures that all proper maps are closed; that is, then send closed sets to closed sets.}
     \begin{definition}
         A map $P:E\to X$ is said to be \uldef{proper} if the preimage of every compact set is compact.
     \end{definition}
     \begin{proposition}\label{1.3:prp:proper_give_neighborhoods}
-        Let $P:E\to X$ be a proper map. Then for every $p\in X$ and every neighborhood $V$ of $P^{-1}\l(p\r)$, there exists a neighborhood $V$ of $p$ such that $P^{-1}\!\l(U\r)\subseteq V$.
+        Let $P:E\to X$ be a proper map. Then for every $p\in X$ and every neighborhood $V$ of $P^{-1}\l(p\r)$, there exists a neighborhood $U$ of $p$ such that $P^{-1}\!\l(U\r)\subseteq V$.
     \end{proposition}
     \begin{proof}
-        Since $V$ is open, the set $E\comp V$ is closed. Since $P$ is proper, it is closed and hence $P\l(E\comp V\r)$ is closed too. Clearly $p\not\in P\l(E\comp V\r)\eqqcolon W$, so $U\coloneqq E\comp W$ is a neighborhood of $p$; we claim that $P^{-1}\l(U\r)\subseteq V$. Indeed, for all $P\l(q\r)\in U$, we see that $P\l(q\r)\not\in P\l(E\comp V\r)$ and so $q\not\in E\comp V$.\qed
+        Since $V$ is open, the set $E\comp V$ is closed. Since $P$ is proper, it is closed and hence $P\l(E\comp V\r)$ is closed too. Clearly $p\not\in P\l(E\comp V\r)\eqqcolon W$, so $U\coloneqq E\comp W$ is a neighborhood of $p$; we claim that $P^{-1}\l(U\r)\subseteq V$. Indeed, for all $P\l(e\r)\in U$, we see that $P\l(e\r)\not\in P\l(E\comp V\r)$ and so $e\not\in E\comp V$.\qed
     \end{proof}
     \begin{definition}
         A map $P:E\to X$ is said to be a \uldef{covering map} if every point $p\in X$ has a neighborhood $U$ such that $P^{-1}\l(U\r)=\bigcup_{j\in J}V_j$ where $V_j$ are disjoint open sets in $E$, each homeomorphic to $U$ via $\l.P\r|_{V_j}$.
     \end{definition}
     \begin{example}
-        Let $m\geq2$ be a natural number and consider the power map $f:\C^\ast\to\C^\ast$ mapping $z\mapsto z^m$. We claim that $f$ is a covering map, so take $b\in\C^\ast$ and let $a\in\C^\ast$ be any one of its $m^\textrm{th}$ roots. Since $f$ is a local homeomorphism, there exist neighborhoods $V_0$ of $a$ and $U$ of $b$ such that $\l.f\r|_{V_0}:V_0\to U$ is a homeomorphism. It is clear then that\side{Indeed, for all $c\in f^{-1}\l(U\r)$, $f\l(c\r)\in U$ and so there exists some $a'\in V_0$ such that $f\l(a'\r)=f\l(c\r)$. Then $c=\omega^ja'$ for some $0\leq j\leq m-1$, so $c\in\omega^jV_0$. Conversely, if $c\in\omega^jV_0$ for some $0\leq j\leq m-1$, then $c=\omega^ja'$ for some $a'\in V_0$ and hence $f\l(c\r)=f\l(\omega^ja'\r)=f\l(a'\r)\in U$.}
+        Let $m\geq2$ be a natural number and consider the power map $f:\C^\ast\to\C^\ast$ mapping $z\mapsto z^m$. We claim that $f$ is a covering map, so take $b\in\C^\ast$ and let $a\in\C^\ast$ be any one of its $m^\textrm{th}$ roots. Since $f$ is a unbranched, there exist neighborhoods $V_0$ of $a$ and $U$ of $b$ such that $\l.f\r|_{V_0}:V_0\to U$ is a homeomorphism. It is clear then that\side{Indeed, for all $c\in f^{-1}\l(U\r)$, $f\l(c\r)\in U$ and so there exists some $a'\in V_0$ such that $f\l(a'\r)=f\l(c\r)$. Then $c=\omega^ja'$ for some $0\leq j\leq m-1$, so $c\in\omega^jV_0$. Conversely, if $c\in\omega^jV_0$ for some $0\leq j\leq m-1$, then $c=\omega^ja'$ for some $a'\in V_0$ and hence $f\l(c\r)=f\l(\omega^ja'\r)=f\l(a'\r)\in U$.}
         \vspace{-0.05in}
         \begin{equation*}
             f^{-1}\l(U\r)=\bigcup_{j=0}^{m-1}\omega^jV_0,
@@ -64,7 +65,7 @@
         \end{equation*}
         where the sets $V_\lambda\coloneqq\lambda+V$ are all disjoint and each $\l.\pi\r|_{V_\lambda}:V_\lambda\to U$ is a homeomorphism.\exqed
     \end{example}
-    \begin{proposition}
+    \begin{proposition}\label{2.1:prp:proper_local_covering}
         Any proper local homeomorphism is a covering map.
     \end{proposition}
     \begin{proof}
@@ -75,7 +76,7 @@
         Thus $P^{-1}\l(p\r)=\l\{e_1,\dots,e_n\r\}$ for some $e_j\in E$. Letting $W_j\coloneqq W_{e_j}$ as above, we see that $\bigcup_{j=1}^{n}W_j$ is a neighborhood of $P^{-1}\l(p\r)$. By Proposition \ref{1.3:prp:proper_give_neighborhoods}, there is a neighborhood $U$ of $p$ such that $P^{-1}\l(U\r)\subseteq\bigcup_{j=1}^{n}W_j$, so $P^{-1}\l(U\r)=\bigcup_{j=1}^{n}V_j$ where the sets $V_j\coloneqq W_j\cap P^{-1}\l(U\r)$ are all disjoint and each $\l.P\r|_{V_j}:V_j\to U$ is a homeomorphism.\qed
     \end{proof}
     \subsection{Liftings of Curves}
-    This section develops some technical tools to define the \textit{number of sheets} of a covering, which is then used to define the \textit{degree} of a proper holomorphic map.
+    This section develops some technical tools to define the \textit{number of sheets} of a covering, which in turn is used to define the \textit{degree} of a proper holomorphic map.
     \begin{definition}
         A function $P:E\to X$ is said to have the \uldef{curve lifting property} if for every curve $\alpha:\l[0,1\r]\to X$ and every point $e_0\in E$ with $P\l(e_0\r)=\alpha\l(0\r)$, there exists a lifting $\tilde{\alpha}:\l[0,1\r]\to E$ w.r.t. $P$ such that $\tilde{\alpha}\l(0\r)=e_0$.
     \end{definition}
@@ -105,22 +106,46 @@
         \end{equation*}
         Clearly\side{$\tilde{\alpha}\l(t_{k-1}\r)=\phi\l(\alpha\l(t_{k-1}\r)\r)=\phi\l(P\l(\tilde{\alpha}\l(t_{k-1}\r)\r)\r)$ on the appropriate restrictions.}, $\tilde{\alpha}\!\l(t_{k-1}\r)$ agrees with our existing lifting, which makes the piecewise-defined map $\l.\alpha\r|_{\l[0,t_k\r]}$ a lifting of $\l.\alpha\r|_{\l[0,t_k\r]}$ w.r.t. $P$.\qed
     \end{proof}
-    \begin{corollary}
+    \begin{corollary}\label{2.1:cor:fiber_cardinalities_coincide}
         Suppose that $X$ is path-connected and let $P:E\to X$ be a covering map. Then, for any $p_1,p_2\in X$, the sets $P^{-1}\!\l(p_1\r)$ and $P^{-1}\!\l(p_2\r)$ are equinumerous.
     \end{corollary}
     \begin{proof}
         Since $X$ is path-connected, there exists a curve $\alpha:\l[0,1\r]\to X$ from $p_1$ to $p_2$. We define a map $\phi:P^{-1}\!\l(p_1\r)\to P^{-1}\!\l(p_2\r)$ as follows. Every $e\in P^{-1}\!\l(p_1\r)$ induces a unique lifting $\tilde{\alpha}:\l[0,1\r]\to E$ such that $\tilde{\alpha}\l(0\r)=e$, and since $P\l(\tilde{\alpha}\l(1\r)\r)=\alpha\l(1\r)=p_2$, we have $\tilde{\alpha}\l(1\r)\in P^{-1}\!\l(p_2\r)$. Hence we define $\phi\l(e\r)\coloneqq\tilde{\alpha}\l(1\r)$. The uniqueness of liftings ensures that $\phi$ is well-defined and bijective, so $P^{-1}\!\l(p_1\r)$ and $P^{-1}\!\l(p_2\r)$ are equinumerous.\qed
     \end{proof}
-    % \begin{theorem}
-    %     \textit{4.17: Existence of lifting.}
-    % \end{theorem}
-    % \begin{proof}
-    %
-    % \end{proof}
-    % \begin{theorem}
-    %     \textit{4.19: Curve lifting property implies covering map.}
-    % \end{theorem}
-    % \begin{proof}
-    %
-    % \end{proof}
+    \subsection{Degrees and Multiplicities}
+    Throughout this section, $X$ and $Y$ are Riemann surfaces and $F:X\to Y$ is a non-constant proper holomorphic map.
+    \begin{definition}
+        The \uldef{degree of $F$}, denoted $\deg F$, is the cardinality of the fiber $F^{-1}\!\l(q\r)$ of any non-critical point $q\in Y$.
+    \end{definition}
+    \begin{proof}
+        (Well-definition): Since $F$ is a proper map, the fiber $F^{-1}\!\l(q\r)$ is compact and is hence finite by Discreteness of Preimages. Being unramified, we see that $F$ is a local homeomorphism, so it is a covering map by Proposition \ref{2.1:prp:proper_local_covering}. Finally, Corollary \ref{2.1:cor:fiber_cardinalities_coincide} shows that $\deg F$ is well-defined.\qed
+    \end{proof}
+    \begin{remark}
+        Since the set of all ramification points of $F$ is finite, we see that $F$ is a covering map away from finitely-many points. The degree of $F$ is then the number of sheets of the covering, which we now claim is the sum of the multiplicities at each $p\in F^{-1}\!\l(q\r)$ of $F$.\exqed
+    \end{remark}
+    \begin{theorem}
+        Fix an arbitrary $q\in Y$. Then $\deg F$ is the sum of the multiplicities at each $p\in F^{-1}\!\l(q\r)$ of $F$. That is,
+        \begin{equation*}
+            \deg F=\sum_{p\in F^{-1}\!\l(q\r)}\mult_p\!\l(F\r).
+        \end{equation*}
+    \end{theorem}
+    \begin{proof}
+        If $q$ is not a critical point, then Proposition \ref{2.1:prp:ramification_off_mult_2} shows that $\mult_p\!\l(F\r)=1$ for any $p\in F^{-1}\!\l(p\r)$. Then $\deg F=\l|F^{-1}\!\l(q\r)\r|$, which agrees with our definition.\\\ \\
+        Otherwise, $q$ is a critical point of $F$\side{Although $q$ is a critical point of $F$, every point in a small enough neighborhood around it is not a critical point.}. Since $F^{-1}\!\l(q\r)$ is compact, we see that $F^{-1}\!\l(q\r)=\l\{p_1,\dots,p_n\r\}$ for some $p_i\in X$. Fix $1\leq j\leq n$ and set $m_j\coloneqq\mult_{p_j}\!\l(F\r)$. We claim that there exist neighborhoods $U_j$ of $p_j$ and $V_j$ of $q$ such that $\l|F^{-1}\!\l(r\r)\cap U_j\r|=m_j$ for all $r\in V_j\comp\l\{q\r\}$.
+        \begin{itemize}
+            \item By Theorem \ref{1.2:thm:local_normal_form}, there exist charts $\tpl{U_j,\phi_j}$ of $X$ centered at $p_j$ and $\tpl{V_j,\psi_j}$ of $Y$ centered $q$ such that $F$ acts as the power function $f\l(z\r)\coloneqq z^{m_j}$ on $\phi_j\!\l(U_j\r)$. Take\side{Note that $V_j$ can be taken small enough so that $r$ is \textit{not} a critical value of $F$.} $r\in V_j\comp\l\{q\r\}$ and set $w\coloneqq\psi_j\!\l(r\r)\neq0$. Then $\l|f^{-1}\!\l(w\r)\r|=m_j$, so we have
+                \begin{equation*}
+                    \l|F^{-1}\!\l(r\r)\cap U_j\r|=\l|\phi_j\l(F^{-1}\l(r\r)\r)\r|=\l|\phi_j\l(F^{-1}\!\l(\psi_j^{-1}\!\l(w\r)\r)\r)\r|=\l|f^{-1}\!\l(w\r)\r|=m_j.
+                \end{equation*}
+        \end{itemize}
+        Since $U_j$ is a neighborhood of $p_j$, we see that $F^{-1}\!\l(V_j\r)\subseteq U_j$ by restricting $V_j$ in accordance with Proposition \ref{1.3:prp:proper_give_neighborhoods}, if necessary. Then, with $V\coloneqq\bigcap_{i=1}^{n}V_i$, we see that
+        \begin{equation*}
+            F^{-1}\!\l(V\r)\subseteq\bigcup_{i=1}^{n}U_i
+        \end{equation*}
+        where the sets $U_i$ are all disjoint. Take any $r\in V\comp\l\{q\r\}$. Then $r\in V_i\comp\l\{q\r\}$ for all $1\leq i\leq n$, so
+        \begin{equation*}
+            \l|F^{-1}\!\l(r\r)\r|=\l|F^{-1}\!\l(r\r)\cap\bigcup_{i=1}^{n}U_i\r|=\l|\bigcup_{i=1}^{n}\l(F^{-1}\!\l(r\r)\cap U_i\r)\r|=\sum_{i=1}^{n}\l|F^{-1}\!\l(r\r)\cap U_i\r|=\sum_{i=1}^{n}m_i.
+        \end{equation*}
+        But $r$ is not a critical point of $F$, so the result follows.\qed
+    \end{proof}
 \end{document}
