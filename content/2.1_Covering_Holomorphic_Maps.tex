@@ -121,7 +121,7 @@
         (Well-definition): Since $F$ is a proper map, the fiber $F^{-1}\!\l(q\r)$ is compact and is hence finite by Discreteness of Preimages. Being unramified, we see that $F$ is a local homeomorphism, so it is a covering map by Proposition \ref{2.1:prp:proper_local_covering}. Finally, Corollary \ref{2.1:cor:fiber_cardinalities_coincide} shows that $\deg F$ is well-defined.\qed
     \end{proof}
     \begin{remark}
-        Since the set of all ramification points of $F$ is finite, we see that $F$ is a covering map away from finitely-many points. The degree of $F$ is then the number of sheets of the covering, which we now claim is the sum of the multiplicities at each $p\in F^{-1}\!\l(q\r)$ of $F$.\exqed
+        Let $n\coloneqq\deg F$. Then $n$ is referred to as the \ul{number of sheets of $F$} and $F$ is said to be an \ul{$n$-sheeted holomorphic covering map}.\exqed
     \end{remark}
     \begin{theorem}
         Fix an arbitrary $q\in Y$. Then $\deg F$ is the sum of the multiplicities at each $p\in F^{-1}\!\l(q\r)$ of $F$. That is,
@@ -129,6 +129,8 @@
             \deg F=\sum_{p\in F^{-1}\!\l(q\r)}\mult_p\!\l(F\r).
         \end{equation*}
     \end{theorem}
+    \side[-0.73in]{Instead of simply counting the elements in the fiber, we need count them \textit{with multiplicities}.}
+    \vspace{-0.1in}
     \begin{proof}
         If $q$ is not a critical point, then Proposition \ref{2.1:prp:ramification_iff_mult_2} shows that $\mult_p\!\l(F\r)=1$ for any $p\in F^{-1}\!\l(p\r)$. Then $\deg F=\l|F^{-1}\!\l(q\r)\r|$, which agrees with our definition.\\\ \\
         Otherwise, $q$ is a critical point of $F$\side{Although $q$ is a critical point of $F$, every point in a small enough neighborhood around it is not a critical point.}. Since $F^{-1}\!\l(q\r)$ is compact, we see that $F^{-1}\!\l(q\r)=\l\{p_1,\dots,p_n\r\}$ for some $p_i\in X$. Fix $1\leq j\leq n$ and set $m_j\coloneqq\mult_{p_j}\!\l(F\r)$. We claim that there exist neighborhoods $U_j$ of $p_j$ and $V_j$ of $q$ such that $\l|F^{-1}\!\l(r\r)\cap U_j\r|=m_j$ for all $r\in V_j\comp\l\{q\r\}$.
