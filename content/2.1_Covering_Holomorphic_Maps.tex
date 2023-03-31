@@ -75,13 +75,13 @@
         Thus $P^{-1}\l(p\r)=\l\{e_1,\dots,e_n\r\}$ for some $e_j\in E$. Letting $W_j\coloneqq W_{e_j}$ as above, we see that $\bigcup_{j=1}^{n}W_j$ is a neighborhood of $P^{-1}\l(p\r)$. By Proposition \ref{1.3:prp:proper_give_neighborhoods}, there is a neighborhood $U$ of $p$ such that $P^{-1}\l(U\r)\subseteq\bigcup_{j=1}^{n}W_j$, so $P^{-1}\l(U\r)=\bigcup_{j=1}^{n}V_j$ where the sets $V_j\coloneqq W_j\cap P^{-1}\l(U\r)$ are all disjoint and each $\l.P\r|_{V_j}:V_j\to U$ is a homeomorphism.\qed
     \end{proof}
     \subsection{Liftings of Curves}
-    This section develops some technical tools to establish Theorem \ref{2.2:thm:preimage_cardinality}, which roughly states that the preimage of every covering map has the same cardinality. This gives us a well-defined notion of the local `number of sheets' of a covering.
+    This section develops some technical tools to define the \textit{number of sheets} of a covering, which is then used to define the \textit{degree} of a proper holomorphic map.
     \begin{definition}
         A function $P:E\to X$ is said to have the \uldef{curve lifting property} if for every curve $\alpha:\l[0,1\r]\to X$ and every point $e_0\in E$ with $P\l(e_0\r)=\alpha\l(0\r)$, there exists a lifting $\tilde{\alpha}:\l[0,1\r]\to E$ w.r.t. $P$ such that $\tilde{\alpha}\l(0\r)=e_0$.
     \end{definition}
-    \begin{lemma}
+    \begin{proposition}
         Every covering map $P:E\to X$ has the curve lifting property.
-    \end{lemma}
+    \end{proposition}
     \begin{proof}
         Let\side{The idea of this proof is to split $\alpha\l(\l[0,1\r]\r)$ into (overlapping) paths $\alpha\l(\l[t_{k-1},t_k\r]\r)$, each of which is an open set, and construct the lifting $\tilde{\alpha}$ inductively: Given a lifting $\tilde{\alpha}$ defined up to some boundary $t_{k-1}$, we define it on the next interval $\l[t_{k-1},t_k\r]$ by lifting $\alpha$ (restricted to $\l[t_{k-1},t_k\r]$) via $\phi$. This gives us a `chain' of paths, which when joined together gives us a global lifting of $\alpha$.\\\ \\
         The base case of this induction simply sets $\tilde{\alpha}\l(0\r)\coloneqq e_0$ in order to start-off this process.} $\alpha:\l[0,1\r]\to X$ be a curve and let $e_0\in E$ be a point such that $P\l(e_0\r)=\alpha\l(0\r)$. Consider any open cover $\l\{U_i\r\}$ of $\alpha\l(\l[0,1\r]\r)$ where each $U_i$ is a connected open set in $\alpha\l(\l[0,1\r]\r)$. Thus $\l\{\alpha^{-1}\!\l(U_i\r)\r\}$ is an open cover of $\l[0,1\r]$, so it admits a finite subcover $\l\{\l(t_i,t_{i+1}\r)\r\}_{i=1}^n\coloneqq\l\{\alpha^{-1}\l(U_i\r)\r\}_{i=1}^n$. Reindexing if necessary, we obtain a partition
@@ -105,11 +105,11 @@
         \end{equation*}
         Clearly\side{$\tilde{\alpha}\l(t_{k-1}\r)=\phi\l(\alpha\l(t_{k-1}\r)\r)=\phi\l(P\l(\tilde{\alpha}\l(t_{k-1}\r)\r)\r)$ on the appropriate restrictions.}, $\tilde{\alpha}\!\l(t_{k-1}\r)$ agrees with our existing lifting, which makes the piecewise-defined map $\l.\alpha\r|_{\l[0,t_k\r]}$ a lifting of $\l.\alpha\r|_{\l[0,t_k\r]}$ w.r.t. $P$.\qed
     \end{proof}
-    \begin{theorem}\label{2.2:thm:preimage_cardinality}
-        Suppose that $X$ is
-    \end{theorem}
+    \begin{corollary}
+        Suppose that $X$ is path-connected and let $P:E\to X$ be a covering map. Then, for any $p_1,p_2\in X$, the sets $P^{-1}\!\l(p_1\r)$ and $P^{-1}\!\l(p_2\r)$ are equinumerous.
+    \end{corollary}
     \begin{proof}
-
+        Since $X$ is path-connected, there exists a curve $\alpha:\l[0,1\r]\to X$ from $p_1$ to $p_2$. We define a map $\phi:P^{-1}\!\l(p_1\r)\to P^{-1}\!\l(p_2\r)$ as follows. Every $e\in P^{-1}\!\l(p_1\r)$ induces a unique lifting $\tilde{\alpha}:\l[0,1\r]\to E$ such that $\tilde{\alpha}\l(0\r)=e$, and since $P\l(\tilde{\alpha}\l(1\r)\r)=\alpha\l(1\r)=p_2$, we have $\tilde{\alpha}\l(1\r)\in P^{-1}\!\l(p_2\r)$. Hence we define $\phi\l(e\r)\coloneqq\tilde{\alpha}\l(1\r)$. The uniqueness of liftings ensures that $\phi$ is well-defined and bijective, so $P^{-1}\!\l(p_1\r)$ and $P^{-1}\!\l(p_2\r)$ are equinumerous.\qed
     \end{proof}
     % \begin{theorem}
     %     \textit{4.17: Existence of lifting.}
