@@ -36,22 +36,21 @@
         so $\tilde{F}|_U=Q\circ\l.F\r|_U$. Then $p\in U$ and $\tilde{F}|_U$ is a composition of two holomorphic maps, so $\tilde{F}$ is holomorphic at $p$.\qed
     \end{proof}
     \subsection{Proper and Covering Maps}
-    In this section, we gather some basic results on the theory of covering maps from topology.
+    In this section, we gather some basic results on the theory of covering maps from topology. Throughout this section and the next, $X$ and $Y$ are locally-compact topological spaces.\side{The assumption that $X$ and $Y$ are locally compact ensures that all proper maps are closed; that is, then send closed sets to closed sets.}
     \begin{definition}
-        Let $X$ and $Y$ be locally compact topological spaces. A map $F:X\to Y$ is said to be \uldef{proper} if the preimage of every compact set is compact.
+        A map $F:X\to Y$ is said to be \uldef{proper} if the preimage of every compact set is compact.
     \end{definition}
-    \side[-0.28in]{The assumption that $X$ and $Y$ are locally compact ensures that all proper maps are closed; that is, then send closed sets to closed sets.}
-    \begin{lemma}\label{1.3:lem:lemma_for_proper_covering}
-        Let $X$ and $Y$ be locally compact topological spaces and let $F:X\to Y$ be a proper map. Then for every $y\in Y$ and every neighborhood $U$ of $F^{-1}\l(y\r)$, there exists a neighborhood $V$ of $y$ such that $F^{-1}\!\l(V\r)\subseteq U$.
-    \end{lemma}
+    \begin{proposition}\label{1.3:prp:proper_give_neighborhoods}
+        Let $F:X\to Y$ be a proper map. Then for every $y\in Y$ and every neighborhood $U$ of $F^{-1}\l(y\r)$, there exists a neighborhood $V$ of $y$ such that $F^{-1}\!\l(V\r)\subseteq U$.
+    \end{proposition}
     \begin{proof}
         Since $U$ is open, the set $X\comp U$ is closed. Since $F$ is proper, it is closed and hence $F\l(X\comp U\r)$ is closed too. Clearly $y\not\in F\l(X\comp U\r)\eqqcolon W$, so $V\coloneqq X\comp W$ is a neighborhood of $y$; we claim that $F^{-1}\l(V\r)\subseteq U$. Indeed, for all $F\l(x\r)\in V$, we see that $F\l(x\r)\not\in F\l(X\comp U\r)$ and so $x\not\in X\comp U$.\qed
     \end{proof}
     \begin{definition}
-        Let $X$ and $Y$ be locally compact topological spaces. A map $F:X\to Y$ is said to be a \uldef{covering map} if every point $y\in Y$ has a neighborhood $V$ such that $F^{-1}\l(V\r)=\bigcup_{j\in J}U_j$ where $U_j$ are disjoint open sets in $X$, each homeomorphic to $V$ via $\l.F\r|_{U_j}$.
+        A map $F:X\to Y$ is said to be a \uldef{covering map} if every point $y\in Y$ has a neighborhood $V$ such that $F^{-1}\l(V\r)=\bigcup_{j\in J}U_j$ where $U_j$ are disjoint open sets in $X$, each homeomorphic to $V$ via $\l.F\r|_{U_j}$.
     \end{definition}
     \begin{example}
-        Let $m\geq2$ be a natural number and consider the power map $f:\C^\ast\to\C^\ast$ mapping $z\mapsto z^m$. We claim that $f$ is a covering map, so take $b\in\C^\ast$ and let $a\in\C^\ast$ be any one of its $m^\textrm{th}$ roots. Since $f$ is a local homeomorphism, there exist neighborhoods $U_0$ of $a$ and $V$ of $b$ such that $\l.f\r|_{U_0}:U_0\to V$ is a homeomorphism. It is clear then that\side{Indeed, for all $c\in f^{-1}\l(V\r)$, $f\l(c\r)\in V$ and so there exists some $a'\in U_0$ such that $f\l(a'\r)=f\l(c\r)$. Then $c=\omega^ja'$ for some $0\leq j\leq m-1$, so $c\in\omega^jU_0$. Conversely, if $\in\omega^jU_0$ for some $0\leq j\leq m-1$, then $c=\omega^ja'$ for some $a'\in U_0$ and hence $f\l(c\r)=f\l(\omega^ja'\r)=f\l(a'\r)\in V$.}
+        Let $m\geq2$ be a natural number and consider the power map $f:\C^\ast\to\C^\ast$ mapping $z\mapsto z^m$. We claim that $f$ is a covering map, so take $b\in\C^\ast$ and let $a\in\C^\ast$ be any one of its $m^\textrm{th}$ roots. Since $f$ is a local homeomorphism, there exist neighborhoods $U_0$ of $a$ and $V$ of $b$ such that $\l.f\r|_{U_0}:U_0\to V$ is a homeomorphism. It is clear then that\side{Indeed, for all $c\in f^{-1}\l(V\r)$, $f\l(c\r)\in V$ and so there exists some $a'\in U_0$ such that $f\l(a'\r)=f\l(c\r)$. Then $c=\omega^ja'$ for some $0\leq j\leq m-1$, so $c\in\omega^jU_0$. Conversely, if $c\in\omega^jU_0$ for some $0\leq j\leq m-1$, then $c=\omega^ja'$ for some $a'\in U_0$ and hence $f\l(c\r)=f\l(\omega^ja'\r)=f\l(a'\r)\in V$.}
         \vspace{-0.05in}
         \begin{equation*}
             f^{-1}\l(V\r)=\bigcup_{j=0}^{m-1}\omega^jU_0,
@@ -59,20 +58,69 @@
         where $\omega$ is an $m^\textrm{th}$ root of unity, and since $f^{-1}\l(b\r)$ is discrete, the sets $U_j\coloneqq\omega^jU_0$ can be made small enough so that they are pairwise disjoint. Then each $\l.f\r|_{U_j}:U_j\to V$ is a homeomorphism, as desired.\exqed
     \end{example}
     \begin{example}
-        For any lattice $\Gamma\subseteq\C$, the projection $\pi:\C\to\C/\Gamma$ is a covering map. Indeed, take $z+\Gamma\in\C/\Gamma$ and let $w\in\C$ be such that $\pi\l(w\r)=z+\Gamma$. Since $\pi$ is unbranched, there exist neighborhoods $U$ of $w$ and $V$ of $z+\Gamma$ such that $\l.\pi\r|_{U}:U\to V$ is a homeomorphism. Then clearly
+        For any lattice $\Gamma\subseteq\C$, the projection $\pi:\C\to\C/\Gamma$ is a covering map. Indeed, take $z+\Gamma\in\C/\Gamma$ and let $w\in\C$ be such that $\pi\l(w\r)=z+\Gamma$. Since $\pi$ is unbranched, there exist neighborhoods $U$ of $w$ and $V$ of $z+\Gamma$ such that $\l.\pi\r|_{U}:U\to V$ is a homeomorphism. Then clearly\side{Similarly, for all $z\in\pi^{-1}\!\l(V\r)$, $\pi\l(z\r)\in V$ and so there exists some $w'\in U$ such that $\pi\l(z\r)=\pi\l(w'\r)$. Then $z+\Gamma=w'+\Gamma$, so $z=w'+\lambda$ for some $\lambda\in\Gamma$. Conversely, if $z\in\lambda+U$ for some $\lambda\in\Gamma$, then $z=w'+\lambda$ for some $w'\in U$ and hence $\pi\l(z\r)=\pi\l(\omega'+\lambda\r)=\pi\l(w\r)\in V$.}
         \begin{equation*}
             \pi^{-1}\l(V\r)=\bigcup_{\lambda\in\Gamma}\l(\lambda+U\r)
         \end{equation*}
         where the sets $U_\lambda\coloneqq\lambda+U$ are all disjoint and each $\l.\pi\r|_{U_\lambda}:U_\lambda\to V$ is a homeomorphism.\exqed
     \end{example}
-    \begin{theorem}
-        Let $X$ and $Y$ be locally compact topological surfaces. Then any proper local homeomorphism is a covering map.
-    \end{theorem}
+    \begin{proposition}
+        Any proper local homeomorphism is a covering map.
+    \end{proposition}
     \begin{proof}
         Let $F:X\to Y$ be a proper local homeomorphism and take $y\in Y$. We claim that $F^{-1}\l(y\r)$ is finite.
         \begin{itemize}
             \item For each $x\in F^{-1}\l(y\r)$, there exist neighborhoods $W_x$ of $x$ and $V$ of $y$ such that $\l.F\r|_{W_x}:W_x\to V$ is a homeomorphism. Then the sets $W_x$ must be disjoint, for if $x'\in W_x$ for some $x'\neq x$, then $\l.F\r|_{W_x}\!\l(x\r)=y=\l.F\r|_{W_x}\!\l(x'\r)$, contradicting that $\l.F\r|_{W_x}$ is a homeomorphism. Thus $F^{-1}\l(y\r)$ must be finite, lest the cover $\l\{W_x\r\}$ admits no finite subcover.
         \end{itemize}
-        Thus $F^{-1}\l(y\r)=\l\{x_1,\dots,x_n\r\}$ for some $x_j\in X$. Letting $W_j\coloneqq W_{x_j}$ as above, we see that $\bigcup_{j=1}^{n}W_j$ is a neighborhood of $F^{-1}\l(y\r)$. By Lemma \ref{1.3:lem:lemma_for_proper_covering}, there is a neighborhood $V$ of $y$ such that $F^{-1}\l(V\r)\subseteq\bigcup_{j=1}^{n}W_j$, so $F^{-1}\l(V\r)=\bigcup_{j=1}^{n}U_j$ where the sets $U_j\coloneqq W_j\cap F^{-1}\l(V\r)$ are all disjoint and each $\l.F\r|_{U_j}:U_j\to V$ is a homeomorphism.\qed
+        Thus $F^{-1}\l(y\r)=\l\{x_1,\dots,x_n\r\}$ for some $x_j\in X$. Letting $W_j\coloneqq W_{x_j}$ as above, we see that $\bigcup_{j=1}^{n}W_j$ is a neighborhood of $F^{-1}\l(y\r)$. By Proposition \ref{1.3:prp:proper_give_neighborhoods}, there is a neighborhood $V$ of $y$ such that $F^{-1}\l(V\r)\subseteq\bigcup_{j=1}^{n}W_j$, so $F^{-1}\l(V\r)=\bigcup_{j=1}^{n}U_j$ where the sets $U_j\coloneqq W_j\cap F^{-1}\l(V\r)$ are all disjoint and each $\l.F\r|_{U_j}:U_j\to V$ is a homeomorphism.\qed
     \end{proof}
+    \subsection{Liftings of Curves}
+    This section develops some technical tools to establish Theorem \ref{2.2:thm:preimage_cardinality}, which roughly states that the preimage of every covering map has the same cardinality.
+    \begin{definition}
+        A function $F:X\to Y$ is said to have the \uldef{curve lifting property} if for every curve $\alpha:\l[0,1\r]\to Y$ and every point $x_0\in X$ with $F\l(x_0\r)=\alpha\l(0\r)$, there exists a lifting $\tilde{\alpha}:\l[0,1\r]\to X$ w.r.t. $F$ such that $\tilde{\alpha}\l(0\r)=x_0$.
+    \end{definition}
+    \begin{lemma}
+        Every covering map $F:X\to Y$ has the curve lifting property.
+    \end{lemma}
+    \begin{proof}
+        Let\side{The idea of this proof is to split $\alpha\l(\l[0,1\r]\r)$ into (overlapping) paths $\alpha\l(\l[t_{k-1},t_k\r]\r)$, each of which is an open set, and construct the lifting $\tilde{\alpha}$ inductively: Given a lifting $\tilde{\alpha}$ defined up to some boundary $t_{k-1}$, we define it on the next interval $\l[t_{k-1},t_k\r]$ by lifting $\alpha$ (restricted to $\l[t_{k-1},t_k\r]$) via $\phi$. This gives us a `chain' of paths, which when joined together gives us a global lifting of $\alpha$.\\\ \\
+        The base case of this induction simply sets $\tilde{\alpha}\l(0\r)\coloneqq x_0$ in order to start-off this process.} $\alpha:\l[0,1\r]\to Y$ be a curve and let $x_0\in X$ be a point such that $F\l(x_0\r)=\alpha\l(0\r)$. Consider any open cover $\l\{V_i\r\}$ of $\alpha\l(\l[0,1\r]\r)$ where each $V_i$ is a connected open set in $\alpha\l(\l[0,1\r]\r)$. Thus $\l\{\alpha^{-1}\!\l(V_i\r)\r\}$ is an open cover of $\l[0,1\r]$, so it admits a finite subcover $\l\{\l(t_i,t_{i+1}\r)\r\}_{i=1}^n\coloneqq\l\{\alpha^{-1}\l(V_i\r)\r\}_{i=1}^n$. Reindexing if necessary, we obtain a partition
+        \begin{equation*}
+            0\eqqcolon t_0<t_1<\cdots<t_n\coloneqq1
+        \end{equation*}
+        of $\l[0,1\r]$ such that $\alpha\l(\l[t_{i-1},t_i\r]\r)\subseteq V_i$ for all $1\leq i\leq n$. Now, since $F$ is a covering map, there exist disjoint open sets $U_{ij}$ in $X$, each homeomorphic to $V_i$ via $\l.F\r|_{U_{ij}}$, such that $F^{-1}\!\l(V_i\r)=\bigcup_{j\in J_i}U_{ij}$. We now construct a lifting $\l.\tilde{\alpha}\r|_{\l[0,t_k\r]}:\l[0,t_k\r]\to X$ by induction on $k\in\N$.
+        \begin{itemize}
+            \item The base case for when $k=0$ is trivial by defining $\tilde{\alpha}\l(0\r)\coloneqq x_0$.
+        \end{itemize}
+        Suppose now that the lifting $\l.\tilde{\alpha}\r|_{\l[0,t_{k-1}\r]}:\l[0,t_{k-1}\r]\to X$ has been constructed for some $k\geq1$. Then\side{
+            \begin{equation*}
+                \begin{tikzcd}[ampersand replacement=\&]
+                    \& X \ar[d, "f"] \\
+                    \l[0,1\r] \ar[r, "\alpha"'] \ar[ur, "\tilde{\alpha}"] \& Y
+                \end{tikzcd}
+            \end{equation*}
+        } $\alpha\l(t_{k-1}\r)=F\l(\tilde{\alpha}\l(t_{k-1}\r)\r)\in V_k$, so there exists some $j\in J_k$ such that $\tilde{\alpha}\l(t_{k-1}\r)\in U_{kj}$. Letting $\phi:V_k\to U_{kj}$ be the inverse of $\l.F\r|_{U_{kj}}:U_{kj}\to V_k$, we set
+        \begin{equation*}
+            \l.\tilde{\alpha}\r|_{\l[t_{k-1},t_k\r]}\coloneqq\phi\circ\l.\alpha\r|_{\l[t_{k-1},t_k\r]}.
+        \end{equation*}
+        Clearly\side{$\tilde{\alpha}\l(t_{k-1}\r)=\phi\l(\alpha\l(t_{k-1}\r)\r)=\phi\l(f\l(\tilde{\alpha}\l(t_{k-1}\r)\r)\r)$ on the appropriate restrictions.}, $\tilde{\alpha}\!\l(t_{k-1}\r)$ agrees with our existing lifting, which makes the piecewise-defined map $\l.\alpha\r|_{\l[0,t_k\r]}$ a lifting of $\l.\alpha\r|_{\l[0,t_k\r]}$ w.r.t. $F$.\qed
+    \end{proof}
+    \begin{theorem}\label{2.2:thm:preimage_cardinality}
+        \textit{4.16: Preimages have the same cardinality.}
+    \end{theorem}
+    \begin{proof}
+
+    \end{proof}
+    % \begin{theorem}
+    %     \textit{4.17: Existence of lifting.}
+    % \end{theorem}
+    % \begin{proof}
+    %
+    % \end{proof}
+    % \begin{theorem}
+    %     \textit{4.19: Curve lifting property implies covering map.}
+    % \end{theorem}
+    % \begin{proof}
+    %
+    % \end{proof}
 \end{document}

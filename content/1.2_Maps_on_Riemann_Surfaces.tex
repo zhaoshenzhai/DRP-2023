@@ -78,9 +78,9 @@
         \end{equation*}
         which is well-defined, and since $\l(\psi\circ F\circ\phi^{-1}\r)^{-1}=\phi\circ F^{-1}\circ\psi^{-1}$, we see that $F^{-1}$ is holomorphic too.\exqed
     \end{example}
-    \begin{theorem}\label{1.2:thm:holomorphic_compact_constant}
+    \begin{proposition}\label{1.2:prp:holomorphic_compact_constant}
         Any holomorphic function $f:X\to\C$ on a compact Riemann surface $X$ is constant.
-    \end{theorem}
+    \end{proposition}
     \begin{proof}
         Since $f$ is holomorphic, the function $\l|f\r|:X\to\R$ defined by $\l|f\r|\l(x\r)\coloneqq\l|f\l(x\r)\r|$ is continuous on $X$. But $X$ is compact, so $\l|f\r|$ achieves its maximum at some point $p\in X$. Choosing a connected\side{Such a connected $U$ can always be found since we may let $V$ be a chart around $p$ and choose $\epsilon>0$ small enough so that $U\coloneqq B\l(p,\epsilon\r)\subseteq V$.} chart $\tpl{U,\phi}$ centered at $p$, we see that $f\circ\phi:U\to\C$ is holomorphic. Then $\l|f\circ\phi\r|:U\to\R$ has a local maximum at $0$, so, since $U$ is connected, $f\circ\phi$ is constant by the Maximum Principle. Then $f$ is locally constant around $p$, so, since $X$ is connected, $f$ is constant on $X$.\qed
     \end{proof}
@@ -156,7 +156,7 @@
     \end{definition}
     \subsection{Meromorphic Functions on $\RS$}
     \begin{example}
-        Let $f:W\subseteq\RS\to\C$ be a non-zero rational function $f\l(z\r)\coloneqq p\l(z\r)/q\l(z\r)$. Then $f$ is holomorphic at all points $z\in\C$ such that $q\l(z\r)\neq0$, and has a pole otherwise. Also, $f\l(\infty\r)\in\C$ if $\deg p=\deg q$, vanishes if $\deg p<\deg q$, and has a pole otherwise. In any case, $f$ is meromorphic on $\RS$\side{In fact, \textit{any} meromorphic function on the Riemann sphere is a rational function; see Theorem \ref{1.2:thm:meromorphic_Riemann_sphere_rational}.}. To compute $\ord_z\!\l(f\r)$ at all $z\in\RS$, we split $p$ and $q$ into linear factors to write $f$ uniquely as
+        Let $f:W\subseteq\RS\to\C$ be a non-zero rational function $f\l(z\r)\coloneqq p\l(z\r)/q\l(z\r)$. Then $f$ is holomorphic at all points $z\in\C$ such that $q\l(z\r)\neq0$, and has a pole otherwise. Also, $f\l(\infty\r)\in\C$ if $\deg p=\deg q$, vanishes if $\deg p<\deg q$, and has a pole otherwise. In any case, $f$ is meromorphic on $\RS$\side{In fact, \textit{any} meromorphic function on the Riemann sphere is a rational function; see Proposition \ref{1.2:prp:meromorphic_Riemann_sphere_rational}.}. To compute $\ord_z\!\l(f\r)$ at all $z\in\RS$, we split $p$ and $q$ into linear factors to write $f$ uniquely as
         \begin{equation*}
             f\l(z\r)=c\prod\l(z-\lambda_i\r)^{\alpha_i}
         \end{equation*}
@@ -170,15 +170,15 @@
         \end{equation*}
         Lastly, it is clear that $\ord_z\!\l(f\r)=0$ for all $z\neq \lambda_i,\infty$.\exqed
     \end{example}
-    \begin{theorem}\label{1.2:thm:meromorphic_Riemann_sphere_rational}
-        Any meromorphic function on the Riemann sphere is a rational function.
-    \end{theorem}
+    \begin{proposition}\label{1.2:prp:meromorphic_Riemann_sphere_rational}
+        Any meromorphic function on $\RS$ is a rational function.
+    \end{proposition}
     \begin{proof}
         Let $f:\RS\to\C$ be meromorphic. Since $\RS$ is compact, it has finitely-many poles.\side[0.01in]{Otherwise, the set of poles would have a limit point, contradicting the discreteness of poles.} W.l.o.g., assume that $\infty$ is not a pole of $f$ (since we may consider $1/f$ instead). Now, for each pole $\lambda_i\in\C$ of $f$, consider its principle part
         \begin{equation*}
             h_i\!\l(z\r)=\sum_{\mathclap{j=-m_i}}^{-1}c_{ij}\l(z-\lambda_i\r)^j
         \end{equation*}
-        for some $m_i>1$. Then the function $g\coloneqq f-\sum_ih_i$ is holomorphic function on $\RS$, and since $\RS$ is compact, it is constant by Theorem \ref{1.2:thm:holomorphic_compact_constant}. Thus $f=g+\sum_ih_i$, which is a rational function.\qed
+        for some $m_i>1$. Then the function $g\coloneqq f-\sum_ih_i$ is holomorphic function on $\RS$, and since $\RS$ is compact, it is constant by Proposition \ref{1.2:prp:holomorphic_compact_constant}. Thus $f=g+\sum_ih_i$, which is a rational function.\qed
     \end{proof}
     \begin{remark}
         Together with the above computation, this shows that if $f$ is a meromorphic function on $\RS$, then $\sum_{z\in\RS}\ord_z\!\l(f\r)=0$. As we shall see, this is a general fact for all compact Riemann surfaces.\exqed
@@ -194,7 +194,7 @@
             \item If $Y=\C$, then $\l|F\r|$ does not attain its maximum.
             \item If $X$ is compact, then $F$ is surjective and $Y$ is compact.
         \end{itemize}
-        Together, the last two claims give an alternative proof for Theorem \ref{1.2:thm:holomorphic_compact_constant}.}\vspace{-0.05in}
+        Together, the last two claims give an alternative proof for Proposition \ref{1.2:prp:holomorphic_compact_constant}.}\vspace{-0.05in}
     \begin{proof}
         Let $\tpl{U_2,\phi_2}$ be a chart of $Y$ centered at $F\l(p\r)$ and consider any chart $\tpl{V,\psi}$ of $X$ centered at $p$. Then the function $h\coloneqq\phi_2\circ F\circ\psi^{-1}$ is holomorphic, so it admits a power series representation $h\l(w\r)=\sum_{i=0}^{\infty}c_iw^i$ for all $w\in\psi\l(V\r)$. Note that $h\l(0\r)=\phi_2\l(F\l(p\r)\r)=0$, so $c_0=0$. Let $m\geq1$ be the smallest integer such that $c_m\neq0$, so
         \begin{equation*}
