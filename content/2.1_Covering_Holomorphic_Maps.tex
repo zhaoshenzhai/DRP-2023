@@ -8,7 +8,7 @@
         Let $X$ and $Y$ be Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. A point $p\in X$ is said to be a \uldef{ramification point of $F$} if $\l.F\r|_U$ is not injective for any neighborhood $U$ of $p$, in which case $F\l(p\r)\in X$ is said to be a \uldef{critical value of $F$}. If $F$ has no ramification points, then $F$ is said to be an \uldef{unbranched holomorphic map}.
     \end{definition}
     \side[-0.56in]{It is immediate that $F$ is unbranched iff it is a local homeomorphism. Indeed, if $F$ is unbranched, then for every $p\in X$ there exists a neighborhood $U$ of $p$ such that $\l.F\r|_U$ is injective. By the Open Mapping Theorem, $F$ is open and hence $\l.F\r|_U$ maps $U$ homeomorphically to the open set $F\l(U\r)$. Conversely, if $F$ is a local homeomorphism, then for every $p\in X$ there exists a neighborhood $U$ of $p$ that is mapped homeomorphically onto an open set in $Y$. In particular, $\l.F\r|_U$ is injective, so $F$ is unbranched at $p$.}
-    \begin{proposition}\label{2.1:prp:ramification_off_mult_2}
+    \begin{proposition}\label{2.1:prp:ramification_iff_mult_2}
         Let $X$ and $Y$ be Riemann surfaces and fix $p\in X$. A non-constant holomorphic map $F:X\to Y$ has a ramification point at $p$ iff $\mult_p\!\l(F\r)\geq2$.
     \end{proposition}
     \begin{proof}
@@ -130,7 +130,7 @@
         \end{equation*}
     \end{theorem}
     \begin{proof}
-        If $q$ is not a critical point, then Proposition \ref{2.1:prp:ramification_off_mult_2} shows that $\mult_p\!\l(F\r)=1$ for any $p\in F^{-1}\!\l(p\r)$. Then $\deg F=\l|F^{-1}\!\l(q\r)\r|$, which agrees with our definition.\\\ \\
+        If $q$ is not a critical point, then Proposition \ref{2.1:prp:ramification_iff_mult_2} shows that $\mult_p\!\l(F\r)=1$ for any $p\in F^{-1}\!\l(p\r)$. Then $\deg F=\l|F^{-1}\!\l(q\r)\r|$, which agrees with our definition.\\\ \\
         Otherwise, $q$ is a critical point of $F$\side{Although $q$ is a critical point of $F$, every point in a small enough neighborhood around it is not a critical point.}. Since $F^{-1}\!\l(q\r)$ is compact, we see that $F^{-1}\!\l(q\r)=\l\{p_1,\dots,p_n\r\}$ for some $p_i\in X$. Fix $1\leq j\leq n$ and set $m_j\coloneqq\mult_{p_j}\!\l(F\r)$. We claim that there exist neighborhoods $U_j$ of $p_j$ and $V_j$ of $q$ such that $\l|F^{-1}\!\l(r\r)\cap U_j\r|=m_j$ for all $r\in V_j\comp\l\{q\r\}$.
         \begin{itemize}
             \item By Theorem \ref{1.2:thm:local_normal_form}, there exist charts $\tpl{U_j,\phi_j}$ of $X$ centered at $p_j$ and $\tpl{V_j,\psi_j}$ of $Y$ centered $q$ such that $F$ acts as the power function $f\l(z\r)\coloneqq z^{m_j}$ on $\phi_j\!\l(U_j\r)$. Take\side{Note that $V_j$ can be taken small enough so that $r$ is \textit{not} a critical value of $F$.} $r\in V_j\comp\l\{q\r\}$ and set $w\coloneqq\psi_j\!\l(r\r)\neq0$. Then $\l|f^{-1}\!\l(w\r)\r|=m_j$, so we have
@@ -138,14 +138,26 @@
                     \l|F^{-1}\!\l(r\r)\cap U_j\r|=\l|\phi_j\l(F^{-1}\l(r\r)\r)\r|=\l|\phi_j\l(F^{-1}\!\l(\psi_j^{-1}\!\l(w\r)\r)\r)\r|=\l|f^{-1}\!\l(w\r)\r|=m_j.
                 \end{equation*}
         \end{itemize}
-        Since $U_j$ is a neighborhood of $p_j$, we see that $F^{-1}\!\l(V_j\r)\subseteq U_j$ by restricting $V_j$ in accordance with Proposition \ref{1.3:prp:proper_give_neighborhoods}, if necessary. Then, with $V\coloneqq\bigcap_{i=1}^{n}V_i$, we see that
-        \begin{equation*}
-            F^{-1}\!\l(V\r)\subseteq\bigcup_{i=1}^{n}U_i
-        \end{equation*}
-        where the sets $U_i$ are all disjoint. Take any $r\in V\comp\l\{q\r\}$. Then $r\in V_i\comp\l\{q\r\}$ for all $1\leq i\leq n$, so
+        Since $U_j$ is a neighborhood of $p_j$, we see that $F^{-1}\!\l(V_j\r)\subseteq U_j$ by restricting $V_j$ in accordance with Proposition \ref{1.3:prp:proper_give_neighborhoods}, if necessary. Then, with $V\coloneqq\bigcap_{i=1}^{n}V_i$, we see that $F^{-1}\!\l(V\r)\subseteq\bigcup_{i=1}^{n}U_i$ where the sets $U_i$ are all disjoint. Take any $r\in V\comp\l\{q\r\}$. Then $r\in V_i\comp\l\{q\r\}$ for all $1\leq i\leq n$, so
         \begin{equation*}
             \l|F^{-1}\!\l(r\r)\r|=\l|F^{-1}\!\l(r\r)\cap\bigcup_{i=1}^{n}U_i\r|=\l|\bigcup_{i=1}^{n}\l(F^{-1}\!\l(r\r)\cap U_i\r)\r|=\sum_{i=1}^{n}\l|F^{-1}\!\l(r\r)\cap U_i\r|=\sum_{i=1}^{n}m_i.
         \end{equation*}
         But $r$ is not a critical point of $F$, so the result follows.\qed
+    \end{proof}
+    \begin{corollary}
+        If $X$ is compact, then a holomorphic map $F:X\to Y$ is a biholomorphism iff $\deg F=1$.
+    \end{corollary}
+    \begin{proof}
+        Since $X$ is compact, we see that $F$ is proper surjection. Observe that $F$ is an injective iff it has no critical points, and by Proposition \ref{2.1:prp:ramification_iff_mult_2}, this occurs iff $\mult_p\!\l(F\r)=1$ for all $p\in X$.
+        \begin{itemize}
+            \item ($\Rightarrow$) If $F$ is an injection, then $\l|f^{-1}\!\l(p\r)\r|=1$ for all $p\in X$. Thus $\deg F=1$.
+            \item ($\Leftarrow$): Since $\mult_p\!\l(F\r)\geq1$ for all $p\in X$, the above theorem forces $\mult_p\!\l(F\r)=1$.\qed
+        \end{itemize}
+    \end{proof}
+    \begin{corollary}
+        If $X$ is compact and there exists a meromorphic function $f:X\to\C$ with a single simple pole, then $X\iso\RS$.
+    \end{corollary}
+    \begin{proof}
+        Let $f:X\to\C$ be a meromorphic function with only a simple pole at $p$ and consider its associated holomorphic map $F:X\to\RS$. By Proposition \ref{1.2:prp:multiplicity_and_order}, we see that $\mult_p\!\l(F\r)=\ord_p\!\l(f\r)=1$ and hence $p$ is unramified. Since $p$ is the only pole of $f$, we see that $\deg F=\l|F^{-1}\!\l(\infty\r)\r|=1$.\qed
     \end{proof}
 \end{document}
