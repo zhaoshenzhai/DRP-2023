@@ -7,7 +7,7 @@
         \begin{equation*}
             \phi_2\circ\phi_1^{-1}:\phi_1\l(U_1\cap U_2\r)\to\phi_2\l(U_1\cap U_2\r)
         \end{equation*}
-        is biholomorphic. A \uldef{$d$-dimensional complex atlas on $X$} is a collection $\ms{A}\coloneqq\l\{\l(U_i,\phi_i\r)\r\}_{i\in I}$ of $d$-dimensional complex charts such that every two charts $\l(U_i,\phi_i\r)$ and $\l(U_j,\phi_j\r)$ are holomorphically compatible and $X=\bigcup_{i\in I}U_i$.
+        is biholomorphic. A \uldef{$d$-dimensional complex atlas on $X$} is a collection $\mc{A}\coloneqq\l\{\l(U_i,\phi_i\r)\r\}_{i\in I}$ of $d$-dimensional complex charts such that every two charts $\l(U_i,\phi_i\r)$ and $\l(U_j,\phi_j\r)$ are holomorphically compatible and $X=\bigcup_{i\in I}U_i$.
     \end{definition}
     \side[-1.31in]{Charts provide us a way of making $X$ $\textrm{`}$look like$\textrm{'}$ an open set in $\C^d$. Indeed, they provide local coordinates for every point in $X$ in such a way that the $\textrm{`}$change of coordinates$\textrm{'}$ map $\phi_2\circ\phi_1^{-1}$ ensures that local notions of functions in $\C^d$ are well-defined on $X$ too.
         \begin{equation*}
@@ -18,7 +18,7 @@
         \end{equation*}
     It is clear that one only needs $\phi_2\circ\phi_1^{-1}$ to be holomorphic for it to be biholomorphic.}
     \begin{remark}
-        Two atlases $\ms{A}$ and $\ms{B}$ on a manifold $X$ are said to be \ul{analytically equivalent} if every chart in $\ms{A}$ is compatible with every chart in $\ms{B}$. By Zorn's Lemma, every atlas $\ms{A}$ of a manifold $X$ is contained in a unique maximal atlas $\mf{U}$ on $X$. Moreover, two atlases are equivalent iff they are contained in the same maximal atlas, which justifies the following definition.\exqed
+        Two atlases $\mc{A}$ and $\mc{B}$ on a manifold $X$ are said to be \ul{analytically equivalent} if every chart in $\mc{A}$ is compatible with every chart in $\mc{B}$. By Zorn's Lemma, every atlas $\mc{A}$ of a manifold $X$ is contained in a unique maximal atlas $\mf{U}$ on $X$. Moreover, two atlases are equivalent iff they are contained in the same maximal atlas, which justifies the following definition.\exqed
     \end{remark}
     \begin{definition}
         Let $X$ be a second-countable Hausdorff space. A \uldef{$d$-dimensional complex} \uldef{structure} on $X$ is a $d$-dimensional maximal atlas $\mf{U}$ on $X$, or, equivalently, an equivalence class of $d$-dimensional complex atlases on $X$. The pair $\tpl{X,\mf{U}}$ is then called a \uldef{$d$-dimensional} \uldef{complex manifold}.
@@ -27,7 +27,7 @@
     \begin{definition}
         A \uldef{Riemann surface} is a connected $1$-dimensional complex manifold.
     \end{definition}
-    \begin{example}\side[-0.15in]{Every Riemann surface can be regarded as a (connected) $2$-dimensional real manifold by $\textrm{`}$forgetting$\textrm{'}$ its complex structure; indeed all holomorphic maps are real $\mc{C}^\infty$ functions.}
+    \begin{example}\side[-0.15in]{Every Riemann surface can be regarded as a (connected) $2$-dimensional real manifold by $\textrm{`}$forgetting$\textrm{'}$ its complex structure; indeed all holomorphic maps are real $\ms{C}^\infty$ functions.}
         Some elementary examples of Riemann surfaces.
         \begin{itemize}
             \item The complex plane $\C$, equipped with its standard topology, can be given a complex structure $\mf{U}$ by choosing the atlas containing a single chart $\tpl{\C,\id_\C}$. We may, however, also give $\C$ a different complex structure $\mf{U}'$ by choosing the chart map $\phi:z\mapsto\bar{z}$ instead. Indeed, $\mf{U}\neq\mf{U}'$ since the map $\phi\circ\id_\C^{-1}=\phi$ is not holomorphic and hence the atlases $\l\{\tpl{\C,\id_\C}\r\}$ and $\l\{\tpl{\C,\phi}\r\}$ are not equivalent. This example generalizes to any domain $D\subseteq\C$.

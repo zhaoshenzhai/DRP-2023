@@ -1,0 +1,48 @@
+\documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
+\begin{document}
+    \section{Sheaves and Function Germs}
+    \subsection{Presheaves and Sheaves}
+    \begin{definition}
+        Let $\tpl{X,\mc{T}}$ be a topological space. A \uldef{presheaf of Abelian groups on $X$} is a pair $\tpl{\ms{F},\rho}$ consisting of
+        \begin{itemize}
+            \item a family $\ms{F}\coloneqq\l\{\ms{F}\l(U\r)\r\}$ of Abelian groups $\ms{F}\l(U\r)$ for every $U\in\mc{T}$,
+                \vspace{-0.05in}
+            \item a family $\rho\coloneqq\l\{\rho^U_V\r\}$ of group homomorphisms $\rho^U_V:\ms{F}\l(U\r)\to\ms{F}\l(V\r)$ for every $U,V\in\mc{T}$ with $V\subseteq U$,
+        \end{itemize}
+        such that the following two properties hold:
+        \begin{itemize}
+            \item For every $U\in\mc{T}$, we have $\rho^U_U=\id_{\ms{F}\l(U\r)}$.
+                \vspace{-0.05in}
+            \item For every $U,V,W\in\mc{T}$ with $W\subseteq V\subseteq U$, we have $\rho^V_W\circ\rho^U_V=\rho^U_W$.
+        \end{itemize}
+    \end{definition}
+    \begin{remark}\side[-1.48in]{Analogously, we define the presheaf of sets, rings, vector spaces, algebras, etc, on a topological space $X$.\\\ \\For those with some category theory background, fix any category $\cat{C}$. A \ul{$\cat{C}$-valued presheaf on $X$} is simply a functor $\ms{F}:\mc{T}\to\cat{C}$ where $\mc{T}$ is the preorder category induced by $\tpl{\mc{T},\subseteq}$.}
+        Presheaves give us a way of tracking data associated with open sets of a topological space in such a way that makes restricting to a smaller open set $V\subseteq U$ well-behaved. Consider, for instance, a Riemann surface $X$ and the presheaf of all holomorphic functions $\ms{O}$ on $X$.
+        \begin{itemize}
+            \item To every open set $U\subseteq X$ we consider the $\C$-algebra $\HOLO\l(U\r)$ of all holomorphic functions $f:U\to\C$. For any open $V\subseteq U$, we define $\rho^U_V\!\l(f\r)\coloneqq\l.f\r|_V$. The two properties are then trivial, which respectively states that restricting to the domain does nothing, and that restricting once to $V$ and then to $W\subseteq V$ yields the same function as restricting to $W$ directly.
+        \end{itemize}
+        Similarly, we have the presheaf of all meromorphic functions $\MERO$ on $X$. However, those two examples are much more than presheaves since global information about elements in $\ms{F}\l(X\r)$ can be obtained locally by `restricting' to $U$. The notion of a sheaf makes this precise.\exqed
+    \end{remark}
+    \begin{definition}
+        Let $X$ be a topological space. A presheaf $\ms{F}$ on $X$ is said to be a \uldef{sheaf} if for every open set $U\subseteq X$ and every family $\l\{U_i\r\}_{i\in I}$ of open subsets that cover $U$, the following two properties hold:
+        \begin{itemize}
+            \item (Identity): For every $f,g\in\ms{F}\l(U\r)$, if $\rho^U_{U_i}\!\l(f\r)=\rho^U_{U_i}\!\l(g\r)$ for every $i\in I$, then $f=g$.
+                \vspace{-0.05in}
+            \item (Gluing): For every family $\l\{f_i\r\}_{i\in I}$ with $f_i\in\ms{F}\l(U_i\r)$, if $\rho^{U_i}_{U_i\cap U_j}\!\l(f_i\r)=\rho^{U_j}_{U_i\cap U_j}\!\l(f_j\r)$ for all $i,j\in I$, then there is a function $f\in\ms{F}\l(U\r)$ such that $\rho^U_{U_i}\!\l(f\r)=f_i$ for every $i\in I$.
+        \end{itemize}
+    \end{definition}
+    \side[-1.1in]{We see that both $\HOLO$ and $\MERO$ are sheaves on $X$ since:
+        \begin{itemize}
+            \item If two functions $f$ and $g$ agree on all restrictions, then they agree globally.
+            \item If we have a family $\l\{f_i\r\}$ that agree on all pairwise common domains, then there exists a globally defined function $f$ whose restrictions are $f_i$'s.
+        \end{itemize}}
+    \vspace{-0.05in}
+    \begin{example}
+        We give an example of a presheaf that is \textit{not} a sheaf. Let $X$ be a normed vector space. For all $U\subseteq X$, let $\ms{B}\l(U\r)$ be the vector space of all bounded functions $f:U\to\R$.
+        \begin{itemize}
+            \item It is clear from our remarks above that $\ms{B}$ is a presheaf. In fact, since $\ms{B}\l(U\r)$ contains functions, we see that if $f,g\in\ms{B}\l(U\r)$ agree on all restrictions, then they agree on $U$.
+        \end{itemize}
+        The problem arises when we consider glueing. For instance, let $U_i\coloneqq\l\{p\in X\mid\l\|p\r\|<i\r\}$ and observe that $\l\{U_i\r\}_{i\in\R^+}$ covers $X$. Consider the family $\l\{f_i\r\}$ where each $f_i\coloneqq\id_{U_i}$, which clearly agree on their pairwise intersections. But no function $f:X\to\R$ such that $\l.f\r|_{U_i}=f_i$ for all $i\in\R^+$ can be bounded, so $\ms{B}$ is not a sheaf.\exqed
+    \end{example}
+    \subsection{Stalks and their Topology}
+\end{document}
