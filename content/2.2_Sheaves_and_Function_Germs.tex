@@ -49,7 +49,7 @@
         \end{itemize}
     \end{example}
     \begin{definition}
-        Let $\tpl{\mc{F},\rho}$ and $\tpl{\mc{G},\sigma}$ be two sheaves of Abelian groups on $X$. A \uldef{morphism} \uldef{of sheaves} $\eta:\mc{F}\to\mc{G}$ is a family $\l\{\eta_U\r\}_{U\in\mc{T}}$ of group homomorphisms $\eta_U:\mc{F}\l(U\r)\to\mc{G}\l(U\r)$ such that for every open set $V\subseteq U$, the following diagram commutes.
+        Let $\tpl{\mc{F},\rho}$ and $\tpl{\mc{G},\sigma}$ be two sheaves of Abelian groups on $X$. A \uldef{morphism} \uldef{of sheaves} $\eta:\mc{F}\to\mc{G}$ is a family $\l\{\eta_U\r\}_{U\in\mc{T}}$ of group homomorphisms $\eta_U:\mc{F}\l(U\r)\to\mc{G}\l(U\r)$ such that for every $U\in\mc{T}$ and every open set $V\subseteq U$, the following diagram commutes.
         \vspace{-0.05in}
         \begin{equation*}
             \begin{tikzcd}
@@ -59,12 +59,12 @@
             \vspace{-0.02in}
         \end{equation*}
     \end{definition}
-    \side[-1.09in]{Phrased categorically, a morphism of sheaves is simply a natural transformation $\eta:\mc{F}\Rightarrow\mc{G}$. This makes the collection of all sheaves on $X$ into a category.}
+    \side[-1.07in]{Phrased categorically, a morphism of sheaves is simply a natural transformation $\eta:\mc{F}\Rightarrow\mc{G}$. This makes the collection of all sheaves on $X$ into a category.}
     \begin{example}
         Some examples relating to divisors of a Riemann surface $X$.
         \begin{itemize}
-            \item For divisors $D_1$ and $D_2$ of a Riemann surface $X$, we write $D_1\leq D_2$ if $D_1\!\l(p\r)\leq D_2\!\l(p\r)$ for all $p\in X$. This induces a inclusion map $\iota:\HOLO\l[D_1\r]\into\HOLO\l[D_2\r]$ defined\side{In particular, we have the inclusion $\HOLO\into\MERO$.} by $\iota_U\!\l(f\r)\coloneqq f$ for all $f\in\HOLO\l[D_1\r]\l(U\r)$, which makes sense since if the poles of $f$ are bounded by $D_1$, then clearly they are also bounded by $D_2$ provided $D_1\leq D_2$. This map clearly also respect restrictions, so it is indeed a morphism.
-            \item For every non-zero meromorphic function $f:X\to\C$, let $D\l(p\r)\coloneqq\ord_p\!\l(f\r)$. This defines a divisor $D:X\to\Z$ by discreteness of zeros and poles, which induces a map $\div:\MERO^\ast\to\mc{D}$.
+            \item For divisors $D_1$ and $D_2$ of a Riemann surface $X$, we write $D_1\leq D_2$ if $D_1\!\l(p\r)\leq D_2\!\l(p\r)$ for all $p\in X$. This induces an \textit{inclusion morphism} $\iota:\HOLO\l[D_1\r]\into\HOLO\l[D_2\r]$ defined\side{In particular, we have the inclusion $\HOLO\into\MERO$.} by $\iota_U\!\l(f\r)\coloneqq f$ for all $U\in\mc{T}$ and $f\in\HOLO\l[D_1\r]\l(U\r)$, which makes sense since if $D_1\leq D_2$ and the poles of $f$ are bounded by $D_1$, then they are also clearly bounded by $D_2$. This inclusion also respect restrictions, so it is indeed a morphism of sheaves.
+            \item For all $U\in\mc{T}$, we associate to each $f\in\MERO^\ast\!\l(U\r)$ the divisor $\div f:U\to\Z:p\mapsto\ord_p\!\l(f\r)$\side{Such a function $\div f$ is a divisor by discreteness of zeros and poles.}. This induces a morphism of sheaves $\div:\MERO^\ast\to\mc{D}$ since for all $U\in\mc{T}$ and all open sets $V\subseteq U$, the restriction of the divisor of any $f\in\MERO^\ast\!\l(U\r)$ coincides with the divisor of the restriction $\l.f\r|_V$.\exqed
         \end{itemize}
     \end{example}
     \subsection{Stalks and their Topology}
