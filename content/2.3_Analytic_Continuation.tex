@@ -1,16 +1,39 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
     \section{Analytic Continuation}
-    We now restrict to when $X$ is a Riemann surface with a fixed point $p\in X$. For convenience, we write\side[0.01in]{In particular, any function $f\in\HOLO\l[p\r]\l(U\r)$ is holomorphic away from $p$.} $\HOLO\l[p\r]\coloneqq\HOLO\l[D\r]$ where $D$ is the divisor on $X$ defined by $D\l(p\r)\coloneqq1$ and zero everywhere else. Throughout, $\alpha:\l[0,1\r]\to X$ is a curve with $p=\alpha\l(0\r)$ and $q\coloneqq\alpha\l(1\r)\neq p$, and $\phi_0\in\HOLO_p\!\l[p\r]$ is a fixed germ.
+    We now restrict to when $X$ is a Riemann surface with a fixed point $p\in X$. For convenience, we write\side[0.01in]{Thus if $U\subseteq X$ is an open set containing $p$, then any $f\in\HOLO_p\!\l[p\r]\l(U\r)$ has at most a single simple pole. Otherwise, if $p\not\in U$, then $f$ is holomorphic.} $\HOLO\l[p\r]\coloneqq\HOLO\l[D\r]$ where $D$ is the divisor on $X$ defined by $D\l(p\r)\coloneqq1$ and zero everywhere else. Throughout, $\alpha:\l[0,1\r]\to X$ is a curve with $p=\alpha\l(0\r)$ and $q\coloneqq\alpha\l(1\r)\neq p$, and $\phi_0\in\HOLO_p\!\l[p\r]$ is a fixed germ.
     \subsection{Analytic Continuation of Germs along Curves}
     \begin{definition}
-        A germ $\psi\in\HOLO_q$ is said to be the \uldef{analytic continuation of $\phi_0$ along $\alpha$} if there exist a family $\phi_t\in\HOLO_{\alpha\l(t\r)}\!\l[p\r]$ of germs for all $t\in\l[0,1\r]$ with $\psi=\phi_1$ such that for all $\tau\in\l[0,1\r]$, there exists a neighborhood $T\subseteq\l[0,1\r]$, an open set $U\subseteq X$, and a function $f\in\HOLO\l[p\r]\l(U\r)$ such that $\l[f\r]_{\alpha\l(t\r)}=\phi_t$ for all $t\in T$.
+        A germ $\psi\in\HOLO_q$ is said to be the \uldef{analytic continuation of $\phi_0$ along $\alpha$} if there exist a family $\phi_t\in\HOLO_{\alpha\l(t\r)}\!\l[p\r]$ of germs for all $t\in\l[0,1\r]$ with $\psi=\phi_1$ such that for all $\tau\in\l[0,1\r]$, there exists a neighborhood $T\subseteq\l[0,1\r]$ of $\tau$, an open set $U\subseteq X$ with $\alpha\l(T\r)\subseteq U$, and a function $f\in\HOLO\l[p\r]\l(U\r)$ such that $\l[f\r]_{\alpha\l(t\r)}=\phi_t$ for all $t\in T$.
     \end{definition}
     \begin{proposition}
         A germ $\psi\in\HOLO_q$ is an analytic continuation of $\phi_0$ along $\alpha$ iff there exists a lifting $\tilde{\alpha}:\l[0,1\r]\to\l|\HOLO\l[p\r]\r|$ such that $\tilde{\alpha}\l(0\r)=\phi_0$ and $\tilde{\alpha}\l(1\r)=\psi$.
     \end{proposition}
     \begin{proof}
-        
+        If\side[-0.42in]{In particular, the uniqueness of liftings shows that if an analytic continuation of $\phi_0$ along $\alpha$ exists, then it is unique.} $\psi\in\HOLO_q$ is an analytic continuation of $\phi_0$ along $\alpha$, let $\l\{\phi_t\r\}$ be a family of germs as defined above. We claim that the curve $\tilde{\alpha}:\l[0,1\r]\to\l|\HOLO\l[p\r]\r|$ mapping $t\mapsto\phi_t$ is a lifting of $\alpha$.
+        \begin{itemize}
+            \item First, note that $\phi_t\in\HOLO_{\alpha\l(t\r)}\!\l[p\r]$ for all $t\in\l[0,1\r]$, so\side[-0.22in]{Clearly $\tilde{\alpha}\l(0\r)=\phi_0$ and $\tilde{\alpha}\l(1\r)=\psi$.
+                \begin{equation*}
+                    \begin{tikzcd}[ampersand replacement=\&]
+                        \& \l|\HOLO\l[p\r]\r| \ar[d, "\pi"] \\
+                        \l[0,1\r] \ar[r, "\alpha"'] \ar[ur, "\tilde{\alpha}"] \& X
+                    \end{tikzcd}
+                \end{equation*}
+                } $\l(\pi\circ\tilde{\alpha}\r)\l(t\r)=\pi\l(\tilde{\alpha}\l(t\r)\r)=\pi\l(\phi_t\r)=\alpha\l(t\r)$. It remains to show that $\tilde{\alpha}$ is continuous, so fix a basis element $\l[U,f\r]\subseteq\l|\HOLO\l[p\r]\r|$ and take $\tau\in\tilde{\alpha}^{-1}\!\l(\l[U,f\r]\r)$. Then $\tau\in\l[0,1\r]$, so there exists a neighborhood $T\subseteq\l[0,1\r]$ of $\tau$ such that $\l[f\r]_{\alpha\l(t\r)}=\phi_t$ for all $t\in T$. Observe that $\tilde{\alpha}\l(T\r)\subseteq\l[U,f\r]$ since for all $\phi_t\in\tilde{\alpha}\l(T\r)$, we have $\alpha\l(t\r)\in U$ and hence $\phi_t=\l[f\r]_{\alpha\l(t\r)}\in\l[U,f\r]$.
+        \end{itemize}
+        Conversely, suppose that there is a lifting $\tilde{\alpha}:\l[0,1\r]\to\l|\HOLO\l[p\r]\r|$ of $\alpha$ with $\tilde{\alpha}\l(0\r)=\phi_0$ and $\tilde{\alpha}\l(1\r)=\psi$. For all $t\in\l[0,1\r]$, we define $\phi_t\coloneqq\tilde{\alpha}\l(t\r)$, so $\phi_1=\psi$. Fix $\tau\in\l[0,1\r]$, so there exists a basis neighborhood $\l[U,f\r]\subseteq\l|\HOLO\l[p\r]\r|$ of $\tilde{\alpha}\l(\tau\r)$. But $\tilde{\alpha}$ is continuous, so there exists a neighborhood $T\subseteq\l[0,1\r]$ of $\tau$ such that $\tilde{\alpha}\l(T\r)\subseteq\l[U,f\r]$. Projecting, we see that $\alpha\l(T\r)\subseteq\pi\l(\l[U,f\r]\r)=U$. Finally, the commutativity of the diagram gives $\l[f\r]_{\alpha\l(t\r)}\!=\phi_t$ for all $t\in T$, so $\psi$ is an analytic continuation of $\phi_0$ along $\alpha$.\qed
+    \end{proof}
+    \begin{corollary}[Monodromy Theorem]
+        Let $\alpha_0,\alpha_1:\l[0,1\r]\to X$ be homotopic curves from $p$ to $q$. If the germ $\phi_0\in\HOLO_p\!\l[p\r]$ admits an analytic continuation along every deformation of $\alpha_0$ to $\alpha_1$, then the analytic continuations of $\phi_0$ along $\alpha_0$ and $\alpha_1$ coincide.
+    \end{corollary}
+    \begin{proof}
+        By Propositions \ref{2.2:prp:basis_stalk} and \ref{2.2:prp:stalk_topology_Hausdorff}, $\l|\HOLO\l[p\r]\r|$ is Hausdorff whose projection $\pi:\l|\HOLO\l[p\r]\r|\to X$ is a local homeomorphism. Since each deformation admits a lifting starting at $\phi_0$, the\side{This is a standard result in algebraic topology. For a proof, see \cite[][Proposition 4.10]{forster}.} liftings $\tilde{\alpha}_0$ and $\tilde{\alpha}_1$ have the same endpoints; that is, the analytic continuations along $\alpha_0$ and $\alpha_1$ coincide.\qed
+    \end{proof}
+    \begin{corollary}
+        Suppose $X$ is simply-connected. If the germ $\phi_0\in\HOLO_p\!\l[p\r]$ admits an analytic continuation along every curve starting at $p$, then there exists a unique (globally-defined) function $f\in\HOLO\l[p\r]\l(X\r)$ with $\l[f\r]_p=\phi_0$.
+    \end{corollary}
+    \begin{proof}
+        Uniqueness follows from the Identity Theorem. For existence, we define\side{Note that $\psi_q$ is a function \textit{germ}, so by $\psi_q\!\l(q\r)$ we mean $g\l(q\r)$ where $V\ni q$ is any open set and $g\in\HOLO\l[p\r]\l(V\r)$ is any function with $\psi_q=\l[g\r]_q$.} $f\l(q\r)\coloneqq\psi_q\!\l(q\r)$ where $\psi_q\!\in\HOLO_q\!\l[p\r]$ is the analytic continuation along any curve from $p$ to $q$. Since $X$ is simply-connected, the Monodromy Theorem ensures that $\psi_q$ is well-defined. Clearly $f\l(p\r)=\phi_0\!\l(p\r)$, so $\l[f\r]_p=\phi_0$. Finally, since $\l[f\r]_q=\psi_q\in\HOLO_q\!\l[p\r]$ for all $q\in X$, we see that $f\in\HOLO\l[p\r]\l(X\r)$.\qed
     \end{proof}
     \subsection{Analytic Continuation and Covering Spaces}
 \end{document}

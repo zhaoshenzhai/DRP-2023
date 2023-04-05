@@ -80,7 +80,7 @@
     \begin{remark}
         The sheaf axioms guarantee that if $\ms{F}$ is a sheaf of Abelian groups on $X$ and $U\in\mc{T}$, then an element $f\in\ms{F}\l(U\r)$ is zero iff\side{The forward direction is tautological.} all germs $\l[f\r]_p$, for $p\in U$ vanish. Indeed, let $0\in\ms{F}\l(U\r)$ denote the zero element, so $f\sim_p0$ for all $p\in U$ furnishes a family $\l\{W_p\r\}$ of open sets $W_p\subseteq U$ containing $p$ such that $\rho^U_{W_p}\!\l(f\r)=\rho^U_{W_p}\!\l(0\r)$. This family covers $U$, so $f=0$ by the first sheaf axiom.\exqed
     \end{remark}
-    \begin{proposition}
+    \begin{proposition}\label{2.2:prp:basis_stalk}
         Let $\ms{F}$ be a presheaf of Abelian groups on $X$. Let $\l|\ms{F}\r|\coloneqq\bigsqcup_{p\in X}\ms{F}_p$ and consider the projection $\pi:\l|\ms{F}\r|\to X$ mapping each $\phi\in\ms{F}_p$ to $p$. Then the system $\mc{B}$ of all sets
         \begin{equation*}
             \l[U,f\r]\coloneqq\bigl\{\l[f\r]_p\,\l|\,p\in U\bigr\}\r.\subseteq\l|\ms{F}\r|
@@ -103,7 +103,7 @@
         A presheaf $\ms{F}$ of Abelian groups on $X$ is said to satisfy the \uldef{Identity Theorem} if for all $U\in\mc{T}$, any two elements $f,g\in\ms{F}\l(U\r)$ such that $\l[f\r]_p=\l[g\r]_p$ for some $p\in U$ coincides.
     \end{definition}
     \side[-0.4in]{In particular, this holds for all $\HOLO\l[D\r]$.}
-    \begin{proposition}
+    \begin{proposition}\label{2.2:prp:stalk_topology_Hausdorff}
         If $X$ is a locally-connected Hausdorff space and $\ms{F}$ is a presheaf of Abelian groups on $X$ that satisfy the Identity Theorem, then $\l|\ms{F}\r|$ is Hausdorff.
     \end{proposition}
     \begin{proof}
