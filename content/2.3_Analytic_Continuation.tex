@@ -1,6 +1,16 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
-    \section{Analytic Continuation}\label{sec:analytic_continuation}
-    \subsection{Analytic Continuation along Curves}
-    \subsection{Analytic Continuation of Function Germs}
+    \section{Analytic Continuation}
+    We now restrict to when $X$ is a Riemann surface with a fixed point $p\in X$. For convenience, we write\side[0.01in]{In particular, any function $f\in\HOLO\l[p\r]\l(U\r)$ is holomorphic away from $p$.} $\HOLO\l[p\r]\coloneqq\HOLO\l[D\r]$ where $D$ is the divisor on $X$ defined by $D\l(p\r)\coloneqq1$ and zero everywhere else. Throughout, $\alpha:\l[0,1\r]\to X$ is a curve with $p=\alpha\l(0\r)$ and $q\coloneqq\alpha\l(1\r)\neq p$, and $\phi_0\in\HOLO_p\!\l[p\r]$ is a fixed germ.
+    \subsection{Analytic Continuation of Germs along Curves}
+    \begin{definition}
+        A germ $\psi\in\HOLO_q$ is said to be the \uldef{analytic continuation of $\phi_0$ along $\alpha$} if there exist a family $\phi_t\in\HOLO_{\alpha\l(t\r)}\!\l[p\r]$ of germs for all $t\in\l[0,1\r]$ with $\psi=\phi_1$ such that for all $\tau\in\l[0,1\r]$, there exists a neighborhood $T\subseteq\l[0,1\r]$, an open set $U\subseteq X$, and a function $f\in\HOLO\l[p\r]\l(U\r)$ such that $\l[f\r]_{\alpha\l(t\r)}=\phi_t$ for all $t\in T$.
+    \end{definition}
+    \begin{proposition}
+        A germ $\psi\in\HOLO_q$ is an analytic continuation of $\phi_0$ along $\alpha$ iff there exists a lifting $\tilde{\alpha}:\l[0,1\r]\to\l|\HOLO\l[p\r]\r|$ such that $\tilde{\alpha}\l(0\r)=\phi_0$ and $\tilde{\alpha}\l(1\r)=\psi$.
+    \end{proposition}
+    \begin{proof}
+        
+    \end{proof}
+    \subsection{Analytic Continuation and Covering Spaces}
 \end{document}
