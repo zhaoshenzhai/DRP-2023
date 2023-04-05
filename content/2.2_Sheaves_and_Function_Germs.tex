@@ -65,7 +65,7 @@
             \item For all $U\in\mc{T}$, we associate to each $f\in\MERO^\ast\!\l(U\r)$ the divisor $\div f:U\to\Z:p\mapsto\ord_p\!\l(f\r)$\side{Such a function $\div f$ is a divisor by discreteness of zeros and poles.}. This induces a morphism of sheaves $\div:\MERO^\ast\to\ms{D}$ since for all $U\in\mc{T}$ and all open sets $V\subseteq U$, the restriction of the divisor of any $f\in\MERO^\ast\!\l(U\r)$ coincides with the divisor of the restriction $\l.f\r|_V$.\exqed
         \end{itemize}
     \end{example}
-    \subsection{Stalks and their Topology}
+    \subsection{Stalks and the Étalé Space}
     Throughout this section, $p\in X$ is a fixed point in a topological space $X$.
     \begin{definition}
         Let $\ms{F}$ be a presheaf of Abelian groups on $X$. The \uldef{stalk of $\ms{F}$ at $p$} is the Abelian group
@@ -99,6 +99,9 @@
             \item For continuity, it suffices to show that $\l.\pi\r|_{\l[U,f\r]}$ is an open map. Indeed, if $\l[V,g\r]\subseteq\l[U,f\r]$ is open, then $\l.\pi\r|_{\l[U,f\r]}\l(\l[V,g\r]\r)=V$ is open too.\qed
         \end{itemize}
     \end{proof}
+    \begin{definition}
+        The \uldef{Étalé space} of a presheaf $\ms{F}$ of Abelian groups on $X$ is the topological space $\l|\ms{F}\r|$ equipped the projection $\pi:\l|\ms{F}\r|\to X$.
+    \end{definition}
     \begin{definition}
         A presheaf $\ms{F}$ of Abelian groups on $X$ is said to satisfy the \uldef{Identity Theorem} if for all $U\in\mc{T}$, any two elements $f,g\in\ms{F}\l(U\r)$ such that $\l[f\r]_p=\l[g\r]_p$ for some $p\in U$ coincides.
     \end{definition}

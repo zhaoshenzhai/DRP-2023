@@ -1,7 +1,7 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
     This chapter assumes that the reader is familiar with the basic notions of liftings and homotopy of curves from algebraic topology, for which we refer the reader to \cite[][Chapter 1]{hatcher}.
-    \section{Degree of Proper Holomorphic Maps}
+    \section{Covering Maps and the Degree}
     We devote this section to develop the tools necessary to define the \textit{degree} of a proper holomorphic map, which, intuitively, is the \textit{number of sheets} in which it covers its image. However, there are points in the image which are not covered `correctly', and they must be taken care of separately.\\\ \\
     Using the theory of degrees, we prove a criterion for a compact Riemann surface $X$ to be biholomorphic to the Riemann sphere $\RS$, which will be used in Section \ref{sec:moduli_space_of_sphere} to calculate the moduli space of $\RS$.
     \subsection{Ramification and Critical Points}
@@ -15,7 +15,7 @@
     \begin{proof}
         By Theorem \ref{1.2:thm:local_normal_form}, there exist charts $\tpl{U,\phi}$ centered at $p$ and $\tpl{V,\psi}$ centered at $F\l(p\r)$ such that $f\coloneqq\psi\circ F\circ\phi^{-1}$ is the power map $z\mapsto z^m$ where $m\coloneqq\mult_p\!\l(F\r)$. Since $\phi$ and $\psi$ are, in particular, injections, we see that $F$ is locally injective at $p$ iff $f$ is locally injective at $0$. But this occurs precisely when $m=\mult_p\!\l(F\r)<2$, so the result follows.\qed
     \end{proof}
-    \begin{example}
+    \begin{example}\label{2.1:exa:covering_of_torus}
         For any lattice $\Gamma\subseteq\C$ the projection $\pi:\C\to\C/\Gamma$ is an unbranched holomorphic map. This follows from our construction of complex tori in Example \ref{1.1:exa:tori} where for every $z\in\C$ a small enough neighborhood $U$ was found so that $\l.\pi\r|_U$ is injective.\exqed
     \end{example}
     \begin{proposition}
