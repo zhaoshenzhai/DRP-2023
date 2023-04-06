@@ -133,6 +133,8 @@
         \renewcommand{\bf}[1]{\textbf{#1}}
         \renewcommand{\phi}{\varphi}
         \renewcommand{\epsilon}{\varepsilon}
+        \DeclareRobustCommand{\cchi}{{\mathpalette\irchi\relax}}
+        \newcommand{\irchi}[2]{\raisebox{\depth/2}{$#1\chi$}}
     % Meta
         \renewcommand{\qed}{\phantom\qedhere\hfill$\blacksquare$}
         \newcommand{\qedin}{\tag*{$\blacksquare$}}

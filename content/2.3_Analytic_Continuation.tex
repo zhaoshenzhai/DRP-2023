@@ -33,9 +33,15 @@
         Suppose $X$ is simply-connected. If the germ $\phi_0\in\HOLO_p\!\l[p\r]$ admits an analytic continuation along every curve starting at $p$, then there exists a unique (globally-defined) function $f\in\HOLO\l[p\r]\l(X\r)$ with $\l[f\r]_p=\phi_0$.
     \end{corollary}
     \begin{proof}
-        Uniqueness follows from the Identity Theorem. For existence, we define\side{Note that $\psi_q$ is a function \textit{germ}, so by $\psi_q\!\l(q\r)$ we mean $g\l(q\r)$ where $V\ni q$ is any open set and $g\in\HOLO\l[p\r]\l(V\r)$ is any function with $\psi_q=\l[g\r]_q$.} $f\l(q\r)\coloneqq\psi_q\!\l(q\r)$ where $\psi_q\!\in\HOLO_q\!\l[p\r]$ is the analytic continuation along any curve from $p$ to $q$. Since $X$ is simply-connected, the Monodromy Theorem ensures that $\psi_q$ is well-defined. Clearly $f\l(p\r)=\phi_0\!\l(p\r)$, so $\l[f\r]_p=\phi_0$. Finally, since $\l[f\r]_q=\psi_q\in\HOLO_q\!\l[p\r]$ for all $q\in X$, we see that $f\in\HOLO\l[p\r]\l(X\r)$.\qed
+        Uniqueness follows from the Identity Theorem. For existence, we define $f\l(q\r)\coloneqq\psi_q\!\l(q\r)$ where $\psi_q\!\in\HOLO_q\!\l[p\r]$ is the analytic continuation along any curve from $p$ to $q$. Since $X$ is simply-connected, the Monodromy Theorem ensures that $\psi_q$ is well-defined. Clearly $f\l(p\r)=\phi_0\!\l(p\r)$, so $\l[f\r]_p=\phi_0$. Finally, since $\l[f\r]_q=\psi_q\in\HOLO_q\!\l[p\r]$ for all $q\in X$, we see that $f\in\HOLO\l[p\r]\l(X\r)$.\qed
     \end{proof}
-    \subsection{Analytic Continuation and Covering Spaces}
+    \begin{remark}
+        Let $U\subseteq X$ be any open set containing $p$ and consider any function $f_0\in\HOLO\l[p\r]\l(U\r)$. We have reduced the problem of analytically continuing $f_0$ to a global function $f\in\HOLO[p]\l(X\r)$ into finding analytic continuations of $\l[f_0\r]_p$ along every curve starting at $p$. We shall establish this fact in the next section.\exqed
+    \end{remark}
+    \subsection{Existence of Analytic Continuations}
+    \begin{theorem}
+        For any $q\in X$ and any curve $\alpha:\l[0,1\r]\to X$ with $\alpha\l(0\r)=p$ and $\alpha\l(1\r)=q$, there exists an analytic continuation $\psi\in\HOLO_q\!\l[p\r]$ of $\phi_0$ along $\alpha$.
+    \end{theorem}
 \end{document}
 
     % \begin{definition}
