@@ -1,9 +1,21 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
-    Surprisingly, computing the moduli space for the torus $T^2$ is rather easy and almost no machinery is needed. We compute it in Section \ref{sec:moduli_space_of_torus} and devote the rest of the chapter to computing the moduli space for the sphere, $S^2$.
+    For any genus $g$, we let $\mc{M}_g$ denote the \textit{moduli space} of Riemann surfaces of genus $g$; that is, the set of all Riemann surfaces of genus $g$ up to biholomorphism. Using the language and machinery developed in Chapters 1 and 2, we compute $\mc{M}_0$ and $\mc{M}_1$, which are the moduli spaces of the sphere $S^2$ and the torus $T^2$, respectively.\\\ \\
+    We conclude with a brief discussion of the \textit{Uniformization Theorem} and the \textit{Classification of Simply-connected Riemann Surfaces}.
     \section{Case for $g=0$ and $g=1$}
-    \subsection{Moduli Space of $T^2$}\label{sec:moduli_space_of_torus}
-    In this section, we show that the moduli space of the torus $T^2$ is $\H/\PSL{2}{\Z}$ where $\H$ is the upper-half plane of $\C$ and $\PSL{2}{\Z}$ is the \textit{modular group} consisting of all functions $\gamma:\H\to\H$ mapping
+    \subsection{Moduli Space of $S^2$}\label{sec:moduli_space_of_sphere}
+    We show that the moduli space of the sphere $S^2$ is a point. That is, there\side{It turns out that this is an easy corollary of the Riemann-Roch Theorem, but its proof is beyond the scope of this paper. Here, we present a more elementary proof.} is a \textit{unique} complex structure on the sphere.
+    \begin{theorem}
+        Every simply-connected compact Riemann surface $X$ is biholomorphic to the Riemann sphere $\RS$.
+    \end{theorem}
+    \begin{proof}
+        Fix an arbitrary point $p\in X$ and let $\tpl{U,\phi}$ be any chart of $X$ centered at $p$. Consider the function $f_0\in\HOLO\l[p\r]\l(U\r)$ defined by $f_0\!\l(q\r)\coloneqq1/\phi\l(q\r)$ for all $q\in U\comp\l\{p\r\}$. Applying Theorem \ref{2.3:thm:existence_of_analytic_continuation} to $\eta_0\coloneqq\l[f_0\r]_p$ and using Corollary \ref{2.3:thm:analytically_continue_to_global_function}, we obtain a function $f\in\HOLO\l[p\r]\l(X\r)$ such that $\l.f\r|_U=f_0$. Since $\ord_p\!\l(f_0\r)=1$, we see that $f$ is meromorphic on $X$ with a single simple pole, so $X\iso\RS$ by Corollary \ref{2.1:cor:exists_meromorphic_implis_biholomorphic_Riemann_sphere}.\qed
+    \end{proof}
+    \begin{remark}
+        This is part of the \textit{Uniformization Theorem}, which states that every simply-connected Riemann surface is biholomorphic to either the Riemann sphere $\RS$, the complex plane $\C$, or the upper-half plane $\H$ of $\C$. A brief discussion and proof sketch is given in Section \ref{sec:uniformization}.\exqed
+    \end{remark}
+    \subsection{Moduli Space of $T^2$}
+    We show that the moduli space of the torus $T^2$ is $\H/\PSL{2}{\Z}$ where $\H$ is the upper-half plane of $\C$ and $\PSL{2}{\Z}$ is the \textit{modular group} consisting of all functions $\gamma:\H\to\H$ mapping
     \begin{equation*}
         \tau\mapsto\frac{a\tau+b}{c\tau+d}
     \end{equation*}
@@ -47,6 +59,9 @@
     \begin{theorem}
         For any $\tau,\tau'\in\H$, the tori $X_{\tau}$ and $X_{\tau'}$ are biholomorphic iff there exists some $\gamma\in\PSL{2}{\Z}$ such that $\tau'=\gamma\l(\tau\r)$.
     \end{theorem}
+    \begin{corollary}
+        The moduli space of $T^2$ is $\H/\PSL{2}{\Z}$.
+    \end{corollary}
     \begin{proof}
         The backwards direction is relatively straightforward. Indeed, note that
         \begin{equation*}
@@ -65,14 +80,14 @@
                 \end{equation*}
                 so $\Z\oplus\Z\tau'\subseteq\alpha\l(\Z\oplus\Z\tau\r)$.
         \end{itemize}
-        For the forward direction, let $\phi:X_\tau\to X_{\tau'}$ be a biholomorphism, which lifts\side{This is a standard result in algebraic topology. For a proof, see \cite[][Theorem 3.4]{i&t}.} to a biholomorphic mapping $\tilde{\phi}:\C\to\C$ such that
+        For the forward direction, let $\phi:X_\tau\to X_{\tau'}$ be a biholomorphism, which lifts to a biholomorphic mapping $\tilde{\phi}:\C\to\C$ such that
         \begin{equation*}
             \begin{tikzcd}
                 \C \ar[r, "\tilde{\phi}"] \ar[d, "\pi"'] & \C \ar[d, "\pi'"] \\
                 \C/\Gamma \ar[r, "\phi"] & \C/\Gamma'
             \end{tikzcd}           
         \end{equation*}
-        commutes. Fix\side{This proof follows \cite[][Proposition 1.3.2]{diamond}.} $\lambda\in\Gamma$ and consider the map $f_\lambda\!\l(z\r)\coloneqq\tilde{\phi}\l(z+\lambda\r)-\tilde{\phi}\l(z\r)$. Then, since $z+\lambda+\Gamma=z+\Gamma$, we see that $\phi\l(z+\lambda+\Gamma\r)=\phi\l(z+\Gamma\r)$ and hence the commutativity of the diagram forces $\tilde{\phi}\l(z+\lambda\r)+\Gamma'=\tilde{\phi}\l(z\r)+\Gamma'$. Thus $f_\lambda\!\l(z\r)\in\Gamma'$ for all $z\in\C$, so, since $f_\lambda$ is a continuous map into a discrete set, it must be constant. Differentiating gives us $f_\lambda'\l(z\r)=\tilde{\phi}'\l(z+\lambda\r)-\tilde{\phi}'\l(z\r)=0$, so $\tilde{\phi}'\l(z+\lambda\r)=\tilde{\phi}'\l(z\r)$ for all $z\in\C$. But $\lambda\in\Gamma$ is arbitrary, so $\tilde{\phi}'$ is $\Gamma$-periodic. Thus $\tilde{\phi}'$ is a bounded entire function and hence is constant by Liouville's Theorem. This shows that $\tilde{\phi}\l(z\r)=\alpha z+\beta$ for some $\alpha,\beta\in\C$, where we may, without loss of generality, assume that $\alpha\neq0$ and $\beta=0$. We now claim that $\alpha\Gamma=\Gamma'$.
+        commutes. Fix\side{This proof follows \cite[][Proposition 1.3.2]{diamond}. For an alternative proof, see \cite[][Lemma 2.8]{i&t}} $\lambda\in\Gamma$ and consider the map $f_\lambda\!\l(z\r)\coloneqq\tilde{\phi}\l(z+\lambda\r)-\tilde{\phi}\l(z\r)$. Then, since $z+\lambda+\Gamma=z+\Gamma$, we see that $\phi\l(z+\lambda+\Gamma\r)=\phi\l(z+\Gamma\r)$ and hence the commutativity of the diagram forces $\tilde{\phi}\l(z+\lambda\r)+\Gamma'=\tilde{\phi}\l(z\r)+\Gamma'$. Thus $f_\lambda\!\l(z\r)\in\Gamma'$ for all $z\in\C$, so, since $f_\lambda$ is a continuous map into a discrete set, it must be constant. Differentiating gives us $f_\lambda'\l(z\r)=\tilde{\phi}'\l(z+\lambda\r)-\tilde{\phi}'\l(z\r)=0$, so $\tilde{\phi}'\l(z+\lambda\r)=\tilde{\phi}'\l(z\r)$ for all $z\in\C$. But $\lambda\in\Gamma$ is arbitrary, so $\tilde{\phi}'$ is $\Gamma$-periodic. Thus $\tilde{\phi}'$ is a bounded entire function and hence is constant by Liouville's Theorem. This shows that $\tilde{\phi}\l(z\r)=\alpha z+\beta$ for some $\alpha,\beta\in\C$ with $\alpha\neq0$. Without loss of generality, assume that $\beta=0$. We now claim that $\alpha\Gamma=\Gamma'$.
         \begin{itemize}
             \item Indeed, for all $z\in\alpha\Gamma$, we have $z/\alpha\in\Gamma$ and so $z/\alpha+\Gamma=0+\Gamma$. Applying $\phi$ to both sides and comparing gives
                 \begin{equation*}
@@ -107,8 +122,4 @@
         \end{equation*}
         so $ad-bc=1$.\qed
     \end{proof}
-    \begin{corollary}
-        The moduli space of $T^2$ is $\H/\PSL{2}{\Z}$.
-    \end{corollary}
-    \subsection{Moduli Space of $S^2$}\label{sec:moduli_space_of_sphere}
 \end{document}

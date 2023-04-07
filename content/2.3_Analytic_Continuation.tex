@@ -29,17 +29,17 @@
     \begin{proof}
         By Propositions \ref{2.2:prp:basis_stalk} and \ref{2.2:prp:stalk_topology_Hausdorff}, $\l|\HOLO\l[p\r]\r|$ is Hausdorff whose projection $\pi:\l|\HOLO\l[p\r]\r|\to X$ is a local homeomorphism. Since each deformation admits a lifting starting at $\eta_0$, the\side{This is a standard result in algebraic topology. For a proof, see \cite[][Proposition 4.10]{forster}.} liftings $\tilde{\alpha}_0$ and $\tilde{\alpha}_1$ have the same endpoints; that is, the analytic continuations along $\alpha_0$ and $\alpha_1$ coincide.\qed
     \end{proof}
-    \begin{corollary}
+    \begin{corollary}\label{2.3:thm:analytically_continue_to_global_function}
         Suppose $X$ is simply-connected. If the germ $\eta_0\in\HOLO_p\!\l[p\r]$ admits an analytic continuation along every curve starting at $p$, then there exists a unique (globally-defined) function $f\in\HOLO\l[p\r]\l(X\r)$ with $\l[f\r]_p=\eta_0$.
     \end{corollary}
     \begin{proof}
         Uniqueness follows from the Identity Theorem. For existence, we define $f\l(q\r)\coloneqq\hat{\eta}_q\!\l(q\r)$ where $\hat{\eta}_q\!\in\HOLO_q\!\l[p\r]$ is the analytic continuation along any curve from $p$ to $q$. Since $X$ is simply-connected, the Monodromy Theorem ensures that $\hat{\eta}_q$ is well-defined. Clearly $f\l(p\r)=\eta_0\!\l(p\r)$, so $\l[f\r]_p=\eta_0$. Finally, since $\l[f\r]_q=\hat{\eta}_q\in\HOLO_q\!\l[p\r]$ for all $q\in X$, we see that $f\in\HOLO\l[p\r]\l(X\r)$.\qed
     \end{proof}
     \begin{remark}
-        Let $U\subseteq X$ be any open set containing $p$ and consider any function $f_0\in\HOLO\l[p\r]\l(U\r)$. We have reduced the problem of analytically continuing $f_0$ to a global function $f\in\HOLO[p]\l(X\r)$ into finding analytic continuations of $\l[f_0\r]_p$ along every curve starting at $p$. We shall establish this fact in the next section.\exqed
+        Let $U\subseteq X$ be any open set containing $p$ and consider any function $f_0\in\HOLO\l[p\r]\l(U\r)$. We have reduced the problem of analytically continuing $f_0$ to a global function $f\in\HOLO[p]\l(X\r)$ with $\l.f\r|_U=f_0$ into finding analytic continuations of $\l[f_0\r]_p$ along every curve starting at $p$. We shall establish this fact in the next section.\exqed
     \end{remark}
     \subsection{Existence of Analytic Continuations}
-    \begin{theorem}
+    \begin{theorem}\label{2.3:thm:existence_of_analytic_continuation}
         For any $q\in X$ and any curve $\alpha:\l[0,1\r]\to X$ with $\alpha\l(0\r)=p$ and $\alpha\l(1\r)=q$, there exists an analytic continuation $\hat{\eta}\in\HOLO_q\!\l[p\r]$ of $\eta_0$ along $\alpha$.
     \end{theorem}
     \begin{proof}
