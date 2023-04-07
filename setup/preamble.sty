@@ -60,3 +60,4 @@
 \theoremstyle{definition}\newtheorem*{remark}{Remark}
 \theoremstyle{remark}\newtheorem*{solution}{Solution}
 \makeatletter\renewenvironment{proof}[1][\proofname]{\par\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\itshape#1\@addpunct{.}]\ignorespaces}{\endtrivlist\@endpefalse}\renewcommand\qedhere{}\makeatother
+\makeatletter\newenvironment{proofsketch}[1][Proof sketch]{\par\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\itshape#1\@addpunct{.}]\ignorespaces}{\endtrivlist\@endpefalse}\renewcommand\qedhere{}\makeatother
