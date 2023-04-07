@@ -1,66 +1,93 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
     \section{Analytic Continuation}
-    We now restrict to when $X$ is a Riemann surface with a fixed point $p\in X$. For convenience, we write\side[0.01in]{Thus if $U\subseteq X$ is an open set containing $p$, then any $f\in\HOLO_p\!\l[p\r]\l(U\r)$ has at most a single simple pole. Otherwise, if $p\not\in U$, then $f$ is holomorphic.} $\HOLO\l[p\r]\coloneqq\HOLO\l[D\r]$ where $D$ is the divisor on $X$ defined by $D\l(p\r)\coloneqq1$ and zero everywhere else. Throughout, $\alpha:\l[0,1\r]\to X$ is a curve with $p=\alpha\l(0\r)$ and $q\coloneqq\alpha\l(1\r)\neq p$, and $\phi_0\in\HOLO_p\!\l[p\r]$ is a fixed germ.
+    We now restrict to when $X$ is a Riemann surface with a fixed point $p\in X$. For convenience, we write\side[0.01in]{Thus if $U\subseteq X$ is an open set containing $p$, then any $f\in\HOLO_p\!\l[p\r]\l(U\r)$ has at most a single simple pole. Otherwise, if $p\not\in U$, then $f$ is holomorphic.} $\HOLO\l[p\r]\coloneqq\HOLO\l[D\r]$ where $D$ is the divisor on $X$ defined by $D\l(p\r)\coloneqq1$ and zero everywhere else. Throughout, $\alpha:\l[0,1\r]\to X$ is a curve with $p=\alpha\l(0\r)$ and $q\coloneqq\alpha\l(1\r)\neq p$, and $\eta_0\in\HOLO_p\!\l[p\r]$ is a fixed germ.
     \subsection{Analytic Continuation of Germs along Curves}
     \begin{definition}
-        A germ $\psi\in\HOLO_q$ is said to be the \uldef{analytic continuation of $\phi_0$ along $\alpha$} if there exist a family $\phi_t\in\HOLO_{\alpha\l(t\r)}\!\l[p\r]$ of germs for all $t\in\l[0,1\r]$ with $\psi=\phi_1$ such that for all $\tau\in\l[0,1\r]$, there exists a neighborhood $T\subseteq\l[0,1\r]$ of $\tau$, an open set $U\subseteq X$ with $\alpha\l(T\r)\subseteq U$, and a function $f\in\HOLO\l[p\r]\l(U\r)$ such that $\l[f\r]_{\alpha\l(t\r)}=\phi_t$ for all $t\in T$.
+        A germ $\hat{\eta}\in\HOLO_q$ is said to be the \uldef{analytic continuation of $\eta_0$ along $\alpha$} if there exist a family $\eta_t\in\HOLO_{\alpha\l(t\r)}\!\l[p\r]$ of germs for all $t\in\l[0,1\r]$ with $\hat{\eta}=\eta_1$ such that for all $\tau\in\l[0,1\r]$, there exists a neighborhood $T\subseteq\l[0,1\r]$ of $\tau$, an open set $U\subseteq X$ with $\alpha\l(T\r)\subseteq U$, and a function $f\in\HOLO\l[p\r]\l(U\r)$ such that $\l[f\r]_{\alpha\l(t\r)}=\eta_t$ for all $t\in T$.
     \end{definition}
-    \begin{proposition}
-        A germ $\psi\in\HOLO_q$ is an analytic continuation of $\phi_0$ along $\alpha$ iff there exists a lifting $\tilde{\alpha}:\l[0,1\r]\to\l|\HOLO\l[p\r]\r|$ such that $\tilde{\alpha}\l(0\r)=\phi_0$ and $\tilde{\alpha}\l(1\r)=\psi$.
+    \begin{proposition}\label{2.3:prp:analytic_continuation_iff_lifting}
+        A germ $\hat{\eta}\in\HOLO_q$ is an analytic continuation of $\eta_0$ along $\alpha$ iff there exists a lifting $\tilde{\alpha}:\l[0,1\r]\to\l|\HOLO\l[p\r]\r|$ such that $\tilde{\alpha}\l(0\r)=\eta_0$ and $\tilde{\alpha}\l(1\r)=\hat{\eta}$.
     \end{proposition}
     \begin{proof}
-        If\side[-0.42in]{In particular, the uniqueness of liftings shows that if an analytic continuation of $\phi_0$ along $\alpha$ exists, then it is unique.} $\psi\in\HOLO_q$ is an analytic continuation of $\phi_0$ along $\alpha$, let $\l\{\phi_t\r\}$ be a family of germs as defined above. We claim that the curve $\tilde{\alpha}:\l[0,1\r]\to\l|\HOLO\l[p\r]\r|$ mapping $t\mapsto\phi_t$ is a lifting of $\alpha$.
+        If\side[-0.42in]{In particular, the uniqueness of liftings shows that if an analytic continuation of $\eta_0$ along $\alpha$ exists, then it is unique.} $\hat{\eta}\in\HOLO_q$ is an analytic continuation of $\eta_0$ along $\alpha$, let $\l\{\eta_t\r\}$ be a family of germs as defined above. We claim that the curve $\tilde{\alpha}:\l[0,1\r]\to\l|\HOLO\l[p\r]\r|$ mapping $t\mapsto\eta_t$ is a lifting of $\alpha$.
         \begin{itemize}
-            \item First, note that $\phi_t\in\HOLO_{\alpha\l(t\r)}\!\l[p\r]$ for all $t\in\l[0,1\r]$, so\side[-0.22in]{Clearly $\tilde{\alpha}\l(0\r)=\phi_0$ and $\tilde{\alpha}\l(1\r)=\psi$.
+            \item First, note that $\eta_t\in\HOLO_{\alpha\l(t\r)}\!\l[p\r]$ for all $t\in\l[0,1\r]$, so\side[-0.22in]{Clearly $\tilde{\alpha}\l(0\r)=\eta_0$ and $\tilde{\alpha}\l(1\r)=\hat{\eta}$.
                 \begin{equation*}
                     \begin{tikzcd}[ampersand replacement=\&]
                         \& \l|\HOLO\l[p\r]\r| \ar[d, "\pi"] \\
                         \l[0,1\r] \ar[r, "\alpha"'] \ar[ur, "\tilde{\alpha}"] \& X
                     \end{tikzcd}
                 \end{equation*}
-                } $\l(\pi\circ\tilde{\alpha}\r)\l(t\r)=\pi\l(\tilde{\alpha}\l(t\r)\r)=\pi\l(\phi_t\r)=\alpha\l(t\r)$. It remains to show that $\tilde{\alpha}$ is continuous, so fix a basis element $\l[U,f\r]\subseteq\l|\HOLO\l[p\r]\r|$ and take $\tau\in\tilde{\alpha}^{-1}\!\l(\l[U,f\r]\r)$. Then $\tau\in\l[0,1\r]$, so there exists a neighborhood $T\subseteq\l[0,1\r]$ of $\tau$ such that $\l[f\r]_{\alpha\l(t\r)}=\phi_t$ for all $t\in T$. Observe that $\tilde{\alpha}\l(T\r)\subseteq\l[U,f\r]$ since for all $\phi_t\in\tilde{\alpha}\l(T\r)$, we have $\alpha\l(t\r)\in U$ and hence $\phi_t=\l[f\r]_{\alpha\l(t\r)}\in\l[U,f\r]$.
+                } $\l(\pi\circ\tilde{\alpha}\r)\l(t\r)=\pi\l(\tilde{\alpha}\l(t\r)\r)=\pi\l(\eta_t\r)=\alpha\l(t\r)$. It remains to show that $\tilde{\alpha}$ is continuous, so fix a basis element $\l[U,f\r]\subseteq\l|\HOLO\l[p\r]\r|$ and take $\tau\in\tilde{\alpha}^{-1}\!\l(\l[U,f\r]\r)$. Then $\tau\in\l[0,1\r]$, so there exists a neighborhood $T\subseteq\l[0,1\r]$ of $\tau$ such that $\l[f\r]_{\alpha\l(t\r)}=\eta_t$ for all $t\in T$. Observe that $\tilde{\alpha}\l(T\r)\subseteq\l[U,f\r]$ since for all $\eta_t\in\tilde{\alpha}\l(T\r)$, we have $\alpha\l(t\r)\in U$ and hence $\eta_t=\l[f\r]_{\alpha\l(t\r)}\in\l[U,f\r]$.
         \end{itemize}
-        Conversely, suppose that there is a lifting $\tilde{\alpha}:\l[0,1\r]\to\l|\HOLO\l[p\r]\r|$ of $\alpha$ with $\tilde{\alpha}\l(0\r)=\phi_0$ and $\tilde{\alpha}\l(1\r)=\psi$. For all $t\in\l[0,1\r]$, we define $\phi_t\coloneqq\tilde{\alpha}\l(t\r)$, so $\phi_1=\psi$. Fix $\tau\in\l[0,1\r]$, so there exists a basis neighborhood $\l[U,f\r]\subseteq\l|\HOLO\l[p\r]\r|$ of $\tilde{\alpha}\l(\tau\r)$. But $\tilde{\alpha}$ is continuous, so there exists a neighborhood $T\subseteq\l[0,1\r]$ of $\tau$ such that $\tilde{\alpha}\l(T\r)\subseteq\l[U,f\r]$. Projecting, we see that $\alpha\l(T\r)\subseteq\pi\l(\l[U,f\r]\r)=U$. Finally, the commutativity of the diagram gives $\l[f\r]_{\alpha\l(t\r)}\!=\phi_t$ for all $t\in T$, so $\psi$ is an analytic continuation of $\phi_0$ along $\alpha$.\qed
+        Conversely, suppose that there is a lifting $\tilde{\alpha}:\l[0,1\r]\to\l|\HOLO\l[p\r]\r|$ of $\alpha$ with $\tilde{\alpha}\l(0\r)=\eta_0$ and $\tilde{\alpha}\l(1\r)=\hat{\eta}$. For all $t\in\l[0,1\r]$, we define $\eta_t\coloneqq\tilde{\alpha}\l(t\r)$, so $\eta_1=\hat{\eta}$. Fix $\tau\in\l[0,1\r]$, so there exists a basis neighborhood $\l[U,f\r]\subseteq\l|\HOLO\l[p\r]\r|$ of $\tilde{\alpha}\l(\tau\r)$. But $\tilde{\alpha}$ is continuous, so there exists a neighborhood $T\subseteq\l[0,1\r]$ of $\tau$ such that $\tilde{\alpha}\l(T\r)\subseteq\l[U,f\r]$. Projecting, we see that $\alpha\l(T\r)\subseteq\pi\l(\l[U,f\r]\r)=U$. Finally, the commutativity of the diagram gives $\l[f\r]_{\alpha\l(t\r)}\!=\eta_t$ for all $t\in T$, so $\hat{\eta}$ is an analytic continuation of $\eta_0$ along $\alpha$.\qed
     \end{proof}
     \begin{corollary}[Monodromy Theorem]
-        Let $\alpha_0,\alpha_1:\l[0,1\r]\to X$ be homotopic curves from $p$ to $q$. If the germ $\phi_0\in\HOLO_p\!\l[p\r]$ admits an analytic continuation along every deformation of $\alpha_0$ to $\alpha_1$, then the analytic continuations of $\phi_0$ along $\alpha_0$ and $\alpha_1$ coincide.
+        Let $\alpha_0,\alpha_1:\l[0,1\r]\to X$ be homotopic curves from $p$ to $q$. If the germ $\eta_0\in\HOLO_p\!\l[p\r]$ admits an analytic continuation along every deformation of $\alpha_0$ to $\alpha_1$, then the analytic continuations of $\eta_0$ along $\alpha_0$ and $\alpha_1$ coincide.
     \end{corollary}
     \begin{proof}
-        By Propositions \ref{2.2:prp:basis_stalk} and \ref{2.2:prp:stalk_topology_Hausdorff}, $\l|\HOLO\l[p\r]\r|$ is Hausdorff whose projection $\pi:\l|\HOLO\l[p\r]\r|\to X$ is a local homeomorphism. Since each deformation admits a lifting starting at $\phi_0$, the\side{This is a standard result in algebraic topology. For a proof, see \cite[][Proposition 4.10]{forster}.} liftings $\tilde{\alpha}_0$ and $\tilde{\alpha}_1$ have the same endpoints; that is, the analytic continuations along $\alpha_0$ and $\alpha_1$ coincide.\qed
+        By Propositions \ref{2.2:prp:basis_stalk} and \ref{2.2:prp:stalk_topology_Hausdorff}, $\l|\HOLO\l[p\r]\r|$ is Hausdorff whose projection $\pi:\l|\HOLO\l[p\r]\r|\to X$ is a local homeomorphism. Since each deformation admits a lifting starting at $\eta_0$, the\side{This is a standard result in algebraic topology. For a proof, see \cite[][Proposition 4.10]{forster}.} liftings $\tilde{\alpha}_0$ and $\tilde{\alpha}_1$ have the same endpoints; that is, the analytic continuations along $\alpha_0$ and $\alpha_1$ coincide.\qed
     \end{proof}
     \begin{corollary}
-        Suppose $X$ is simply-connected. If the germ $\phi_0\in\HOLO_p\!\l[p\r]$ admits an analytic continuation along every curve starting at $p$, then there exists a unique (globally-defined) function $f\in\HOLO\l[p\r]\l(X\r)$ with $\l[f\r]_p=\phi_0$.
+        Suppose $X$ is simply-connected. If the germ $\eta_0\in\HOLO_p\!\l[p\r]$ admits an analytic continuation along every curve starting at $p$, then there exists a unique (globally-defined) function $f\in\HOLO\l[p\r]\l(X\r)$ with $\l[f\r]_p=\eta_0$.
     \end{corollary}
     \begin{proof}
-        Uniqueness follows from the Identity Theorem. For existence, we define $f\l(q\r)\coloneqq\psi_q\!\l(q\r)$ where $\psi_q\!\in\HOLO_q\!\l[p\r]$ is the analytic continuation along any curve from $p$ to $q$. Since $X$ is simply-connected, the Monodromy Theorem ensures that $\psi_q$ is well-defined. Clearly $f\l(p\r)=\phi_0\!\l(p\r)$, so $\l[f\r]_p=\phi_0$. Finally, since $\l[f\r]_q=\psi_q\in\HOLO_q\!\l[p\r]$ for all $q\in X$, we see that $f\in\HOLO\l[p\r]\l(X\r)$.\qed
+        Uniqueness follows from the Identity Theorem. For existence, we define $f\l(q\r)\coloneqq\hat{\eta}_q\!\l(q\r)$ where $\hat{\eta}_q\!\in\HOLO_q\!\l[p\r]$ is the analytic continuation along any curve from $p$ to $q$. Since $X$ is simply-connected, the Monodromy Theorem ensures that $\hat{\eta}_q$ is well-defined. Clearly $f\l(p\r)=\eta_0\!\l(p\r)$, so $\l[f\r]_p=\eta_0$. Finally, since $\l[f\r]_q=\hat{\eta}_q\in\HOLO_q\!\l[p\r]$ for all $q\in X$, we see that $f\in\HOLO\l[p\r]\l(X\r)$.\qed
     \end{proof}
     \begin{remark}
         Let $U\subseteq X$ be any open set containing $p$ and consider any function $f_0\in\HOLO\l[p\r]\l(U\r)$. We have reduced the problem of analytically continuing $f_0$ to a global function $f\in\HOLO[p]\l(X\r)$ into finding analytic continuations of $\l[f_0\r]_p$ along every curve starting at $p$. We shall establish this fact in the next section.\exqed
     \end{remark}
     \subsection{Existence of Analytic Continuations}
     \begin{theorem}
-        For any $q\in X$ and any curve $\alpha:\l[0,1\r]\to X$ with $\alpha\l(0\r)=p$ and $\alpha\l(1\r)=q$, there exists an analytic continuation $\psi\in\HOLO_q\!\l[p\r]$ of $\phi_0$ along $\alpha$.
+        For any $q\in X$ and any curve $\alpha:\l[0,1\r]\to X$ with $\alpha\l(0\r)=p$ and $\alpha\l(1\r)=q$, there exists an analytic continuation $\hat{\eta}\in\HOLO_q\!\l[p\r]$ of $\eta_0$ along $\alpha$.
     \end{theorem}
+    \begin{proof}
+        Let $E\subseteq\l|\HOLO\l[p\r]\r|$ be the connected component of the Étalé space of $\HOLO\l[p\r]$ containing $\eta_0$, and, abusing notation, we write $\pi:E\to X$ as the restricted projection map. Define a complex structure $\mf{A}$ on $E$, that makes $\pi:E\to X$ locally biholomorphic, as follows.
+        \begin{itemize}
+            \item For any $\zeta\in E$, let $\tpl{U_0,\phi}$ be a chart of $X$ around $\pi\l(\zeta\r)$. Since $\pi$ is a local homeomorphism, there exist neighborhoods $V\subseteq E$ of $\zeta$ and $U\subseteq U_0$ of $\pi\l(\zeta\r)$ such that $\l.\pi\r|_V:V\to U$ is a homeomorphism. Set $\psi\coloneqq\phi\circ\l.\pi\r|_V$, so $\tpl{V,\psi}$ is a chart on $E$ around $\zeta$. Let $\mf{A}$ be the collection of all such charts, which defines an atlas on $E$ since for any pair of charts $\tpl{V_1,\psi_1},\tpl{V_2,\psi_2}\in\mf{A}$ with $V_1\cap V_2\neq\em$, there exist charts $\tpl{U_1,\phi_1}$ and $\tpl{U_2,\phi_2}$ of $X$ such that
+                \begin{equation*}
+                    \psi_2\circ\psi_1^{-1}=\l(\phi_2\circ\l.\pi\r|_{V_2}\r)\circ\l(\phi_1\circ\l.\pi\r|_{V_1}\r)^{-1}=\phi_2\circ\l(\l.\pi\r|_{V_2}\circ\l.\pi\r|_{V_1}^{-1}\r)\circ\phi_1^{-1},
+                \end{equation*}
+                when restricted to $\psi_1\!\l(V_1\cap V_2\r)$, reduces to $\phi_2\circ\phi_1^{-1}$. This shows that the charts $\tpl{V_1,\psi_1}$ and $\tpl{V_2,\psi_2}$ are holomorphically compatible, as desired. Furthermore, we claim that $\pi:E\to X$ is locally biholomorphic w.r.t. $\mf{A}$. Indeed, for any $\zeta\in E$, there exist charts $\tpl{V,\psi}$ of $E$ around $\zeta$ and $\tpl{U_0,\phi}$ of $X$ around $\pi\l(\zeta\r)$ such that $\psi=\phi\circ\l.\pi\r|_V$. Then $\phi\circ\l.\pi\r|_V\circ\psi^{-1}=\id_V$, which is holomorphic, so $\pi$ is locally biholomorphic.
+        \end{itemize}
+        We now define a family $\eta_t\in\HOLO_{\alpha\l(t\r)}\!\l[p\r]$ for $t\in\l[0,1\r]$ as follows. For all $t\in\l[0,1\r]$, let $\zeta_t\in E$ be such that $\pi\l(\zeta_t\r)=\alpha\l(t\r)$, which, by the Identity Theorem, is unique. Then there exist neighborhoods $V_t$ around $\zeta_t$ and $U_t$ around $\alpha\l(t\r)$ such that $\l.\pi\r|_{V_t}:V_t\to U_t$ is a biholomorphism. Let $\cchi_t\coloneqq\l.\pi\r|_{V_t}^{-1}$ and define $\eta_t\coloneqq\l(\cchi_t\circ\alpha\r)\l(t\r)\in\HOLO_{\alpha\l(t\r)}\!\l[p\r]$. Observe that $\hat{\eta}\coloneqq\eta_1\in\HOLO_q\!\l[p\r]$, which we claim is the analytic continuation of $\eta_0$ along $\alpha$.
+        \begin{equation*}
+            \begin{tikzcd}[column sep=0.5in, row sep=0.3in]
+                E \ar[d, "\pi"'] & V_t \ar[l, hook] \ar[r, "\l.\ell\r|_{V_t}"] \ar[d, "\l.\pi\r|_{V_t}", bend left=10] & \C \\
+                X & U_t \ar[l, hook] \ar[u, "\cchi_t", bend left=10] \ar[ur, "f_t"'] & \l[0,1\r] \ar[l, "\alpha"']
+            \end{tikzcd}
+        \end{equation*}
+        \begin{itemize}
+            \item We first construct a function $\ell:E\to\C$ as follows. For $\zeta\in E$, consider any chart $\tpl{U_0,\phi}$ of $X$ around $\pi\l(\zeta\r)$ and any function $g\in\HOLO\l[p\r]\l(U_0\r)$ such that $\zeta=\l[g\r]_{\pi\l(\zeta\r)}$. Set\side{This is well-defined.} $\ell\l(\zeta\r)\coloneqq g\l(\pi\l(\zeta\r)\r)$. We claim that $\ell$ has at most a single simple pole at $\eta_0$. Indeed, for any $\zeta\in E$, the chart $\tpl{V,\psi}$ as defined above that makes $\l.\pi\r|_V:V\to U$ a homeomorphism ensures that
+                \begin{equation*}
+                    \ell\circ\psi^{-1}=\l(\ell\circ\l.\pi\r|_V^{-1}\r)\circ\phi^{-1}=g\circ\phi^{-1},
+                \end{equation*}
+                which is meromorphic with at most a single simple pole at $\phi\l(p\r)$; observe that $\ell\l(\eta_0\r)=g\l(p\r)$.
+        \end{itemize}
+        Take $\tau\in\l[0,1\r]$ and consider $\cchi_\tau:U_\tau\to V_\tau$ as defined above. Since $U_\tau$ is open, the continuity of $\alpha$ furnishes a neighborhood $T_\tau\subseteq\l[0,1\r]$ of $\tau$ such that $\alpha\l(T_\tau\r)\subseteq U_\tau$. Set $f_\tau\coloneqq\l.\ell\r|_{V_\tau}\circ\cchi_\tau$, which is in $\HOLO\l[p\r]\l(U_\tau\r)$ since $\cchi_\tau$ is holomorphic and $\ell$ is meromorphic with at most a single simple pole at $\eta_0$. It remains to show that $\l[f_t\r]_{\alpha\l(t\r)}=\eta_t$ for all $t\in T$. But this is clear since $\pi\l(\l[f_t\r]_{\alpha\l(t\r)}\r)=\alpha\l(t\r)\in U_t$ and $\l.\pi\r|_{V_t}:V_t\to U_t$ is invertible, so
+        \begin{equation*}
+            \l[f_t\r]_{\alpha\l(t\r)}=\l(\l.\pi\r|_{V_t}^{-1}\circ\alpha\r)\l(t\r)=\l(\cchi_t\circ\alpha\r)\l(t\r)=\eta_t.\qedin
+        \end{equation*}
+    \end{proof}
 \end{document}
-
-    % \begin{definition}
-    %     Let $X$ and $E$ be connected topological spaces. A covering map $\pi:E\to X$ if said to be the \uldef{universal covering of $X$} if for every covering $\pi':E'\to X$ on a connected topological space $E'$ and every $e\in E$ and $e'\in E'$ such that $\pi\l(e\r)=\pi'\l(e'\r)$, there exists a unique continuous map $\sigma:E\to E'$ with $\sigma\l(e\r)=e'$ making the below diagram commute.
-    %     \begin{equation*}
-    %         \begin{tikzcd}
-    %             E \ar[rr, "\sigma"] \ar[dr, "\pi"'] & & E' \ar[dl, "\pi'"] \\
-    %                                                 & X
-    %         \end{tikzcd}
-    %     \end{equation*}
-    % \end{definition}
-    % \side[-1.21in]{As with all `universal properties', the universal covering of $X$ is unique up to isomorphism.}
-    % \vspace{-0.05in}
-    % \begin{remark}
-    %     Note that $\sigma$ is the lifting of of $\pi$ along $\pi'$. Recall that if $E$ is simply-connected, such a lifting exists and is unique, so in this case \textit{any} covering map is the universal covering of $X$. We quote the following theorem that guarantees the existence of such a simply-connected space.\exqed
-    % \end{remark}
-    % \begin{theorem}[{\cite[][Theorem 5.3]{forster}}]
-    %     Suppose $X$ is a connected manifold. Then there exists a connected, simply-connected manifold $\tilde{X}$ and a covering map $\pi:\tilde{X}\to X$.
-    % \end{theorem}
-    % \begin{example}
-    %     Recall from Example \ref{2.1:exa:covering_of_torus} that for any lattice $\Gamma\subseteq\C$, the projection $\pi:\C\to\C/\Gamma$ is a covering map. Since $\C$ is simply-connected, we see that $\pi$ is the universal covering of $\C/\Gamma$.\exqed
-    % \end{example}
+% \begin{definition}
+%     Let $X$ and $E$ be connected topological spaces. A covering map $\pi:E\to X$ if said to be the \uldef{universal covering of $X$} if for every covering $\pi':E'\to X$ on a connected topological space $E'$ and every $e\in E$ and $e'\in E'$ such that $\pi\l(e\r)=\pi'\l(e'\r)$, there exists a unique continuous map $\sigma:E\to E'$ with $\sigma\l(e\r)=e'$ making the below diagram commute.
+%     \begin{equation*}
+%         \begin{tikzcd}
+%             E \ar[rr, "\sigma"] \ar[dr, "\pi"'] & & E' \ar[dl, "\pi'"] \\
+%                                                 & X
+%         \end{tikzcd}
+%     \end{equation*}
+% \end{definition}
+% \side[-1.21in]{As with all `universal properties', the universal covering of $X$ is unique up to isomorphism.}
+% \vspace{-0.05in}
+% \begin{remark}
+%     Note that $\sigma$ is the lifting of of $\pi$ along $\pi'$. Recall that if $E$ is simply-connected, such a lifting exists and is unique, so in this case \textit{any} covering map is the universal covering of $X$. We quote the following theorem that guarantees the existence of such a simply-connected space.\exqed
+% \end{remark}
+% \begin{theorem}[{\cite[][Theorem 5.3]{forster}}]
+%     Suppose $X$ is a connected manifold. Then there exists a connected, simply-connected manifold $\tilde{X}$ and a covering map $\pi:\tilde{X}\to X$.
+% \end{theorem}
+% \begin{example}
+%     Recall from Example \ref{2.1:exa:covering_of_torus} that for any lattice $\Gamma\subseteq\C$, the projection $\pi:\C\to\C/\Gamma$ is a covering map. Since $\C$ is simply-connected, we see that $\pi$ is the universal covering of $\C/\Gamma$.\exqed
+% \end{example}
