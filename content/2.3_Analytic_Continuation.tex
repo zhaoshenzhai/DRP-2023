@@ -40,7 +40,7 @@
     \end{remark}
     \subsection{Existence of Analytic Continuations}
     \begin{theorem}\label{2.3:thm:existence_of_analytic_continuation}
-        Let $\eta_0\in\HOLO_p\!\l[p\r]$ be a germ whose Laurent series representation in some chart has finitely-many terms with positive powers. Then, for any $q\in X$ and any curve $\alpha:\l[0,1\r]\to X$ with $\alpha\l(0\r)=p$ and $\alpha\l(1\r)=q$, there exists an analytic continuation $\hat{\eta}\in\HOLO_q\!\l[p\r]$ of $\eta_0$ along $\alpha$.
+        For any $q\in X$ and any curve $\alpha:\l[0,1\r]\to X$ with $\alpha\l(0\r)=p$ and $\alpha\l(1\r)=q$, there exists an analytic continuation $\hat{\eta}\in\HOLO_q\!\l[p\r]$ of $\eta_0$ along $\alpha$.
     \end{theorem}
     \begin{proof}
         Let $E\subseteq\l|\HOLO\l[p\r]\r|$ be the connected component of the Étalé space of $\HOLO\l[p\r]$ containing $\eta_0$, and, abusing notation, we write $\pi:E\to X$ as the restricted projection map. Define a complex structure $\mf{A}$ on $E$, that makes $\pi:E\to X$ locally biholomorphic, as follows.
@@ -63,7 +63,7 @@
                 \begin{equation*}
                     \ell\circ\psi^{-1}=\l(\ell\circ\l.\pi\r|_V^{-1}\r)\circ\phi^{-1}=g\circ\phi^{-1},
                 \end{equation*}
-                which is meromorphic with at most a single simple pole at $\phi\l(p\r)$; observe that $\ell\l(\eta_0\r)=g\l(p\r)$.
+                which is meromorphic with at most a single simple pole at $\phi\l(p\r)$; we have $\ell\l(\eta_0\r)=g\l(p\r)$.
         \end{itemize}
         Take $\tau\in\l[0,1\r]$ and consider $\cchi_\tau:U_\tau\to V_\tau$ as defined above. Since $U_\tau$ is open, the continuity of $\alpha$ furnishes a neighborhood $T_\tau\subseteq\l[0,1\r]$ of $\tau$ such that $\alpha\l(T_\tau\r)\subseteq U_\tau$. Set $f_\tau\coloneqq\l.\ell\r|_{V_\tau}\circ\cchi_\tau$, which is in $\HOLO\l[p\r]\l(U_\tau\r)$ since $\cchi_\tau$ is holomorphic and $\ell$ is meromorphic with at most a single simple pole at $\eta_0$. It remains to show that $\l[f_t\r]_{\alpha\l(t\r)}=\eta_t$ for all $t\in T$. But this is clear since $\pi\bigl(\l[f_t\r]_{\alpha\l(t\r)}\bigr)=\alpha\l(t\r)\in U_t$ and $\l.\pi\r|_{V_t}:V_t\to U_t$ is invertible, so
         \begin{equation*}

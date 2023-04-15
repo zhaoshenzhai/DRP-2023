@@ -5,13 +5,13 @@
     \begin{theorem}[Uniformization]
         Every simply-connected Riemann surface $X$ is biholomorphic to either the Riemann sphere $\RS$, the complex plane $\C$, or the upper-half plane $\H$.
     \end{theorem}
-    \begin{proofsketch}\side{This sketch follows \cite{peter}.}
-        As in Theorem \ref{3.1:thm:simply-connect_compact_biholomorphic_Riemann_sphere}, fix $p\in X$ and let $f\in\HOLO\l[p\r]\l(X\r)$ be meromorphic with a single simple pole. Let $F:X\to\RS$ be its associated holomorphic map, so $F\l(p\r)=\infty$. Since $\deg F=1$, we see that $\mult_p\!\l(F\r)=1$ and so $\l.F\r|_U:U\to V$ is a biholomorphism for some neighborhoods $U\subseteq X$ of $p$ and $V\subseteq\RS$ of $\infty$. We outline the rest of the proof.\side{These claims are highly-nontrivial and is beyond the scope of this paper.}
+    \begin{proofsketch}\side[0.1in]{This sketch follows \cite{peter}.}
+        As in Theorem \ref{3.1:thm:simply-connect_compact_biholomorphic_Riemann_sphere}, fix $p\in X$ and let $f\in\HOLO\l[p\r]\l(X\r)$ be meromorphic with a single simple pole. Let $F:X\to\RS$ be its associated holomorphic map, so $F\l(p\r)=\infty$. Since $\deg F=1$, we see that $\mult_p\!\l(F\r)=1$ and so $\l.F\r|_U:U\to V$ is a biholomorphism for some neighborhoods $U\subseteq X$ of $p$ and $V\subseteq\RS$ of $\infty$. We outline the rest of the proof.\side[0.23in]{These claims are nontrivial and is beyond the scope of this paper.}
         \begin{itemize}
-            \item First, it can be shown that $\Im F\l(x\r)\to0$ as $x\to\infty$ in $X$. That is, for every $\epsilon>0$, there is a large enough compact subset $K$ of $X$ such that $\Im F\l(x\r)<\epsilon$ for all $x\in K\comp X$.
-            \item It can also be shown that $\im F$ is open, contains the `top and bottom halves' of\side{That is, $\l\{x\in X\mid\Im\phi\l(z\r)\neq0\r\}\subseteq\im F$.} $\RS$, and is a biholomorphism onto its image.
+            \item First, it can be shown that $\Im F\l(x\r)\to0$ as $x\to\infty$ in $X$. That is, for every $\epsilon>0$, there is a large enough compact subset $K$ of $X$ such that $\Im F\l(x\r)<\epsilon$ for all $x\in X\comp K$.
+            \item It can also be shown that $\im F$ is open, contains the `top and bottom halves' of\side[0.01in]{That is, $\l\{x\in X\mid\Im\phi\l(z\r)\neq0\r\}\subseteq\im F$.} $\RS$, and is a biholomorphism onto its image.
         \end{itemize}
-        Thus $\Im F\iso\RS\comp I$ for some $I\subseteq\R$. By simply-connected to $X$, we see that $I$ is connected and hence we have three possibilities.
+        Thus $\im F\iso\RS\comp I$ for some $I\subseteq\R$. By simply-connectedness of $X$, we see that $I$ is connected and hence we have three possibilities.
         \begin{itemize}
             \item If $I=\em$, then $F:X\to\RS$ is a biholomorphism, which reduces to Theorem \ref{3.1:thm:simply-connect_compact_biholomorphic_Riemann_sphere}.
             \item If $I$ is a singleton, then $\RS\comp I\iso\C$, so $X\iso\C$.
