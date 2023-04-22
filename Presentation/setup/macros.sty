@@ -1,0 +1,153 @@
+% Math notations
+    % Set Theory
+        \newcommand{\fa}{\forall}
+        \newcommand{\ex}{\exists}
+        \newcommand{\tpl}[1]{\l(#1\r)}
+        \newcommand{\pow}{\mathcal{P}}
+        \newcommand{\id}{\operatorname{id}}
+        \newcommand{\iv}{\operatorname{iv}}
+        \newcommand{\dom}{\operatorname{dom}}
+        \newcommand{\ran}{\operatorname{ran}}
+        \newcommand{\cdm}{\operatorname{cdm}}
+        \newcommand{\fld}{\operatorname{fld}}
+        \newcommand{\im}{\operatorname{im}}
+        \newcommand{\preim}{\operatorname{preim}}
+        \newcommand{\rest}{\!\upharpoonright\!}
+        \newcommand{\comp}{\setminus}
+        \newcommand{\rfcl}{\operatorname{rfcl}}
+        \newcommand{\ordinal}{\textrm{ON}}
+        \newcommand{\iso}{\cong}
+        \newcommand{\into}{\hookrightarrow}
+        \newcommand{\onto}{\twoheadrightarrow}
+        \newcommand{\simto}{\rightleftarrows}
+        \newcommand{\eqnum}{\approx}
+        \renewcommand{\em}{\varnothing}
+        \renewcommand{\mid}{\,\middle\vert\,}
+        \renewcommand{\min}{\operatorname{min}}
+        \renewcommand{\max}{\operatorname{max}}
+
+    % Category Theory
+        \newcommand{\cat}[1]{\textbf{#1}}
+        \newcommand{\catset}{\cat{Set}}
+        \newcommand{\catrel}{\cat{Rel}}
+        \newcommand{\catgrp}{\cat{Grp}}
+        \newcommand{\catvect}[1][K]{\cat{Vect}_#1}
+        \newcommand{\Id}{\operatorname{Id}}
+        \newcommand{\natid}{\mc{I}\textrm{d}}
+        \newcommand{\obj}{\operatorname{Obj}}
+        \newcommand{\aut}{\operatorname{Aut}}
+        \newcommand{\edm}{\operatorname{End}}
+        \renewcommand{\hom}{\operatorname{Hom}}
+
+    % Geometry
+        % Analysis
+            \newcommand{\diam}{\operatorname{diam}}
+            \newcommand{\del}{\partial}
+            \renewcommand{\d}{\mathrm{d}}
+            \renewcommand{\Re}{\operatorname{Re}}
+            \renewcommand{\Im}{\operatorname{Im}}
+
+        % Topology
+            \newcommand{\sttopR}[1][]{\mc{T}^\textrm{st}_{\R^{#1}}}
+            \newcommand{\ULtopR}{\mc{T}^\textrm{UL}_\R}
+            \newcommand{\LLtopR}{\mc{T}^\textrm{LL}_\R}
+            \newcommand{\KtopR}{\mc{T}^K_\R}
+
+        % Complex Analysis
+            \newcommand{\RS}{\hat{\C}}
+            \newcommand{\HOLO}{\ms{O}}
+            \newcommand{\MERO}{\ms{M}}
+            \newcommand{\mult}{\operatorname{mult}}
+            \newcommand{\ord}{\operatorname{ord}}
+            \renewcommand{\div}{\operatorname{div}}
+
+    % Algebra
+        % Linear Algebra
+            % Core
+                \newcommand{\rank}{\operatorname{rank}}
+                \newcommand{\nullity}{\operatorname{nullity}}
+                \newcommand{\bilform}[2]{\l\langle{#1},{#2}\r\rangle}
+                \newcommand{\proj}{\operatorname{proj}}
+                \renewcommand{\span}{\operatorname{span}}
+            % Classes of Matrices
+                \newcommand{\mat}[2]{\mathcal{M}_{#1}\!\l(#2\r)}
+                \newcommand{\GL}{\operatorname{GL}}
+                \newcommand{\SL}{\operatorname{SL}}
+                \newcommand{\Diag}{\operatorname{Diag}}
+                \newcommand{\Skew}{\operatorname{Skew}}
+            % Matrix
+                \newcommand{\diag}{\operatorname{diag}}
+                \newcommand{\trans}{\mathsf{T}}
+                \newcommand{\rref}{\operatorname{rref}}
+                \newcommand{\row}{\operatorname{row}}
+                \newcommand{\col}{\operatorname{col}}
+                \newcommand{\nullsp}{\operatorname{null}}
+            % Vector
+                \newcommand{\dotpro}{\boldsymbol\cdot}
+                \newcommand{\cropro}{\boldsymbol\times}
+                \newcommand{\unitv}[1]{\mathbf{\hat{#1}}}
+                \newcommand{\unitvalt}[1]{\bm{\hat{#1}}}
+                \newcommand{\ihat}{\bm\hat{\textbf{\i}}}
+                \newcommand{\jhat}{\bm\hat{\textbf{\j}}}
+                \newcommand{\valt}[1]{\bm{#1}}
+                \renewcommand{\v}[1]{\mathbf{#1}}
+
+        % Group Theory
+            \newcommand{\Sym}{\operatorname{Sym}}
+            \newcommand{\nsubgrpeq}{\trianglelefteq}
+            \newcommand{\cyclic}[1]{\l\langle#1\r\rangle}
+
+        % Number Theory
+            \newcommand{\lcm}{\operatorname{lcm}}
+            \newcommand{\divides}{\,|\,}
+            \newcommand{\ndivides}{\nmid}
+            \renewcommand{\mod}[1]{\equiv_{#1}}
+
+        % Ring Theory
+            \newcommand{\charac}{\operatorname{char}}
+            \newcommand{\eval}{\operatorname{eval}}
+
+    % Others
+        % Projective Geometry
+            \newcommand{\proje}[1]{\l[#1\r]}
+            \newcommand{\PSL}[2]{\operatorname{PSL}_{#1}\!\l(#2\r)}
+
+% Math others
+    % Number Systems
+        \newcommand{\N}{\mathbb{N}}
+        \newcommand{\Z}{\mathbb{Z}}
+        \newcommand{\Q}{\mathbb{Q}}
+        \newcommand{\R}{\mathbb{R}}
+        \newcommand{\C}{\mathbb{C}}
+        \newcommand{\F}{\mathbb{F}}
+        \renewcommand{\H}{\mathbb{H}}
+        \renewcommand{\P}{\mathbb{P}}
+
+% LaTeX/MathJax
+    % Fonts
+        \newcommand{\mc}[1]{\mathcal{#1}}
+        \newcommand{\ms}[1]{\mathscr{#1}}
+        \newcommand{\mb}[1]{\mathbb{#1}}
+        \newcommand{\mf}[1]{\mathfrak{#1}}
+        \renewcommand{\it}[1]{\textit{#1}}
+        \renewcommand{\bf}[1]{\textbf{#1}}
+        \renewcommand{\phi}{\varphi}
+        \renewcommand{\epsilon}{\varepsilon}
+        \DeclareRobustCommand{\cchi}{{\mathpalette\irchi\relax}}
+        \newcommand{\irchi}[2]{\raisebox{\depth/2}{$#1\chi$}}
+    % Meta
+        \renewcommand{\qed}{\phantom\qedhere\hfill$\blacksquare$}
+        \newcommand{\qedin}{\tag*{$\blacksquare$}}
+        \newcommand{\exqed}{\phantom\qedhere\hfill$\blacklozenge$}
+        \newcommand{\exqedin}{\tag*{$\blacklozenge$}}
+        \newcommand{\blob}{\bullet}
+        \newcommand{\slot}{-}
+        \newcommand{\cref}[1]{\tag{$\,#1\,$}}
+        \newcommand{\ulthm}[1]{\uline{\phantom{#1}}\llap{\contour{gray}{#1}}}
+        \newcommand{\uldef}[1]{\uline{\phantom{#1}}\llap{\contour{lightGray}{#1}}}
+        \newcommand{\ul}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
+        \newcommand{\side}[2][0in]{\marginpar{\vspace{#1 - 0.07in}\footnotesize{\normalfont{#2}}}}
+        \renewcommand{\ref}[1]{\l(\,#1\,\r)}
+        \renewcommand{\bar}{\overline}
+        \renewcommand{\l}{\left}
+        \renewcommand{\r}{\right}
