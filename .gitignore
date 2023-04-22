@@ -10,3 +10,5 @@ Resources/
 *.bcf
 *.blg
 *.run.xml
+*.nav
+*.snm
