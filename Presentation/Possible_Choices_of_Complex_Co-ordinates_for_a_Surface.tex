@@ -78,7 +78,10 @@
 
                 \draw[dashed] (0.25in,1.5) edge[out=40, in=180, ->] (2in,3) node[xshift=0.55in, yshift=0.45in, rotate=20]{\scriptsize$\l(x,y\r)\mapsto x+iy$};
                 \draw[dashed] (0.25in,-1.5) edge[out=-40, in=180, ->] (2in,-3) node[xshift=0.55in, yshift=-0.45in, rotate=-20]{\scriptsize$\l(x,y\r)\mapsto x-iy$};
-                \draw[dashed, <->] (3.5in,1.25) -- (3.5in,-1.25) node[midway, right]{$z\mapsto\bar{z}$};
+
+                \pause
+
+                \draw[dashed] (1.25in,1.25) edge[out=340, in=20,<->] (1.25in,-1.25) node[xshift=0.8in, yshift=-0.4in]{$\l(x,y\r)\mapsto\l(x,-y\r)$};
             \end{tikzpicture}
         \end{center}
     \end{frame}
@@ -117,7 +120,10 @@
 
                 \draw[dashed] (0.25in,1.5) edge[out=40, in=180, ->] (2in,3) node[xshift=0.55in, yshift=0.45in, rotate=20]{\scriptsize$\l(x,y\r)\mapsto x+iy$};
                 \draw[dashed] (0.25in,-1.5) edge[out=-40, in=180, ->] (2in,-3) node[xshift=0.55in, yshift=-0.45in, rotate=-20]{\scriptsize$\l(x,y\r)\mapsto x+ie^y$};
-                \draw (3in,0) circle (0in) node{No biholomorphism!};
+
+                \pause
+
+                \draw[dashed, red] (1.25in,1.25) edge[out=340, in=20,<->] (1.25in,-1.25) node[xshift=1in, yshift=-0.4in]{No biholomorphism!};
             \end{tikzpicture}
         \end{center}
     \end{frame}
