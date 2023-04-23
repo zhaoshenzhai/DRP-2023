@@ -21,7 +21,7 @@
     \end{equation*}
     for some $a,b,c,d\in\Z$ with $ad-bc=1$.
     \begin{lemma}\label{2.1:lem:moduli_space_torus_1}
-        Let $\Gamma,\Gamma'\subseteq\C$ be two lattices and suppose $\alpha\Gamma\subseteq\Gamma'$ for some $\alpha\in\C^\ast$. Then $z\mapsto\alpha z$ descends to a holomorphic map $\phi:\C/\Gamma\to\C/\Gamma'$, which is biholomorphic iff $\alpha\Gamma\subseteq\Gamma'$.
+        Let $\Gamma,\Gamma'\subseteq\C$ be two lattices and suppose $\alpha\Gamma\subseteq\Gamma'$ for some $\alpha\in\C^\ast$. Then $z\mapsto\alpha z$ descends to a holomorphic map $\phi:\C/\Gamma\to\C/\Gamma'$, which is biholomorphic iff $\alpha\Gamma=\Gamma'$.
     \end{lemma}\side[-0.3in]{This gives a simple criterion for when two tori are biholomorphic.}\vspace{-0.08in}
     \begin{proof}
         Let $\Gamma\coloneqq\Z\omega_1\oplus\Z\omega_2$ and $\Gamma'\coloneqq\Z\omega_1'\oplus\Z\omega_2'$. Define $\phi\l(z+\Gamma\r)\coloneqq\alpha z+\Gamma'$ for all $z\in\C$, which is clearly holomorphic if it is well-defined in the first place. To verify, take $z_1,z_2\in\C$ such that $z_1+\Gamma=z_2+\Gamma$. Then $z_1-z_2\in\Gamma$, so $z_1-z_2=m\omega_1+n\omega_2$ for some $n,m\in\Z$. Observe that
@@ -101,16 +101,16 @@
         \end{equation*}
         A computation now shows that $\alpha=-\l(ad-bc\r)/\l(c\tau+d\r)$, so $ad-bc\neq0$. Then, since
         \begin{equation*}
-            \begin{bmatrix}
+            \begin{pmatrix}
                 \alpha\tau \\ \alpha
-            \end{bmatrix}=
-            \begin{bmatrix}
+            \end{pmatrix}=
+            \begin{pmatrix}
                 b & -d \\
                 -a & c
-            \end{bmatrix}
-            \begin{bmatrix}
+            \end{pmatrix}
+            \begin{pmatrix}
                 1 \\ \tau'
-            \end{bmatrix},
+            \end{pmatrix},
         \end{equation*}
         we solve for $\tau'$ to obtain
         \begin{equation*}

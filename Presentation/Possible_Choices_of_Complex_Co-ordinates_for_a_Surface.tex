@@ -132,9 +132,8 @@
             What about for manifolds?\\\ \\
             \pause
             \begin{definition}
-                A \textit{Riemann surface} is a connected 1-dimensional complex manifold.
+                \textit{A \ul{Riemann surface} is a connected 1-dimensional complex manifold.}
             \end{definition}
-            \pause
             \includegraphics[width=0.8\textwidth]{figures/manifolds.png}
         \end{center}
     \end{frame}
@@ -144,7 +143,78 @@
         \end{theorem}
         \pause
         \begin{center}
-            \includegraphics[width=0.8\textwidth]{figures/torus.png}
+            \includegraphics[width=0.8\textwidth]{figures/torus_handle.png}
         \end{center}
+    \end{frame}
+    \begin{frame}{Topological torus}
+        \begin{theorem}
+            Every torus is the quotient $\C/\Gamma$ where $\Gamma=\Z\omega_1\oplus\Z\omega_2$ for some linearly independent $\omega_1,\omega_2\in\C$.
+        \end{theorem}
+        \pause
+        \ \\
+        \begin{center}
+            \includegraphics[width=0.9\textwidth]{figures/torus_glue.png}
+        \end{center}
+    \end{frame}
+    \begin{frame}{Complex tori}
+        \begin{theorem}
+            There is, up to homeomorphism, only one topological torus.
+        \end{theorem}
+
+        \pause
+
+        \begin{block}{Question}
+            \textit{In how many ways can we give the torus complex coordinates?}
+        \end{block}
+    \end{frame}
+    \begin{frame}{Complex tori}
+        \begin{center}
+            \includegraphics[width=\textwidth]{figures/torus_scale.png}
+        \end{center}
+    \end{frame}
+    \begin{frame}{Complex tori}
+        \begin{theorem}
+            Every complex tori is the quotient $X_\tau\coloneqq\C/\Gamma$ where $\Gamma=\Z\oplus\Z\tau$ for some $\tau\in\H$. \pause Indeed, for all linearly independent $\omega_1,\omega_2\in\C$,
+            \begin{equation*}
+                \C/\!\l(\Z\omega_1\oplus\Z\omega_2\r)\iso X_\tau
+            \end{equation*}
+            for $\tau\coloneqq\omega_2/\omega_1\in\H$.
+        \end{theorem}
+    \end{frame}
+    \begin{frame}{Complex tori}
+        \begin{center}
+            \includegraphics[width=\textwidth]{figures/torus_fundamental_domain_1.png}
+        \end{center}
+    \end{frame}
+    \begin{frame}{Complex tori}
+        \begin{center}
+            \includegraphics[width=\textwidth]{figures/torus_fundamental_domain_2.png}
+        \end{center}
+    \end{frame}
+    \begin{frame}{Complex tori}
+        \begin{center}
+            \includegraphics[width=\textwidth]{figures/torus_fundamental_domain_3.png}
+        \end{center}
+    \end{frame}
+    \begin{frame}{Complex tori}
+        \begin{definition}
+            \textit{The \ul{modular group} $\PSL{2}{\Z}$ is the group of functions $\gamma:\H\to\H$ mapping}
+            \begin{equation*}
+                \tau\mapsto\frac{a\tau+b}{c\tau+d}
+            \end{equation*}
+            \textit{for some $a,b,c,d\in\Z$ with $ad-bc=1$.}
+        \end{definition}
+
+        \pause
+
+        \begin{theorem}
+            For any $\tau,\tau'\in\H$, the tori $X_\tau$ and $X_{\tau'}$ are biholomorphic iff there exists some $\gamma\in\PSL{2}{\Z}$ such that $\tau'=\gamma\l(\tau\r)$.
+        \end{theorem}
+
+        \pause
+
+        \begin{corollary}
+            The moduli space of complex tori is $\H/\PSL{2}{\Z}$.
+        \end{corollary}
     \end{frame}
 \end{document}
