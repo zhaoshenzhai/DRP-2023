@@ -3,8 +3,8 @@
 \input{setup/preamble.sty}
 \input{setup/macros.sty}
 
-\title{\normalsize Possible Choices of Complex Co-ordinates for a Surface}
-\subtitle{\small Moduli Spaces of Riemann Surfaces}
+\title{\normalsize{Possible Choices of Complex Co-ordinates for a Surface}}
+\subtitle{\small{Moduli Spaces of Riemann Surfaces}}
 \author{Zhaoshen Zhai}
 \institute{McGill University}
 \date{\today}
@@ -13,9 +13,112 @@
 \usefonttheme{serif}
 \useinnertheme{rounded}
 
-\begin{document}
-    \frame{\titlepage}
-    \begin{frame}{Rough outline}
+\begin{document}\frame{\titlepage}
+    \begin{frame}{How many complex coordinates on $\R^2$?}
+        \begin{center}
+            \begin{tikzpicture}
+                \draw[<->, thick] (-2,0) -- (2,0);
+                \draw[<->, thick] (0,-1.5) -- (0,1.5);
+                \fill (-2,1.5) circle (0in) node{$\R^2$};
+                \fill (1,0.75) circle (0.02in) node[above right]{$\l(x,y\r)$};
 
+                \begin{scope}[xshift=2.25in]
+                    \draw[<->, thick] (-2,0) -- (2,0);
+                    \draw[<->, thick] (0,-1.5) -- (0,1.5);
+                    \fill (-2,1.5) circle (0in) node{$\C$};
+                    \fill (1,0.75) circle (0.02in) node[above right]{$x+iy$};
+                \end{scope}
+
+                \draw[dashed] (0.25in,2) edge[out=20,in=160,->] (2in,2);
+                \fill (1.125in,2.8) circle (0in) node{$\l(x,y\r)\mapsto x+iy$};
+            \end{tikzpicture}
+        \end{center}
+    \end{frame}
+    \begin{frame}{How many complex coordinates on $\R^2$?}
+        \begin{center}
+            \begin{tikzpicture}
+                \draw[<->, thick] (-2,0) -- (2,0);
+                \draw[<->, thick] (0,-1.5) -- (0,1.5);
+                \fill (-2,1.5) circle (0in) node{$\R^2$};
+                \fill (1,0.75) circle (0.02in) node[above right]{$\l(x,y\r)$};
+
+                \begin{scope}[xshift=2.25in]
+                    \draw[<->, thick] (-2,0) -- (2,0);
+                    \draw[<->, thick] (0,-1.5) -- (0,1.5);
+                    \fill (-2,1.5) circle (0in) node{$\C$};
+                    \fill (1,-0.75) circle (0.02in) node[above right]{$x-iy$};
+                \end{scope}
+
+                \draw[dashed] (0.25in,2) edge[out=20,in=160,->] (2in,2);
+                \fill (1.125in,2.8) circle (0in) node{$\l(x,y\r)\mapsto x-iy$};
+            \end{tikzpicture}
+        \end{center}
+    \end{frame}
+    \begin{frame}{How many complex coordinates on $\R^2$?}
+        \begin{center}
+            \begin{tikzpicture}[scale=0.8]
+                \draw[<->, thick] (-2,0) -- (2,0);
+                \draw[<->, thick] (0,-1.5) -- (0,1.5);
+                \fill (-2,1.5) circle (0in) node{$\R^2$};
+                \fill (1,0.75) circle (0.02in) node[above right]{$\l(x,y\r)$};
+
+                \begin{scope}[xshift=3in, yshift=1in]
+                    \draw[<->, thick] (-2,0) -- (2,0);
+                    \draw[<->, thick] (0,-1.5) -- (0,1.5);
+                    \fill (-2,1.5) circle (0in) node{$\C$};
+                    \fill (1,0.75) circle (0.02in) node[above right]{$x+iy$};
+                \end{scope}
+
+                \begin{scope}[xshift=3in, yshift=-1in]
+                    \draw[<->, thick] (-2,0) -- (2,0);
+                    \draw[<->, thick] (0,-1.5) -- (0,1.5);
+                    \fill (-2,1.5) circle (0in) node{$\C$};
+                    \fill (1,-0.75) circle (0.02in) node[above right]{$x-iy$};
+                \end{scope}
+
+                \draw[dashed] (0.25in,1.5) edge[out=40, in=180, ->] (2in,3) node[xshift=0.55in, yshift=0.45in, rotate=20]{\scriptsize$\l(x,y\r)\mapsto x+iy$};
+                \draw[dashed] (0.25in,-1.5) edge[out=-40, in=180, ->] (2in,-3) node[xshift=0.55in, yshift=-0.45in, rotate=-20]{\scriptsize$\l(x,y\r)\mapsto x-iy$};
+                \draw[dashed, <->] (3.5in,1.25) -- (3.5in,-1.25) node[midway, right]{$z\mapsto\bar{z}$};
+            \end{tikzpicture}
+        \end{center}
+    \end{frame}
+    \begin{frame}{Refined question}
+        \begin{center}
+            How many complex coordinates on $\R^2$?
+        \end{center}
+    \end{frame}
+    \begin{frame}{Refined question}
+        \begin{center}
+            \sout{How many complex coordinates on $\R^2$?}\\
+            How many complex coordinates on $\R^2$ \textit{up to biholomorphism}?
+        \end{center}
+    \end{frame}
+    \begin{frame}{$\C$ and $\H$}
+        \begin{center}
+            \begin{tikzpicture}[scale=0.8]
+                \draw[<->, thick] (-2,0) -- (2,0);
+                \draw[<->, thick] (0,-1.5) -- (0,1.5);
+                \fill (-2,1.5) circle (0in) node{$\R^2$};
+                \fill (1,0.75) circle (0.02in) node[above right]{$\l(x,y\r)$};
+
+                \begin{scope}[xshift=3in, yshift=1in]
+                    \draw[<->, thick] (-2,0) -- (2,0);
+                    \draw[<->, thick] (0,-1.5) -- (0,1.5);
+                    \fill (-2,1.5) circle (0in) node{$\C$};
+                    \fill (1,0.75) circle (0.02in) node[above right]{$x+iy$};
+                \end{scope}
+
+                \begin{scope}[xshift=3in, yshift=-1.25in]
+                    \draw[<->, thick, dashed, dash pattern={on 3pt off 2pt}] (-2,0) -- (2,0);
+                    \draw[->, thick] (0,0) -- (0,1.5);
+                    \fill (-2,1.5) circle (0in) node{$\H$};
+                    \fill (1,1) circle (0.02in) node[above right]{$x+ie^y$};
+                \end{scope}
+
+                \draw[dashed] (0.25in,1.5) edge[out=40, in=180, ->] (2in,3) node[xshift=0.55in, yshift=0.45in, rotate=20]{\scriptsize$\l(x,y\r)\mapsto x+iy$};
+                \draw[dashed] (0.25in,-1.5) edge[out=-40, in=180, ->] (2in,-3) node[xshift=0.55in, yshift=-0.45in, rotate=-20]{\scriptsize$\l(x,y\r)\mapsto x+ie^y$};
+                \draw (3in,0) circle (0in) node{No biholomorphism!};
+            \end{tikzpicture}
+        \end{center}
     \end{frame}
 \end{document}
