@@ -1,7 +1,7 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
     \section{Differential Forms}
-    Throughout this section, let $p\in X$ be a fixed point in a Riemann surface $X$.
+    Throughout this section, let $W\subseteq X$ be an open subset of a Riemann surface $X$ and fix $p\in W$.
     \subsection{The Cotangent Space}
     For an open set $V\subseteq\C$, we let $\DIFF\l(V\r)$ denote the $\C$-algebra of all functions $f:V\to\C$ that are differentiable w.r.t. the real coordinates $x$ and $y$, which we simple call \ul{differentiable}\side{By `differentiable', we always mean infinitely-differentiable.}. Using the partial derivative operators $\partial/\partial x$ and $\partial/\partial y$, we define
     \begin{equation*}
@@ -9,7 +9,7 @@
     \end{equation*}
     In this language, the Cauchy-Riemann equations state that $\HOLO\l(V\r)=\ker\partial/\partial\bar{z}$. We now lift these notions to a Riemann surface $X$.
     \begin{definition}
-        Let $W\subseteq X$ be open. A function $f:W\to\C$ is said to be \uldef{differentiable at $p$} if there is a chart $\tpl{U,\phi}$ of $X$ around $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ is differentiable at $\phi\l(p\r)$. If $f$ is differentiable at every point of $W$, then $f$ is said to be \uldef{differentiable on $W$}.
+        A function $f:W\to\C$ is said to be \uldef{differentiable at $p$} if there is a chart $\tpl{U,z}$ of $X$ around $p$ such that $f\circ z^{-1}:z\l(U\r)\to\C$ is differentiable at $z\l(p\r)$. If $f$ is differentiable at every point of $W$, then $f$ is said to be \uldef{differentiable on $W$}.
     \end{definition}
     \side[-0.45in]{As with holomorphic functions, differentiability is chart-independent.}
     \vspace{-0.05in}
@@ -17,22 +17,22 @@
         Let $\DIFF\l(W\r)$ denote the $\C$-algebra of all differentiable functions $f:W\to\C$ on $W$. Together with the usual restriction mappings, we obtain a sheaf $\DIFF$ of $\C$-algebras consisting of all differentiable functions on $X$.\exqed
     \end{remark}
     \begin{definition}
-        Fix a chart $\tpl{U,\phi}$ of $X$ around $p$. The \uldef{partial derivative operator w.r.t.} \uldef{$\tpl{U,\phi}$} is the operator
+        Fix a chart $\tpl{U,z}$ of $X$ around $p$. The \uldef{partial derivative operator w.r.t.} \uldef{$\tpl{U,z}$} is the operator
         \begin{equation*}
-            \frac{\partial}{\partial z}:\DIFF\l(U\r)\to\DIFF\l(U\r)\ \ \ \ \ \ \ \ \textrm{\it{mapping}}\ \ \ \ \ \ \ \ f\mapsto\frac{\partial}{\partial z}\!\l(f\circ\phi^{-1}\r).
+            \frac{\partial}{\partial z}:\DIFF\l(U\r)\to\DIFF\l(U\r)\ \ \ \ \ \ \ \ \textrm{\it{mapping}}\ \ \ \ \ \ \ \ f\mapsto\frac{\partial}{\partial z}\!\l(f\circ z^{-1}\r).
         \end{equation*}
         Similarly, we define $\partial/\partial x$, $\partial/\partial y$, and $\partial/\partial\bar{z}$.
     \end{definition}
-    \side[-0.9in]{That is, we define $\partial f/\partial z$ by pulling back the regular partial derivative $\partial/\partial z$ for the function $f\circ\phi^{-1}$ on $\C$. Again, this is chart-independent.}
+    \side[-0.9in]{That is, we define $\partial f/\partial z$ by pulling back the regular partial derivative $\partial/\partial z$ for the function $f\circ z^{-1}$ on $\C$. Again, this is chart-independent.}
     \begin{definition}
-        Let $\mf{m}_p\subseteq\DIFF_p$ be the ideal of all differentiable functions vanishing at $p$ and let $\mf{m}_p^2$ be its product. The \uldef{cotangent space of $X$ at $p$} is the quotient $T_p^\ast X\coloneqq\mf{m}_p/\mf{m}^2_p$. If $U\ni p$ is open and $f\in\DIFF\l(U\r)$, we define the \uldef{differential of $f$ at $p$} as
+        Let $\mf{m}_p\subseteq\DIFF_p$ be the ideal of all differentiable functions vanishing at $p$ and let $\mf{m}_p^2$ be its product. The \uldef{cotangent space of $X$ at $p$} is the quotient space $T_p^\ast X\coloneqq\mf{m}_p/\mf{m}^2_p$. If $U\ni p$ is open and $f\in\DIFF\l(U\r)$, we define the \uldef{differential of $f$ at $p$} as
         \begin{equation*}
             \d_pf\coloneqq\l[f-f\l(p\r)\r]_{\mf{m}_p^2}\in T_p^\ast X.
         \end{equation*}
     \end{definition}
     \side[-0.72in]{That is, $\mf{m}_p$ consists of all germs $\l[f\r]_p$ such that $f\l(p\r)=0$. Also, $\mf{m}^2_p$ is the product of ideals which consists of all germs $\l[h\r]_p$ such that $h=\sum_if_ig_i$ for some $f_i,g_i\in\mf{m}_p$.}
     \begin{proposition}
-        Let $\tpl{U,\phi}$ be a chart of $X$ around $p$ and let $z=x+iy$ be its local coordinates. Then $\l\{\d_px,\d_py\r\}$ and $\l\{\d_pz,\d_p\bar{z}\r\}$ are both bases for $T_p^\ast X$, and if $f\in\DIFF\l(W\r)$ for some $W\ni p$, then
+        Let $\tpl{U,z}$ be a chart of $X$ around $p$. Then $\l\{\d_px,\d_py\r\}$ and $\l\{\d_pz,\d_p\bar{z}\r\}$ are both bases for $T_p^\ast X$, and if $f\in\DIFF\l(W\r)$, then
         \begin{equation*}
             \begin{aligned}
                 \d_pf&=\l.\frac{\partial f}{\partial x}\r|_p\d_px+\l.\frac{\partial f}{\partial y}\r|_p\d_py \\
@@ -68,33 +68,59 @@
         \end{equation*}
         Thus $\l\{\d_pz,\d_p\bar{z}\r\}$ is linearly-independent, so it is a basis for $T_p^\ast X$. For $f\in\DIFF\l(W\r)$, a computation now shows that
         \begin{equation*}
-            \begin{aligned}
-                \d_pf&=\l.\frac{\partial f}{\partial x}\r|_p\d_px+\l.\frac{\partial f}{\partial y}\r|_p\d_py=\frac{1}{2}\l(\l.\frac{\partial f}{\partial x}\r|_p-i\l.\frac{\partial f}{\partial y}\r|_p\r)\d_pz+\frac{1}{2}\l(\l.\frac{\partial f}{\partial x}\r|_p+i\l.\frac{\partial f}{\partial y}\r|_p\r)\d_p\bar{z} \\
-                     &=\l.\frac{\partial f}{\partial z}\r|_p\d_pz+\l.\frac{\partial f}{\partial\bar{z}}\r|_p\d_p\bar{z},
-            \end{aligned}
+            \d_pf=\frac{1}{2}\l(\l.\frac{\partial f}{\partial x}\r|_p-i\l.\frac{\partial f}{\partial y}\r|_p\r)\d_pz+\frac{1}{2}\l(\l.\frac{\partial f}{\partial x}\r|_p+i\l.\frac{\partial f}{\partial y}\r|_p\r)\d_p\bar{z}=\l.\frac{\partial f}{\partial z}\r|_p\d_pz+\l.\frac{\partial f}{\partial\bar{z}}\r|_p\d_p\bar{z}.\qedin
         \end{equation*}
-        as desired.\qed
     \end{proof}
     \begin{proposition}[Canonical Decomposition]
-        Let $\tpl{U,\phi}$ be a chart of $X$ around $p$ and let $z$ be its local coordinates. Then the subspaces
+        Let $\tpl{U,z}$ be a chart of $X$ around $p$. Then the subspaces
         \begin{equation*}
-            T_p^\ast X^{1,0}\coloneqq\span\l\{\d_pz\r\}\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ T_p^\ast X^{0,1}\coloneqq\span\l\{\d_p\bar{z}\r\}
+            T_p^\ast X^{\l(1,0\r)}\coloneqq\span\l\{\d_pz\r\}\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ T_p^\ast X^{\l(0,1\r)}\coloneqq\span\l\{\d_p\bar{z}\r\}
         \end{equation*}
-        are chart-independent and $T_p^\ast X=T_p^\ast X^{1,0}\oplus T_p^\ast X^{0,1}$.
+        are chart-independent and $T_p^\ast X=T_p^\ast X^{\l(1,0\r)}\oplus T_p^\ast X^{\l(0,1\r)}$.
     \end{proposition}
     \begin{proof}
-        If $\tpl{U',\phi'}$ is another chart of $X$ around $p$ with local coordinates $z'$, then, since $z'\in\HOLO\l(U\cap U'\r)$, we see that
+        If $\tpl{U',z'}$ is another chart of $X$ around $p$, then, since $z'\in\HOLO\l(U\cap U'\r)$, we see that
         \begin{equation*}
             \d_pz'=\l.\frac{\partial z'}{\partial z}\r|_p\d_pz+\l.\frac{\partial z'}{\partial\bar{z}}\r|_p\d_p\bar{z}.
         \end{equation*}
         But $\partial z'/\partial\bar{z}=0$, so $\span\l\{\d_pz\r\}=\span\l\{\d_pz'\r\}$. Similarly, $\partial\bar{z'}/\partial z=0$, so $\span\l\{\d_p\bar{z}\r\}=\span\big\{\d_p\bar{z'}\big\}$. The decomposition then follows by construction.\qed
     \end{proof}
     \begin{remark}
-        If $f\in\DIFF\l(W\r)$ for some open set $W\ni p$, let $\partial_pf\in T_p^\ast X^{1,0}$ and $\bar{\partial}_pf\in T_p^\ast X^{0,1}$ be the unique elements such that $\d_pf=\partial_pf+\bar{\partial}_pf$. The above proposition ensures that they are chart-independent. For computations, we descend via any chart $\tpl{U,\phi}$ of $X$ around $p$, say with local coordinates $z$, where we have
+        For\side{For computations, we descend via any chart $\tpl{U,z}$ of $X$ around $p$ where we have
         \begin{equation*}
-            \partial_pf=\l.\frac{\partial f}{\partial z}\r|_p\d_pz\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ \bar{\partial}_pf=\l.\frac{\partial f}{\partial\bar{z}}\r|_p\d_p\bar{z}.\exqedin
-        \end{equation*}
+            \partial_pf=\l.\frac{\partial f}{\partial z}\r|_p\d_pz\ \ \ \ \textrm{and}\ \ \ \ \bar{\partial}_pf=\l.\frac{\partial f}{\partial\bar{z}}\r|_p\d_p\bar{z}.
+        \end{equation*}} all $f\in\DIFF\l(W\r)$, let $\partial_pf\in T_p^\ast X^{\l(1,0\r)}$ and $\bar{\partial}_pf\in T_p^\ast X^{\l(0,1\r)}$ be the unique elements such that $\d_pf=\partial_pf+\bar{\partial}_pf$. The above proposition ensures that they are chart-independent.\exqed
     \end{remark}
     \subsection{Differential $1$-forms}
-    \subsection{The Exterior Product and Differential $2$-forms}
+    \begin{definition}
+        A \uldef{differential $1$-form on $W$} is a map
+        \begin{equation*}
+            \omega:W\to\bigcup_{p\in W}T_p^\ast X
+            \vspace{-0.05in}
+        \end{equation*}
+        such that $\omega\l(p\r)\in T_p^\ast X$ for every $p\in W$.
+    \end{definition}
+    \side[-0.83in]{With the induced operations from $T_p^\ast X$, the set of all $1$-forms on $W$ becomes a vector space. In fact, it is a $\C$-algebra, for if $f:W\to\C$ is a function, then the map $f\omega$ defined by $\l(f\omega\r)\l(p\r)\coloneqq f\l(p\r)\omega\l(p\r)$ is also a $1$-form on $W$.}
+    \vspace{-0.05in}
+    \begin{example}
+        For $f\in\DIFF\l(W\r)$, the maps $\d f$, $\partial f$, and $\bar{\partial}f$ defined by
+        \begin{equation*}
+            \l(\d f\r)\l(p\r)\coloneqq\d_pf,\ \ \ \ \ \ \ \ \l(\partial f\r)\l(p\r)\coloneqq\partial_pf,\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ \big(\bar{\partial}f\big)\l(p\r)\coloneqq\bar{\partial}_pf
+        \end{equation*}
+        for all $p\in W$ are all $1$-forms. Note that if $\tpl{U,z}$ is a chart of $X$, then every $1$-form $\omega$ on $W$ can be written as
+        \begin{equation*}
+            \omega=f_1\d x+f_2\d y=f_1'\d z+f_2'\d\bar{z}
+        \end{equation*}
+        for some\side{We note that the functions $f_1,f_2,f_1',f_2'$ are not necessarily continuous.} $f_1,f_2,f_1',f_2':U\to\C$. Indeed, for all $p\in U$, we have $\omega\l(p\r)=f_1\!\l(p\r)\d_px+f_2\!\l(p\r)\d_py$ for some $f_1\!\l(p\r),f_2\!\l(p\r)\in\C$. Varying over all $p\in U$ gives us functions $f_1,f_2:U\to\C$. Similarly for $f_1'$ and $f_2'$.\exqed
+    \end{example}
+    \begin{definition}
+        We define certain subspaces of $1$-forms on $W$ as follows.
+        \begin{itemize}
+            \item The subspace $\DIFF^{\l(1\r)}\!\l(W\r)$ of all \uldef{differentiable $1$-forms} $\omega$ on $W$ such that $\omega=f\d z+g\d\bar{z}$ for some $f,g\in\DIFF\l(U\cap W\r)$.
+            \item The subspace $\DIFF^{\l(1,0\r)}\!\l(W\r)$ (resp. $\DIFF^{\l(0,1\r)}$) of all \uldef{type $\l(1,0\r)$} (resp. \uldef{$\l(0,1\r)$}) \uldef{$1$-forms} $\omega$ on $W$ such that $\omega=f\d z$ (resp. $\omega=f\d\bar{z}$) for some $f\in\DIFF\l(U\cap W\r)$.
+            \item The subspace $\Omega\l(W\r)$ of all \uldef{holomorphic $1$-forms} $\omega$ on $W$ such that $\omega=f\d z$ for some $f\in\HOLO\l(U\cap W\r)$.
+        \end{itemize}
+    \end{definition}
+    \side[-1.03in]{All conditions on $\omega$ must hold on \textit{every} chart $\tpl{U,z}$ of $X$.}
+    \subsection{The Exterior Product}
 \end{document}

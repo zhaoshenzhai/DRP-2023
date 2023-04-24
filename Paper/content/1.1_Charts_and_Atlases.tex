@@ -3,7 +3,7 @@
     \section{Charts and Atlases}
     We assume that the reader is familiar with the basic notions of real manifolds. The case for complex manifolds is similar, so our exposition will be brief.
     \begin{definition}
-        Let $X$ be a second-countable Hausdorff space. A \uldef{$d$-dimensional complex} \uldef{chart on $X$} is a pair $\tpl{U,\phi}$ where $\phi:U\to V$ is a homeomorphism from an open subset $U\subseteq X$ onto an open subset $V\subseteq\C^d$ for some $d$. Two $d$-dimensional charts $\l(U_1,\phi_1\r)$ and $\l(U_2,\phi_2\r)$ are said to be \uldef{holomorphically compatible} if either $U_1\cap U_2=\em$, or the map
+        Let $X$ be a second-countable Hausdorff space. A \uldef{$d$-dimensional complex} \uldef{chart of $X$} is a pair $\tpl{U,\phi}$ where $\phi:U\to V$ is a homeomorphism from an open subset $U\subseteq X$ onto an open subset $V\subseteq\C^d$ for some $d$. Two $d$-dimensional charts $\l(U_1,\phi_1\r)$ and $\l(U_2,\phi_2\r)$ are said to be \uldef{holomorphically compatible} if either $U_1\cap U_2=\em$, or the map
         \begin{equation*}
             \phi_2\circ\phi_1^{-1}:\phi_1\l(U_1\cap U_2\r)\to\phi_2\l(U_1\cap U_2\r)
         \end{equation*}
@@ -16,7 +16,8 @@
                 \phi_1(U_1\cap U_2) \ar[rr, "\phi_2\circ\phi_1^{-1}"'] \& \& \phi_2(U_1\cap U_2)
             \end{tikzcd}       
         \end{equation*}
-    It is clear that one only needs $\phi_2\circ\phi_1^{-1}$ to be holomorphic for it to be biholomorphic.}
+    It is clear that one only needs $\phi_2\circ\phi_1^{-1}$ to be holomorphic for it to be biholomorphic.\\\ \\
+    It is sometimes convenient to write $\tpl{U,z}$ for a chart on $X$ instead, where now $z=x+iy$ is said to be a \ul{local coordinate system} of $X$.}
     \begin{remark}
         Two atlases $\mf{A}$ and $\mf{B}$ on a manifold $X$ are said to be \ul{analytically equivalent} if every chart in $\mf{A}$ is compatible with every chart in $\mf{B}$. By Zorn's Lemma, every atlas $\mf{A}$ of a manifold $X$ is contained in a unique maximal atlas on $X$. Moreover, two atlases are equivalent iff they are contained in the same maximal atlas, which justifies the following definition.\exqed
     \end{remark}
