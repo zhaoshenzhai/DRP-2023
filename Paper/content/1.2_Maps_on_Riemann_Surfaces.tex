@@ -114,13 +114,13 @@
                 \end{equation*}
                 that extends the codomain of $f$ to the Riemann sphere $\RS$;\side{Here, we consider $\RS=\C_\infty$.} it is clear that $F$ is holomorphic.
         \end{itemize}
-        Thus we see that every such function $f:W\to\C$ having pole at $p$ can be holomorphically extended to a map $F:W\to\RS$. Conversely, every holomorphic map $F:W\to\RS$ (that is not identically zero) can be regarded as a function $f:W\comp F^{-1}\l(\infty\r)\to\C$ that is holomorphic everywhere except where $F\l(x\r)=\infty$, in which case it either has a pole. This motivates the following definition.\exqed
+        Thus we see that every such function $f:W\to\C$ having pole at $p$ can be holomorphically extended to a map $F:W\to\RS$. Conversely, every holomorphic map $F:W\to\RS$ (that is not identically infinity) can be regarded as a function $f:W\comp F^{-1}\l(\infty\r)\to\C$ that is holomorphic everywhere except where $F\l(x\r)=\infty$, in which case it either has a pole. This motivates the following definition.\exqed
     \end{remark}
     \begin{definition}
         A function $f:W\to\C$ is said to be \uldef{meromorphic at $p$} if it does not have an essential singularity at $p$; that is, if it is either holomorphic, has a removable singularity, or has a pole at $p$. If $f$ is meromorphic at every point of $W$, then $f$ is \uldef{meromorphic on $W$}.
     \end{definition}\side[-0.44in]{As in Example \ref{1.2:exa:elementary_holomorphic_functions}, if $f,g:W\to\C$ are both meromorphic at $p$, then so are $f\pm g$ and $f\cdot g$. If $g$ is not identically $0$, then so is $f/g$. This makes the set $\MERO\l(W\r)$ of all meromorphic functions $f:W\to\C$ into a $\C$-algebra.}
     \begin{remark}
-        The previous remark can now be rephrased by saying that the set of all meromorphic functions $f:W\to\C$ are in one-to-one correspondence with the set of all holomorphic maps $F:W\to\RS$ (which are not identically zero). That is, meromorphic functions are the holomorphic maps to the Riemann sphere.\exqed
+        The previous remark can now be rephrased by saying that the set of all meromorphic functions $f:W\to\C$ are in one-to-one correspondence with the set of all holomorphic maps $F:W\to\RS$ (which are not identically infinity). That is, meromorphic functions are the holomorphic maps to the Riemann sphere.\exqed
     \end{remark}
     \begin{definition}\label{1.2:def:order}
         Let $f:W\to\C$ be meromorphic at $p$ and consider its Laurent series $f_\phi\!\l(z\r)\coloneqq\l(f\circ\phi^{-1}\r)\l(z\r)=\sum_{i}c_i\l(z-z_0\r)^i$ under a chart $\l(U,\phi\r)$ of $X$ with $z_0\coloneqq\phi\l(p\r)$. The \uldef{order of $f$ at $p$} is
@@ -128,7 +128,7 @@
             \ord_p\!\l(f\r)\coloneqq\min\l\{n\in\Z\mid0\neq\l(z-z_0\r)^n\!f_\phi\!\l(z\r)\in\HOLO\l(W\r)\r\}.
         \end{equation*}
     \end{definition}
-    \side[-0.53in]{Note that $f$, being meromorphic, ensures that its Laurent series has finitely-many negative terms, so the definition makes sense. If $f$ is not meromorphic, we take $\ord_p\!\l(f\r)\coloneqq\infty$.\\\ \\
+    \side[-0.67in]{Note that $f$, being meromorphic, ensures that its Laurent series has finitely-many negative terms, so the definition makes sense. If $f$ is not meromorphic, we take $\ord_p\!\l(f\r)\coloneqq\infty$.\\\ \\
         The arithmetic of $\ord_p$ is straightforward. Indeed, if $f,g:W\to\C$ are meromorphic at $p$, then
         \begin{itemize}
             \item $\ord_p\!\l(fg\r)=\ord_p\!\l(f\r)+\ord_p\!\l(g\r)$.
@@ -183,7 +183,10 @@
     \begin{remark}
         Together with the above computation, this shows that if $f$ is a meromorphic function on $\RS$, then $\sum_{z\in\RS}\ord_z\!\l(f\r)=0$. In fact, this holds for all compact Riemann surfaces.\exqed
     \end{remark}
-    \subsection{Local Normal Form}
+    \begin{remark}
+        We may rephrase the proposition by saying that the automorphisms on $\RS$ are precisely the rational functions.\exqed
+    \end{remark}
+    \subsection{Local Normal Form and the Multiplicity}
     \begin{theorem}[Local Normal Form]\label{1.2:thm:local_normal_form}
         Let $X$ and $Y$ be Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. Then, for every $p\in X$, there exists a unique $m\geq1$ such that for any chart $\tpl{U_2,\phi_2}$ of $Y$ centered at $F\l(p\r)$, there exists a chart $\tpl{U_1,\phi_1}$ of $X$ centered at $p$ such that $\phi_2\circ F\circ\phi_1^{-1}:z\mapsto z^m$ for all $z\in\phi_1\l(U_1\r)$.
     \end{theorem}
