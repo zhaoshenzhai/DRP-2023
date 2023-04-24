@@ -1,0 +1,100 @@
+\documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
+\begin{document}
+    \section{Differential Forms}
+    Throughout this section, let $p\in X$ be a fixed point in a Riemann surface $X$.
+    \subsection{The Cotangent Space}
+    For an open set $V\subseteq\C$, we let $\DIFF\l(V\r)$ denote the $\C$-algebra of all functions $f:V\to\C$ that are differentiable w.r.t. the real coordinates $x$ and $y$, which we simple call \ul{differentiable}\side{By `differentiable', we always mean infinitely-differentiable.}. Using the partial derivative operators $\partial/\partial x$ and $\partial/\partial y$, we define
+    \begin{equation*}
+        \frac{\partial}{\partial z}\coloneqq\frac{1}{2}\l(\frac{\partial}{\partial x}-i\frac{\partial}{\partial y}\r)\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ \frac{\partial}{\partial\bar{z}}\coloneqq\frac{1}{2}\l(\frac{\partial}{\partial x}+i\frac{\partial}{\partial y}\r).
+    \end{equation*}
+    In this language, the Cauchy-Riemann equations state that $\HOLO\l(V\r)=\ker\partial/\partial\bar{z}$. We now lift these notions to a Riemann surface $X$.
+    \begin{definition}
+        Let $W\subseteq X$ be open. A function $f:W\to\C$ is said to be \uldef{differentiable at $p$} if there is a chart $\tpl{U,\phi}$ of $X$ around $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ is differentiable at $\phi\l(p\r)$. If $f$ is differentiable at every point of $W$, then $f$ is said to be \uldef{differentiable on $W$}.
+    \end{definition}
+    \side[-0.45in]{As with holomorphic functions, differentiability is chart-independent.}
+    \vspace{-0.05in}
+    \begin{remark}
+        Let $\DIFF\l(W\r)$ denote the $\C$-algebra of all differentiable functions $f:W\to\C$ on $W$. Together with the usual restriction mappings, we obtain a sheaf $\DIFF$ of $\C$-algebras consisting of all differentiable functions on $X$.\exqed
+    \end{remark}
+    \begin{definition}
+        Fix a chart $\tpl{U,\phi}$ of $X$ around $p$. The \uldef{partial derivative operator w.r.t.} \uldef{$\tpl{U,\phi}$} is the operator
+        \begin{equation*}
+            \frac{\partial}{\partial z}:\DIFF\l(U\r)\to\DIFF\l(U\r)\ \ \ \ \ \ \ \ \textrm{\it{mapping}}\ \ \ \ \ \ \ \ f\mapsto\frac{\partial}{\partial z}\!\l(f\circ\phi^{-1}\r).
+        \end{equation*}
+        Similarly, we define $\partial/\partial x$, $\partial/\partial y$, and $\partial/\partial\bar{z}$.
+    \end{definition}
+    \side[-0.9in]{That is, we define $\partial f/\partial z$ by pulling back the regular partial derivative $\partial/\partial z$ for the function $f\circ\phi^{-1}$ on $\C$. Again, this is chart-independent.}
+    \begin{definition}
+        Let $\mf{m}_p\subseteq\DIFF_p$ be the ideal of all differentiable functions vanishing at $p$ and let $\mf{m}_p^2$ be its product. The \uldef{cotangent space of $X$ at $p$} is the quotient $T_p^\ast X\coloneqq\mf{m}_p/\mf{m}^2_p$. If $U\ni p$ is open and $f\in\DIFF\l(U\r)$, we define the \uldef{differential of $f$ at $p$} as
+        \begin{equation*}
+            \d_pf\coloneqq\l[f-f\l(p\r)\r]_{\mf{m}_p^2}\in T_p^\ast X.
+        \end{equation*}
+    \end{definition}
+    \side[-0.72in]{That is, $\mf{m}_p$ consists of all germs $\l[f\r]_p$ such that $f\l(p\r)=0$. Also, $\mf{m}^2_p$ is the product of ideals which consists of all germs $\l[h\r]_p$ such that $h=\sum_if_ig_i$ for some $f_i,g_i\in\mf{m}_p$.}
+    \begin{proposition}
+        Let $\tpl{U,\phi}$ be a chart of $X$ around $p$ and let $z=x+iy$ be its local coordinates. Then $\l\{\d_px,\d_py\r\}$ and $\l\{\d_pz,\d_p\bar{z}\r\}$ are both bases for $T_p^\ast X$, and if $f\in\DIFF\l(W\r)$ for some $W\ni p$, then
+        \begin{equation*}
+            \begin{aligned}
+                \d_pf&=\l.\frac{\partial f}{\partial x}\r|_p\d_px+\l.\frac{\partial f}{\partial y}\r|_p\d_py \\
+                     &=\l.\frac{\partial f}{\partial z}\r|_p\d_pz+\l.\frac{\partial f}{\partial\bar{z}}\r|_p\d_p\bar{z}.
+            \end{aligned}
+        \end{equation*}
+    \end{proposition}
+    \begin{proof}
+        We first show that $\l\{\d_px,\d_py\r\}$ is a basis for $T_p^\ast X$.
+        \begin{itemize}
+            \item Let $\l[\eta\r]\in T_p^\ast X$, so $\eta=\l[f\r]_p\in\mf{m}_p$ is a differentiable function germ for some $f\in\DIFF\l(W\r)$. Taylor's Theorem in $\C$ then furnishes $\lambda_1,\lambda_2\in\C$ such that\side[0.25in]{There is no constant term since $\l[f\r]_p\in\mf{m}_p$.}
+                \begin{equation*}
+                    f=\lambda_1\l(x-x\l(p\r)\r)+\lambda_2\l(y-y\l(p\r)\r)+g
+                \end{equation*}
+                where $g\in\DIFF\l(W\r)$ is such that $\l[g\r]_p\in\mf{m}^2_p$. This lifts to an equality of germs, so, taking the quotient modulo $\mf{m}^2_p$, we see that $\l[\eta\r]=\lambda_1\d_px+\lambda_2\d_py$.
+            \item For any $\lambda_1,\lambda_2\in\C$, the linear dependence $\lambda_1\d_px+\lambda_2\d_py=0$ implies that
+                \begin{equation*}
+                    \lambda_1\l(x-x\l(p\r)\r)+\lambda_2\l(y-y\l(p\r)\r)\in\mf{m}^2_p.
+                \end{equation*}
+                Taking the partials $\partial/\partial x$ and $\partial/\partial y$ shows that $\lambda_1=\lambda_2=0$.
+        \end{itemize}
+        Suppose now that $f\in\DIFF\l(W\r)$. By Taylor's Theorem, we have
+        \begin{equation*}
+            f-f\l(p\r)=\l.\frac{\partial f}{\partial x}\r|_p\!\l(x-x\l(p\r)\r)+\l.\frac{\partial f}{\partial y}\r|_p\!\l(y-y\l(p\r)\r)+g
+        \end{equation*}
+        where $g\in\DIFF\l(W\r)$ is such that $\l[g\r]\in\mf{m}^2_p$, so lifting this to an equality of germs and taking the quotient modulo $\mf{m}^2_p$ gives us
+        \begin{equation*}
+            \d_pf=\l.\frac{\partial f}{\partial x}\r|_p\d_px+\l.\frac{\partial f}{\partial y}\r|_p\d_py.
+        \end{equation*}
+        Finally, we show the corresponding result for $\l\{\d_pz,\d_p\bar{z}\r\}$. Indeed, since $z=x+iy$ as functions in $\DIFF\l(W\r)$, we have that $\partial z/\partial x=1$ and $\partial z/\partial y=i$. Similarly, $\partial\bar{z}/\partial x=1$ and $\partial\bar{z}/\partial y=-i$, so
+        \begin{equation*}
+            \d_pz=\d_px+i\d_py\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ \d_p\bar{z}=\d_px-i\d_py.
+        \end{equation*}
+        Thus $\l\{\d_pz,\d_p\bar{z}\r\}$ is linearly-independent, so it is a basis for $T_p^\ast X$. For $f\in\DIFF\l(W\r)$, a computation now shows that
+        \begin{equation*}
+            \begin{aligned}
+                \d_pf&=\l.\frac{\partial f}{\partial x}\r|_p\d_px+\l.\frac{\partial f}{\partial y}\r|_p\d_py=\frac{1}{2}\l(\l.\frac{\partial f}{\partial x}\r|_p-i\l.\frac{\partial f}{\partial y}\r|_p\r)\d_pz+\frac{1}{2}\l(\l.\frac{\partial f}{\partial x}\r|_p+i\l.\frac{\partial f}{\partial y}\r|_p\r)\d_p\bar{z} \\
+                     &=\l.\frac{\partial f}{\partial z}\r|_p\d_pz+\l.\frac{\partial f}{\partial\bar{z}}\r|_p\d_p\bar{z},
+            \end{aligned}
+        \end{equation*}
+        as desired.\qed
+    \end{proof}
+    \begin{proposition}[Canonical Decomposition]
+        Let $\tpl{U,\phi}$ be a chart of $X$ around $p$ and let $z$ be its local coordinates. Then the subspaces
+        \begin{equation*}
+            T_p^\ast X^{1,0}\coloneqq\span\l\{\d_pz\r\}\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ T_p^\ast X^{0,1}\coloneqq\span\l\{\d_p\bar{z}\r\}
+        \end{equation*}
+        are chart-independent and $T_p^\ast X=T_p^\ast X^{1,0}\oplus T_p^\ast X^{0,1}$.
+    \end{proposition}
+    \begin{proof}
+        If $\tpl{U',\phi'}$ is another chart of $X$ around $p$ with local coordinates $z'$, then, since $z'\in\HOLO\l(U\cap U'\r)$, we see that
+        \begin{equation*}
+            \d_pz'=\l.\frac{\partial z'}{\partial z}\r|_p\d_pz+\l.\frac{\partial z'}{\partial\bar{z}}\r|_p\d_p\bar{z}.
+        \end{equation*}
+        But $\partial z'/\partial\bar{z}=0$, so $\span\l\{\d_pz\r\}=\span\l\{\d_pz'\r\}$. Similarly, $\partial\bar{z'}/\partial z=0$, so $\span\l\{\d_p\bar{z}\r\}=\span\big\{\d_p\bar{z'}\big\}$. The decomposition then follows by construction.\qed
+    \end{proof}
+    \begin{remark}
+        If $f\in\DIFF\l(W\r)$ for some open set $W\ni p$, let $\partial_pf\in T_p^\ast X^{1,0}$ and $\bar{\partial}_pf\in T_p^\ast X^{0,1}$ be the unique elements such that $\d_pf=\partial_pf+\bar{\partial}_pf$. The above proposition ensures that they are chart-independent. For computations, we descend via any chart $\tpl{U,\phi}$ of $X$ around $p$, say with local coordinates $z$, where we have
+        \begin{equation*}
+            \partial_pf=\l.\frac{\partial f}{\partial z}\r|_p\d_pz\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ \bar{\partial}_pf=\l.\frac{\partial f}{\partial\bar{z}}\r|_p\d_p\bar{z}.\exqedin
+        \end{equation*}
+    \end{remark}
+    \subsection{Differential $1$-forms}
+    \subsection{The Exterior Product and Differential $2$-forms}
+\end{document}
