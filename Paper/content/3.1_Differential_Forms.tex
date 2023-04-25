@@ -17,20 +17,20 @@
         Let $\DIFF\l(W\r)$ denote the $\C$-algebra of all differentiable functions $f:W\to\C$ on $W$. Together with the usual restriction mappings, we obtain a sheaf $\DIFF$ of $\C$-algebras consisting of all differentiable functions on $X$.\exqed
     \end{remark}
     \begin{definition}
-        Fix a chart $\tpl{U,z}$ of $X$ around $p$. The \uldef{partial derivative operator w.r.t.} \uldef{$\tpl{U,z}$} is the operator
+        Fix a chart $\tpl{U,z}$ of $X$. The \uldef{partial derivative operator w.r.t. $\tpl{U,z}$} is the operator
         \begin{equation*}
             \frac{\partial}{\partial z}:\DIFF\l(U\r)\to\DIFF\l(U\r)\ \ \ \ \ \ \ \ \textrm{\it{mapping}}\ \ \ \ \ \ \ \ f\mapsto\frac{\partial}{\partial z}\!\l(f\circ z^{-1}\r).
         \end{equation*}
         Similarly, we define $\partial/\partial x$, $\partial/\partial y$, and $\partial/\partial\bar{z}$.
     \end{definition}
-    \side[-0.9in]{That is, we define $\partial f/\partial z$ by pulling back the regular partial derivative $\partial/\partial z$ for the function $f\circ z^{-1}$ on $\C$. Again, this is chart-independent.}
+    \side[-0.75in]{That is, we define $\partial f/\partial z$ by pulling back the regular partial derivative $\partial/\partial z$ for the function $f\circ z^{-1}$ on $\C$. Again, this is chart-independent.}
     \begin{definition}
         Let $\mf{m}_p\subseteq\DIFF_p$ be the ideal of all differentiable functions vanishing at $p$ and let $\mf{m}_p^2$ be its product. The \uldef{cotangent space of $X$ at $p$} is the quotient space $T_p^\ast X\coloneqq\mf{m}_p/\mf{m}^2_p$. If $U\ni p$ is open and $f\in\DIFF\l(U\r)$, we define the \uldef{differential of $f$ at $p$} as
         \begin{equation*}
             \d_pf\coloneqq\l[f-f\l(p\r)\r]_{\mf{m}_p^2}\in T_p^\ast X.
         \end{equation*}
     \end{definition}
-    \side[-0.72in]{That is, $\mf{m}_p$ consists of all germs $\l[f\r]_p$ such that $f\l(p\r)=0$. Also, $\mf{m}^2_p$ is the product of ideals which consists of all germs $\l[h\r]_p$ such that $h=\sum_if_ig_i$ for some $f_i,g_i\in\mf{m}_p$.}
+    \side[-0.72in]{That is, let $\mf{m}_p$ contain all germs $\l[f\r]_p$ such that $f\l(p\r)=0$ and let $\mf{m}^2_p$ contain all germs $\l[h\r]_p$ such that $h=\sum_if_ig_i$ for some $f_i,g_i\in\mf{m}_p$.}
     \begin{proposition}
         Let $\tpl{U,z}$ be a chart of $X$ around $p$. Then $\l\{\d_px,\d_py\r\}$ and $\l\{\d_pz,\d_p\bar{z}\r\}$ are both bases for $T_p^\ast X$, and if $f\in\DIFF\l(W\r)$, then
         \begin{equation*}
@@ -172,6 +172,71 @@
         \begin{equation*}
             \l(\omega_1\wedge\omega_2\r)\l(p\r)\coloneqq\omega_1\!\l(p\r)\wedge\omega_2\!\l(p\r)
         \end{equation*}
-        for every $p\in W$.\exqed
+        for every $p\in W$. The $\C$-vector space of all differentiable $2$-forms on $W$ is denoted $\DIFF^{\l(2\r)}\!\l(W\r)$.\exqed
     \end{remark}
+    \begin{defprop}
+        Let $\omega$ be a differentiable $1$-form on $W$, which, under a chart $\tpl{U,z}$ of $X$, has the form $\omega=f_1\d z+f_2\d\bar{z}$ for some $f_1,f_2\in\DIFF\l(U\cap W\r)$. Then the $2$-forms
+        \begin{equation*}
+            \begin{gathered}
+                \d\omega\coloneqq\d f_1\wedge\d z+\d f_2\wedge\d\bar{z} \\
+                \partial\omega\coloneqq\partial f_1\wedge\d z+\partial f_2\wedge\d\bar{z} \\
+                \bar{\partial}\omega\coloneqq\bar{\partial}f_1\wedge\d z+\bar{\partial}f_2\wedge\d\bar{z}
+            \end{gathered}
+        \end{equation*}
+        are chart-independent and differentiable, which define the \uldef{exterior derivatives on $\DIFF^{\l(1\r)}\!\l(W\r)$}
+        \begin{equation*}
+            \d,\partial,\bar{\partial}:\DIFF^{\l(1\r)}\!\l(W\r)\to\DIFF^{\l(2\r)}\!\l(W\r).
+        \end{equation*}
+    \end{defprop}
+    \begin{proof}
+        For convenience, we write $z_1\coloneqq z$ and $z_2\coloneqq\bar{z}$, so $\omega=\sum_if_i\d z_i$ and $\d\omega=\sum_i\d f_i\wedge\d z_i$. We only prove the result for $\d$; the others are similar.
+        \begin{itemize}
+            \item To show that $\d\omega\in\DIFF^{\l(2\r)}\!\l(W\r)$, let $\tpl{V,w}$ be a chart of $X$. Then
+                \begin{equation*}
+                    \d f_i=\frac{\partial f_i}{\partial w}\d w+\frac{\partial f_i}{\partial\bar{w}}\d\bar{w}\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ \d z_i=\frac{\partial z_i}{\partial w}\d w+\frac{\partial z_i}{\partial\bar{w}}\d\bar{w}
+                \end{equation*}
+                for $i=1,2$, so
+                \begin{equation*}
+                    \begin{aligned}
+                        \d\omega&=\sum_{j=1}^{2}\l(\frac{\partial f_i}{\partial w}\d w+\frac{\partial f_i}{\partial\bar{w}}\d\bar{w}\r)\wedge\l(\frac{\partial z_i}{\partial w}\d w+\frac{\partial z_i}{\partial\bar{w}}\d\bar{w}\r) \\
+                                &=\sum_{j=1}^{2}\l(\frac{\partial f_i}{\partial w}\frac{\partial z_i}{\partial\bar{w}}-\frac{\partial f_i}{\partial\bar{w}}\frac{\partial z_i}{\partial w}\r)\d w\wedge\d\bar{w}\in\DIFF^{\l(2\r)}\!\l(W\r).
+                    \end{aligned}
+                \end{equation*}
+        \end{itemize}
+        To show well-definition, let $\tpl{U',z'}$ be another chart of $X$ and write $\omega=\sum_if_i'\d z_i'$.\side[-0.01in]{Again, write $z_1'\coloneqq z'$ and $z_2'\coloneqq\bar{z'}$.} Choose a chart $\tpl{V,w}$ of $X$. Expanding $\d z_i$ and $\d z_i'$ in the basis $\l\{\d w,\d\bar{w}\r\}$ and equating, we obtain by the assumption $\sum_if_i\d z_i=\sum_if_i'\d z_i'$ that
+        \begin{equation*}
+            \sum_{i=1}^{2}f_i\frac{\partial z_i}{\partial w}=\sum_{i=1}^{2}f_i'\frac{\partial z_i'}{\partial w}\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ \sum_{i=1}^{2}f_i\frac{\partial z_i}{\partial\bar{w}}=\sum_{i=1}^{2}f_i'\frac{\partial z_i'}{\partial\bar{w}}.
+        \end{equation*}
+        Applying $\partial/\partial\bar{w}$ and $\partial/\partial w$ respectively and subtracting yields
+        \begin{equation*}
+            \sum_{i=1}^{2}\l(\frac{\partial f_i}{\partial w}\frac{\partial z_i}{\partial\bar{w}}-\frac{\partial f_i}{\partial\bar{w}}\frac{\partial z_i}{\partial w}\r)=\sum_{i=1}^{2}\l(\frac{\partial f_i'}{\partial w}\frac{\partial z_i'}{\partial\bar{w}}-\frac{\partial f_i'}{\partial\bar{w}}\frac{\partial z_i'}{\partial w}\r).
+        \end{equation*}
+        From our previous calculation of $\d\omega$, the result follows.\qed
+    \end{proof}
+    \begin{definition}
+        A differentiable $1$-form $\omega$ on $W$ is \uldef{closed} if $\d\omega=0$, and is \uldef{exact} if $\omega=\d f$ for some $f\in\DIFF\l(W\r)$.
+    \end{definition}
+    \begin{proposition}\ 
+        \begin{enumerate}
+            \item Every exact form is closed.
+                \vspace{-0.05in}
+            \item Every holomorphic $1$-form is closed.
+                \vspace{-0.05in}
+            \item Every closed $1$-form of type $\l(1,0\r)$ is holomorphic.
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        Let $\omega$ be a $1$-form on $W$.
+        \begin{enumerate}
+            \item This is precisely the statement that $\d^2\!f=0$ for all $f\in\DIFF\l(W\r)$, which follows from\side[0.21in]{The same computation also shows $\partial^2\!f=\bar{\partial}^2\!f=0$.}
+                \begin{equation*}
+                    \d^2\!f=\d\l(1\cdot\d f\r)=\d1\wedge\d f=0.
+                \end{equation*}
+        \end{enumerate}
+        For $2$ and $3$, suppose that $\omega=f\d z$ for some $f\in\DIFF\l(W\r)$. Then
+        \begin{equation*}
+            \d\omega=\d f\wedge\d z=\l(\frac{\partial f}{\partial z}\d z+\frac{\partial f}{\partial\bar{z}}\d\bar{z}\r)=\d z=-\frac{\partial f}{\partial\bar{z}}\d z\wedge\d\bar{z}
+        \end{equation*}
+        Thus $\d\omega=0$ iff $\partial f/\partial\bar{z}=0$, so every holomorphic $1$-form is closed and every closed $1$-form of type $\l(1,0\r)$ is holomorphic.\qed
+    \end{proof}
 \end{document}
