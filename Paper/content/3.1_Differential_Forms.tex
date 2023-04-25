@@ -127,7 +127,7 @@
         For $f\in\DIFF\l(W\r)$, the form $\d f$ (resp. $\partial f$, $\bar{\partial}f$) is a differentiable (resp. type $\l(1,0\r)$, type $\l(0,1\r)$) $1$-form on $W$. Thus we have the map $\d:\DIFF\l(W\r)\to\DIFF^{\l(1\r)}\!\l(W\r)$, and similarly the maps $\partial$ and $\bar{\partial}$, called the \ul{exterior derivatives on $\DIFF\l(W\r)$}. They are studied in the next section.\exqed
     \end{example}
     \subsection{Differential $2$-forms and Exterior Differentiation}
-    Define\side{For an in-depth discussion of the tensor product, see \cite[][Chapter 8.2]{aluffi}.} the \textit{exterior power} $\Lambda^2V$ of a $\C$-vector space $V$ as the quotient of the tensor product $V\otimes V$ by the ideal $\mf{a}\coloneqq\ideal{v\otimes v\mid v\in V}$. For completeness, we very briefly define $V\otimes V$.
+    Define\side{For an in-depth discussion of the tensor product, see \cite[][Chapter 8.2]{aluffi} or \cite{conrad}.} the \textit{exterior power} $\Lambda^2V$ of a $\C$-vector space $V$ as the quotient of the tensor product $V\otimes V$ by the ideal $\mf{a}\coloneqq\ideal{v\otimes v\mid v\in V}$. For completeness, we very briefly define $V\otimes V$.
     \begin{definition}
         Let $V$ be a $\C$-vector space and consider the free vector space $\tpl{F,j}$ over $V\times V$. Letting $S$ denote the span of
         \begin{equation*}
@@ -135,10 +135,10 @@
         \end{equation*}
         for all $v,v_1,v_2\in V$ and $\lambda\in\C$, we define the \uldef{tensor product} of $V$ as the quotient space $V\otimes V\coloneqq F/S$ equipped with the map $\otimes\coloneqq\pi\circ j$, where $\pi:F\to F/S$ is the projection.
     \end{definition}
-    \side[-0.92in]{Here, $j:V\times V\to F$ is a function making $\tpl{F,j}$ satisfy the universal property of the free vector space.}
+    \side[-0.92in]{Here, $j:V\times V\to F$ is a function making $\tpl{F,j}$ satisfy the universal property of the free vector space over $V\times V$.}
     \vspace{-0.05in}
     \begin{remark}
-        Let $V$ be a $\C$-vector space. For all $v_1,v_2\in V$, define $v_1\wedge v_2\in\Lambda^2V$ by the equivalence class of $v\otimes v$ modulo $\mf{a}$. It is then immediate from the definition of $V\otimes V$ that
+        Let $V$ be a $\C$-vector space. For all $v_1,v_2\in V$, define $v_1\wedge v_2\in\Lambda^2V$ to be the equivalence class of $v\otimes v$ modulo $\mf{a}$. It is then immediate from the definition of $V\otimes V$ that
         \begin{equation*}
             \l(v_1+v_2\r)\wedge v_3=\l(v_1\wedge v_3\r)+\l(v_2\wedge v_3\r)\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ \l(\lambda v_1\r)\wedge v_2=\lambda\l(v_1\wedge v_2\r)
         \end{equation*}
@@ -150,7 +150,7 @@
                  &=\l(v_1\wedge v_2\r)+\l(v_2\wedge v_1\r),
             \end{aligned}
         \end{equation*}
-        so $v_1\wedge v_2=-\l(v_2\wedge v_1\r)$ for all $v_1,v_2\in V$. Finally, if $\l\{e_i\r\}$ is a basis for $V$, then\side{For a proof, see \cite[][Proposition 12.8]{lee}.} $\l\{e_i\otimes e_j\r\}$ is a basis for $V\otimes V$. From this, we see that $\l\{e_i\wedge e_j\r\}_{i<j}$ is a basis for $\Lambda^2V$.\exqed
+        so $v_1\wedge v_2=-\l(v_2\wedge v_1\r)$ for all $v_1,v_2\in V$. Finally, if $\l\{e_i\r\}$ is a basis for $V$, then\side{For a proof, see \cite[][Proposition 12.8]{lee}.} $\l\{e_i\otimes e_j\r\}$ is a basis for $V\otimes V$. Combined with the above, we see that $\l\{e_i\wedge e_j\r\}_{i<j}$ is a basis for $\Lambda^2V$.\exqed
     \end{remark}
     \begin{remark}
         We now specialize for when $V=T_p^\ast X$\side{Recall our notation, where $W\subseteq X$ is an open subset of a Riemann surface $X$ and $p\in W$.} and consider the exterior power $\Lambda^2T_p^\ast X$. Letting $\tpl{U,z}$ be a chart of $X$ around $p$, we see that $\l\{\d_px\wedge\d_py\r\}$ and $\l\{\d_pz\wedge\d_p\bar{z}\r\}$ are both bases for $\Lambda^2T_p^\ast X$. Thus $\dim\Lambda^2T_p^\ast X=1$. Also, observe that
