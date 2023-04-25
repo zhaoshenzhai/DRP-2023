@@ -127,28 +127,33 @@
             \end{tikzpicture}
         \end{center}
     \end{frame}
-    \begin{frame}{Riemann surfaces}
+    \begin{frame}{Surfaces}
+        Recall that a surface is a connected $2$-dimensional real manifold.
+
         \begin{center}
-            What about for manifolds?\\\ \\
-            \pause
-            \begin{definition}
-                \textit{A \ul{Riemann surface} is a connected 1-dimensional complex manifold.}
-            \end{definition}
-            \includegraphics[width=0.8\textwidth]{figures/manifolds.png}
+            \includegraphics[width=0.7\textwidth]{figures/manifolds.png}
         \end{center}
+
+        \pause\vspace{-0.3in}
+
+        \begin{definition}
+            \textit{A \ul{Riemann surface} is a surface with a choice of complex structure.}
+        \end{definition}
     \end{frame}
-    \begin{frame}{Compact Riemann surfaces}
-        \begin{theorem}[Classification]
-            Every compact Riemann surface is classified by its genus.
+    \begin{frame}{Compact surfaces}
+        \begin{theorem}[Classification of Surfaces]
+            For each natural number $g$, there exists exactly one compact orientable surface up to homeomorphism. We call $g$ the \ul{genus} of the surface.
         \end{theorem}
+
         \pause
+
         \begin{center}
             \includegraphics[width=0.8\textwidth]{figures/torus_handle.png}
         \end{center}
     \end{frame}
     \begin{frame}{Topological torus}
         \begin{theorem}
-            Every torus is a quotient $\C/\!\l(\Z\omega_1\oplus\Z\omega_2\r)$ for some linearly independent $\omega_1,\omega_2\in\C$.
+            Every torus is a quotient $\C/\!\l(\Z\omega_1\oplus\Z\omega_2\r)$ for some $\R$-linearly independent $\omega_1,\omega_2\in\C$.
         \end{theorem}
 
         \pause\ \\
@@ -156,19 +161,13 @@
         \begin{center}
             \includegraphics[width=0.8\textwidth]{figures/torus_glue.png}
         \end{center}
-
-        \pause
-
-        \begin{theorem}
-            There is, up to homeomorphism, only one topological torus.
-        \end{theorem}
     \end{frame}
     \begin{frame}{Complex tori}
         \begin{block}{Questions}
             \begin{itemize}
                 \item[\scriptsize$\blob$] \textit{Up to biholomorphism, in how many ways can we give the torus complex coordinates?}
                     \pause
-                \item[\scriptsize$\blob$] \textit{What is the moduli space of the torus?}
+                \item[\scriptsize$\blob$] \textit{Can we give the set of all complex coordinates on the torus some geometric structure?}
             \end{itemize}
         \end{block}
     \end{frame}
@@ -179,7 +178,7 @@
     \end{frame}
     \begin{frame}{Complex tori}
         \begin{theorem}
-            Every complex tori is the quotient $X_\tau\coloneqq\C/\Gamma$ where $\Gamma=\Z\oplus\Z\tau$ for some $\tau\in\H$. \pause Indeed, for all linearly independent $\omega_1,\omega_2\in\C$,
+            Every complex tori is the quotient $X_\tau\coloneqq\C/\!\l(\Z\oplus\Z\tau\r)$ for some $\tau\in\H$. \pause Indeed, for all linearly independent $\omega_1,\omega_2\in\C$,
             \begin{equation*}
                 \C/\!\l(\Z\omega_1\oplus\Z\omega_2\r)\iso X_\tau
             \end{equation*}
