@@ -15,14 +15,14 @@
     \begin{definition}
         For all $n\in\N$, the \uldef{$n^\textrm{th}$ coboundary operator w.r.t. $\mf{A}$} is the map
         \begin{equation*}
-            \d^n\!:\check{C}^n\!\l(\mf{A},\ms{F}\r)\to\check{C}^{n+1}\!\l(\mf{A},\ms{F}\r)\ \ \ \ \textrm{\it{mapping}}\ \ \ \ \l(f_{i_0,\dots,i_n}\r)\mapsto\l(g_{i_0,\dots,i_{n+1}}\r)
+            \delta^n\!:\check{C}^n\!\l(\mf{A},\ms{F}\r)\to\check{C}^{n+1}\!\l(\mf{A},\ms{F}\r)\ \ \ \ \textrm{\it{mapping}}\ \ \ \ \l(f_{i_0,\dots,i_n}\r)\mapsto\l(g_{i_0,\dots,i_{n+1}}\r)
         \end{equation*}
         where
         \vspace{-0.05in}
         \begin{equation*}
             g_{i_0,\dots,i_{n+1}}\coloneqq\sum_{k=0}^{n+1}\l(-1\r)^k\rho\l(f_{i_0,\dots,\widehat{i_k},\dots,i_{n+1}}\r).
         \end{equation*}
-        Define the \uldef{$n^\textrm{th}$ cocycle} $\check{Z}^n\!\l(\mf{A},\ms{F}\r)\coloneqq\ker\d^n$ and the \uldef{$n^\textrm{th}$ splitting cocycle} $\check{B}^n\!\l(\mf{A},\ms{F}\r)\coloneqq\im\d^{n-1}$, whose quotient
+        Define the \uldef{$n^\textrm{th}$ cocycle} $\check{Z}^n\!\l(\mf{A},\ms{F}\r)\coloneqq\ker\delta^n$ and the \uldef{$n^\textrm{th}$ splitting cocycle} $\check{B}^n\!\l(\mf{A},\ms{F}\r)\coloneqq\im\delta^{n-1}$, whose quotient
         \begin{equation*}
             \check{H}^n\!\l(\mf{A},\ms{F}\r)\coloneqq\check{Z}^n\!\l(\mf{A},\ms{F}\r)/\check{B}^n\!\l(\mf{A},\ms{F}\r)
             \vspace{-0.05in}
@@ -33,21 +33,21 @@
     Note that $\check{B}^0\!\l(\mf{A},\ms{F}\r)=0$ since $\check{C}^{-1}\!\l(\mf{A},\ms{F}\r)=0$.}
     \vspace{-0.05in}
     \begin{remark}
-        A calculation shows that $\check{B}^n\!\l(\mf{A},\ms{F}\r)\subseteq\check{Z}^n\!\l(\mf{A},\ms{F}\r)$, so the quotient makes sense. In particular, $\d^{n+1}\circ\d^n=0$.\exqed
+        A calculation shows that $\check{B}^n\!\l(\mf{A},\ms{F}\r)\subseteq\check{Z}^n\!\l(\mf{A},\ms{F}\r)$, so the quotient makes sense. In particular, $\delta^{n+1}\circ\delta^n=0$.\exqed
     \end{remark}
     \begin{remark}
-        For $n=0$, we have $\d^0\!\l(f_i\r)=\tpl{f_j-f_i}$ for all $\tpl{f_i}\in\check{C}^0\!\l(\mf{A},\ms{F}\r)$. This gives us a glueing condition, that if $\tpl{f_i}\in\check{Z}^0\!\l(\mf{A},\ms{F}\r)$, then the sheaf axioms furnish a unique $f\in\ms{F}\l(X\r)$ such that $\rho^X_{U_i}\!\l(f\r)=f_i$ for all $i$. Thus
+        For $n=0$, we have $\delta^0\!\l(f_i\r)=\tpl{f_j-f_i}$ for all $\tpl{f_i}\in\check{C}^0\!\l(\mf{A},\ms{F}\r)$. This gives us a glueing condition, that if $\tpl{f_i}\in\check{Z}^0\!\l(\mf{A},\ms{F}\r)$, then the sheaf axioms furnish a unique $f\in\ms{F}\l(X\r)$ such that $\rho^X_{U_i}\!\l(f\r)=f_i$ for all $i$. Thus
         \begin{equation*}
             \check{H}^0\!\l(\mf{A},\ms{F}\r)=\check{Z}^0\!\l(\mf{A},\ms{F}\r)\iso\ms{F}\l(X\r),
         \end{equation*}
         so $\check{H}^0\!\l(\mf{A},\ms{F}\r)$ is independent of the covering $\mf{A}$ and we may define the \ul{$0^\textrm{th}$ cohomology group of $\ms{F}$} as $\check{H}^0\!\l(X,\ms{F}\r)\coloneqq\ms{F}\l(X\r)$.\exqed
     \end{remark}
     \begin{remark}
-        For $n=1$, we have $\d^1\!\l(f_{ij}\r)=\tpl{f_{jk}-f_{ik}+f_{ij}}$ for all $\tpl{f_{ij}}\in\check{C}^1\!\l(\mf{A},\ms{F}\r)$. Elements $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ satisfy the \textit{cocycle condition}, which states
+        For $n=1$, we have $\delta^1\!\l(f_{ij}\r)=\tpl{f_{jk}-f_{ik}+f_{ij}}$ for all $\tpl{f_{ij}}\in\check{C}^1\!\l(\mf{A},\ms{F}\r)$. Elements $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ satisfy the \textit{cocycle condition}, which states
         \begin{equation*}
             f_{ik}=f_{ij}+f_{jk}.
         \end{equation*}
-        In particular, it implies that $f_{ii}=0$ and $f_{ij}=-f_{ji}$. Note that every splitting cocycle is a cocycle, but not every cocycle splits. In other words, $\check{H}^n\!\l(\mf{A},\ms{F}\r)$ measures hows cocycles fail to split. The next section defines the $1^\textrm{st}$ cohomology group of $\ms{F}$, independent of the covering $\mf{A}$.\exqed
+        In\side{The construction of the $1^\textrm{st}$ cohomology group $\check{H}^1\!\l(X,\ms{F}\r)$ is more involved. We will not need the general construction for $\check{H}^n\!\l(X,\ms{F}\r)$, but they can be done similarly as in the $n=1$ case. With some machinery, we can also define the \textit{De Rham} and \textit{Dolbeault} cohomology groups and relate them to $\check{H}^n\!\l(X,\ms{F}\r)$. See \cite[][Section IX.4]{miranda}.} particular, it implies that $f_{ii}=0$ and $f_{ij}=-f_{ji}$. Note that every splitting cocycle is a cocycle, but not every cocycle splits. In other words, $\check{H}^1\!\l(\mf{A},\ms{F}\r)$ measures how $1$-cocycles fail to split. The next section defines the $1^\textrm{st}$ cohomology group of $\ms{F}$, independent of the covering $\mf{A}$.\exqed
     \end{remark}
     \subsection{Refinements and $\check{H}^1\!\l(X,\ms{F}\r)$}
     In this section, we specialize to when $n=1$.
@@ -55,7 +55,7 @@
         Let and $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ and $\mf{B}\coloneqq\l\{V_j\r\}_{j\in J}$ be open coverings of $X$. We say that \uldef{$\mf{B}$ is finer than $\mf{A}$} if there exists a \uldef{refining map} $r:J\to I$ such that $V_j\subseteq U_{r\l(j\r)}$ for all $j\in J$.
     \end{definition}
     \begin{remark}
-        The refining map $r$ lifts to a map $\tilde{r}:\check{Z}^1\!\l(\mf{A},\ms{F}\r)\to\check{Z}^1\!\l(\mf{B},\ms{F}\r)$ by sending $\tpl{f_{ij}}$ into $\tpl{\rho\l(f_{r\l(i\r),r\l(j\r)}\r)}$ for\side{Again, we need the appropriate restriction map.} all $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$. Observe that if $\tpl{f_{ij}}\in\check{B}^1\!\l(\mf{A},\ms{F}\r)$, then $\d^1_\mf{A}\!\l(f_{ij}\r)=0$ and hence $f_{ik}=f_{ij}+f_{jk}$ for all $i,j,k\in I$. In particular, we have $f_{r\l(i\r),r\l(k\r)}=f_{r\l(i\r),r\l(j\r)}+f_{r\l(j\r),r\l(k\r)}$ and hence $\d^1_\mf{B}\!\l(\tilde{r}\l(f_{ij}\r)\r)=0$. Thus $\tilde{r}\l(f_{ij}\r)\in\check{B}^1\!\l(\mf{B},\ms{F}\r)$, and so $\tilde{r}$ sends splitting cocycles into splitting cocycles. Hence we may descent $\tilde{r}$ into the quotient, giving us a map
+        The refining map $r$ lifts to a map $\tilde{r}:\check{Z}^1\!\l(\mf{A},\ms{F}\r)\to\check{Z}^1\!\l(\mf{B},\ms{F}\r)$ by sending $\tpl{f_{ij}}$ into $\tpl{\rho\l(f_{r\l(i\r),r\l(j\r)}\r)}$ for\side{Again, we need the appropriate restriction map.} all $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$. Observe that if $\tpl{f_{ij}}\in\check{B}^1\!\l(\mf{A},\ms{F}\r)$, then $\delta^1_\mf{A}\!\l(f_{ij}\r)=0$ and hence $f_{ik}=f_{ij}+f_{jk}$ for all $i,j,k\in I$. In particular, we have $f_{r\l(i\r),r\l(k\r)}=f_{r\l(i\r),r\l(j\r)}+f_{r\l(j\r),r\l(k\r)}$ and hence $\delta^1_\mf{B}\!\l(\tilde{r}\l(f_{ij}\r)\r)=0$. Thus $\tilde{r}\l(f_{ij}\r)\in\check{B}^1\!\l(\mf{B},\ms{F}\r)$, and so $\tilde{r}$ sends splitting cocycles into splitting cocycles. Hence we may descent $\tilde{r}$ into the quotient, giving us a map
         \begin{equation*}
             \check{H}\l(r\r):\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(\mf{B},\ms{F}\r)\ \ \ \ \textrm{mapping}\ \ \ \ \l[f_{ij}\r]\mapsto\l[\tilde{r}\l(f_{ij}\r)\r].\exqedin
         \end{equation*}
@@ -74,7 +74,7 @@
         \end{equation*}
         for all $i,j\in J$. Since $r$ and $r'$ are refining maps, we see that $V_j\subseteq U_{r\l(j\r)}\cap U_{r'\l(j\r)}$ for all $j\in J$, so we may define the $0$-cocycle $\tpl{h_j}\in\check{Z}^0\!\l(\mf{B},\ms{F}\r)$ by $h_j\coloneqq\rho\l(f_{r\l(j\r),r'\l(j\r)}\r)$ where $\rho$ is the restriction map from $U_{r\l(j\r)}\cap U_{r'\l(j\r)}$ to $V_j$. Then
         \begin{equation*}
-            g_{ij}-g_{ij}'=h_i-h_j=\d^0\!\l(h_j\r),
+            g_{ij}-g_{ij}'=h_i-h_j=\delta^0\!\l(h_j\r),
         \end{equation*}
         so $\tpl{g_{ij}}-(g_{ij}')\in\check{B}^1\!\l(\mf{B},\ms{F}\r)$. Thus their equivalence classes coincide, as desired.\qed
     \end{proof}
