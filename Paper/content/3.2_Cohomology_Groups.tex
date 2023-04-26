@@ -47,6 +47,35 @@
         \begin{equation*}
             f_{ik}=f_{ij}+f_{jk}.
         \end{equation*}
-        In particular, it implies that $f_{ii}=0$ and $f_{ij}=-f_{ji}$. Note that every splitting cocycle is a cocycle, but not every cocycle splits. In other words, $\check{H}^n\!\l(\mf{A},\ms{F}\r)$ measures hows cocycles fail to split.\exqed
+        In particular, it implies that $f_{ii}=0$ and $f_{ij}=-f_{ji}$. Note that every splitting cocycle is a cocycle, but not every cocycle splits. In other words, $\check{H}^n\!\l(\mf{A},\ms{F}\r)$ measures hows cocycles fail to split. The next section defines the $1^\textrm{st}$ cohomology group of $\ms{F}$, independent of the covering $\mf{A}$.\exqed
     \end{remark}
+    \subsection{Refinements and $\check{H}^1\!\l(X,\ms{F}\r)$}
+    In this section, we specialize to when $n=1$.
+    \begin{definition}
+        Let and $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ and $\mf{B}\coloneqq\l\{V_j\r\}_{j\in J}$ be open coverings of $X$. We say that \uldef{$\mf{B}$ is finer than $\mf{A}$} if there exists a \uldef{refining map} $r:J\to I$ such that $V_j\subseteq U_{r\l(j\r)}$ for all $j\in J$.
+    \end{definition}
+    \begin{remark}
+        The refining map $r$ lifts to a map $\tilde{r}:\check{Z}^1\!\l(\mf{A},\ms{F}\r)\to\check{Z}^1\!\l(\mf{B},\ms{F}\r)$ by sending $\tpl{f_{ij}}$ into $\tpl{\rho\l(f_{r\l(i\r),r\l(j\r)}\r)}$ for\side{Again, we need the appropriate restriction map.} all $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$. Observe that if $\tpl{f_{ij}}\in\check{B}^1\!\l(\mf{A},\ms{F}\r)$, then $\d^1_\mf{A}\!\l(f_{ij}\r)=0$ and hence $f_{ik}=f_{ij}+f_{jk}$ for all $i,j,k\in I$. In particular, we have $f_{r\l(i\r),r\l(k\r)}=f_{r\l(i\r),r\l(j\r)}+f_{r\l(j\r),r\l(k\r)}$ and hence $\d^1_\mf{B}\!\l(\tilde{r}\l(f_{ij}\r)\r)=0$. Thus $\tilde{r}\l(f_{ij}\r)\in\check{B}^1\!\l(\mf{B},\ms{F}\r)$, and so $\tilde{r}$ sends splitting cocycles into splitting cocycles. Hence we may descent $\tilde{r}$ into the quotient, giving us a map
+        \begin{equation*}
+            \check{H}\l(r\r):\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(\mf{B},\ms{F}\r)\ \ \ \ \textrm{mapping}\ \ \ \ \l[f_{ij}\r]\mapsto\l[\tilde{r}\l(f_{ij}\r)\r].\exqedin
+        \end{equation*}
+    \end{remark}
+    \begin{proposition}
+        In the above notation, the map $\check{H}^\mf{B}_\mf{A}\coloneqq\check{H}\l(r\r)$ is independent of $r$.
+    \end{proposition}
+    \begin{proof}
+        Take $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ and suppose that $r':J\to I$ is another refining map. Lifting it to $\tilde{r}'$ similarly, let $\tpl{g_{ij}}\coloneqq\tilde{r}\l(f_{ij}\r)=\tpl{\rho\l(f_{r\l(i\r),r\l(j\r)}\r)}$ and $(g'_{ij})\coloneqq\tilde{r}'\l(f_{ij}\r)=\tpl{\rho\l(f_{r'\l(i\r),r'\l(j\r)}\r)}$. Observe then that
+        \begin{equation*}
+            \begin{aligned}
+                g_{ij}-g_{ij}'&=f_{r\l(i\r),r\l(j\r)}-f_{r'\l(i\r),r'\l(j\r)} \\
+                              &=f_{r\l(i\r),r\l(j\r)}+f_{r\l(j\r),r'\l(i\r)}-f_{r\l(j\r),r'\l(i\r)}-f_{r'\l(i\r),r'\l(j\r)} \\
+                              &=f_{r\l(i\r),r'\l(i\r)}-f_{r\l(j\r),r'\l(j\r)}
+            \end{aligned}
+        \end{equation*}
+        for all $i,j\in J$. Since $r$ and $r'$ are refining maps, we see that $V_j\subseteq U_{r\l(j\r)}\cap U_{r'\l(j\r)}$ for all $j\in J$, so we may define the $0$-cocycle $\tpl{h_j}\in\check{Z}^0\!\l(\mf{B},\ms{F}\r)$ by $h_j\coloneqq\rho\l(f_{r\l(j\r),r'\l(j\r)}\r)$ where $\rho$ is the restriction map from $U_{r\l(j\r)}\cap U_{r'\l(j\r)}$ to $V_j$. Then
+        \begin{equation*}
+            g_{ij}-g_{ij}'=h_i-h_j=\d^0\!\l(h_j\r),
+        \end{equation*}
+        so $\tpl{g_{ij}}-(g_{ij}')\in\check{B}^1\!\l(\mf{B},\ms{F}\r)$. Thus their equivalence classes coincide, as desired.\qed
+    \end{proof}
 \end{document}
