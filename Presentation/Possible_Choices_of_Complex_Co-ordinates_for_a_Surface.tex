@@ -163,22 +163,13 @@
         \end{center}
     \end{frame}
     \begin{frame}{Complex tori}
-        \begin{block}{Questions}
-            \begin{itemize}
-                \item[\scriptsize$\blob$] \textit{Up to biholomorphism, in how many ways can we give the torus complex coordinates?}
-                    \pause
-                \item[\scriptsize$\blob$] \textit{Can we give the set of all complex coordinates on the torus some geometric structure?}
-            \end{itemize}
-        \end{block}
-    \end{frame}
-    \begin{frame}{Complex tori}
         \begin{center}
             \includegraphics[width=\textwidth]{figures/torus_scale.png}
         \end{center}
     \end{frame}
     \begin{frame}{Complex tori}
         \begin{theorem}
-            Every complex tori is the quotient $X_\tau\coloneqq\C/\!\l(\Z\oplus\Z\tau\r)$ for some $\tau\in\H$. \pause Indeed, for all linearly independent $\omega_1,\omega_2\in\C$,
+            Every complex tori is the quotient $X_\tau\coloneqq\C/\!\l(\Z\oplus\Z\tau\r)$ for some $\tau\in\H$. Indeed, for all linearly independent $\omega_1,\omega_2\in\C$,
             \begin{equation*}
                 \C/\!\l(\Z\omega_1\oplus\Z\omega_2\r)\iso X_\tau
             \end{equation*}
@@ -222,7 +213,7 @@
         \end{corollary}
     \end{frame}
     \begin{frame}{Riemann sphere}
-        \begin{theorem}
+        \begin{theorem}[Uniformization]
             \textit{There is a unique choice of complex coordinates on the sphere.}
         \end{theorem}
 
@@ -231,13 +222,14 @@
         \begin{proof}
             Hard!
             \pause
-            We used techniques from:
+            Fix a sphere $\RS$, which is equipped with a particular complex coordinate. Let $X$ be another sphere.
+            \pause
             \begin{itemize}
                 \item[\scriptsize$\blob$] \scriptsize Covering space theory: We defined the degree of a holomorphic map and proved that if $X$ is compact and if there exists a meromorphic function on $X$ with a single simple pole, then $X\iso\RS$.
                     \pause
                 \item[\scriptsize$\blob$] \scriptsize Analytic continuation: We attempted to find such a meromorphic function, but our techniques weren't powerful enough.
                     \pause
-                \item[\scriptsize$\blob$] \scriptsize $\check{\textrm{C}}$ech cohomology: We used the machinery of differential forms and cohomology to prove the existence of such a meromorphic function.
+                \item[\scriptsize$\blob$] \scriptsize $\check{\textrm{C}}$ech cohomology: We used tools from differential forms and cohomology to prove the existence of such a meromorphic function.
                     \pause\qed
             \end{itemize}
         \end{proof}
