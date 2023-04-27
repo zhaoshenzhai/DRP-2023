@@ -154,7 +154,7 @@
         \pause\ \\
 
         \begin{center}
-            \includegraphics[width=0.8\textwidth]{figures/torus_glue.png}
+            \includegraphics[width=\textwidth]{figures/torus_glue.png}
         \end{center}
     \end{frame}
     \begin{frame}{Complex tori}
@@ -171,22 +171,25 @@
             for $\tau\coloneqq\omega_2/\omega_1\in\H$.
         \end{theorem}
     \end{frame}
-    \begin{frame}{Complex tori}
-        \begin{center}
+    \begin{frame}{Fundamental domain}
+        \begin{figure}
             \includegraphics[width=\textwidth]{figures/torus_fundamental_domain_1.png}
-        \end{center}
+            \caption{A fixed $\tau\in\H$.}
+        \end{figure}
     \end{frame}
-    \begin{frame}{Complex tori}
-        \begin{center}
+    \begin{frame}{Fundamental domain}
+        \begin{figure}
             \includegraphics[width=\textwidth]{figures/torus_fundamental_domain_2.png}
-        \end{center}
+            \caption{$X_\tau\iso X_{\tau'}$.}
+        \end{figure}
     \end{frame}
-    \begin{frame}{Complex tori}
-        \begin{center}
+    \begin{frame}{Fundamental domain}
+        \begin{figure}
             \includegraphics[width=\textwidth]{figures/torus_fundamental_domain_3.png}
-        \end{center}
+            \caption{$X_\tau\iso X_{\color{red}\blob}$.}
+        \end{figure}
     \end{frame}
-    \begin{frame}{Complex tori}
+    \begin{frame}{Moduli space of the torus}
         \begin{definition}
             \textit{The \ul{modular group} $\PSL{2}{\Z}$ is the group of functions $\gamma:\H\to\H$ mapping}
             \begin{equation*}
@@ -217,14 +220,14 @@
         \begin{proof}
             Hard!
             \pause
-            Fix a sphere $\RS$, which is equipped with a particular complex structure. Let $X$ be another sphere.
+            Equip a sphere $\RS$ with a particular complex structure and let $X$ be another sphere.
             \pause
             \begin{itemize}
-                \item[\scriptsize$\blob$] \scriptsize Covering space theory: We showed that if $X$ is compact and if there exists a meromorphic function on $X$ with a single simple pole, then $X\iso\RS$.
+                \item[\scriptsize$\blob$] \scriptsize Covering space theory: We showed that if there exists a global meromorphic function on $X$ with a single simple pole, then $X\iso\RS$.
                     \pause
                 \item[\scriptsize$\blob$] \scriptsize Analytic continuation: We attempted to find such a meromorphic function, but our techniques weren't powerful enough.
                     \pause
-                \item[\scriptsize$\blob$] \scriptsize $\check{\textrm{C}}$ech cohomology: We used tools from differential forms and cohomology to prove the existence of such a meromorphic function.
+                \item[\scriptsize$\blob$] \scriptsize $\check{\textrm{C}}$ech cohomology: We used tools from differential forms and cohomology to prove the existence of such a global meromorphic function.
                     \pause\qed
             \end{itemize}
         \end{proof}
