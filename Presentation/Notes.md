@@ -1,10 +1,10 @@
 # Title page
-    - Hi everyone, so my project is similar to Haoyang's in that its about surfaces, but instead making them look locally like $\R^2$, I want to make them look locally like the complex plane.
-    - Such a surface that looks locally like $\C$ is called a Riemann surface.
+    - Hi everyone, so my project is related to Haoyang's in that its about surfaces, but instead making them look locally like $\R^2$, I want to make them look locally like the complex plane.
+    - We call such a surface that looks locally like $\C$ a Riemann surface.
     - Specifically, we wanted to investigate the number of different ways we can turn a surface into a Riemann surface, and we call any such way a complex structure on the surface.
     - To illustrate, let's look at an example.
 # Obvious one
-    - One way to give $\R^2$ a complex structure is the obvious one by assigning a pair $\tpl{x,y}$ the complex number $x+iy$.
+    - So, on $\R^2$, one way to give it a complex structure is the obvious one by sending the pair $\tpl{x,y}$ to the complex number $x+iy$.
     - However, we can assign complex structures in any reasonable way we want, so why not something like this?
 # Conjugate one
     - This gives us a different complex structure on $\R^2$ since points in the plane are mapped to different complex numbers.
@@ -17,36 +17,34 @@
     - It turns out if we do that, there are two complex structures on $\R^2$.
 # Two complex structures on $\R^2$
     - The first one is what we saw, which is the usual one, and the other one maps everything to the upper-half plane.
-    - Geometrically, you can think of the top one as the complex plane equipped with the usual Euclidean metric, and the bottom one as the upper-half plane equipped with the hyperbolic metric, making it the hyperbolic plane.
     - Those two are fundamentally different complex structures on $\R^2$, as there is no biholomorphism between the two.
     - In fact those are the only two complex structures on $\R^2$.
 # Riemann surfaces
     - Now lets do the same for surfaces in general, which look like these.
-    - As mentioned in the beginning, a Riemann surface is a surface with a particular choice of complex structure. So we want to find the different ways of making a surface into a Riemann surface.
+    - A Riemann surface is a surface with a particular choice of complex structure. So we want to find the different ways of making a surface into a Riemann surface.
     - We'll only be looking at compact surfaces, which are basically surfaces that are closed and bounded (so everything here except for $\R^2$.)
 # Classification of surfaces
     - Topologically speaking, the only difference between two compact surfaces is the number of holes that it has.
     - For example, the sphere with one handle is homeomorphic to the torus, since they both just have one hole.
-    - Since we're on the torus, let's try to find the number of ways we can make a Riemann surface out of the torus.
-    - The resulting torus with a complex structure will be called a complex torus.
+    - Since we're on the torus, let's try to find the number of ways we can make the torus into a Riemann surface.
+    - The resulting torus with a particular choice of complex structure will be called a complex torus.
 # Topological torus
     - From Haoyang's talk, we saw that a torus is obtained by quotienting the plane by a lattice.
     - So here's a picture. On the left is a lattice, which is spanned by two vectors $\omega_1$ and $\omega_2$, and the torus is obtained by glueing the sides of the parallelogram that it forms.
-    - Topologically, it doesn't matter which $\omega$'s we choose since the tori will all have one hole, but it turns out that we can give the torus different complex structures, and the choice of complex structure is determined by the choice of the lattice (by those $\omega$'s).
+    - Topologically, it doesn't matter which $\omega$'s we choose since the tori will all have one hole, but it turns out that we build different complex tori out of the torus, and the choice of complex structure is determined by the choice of the lattice (by those $\omega$'s).
     - So we need to determine how do different lattices give rise to different complex structures.
 # Scaling/rotating doesn't matter
     - Now, there's a theorem from complex analysis which states that holomorphic maps, which are maps that preserve the complex structure, also preserve angles.
-    - So, intuitively, if we do anything to the plane that preserve angles, like scaling and rotating, the resulting tori should be biholomorphic.
+    - So, intuitively, if we do anything to the plane that preserve angles, like scaling and rotating, the resulting complex tori should be biholomorphic.
     - This is indeed the case, and if the lattice is spanned by $\omega_1$ and $\omega_2$, we can scale and rotate the parallelogram so that $\omega_1$ becomes $1$. Then $\omega_2$ becomes the ratio $\omega_2/\omega_1$, which we call $\tau$.
-    - Thus every complex torus can be written as $\C$ quotient by a lattice generated by $1$ and $\tau$.
-    - This $\tau$ lies in the upper-half plane of $\C$ and we call the torus it generates $X_\tau$.
-    - So far, we've seen that every complex number in the upper-half plane $\tau$ generates a torus, and every torus is generated by such a $\tau$.
+    - This $\tau$ lies in the upper-half plane of $\C$ and we call the torus it generates $X_\tau$, which is the quotient of $\C$ by the lattice spanned by $1$ and $\tau$.
+    - So far, we've seen that every complex number $\tau$ in the upper-half plane generates a torus, and every torus is generated by such a $\tau$.
     - However, it turns out that given a torus, there are different $\tau$'s that generate it.
 # Fundamental domain and the moduli space
-    - To illustrate, I have a fixed $\tau$ in the upper-half plane.
+    - To illustrate, I have a fixed a $\tau$ in the upper-half plane.
     - If we shift this $\tau$ one unit to the right, the resulting tori $X_\tau$ and $X_{\tau'}$ are actually biholomorphic.
-    - It turns out that if we map $\tau$ to any of those red points, the resulting tori are all biholomorphic.
-    - Within any one of the triangular regions though, like the shaded region, varying $\tau$ within this region will give different complex tori. This region, which is called the fundamental domain, parametrizes the different complex structures on the torus.
+    - It gets worse. If we map $\tau$ to any one of those red points, the resulting tori are all biholomorphic.
+    - Within any one of the triangular regions though, like the shaded region, varying $\tau$ within this region will generate different complex tori. This region, which is called the fundamental domain, parametrizes the different complex structures on the torus.
     - Since all other regions generate the same torus, we take the quotient of the upper-half plane under the group action that sends $\tau$ to the other red points. This quotient, which now uniquely parametrizes the complex structure of the torus, is called the moduli space of the torus.
 # Modular group
     - Explicitly, the group of functions that send $\tau$ to $\tau'$ is called the modular group.
@@ -58,11 +56,11 @@
     - This is pretty surprising, and this means is that every sphere is biholomorphic to each other.
     - The proof for this is hard, but it essentially goes like this. Let's fix a particular complex structure on the sphere and call the resulting Riemann surface the Riemann sphere.
     - Our goal now is to show that every other sphere $X$ is biholomorphic to the Riemann sphere.
-    - The first thing we proved is that if we can find a function defined on all of $X$ that blows up to infinity at a single point, then $X$ is biholomorphic to the Riemann sphere.
-    - Now, its easy to define a function locally on a small patch of the sphere, since, being a Riemann surface, it locally just looks like $\C$. But we need a function defined globally on all of $X$.
-    - So what we tried was to first define it locally as $1/z$ and then analytically continue it to the rest of $X$, but that didn't work out.
+    - To do so, we first proved that if we can find a function defined on all of $X$ that blows up to infinity at a single point, then $X$ is biholomorphic to the Riemann sphere.
+    - Defining such a function locally on a small patch of the sphere is easy, since, being a Riemann surface, $X$ just locally looks like $\C$ and we can define the function as $1/z$. But we need a function defined globally on all of $X$.
+    - So what we first tried was to and then analytically continue the function $1/z$ it to the rest of $X$, but that didn't work out.
     - Instead, what we needed was tools from sheaf cohomology, which gives us sufficient conditions to patch up a bunch of local functions into a global one.
-    - This turned out to work, which proves the theorem.
+    - This turned out to work, which gives us a function defined on all of $X$ that blows up to infinity at a single point and proves the theorem.
     - This theorem is actually a pretty significant result in the theory of Riemann surfaces and is part of the so-called Uniformization Theorem.
 
 So that's it! Thanks a lot for your attention.
