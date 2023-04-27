@@ -3,18 +3,18 @@
 \input{setup/preamble.sty}
 \input{setup/macros.sty}
 
-\title{\normalsize{Possible Choices of Complex Co-ordinates for a Surface}}
+\title{\normalsize{Possible Choices of Complex Structures for a Surface}}
 \subtitle{\small{Moduli Spaces of Riemann Surfaces}}
 \author{Zhaoshen Zhai}
 \institute{Graduate mentor: Kaleb Ruscitti}
-\date{\today}
+\date{April $28$, $2023$}
 
 \usecolortheme{seahorse}
 \usefonttheme{serif}
 \useinnertheme{rounded}
 
 \begin{document}\frame{\titlepage}
-    \begin{frame}{How many complex coordinates on $\R^2$?}
+    \begin{frame}{Complex structures on $\R^2$}
         \begin{center}
             \begin{tikzpicture}
                 \draw[<->, thick] (-2,0) -- (2,0);
@@ -34,7 +34,7 @@
             \end{tikzpicture}
         \end{center}
     \end{frame}
-    \begin{frame}{How many complex coordinates on $\R^2$?}
+    \begin{frame}{Complex structures on $\R^2$}
         \begin{center}
             \begin{tikzpicture}
                 \draw[<->, thick] (-2,0) -- (2,0);
@@ -54,7 +54,7 @@
             \end{tikzpicture}
         \end{center}
     \end{frame}
-    \begin{frame}{How many complex coordinates on $\R^2$?}
+    \begin{frame}{Complex structures on $\R^2$}
         \begin{center}
             \begin{tikzpicture}[scale=0.8]
                 \draw[<->, thick] (-2,0) -- (2,0);
@@ -87,13 +87,13 @@
     \end{frame}
     \begin{frame}{Refined question}
         \begin{center}
-            How many complex coordinates on $\R^2$?
+            How many complex structures on $\R^2$?
         \end{center}
     \end{frame}
     \begin{frame}{Refined question}
         \begin{center}
-            \sout{How many complex coordinates on $\R^2$?}\\
-            How many complex coordinates on $\R^2$ \textit{up to biholomorphism}?
+            \sout{How many complex structures on $\R^2$?}\\
+            How many complex structures on $\R^2$ \textit{up to biholomorphism}?
         \end{center}
     \end{frame}
     \begin{frame}{$\C$ and $\H$}
@@ -127,22 +127,17 @@
             \end{tikzpicture}
         \end{center}
     \end{frame}
-    \begin{frame}{Surfaces}
-        Recall that a surface is a connected $2$-dimensional real manifold.
-
-        \begin{center}
-            \includegraphics[width=0.7\textwidth]{figures/manifolds.png}
-        \end{center}
-
-        \pause\vspace{-0.3in}
-
+    \begin{frame}{Riemann surfaces}
         \begin{definition}
-            \textit{A \ul{Riemann surface} is a surface with a choice of complex structure.}
+            \textit{A \ul{Riemann surface} is a surface equipped with a complex structure.}
         \end{definition}
+        \begin{center}
+            \includegraphics[width=0.8\textwidth]{figures/manifolds.png}
+        \end{center}
     \end{frame}
     \begin{frame}{Compact surfaces}
         \begin{theorem}[Classification of Surfaces]
-            For each natural number $g$, there exists exactly one compact orientable surface up to homeomorphism. We call $g$ the \ul{genus} of the surface.
+            For each natural number $g$, there exists exactly one compact orientable surface up to homeomorphism.
         \end{theorem}
 
         \pause
@@ -169,7 +164,7 @@
     \end{frame}
     \begin{frame}{Complex tori}
         \begin{theorem}
-            Every complex tori is the quotient $X_\tau\coloneqq\C/\!\l(\Z\oplus\Z\tau\r)$ for some $\tau\in\H$. Indeed, for all linearly independent $\omega_1,\omega_2\in\C$,
+            Every complex torus is the quotient $X_\tau\coloneqq\C/\!\l(\Z\oplus\Z\tau\r)$ for some $\tau\in\H$. Indeed, for all linearly independent $\omega_1,\omega_2\in\C$,
             \begin{equation*}
                 \C/\!\l(\Z\omega_1\oplus\Z\omega_2\r)\iso X_\tau
             \end{equation*}
@@ -203,18 +198,18 @@
         \pause
 
         \begin{theorem}
-            For any $\tau,\tau'\in\H$, the tori $X_\tau$ and $X_{\tau}$ are biholomorphic iff there exists some $\gamma\in\PSL{2}{\Z}$ such that $\tau'=\gamma\l(\tau\r)$.
+            For any $\tau,\tau'\in\H$, the tori $X_\tau$ and $X_{\tau'}$ are biholomorphic iff there exists some $\gamma\in\PSL{2}{\Z}$ such that $\tau'=\gamma\l(\tau\r)$.
         \end{theorem}
 
         \pause
 
         \begin{corollary}
-            The moduli space of complex tori is $\H/\PSL{2}{\Z}$.
+            The moduli space of the torus is $\H/\PSL{2}{\Z}$.
         \end{corollary}
     \end{frame}
     \begin{frame}{Riemann sphere}
         \begin{theorem}[Uniformization]
-            \textit{There is a unique choice of complex coordinates on the sphere.}
+            \textit{There is a unique choice of complex structure on the sphere.}
         \end{theorem}
 
         \pause
@@ -222,10 +217,10 @@
         \begin{proof}
             Hard!
             \pause
-            Fix a sphere $\RS$, which is equipped with a particular complex coordinate. Let $X$ be another sphere.
+            Fix a sphere $\RS$, which is equipped with a particular complex structure. Let $X$ be another sphere.
             \pause
             \begin{itemize}
-                \item[\scriptsize$\blob$] \scriptsize Covering space theory: We defined the degree of a holomorphic map and proved that if $X$ is compact and if there exists a meromorphic function on $X$ with a single simple pole, then $X\iso\RS$.
+                \item[\scriptsize$\blob$] \scriptsize Covering space theory: We showed that if $X$ is compact and if there exists a meromorphic function on $X$ with a single simple pole, then $X\iso\RS$.
                     \pause
                 \item[\scriptsize$\blob$] \scriptsize Analytic continuation: We attempted to find such a meromorphic function, but our techniques weren't powerful enough.
                     \pause
