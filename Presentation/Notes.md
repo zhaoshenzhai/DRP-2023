@@ -1,65 +1,66 @@
 # Title page
-    - Hi everyone, so my project is on Riemann surfaces, which are topological spaces that locally look like the complex plane.
-    - Generally speaking, Riemann surfaces are obtained by equipping a topological space with a complex structure, thereby making it look locally like $\C$, and we wanted to investigate the number of different ways we can turn a topological space into a Riemann surface. That is, the number of different complex structures on a surface.
+    - Hi everyone, so my project is on Riemann surfaces, which are surfaces that locally look like the complex plane.
+    - By 'locally looking like the complex plane', I mean that for every point on the surface, I can find a small enough neighborhood around that point that is homeomorphic to an open set in $\C$. We call the collection of all such neighborhoods and homeomorphisms a complex structure on the surface.
+    - Generally speaking, Riemann surfaces are obtained by equipping a surface with a complex structure, and we wanted to investigate the number of different ways we can turn surfaces into a Riemann surface. In other words, the number of different complex structures on a surface.
     - To illustrate, let's look at an example.
 # Obvious one
-    - So, on $\R^2$, one way to give it a complex structure is the standard one by sending the pair $\tpl{x,y}$ to the complex number $x+iy$.
+    - On the plane, there's a standard way of giving it a complex structure by taking the neighborhood of each point to just be all of $\R^2$, and sending the point $\tpl{x,y}$ to the complex number $x+iy$.
     - However, we can assign complex structures in any reasonable way we want, so why not something like this?
 # Conjugate one
-    - This gives us a different complex structure on $\R^2$ since points in the plane are mapped to different complex numbers.
+    - This gives us a different complex structure on $\R^2$ by essentially using the conjugate map.
 # Biholomorphisms
-    - But those two are in some sense the same, you basically get one by flipping the other.
-    - In fact, we can make this precise by saying that there is an isomorphism that preserves the complex structure, which we call a biholomorphism.
-    - So we say that $\R^2$, equipped with the top complex structure, is biholomorphic to $\R^2$ equipped with the bottom one.
+    - But those two are in some sense the same. The first one is saying that $i^2=-1$ and the second one is saying that $-i^2=-1$.
+    - In fact, we can make this precise by saying that there is an isomorphism between the two that preserves the complex structure, which we call a biholomorphism.
+    - So we say that $\R^2$, equipped with the two different complex structures, are biholomorphic.
 # Refined question
-    - So instead of asking about literally how many complex structures there are, we only ask up to biholomorphism.
-    - It turns out if we do that, there are two complex structures on $\R^2$.
+    - We can now refine the question, and instead of asking about literally how many complex structures there are, we only ask up to biholomorphism.
+    - If we do that, it turns out that the plane admits two complex structures.
 # Two complex structures on $\R^2$
-    - The first one is what we saw, which is the usual one, and the other one maps everything to the upper-half plane.
+    - The first one is what we just saw, which is the usual one, and the other one maps everything to the upper-half plane, which turns out to be a model of the hyperbolic plane.
     - Those two are fundamentally different complex structures on $\R^2$, as there is no biholomorphism between the two.
     - In fact those are the only two complex structures on $\R^2$.
 # Riemann surfaces
-    - Now lets do the same for surfaces in general, which look like these.
-    - A Riemann surface is a surface with a particular choice of complex structure. So we want to find the different ways of making a surface into a Riemann surface.
-    - We'll only be looking at compact surfaces, which are basically surfaces that are closed and bounded (so everything here except for $\R^2$.)
+    - So $\R^2$ is the simplest example of a surface, and in general they look like these.
+    - We want to find the number of ways of turning those surfaces into Riemann surfaces. The complex structures on those surfaces are more complicated now.
+    - Take the sphere, for example. If I pick a point on the sphere, I need to find a sufficiently small enough neighborhood of that point and flatten it to $\C$, and I need to count the number of different ways of doing so.
+    - We'll only focus on compact surfaces now, so we can use a fact from topology that
 # Classification of surfaces
-    - To make our lives easier, there's a theorem from topology that says that the only difference between two compact surfaces is the number of holes that it has.
+    - Two compact surfaces differ only by the number of holes that they have.
     - For example, the sphere with one handle is homeomorphic to the torus, since they both just have one hole.
-    - Since we're on the torus, in how many ways can we make a Riemann surface out of it? In other words, how many complex tori are there?
+    - For the rest of the presentation, I'll talk about how many different complex structures there are on the torus, which are called complex tori, and the sphere.
 # Topological torus
     - Recall that a torus is obtained by quotienting the plane by a lattice.
     - So here's a picture. On the left is a lattice, which is spanned by two vectors $\omega_1$ and $\omega_2$, and the torus is obtained by glueing the sides of the parallelogram that it forms.
-    - Topologically speaking, there is only one torus, but it turns out that we can equip the torus with multiple different complex structures, and the choice of complex structure is determined by the choice of the $\omega$'s.
-    - So we need to determine how do different lattices give rise to different complex structures.
+    - Topologically speaking, there is only one torus, so the particular choice of the $\omega$'s don't matter, but in fact we can equip it with different complex structures to give us different complex tori, and the choice of complex structure is determined by the choice of the $\omega$'s.
+    - So we need to determine how different $\omega$'s give rise to different complex structures on the torus.
 # Scaling/rotating doesn't matter
-    - From complex analysis, holomorphic maps, which are maps that preserve the complex structure, also preserve angles.
+    - From complex analysis we know that holomorphic maps, which are maps that preserve the complex structure, also preserve angles.
     - So, intuitively, if we do anything to the plane that preserve angles, like scaling and rotating, the resulting complex tori should be biholomorphic.
-    - This is indeed the case, and if the lattice is spanned by $\omega_1$ and $\omega_2$, we can scale and rotate the parallelogram so that $\omega_1$ becomes $1$. Then $\omega_2$ becomes the ratio $\omega_2/\omega_1$, which we call $\tau$.
+    - This is indeed the case, and if the lattice is spanned by $\omega_1$ and $\omega_2$, we can scale and rotate the parallelogram so that $\omega_1$ becomes $1$, and $\omega_2$ becomes the ratio $\omega_2/\omega_1$, which we call $\tau$.
     - This $\tau$ lies in the upper-half plane of $\C$ and we call the torus it generates $X_\tau$, which is the quotient of $\C$ by the lattice spanned by $1$ and $\tau$.
-    - So far, we've seen that every complex number $\tau$ in the upper-half plane generates a torus, and every torus is generated by such a $\tau$.
+    - So far, we've seen that every complex number $\tau$ in the upper-half plane generates a torus, and conversely that every torus is generated by such a $\tau$.
     - However, it turns out that given a torus, there are different $\tau$'s that generate it.
 # Fundamental domain and the moduli space
-    - To illustrate, I have a fixed a $\tau$ in the upper-half plane.
-    - If we shift this $\tau$ one unit to the right, the resulting tori $X_\tau$ and $X_{\tau'}$ are actually biholomorphic.
-    - It gets worse. If we map $\tau$ to any one of those red points, the resulting tori are all biholomorphic.
-    - Within any one of the triangular regions though, like the shaded region, varying $\tau$ within this region will generate different complex tori. This region, which is called the fundamental domain, parametrizes the different complex structures on the torus.
-    - To remove redundancies, we take the quotient of the upper-half plane under the group action that sends $\tau$ to the other red points. This quotient, which now uniquely parametrizes the complex structure of the torus, is called the moduli space of the torus.
+    - To illustrate, let's fix a $\tau$ in the upper-half plane.
+    - If we shift this $\tau$ one unit to the right to get $\tau'$, the resulting tori $X_\tau$ and $X_{\tau'}$ are actually biholomorphic.
+    - It gets worse. If we map $\tau$ to any one of those red points, the tori generated by all those red points are all biholomorphic.
+    - Within any one of those triangular regions though, like the shaded region, varying $\tau$ within this region will generate different complex tori. This region, which is called the fundamental domain, parametrizes the different complex structures on the torus.
+    - Now, we still need to remove the redundancies, so we take the quotient of the upper-half plane under the group action that sends $\tau$ to the other red points. This quotient, which now uniquely parametrizes the complex structure of the torus, is called the moduli space of the torus.
 # Modular group
     - Explicitly, the group of functions that send $\tau$ to $\tau'$ is called the modular group.
     - And we've proved that two tori $X_\tau$ and $X_{\tau'}$ are biholomorphic iff $\tau$ and $\tau'$ are related by an element of the modular group, so we conclude that the moduli space of the torus is $\H/\PSL\l(2,\Z\r)$.
     - This answers the question for the torus, but to reiterate:
-    - The $\H$ comes from the fact that every lattice is determined by some $\tau$ in the upper-half plane, and the quotient by the modular group removes redundant $\tau$'s that generate the same torus.
+    - The $\H$ comes from the fact that every lattice is determined by some $\tau$ in the upper-half plane, and we take the quotient by the modular group to remove redundant $\tau$'s that generate the same torus.
 # Riemann sphere
     - Let's also quickly talk about the sphere, which turns out to admit a unique complex structure.
     - This is pretty surprising, and this means is that if you have any simply-connected compact topological space, which is what a sphere is, then you already know what complex structure to put on it.
     - The proof for this is hard, but it essentially goes like this. Let's fix a particular complex structure on the sphere and call the resulting Riemann surface the Riemann sphere.
     - Our goal now is to show that every other sphere $X$ is biholomorphic to the Riemann sphere.
     - To do so, we first proved that if we can find a function defined on all of $X$ that blows up to infinity at a single point, then $X$ is biholomorphic to the Riemann sphere.
-    - So all we have to do is to find such a function.
     - Defining such a function locally on a small patch of $X$ is easy, since, being a Riemann surface, $X$ just locally looks like $\C$ and we can define the function as $1/z$. But we need a function defined globally on all of $X$.
-    - So what we first tried was to and then analytically continue the function $1/z$ it to the rest of $X$, but but process was a bit more intricate than we thought, so it didn't work out.
+    - So what we first tried was to use analytic continuation to extend the domain of the function $1/z$ it to the rest of $X$, but this process was a bit more intricate than we thought, so it didn't work out.
     - Instead, what we needed was tools from sheaf cohomology, which gives us sufficient conditions to patch up a bunch of local functions into a global one.
-    - This turned out to work, which gives us a function defined on all of $X$ that blows up to infinity at a single point and proves the theorem.
+    - This turned out to work, which gives us a function defined on all of $X$ that blows up to infinity at a single point and so proves the theorem.
     - This theorem is actually a pretty significant result in the theory of Riemann surfaces and is part of the so-called Uniformization Theorem.
 
 So that's it! Thanks a lot for your attention.
