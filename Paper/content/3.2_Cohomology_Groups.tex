@@ -52,7 +52,7 @@
     \subsection{Refinements and $\check{H}^1\!\l(X,\ms{F}\r)$}
     In this section, we specialize to when $n=1$.
     \begin{definition}
-        Let $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ and $\mf{B}\coloneqq\l\{V_k\r\}_{k\in K}$ be open coverings of $X$. We say that \uldef{$\mf{B}$ is finer than $\mf{A}$} if there exists a \uldef{refining map} $r:K\to I$ such that $V_k\subseteq U_{r\l(k\r)}$ for all $k\in K$.
+        Let $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ and $\mf{B}\coloneqq\l\{V_k\r\}_{k\in K}$ be open coverings of $X$. We say that \uldef{$\mf{B}$ is finer than $\mf{A}$}, and write $\mf{B}\preceq\mf{A}$, if there exists a \uldef{refining map} $r:K\to I$ such that $V_k\subseteq U_{r\l(k\r)}$ for all $k\in K$.
     \end{definition}
     \begin{remark}
         The refining map $r$ lifts to a map $\tilde{r}:\check{Z}^1\!\l(\mf{A},\ms{F}\r)\to\check{Z}^1\!\l(\mf{B},\ms{F}\r)$ by sending $\tpl{f_{ij}}$ into $\tpl{g_{kl}}$ defined by $g_{kl}\coloneqq f_{r\l(k\r),r\l(l\r)}$ on $V_k\cap V_l$ for all $k,l\in K$. Observe that if $\tpl{f_{ij}}\in\check{B}^1\!\l(\mf{A},\ms{F}\r)$, then $\delta^1_\mf{A}\!\l(f_{ij}\r)=0$ and hence $f_{i_1i_3}=f_{i_1i_2}+f_{i_2i_3}$ on $U_{i_1}\cap U_{i_2}\cap U_{i_3}$ for all $i_1,i_2,i_3\in I$. In particular, we have
@@ -64,8 +64,8 @@
             \check{H}\l(r\r):\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(\mf{B},\ms{F}\r)\ \ \ \ \textrm{mapping}\ \ \ \ \l[f_{ij}\r]\mapsto\l[\tilde{r}\l(f_{ij}\r)\r].\exqedin
         \end{equation*}
     \end{remark}
-    \begin{proposition}
-        In the above notation, the map $\check{H}^\mf{B}_\mf{A}\coloneqq\check{H}\l(r\r)$ is independent of $r$ and is injective.
+    \begin{proposition}\label{3.2:prp:lifted_refinement_independent_of_refining_map}
+        In the above notation, the map $\check{H}^\mf{A}_\mf{B}\coloneqq\check{H}\l(r\r)$ is independent of $r$ and is injective.
     \end{proposition}
     \begin{proof}
         Take $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ and suppose that $r':K\to I$ is another refining map. Lifting it to $\tilde{r}'$ similarly, let $\tpl{g_{kl}}\coloneqq\tilde{r}\l(f_{ij}\r)=\tpl{f_{r\l(k\r),r\l(l\r)}}$ and $(g'_{kl})\coloneqq\tilde{r}'\l(f_{ij}\r)=\tpl{f_{r'\l(k\r),r'\l(l\r)}}$. Observe then that
@@ -80,7 +80,7 @@
         \begin{equation*}
             \tpl{g_{kl}-g_{kl}'}=\tpl{h_k-h_l}=\delta^0\!\l(h_k\r)
         \end{equation*}
-        on $V_k\cap V_l$, so $\tpl{g_{ij}}-(g_{ij}')\in\check{B}^1\!\l(\mf{B},\ms{F}\r)$. Thus their equivalence classes coincide, as desired. Now, to show that $\check{H}_\mf{A}^\mf{B}$ is injective, take $\tpl{f_{ij}}\in\ker\check{H}_\mf{A}^\mf{B}$. Thus $\tpl{f_{r\l(k\r),r\l(l\r)}}=\check{H}_\mf{A}^\mf{B}\!\l(f_{ij}\r)$ splits, so there exist $g_k\in\ms{F}\l(V_k\r)$ such that $f_{r\l(k\r),r\l(l\r)}=g_k-g_l$ on $V_k\cap V_l$ for all $k,l\in K$. Then
+        on $V_k\cap V_l$, so $\tpl{g_{ij}}-(g_{ij}')\in\check{B}^1\!\l(\mf{B},\ms{F}\r)$. Thus their equivalence classes coincide, as desired. Now, to show that $\check{H}_\mf{B}^\mf{A}$ is injective, take $\tpl{f_{ij}}\in\ker\check{H}_\mf{B}^\mf{A}$. Thus $\tpl{f_{r\l(k\r),r\l(l\r)}}=\check{H}_\mf{B}^\mf{A}\!\l(f_{ij}\r)$ splits, so there exist $g_k\in\ms{F}\l(V_k\r)$ such that $f_{r\l(k\r),r\l(l\r)}=g_k-g_l$ on $V_k\cap V_l$ for all $k,l\in K$. Then
         \begin{equation*}
             g_k-g_l=f_{r\l(k\r),i}+f_{i,r\l(l\r)}=f_{i,r\l(l\r)}-f_{i,r\l(k\r)}
         \end{equation*}
@@ -89,5 +89,35 @@
             f_{ij}=f_{i,r\l(k\r)}-f_{j,r\l(k\r)}=h_i-g_k-h_j+g_k=h_i-h_j
         \end{equation*}
         on $U_i\cap U_j\cap V_k$. Note that both $f_{ij}$ and $h_i-h_j$ are defined on $U_i\cap U_j$, and since they coincide on the restriction to $V_k$, uniqueness of the glueing gives us $f_{ij}=h_i-h_j$ on $U_i\cap U_j$. Thus $\tpl{f_{ij}}=\delta^0\!\l(h_i\r)$, so $\tpl{f_{ij}}$ splits.\qed
+    \end{proof}
+    \begin{remark}
+        If $\mf{C}\preceq\mf{B}\preceq\mf{A}$ are open coverings of $X$, we have that $\check{H}^\mf{B}_\mf{C}\circ\check{H}^\mf{A}_\mf{B}=\check{H}^\mf{A}_\mf{C}$. This\side{Both constructions are special cases of the so-called \textit{direct limit}; see \cite[][Chapter III]{maclane}.} allows us to give a construction of $\check{H}^1\!\l(X,\ms{F}\r)$ similar to that of Definition \ref{2.2:def:stalk}.\exqed
+    \end{remark}
+    \begin{definition}
+        The \uldef{$1^\textrm{st}$ cohomology group of $\ms{F}$} is the Abelian group
+        \begin{equation*}
+            \check{H}^1\!\l(X,\ms{F}\r)\coloneqq\raisebox{-2pt}{$\Biggl(\!$}\bigsqcup_{\mf{A}}\check{H}^1\!\l(\mf{A},\ms{F}\r)\!\raisebox{-2pt}{$\Biggr)$}\!\!_{\scalebox{2}{/}\sim}
+        \end{equation*}
+        where $\sim$ is the equivalence relation on the disjoint union, defined, for all $\xi\in\check{H}^1\!\l(\mf{A},\ms{F}\r)$ and $\xi'\in\check{H}^1\!\l(\mf{A}',\ms{F}\r)$, by $\xi\sim\xi'$ iff there exists a refinement $\mf{B}\preceq\mf{A},\mf{A}'$ such that $\check{H}^\mf{A}_\mf{B}\!\l(\xi\r)=\check{H}^{\mf{A}'}_\mf{B}\!\l(\xi'\r)$.
+    \end{definition}
+    \side[-1.08in]{Note that $\check{H}^1\!\l(X,\ms{F}\r)$ vanishes iff $\check{H}^1\!\l(\mf{A},\ms{F}\r)=0$ for all open coverings $\mf{A}$ of $X$. Indeed, the converse direction is trivial. For the forward, let $\mf{A}$ be an open covering of $X$. By Proposition \ref{3.2:prp:lifted_refinement_independent_of_refining_map}, the canonical map $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(X,\ms{F}\r)$ is injective. The result follows.}
+    \vspace{-0.05in}
+    \begin{proposition}
+        Let $X$ be a Riemann surface and consider the sheaf of differentiable functions $\DIFF$ on $X$. Then $\check{H}^1\!\l(X,\DIFF\r)=0$.
+    \end{proposition}
+    \begin{proof}
+        Let $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ be an open covering of $X$ and let $\tpl{f_{ij}}\in\check{Z}^1\!\l(X,\DIFF\r)$ be a cocycle; it suffices to show that $\tpl{f_{ij}}$ splits, for then $\check{H}^1\!\l(\mf{A},\DIFF\r)=0$ and we are done by the remark above. To do so, we use the fact that there exists\side{For a proof, see \cite[][Theorem 2.23]{lee}. Note that the functions $\psi_i$ are \textit{not necessarily} holomorphic.} a partition of unity subordinate to $\mf{A}$; that is, a family $\l\{\psi_i\r\}_{i\in I}$ of differentiable functions such that:
+        \begin{itemize}
+            \item $\Supp\l(\psi_i\r)\coloneqq\bar{\l\{p\in X\mid\psi\l(p\r)\neq0\r\}}\subseteq U_i$ for every $i\in I$.
+                \vspace{-0.05in}
+            \item Every point in $X$ admits a neighborhood whose intersection with $\l\{\Supp\l(\psi_i\r)\r\}_{i\in I}$ is finite.
+                \vspace{-0.05in}
+            \item $\sum_{i\in I}\psi_i=1$.
+        \end{itemize}
+        Consider the function $\psi_jf_{ij}$ on $U_i\cap U_j$, which may be differentiably extended to $U_i$ by zero outside $\Supp\l(\psi_j\r)$. Consider the function $g_i\coloneqq\sum_{j\in I}\psi_jf_{ij}\in\DIFF\l(U_i\r)$, which is legal since there is a neighborhood around every point of $U_i$ such that $\psi_jf_{ij}=0$ for all but finitely-many $j\in I$. Observe that
+        \begin{equation*}
+            g_i-g_j=\sum_{k\in I}\psi_k\l(f_{ik}-f_{jk}\r)=\sum_{k\in I}\psi_k\l(f_{ik}+f_{kj}\r)=\sum_{k\in I}\psi_kf_{ij}=f_{ij}
+        \end{equation*}
+        on $U_i\cap U_j$, so $\tpl{f_{ij}}=\tpl{g_i-g_j}=\delta^0\!\l(g_i\r)$ splits.\qed
     \end{proof}
 \end{document}

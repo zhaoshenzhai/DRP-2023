@@ -1,23 +1,23 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
     \section{Sheaves and Function Germs}
-    Unless otherwise stated, in this section, $X$ denotes a topological space with $\mc{T}$ its system of open sets. Our exposition on sheaves roughly follows \cite[][Section 6]{forster} and \cite[][Chapter IX]{miranda}.
+    Unless otherwise stated, in this section, $X$ denotes a topological space with $\tau$ its system of open sets. Our exposition on sheaves roughly follows \cite[][Section 6]{forster} and \cite[][Chapter IX]{miranda}.
     \subsection{Presheaves and Sheaves}
     \begin{definition}
         A \uldef{presheaf of Abelian groups on $X$} is a pair $\tpl{\ms{F},\rho}$ consisting of
         \begin{itemize}
-            \item a family $\ms{F}\coloneqq\l\{\ms{F}\l(U\r)\r\}$ of Abelian groups $\ms{F}\l(U\r)$ for every $U\in\mc{T}$,
+            \item a family $\ms{F}\coloneqq\l\{\ms{F}\l(U\r)\r\}$ of Abelian groups $\ms{F}\l(U\r)$ for every $U\in\tau$,
                 \vspace{-0.05in}
-            \item a family $\rho\coloneqq\l\{\rho^U_V\r\}$ of group homomorphisms $\rho^U_V:\ms{F}\l(U\r)\to\ms{F}\l(V\r)$ for every $U,V\in\mc{T}$ with $V\subseteq U$,
+            \item a family $\rho\coloneqq\l\{\rho^U_V\r\}$ of group homomorphisms $\rho^U_V:\ms{F}\l(U\r)\to\ms{F}\l(V\r)$ for every $U,V\in\tau$ with $V\subseteq U$,
         \end{itemize}
         such that the following two properties hold:
         \begin{itemize}
-            \item For every $U\in\mc{T}$, we have $\rho^U_U=\id_{\ms{F}\l(U\r)}$.
+            \item For every $U\in\tau$, we have $\rho^U_U=\id_{\ms{F}\l(U\r)}$.
                 \vspace{-0.05in}
-            \item For every $U,V,W\in\mc{T}$ with $W\subseteq V\subseteq U$, we have $\rho^V_W\circ\rho^U_V=\rho^U_W$.
+            \item For every $U,V,W\in\tau$ with $W\subseteq V\subseteq U$, we have $\rho^V_W\circ\rho^U_V=\rho^U_W$.
         \end{itemize}
     \end{definition}
-    \begin{remark}\side[-1.36in]{Analogously, we define the presheaf of sets, rings, vector spaces, algebras, etc, on a topological space $X$.\\\ \\For those with some category theory background, fix any category $\cat{C}$. A \ul{$\cat{C}$-valued presheaf on $X$} is simply a contravariant functor $\ms{F}:\mc{T}\to\cat{C}$ where $\mc{T}$ is the preorder category induced by $\tpl{\mc{T},\subseteq}$.}
+    \begin{remark}\side[-1.36in]{Analogously, we define the presheaf of sets, rings, vector spaces, algebras, etc, on a topological space $X$.\\\ \\More generally, fix any category $\cat{C}$. A \ul{$\cat{C}$-valued} \ul{presheaf on $X$} is simply a contravariant functor $\ms{F}:\tau\to\cat{C}$ where $\tau$ is the preorder category induced by $\tpl{\tau,\subseteq}$. Although many statements are implied when phrased categorically, no category theory background is needed for this paper. We refer the interested reader to \cite{maclane}.}
         Presheaves give us a way of tracking data associated with open sets of a topological space in such a way that makes restricting to a smaller open set $V\subseteq U$ well-behaved. Consider, for instance, a Riemann surface $X$ and the presheaf of all holomorphic functions $\HOLO$ on $X$.
         \begin{itemize}
             \item To every open set $U\subseteq X$\side{Similarly, consider the (multiplicative) group $\HOLO^\ast\!\l(U\r)$ of all holomorphic functions $f:U\to\C^\ast$, which defines a presheaf $\HOLO^\ast$ of Abelian groups. We define $\MERO^\ast\!\l(U\r)$ similarly, but instead restrict to all meromorphic functions $f:U\to\C$ that do not vanish identically on any connected-component of $U$.} we consider the $\C$-algebra $\HOLO\l(U\r)$ of all holomorphic functions $f:U\to\C$. For any open $V\subseteq U$, we define $\rho^U_V\!\l(f\r)\coloneqq\l.f\r|_V$. The two properties are then trivial, which respectively states that restricting to the domain does nothing, and that restricting once to $V$ and then to $W\subseteq V$ yields the same function as restricting to $W$ directly.
@@ -44,12 +44,12 @@
     \begin{example}
         We give two examples of sheaves relating to \textit{divisors}\side[0.01in]{For compact Riemann surfaces, we see that a function $D:X\to\Z$ is a divisor iff it has finite support, so its set of divisors is the free Abelian group of the points of $X$.} on a Riemann surface $X$; that is, a function $D:X\to\Z$ whose support $\l\{p\in X\mid D\l(p\r)\neq0\r\}$ is a discrete subset of $X$.
         \begin{itemize}
-            \item Let $D$ be a divisor on $X$. For every $U\in\mc{T}$, let $\HOLO\l[D\r]\l(U\r)$ denote the set of all meromorphic functions $f:X\to\C$ such that $\ord_p\!\l(f\r)\leq D\l(p\r)$ for all $p\in X$. The usual restriction homomorphisms make $\HOLO\l[D\r]$ is a sheaf of Abelian groups, \side[0.01in]{This construction generalizes both $\HOLO$ and $\MERO$. Intuitively, the use of divisors here allow us to `bound' the orders of the poles of $f$ at specific points $p$, thereby restricting how badly-behaved it can be.} for if $\l\{f_i\r\}$ is a family of meromorphic functions having poles bounded by $D$, then the meromorphic function $f:X\to\C$ that glues them together also has poles bounded by $D$.
-            \item For every $U\in\mc{T}$, let $\ms{D}\l(U\r)$ denote the group of all discretely-supported functions from $U$ to $\Z$ (which is exactly a divisor on $U$). This makes $\ms{D}$ into a sheaf since for every family $\l\{D_i\r\}$, the function $D:X\to\Z$ that glues them together is also discretely-supported.\exqed
+            \item Let $D$ be a divisor on $X$. For every $U\in\tau$, let $\HOLO\l[D\r]\l(U\r)$ denote the set of all meromorphic functions $f:X\to\C$ such that $\ord_p\!\l(f\r)\leq D\l(p\r)$ for all $p\in X$. The usual restriction homomorphisms make $\HOLO\l[D\r]$ is a sheaf of Abelian groups, \side[0.01in]{This construction generalizes both $\HOLO$ and $\MERO$. Intuitively, the use of divisors here allow us to `bound' the orders of the poles of $f$ at specific points $p$, thereby restricting how badly-behaved it can be.} for if $\l\{f_i\r\}$ is a family of meromorphic functions having poles bounded by $D$, then the meromorphic function $f:X\to\C$ that glues them together also has poles bounded by $D$.
+            \item For every $U\in\tau$, let $\ms{D}\l(U\r)$ denote the group of all discretely-supported functions from $U$ to $\Z$ (which is exactly a divisor on $U$). This makes $\ms{D}$ into a sheaf since for every family $\l\{D_i\r\}$, the function $D:X\to\Z$ that glues them together is also discretely-supported.\exqed
         \end{itemize}
     \end{example}
     \begin{definition}
-        Let $\tpl{\ms{F},\rho}$ and $\tpl{\ms{G},\sigma}$ be two sheaves of Abelian groups on $X$. A \uldef{morphism} \uldef{of sheaves} $\eta:\ms{F}\to\ms{G}$ is a family $\l\{\eta_U\r\}_{U\in\mc{T}}$ of group homomorphisms $\eta_U:\ms{F}\l(U\r)\to\ms{G}\l(U\r)$ such that for every $U\in\mc{T}$ and every open set $V\subseteq U$, the following diagram commutes.
+        Let $\tpl{\ms{F},\rho}$ and $\tpl{\ms{G},\sigma}$ be two sheaves of Abelian groups on $X$. A \uldef{morphism} \uldef{of sheaves} $\eta:\ms{F}\to\ms{G}$ is a family $\l\{\eta_U\r\}_{U\in\tau}$ of group homomorphisms $\eta_U:\ms{F}\l(U\r)\to\ms{G}\l(U\r)$ such that for every $U\in\tau$ and every open set $V\subseteq U$, the following diagram commutes.
         \begin{equation*}
             \begin{tikzcd}
                 \ms{F}\l(U\r) \ar[r, "\eta_U"] \ar[d, "\rho^U_V"'] & \ms{G}\l(U\r) \ar[d, "\sigma^U_V"] \\
@@ -61,37 +61,39 @@
     \begin{example}
         Some examples relating to divisors of a Riemann surface $X$.
         \begin{itemize}
-            \item For divisors $D_1$ and $D_2$ of a Riemann surface $X$, we write $D_1\leq D_2$ if $D_1\!\l(p\r)\leq D_2\!\l(p\r)$ for all $p\in X$. This induces an \textit{inclusion morphism} $\iota:\HOLO\l[D_1\r]\into\HOLO\l[D_2\r]$ defined\side{In particular, we have the inclusion $\HOLO\into\MERO$.} by $\iota_U\!\l(f\r)\coloneqq f$ for all $U\in\mc{T}$ and $f\in\HOLO\l[D_1\r]\l(U\r)$, which makes sense since if $D_1\leq D_2$ and the poles of $f$ are bounded by $D_1$, then they are also clearly bounded by $D_2$. This inclusion also respect restrictions, so it is indeed a morphism of sheaves.
-            \item For all $U\in\mc{T}$, we associate to each $f\in\MERO^\ast\!\l(U\r)$ the divisor $\div f:U\to\Z:p\mapsto\ord_p\!\l(f\r)$\side{Such a function $\div f$ is a divisor by discreteness of zeros and poles.}. This induces a morphism of sheaves $\div:\MERO^\ast\to\ms{D}$ since for all $U\in\mc{T}$ and all open sets $V\subseteq U$, the restriction of the divisor of any $f\in\MERO^\ast\!\l(U\r)$ coincides with the divisor of the restriction $\l.f\r|_V$.\exqed
+            \item For divisors $D_1$ and $D_2$ of a Riemann surface $X$, we write $D_1\leq D_2$ if $D_1\!\l(p\r)\leq D_2\!\l(p\r)$ for all $p\in X$. This induces an \textit{inclusion morphism} $\iota:\HOLO\l[D_1\r]\into\HOLO\l[D_2\r]$ defined\side{In particular, we have the inclusion $\HOLO\into\MERO$.} by $\iota_U\!\l(f\r)\coloneqq f$ for all $U\in\tau$ and $f\in\HOLO\l[D_1\r]\l(U\r)$, which makes sense since if $D_1\leq D_2$ and the poles of $f$ are bounded by $D_1$, then they are also clearly bounded by $D_2$. This inclusion also respect restrictions, so it is indeed a morphism of sheaves.
+            \item For all $U\in\tau$, we associate to each $f\in\MERO^\ast\!\l(U\r)$ the divisor $\div f:U\to\Z:p\mapsto\ord_p\!\l(f\r)$\side{Such a function $\div f$ is a divisor by discreteness of zeros and poles.}. This induces a morphism of sheaves $\div:\MERO^\ast\to\ms{D}$ since for all $U\in\tau$ and all open sets $V\subseteq U$, the restriction of the divisor of any $f\in\MERO^\ast\!\l(U\r)$ coincides with the divisor of the restriction $\l.f\r|_V$.\exqed
         \end{itemize}
     \end{example}
     \subsection{Stalks and the Étalé Space}
     Throughout this section, $p\in X$ is a fixed point in a topological space $X$.
-    \begin{definition}
+    \begin{definition}\label{2.2:def:stalk}
         Let $\ms{F}$ be a presheaf of Abelian groups on $X$. The \uldef{stalk of $\ms{F}$ at $p$} is the Abelian group
         \begin{equation*}
             \ms{F}_p\coloneqq\raisebox{-2pt}{$\Biggl(\!$}\bigsqcup_{U\ni p}\ms{F}\l(U\r)\!\raisebox{-2pt}{$\Biggr)$}\!\!_{\scalebox{2}{/}\sim_p}
         \end{equation*}
-        where $\sim_p$ is the equivalence relation on the disjoint union, defined, for all $f\in\ms{F}\l(U\r)$ and $g\in\ms{F}\l(V\r)$, by $f\sim_p g$ iff there exists an open set $W\in\mc{T}$ with $p\in W\subseteq U\cap V$ such that $\rho^U_W\!\l(f\r)=\rho^V_W\!\l(g\r)$. For any $f\in\ms{F}\l(U\r)$, its equivalence class $\l[f\r]_p$ is called the \uldef{germ of $f$ at $p$}.
+        where $\sim_p$ is the equivalence relation on the disjoint union, defined, for all $f\in\ms{F}\l(U\r)$ and $g\in\ms{F}\l(V\r)$, by $f\sim_p g$ iff there exists an open set $W\in\tau$ with $p\in W\subseteq U\cap V$ such that $\rho^U_W\!\l(f\r)=\rho^V_W\!\l(g\r)$. For any $f\in\ms{F}\l(U\r)$, its equivalence class $\l[f\r]_p$ is called the \uldef{germ of $f$ at $p$}.
     \end{definition}
+    \side[-0.47in]{The relation $\sim_p$ is transitive since $\rho^V_W\circ\rho^U_V=\rho^U_W$ for all $U,V,W\in\tau$ such that $W\subseteq V\subseteq U$.}
+    \vspace{-0.05in}
     \begin{example}
         Let\side[-1.23in]{This construction is analogous to that of the \textit{tangent space} $T_pM$ of a (real) manifold $M$ at some point $p$.}\side[0.01in]{This equivalence relation allows us to `evaluate' a function germ $\eta\in\HOLO_p\!\l[D\r]$ as $\eta\l(p\r)\coloneqq f\l(p\r)$ where $U\ni p$ is any open set and $f\in\HOLO\l[D\r]\l(U\r)$ is any function such that $\eta=\l[f\r]_p$.} $D$ be a divisor on a Riemann surface $X$ and consider the stalk $\HOLO_p\!\l[D\r]$. Fix a chart centered at $p$. Since any meromorphic function $f$ admits a Laurent series, we see that the function germ $\l[f\r]_p$ is represented by a Laurent series $\sum_{i=i_0}^{\infty}c_iz^i$ for some $i_0\geq-D\l(p\r)$ and $c_i\in\C$. Conversely, the germ of any Laurent series $\sum_{i=i_0}^{\infty}c_iz^i$ with $i_0\geq-D\l(p\r)$ and $c_i\in\C$ lifts to a meromorphic function germ $\l[f\r]_p$, so this defines a bijection\side[0.01in]{This isomorphism depends on the chosen chart map, so it is not canonical.} between $\HOLO_p\!\l[D\r]$ and the set of all such Laurent series.\exqed
     \end{example}
     \begin{remark}
-        The sheaf axioms guarantee that if $\ms{F}$ is a sheaf of Abelian groups on $X$ and $U\in\mc{T}$, then an element $f\in\ms{F}\l(U\r)$ is zero iff\side{The forward direction is tautological.} all germs $\l[f\r]_p$, for $p\in U$ vanish. Indeed, let $0\in\ms{F}\l(U\r)$ denote the zero element, so $f\sim_p0$ for all $p\in U$ furnishes a family $\l\{W_p\r\}$ of open sets $W_p\subseteq U$ containing $p$ such that $\rho^U_{W_p}\!\l(f\r)=\rho^U_{W_p}\!\l(0\r)$. This family covers $U$, so $f=0$ by the first sheaf axiom.\exqed
+        The sheaf axioms guarantee that if $\ms{F}$ is a sheaf of Abelian groups on $X$ and $U\in\tau$, then an element $f\in\ms{F}\l(U\r)$ is zero iff\side{The forward direction is tautological.} all germs $\l[f\r]_p$, for $p\in U$ vanish. Indeed, let $0\in\ms{F}\l(U\r)$ denote the zero element, so $f\sim_p0$ for all $p\in U$ furnishes a family $\l\{W_p\r\}$ of open sets $W_p\subseteq U$ containing $p$ such that $\rho^U_{W_p}\!\l(f\r)=\rho^U_{W_p}\!\l(0\r)$. This family covers $U$, so $f=0$ by the first sheaf axiom.\exqed
     \end{remark}
     \begin{proposition}\label{2.2:prp:basis_stalk}
         Let $\ms{F}$ be a presheaf of Abelian groups on $X$. Let $\l|\ms{F}\r|\coloneqq\bigsqcup_{p\in X}\ms{F}_p$ and consider the projection $\pi:\l|\ms{F}\r|\to X$ mapping each $\eta\in\ms{F}_p$ to $p$. Then the system $\mc{B}$ of all sets
         \begin{equation*}
             \l[U,f\r]\coloneqq\bigl\{\l[f\r]_p\,\l|\,p\in U\bigr\}\r.\subseteq\l|\ms{F}\r|
         \end{equation*}
-        for $U\in\mc{T}$ and $f\in\ms{F}\l(U\r)$ is a basis for a topology on $\l|\ms{F}\r|$ and $\pi$ is a local homeomorphism.
+        for $U\in\tau$ and $f\in\ms{F}\l(U\r)$ is a basis for a topology on $\l|\ms{F}\r|$ and $\pi$ is a local homeomorphism.
     \end{proposition}
     \begin{proof}
         We first verify that $\mc{B}$ is a basis.
         \begin{enumerate}
-            \item[(a)] Take $\eta\in\l|\ms{F}\r|$, so there exists an open set $U\in\mc{T}$ such that $\eta=\l[f\r]_p$ for some $f\in\ms{F}\l(U\r)$ and $p\in U$. Observe that $\eta\in\l[U,f\r]$.
-            \item[(b)] Take $\l[U,f\r],\l[V,g\r]\in\mc{B}$ and $\eta\in\l[U,f\r]\cap\l[V,g\r]$. Then there exists a point $p\in X$ such that $\eta=\l[f\r]_p=\l[g\r]_p$, which furnishes an open set $W\in\mc{T}$ with $p\in W\subseteq U\cap V$ such that $\rho^U_W\!\l(f\r)=\rho^V_W\!\l(g\r)\eqqcolon h$. Then $\eta=\l[h\r]_p$ with $h\in W$, so $\eta\in\l[W,h\r]\subseteq\l[U,f\r]\cap\l[V,g\r]$.
+            \item[(a)] Take $\eta\in\l|\ms{F}\r|$, so there exists an open set $U\in\tau$ such that $\eta=\l[f\r]_p$ for some $f\in\ms{F}\l(U\r)$ and $p\in U$. Observe that $\eta\in\l[U,f\r]$.
+            \item[(b)] Take $\l[U,f\r],\l[V,g\r]\in\mc{B}$ and $\eta\in\l[U,f\r]\cap\l[V,g\r]$. Then there exists a point $p\in X$ such that $\eta=\l[f\r]_p=\l[g\r]_p$, which furnishes an open set $W\in\tau$ with $p\in W\subseteq U\cap V$ such that $\rho^U_W\!\l(f\r)=\rho^V_W\!\l(g\r)\eqqcolon h$. Then $\eta=\l[h\r]_p$ with $h\in W$, so $\eta\in\l[W,h\r]\subseteq\l[U,f\r]\cap\l[V,g\r]$.
         \end{enumerate}
         To show that $\pi$ is a local homeomorphism, fix $\eta\in\l|\ms{F}\r|$, say with $p\coloneqq\pi\l(\eta\r)$. By (a), there exists some $\l[U,f\r]\in\mc{B}$ containing $\eta$; we claim that $\l.\pi\r|_{\l[U,f\r]}:\l[U,f\r]\to U$ is a homeomorphism.
         \begin{itemize}
@@ -103,7 +105,7 @@
         The \uldef{Étalé space} of a presheaf $\ms{F}$ of Abelian groups on $X$ is the topological space $\l|\ms{F}\r|$ equipped the projection $\pi:\l|\ms{F}\r|\to X$.
     \end{definition}
     \begin{definition}
-        A presheaf $\ms{F}$ of Abelian groups on $X$ is said to satisfy the \uldef{Identity Theorem} if for all $U\in\mc{T}$ and all $f,g\in\ms{F}\l(U\r)$, if there is some $p\in U$ such that $\l[f\r]_p=\l[g\r]_p$, then $f=g$ (on $U$).
+        A presheaf $\ms{F}$ of Abelian groups on $X$ is said to satisfy the \uldef{Identity Theorem} if for all $U\in\tau$ and all $f,g\in\ms{F}\l(U\r)$, if there is some $p\in U$ such that $\l[f\r]_p=\l[g\r]_p$, then $f=g$ (on $U$).
     \end{definition}
     \side[-0.4in]{In particular, this holds for all $\HOLO\l[D\r]$.}
     \begin{proposition}\label{2.2:prp:stalk_topology_Hausdorff}
