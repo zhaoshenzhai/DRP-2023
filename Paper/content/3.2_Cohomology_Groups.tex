@@ -36,7 +36,7 @@
         A calculation shows that $\check{B}^n\!\l(\mf{A},\ms{F}\r)\subseteq\check{Z}^n\!\l(\mf{A},\ms{F}\r)$, so the quotient makes sense. In particular, $\delta^{n+1}\circ\delta^n=0$.\exqed
     \end{remark}
     \begin{remark}
-        For $n=0$, we have $\delta^0\!\l(f_i\r)=\tpl{f_j-f_i}$ for all $\tpl{f_i}\in\check{C}^0\!\l(\mf{A},\ms{F}\r)$. This gives us a glueing condition, that if $\tpl{f_i}\in\check{Z}^0\!\l(\mf{A},\ms{F}\r)$, then the sheaf axioms furnish a unique $f\in\ms{F}\l(X\r)$ such that $\rho^X_{U_i}\!\l(f\r)=f_i$ for all $i$. Thus
+        For $n=0$, we have $\delta^0\!\l(f_i\r)=\tpl{f_j-f_i}$ for all $\tpl{f_i}\in\check{C}^0\!\l(\mf{A},\ms{F}\r)$. This gives us a glueing condition, that if\side{Indeed, if $\tpl{f_i}\in\check{C}^0\!\l(\mf{A},\ms{F}\r)$, then $\rho\l(f_i\r)=\rho\l(f_j\r)$ for all $i,j$. Henceforth, we suppress the restriction maps $\rho$ for ease of notation, but will always mention on which domain the relation is valid on.} $\tpl{f_i}\in\check{Z}^0\!\l(\mf{A},\ms{F}\r)$, then the sheaf axioms furnish a unique $f\in\ms{F}\l(X\r)$ such that $\rho^X_{U_i}\!\l(f\r)=f_i$ for all $i$. Thus
         \begin{equation*}
             \check{H}^0\!\l(\mf{A},\ms{F}\r)=\check{Z}^0\!\l(\mf{A},\ms{F}\r)\iso\ms{F}\l(X\r),
         \end{equation*}
@@ -45,37 +45,49 @@
     \begin{remark}
         For $n=1$, we have $\delta^1\!\l(f_{ij}\r)=\tpl{f_{jk}-f_{ik}+f_{ij}}$ for all $\tpl{f_{ij}}\in\check{C}^1\!\l(\mf{A},\ms{F}\r)$. Elements $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ satisfy the \textit{cocycle condition}, which states
         \begin{equation*}
-            f_{ik}=f_{ij}+f_{jk}.
+            f_{ik}=f_{ij}+f_{jk}
         \end{equation*}
-        In\side{The construction of the $1^\textrm{st}$ cohomology group $\check{H}^1\!\l(X,\ms{F}\r)$ is more involved. We will not need the general construction for $\check{H}^n\!\l(X,\ms{F}\r)$, but they can be done similarly as in the $n=1$ case. With some machinery, we can also define the $n^\textrm{th}$ \textit{De Rham} and \textit{Dolbeault} cohomology groups, which relate to $\check{H}^n\!\l(X,\ms{F}\r)$. See \cite[][Section IX.4]{miranda}.} particular, it implies that $f_{ii}=0$ and $f_{ij}=-f_{ji}$. Note that every splitting cocycle is a cocycle, but not every cocycle splits. In other words, $\check{H}^1\!\l(\mf{A},\ms{F}\r)$ measures how $1$-cocycles fail to split. The next section defines the $1^\textrm{st}$ cohomology group of $\ms{F}$, independent of the covering $\mf{A}$.\exqed
+        on $U_i\cap U_j\cap U_k$ for all $i,j,k$. In\side{The construction of the $1^\textrm{st}$ cohomology group $\check{H}^1\!\l(X,\ms{F}\r)$ is more involved. We will not need the general construction for $\check{H}^n\!\l(X,\ms{F}\r)$, but they can be done similarly as in the $n=1$ case. With some machinery, we can also define the $n^\textrm{th}$ \textit{De Rham} and \textit{Dolbeault} cohomology groups, which relate to $\check{H}^n\!\l(X,\ms{F}\r)$. See \cite[][Section IX.4]{miranda}.} particular, it implies that $f_{ii}=0$ for all $i$ and $f_{ij}=-f_{ji}$ on $U_i\cap U_j$ for all $i,j$. Note that every splitting cocycle is a cocycle, but not every cocycle splits. In other words, $\check{H}^1\!\l(\mf{A},\ms{F}\r)$ measures how $1$-cocycles fail to split. The next section defines the $1^\textrm{st}$ cohomology group of $\ms{F}$, independent of the covering $\mf{A}$.\exqed
     \end{remark}
     \subsection{Refinements and $\check{H}^1\!\l(X,\ms{F}\r)$}
     In this section, we specialize to when $n=1$.
     \begin{definition}
-        Let and $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ and $\mf{B}\coloneqq\l\{V_j\r\}_{j\in J}$ be open coverings of $X$. We say that \uldef{$\mf{B}$ is finer than $\mf{A}$} if there exists a \uldef{refining map} $r:J\to I$ such that $V_j\subseteq U_{r\l(j\r)}$ for all $j\in J$.
+        Let $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ and $\mf{B}\coloneqq\l\{V_k\r\}_{k\in K}$ be open coverings of $X$. We say that \uldef{$\mf{B}$ is finer than $\mf{A}$} if there exists a \uldef{refining map} $r:K\to I$ such that $V_k\subseteq U_{r\l(k\r)}$ for all $k\in K$.
     \end{definition}
     \begin{remark}
-        The refining map $r$ lifts to a map $\tilde{r}:\check{Z}^1\!\l(\mf{A},\ms{F}\r)\to\check{Z}^1\!\l(\mf{B},\ms{F}\r)$ by sending $\tpl{f_{ij}}$ into $\tpl{\rho\l(f_{r\l(i\r),r\l(j\r)}\r)}$ for\side{Again, we need the appropriate restriction map.} all $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$. Observe that if $\tpl{f_{ij}}\in\check{B}^1\!\l(\mf{A},\ms{F}\r)$, then $\delta^1_\mf{A}\!\l(f_{ij}\r)=0$ and hence $f_{ik}=f_{ij}+f_{jk}$ for all $i,j,k\in I$. In particular, we have $f_{r\l(i\r),r\l(k\r)}=f_{r\l(i\r),r\l(j\r)}+f_{r\l(j\r),r\l(k\r)}$ and hence $\delta^1_\mf{B}\!\l(\tilde{r}\l(f_{ij}\r)\r)=0$. Thus $\tilde{r}\l(f_{ij}\r)\in\check{B}^1\!\l(\mf{B},\ms{F}\r)$, and so $\tilde{r}$ sends splitting cocycles into splitting cocycles. Hence we may descent $\tilde{r}$ into the quotient, giving us a map
+        The refining map $r$ lifts to a map $\tilde{r}:\check{Z}^1\!\l(\mf{A},\ms{F}\r)\to\check{Z}^1\!\l(\mf{B},\ms{F}\r)$ by sending $\tpl{f_{ij}}$ into $\tpl{g_{kl}}$ defined by $g_{kl}\coloneqq f_{r\l(k\r),r\l(l\r)}$ on $V_k\cap V_l$ for all $k,l\in K$. Observe that if $\tpl{f_{ij}}\in\check{B}^1\!\l(\mf{A},\ms{F}\r)$, then $\delta^1_\mf{A}\!\l(f_{ij}\r)=0$ and hence $f_{i_1i_3}=f_{i_1i_2}+f_{i_2i_3}$ on $U_{i_1}\cap U_{i_2}\cap U_{i_3}$ for all $i_1,i_2,i_3\in I$. In particular, we have
+        \begin{equation*}
+            f_{r\l(k_1\r),r\l(k_3\r)}=f_{r\l(k_1\r),r\l(k_2\r)}+f_{r\l(k_2\r),r\l(k_3\r)}
+        \end{equation*}
+        on $V_{k_1}\cap V_{k_2}\cap V_{k_3}$ for all $k_1,k_2,k_3\in K$ and hence $\delta^1_\mf{B}\!\l(\tilde{r}\l(f_{ij}\r)\r)=0$. Thus $\tilde{r}\l(f_{ij}\r)\in\check{B}^1\!\l(\mf{B},\ms{F}\r)$ and so $\tilde{r}$ sends splitting cocycles into splitting cocycles. Hence we may descent $\tilde{r}$ into the quotient, giving us a map
         \begin{equation*}
             \check{H}\l(r\r):\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(\mf{B},\ms{F}\r)\ \ \ \ \textrm{mapping}\ \ \ \ \l[f_{ij}\r]\mapsto\l[\tilde{r}\l(f_{ij}\r)\r].\exqedin
         \end{equation*}
     \end{remark}
     \begin{proposition}
-        In the above notation, the map $\check{H}^\mf{B}_\mf{A}\coloneqq\check{H}\l(r\r)$ is independent of $r$.
+        In the above notation, the map $\check{H}^\mf{B}_\mf{A}\coloneqq\check{H}\l(r\r)$ is independent of $r$ and is injective.
     \end{proposition}
     \begin{proof}
-        Take $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ and suppose that $r':J\to I$ is another refining map. Lifting it to $\tilde{r}'$ similarly, let $\tpl{g_{ij}}\coloneqq\tilde{r}\l(f_{ij}\r)=\tpl{\rho\l(f_{r\l(i\r),r\l(j\r)}\r)}$ and $(g'_{ij})\coloneqq\tilde{r}'\l(f_{ij}\r)=\tpl{\rho\l(f_{r'\l(i\r),r'\l(j\r)}\r)}$. Observe then that
+        Take $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ and suppose that $r':K\to I$ is another refining map. Lifting it to $\tilde{r}'$ similarly, let $\tpl{g_{kl}}\coloneqq\tilde{r}\l(f_{ij}\r)=\tpl{f_{r\l(k\r),r\l(l\r)}}$ and $(g'_{kl})\coloneqq\tilde{r}'\l(f_{ij}\r)=\tpl{f_{r'\l(k\r),r'\l(l\r)}}$. Observe then that
         \begin{equation*}
             \begin{aligned}
-                g_{ij}-g_{ij}'&=f_{r\l(i\r),r\l(j\r)}-f_{r'\l(i\r),r'\l(j\r)} \\
-                              &=f_{r\l(i\r),r\l(j\r)}+f_{r\l(j\r),r'\l(i\r)}-f_{r\l(j\r),r'\l(i\r)}-f_{r'\l(i\r),r'\l(j\r)} \\
-                              &=f_{r\l(i\r),r'\l(i\r)}-f_{r\l(j\r),r'\l(j\r)}
+                g_{kl}-g_{kl}'&=f_{r\l(k\r),r\l(l\r)}-f_{r'\l(k\r),r'\l(l\r)} \\
+                              &=f_{r\l(k\r),r\l(l\r)}+f_{r\l(l\r),r'\l(k\r)}-f_{r\l(l\r),r'\l(k\r)}-f_{r'\l(k\r),r'\l(l\r)} \\
+                              &=f_{r\l(k\r),r'\l(k\r)}-f_{r\l(l\r),r'\l(l\r)}
             \end{aligned}
         \end{equation*}
-        for all $i,j\in J$. Since $r$ and $r'$ are refining maps, we see that $V_j\subseteq U_{r\l(j\r)}\cap U_{r'\l(j\r)}$ for all $j\in J$, so we may define the $0$-cocycle $\tpl{h_j}\in\check{Z}^0\!\l(\mf{B},\ms{F}\r)$ by $h_j\coloneqq\rho\l(f_{r\l(j\r),r'\l(j\r)}\r)$ where $\rho$ is the restriction map from $U_{r\l(j\r)}\cap U_{r'\l(j\r)}$ to $V_j$. Then
+        on $V_k\cap V_l$ for all $k,l\in K$. Since $r$ and $r'$ are refining maps, we see that $V_k\subseteq U_{r\l(k\r)}\cap U_{r'\l(k\r)}$ for all $k\in K$, so we may define $h_k\coloneqq f_{r\l(k\r),r'\l(k\r)}$ on the restriction to $V_k$. Then
         \begin{equation*}
-            g_{ij}-g_{ij}'=h_i-h_j=\delta^0\!\l(h_j\r),
+            \tpl{g_{kl}-g_{kl}'}=\tpl{h_k-h_l}=\delta^0\!\l(h_k\r)
         \end{equation*}
-        so $\tpl{g_{ij}}-(g_{ij}')\in\check{B}^1\!\l(\mf{B},\ms{F}\r)$. Thus their equivalence classes coincide, as desired.\qed
+        on $V_k\cap V_l$, so $\tpl{g_{ij}}-(g_{ij}')\in\check{B}^1\!\l(\mf{B},\ms{F}\r)$. Thus their equivalence classes coincide, as desired. Now, to show that $\check{H}_\mf{A}^\mf{B}$ is injective, take $\tpl{f_{ij}}\in\ker\check{H}_\mf{A}^\mf{B}$. Thus $\tpl{f_{r\l(k\r),r\l(l\r)}}=\check{H}_\mf{A}^\mf{B}\!\l(f_{ij}\r)$ splits, so there exist $g_k\in\ms{F}\l(V_k\r)$ such that $f_{r\l(k\r),r\l(l\r)}=g_k-g_l$ on $V_k\cap V_l$ for all $k,l\in K$. Then
+        \begin{equation*}
+            g_k-g_l=f_{r\l(k\r),i}+f_{i,r\l(l\r)}=f_{i,r\l(l\r)}-f_{i,r\l(k\r)}
+        \end{equation*}
+        on $U_i\cap V_k\cap V_l$ for all $i\in I$ and hence $g_k+f_{i,r\l(k\r)}=g_l+f_{i,r\l(l\r)}$ on the same domain. Fixing $i\in I$ and glueing the family $\l\{g_k+f_{i,r\l(k\r)}\r\}_{k\in K}$ defined on the cover $\l\{U_i\cap V_k\r\}_{k\in K}$ of $U_i$, we obtain an element $h_i\in\ms{F}\l(U_i\r)$ such that $h_i=g_k+f_{i,r\l(k\r)}$ on $U_i\cap V_k$ for all $k\in K$. Observe then that
+        \begin{equation*}
+            f_{ij}=f_{i,r\l(k\r)}-f_{j,r\l(k\r)}=h_i-g_k-h_j+g_k=h_i-h_j
+        \end{equation*}
+        on $U_i\cap U_j\cap V_k$. Note that both $f_{ij}$ and $h_i-h_j$ are defined on $U_i\cap U_j$, and since they coincide on the restriction to $V_k$, uniqueness of the glueing gives us $f_{ij}=h_i-h_j$ on $U_i\cap U_j$. Thus $\tpl{f_{ij}}=\delta^0\!\l(h_i\r)$, so $\tpl{f_{ij}}$ splits.\qed
     \end{proof}
 \end{document}
