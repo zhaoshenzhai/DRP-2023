@@ -100,7 +100,7 @@
         \end{equation*}
         where $\sim$ is the equivalence relation on the disjoint union, defined, for all $\xi\in\check{H}^1\!\l(\mf{A},\ms{F}\r)$ and $\xi'\in\check{H}^1\!\l(\mf{A}',\ms{F}\r)$, by $\xi\sim\xi'$ iff there exists a refinement $\mf{B}\preceq\mf{A},\mf{A}'$ such that $\check{H}^\mf{A}_\mf{B}\!\l(\xi\r)=\check{H}^{\mf{A}'}_\mf{B}\!\l(\xi'\r)$.
     \end{definition}
-    \side[-1.08in]{Note that $\check{H}^1\!\l(X,\ms{F}\r)$ vanishes iff $\check{H}^1\!\l(\mf{A},\ms{F}\r)=0$ for all open coverings $\mf{A}$ of $X$. Indeed, the converse direction is trivial. For the forward, let $\mf{A}$ be an open covering of $X$. By Proposition \ref{3.2:prp:lifted_refinement_independent_of_refining_map}, the canonical map $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(X,\ms{F}\r)$ is injective. The result follows.}
+    \side[-1.08in]{Note that $\check{H}^1\!\l(X,\ms{F}\r)$ vanishes iff $\check{H}^1\!\l(\mf{A},\ms{F}\r)=0$ for all open coverings $\mf{A}$ of $X$. Indeed, the converse direction is trivial. For the forward, let $\mf{A}$ be an open covering of $X$. By Proposition \ref{3.2:prp:lifted_refinement_independent_of_refining_map}, the canonical maps $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(\mf{B},\ms{F}\r)$ are injective for all open coverings $\mf{B}\preceq\mf{A}$. Descending into the quotient, the induced map $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(X,\ms{F}\r)$ is also injective, from which the result follows.}
     \vspace{-0.05in}
     \begin{proposition}
         Let $X$ be a Riemann surface and consider the sheaf of differentiable functions $\DIFF$ on $X$. Then $\check{H}^1\!\l(X,\DIFF\r)=0$.
@@ -119,5 +119,22 @@
             g_i-g_j=\sum_{k\in I}\psi_k\l(f_{ik}-f_{jk}\r)=\sum_{k\in I}\psi_k\l(f_{ik}+f_{kj}\r)=\sum_{k\in I}\psi_kf_{ij}=f_{ij}
         \end{equation*}
         on $U_i\cap U_j$, so $\tpl{f_{ij}}=\tpl{g_i-g_j}=\delta^0\!\l(g_i\r)$ splits.\qed
+    \end{proof}
+    \begin{proposition}[Leray]
+        If $\ms{F}$ is a sheaf of Abelian groups on a topological space $X$ and $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ is an open covering of $X$ such that $\check{H}^1\!\l(U_i,\ms{F}\r)$ vanishes for every $i\in I$, then
+        \begin{equation*}
+            \check{H}^1\!\l(X,\ms{F}\r)\iso\check{H}^1\!\l(\mf{A},\ms{F}\r).
+        \end{equation*}
+    \end{proposition}
+    \begin{proof}
+        Let $\mf{B}\coloneqq\l\{V_k\r\}_{k\in K}$ be an open covering of $X$ with $\mf{B}\preceq\mf{A}$, so there exists a refining map $r:K\to I$. We claim that $\check{H}^\mf{A}_\mf{B}$ is an isomorphism, from which the result follows by descending into the quotient. By Proposition \ref{3.2:prp:lifted_refinement_independent_of_refining_map}, this map is injective, and to show that it is surjective, we must show that every cocycle $\tpl{f_{kl}}\in\check{Z}^1\!\l(\mf{B},\ms{F}\r)$ admits a cocycle $\tpl{F_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ such that
+        \begin{equation*}
+            \tpl{F_{r\l(k\r),r\l(l\r)}}-\tpl{f_{kl}}\in\check{B}^1\!\l(\mf{B},\ms{F}\r).
+        \end{equation*}
+        For each $i\in I$, consider the open cover $U_i\cap\mf{B}\coloneqq\l\{U_i\cap V_k\r\}_{k\in K}$ of $U_i$. Since $\check{H}^1\!\l(U_i,\ms{F}\r)=0$, we see that $\check{H}^1\!\l(U_i\cap\mf{B},\ms{F}\r)=0$. Restricting to $U_i$, we see that $\tpl{f_{kl}}\in\check{Z}^1\!\l(U_i\cap\mf{B},\ms{F}\r)$ and hence there exist $g_{ik}\in\ms{F}\l(U_i\cap V_k\r)$ such that $f_{kl}=g_{ik}-g_{il}$ on $U_i\cap V_k\cap V_l$ for all $i\in I$ and $k,l\in K$. Using this result on two fixed $i,j\in I$ and equating, we see that $g_{jk}-g_{ik}=g_{jl}-g_{il}$ on $U_i\cap U_j\cap V_k\cap V_l$. This glues to an element $F_{ij}\in\ms{F}\l(U_i\cap U_j\r)$ such that $F_{ij}=g_{jk}-g_{ik}$ on $U_i\cap U_j\cap V_k$ for all $k\in K$, and a computation shows that $\tpl{F_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$. Observe then that\side[0.25in]{Here, we instantiated the relation $f_{kl}=g_{ik}-g_{il}$ with $i\coloneqq r\l(l\r)$.}
+        \begin{equation*}
+            F_{r\l(k\r),r\l(l\r)}-f_{kl}=\l(g_{r\l(l\r),k}-g_{r\l(k\r),k}\r)-\l(g_{r\l(l\r),k}-g_{r\l(l\r),l}\r)=g_{r\l(l\r),l}-g_{r\l(k\r),k}
+        \end{equation*}
+        on $V_k\cap V_l$, so setting $h_k\coloneqq g_{r\l(k\r),k}\in\ms{F}\l(V_k\r)$ shows that $\tpl{F_{r\l(k\r),r\l(l\r)}}-\tpl{f_{kl}}$ splits in $\mf{B}$.\qed
     \end{proof}
 \end{document}
