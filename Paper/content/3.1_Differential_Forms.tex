@@ -16,7 +16,7 @@
     \begin{remark}
         Let $\DIFF\l(W\r)$ denote the $\C$-algebra of all differentiable functions $f:W\to\C$ on $W$. Together with the usual restriction mappings, we obtain a sheaf $\DIFF$ of $\C$-algebras consisting of all differentiable functions on $X$.\exqed
     \end{remark}
-    \begin{definition}
+    \begin{definition}\label{3.1:def:partial_derivative}
         Fix a chart $\tpl{U,z}$ of $X$. The \uldef{partial derivative operator w.r.t. $\tpl{U,z}$} is the operator
         \begin{equation*}
             \frac{\partial}{\partial z}:\DIFF\l(U\r)\to\DIFF\l(U\r)\ \ \ \ \ \ \ \ \textrm{\it{mapping}}\ \ \ \ \ \ \ \ f\mapsto\frac{\partial}{\partial z}\!\l(f\circ z^{-1}\r).
@@ -241,4 +241,27 @@
         Thus $\d\omega=0$ iff $\partial f/\partial\bar{z}=0$, so every holomorphic $1$-form is closed and every closed $1$-form of type $\l(1,0\r)$ is holomorphic.\qed
     \end{proof}
     \subsection{Integration of $2$-forms}
+    Similarly to how we defined partial derivatives on a chart $\tpl{U,z}$ of $X$ in Definition \ref{3.1:def:partial_derivative} by pulling back the partial derivative on $\C$, we first discuss integration of a $2$-form $\omega$ on an open set $V\subseteq\C$ and then pull it back to Riemann surfaces.\\\ \\
+    Let $\omega$ of a differentiable $2$-form on an open subset $V\subseteq\C$, say with\side{We take the standard chart on $\C$, so $x+iy=\id_\C$.} $\omega=f\d x\wedge\d y$ for some $f\in\DIFF\l(V\r)$. If $f$ vanish outside a compact subset of $V$, define\side[0.25in]{The right-hand side is the usual double integral on $\C$.}
+    \begin{equation*}
+        \iint_V\omega\coloneqq\iint_Vf\,\d x\wedge\d y.
+    \end{equation*}
+    We now define the pull-back of forms under a holomorphic map.
+    \begin{definition}
+        Let $F:X\to Y$ be a holomorphic map between Riemann surfaces. The \uldef{pull-backs of $F$} are the maps
+        \begin{equation*}
+            F^\ast:\DIFF^{\l(k\r)}\!\l(U\r)\to\DIFF^{\l(k\r)}\!\l(F^{-1}\l(U\r)\r)
+        \end{equation*}
+        for $k\in\l\{0,1,2\r\}$
+    \end{definition}
+    Now, let $\omega$ be a differentiable $2$-form on an open subset $U\subseteq X$. If $\omega$ has a compact support\side[-0.01in]{$\Supp\l(\omega\r)\coloneqq\bar{\l\{p\in X\mid\omega\l(p\r)\neq0\r\}}$.}, then there exist exist finitely-many charts $\tpl{U_i,\phi_i}$ on $X$ such that $\Supp\l(\omega\r)\subseteq\bigcup_{i=1}^{n}U_i$. This open cover $\l\{U_i\r\}$ of $\Supp\l(\omega\r)$ admits a partition of unity\side[0.01in]{The `local-finiteness' condition is irrelevant here since the cover is finite.} $\l\{\psi_i\r\}$, which are functions such that $\Supp\l(\psi_i\r)\subseteq U_i$ for all $i$ and $\sum_{i=1}^n\psi_i=1$. Using this partition of unity, we define the integral of $\omega$ on $U$.
+    \begin{defprop}
+        In the above notation and with $V_i\coloneqq\phi_i\!\l(U_i\r)$, define
+        \begin{equation*}
+            \iint_U\omega\coloneqq\sum_{i=1}^{n}\iint_{U_i}\!\psi_i\omega\coloneqq\sum_{i=1}^{n}\iint_{V_i}\!\big(\phi_i^{-1}\big)^\ast\!\l(\psi_i\omega\r).
+        \end{equation*}
+    \end{defprop}
+    \begin{proof}
+        (Well-definition). 
+    \end{proof}
 \end{document}
