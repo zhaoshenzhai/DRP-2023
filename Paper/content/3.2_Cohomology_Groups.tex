@@ -18,14 +18,12 @@
             \delta^n\!:\check{C}^n\!\l(\mf{A},\ms{F}\r)\to\check{C}^{n+1}\!\l(\mf{A},\ms{F}\r)\ \ \ \ \textrm{\it{mapping}}\ \ \ \ \l(f_{i_0,\dots,i_n}\r)\mapsto\l(g_{i_0,\dots,i_{n+1}}\r)
         \end{equation*}
         where
-        \vspace{-0.05in}
         \begin{equation*}
             g_{i_0,\dots,i_{n+1}}\coloneqq\sum_{k=0}^{n+1}\l(-1\r)^k\rho\l(f_{i_0,\dots,\widehat{i_k},\dots,i_{n+1}}\r).
         \end{equation*}
         Define the \uldef{$n^\textrm{th}$ cocycle} $\check{Z}^n\!\l(\mf{A},\ms{F}\r)\coloneqq\ker\delta^n$ and the \uldef{$n^\textrm{th}$ splitting cocycle} $\check{B}^n\!\l(\mf{A},\ms{F}\r)\coloneqq\im\delta^{n-1}$, whose quotient
         \begin{equation*}
             \check{H}^n\!\l(\mf{A},\ms{F}\r)\coloneqq\check{Z}^n\!\l(\mf{A},\ms{F}\r)/\check{B}^n\!\l(\mf{A},\ms{F}\r)
-            \vspace{-0.05in}
         \end{equation*}
         is called the \uldef{$n^\textrm{th}$ cohomology group of $\ms{F}$ w.r.t. $\mf{A}$}.
     \end{definition}
@@ -43,11 +41,7 @@
         so $\check{H}^0\!\l(\mf{A},\ms{F}\r)$ is independent of the covering $\mf{A}$ and we may define the \ul{$0^\textrm{th}$ cohomology group of $\ms{F}$} as $\check{H}^0\!\l(X,\ms{F}\r)\coloneqq\ms{F}\l(X\r)$.\exqed
     \end{remark}
     \begin{remark}
-        For $n=1$, we have $\delta^1\!\l(f_{ij}\r)=\tpl{f_{jk}-f_{ik}+f_{ij}}$ for all $\tpl{f_{ij}}\in\check{C}^1\!\l(\mf{A},\ms{F}\r)$. Elements $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ satisfy the \textit{cocycle condition}, which states
-        \begin{equation*}
-            f_{ik}=f_{ij}+f_{jk}
-        \end{equation*}
-        on $U_i\cap U_j\cap U_k$ for all $i,j,k$. In\side{The construction of the $1^\textrm{st}$ cohomology group $\check{H}^1\!\l(X,\ms{F}\r)$ is more involved. We will not need the general construction for $\check{H}^n\!\l(X,\ms{F}\r)$, but they can be done similarly as in the $n=1$ case. With some machinery, we can also define the $n^\textrm{th}$ \textit{De Rham} and \textit{Dolbeault} cohomology groups, which relate to $\check{H}^n\!\l(X,\ms{F}\r)$. See \cite[][Section IX.4]{miranda}.} particular, it implies that $f_{ii}=0$ for all $i$ and $f_{ij}=-f_{ji}$ on $U_i\cap U_j$ for all $i,j$. Note that every splitting cocycle is a cocycle, but not every cocycle splits. In other words, $\check{H}^1\!\l(\mf{A},\ms{F}\r)$ measures how $1$-cocycles fail to split. The next section defines the $1^\textrm{st}$ cohomology group of $\ms{F}$, independent of the covering $\mf{A}$.\exqed
+        For $n=1$\side{The construction of the $1^\textrm{st}$ cohomology group $\check{H}^1\!\l(X,\ms{F}\r)$ is more involved. We will not need the general construction for $\check{H}^n\!\l(X,\ms{F}\r)$, but they can be done similarly as in the $n=1$ case. With some machinery, we can also define the $n^\textrm{th}$ \textit{De Rham} and \textit{Dolbeault} cohomology groups, which relate to $\check{H}^n\!\l(X,\ms{F}\r)$. See \cite[][Section IX.4]{miranda}.}, we have $\delta^1\!\l(f_{ij}\r)=\tpl{f_{jk}-f_{ik}+f_{ij}}$ for all $\tpl{f_{ij}}\in\check{C}^1\!\l(\mf{A},\ms{F}\r)$. Elements $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ satisfy the \textit{cocycle condition}, which states $f_{ik}=f_{ij}+f_{jk}$ on $U_i\cap U_j\cap U_k$ for all $i,j,k$. In particular, it implies that $f_{ii}=0$ for all $i$ and $f_{ij}=-f_{ji}$ on $U_i\cap U_j$ for all $i,j$. Note that every splitting cocycle is a cocycle, but not every cocycle splits. In other words, $\check{H}^1\!\l(\mf{A},\ms{F}\r)$ measures how $1$-cocycles fail to split. The next section defines the $1^\textrm{st}$ cohomology group of $\ms{F}$, independent of the covering $\mf{A}$.\exqed
     \end{remark}
     \subsection{Refinements and $\check{H}^1\!\l(X,\ms{F}\r)$}
     In this section, we specialize to when $n=1$.
@@ -125,6 +119,7 @@
         \begin{equation*}
             \check{H}^1\!\l(X,\ms{F}\r)\iso\check{H}^1\!\l(\mf{A},\ms{F}\r).
         \end{equation*}
+        Such a covering $\mf{A}$ of $X$ is called a \uldef{Leray covering of $X$}.
     \end{proposition}
     \begin{proof}
         Let $\mf{B}\coloneqq\l\{V_k\r\}_{k\in K}$ be an open covering of $X$ with $\mf{B}\preceq\mf{A}$, so there exists a refining map $r:K\to I$. We claim that $\check{H}^\mf{A}_\mf{B}$ is an isomorphism, from which the result follows by descending into the quotient. By Proposition \ref{3.2:prp:lifted_refinement_independent_of_refining_map}, this map is injective, and to show that it is surjective, we must show that every cocycle $\tpl{f_{kl}}\in\check{Z}^1\!\l(\mf{B},\ms{F}\r)$ admits a cocycle $\tpl{F_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ such that
