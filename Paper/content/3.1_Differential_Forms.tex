@@ -242,26 +242,64 @@
     \end{proof}
     \subsection{Integration of $2$-forms}
     Similarly to how we defined partial derivatives on a chart $\tpl{U,z}$ of $X$ in Definition \ref{3.1:def:partial_derivative} by pulling back the partial derivative on $\C$, we first discuss integration of a $2$-form $\omega$ on an open set $V\subseteq\C$ and then pull it back to Riemann surfaces.\\\ \\
-    Let $\omega$ of a differentiable $2$-form on an open subset $V\subseteq\C$, say with\side{We take the standard chart on $\C$, so $x+iy=\id_\C$.} $\omega=f\d x\wedge\d y$ for some $f\in\DIFF\l(V\r)$. If $f$ vanish outside a compact subset of $V$, define\side[0.25in]{The right-hand side is the usual double integral on $\C$.}
+    Let $\omega$ of a differentiable $2$-form on an open subset $V\subseteq\C$, say with\side{We take the standard chart on $\C$, so $x+iy=\id_\C$.} $\omega=f\d x\wedge\d y$ for some $f\in\DIFF\l(V\r)$. If $f$ vanishes outside a compact subset of $V$, define\side[0.25in]{The right-hand side is the usual double integral on $\C$, which simply `erases the wedges'.}
     \begin{equation*}
-        \iint_V\omega\coloneqq\iint_Vf\,\d x\wedge\d y.
+        \int_V\omega=\int_Vf\,\d x\wedge\d y\coloneqq\int_Vf\,\d x\,\d y.
     \end{equation*}
-    We now define the pull-back of forms under a holomorphic map.
+    We now define the pullback of forms under a holomorphic map, which gives us a coordinate-free description of the Change of Variables formula.
     \begin{definition}
-        Let $F:X\to Y$ be a holomorphic map between Riemann surfaces. The \uldef{pull-backs of $F$} are the maps
+        Let $F:X\to Y$ be a holomorphic map between Riemann surfaces and let $V\subseteq Y$ be open. The \uldef{pullback of $F$} is the map $F^\ast:\DIFF\l(V\r)\to\DIFF\l(F^{-1}\l(V\r)\r)$ mapping $f\mapsto f\circ F$. More generally, define $F^\ast:\DIFF^{\l(k\r)}\!\l(V\r)\to\DIFF^{\l(k\r)}\!\l(F^{-1}\l(V\r)\r)$ for $k=1,2$ mapping
         \begin{equation*}
-            F^\ast:\DIFF^{\l(k\r)}\!\l(U\r)\to\DIFF^{\l(k\r)}\!\l(F^{-1}\l(U\r)\r)
+            \begin{aligned}
+                f_1\d z+f_2\d\bar{z}&\mapsto\l(F^\ast f_1\r)\d\l(F^\ast z\r)+\l(F^\ast f_2\r)\d\l(F^\ast\bar{z}\r) \\
+                f\d z\wedge\d\bar{z}&\mapsto\l(F^\ast f\r)\d\l(F^\ast z\r)\wedge\d\l(F^\ast\bar{z}\r).
+            \end{aligned}
         \end{equation*}
-        for $k\in\l\{0,1,2\r\}$
     \end{definition}
-    Now, let $\omega$ be a differentiable $2$-form on an open subset $U\subseteq X$. If $\omega$ has a compact support\side[-0.01in]{$\Supp\l(\omega\r)\coloneqq\bar{\l\{p\in X\mid\omega\l(p\r)\neq0\r\}}$.}, then there exist exist finitely-many charts $\tpl{U_i,\phi_i}$ on $X$ such that $\Supp\l(\omega\r)\subseteq\bigcup_{i=1}^{n}U_i$. This open cover $\l\{U_i\r\}$ of $\Supp\l(\omega\r)$ admits a partition of unity\side[0.01in]{The `local-finiteness' condition is irrelevant here since the cover is finite.} $\l\{\psi_i\r\}$, which are functions such that $\Supp\l(\psi_i\r)\subseteq U_i$ for all $i$ and $\sum_{i=1}^n\psi_i=1$. Using this partition of unity, we define the integral of $\omega$ on $U$.
+    \begin{proposition}\label{3.1:prp:change_of_variables_in_C}
+        Let $U,V\subseteq\C$ be open and let $\phi:U\to V$ be biholomorphic. Then, for any differentiable $2$-form $\omega$ on $V$, $\int_V\omega=\int_U\phi^\ast\omega$.
+    \end{proposition}
+    \begin{proof}
+        Writing $\omega=f\d x\wedge\d y$ for some $f\in\DIFF\l(V\r)$, we have by the Change of Variables on $\C$ that
+        \begin{equation*}
+            \int_V\omega=\int_Vf\,\d x\,\d y=\int_U\l(f\circ\phi\r)\l|\det D\phi\r|\,\d x\,\d y,
+        \end{equation*}
+        where $D\phi$ is the Jacobian of $\phi$. Decomposing\side{Note that $u,v\in\DIFF\l(U\r)$.} $\phi=u+iv$ and using the Cauchy-Riemann equations, we have that\side[0.15in]{$\l|\det D\phi\r|\geq0$ is related to the fact that Riemann surfaces are all orientable.}
+        \begin{equation*}
+            \l|\det D\phi\r|=\l|\frac{\partial u}{\partial x}\frac{\partial v}{\partial y}-\frac{\partial u}{\partial y}\frac{\partial v}{\partial x}\r|=\l(\frac{\partial u}{\partial x}\r)^2+\l(\frac{\partial v}{\partial y}\r)^2\geq0
+        \end{equation*}
+        and thus the pullback of $\omega$ is
+        \begin{equation*}
+            \begin{aligned}
+                \phi^\ast\omega&=\phi^\ast\!\l(f\d x\wedge\d y\r)=\l(\phi^\ast f\r)\d\l(\phi^\ast x\r)\wedge\d\l(\phi^\ast y\r)=\l(f\circ\phi\r)\d u\wedge \d v \\
+                               &=\l(f\circ\phi\r)\l(\frac{\partial u}{\partial x}\d x+\frac{\partial u}{\partial y}\d y\r)\wedge\l(\frac{\partial v}{\partial x}\d x+\frac{\partial v}{\partial y}\d y\r) \\
+                               &=\l(f\circ\phi\r)\l(\det D\phi\r)\d x\wedge\d y.
+            \end{aligned}
+        \end{equation*}
+        Noting that $\phi^\ast\omega$ is a differentiable $2$-form on $U$, the result follows by definition of $\int_U\phi^\ast\omega$.\qed
+    \end{proof}
+    Using the above results, let $\omega$ be a differentiable $2$-form on $X$ with compact support.\side[-0.01in]{$\Supp\l(\omega\r)\coloneqq\bar{\l\{p\in X\mid\omega\l(p\r)\neq0\r\}}$.} Then there exist exist finitely-many charts $\tpl{U_i,\phi_i}$ on $X$ such that $\Supp\l(\omega\r)\subseteq\bigcup_{i=1}^{n}U_i$. This open cover $\l\{U_i\r\}$ of $\Supp\l(\omega\r)$ admits a partition of unity\side[0.01in]{The `local-finiteness' condition is irrelevant here since the cover is finite.} $\l\{\psi_i\r\}$, which are functions such that $\Supp\l(\psi_i\r)\subseteq U_i$ for all $i$ and $\sum_{i=1}^n\psi_i=1$. Using this partition of unity, we define the integral of $\omega$ on $X$.
     \begin{defprop}
         In the above notation and with $V_i\coloneqq\phi_i\!\l(U_i\r)$, define
         \begin{equation*}
-            \iint_U\omega\coloneqq\sum_{i=1}^{n}\iint_{U_i}\!\psi_i\omega\coloneqq\sum_{i=1}^{n}\iint_{V_i}\!\big(\phi_i^{-1}\big)^\ast\!\l(\psi_i\omega\r).
+            \int_X\omega\coloneqq\sum_{i=1}^{n}\int_{U_i}\!\psi_i\omega\coloneqq\sum_{i=1}^{n}\int_{V_i}\!\big(\phi_i^{-1}\big)^\ast\!\l(\psi_i\omega\r).
         \end{equation*}
     \end{defprop}
     \begin{proof}
-        (Well-definition). 
+        (Well-definition). First, note that the forms $\omega_i\coloneqq\psi_i\omega$ can all be restricted\side{Indeed, $\Supp\l(\omega_i\r)\subseteq U_i$.} to $U_i$, so we have to check that each integral of $\omega_i$ over $U_i$ is independent of the chart $\phi_i$, and that the integral of $\omega$ over $X$ is independent of $\l\{U_i\r\}$ and its partition of unity $\l\{\psi_i\r\}$.
+        \begin{itemize}
+            \item (Independence of $\phi_i$). Note that $\big(\phi_i^{-1}\big)^\ast\omega$ is a differentiable $2$-form on $V_i$. Let\side{We assume that the domain of $\tilde{\phi}_i$ is also $U_i$; otherwise take the intersection.} $\tilde{\phi}_i$ be another chart of $U_i$ and set $\tilde{V}_i\coloneqq\tilde{\phi}\l(U_i\r)$. The transition map $\phi_i\circ\tilde{\phi}_i^{-1}:\tilde{V}_i\to V_i$ is biholomorphic, so we have by Proposition \ref{3.1:prp:change_of_variables_in_C} that\side[0.25in]{The fact that pullbacks are anti-multiplicative is clear by expanding the definition.}
+                \begin{equation*}
+                    \int_{V_i}\!\big(\phi_i^{-1}\big)^\ast\omega_i=\int_{\tilde{V}_i}\!\big(\phi_i\circ\tilde{\phi}_i^{-1}\big)^\ast\big(\phi_i^{-1}\big)^\ast\omega_i=\int_{\tilde{V}_i}\!\big(\tilde{\phi}_i^{-1}\big)^\ast\phi_i^\ast\big(\phi_i^{-1}\big)^\ast\omega=\int_{\tilde{V}_i}\!\big(\tilde{\phi}_i^{-1}\big)^\ast\omega.
+                \end{equation*}
+            \item (Independence of $\l\{U_i\r\}$). Let $\big\{\tilde{U}_j\big\}_{j=1}^m$ be another finite open cover and let $\big\{\tilde{\psi}_j\big\}_{j=1}^m$ be its corresponding partition of unity. We expand the definition of $\int_X\omega$ on both charts as
+                \begin{equation*}
+                    \begin{gathered}
+                        \sum_{i=1}^{n}\int_{U_i}\psi_i\omega=\sum_{i=1}^{n}\int_{U_i}\l(\sum_{j=1}^{m}\tilde{\psi}_j\r)\psi_i\omega=\sum_{i=1}^{n}\sum_{j=1}^{m}\int_{U_i}\tilde{\psi_j}\psi_i\omega \\
+                        \sum_{j=1}^{m}\int_{\tilde{U}_j}\tilde{\psi}_j\omega=\sum_{j=1}^{m}\int_{\tilde{U}_j}\l(\sum_{i=1}^{n}\psi_i\r)\tilde{\psi}_j\omega=\sum_{i=1}^{n}\sum_{j=1}^{m}\int_{\tilde{U}_j}\tilde{\psi_j}\psi_i\omega.
+                    \end{gathered}
+                \end{equation*}
+                Note that $\tilde{\psi}_j\psi_i\omega$ is compactly supported on $U_i\cap\tilde{U}_j$, so their integrals over $U_i$ and $\tilde{U}_j$ coincide and is well-defined.\qed
+        \end{itemize}
     \end{proof}
 \end{document}
