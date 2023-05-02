@@ -102,7 +102,11 @@
     \side[-0.83in]{With the induced operations from $T_p^\ast X$, the set of all $1$-forms on $W$ becomes a $\C$-vector space. In fact, it is a $\C$-algebra, for if $f:W\to\C$ is a function, then the map $f\omega$ defined by $\l(f\omega\r)\l(p\r)\coloneqq f\l(p\r)\omega\l(p\r)$ is also a $1$-form on $W$.}
     \vspace{-0.05in}
     \begin{example}
-        For $f\in\DIFF\l(W\r)$, the map $\d f$ defined by $\l(\d f\r)\l(p\r)\coloneqq\d_pf$ for all $p\in W$ is a differentiable $1$-form. Note that if $\tpl{U,z}$ is a chart of $X$, then every $1$-form $\omega$ on $W$ can be written as
+        For $f\in\DIFF\l(W\r)$, the maps $\d f$, $\partial f$, and $\bar{\partial}f$ defined by
+        \begin{equation*}
+            \l(\d f\r)\l(p\r)\coloneqq\d_pf,\ \ \ \ \ \ \ \ \l(\partial f\r)\l(p\r)\coloneqq\partial_pf,\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ \big(\bar{\partial}f\big)\l(p\r)\coloneqq\bar{\partial}_pf
+        \end{equation*}
+        for all $p\in W$ are all $1$-forms. Note that if $\tpl{U,z}$ is a chart of $X$, then every $1$-form $\omega$ on $W$ can be written as
         \begin{equation*}
             \omega=f_1\d x+f_2\d y=f_1'\d z+f_2'\d\bar{z}
         \end{equation*}
@@ -120,7 +124,7 @@
         More work needs to be done to define \textit{meromorphic $1$-forms} on $W$. In fact, we may analogously define the \textit{order of a pole} of a meromorphic $1$-form; see \cite[][Section 9.9]{forster}.\exqed
     \end{remark}
     \begin{example}
-        For $f\in\DIFF\l(W\r)$, the form $\d f$ is a differentiable $1$-form on $W$. Thus we have the map $\d:\DIFF\l(W\r)\to\DIFF^{\l(1\r)}\!\l(W\r)$, called the \ul{exterior derivative on $\DIFF\l(W\r)$}. This exterior derivative, which is in fact morphisms of sheaves, is studied in the next section.\exqed
+        For $f\in\DIFF\l(W\r)$, the form $\d f$ (resp. $\partial f$, $\bar{\partial}f$) is a differentiable (resp. type $\l(1,0\r)$, type $\l(0,1\r)$) $1$-form on $W$. Thus we have the map $\d:\DIFF\l(W\r)\to\DIFF^{\l(1\r)}\!\l(W\r)$, and similarly the maps $\partial$ and $\bar{\partial}$, called the \ul{exterior derivatives on $\DIFF\l(W\r)$}. These exterior derivatives, which are in fact morphisms of sheaves, are studied in the next section.\exqed
     \end{example}
     \subsection{Differential $2$-forms and Exterior Differentiation}
     Define\side{For an in-depth discussion of the tensor product, see \cite[][Chapter 8.2]{aluffi} or \cite{conrad}.} the \textit{exterior power} $\Lambda^2V$ of a $\C$-vector space $V$ as the quotient of the tensor product $V\otimes V$ by the ideal $\mf{a}\coloneqq\ideal{v\otimes v\mid v\in V}$. For completeness, we very briefly define $V\otimes V$.
@@ -177,6 +181,15 @@
         \end{equation*}
         is chart-independent and differentiable, which defines the map $\d:\DIFF^{\l(1\r)}\!\l(W\r)\to\DIFF^{\l(2\r)}\!\l(W\r)$, called the \uldef{exterior derivative on $\DIFF^{\l(1\r)}\!\l(W\r)$}.
     \end{defprop}
+    \side[-0.85in]{Similarly, define the $2$-forms
+        \begin{equation*}
+            \begin{gathered}
+                \partial\omega\coloneqq\partial f_1\wedge\d z+\partial f_2\wedge\d\bar{z} \\
+                \bar{\partial}\omega\coloneqq\bar{\partial}f_1\wedge\d z+\bar{\partial}f_2\wedge\d\bar{z}.
+            \end{gathered}
+        \end{equation*}
+    The same proof shows that $\partial\omega$ and $\bar{\partial}\omega$ are chart-independent, which define the operators $\partial$ and $\bar{\partial}$.}
+    \vspace{-0.05in}
     \begin{proof}
         For convenience, we write $z_1\coloneqq z$ and $z_2\coloneqq\bar{z}$, so $\omega=\sum_if_i\d z_i$ and $\d\omega=\sum_i\d f_i\wedge\d z_i$. To show that $\d\omega\in\DIFF^{\l(2\r)}\!\l(W\r)$, let $\tpl{V,w}$ be a chart of $X$. Expanding $\d f_i$ and $\d z_i$ in the basis $\l\{\d w,\d\bar{w}\r\}$, we see that
             \begin{equation*}
@@ -210,7 +223,7 @@
     \begin{proof}
         Let $\omega$ be a $1$-form on $W$.
         \begin{enumerate}
-            \item This is precisely the statement that $\d^2\!f=0$ for all $f\in\DIFF\l(W\r)$, which follows from
+            \item This is precisely the statement that $\d^2\!f=0$ for all $f\in\DIFF\l(W\r)$, which follows from\side[0.21in]{The same computation also shows $\partial^2\!f=\bar{\partial}^2\!f=0$.}
                 \begin{equation*}
                     \d^2\!f=\d\l(1\cdot\d f\r)=\d1\wedge\d f=0.
                 \end{equation*}

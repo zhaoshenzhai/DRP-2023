@@ -96,7 +96,7 @@
     \end{definition}
     \side[-1.08in]{Note that $\check{H}^1\!\l(X,\ms{F}\r)$ vanishes iff $\check{H}^1\!\l(\mf{A},\ms{F}\r)=0$ for all open coverings $\mf{A}$ of $X$. Indeed, the converse direction is trivial. For the forward, let $\mf{A}$ be an open covering of $X$. By Proposition \ref{3.2:prp:lifted_refinement_independent_of_refining_map}, the canonical maps $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(\mf{B},\ms{F}\r)$ are injective for all open coverings $\mf{B}\preceq\mf{A}$. Descending into the quotient, the induced map $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(X,\ms{F}\r)$ is also injective, from which the result follows.}
     \vspace{-0.05in}
-    \begin{proposition}
+    \begin{proposition}\label{prp:3.2:vanishing_of_sheaf_differentiable}
         Let $X$ be a Riemann surface and consider the sheaf of differentiable functions $\DIFF$ on $X$. Then $\check{H}^1\!\l(X,\DIFF\r)=0$.
     \end{proposition}
     \begin{proof}
@@ -114,7 +114,7 @@
         \end{equation*}
         on $U_i\cap U_j$, so $\tpl{f_{ij}}=\tpl{g_i-g_j}=\delta^0\!\l(g_i\r)$ splits.\qed
     \end{proof}
-    \begin{proposition}[Leray]
+    \begin{proposition}[Leray]\label{3.2:prp:leray}
         If $\ms{F}$ is a sheaf of Abelian groups on a topological space $X$ and $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ is an open covering of $X$ such that $\check{H}^1\!\l(U_i,\ms{F}\r)$ vanishes for every $i\in I$, then
         \begin{equation*}
             \check{H}^1\!\l(X,\ms{F}\r)\iso\check{H}^1\!\l(\mf{A},\ms{F}\r).
