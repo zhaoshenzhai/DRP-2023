@@ -108,17 +108,17 @@
         \end{itemize}
     \end{remark}
     \subsection{Existence of Global Meromorphic Functions}
-    \begin{theorem}
+    \begin{theorem}\label{3.3:thm:global_meromorphic_functions}
         Let $X$ be a compact Riemann surface of genus $g$ and fix $p\in X$. Then there exists a meromorphic function $f\in\MERO\l(X\r)$ which has a pole at $p$ of order between $1$ and $g+1$, and is holomorphic everywhere else.
     \end{theorem}
     \begin{proof}
-        Let $\tpl{U_1,z}$ be a chart of $X$ centered at $p$ and set $U_2\coloneqq X\comp\l\{p\r\}$, so $\mf{A}\coloneqq\l\{U_1,U_2\r\}$ is an open cover of $X$. Fix $1\leq i\leq g+1$ and consider the function $z^{-i}$ on $U_1\cap U_2=U_1\comp\l\{p\r\}$. Thus we have ($g+1$)-many cocycles $\tpl{z^{-i}}\in\check{Z}^1\!\l(\mf{A},\HOLO\r)$, but since $\dim\check{H}^1\!\l(X,\HOLO\r)=g$, they are linearly dependent\side[0.35in]{Here, we have linear dependence in the quotient $\check{H}^1\!\l(\mf{A},\HOLO\r)$, whose $0$ is a splitting cocycle.}. Thus there are constants $c_1,\dots,c_{g+1}\in\C$, not all zero, such that
+        Let $\tpl{U_1,z}$ be a chart of $X$ centered at $p$ and set $U_2\coloneqq X\comp\l\{p\r\}$, so $\mf{A}\coloneqq\l\{U_1,U_2\r\}$ is an open cover of $X$. Fix $1\leq i\leq g+1$ and consider the holomorphic function $z^{-i}$ on $U_1\cap U_2=U_1\comp\l\{p\r\}$. Thus we have ($g+1$)-many cocycles $\tpl{z^{-i}}\in\check{Z}^1\!\l(\mf{A},\HOLO\r)$, but since $\dim\check{H}^1\!\l(X,\HOLO\r)=g$, they are linearly dependent\side[0.35in]{Here, we have linear dependence in the quotient $\check{H}^1\!\l(\mf{A},\HOLO\r)$, whose $0$ is a splitting cocycle.}. Thus there are constants $c_1,\dots,c_{g+1}\in\C$, not all zero, such that
         \begin{equation*}
             \sum_{i=1}^{g+1}c_iz^{-i}=f_2-f_1
         \end{equation*}
-        on $U_1\cap U_2$ for some $f_i\in\HOLO\l(U_i\r)$. Thus the function $f\coloneqq f_1+\sum_{i=1}^{g+1}c_iz^{-i}$ agrees with $f_2$ on $U_1\cap U_2$, so they glue to a global function $f\in\MERO\l(X\r)$ which has a pole at $p$ of order between $1$ and $p$ and is holomorphic everywhere else.\qed
+        on $U_1\cap U_2$ for some $f_i\in\HOLO\l(U_i\r)$. Observe that the function $f\coloneqq f_1+\sum_{i=1}^{g+1}c_iz^{-i}$ agrees with $f_2$ on $U_1\cap U_2$, so they glue to a global function $f\in\MERO\l(X\r)$ which has a pole at $p$ of order between $1$ and $p$ and is holomorphic everywhere else.\qed
     \end{proof}
     \begin{remark}
-        By our remarks regarding the genus above, we see that every simply-connected compact Riemann surface $X$ admits a global meromorphic function $f\in\HOLO_p\!\l(X\r)$.\exqed
+        By our remarks regarding the genus above, we see that every simply-connected compact Riemann surface $X$ admits a global meromorphic function $f\in\HOLO\l[p\r]\!\l(X\r)$ for any $p\in X$.\exqed
     \end{remark}
 \end{document}
