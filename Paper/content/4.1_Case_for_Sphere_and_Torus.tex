@@ -1,6 +1,6 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
-    For any genus $g$, we let\side{This defines $\mc{M}_g$ as a set, but it turns out that they can all be equipped with a natural complex structure.} $\mc{M}_g$ denote the \textit{moduli space} of compact Riemann surfaces of genus $g$; that is, the set of all Riemann surfaces of genus $g$ up to biholomorphism. Using the language and machinery developed in Chapters \ref{cpt:Riemann_surfaces} and \ref{cpt:covering_spaces_analytic_continuation}, we compute $\mc{M}_0$ and $\mc{M}_1$, which are the moduli spaces of the sphere $S^2$ and the torus $T^2$, respectively.\\\ \\
+    For any genus $g$, we let\side{This defines $\mc{M}_g$ as a set, but it turns out that they can all be equipped with a natural complex structure.} $\mc{M}_g$ denote the \textit{moduli space} of compact Riemann surfaces of genus $g$; that is, the set of all Riemann surfaces of genus $g$ up to biholomorphism. Using the language and machinery developed in Chapters \ref{cpt:Riemann_surfaces}, \ref{cpt:covering_spaces_analytic_continuation}, and \ref{cpt:sheaf_cohomology}, we compute $\mc{M}_0$ and $\mc{M}_1$, which are the moduli spaces of the sphere $S^2$ and the torus $T^2$, respectively.\\\ \\
     We conclude with a brief discussion of the \textit{Uniformization Theorem} and the \textit{Classification of Riemann Surfaces}.
     \section{Case for $g=0$ and $g=1$}
     \subsection{Moduli Space of $S^2$}\label{sec:moduli_space_of_sphere}
@@ -9,7 +9,6 @@
         Every simply-connected compact Riemann surface $X$ is biholomorphic to the Riemann sphere $\RS$.
     \end{theorem}
     \begin{proof}
-        % Fix an arbitrary point $p\in X$ and let $\tpl{U,\phi}$ be any chart of $X$ centered at $p$. Consider the function $f_0\in\HOLO\l[p\r]\l(U\r)$ defined by $f_0\!\l(q\r)\coloneqq1/\phi\l(q\r)$ for all $q\in U\comp\l\{p\r\}$. Applying Theorem \ref{2.3:thm:existence_of_analytic_continuation} to $\eta_0\coloneqq\l[f_0\r]_p$ and using Corollary \ref{2.3:thm:analytically_continue_to_global_function}, we obtain a function $f\in\HOLO\l[p\r]\l(X\r)$ such that $\l.f\r|_U=f_0$. Since $\ord_p\!\l(f_0\r)=1$, we see that $f$ is meromorphic on $X$ with a single simple pole, so $X\iso\RS$ by Corollary \ref{2.1:cor:exists_meromorphic_implis_biholomorphic_Riemann_sphere}.\qed
         Fix an arbitrary point $p\in X$. By Theorem \ref{3.3:thm:global_meromorphic_functions}, there exists a meromorphic function $f\in\MERO\l(X\r)$ with a single simple pole at $p$, so $X\iso\RS$ by Corollary \ref{2.1:cor:exists_meromorphic_implies_biholomorphic_Riemann_sphere}.\qed
     \end{proof}
     \begin{remark}
