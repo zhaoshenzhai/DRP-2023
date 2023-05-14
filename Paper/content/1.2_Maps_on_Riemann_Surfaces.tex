@@ -5,11 +5,11 @@
     \begin{definition}
         Let $X$ be a Riemann surface and let $W\subseteq X$ be open. For a fixed $p\in W$, a function $f:W\to\C$ is said to be \uldef{holomorphic at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ is holomorphic at $\phi\l(p\r)$. If $f$ is holomorphic at every point of $W$, then $f$ is said to be \uldef{holomorphic on $W$}.
     \end{definition}
-    \begin{remark}\side[-0.57in]{Defining some property $P$ of $f$ using charts by transporting $f$ to a function $f\circ\phi^{-1}$ on a subset of $\C$, and borrowing $P$ from $f\circ\phi^{-1}$, will be a common theme. However, one must check that $P$ is \textit{independent of charts}; that is, if $f\circ\phi^{-1}$ satisfies $P$, then so does $f\circ\psi^{-1}$ for any other chart $\tpl{V,\psi}$.}
+    \begin{remark}\side[-0.55in]{Defining some property $P$ of $f$ using charts by transporting $f$ to a function $f\circ\phi^{-1}$ on a subset of $\C$, and borrowing $P$ from $f\circ\phi^{-1}$, will be a common theme. However, one must check that $P$ is \textit{independent of charts}; that is, if $f\circ\phi^{-1}$ satisfies $P$, then so does $f\circ\psi^{-1}$ for any other chart $\tpl{V,\psi}$.}
         It must be checked that $\textrm{`}$being holomorphic$\textrm{'}$ does not depend on the choice of chart. This is indeed the case, for if $\tpl{V,\psi}$ is another chart containing $p$, then, since
         \begin{equation}\label{1.2:eqn:holomorphic_function_well_defined}
             f\circ\psi^{-1}=f\circ\l(\phi^{-1}\circ\phi\r)\circ\psi^{-1}=\l(f\circ\phi^{-1}\r)\circ\l(\phi\circ\psi^{-1}\r):\psi\l(U\cap V\r)\to\C
-        \end{equation}\side[-0.45in]{
+        \end{equation}\side[-0.43in]{
             \begin{equation*}
                 \begin{tikzcd}[ampersand replacement=\&, column sep = 0.1in]
                     \phi\l(U\cap V\r) \ar[drrrr, "f\circ\phi^{-1}", bend left = 20] \\
@@ -30,7 +30,7 @@
     \end{example}
     \begin{definition}
         Let $X$ and $Y$ be Riemann surfaces and let $W\subseteq X$ be open. For a fixed $p\in W$, a mapping $F:W\to Y$ is said to be \uldef{holomorphic at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ and a chart $\tpl{V,\psi}$ of $Y$ containing $F\l(p\r)$ such that $\psi\circ F\circ\phi^{-1}\!\!:\phi\l(U\r)\to\psi\l(V\r)$ is holomorphic at $\phi\l(p\r)$. If $F$ is holomorphic at every point of $W$, then $F$ is \uldef{holomorphic on $W$}.
-    \end{definition}\side[-0.7in]{For $Y\coloneqq\C$ regarded as a Riemann surface, this definition agrees with the above. Again, we must check that $\textrm{`}$being holomorphic$\textrm{'}$ is well-defined, but it follows from the commutativity of the diagram below.
+    \end{definition}\side[-0.67in]{For $Y\coloneqq\C$ regarded as a Riemann surface, this definition agrees with the above. Again, we must check that $\textrm{`}$being holomorphic$\textrm{'}$ is well-defined, but it follows from the commutativity of the diagram below.
         \begin{equation*}
             \begin{tikzcd}[ampersand replacement=\&, column sep = 0.05in]
                 \phi_1\!\l(U_1\cap U_2\r) \ar[rrrrrrr, "\psi_1\circ F\circ\phi_1^{-1}", bend left = 10] \ar[dd, "\phi_2\circ\phi_1^{-1}"'] \& \& \& \& \& \& \& \psi_1\!\l(V_1\cap V_2\r) \ar[dd, "\psi_2\circ\psi_1^{-1}"] \\
@@ -49,7 +49,7 @@
         \begin{equation*}
             F:S^2\to\P^1:\tpl{x,y,w}\mapsto\proje{1-w:x+iy}\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ G:S^2\to\C_\infty:\tpl{x,y,w}\mapsto\frac{x+iy}{1-w}
         \end{equation*}
-        are biholomorphisms, which shows that all three constructions are biholomorphic.\side{Since the collection of Riemann surfaces form a category, the $\textrm{`}$is isomorphic to$\textrm{'}$ relation is an equivalence relation. Thus we are justified to call all three constructions $\textrm{`}$the$\textrm{'}$ Riemann sphere, and, henceforth, we shall denote all three by $\RS$.} Indeed $F$ is holomorphic since with the charts
+        are biholomorphisms, which shows that all three constructions are biholomorphic.\side[0.02in]{Since the collection of Riemann surfaces form a category, the $\textrm{`}$is isomorphic to$\textrm{'}$ relation is an equivalence relation. Thus we are justified to call all three constructions $\textrm{`}$the$\textrm{'}$ Riemann sphere, and, henceforth, we shall denote all three by $\RS$.} Indeed $F$ is holomorphic since with the charts
         \begin{equation*}
             \begin{alignedat}{2}
                 U&\coloneqq S^2\comp\l\{\l(0,0,1\r)\r\}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ &&\phi:U\to\C:\tpl{x,y,w}\mapsto\frac{x+iy}{1-w} \\
@@ -97,7 +97,7 @@
     }
     \vspace{-0.05in}
     \begin{proof}
-        (Well-definition): Equation (\ref{1.2:eqn:holomorphic_function_well_defined}) shows that those notions are chart independent; the composition of $f\circ\phi^{-1}$ having a singularity at $p$ with a transition map that is holomorphic at $p$ yields a function with the same type of singularity at $p$.\qed
+        (Well-definition). Equation (\ref{1.2:eqn:holomorphic_function_well_defined}) shows that those notions are chart independent; the composition of $f\circ\phi^{-1}$ having a singularity at $p$ with a transition map that is holomorphic at $p$ yields a function with the same type of singularity at $p$.\qed
     \end{proof}
     \begin{remark}
         Functions having an essential singularity at $p$ are very ill-behaved. Indeed, this occurs iff $\l|f\l(x\r)\r|$ has a non-zero oscillation near $p$. Other singularities behave much better:

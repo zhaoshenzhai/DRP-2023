@@ -165,7 +165,7 @@
         \end{equation*}
         such that $\omega\l(p\r)\in\Lambda^2T_p^\ast X$ for every $p\in W$. A $2$-form $\omega$ is said to be \uldef{differentiable} if, w.r.t. every chart $\tpl{U,z}$ of $X$, we have $\omega=f\d z\wedge\d\bar{z}$ for some $f\in\DIFF\l(U\cap W\r)$.
     \end{definition}
-    \side[-0.97in]{As with $1$-forms, the set of all $2$-forms on $W$ forms a vector space under the induced operations from $\Lambda^2T_p^\ast X$. Similarly, it is also a $\C$-algebra by defining the map $f\omega$ by $\l(f\omega\r)\l(p\r)\coloneqq f\l(p\r)\omega\l(p\r)$ for every function $f:W\to \C$.}
+    \side[-0.94in]{As with $1$-forms, the set of all $2$-forms on $W$ forms a vector space under the induced operations from $\Lambda^2T_p^\ast X$. Similarly, it is also a $\C$-algebra by defining the map $f\omega$ by $\l(f\omega\r)\l(p\r)\coloneqq f\l(p\r)\omega\l(p\r)$ for every function $f:W\to \C$.}
     \vspace{-0.05in}
     \begin{remark}
         In the above definition, $\d z\wedge\d\bar{z}$ is the $2$-form on $W$ defined by $\l(\d z\wedge\d\bar{z}\r)\l(p\r)\coloneqq\d_pz\wedge\d_p\bar{z}$ for every $p\in W$. In general, if $\omega_1$ an $\omega_2$ are $1$-forms on $W$, we have the $2$-form $\omega_1\wedge\omega_2$ defined by
@@ -231,7 +231,7 @@
         \vspace{-0.05in}
         For $2$ and $3$, suppose that $\omega=f\d z$ for some $f\in\DIFF\l(W\r)$. Then
         \begin{equation*}
-            \d\omega=\d f\wedge\d z=\l(\frac{\partial f}{\partial z}\d z+\frac{\partial f}{\partial\bar{z}}\d\bar{z}\r)=\d z=-\frac{\partial f}{\partial\bar{z}}\d z\wedge\d\bar{z}
+            \d\omega=\d f\wedge\d z=\l(\frac{\partial f}{\partial z}\d z+\frac{\partial f}{\partial\bar{z}}\d\bar{z}\r)\wedge\d z=-\frac{\partial f}{\partial\bar{z}}\d z\wedge\d\bar{z}
         \end{equation*}
         Thus $\d\omega=0$ iff $\partial f/\partial\bar{z}=0$, so every holomorphic $1$-form is closed and every closed $1$-form of type $\l(1,0\r)$ is holomorphic.\qed
     \end{proof}
@@ -273,7 +273,7 @@
         \end{equation*}
         Noting that $\phi^\ast\omega$ is a differentiable $2$-form on $U$, the result follows by definition of $\int_U\phi^\ast\omega$.\qed
     \end{proof}
-    Using the above results, let $\omega$ be a differentiable $2$-form on $X$ with compact support.\side[-0.01in]{$\Supp\l(\omega\r)\coloneqq\bar{\l\{p\in X\mid\omega\l(p\r)\neq0\r\}}$.} Then there exist exist finitely-many charts $\tpl{U_i,\phi_i}$ on $X$ such that $\Supp\l(\omega\r)\subseteq\bigcup_{i=1}^{n}U_i$. This open cover $\l\{U_i\r\}$ of $\Supp\l(\omega\r)$ admits a partition of unity\side[0.01in]{The `local-finiteness' condition is irrelevant here since the cover is finite.} $\l\{\psi_i\r\}$, which are functions such that $\Supp\l(\psi_i\r)\subseteq U_i$ for all $i$ and $\sum_{i=1}^n\psi_i=1$. Using this partition of unity, we define the integral of $\omega$ on $X$.
+    Using the above results, let $\omega$ be a differentiable $2$-form on $X$ with compact support.\side[-0.01in]{$\Supp\l(\omega\r)\coloneqq\bar{\l\{p\in X\mid\omega\l(p\r)\neq0\r\}}$.} Then there exist exist finitely-many charts $\tpl{U_i,\phi_i}$ on $X$ such that $\Supp\l(\omega\r)\subseteq\bigcup_{i=1}^{n}U_i$. This open cover $\l\{U_i\r\}$ of $\Supp\l(\omega\r)$ admits a partition of unity\side[0.01in]{The `local-finiteness' condition is irrelevant here since the cover is finite.} $\l\{\psi_i\r\}$, which are functions such that $\Supp\l(\psi_i\r)\subseteq U_i$ for all $i$ and $\sum_{i=1}^n\psi_i=\id$. Using this partition of unity, we define the integral of $\omega$ on $X$.
     \begin{defprop}
         In the above notation and with $V_i\coloneqq\phi_i\!\l(U_i\r)$, define
         \begin{equation*}

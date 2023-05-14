@@ -90,9 +90,9 @@
     \begin{definition}
         The \uldef{$1^\textrm{st}$ cohomology group of $\ms{F}$} is the Abelian group
         \begin{equation*}
-            \check{H}^1\!\l(X,\ms{F}\r)\coloneqq\raisebox{-2pt}{$\Biggl(\!$}\bigsqcup_{\mf{A}}\check{H}^1\!\l(\mf{A},\ms{F}\r)\!\raisebox{-2pt}{$\Biggr)$}\!\!_{\scalebox{2}{/}\sim}
+            \check{H}^1\!\l(X,\ms{F}\r)\coloneqq\raisebox{-2pt}{$\Biggl(\!$}\coprod_{\mf{A}}\check{H}^1\!\l(\mf{A},\ms{F}\r)\!\raisebox{-2pt}{$\Biggr)$}\!\!_{\scalebox{2}{/}\sim}
         \end{equation*}
-        where $\sim$ is the equivalence relation on the disjoint union, defined, for all $\xi\in\check{H}^1\!\l(\mf{A},\ms{F}\r)$ and $\xi'\in\check{H}^1\!\l(\mf{A}',\ms{F}\r)$, by $\xi\sim\xi'$ iff there exists a refinement $\mf{B}\preceq\mf{A},\mf{A}'$ such that $\check{H}^\mf{A}_\mf{B}\!\l(\xi\r)=\check{H}^{\mf{A}'}_\mf{B}\!\l(\xi'\r)$.
+        where $\sim$ is the equivalence relation on the disjoint union, defined, for all $\xi\in\check{H}^1\!\l(\mf{A},\ms{F}\r)$ and $\xi'\in\check{H}^1\!\l(\mf{A}',\ms{F}\r)$, by $\xi\sim\xi'$ iff there exists a refinement $\mf{B}\preceq\mf{A},\mf{A}'$ such that $\check{H}^\mf{A}_\mf{B}\!\l(\xi\r)=\check{H}^{\mf{A}'}_\mf{B}\!\!\l(\xi'\r)$.
     \end{definition}
     \side[-1.08in]{Note that $\check{H}^1\!\l(X,\ms{F}\r)$ vanishes iff $\check{H}^1\!\l(\mf{A},\ms{F}\r)=0$ for all open coverings $\mf{A}$ of $X$. Indeed, the converse direction is trivial. For the forward, let $\mf{A}$ be an open covering of $X$. By Proposition \ref{3.2:prp:lifted_refinement_independent_of_refining_map}, the canonical maps $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(\mf{B},\ms{F}\r)$ are injective for all open coverings $\mf{B}\preceq\mf{A}$. Descending into the quotient, the induced map $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(X,\ms{F}\r)$ is also injective, from which the result follows.}
     \vspace{-0.05in}
@@ -100,13 +100,13 @@
         Let $X$ be a Riemann surface and consider the sheaf of differentiable functions $\DIFF$ on $X$. Then $\check{H}^1\!\l(X,\DIFF\r)=0$.
     \end{proposition}
     \begin{proof}
-        Let $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ be an open covering of $X$ and let $\tpl{f_{ij}}\in\check{Z}^1\!\l(X,\DIFF\r)$ be a cocycle; it suffices to show that $\tpl{f_{ij}}$ splits, for then $\check{H}^1\!\l(\mf{A},\DIFF\r)=0$ and we are done by the remark above. To do so, we use the fact that there exists\side{For a proof, see \cite[][Theorem 2.23]{lee}. Note that the functions $\psi_i$ are \textit{not necessarily} holomorphic.} a partition of unity subordinate to $\mf{A}$; that is, a family $\l\{\psi_i\r\}_{i\in I}$ of differentiable functions such that:
+        Let $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ be an open covering of $X$ and let $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\DIFF\r)$ be a cocycle; it suffices to show that $\tpl{f_{ij}}$ splits, for then $\check{H}^1\!\l(\mf{A},\DIFF\r)=0$ and we are done by the remark above. To do so, we use the fact that there exists\side{For a proof, see \cite[][Theorem 2.23]{lee}. Note that the functions $\psi_i$ are \textit{not necessarily} holomorphic.} a partition of unity subordinate to $\mf{A}$; that is, a family $\l\{\psi_i\r\}_{i\in I}$ of differentiable functions such that:
         \begin{itemize}
             \item $\Supp\l(\psi_i\r)\coloneqq\bar{\l\{p\in X\mid\psi\l(p\r)\neq0\r\}}\subseteq U_i$ for every $i\in I$.
                 \vspace{-0.05in}
             \item Every point in $X$ admits a neighborhood whose intersection with $\l\{\Supp\l(\psi_i\r)\r\}_{i\in I}$ is finite.
                 \vspace{-0.05in}
-            \item $\sum_{i\in I}\psi_i=1$.
+            \item $\sum_{i\in I}\psi_i=\id$.
         \end{itemize}
         Consider the function $\psi_jf_{ij}$ on $U_i\cap U_j$, which may be differentiably extended to $U_i$ by zero outside $\Supp\l(\psi_j\r)$. Consider the function $g_i\coloneqq\sum_{j\in I}\psi_jf_{ij}\in\DIFF\l(U_i\r)$, which is legal since there is a neighborhood around every point of $U_i$ such that $\psi_jf_{ij}=0$ for all but finitely-many $j\in I$. Observe that
         \begin{equation*}

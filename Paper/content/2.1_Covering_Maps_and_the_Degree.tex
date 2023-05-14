@@ -85,7 +85,7 @@
         Every covering map $\pi:E\to X$ has the curve lifting property.
     \end{proposition}
     \begin{proof}
-        Let\side{The idea of this proof is to split $\alpha\l(\l[0,1\r]\r)$ into (overlapping) paths $\alpha\l(\l[t_{k-1},t_k\r]\r)$, each of which is an open set, and construct the lifting $\tilde{\alpha}$ inductively: Given a lifting $\tilde{\alpha}$ defined up to some boundary $t_{k-1}$, we define it on the next interval $\l[t_{k-1},t_k\r]$ by lifting $\alpha$ (restricted to $\l[t_{k-1},t_k\r]$) via $\cchi$. This gives us a `chain' of paths, which when joined together gives us a global lifting of $\alpha$.\\\ \\
+        Let\side{The idea of this proof is to split $\alpha\l(\l[0,1\r]\r)$ into (overlapping) paths $\alpha\l(\l[t_{k-1},t_k\r]\r)$ and construct the lifting $\tilde{\alpha}$ inductively: Given a lifting $\tilde{\alpha}$ defined up to some boundary $t_{k-1}$, we define it on the next interval $\l[t_{k-1},t_k\r]$ by lifting $\alpha$ (restricted to $\l[t_{k-1},t_k\r]$) via $\cchi$. This gives us a `chain' of paths, which when joined together gives us a global lifting of $\alpha$.\\\ \\
         The base case of this induction simply sets $\tilde{\alpha}\l(0\r)\coloneqq e_0$ in order to start-off this process.} $\alpha:\l[0,1\r]\to X$ be a curve and let $e_0\in E$ be a point such that $\pi\l(e_0\r)=\alpha\l(0\r)$. Consider any open cover $\l\{U_i\r\}$ of $\alpha\l(\l[0,1\r]\r)$ where each $U_i$ is a connected open set in $\alpha\l(\l[0,1\r]\r)$. Thus $\l\{\alpha^{-1}\!\l(U_i\r)\r\}$ is an open cover of $\l[0,1\r]$, so it admits a finite subcover $\l\{\l(t_i,t_{i+1}\r)\r\}_{i=1}^n\coloneqq\l\{\alpha^{-1}\l(U_i\r)\r\}_{i=1}^n$. Reindexing if necessary, we obtain a partition
         \begin{equation*}
             0\eqqcolon t_0<t_1<\cdots<t_n\coloneqq1
@@ -119,7 +119,7 @@
         The \uldef{degree of $F$}, denoted $\deg F$, is the cardinality of the fiber $F^{-1}\!\l(q\r)$ of any non-critical point $q\in Y$.
     \end{definition}
     \begin{proof}
-        (Well-definition): Since $F$ is a proper map, the fiber $F^{-1}\!\l(q\r)$ is compact and is hence finite by Discreteness of Preimages. Being unramified, we see that $F$ is a local homeomorphism, so it is a covering map by Proposition \ref{2.1:prp:proper_local_covering}. Finally, Corollary \ref{2.1:cor:fiber_cardinalities_coincide} shows that $\deg F$ is well-defined.\qed
+        (Well-definition). Since $F$ is a proper map, the fiber $F^{-1}\!\l(q\r)$ is compact and is hence finite by Discreteness of Preimages. Being unramified, we see that $F$ is a local homeomorphism, so it is a covering map by Proposition \ref{2.1:prp:proper_local_covering}. Finally, Corollary \ref{2.1:cor:fiber_cardinalities_coincide} shows that $\deg F$ is well-defined.\qed
     \end{proof}
     \begin{remark}
         Let $n\coloneqq\deg F$. Then $n$ is referred to as the \ul{number of sheets of $F$} and $F$ is said to be an \ul{$n$-sheeted holomorphic covering map}.\exqed
