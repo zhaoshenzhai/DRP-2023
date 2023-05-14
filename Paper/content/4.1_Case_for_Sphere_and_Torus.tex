@@ -9,20 +9,23 @@
         Every simply-connected compact Riemann surface $X$ is biholomorphic to the Riemann sphere $\RS$.
     \end{theorem}
     \begin{proof}
-        Since $\check{H}^1\!\big(\RS,\HOLO\big)$ vanishes and the genus is a topological invariant, we see that $X$ has genus $0$ too. Then, for any fixed point $p\in X$, Theorem \ref{3.3:thm:global_meromorphic_functions} furnishes a meromorphic function $f\in\MERO\l(X\r)$ with a single simple pole at $p$, so $X\iso\RS$ by Corollary \ref{2.1:cor:exists_meromorphic_implies_biholomorphic_Riemann_sphere}.\qed
+        The Classification Theorem of Surfaces shows that such a Riemann surface $X$, being simply-connected and compact, is homeomorphic to the sphere $\RS$. Corollary \ref{3.3:cor:vanishing_of_H_Riemann_sphere} shows that $\check{H}^1\big(\RS,\HOLO\big)$ vanishes, and since the genus is a topological invariant, we see that $\check{H}^1\!\l(X,\HOLO\r)$ vanishes too. Thus $X$ has genus $0$, so for any fixed point $p\in X$, Theorem \ref{3.3:thm:global_meromorphic_functions} furnishes a meromorphic function $f\in\MERO\l(X\r)$ with a single simple pole at $p$. Thus $X\iso\RS$ by Corollary \ref{2.1:cor:exists_meromorphic_implies_biholomorphic_Riemann_sphere}, as desired.\qed
     \end{proof}
     \begin{remark}
         This is part of the \textit{Uniformization Theorem}, which states that every simply-connected Riemann surface is biholomorphic to either the Riemann sphere $\RS$, the complex plane $\C$, or the upper-half plane $\H$ of $\C$. A brief discussion and proof sketch is given in Section \ref{sec:uniformization}.\exqed
     \end{remark}
     \subsection{Moduli Space of $T^2$}
-    We show that the moduli space of the torus $T^2$ is $\H/\PSL{2}{\Z}$ where $\H$ is the upper-half plane of $\C$ and $\PSL{2}{\Z}$ is the \textit{modular group} consisting of all functions $\gamma:\H\to\H$ mapping
+    We show that the moduli space of the torus $T^2$ is\side{By the Uniformization Theorem, $\H$ has a unique complex structure and thus induces a unique complex structure on the quotient $\H/\!\PSL{2}{\Z}$. This justifies the term `moduli \textit{space}', as opposed to `moduli \textit{set}'.} $\H/\!\PSL{2}{\Z}$ where $\H$ is the upper-half plane of $\C$ and $\PSL{2}{\Z}\coloneqq\SL_2\!\l(\Z\r)\!/\!\l\{\pm I\r\}$ is the \textit{modular group}, which acts on $\H$ via
     \begin{equation*}
-        \tau\mapsto\frac{a\tau+b}{c\tau+d}
+        \begin{pmatrix}
+            a & b \\
+            c & d
+        \end{pmatrix}\tau\coloneqq\frac{a\tau+b}{c\tau+d}.
     \end{equation*}
-    for some $a,b,c,d\in\Z$ with $ad-bc=1$.
+    We first need a technical lemma, which gives an equivalent condition for a biholomorphism between tori in terms of their lattices.
     \begin{lemma}\label{4.1:lem:moduli_space_torus_1}
         Let $\Gamma,\Gamma'\subseteq\C$ be two lattices and suppose $\alpha\Gamma\subseteq\Gamma'$ for some $\alpha\in\C^\ast$. Then $z\mapsto\alpha z$ descends to a holomorphic map $\phi:\C/\Gamma\to\C/\Gamma'$, which is biholomorphic iff $\alpha\Gamma=\Gamma'$.
-    \end{lemma}\side[-0.3in]{This gives a simple criterion for when two tori are biholomorphic.}\vspace{-0.08in}
+    \end{lemma}
     \begin{proof}
         Let $\Gamma\coloneqq\Z\omega_1\oplus\Z\omega_2$ and $\Gamma'\coloneqq\Z\omega_1'\oplus\Z\omega_2'$. Define $\phi\l(z+\Gamma\r)\coloneqq\alpha z+\Gamma'$ for all $z\in\C$, which is clearly holomorphic if it is well-defined in the first place. To verify, take $z_1,z_2\in\C$ such that $z_1+\Gamma=z_2+\Gamma$. Then $z_1-z_2\in\Gamma$, so $z_1-z_2=m\omega_1+n\omega_2$ for some $n,m\in\Z$. Observe that
         \begin{equation*}
@@ -47,20 +50,20 @@
         \end{itemize}
     \end{proof}
     \begin{lemma}
-        Any torus $\C/\Gamma$ is biholomorphic to $X_\tau\!\coloneqq\C/\l(\Z+\tau\Z\r)$ for some $\tau\in\H$.
-    \end{lemma}\side[-0.15in]{This reduces the analysis to just tori of the form $X_\tau$, which is considerably more simpler.}\vspace{-0.08in}
+        Any torus $\C/\Gamma$ is biholomorphic to $X_\tau\!\coloneqq\C/\!\l(\Z+\tau\Z\r)$ for some $\tau\in\H$.
+    \end{lemma}\side[-0.15in]{Intuitively, scaling and rotating the lattice, which are biholomorphisms of the plane, should preserve the complex structure on the torus. Thus only one complex parameter is needed to generate the torus, which we choose to be the ratio $\tau\coloneqq\omega_2/\omega_1$.}\vspace{-0.08in}
     \begin{proof}
         Let $\Gamma\coloneqq\Z\omega_1\oplus\Z\omega_2$ and set $\alpha\coloneqq1/\omega_1$ and $\tau\coloneqq\omega_2/\omega_1$. Then $\Im\tau\neq0$, lest $\omega_1,\omega_2$ be linearly dependent over $\R$. Without loss of generality, suppose that $\Im\tau>0$; if not, take $\tau\coloneqq\bar{\omega_2}/\omega_1$. Then, since
         \begin{equation*}
             \alpha\l(m\omega_1+n\omega_2\r)=\alpha\omega_1\l(m+n\omega_2/\omega_1\r)=m+n\tau
         \end{equation*}
-        for all $m,n\in\Z$, we see that $\alpha\Gamma=\Z\oplus\Z\tau$. By Lemma \ref{4.1:lem:moduli_space_torus_1}, the map $z\mapsto\alpha z$ descends to a biholomorphism $\phi:\C/\Gamma\to\C/\l(\Z\oplus\Z\tau\r)=X_\tau$, so $\C/\Gamma\iso X_\tau$.\qed
+        for all $m,n\in\Z$, we see that $\alpha\Gamma=\Z\oplus\Z\tau$. By Lemma \ref{4.1:lem:moduli_space_torus_1}, the map $z\mapsto\alpha z$ descends to a biholomorphism $\phi:\C/\Gamma\to\C/\!\l(\Z\oplus\Z\tau\r)=X_\tau$, so $\C/\Gamma\iso X_\tau$.\qed
     \end{proof}
     \begin{theorem}
-        For any $\tau,\tau'\in\H$, the tori $X_{\tau}$ and $X_{\tau'}$ are biholomorphic iff there exists some $\gamma\in\PSL{2}{\Z}$ such that $\tau'=\gamma\l(\tau\r)$.
+        For any $\tau,\tau'\in\H$, the tori $X_{\tau}$ and $X_{\tau'}$ are biholomorphic iff $\tau$ and $\tau'$ lie in the same orbit of the action of $\PSL{2}{\Z}$ on $\H$.
     \end{theorem}
     \begin{corollary}
-        The moduli space of $T^2$ is $\H/\PSL{2}{\Z}$.
+        The moduli space of $T^2$ is $\H/\!\PSL{2}{\Z}$.
     \end{corollary}
     \begin{proof}
         The backwards direction is relatively straightforward. Indeed, note that
@@ -87,7 +90,7 @@
                 \C/\Gamma \ar[r, "\phi"] & \C/\Gamma'
             \end{tikzcd}           
         \end{equation*}
-        commutes. Fix\side{This proof follows \cite[][Proposition 1.3.2]{diamond}. For an alternative proof, see \cite[][Lemma 2.8]{i&t}} $\lambda\in\Gamma$ and consider the map $f_\lambda\!\l(z\r)\coloneqq\tilde{\phi}\l(z+\lambda\r)-\tilde{\phi}\l(z\r)$. Then, since $z+\lambda+\Gamma=z+\Gamma$, we see that $\phi\l(z+\lambda+\Gamma\r)=\phi\l(z+\Gamma\r)$ and hence the commutativity of the diagram forces $\tilde{\phi}\l(z+\lambda\r)+\Gamma'=\tilde{\phi}\l(z\r)+\Gamma'$. Thus $f_\lambda\!\l(z\r)\in\Gamma'$ for all $z\in\C$, so, since $f_\lambda$ is a continuous map into a discrete set, it must be constant. Differentiating gives us $f_\lambda'\l(z\r)=\tilde{\phi}'\l(z+\lambda\r)-\tilde{\phi}'\l(z\r)=0$, so $\tilde{\phi}'\l(z+\lambda\r)=\tilde{\phi}'\l(z\r)$ for all $z\in\C$. But $\lambda\in\Gamma$ is arbitrary, so $\tilde{\phi}'$ is $\Gamma$-periodic. Thus $\tilde{\phi}'$ is a bounded entire function and hence is constant by Liouville's Theorem. This shows that $\tilde{\phi}\l(z\r)=\alpha z+\beta$ for some $\alpha,\beta\in\C$ with $\alpha\neq0$. Without loss of generality, assume that $\beta=0$. We now claim that $\alpha\Gamma=\Gamma'$.
+        commutes. Fix\side{This proof follows \cite[][Proposition 1.3.2]{diamond}. For an alternative proof, see \cite[][Lemma 2.8]{i&t}.} $\lambda\in\Gamma$ and consider the map $f_\lambda\!\l(z\r)\coloneqq\tilde{\phi}\l(z+\lambda\r)-\tilde{\phi}\l(z\r)$. Then, since $z+\lambda+\Gamma=z+\Gamma$, we see that $\phi\l(z+\lambda+\Gamma\r)=\phi\l(z+\Gamma\r)$ and hence the commutativity of the diagram forces $\tilde{\phi}\l(z+\lambda\r)+\Gamma'=\tilde{\phi}\l(z\r)+\Gamma'$. Thus $f_\lambda\!\l(z\r)\in\Gamma'$ for all $z\in\C$, so, since $f_\lambda$ is a continuous map into a discrete set, it must be constant. Differentiating gives us $f_\lambda'\l(z\r)=\tilde{\phi}'\l(z+\lambda\r)-\tilde{\phi}'\l(z\r)=0$, so $\tilde{\phi}'\l(z+\lambda\r)=\tilde{\phi}'\l(z\r)$ for all $z\in\C$. But $\lambda\in\Gamma$ is arbitrary, so $\tilde{\phi}'$ is $\Gamma$-periodic. Thus $\tilde{\phi}'$ is a bounded entire function and hence is constant by Liouville's Theorem. This shows that $\tilde{\phi}\l(z\r)=\alpha z+\beta$ for some $\alpha,\beta\in\C$ with $\alpha\neq0$. Without loss of generality, assume that $\beta=0$. We now claim that $\alpha\Gamma=\Gamma'$.
         \begin{itemize}
             \item Indeed, for all $z\in\alpha\Gamma$, we have $z/\alpha\in\Gamma$ and so $z/\alpha+\Gamma=0+\Gamma$. Applying $\phi$ to both sides and comparing gives
                 \begin{equation*}

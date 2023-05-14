@@ -39,7 +39,7 @@
         \begin{itemize}
             \item It is clear from our remarks above that $\ms{B}$ is a presheaf. In fact, since $\ms{B}\l(U\r)$ contains functions, we see that if $f,g\in\ms{B}\l(U\r)$ agree on all restrictions, then they agree on $U$.
         \end{itemize}
-        The problem arises when we consider glueing\side{In other words, boundedness is a local behaviour.}. For instance, let $U_i\coloneqq\l\{p\in X\mid\l\|p\r\|<i\r\}$ and observe that $\l\{U_i\r\}_{i\in\R^+}$ covers $X$. Consider the family $\l\{f_i\r\}$ where each $f_i\coloneqq\id_{U_i}$, which clearly agree on their pairwise intersections. But no function $f:X\to\R$ such that $\l.f\r|_{U_i}=f_i$ for all $i\in\R^+$ can be bounded, so $\ms{B}$ is not a sheaf.\exqed
+        The problem arises when we consider glueing\side{In other words, boundedness is a global property. To check if a function is bounded, it does \textit{not} suffice to check it on an arbitrary neighborhood.}. For instance, let $U_i\coloneqq\l\{p\in X\mid\l\|p\r\|<i\r\}$ and observe that $\l\{U_i\r\}_{i\in\R^+}$ covers $X$. Consider the family $\l\{f_i\r\}$ where each $f_i\coloneqq\id_{U_i}$, which clearly agree on their pairwise intersections. But no function $f:X\to\R$ such that $\l.f\r|_{U_i}=f_i$ for all $i\in\R^+$ can be bounded, so $\ms{B}$ is not a sheaf.\exqed
     \end{example}
     \begin{example}
         We give two examples of sheaves relating to \textit{divisors}\side[0.01in]{For compact Riemann surfaces, we see that a function $D:X\to\Z$ is a divisor iff it has finite support, so its set of divisors is the free Abelian group of the points of $X$.} on a Riemann surface $X$; that is, a function $D:X\to\Z$ whose support $\l\{p\in X\mid D\l(p\r)\neq0\r\}$ is a discrete subset of $X$.
@@ -107,7 +107,7 @@
     \begin{definition}
         A presheaf $\ms{F}$ of Abelian groups on $X$ is said to satisfy the \uldef{Identity Theorem} if for all $U\in\tau$ and all $f,g\in\ms{F}\l(U\r)$, if there is some $p\in U$ such that $\l[f\r]_p=\l[g\r]_p$, then $f=g$ (on $U$).
     \end{definition}
-    \side[-0.4in]{In particular, this holds for all $\HOLO\l[D\r]$.}
+    \side[-0.4in]{In particular, this holds for all $\HOLO\l[D\r]$. In contrast, the sheaf of smooth functions $\DIFF$ (see Section \ref{sec:differential_forms}) does \textit{not} satisfy the Identity Theorem.}
     \begin{proposition}\label{2.2:prp:stalk_topology_Hausdorff}
         If $X$ is a locally-connected Hausdorff space and $\ms{F}$ is a presheaf of Abelian groups on $X$ that satisfy the Identity Theorem, then $\l|\ms{F}\r|$ is Hausdorff.
     \end{proposition}
