@@ -9,14 +9,14 @@
         Let $X$ and $Y$ be Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. A point $p\in X$ is said to be a \uldef{ramification point of $F$} if $\l.F\r|_U$ is not injective for any neighborhood $U$ of $p$, in which case $F\l(p\r)\in Y$ is said to be a \uldef{critical value of $F$}. If $F$ has no ramification points, then $F$ is said to be an \uldef{unbranched holomorphic map}.
     \end{definition}
     \footnote{It is immediate that $F$ is unbranched iff it is a local homeomorphism. Indeed, if $F$ is unbranched, then for every $p\in X$ there exists a neighborhood $U$ of $p$ such that $\l.F\r|_U$ is injective. By the Open Mapping Theorem, $F$ is open and hence $\l.F\r|_U$ maps $U$ homeomorphically to the open set $F\l(U\r)$. Conversely, if $F$ is a local homeomorphism, then for every $p\in X$ there exists a neighborhood $U$ of $p$ that is mapped homeomorphically onto an open set in $Y$. In particular, $\l.F\r|_U$ is injective, so $F$ is unbranched at $p$.}
-    \begin{proposition}\label{2.1:prp:ramification_iff_mult_2}
+    \begin{proposition}\label{CS:prp:ramification_iff_mult_2}
         Let $X$ and $Y$ be Riemann surfaces and fix $p\in X$. A non-constant holomorphic map $F:X\to Y$ has a ramification point at $p$ iff $\mult_p\!\l(F\r)\geq2$.
     \end{proposition}
     \begin{proof}
-        By Theorem \ref{1.2:thm:local_normal_form}, there exist charts $\tpl{U,\phi}$ centered at $p$ and $\tpl{V,\psi}$ centered at $F\l(p\r)$ such that $f\coloneqq\psi\circ F\circ\phi^{-1}$ is the power map $z\mapsto z^m$ where $m\coloneqq\mult_p\!\l(F\r)$. Since $\phi$ and $\psi$ are, in particular, injections, we see that $F$ is locally injective at $p$ iff $f$ is locally injective at $0$. But this occurs precisely when $m=\mult_p\!\l(F\r)<2$, so the result follows.\qed
+        By Theorem \ref{RS:thm:local_normal_form}, there exist charts $\tpl{U,\phi}$ centered at $p$ and $\tpl{V,\psi}$ centered at $F\l(p\r)$ such that $f\coloneqq\psi\circ F\circ\phi^{-1}$ is the power map $z\mapsto z^m$ where $m\coloneqq\mult_p\!\l(F\r)$. Since $\phi$ and $\psi$ are, in particular, injections, we see that $F$ is locally injective at $p$ iff $f$ is locally injective at $0$. But this occurs precisely when $m=\mult_p\!\l(F\r)<2$, so the result follows.\qed
     \end{proof}
-    \begin{example}\label{2.1:exa:covering_of_torus}
-        For any lattice $\Gamma\subseteq\C$ the projection $\pi:\C\to\C/\Gamma$ is an unbranched holomorphic map. This follows from our construction of complex tori in Example \ref{1.1:exa:tori} where for every $z\in\C$ a small enough neighborhood $U$ was found so that $\l.\pi\r|_U$ is injective.\exqed
+    \begin{example}\label{CS:exa:covering_of_torus}
+        For any lattice $\Gamma\subseteq\C$ the projection $\pi:\C\to\C/\Gamma$ is an unbranched holomorphic map. This follows from our construction of complex tori in Example \ref{RS:exa:tori} where for every $z\in\C$ a small enough neighborhood $U$ was found so that $\l.\pi\r|_U$ is injective.\exqed
     \end{example}
     \begin{proposition}
         Let $X$, $Y$ and $Z$ be Riemann surfaces and let $F:X\to Y$ be a holomorphic map. Then any lifting $\tilde{F}:X\to Z$ of $F$ w.r.t. an unbranched holomorphic map $\pi:Z\to Y$ is a holomorphic map.
@@ -42,7 +42,7 @@
     \begin{definition}
         A map $\pi:E\to X$ is said to be \uldef{proper} if the preimage of every compact set is compact.
     \end{definition}
-    \begin{proposition}\label{1.3:prp:proper_give_neighborhoods}
+    \begin{proposition}\label{RS:prp:proper_give_neighborhoods}
         Let $\pi:E\to X$ be a proper map. Then for every $p\in X$ and every neighborhood $V$ of $\pi^{-1}\l(p\r)$, there exists a neighborhood $U$ of $p$ such that $\pi^{-1}\!\l(U\r)\subseteq V$.
     \end{proposition}
     \begin{proof}
@@ -66,7 +66,7 @@
         \end{equation*}
         where the sets $V_\lambda\coloneqq\lambda+V$ are all disjoint and each $\l.\pi\r|_{V_\lambda}:V_\lambda\to U$ is a homeomorphism.\exqed
     \end{example}
-    \begin{proposition}\label{2.1:prp:proper_local_covering}
+    \begin{proposition}\label{CS:prp:proper_local_covering}
         Any proper local homeomorphism is a covering map.
     \end{proposition}
     \begin{proof}
@@ -74,7 +74,7 @@
         \begin{itemize}
             \item For each $\zeta\in\pi^{-1}\l(p\r)$, there exist neighborhoods $W_\zeta$ of $\zeta$ and $U$ of $p$ such that $\l.\pi\r|_{W_\zeta}:W_\zeta\to U$ is a homeomorphism. Then the sets $W_\zeta$ must be disjoint, for if $\zeta'\in W_\zeta$ for some $\zeta'\neq\zeta$, then $\l.\pi\r|_{W_\zeta}\!\l(\zeta\r)=p=\l.\pi\r|_{W_\zeta}\!\l(\zeta'\r)$, contradicting that $\l.\pi\r|_{W_\zeta}$ is a homeomorphism. Thus $\pi^{-1}\l(p\r)$ must be finite, lest the cover $\l\{W_\zeta\r\}$ admits no finite subcover.
         \end{itemize}
-        Thus $\pi^{-1}\l(p\r)=\l\{\zeta_1,\dots,\zeta_n\r\}$ for some $\zeta_j\in E$. Letting $W_j\coloneqq W_{\zeta_j}$ as above, we see that $\bigcup_{j=1}^{n}W_j$ is a neighborhood of $\pi^{-1}\l(p\r)$. By Proposition \ref{1.3:prp:proper_give_neighborhoods}, there is a neighborhood $U$ of $p$ such that $\pi^{-1}\l(U\r)\subseteq\bigcup_{j=1}^{n}W_j$, so $\pi^{-1}\l(U\r)=\bigcup_{j=1}^{n}V_j$ where the sets $V_j\coloneqq W_j\cap\pi^{-1}\l(U\r)$ are all disjoint and each $\l.\pi\r|_{V_j}:V_j\to U$ is a homeomorphism.\qed
+        Thus $\pi^{-1}\l(p\r)=\l\{\zeta_1,\dots,\zeta_n\r\}$ for some $\zeta_j\in E$. Letting $W_j\coloneqq W_{\zeta_j}$ as above, we see that $\bigcup_{j=1}^{n}W_j$ is a neighborhood of $\pi^{-1}\l(p\r)$. By Proposition \ref{RS:prp:proper_give_neighborhoods}, there is a neighborhood $U$ of $p$ such that $\pi^{-1}\l(U\r)\subseteq\bigcup_{j=1}^{n}W_j$, so $\pi^{-1}\l(U\r)=\bigcup_{j=1}^{n}V_j$ where the sets $V_j\coloneqq W_j\cap\pi^{-1}\l(U\r)$ are all disjoint and each $\l.\pi\r|_{V_j}:V_j\to U$ is a homeomorphism.\qed
     \end{proof}
     \subsection{Liftings of Curves}
     This section develops some technical tools to define the \textit{number of sheets} of a covering, which in turn is used to define the \textit{degree} of a proper holomorphic map.
@@ -107,7 +107,7 @@
         \end{equation*}
         Clearly\footnote{$\tilde{\alpha}\l(t_{k-1}\r)=\cchi\l(\alpha\l(t_{k-1}\r)\r)=\cchi\l(\pi\l(\tilde{\alpha}\l(t_{k-1}\r)\r)\r)$ on the appropriate restrictions.}, $\tilde{\alpha}\!\l(t_{k-1}\r)$ agrees with our existing lifting, which makes the piecewise-defined map $\l.\alpha\r|_{\l[0,t_k\r]}$ a lifting of $\l.\alpha\r|_{\l[0,t_k\r]}$ w.r.t. $\pi$.\qed
     \end{proof}
-    \begin{corollary}\label{2.1:cor:fiber_cardinalities_coincide}
+    \begin{corollary}\label{CS:cor:fiber_cardinalities_coincide}
         Suppose that $X$ is path-connected and let $\pi:E\to X$ be a covering map. Then, for any $p_1,p_2\in X$, the sets $\pi^{-1}\!\l(p_1\r)$ and $\pi^{-1}\!\l(p_2\r)$ are equinumerous.
     \end{corollary}
     \begin{proof}
@@ -119,7 +119,7 @@
         The \uldef{degree of $F$}, denoted $\deg F$, is the cardinality of the fiber $F^{-1}\!\l(q\r)$ of any non-critical point $q\in Y$.
     \end{definition}
     \begin{proof}
-        (Well-definition). Since $F$ is a proper map, the fiber $F^{-1}\!\l(q\r)$ is compact and is hence finite by Discreteness of Preimages. Being unramified, we see that $F$ is a local homeomorphism, so it is a covering map by Proposition \ref{2.1:prp:proper_local_covering}. Finally, Corollary \ref{2.1:cor:fiber_cardinalities_coincide} shows that $\deg F$ is well-defined.\qed
+        (Well-definition). Since $F$ is a proper map, the fiber $F^{-1}\!\l(q\r)$ is compact and is hence finite by Discreteness of Preimages. Being unramified, we see that $F$ is a local homeomorphism, so it is a covering map by Proposition \ref{CS:prp:proper_local_covering}. Finally, Corollary \ref{CS:cor:fiber_cardinalities_coincide} shows that $\deg F$ is well-defined.\qed
     \end{proof}
     \begin{remark}
         Let $n\coloneqq\deg F$. Then $n$ is referred to as the \ul{number of sheets of $F$} and $F$ is said to be an \ul{$n$-sheeted holomorphic covering map}.\exqed
@@ -133,15 +133,15 @@
     \footnote{Instead of simply counting the elements in the fiber, we need count them \textit{with multiplicities}.}
     \vspace{-0.1in}
     \begin{proof}
-        If $q$ is not a critical point, then Proposition \ref{2.1:prp:ramification_iff_mult_2} shows that $\mult_p\!\l(F\r)=1$ for any $p\in F^{-1}\!\l(p\r)$. Then $\deg F=\l|F^{-1}\!\l(q\r)\r|$, which agrees with our definition.\\\ \\
+        If $q$ is not a critical point, then Proposition \ref{CS:prp:ramification_iff_mult_2} shows that $\mult_p\!\l(F\r)=1$ for any $p\in F^{-1}\!\l(p\r)$. Then $\deg F=\l|F^{-1}\!\l(q\r)\r|$, which agrees with our definition.\\\ \\
         Otherwise, $q$ is a critical point of $F$\footnote{Although $q$ is a critical point of $F$, every point in a small enough neighborhood around it is not a critical point.}. Since $F^{-1}\!\l(q\r)$ is compact, we see that $F^{-1}\!\l(q\r)=\l\{p_1,\dots,p_n\r\}$ for some $p_i\in X$. Fix $1\leq j\leq n$ and set $m_j\coloneqq\mult_{p_j}\!\l(F\r)$. We claim that there exist neighborhoods $U_j$ of $p_j$ and $V_j$ of $q$ such that $\l|F^{-1}\!\l(r\r)\cap U_j\r|=m_j$ for all $r\in V_j\comp\l\{q\r\}$.
         \begin{itemize}
-            \item By Theorem \ref{1.2:thm:local_normal_form}, there exist charts $\tpl{U_j,\phi_j}$ of $X$ centered at $p_j$ and $\tpl{V_j,\psi_j}$ of $Y$ centered $q$ such that $F$ acts as the power function $f\l(z\r)\coloneqq z^{m_j}$ on $\phi_j\!\l(U_j\r)$. Take\footnote{Note that $V_j$ can be taken small enough so that $r$ is \textit{not} a critical value of $F$.} $r\in V_j\comp\l\{q\r\}$ and set $w\coloneqq\psi_j\!\l(r\r)\neq0$. Then $\l|f^{-1}\!\l(w\r)\r|=m_j$, so we have
+            \item By Theorem \ref{RS:thm:local_normal_form}, there exist charts $\tpl{U_j,\phi_j}$ of $X$ centered at $p_j$ and $\tpl{V_j,\psi_j}$ of $Y$ centered $q$ such that $F$ acts as the power function $f\l(z\r)\coloneqq z^{m_j}$ on $\phi_j\!\l(U_j\r)$. Take\footnote{Note that $V_j$ can be taken small enough so that $r$ is \textit{not} a critical value of $F$.} $r\in V_j\comp\l\{q\r\}$ and set $w\coloneqq\psi_j\!\l(r\r)\neq0$. Then $\l|f^{-1}\!\l(w\r)\r|=m_j$, so we have
                 \begin{equation*}
                     \l|F^{-1}\!\l(r\r)\cap U_j\r|=\l|\phi_j\l(F^{-1}\l(r\r)\r)\r|=\l|\phi_j\l(F^{-1}\!\l(\psi_j^{-1}\!\l(w\r)\r)\r)\r|=\l|f^{-1}\!\l(w\r)\r|=m_j.
                 \end{equation*}
         \end{itemize}
-        Since $U_j$ is a neighborhood of $p_j$, we see that $F^{-1}\!\l(V_j\r)\subseteq U_j$ by restricting $V_j$ in accordance with Proposition \ref{1.3:prp:proper_give_neighborhoods}, if necessary. Then, with $V\coloneqq\bigcap_{i=1}^{n}V_i$, we see that $F^{-1}\!\l(V\r)\subseteq\bigcup_{i=1}^{n}U_i$ where the sets $U_i$ are all disjoint. Take any $r\in V\comp\l\{q\r\}$. Then $r\in V_i\comp\l\{q\r\}$ for all $1\leq i\leq n$, so
+        Since $U_j$ is a neighborhood of $p_j$, we see that $F^{-1}\!\l(V_j\r)\subseteq U_j$ by restricting $V_j$ in accordance with Proposition \ref{RS:prp:proper_give_neighborhoods}, if necessary. Then, with $V\coloneqq\bigcap_{i=1}^{n}V_i$, we see that $F^{-1}\!\l(V\r)\subseteq\bigcup_{i=1}^{n}U_i$ where the sets $U_i$ are all disjoint. Take any $r\in V\comp\l\{q\r\}$. Then $r\in V_i\comp\l\{q\r\}$ for all $1\leq i\leq n$, so
         \begin{equation*}
             \l|F^{-1}\!\l(r\r)\r|=\l|F^{-1}\!\l(r\r)\cap\bigcup_{i=1}^{n}U_i\r|=\l|\bigcup_{i=1}^{n}\l(F^{-1}\!\l(r\r)\cap U_i\r)\r|=\sum_{i=1}^{n}\l|F^{-1}\!\l(r\r)\cap U_i\r|=\sum_{i=1}^{n}m_i.
         \end{equation*}
@@ -151,16 +151,16 @@
         If $X$ is compact, then a holomorphic map $F:X\to Y$ is a biholomorphism iff $\deg F=1$.
     \end{corollary}
     \begin{proof}
-        Since $X$ is compact, we see that $F$ is proper surjection. Observe that $F$ is an injective iff it has no critical points, and by Proposition \ref{2.1:prp:ramification_iff_mult_2}, this occurs iff $\mult_p\!\l(F\r)=1$ for all $p\in X$.
+        Since $X$ is compact, we see that $F$ is proper surjection. Observe that $F$ is an injective iff it has no critical points, and by Proposition \ref{CS:prp:ramification_iff_mult_2}, this occurs iff $\mult_p\!\l(F\r)=1$ for all $p\in X$.
         \begin{itemize}
             \item ($\Rightarrow$) If $F$ is an injection, then $\l|f^{-1}\!\l(p\r)\r|=1$ for all $p\in X$. Thus $\deg F=1$.
             \item ($\Leftarrow$): Since $\mult_p\!\l(F\r)\geq1$ for all $p\in X$, the above theorem forces $\mult_p\!\l(F\r)=1$.\qed
         \end{itemize}
     \end{proof}
-    \begin{corollary}\label{2.1:cor:exists_meromorphic_implies_biholomorphic_Riemann_sphere}
+    \begin{corollary}\label{CS:cor:exists_meromorphic_implies_biholomorphic_Riemann_sphere}
         If $X$ is compact and there exists a meromorphic function $f:X\to\C$ with a single simple pole, then $X\iso\RS$.
     \end{corollary}
     \begin{proof}
-        Let $f:X\to\C$ be a meromorphic function with only a simple pole at $p$ and consider its associated holomorphic map $F:X\to\RS$. By Proposition \ref{1.2:prp:multiplicity_and_order}, we see that $\mult_p\!\l(F\r)=\ord_p\!\l(f\r)=1$ and hence $p$ is unramified. Since $p$ is the only pole of $f$, we see that $\deg F=\l|F^{-1}\!\l(\infty\r)\r|=1$.\qed
+        Let $f:X\to\C$ be a meromorphic function with only a simple pole at $p$ and consider its associated holomorphic map $F:X\to\RS$. By Proposition \ref{RS:prp:multiplicity_and_order}, we see that $\mult_p\!\l(F\r)=\ord_p\!\l(f\r)=1$ and hence $p$ is unramified. Since $p$ is the only pole of $f$, we see that $\deg F=\l|F^{-1}\!\l(\infty\r)\r|=1$.\qed
     \end{proof}
 \end{document}

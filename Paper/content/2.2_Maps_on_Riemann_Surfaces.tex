@@ -7,7 +7,7 @@
     \end{definition}
     \begin{remark}\footnote{Defining some property $P$ of $f$ using charts by transporting $f$ to a function $f\circ\phi^{-1}$ on a subset of $\C$, and borrowing $P$ from $f\circ\phi^{-1}$, will be a common theme. However, one must check that $P$ is \textit{independent of charts}; that is, if $f\circ\phi^{-1}$ satisfies $P$, then so does $f\circ\psi^{-1}$ for any other chart $\tpl{V,\psi}$.}
         It must be checked that $\textrm{`}$being holomorphic$\textrm{'}$ does not depend on the choice of chart. This is indeed the case, for if $\tpl{V,\psi}$ is another chart containing $p$, then, since
-        \begin{equation}\label{1.2:eqn:holomorphic_function_well_defined}
+        \begin{equation}\label{RS:eqn:holomorphic_function_well_defined}
             f\circ\psi^{-1}=f\circ\l(\phi^{-1}\circ\phi\r)\circ\psi^{-1}=\l(f\circ\phi^{-1}\r)\circ\l(\phi\circ\psi^{-1}\r):\psi\l(U\cap V\r)\to\C
         \end{equation}\footnote{
             \begin{equation*}
@@ -20,7 +20,7 @@
         }
         on the intersection $U\cap V$, we see that $f\circ\psi^{-1}:\psi\l(V\r)\to\C$ is also holomorphic at $p$.\exqed
     \end{remark}
-    \begin{example}\label{1.2:exa:elementary_holomorphic_functions}
+    \begin{example}\label{RS:exa:elementary_holomorphic_functions}
         Some elementary examples of holomorphic functions.
         \begin{itemize}
             \item Any holomorphic function $f:W\to\C$ from an open set $W\subseteq\C$, considering $\C$ as a Riemann surface with the standard chart $\l(\C,\id_\C\r)$, is holomorphic in the classical sense.
@@ -41,11 +41,11 @@
     \begin{example}
         It is easy to show that the identity map $\id_X$ on a Riemann surface $X$ is a holomorphic map. Furthermore, for all Riemann surfaces $X$, $Y$ and $Z$ and holomorphic maps $F:X\to Y$ and $G:Y\to Z$, their composite $G\circ F:X\to Z$ is also a holomorphic map. This shows that the collection of all Riemann surfaces is a \textit{category}.\exqed
     \end{example}
-    \begin{definition}\label{1.2:def:biholomorphic_Riemann_surfaces}
+    \begin{definition}\label{RS:def:biholomorphic_Riemann_surfaces}
         Let $X$ and $Y$ be Riemann surfaces. A \uldef{biholomorphism between $X$ and $Y$} is an invertible holomorphic map $F:X\to Y$ whose inverse $F^{-1}:Y\to X$ is also holomorphic. Two Riemann surfaces $X$ and $Y$ are said to be \uldef{biholomorphic} if there exists a biholomorphism $F:X\to Y$.
     \end{definition}
-    \begin{example}[Biholomorphisms between Riemann spheres]\label{1.2:exa:biholomorphisms_between_Riemann_spheres}
-        Let $\C_\infty$, $S^2$, and $\P^1$ denote the three constructions for the Riemann sphere $\RS$ presented in Examples \ref{1.1:exa:one_point_compactification_of_C}, \ref{1.1:exa:stereographic_projection}, and \ref{1.1:exa:complex_projective_line}, respectively. We claim that the maps\footnote{Take $G\l(0,0,1\r)\coloneqq\infty$.}
+    \begin{example}[Biholomorphisms between Riemann spheres]\label{RS:exa:biholomorphisms_between_Riemann_spheres}
+        Let $\C_\infty$, $S^2$, and $\P^1$ denote the three constructions for the Riemann sphere $\RS$ presented in Examples \ref{RS:exa:one_point_compactification_of_C}, \ref{RS:exa:stereographic_projection}, and \ref{RS:exa:complex_projective_line}, respectively. We claim that the maps\footnote{Take $G\l(0,0,1\r)\coloneqq\infty$.}
         \begin{equation*}
             F:S^2\to\P^1:\tpl{x,y,w}\mapsto\proje{1-w:x+iy}\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ G:S^2\to\C_\infty:\tpl{x,y,w}\mapsto\frac{x+iy}{1-w}
         \end{equation*}
@@ -78,7 +78,7 @@
         \end{equation*}
         which is well-defined, and since $\l(\psi\circ F\circ\phi^{-1}\r)^{-1}=\phi\circ F^{-1}\circ\psi^{-1}$, we see that $F^{-1}$ is holomorphic too.\exqed
     \end{example}
-    \begin{proposition}\label{1.2:prp:holomorphic_compact_constant}
+    \begin{proposition}\label{RS:prp:holomorphic_compact_constant}
         Any holomorphic function $f:X\to\C$ on a compact Riemann surface $X$ is constant.
     \end{proposition}
     \begin{proof}
@@ -91,13 +91,13 @@
     \end{definition}\footnote{We recall those notions from complex analysis. Let $f:W\subseteq\C\to\C$ be a holomorphic function (in the regular sense) in a punctured neighborhood of $p$. Suppose that $f$ is not holomorphic at $p$.
         \begin{itemize}
             \item If $\lim_{z\to p}f\l(z\r)$ exists, then $f$ has a \ul{removable singularity at $p$}.
-            \item If $\lim_{z\to p}f\l(z\r)=\pm\infty$, then $f$ has a \ul{pole at $p$}. This is equivalent to the existence of some $n>0$ such that the limit $\lim_{z\to p}\l(z-p\r)^nf\l(z\r)$ exists. See Definition \ref{1.2:def:order}.
+            \item If $\lim_{z\to p}f\l(z\r)=\pm\infty$, then $f$ has a \ul{pole at $p$}. This is equivalent to the existence of some $n>0$ such that the limit $\lim_{z\to p}\l(z-p\r)^nf\l(z\r)$ exists. See Definition \ref{RS:def:order}.
             \item Otherwise, $f$ has an \ul{essential singularity} \ul{at $p$}.
         \end{itemize}
     }
     \vspace{-0.05in}
     \begin{proof}
-        (Well-definition). Equation (\ref{1.2:eqn:holomorphic_function_well_defined}) shows that those notions are chart independent; the composition of $f\circ\phi^{-1}$ having a singularity at $p$ with a transition map that is holomorphic at $p$ yields a function with the same type of singularity at $p$.\qed
+        (Well-definition). Equation (\ref{RS:eqn:holomorphic_function_well_defined}) shows that those notions are chart independent; the composition of $f\circ\phi^{-1}$ having a singularity at $p$ with a transition map that is holomorphic at $p$ yields a function with the same type of singularity at $p$.\qed
     \end{proof}
     \begin{remark}
         Functions having an essential singularity at $p$ are very ill-behaved. Indeed, this occurs iff $\l|f\l(x\r)\r|$ has a non-zero oscillation near $p$. Other singularities behave much better:
@@ -118,11 +118,11 @@
     \end{remark}
     \begin{definition}
         A function $f:W\to\C$ is said to be \uldef{meromorphic at $p$} if it does not have an essential singularity at $p$; that is, if it is either holomorphic, has a removable singularity, or has a pole at $p$. If $f$ is meromorphic at every point of $W$, then $f$ is \uldef{meromorphic on $W$}.
-    \end{definition}\footnote{As in Example \ref{1.2:exa:elementary_holomorphic_functions}, if $f,g:W\to\C$ are both meromorphic at $p$, then so are $f\pm g$ and $f\cdot g$. If $g$ is not identically $0$, then so is $f/g$. This makes the set $\MERO\l(W\r)$ of all meromorphic functions $f:W\to\C$ into a $\C$-algebra.}
+    \end{definition}\footnote{As in Example \ref{RS:exa:elementary_holomorphic_functions}, if $f,g:W\to\C$ are both meromorphic at $p$, then so are $f\pm g$ and $f\cdot g$. If $g$ is not identically $0$, then so is $f/g$. This makes the set $\MERO\l(W\r)$ of all meromorphic functions $f:W\to\C$ into a $\C$-algebra.}
     \begin{remark}
         The previous remark can now be rephrased by saying that the set of all meromorphic functions $f:W\to\C$ are in one-to-one correspondence with the set of all holomorphic maps $F:W\to\RS$ (which are not identically infinity). That is, meromorphic functions are the holomorphic maps to the Riemann sphere.\exqed
     \end{remark}
-    \begin{definition}\label{1.2:def:order}
+    \begin{definition}\label{RS:def:order}
         Let $f:W\to\C$ be meromorphic at $p$ and consider its Laurent series $f_\phi\!\l(z\r)\coloneqq\l(f\circ\phi^{-1}\r)\l(z\r)=\sum_{i}c_i\l(z-z_0\r)^i$ under a chart $\l(U,\phi\r)$ of $X$ with $z_0\coloneqq\phi\l(p\r)$. The \uldef{order of $f$ at $p$} is
         \begin{equation*}
             \ord_p\!\l(f\r)\coloneqq\min\l\{n\in\Z\mid0\neq\l(z-z_0\r)^n\!f_\phi\!\l(z\r)\in\HOLO\l(W\r)\r\}.
@@ -155,7 +155,7 @@
         Let $f:W\to\C$ be meromorphic at $p$. We say that $f$ has a \uldef{zero} (resp. \uldef{pole}) \uldef{of order $n$ at $p$} if $\ord_p\!\l(f\r)=n<0$ (resp. $n>0$).
     \end{definition}
     \subsection{Meromorphic Functions on $\RS$}
-    \begin{proposition}\label{1.2:prp:meromorphic_Riemann_sphere_rational}
+    \begin{proposition}\label{RS:prp:meromorphic_Riemann_sphere_rational}
         Every meromorphic function on $\RS$ is a rational function.
     \end{proposition}
     \begin{proof}
@@ -163,7 +163,7 @@
         \begin{equation*}
             h_i\!\l(z\r)=\sum_{\mathclap{j=-m_i}}^{-1}c_{ij}\l(z-\lambda_i\r)^j
         \end{equation*}
-        for some $m_i>1$. Then the function $g\coloneqq f-\sum_ih_i$ is holomorphic function on $\RS$, and since $\RS$ is compact, it is constant by Proposition \ref{1.2:prp:holomorphic_compact_constant}. Thus $f=g+\sum_ih_i$, which is a rational function.\qed
+        for some $m_i>1$. Then the function $g\coloneqq f-\sum_ih_i$ is holomorphic function on $\RS$, and since $\RS$ is compact, it is constant by Proposition \ref{RS:prp:holomorphic_compact_constant}. Thus $f=g+\sum_ih_i$, which is a rational function.\qed
     \end{proof}
     \begin{example}
         Let $f:\RS\to\C$ be meromorphic, so $f\l(z\r)=p\l(z\r)\!/q\l(z\r)$ for some $p,q\in\C\l[z\r]$. Then $f$ is holomorphic at all points $z\in\C$ such that $q\l(z\r)\neq0$, and has a pole otherwise. Also, $f\l(\infty\r)\in\C$ if $\deg p=\deg q$, vanishes if $\deg p<\deg q$, and has a pole otherwise. In any case, $f$ is meromorphic on $\RS$. To compute $\ord_z\!\l(f\r)$ at all $z\in\RS$, we split $p$ and $q$ into linear factors to write $f$ uniquely as
@@ -187,7 +187,7 @@
         We may rephrase the proposition by saying that the automorphisms on $\RS$ are all rational functions.\exqed
     \end{remark}
     \subsection{Local Normal Form and the Multiplicity}
-    \begin{theorem}[Local Normal Form]\label{1.2:thm:local_normal_form}
+    \begin{theorem}[Local Normal Form]\label{RS:thm:local_normal_form}
         Let $X$ and $Y$ be Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. Then, for every $p\in X$, there exists a unique $m\geq1$ such that for any chart $\tpl{U_2,\phi_2}$ of $Y$ centered at $F\l(p\r)$, there exists a chart $\tpl{U_1,\phi_1}$ of $X$ centered at $p$ such that $\phi_2\circ F\circ\phi_1^{-1}:z\mapsto z^m$ for all $z\in\phi_1\l(U_1\r)$.
     \end{theorem}
     \footnote{This theorem also give easy proofs of some elementary properties of holomorphic maps, which we collect here; see \cite[][Section 1.2]{forster} for details. Throughout, $F:X\to Y$ is a non-constant holomorphic map between Riemann surfaces $X$ and $Y$.
@@ -197,7 +197,7 @@
             \item If $Y=\C$, then $\l|F\r|$ does not attain its maximum.
             \item If $X$ is compact, then $F$ is surjective and $Y$ is compact.
         \end{itemize}
-        Together, the last two claims give an alternative proof for Proposition \ref{1.2:prp:holomorphic_compact_constant}.}\vspace{-0.05in}
+        Together, the last two claims give an alternative proof for Proposition \ref{RS:prp:holomorphic_compact_constant}.}\vspace{-0.05in}
     \begin{proof}
         Let $\tpl{U_2,\phi_2}$ be a chart of $Y$ centered at $F\l(p\r)$ and consider any chart $\tpl{V,\psi}$ of $X$ centered at $p$. Then the function $h\coloneqq\phi_2\circ F\circ\psi^{-1}$ is holomorphic, so it admits a power series representation $h\l(w\r)=\sum_{i=0}^{\infty}c_iw^i$ for all $w\in\psi\l(V\r)$. Note that $h\l(0\r)=\phi_2\l(F\l(p\r)\r)=0$, so $c_0=0$. Let $m\geq1$ be the smallest integer such that $c_m\neq0$, so
         \begin{equation*}
@@ -212,14 +212,14 @@
     \begin{definition}
         With the above notation, the unique $m\geq1$ such that there are local coordinates around $p$ and $F\l(p\r)$ where $F$ acts like $z\mapsto z^m$ is called the \uldef{multiplicity of $F$ at $p$}, denoted $\mult_p\!\l(F\r)$.
     \end{definition}
-    \begin{remark}\footnote{Consider the power function $f\l(z\r)\coloneqq z^m$ where $m\coloneqq\mult_p\!\l(F\r)$. Then, for all $z\in\C^*$, we see that $f^{-1}\l(z\r)$ has exactly $m$ elements given by the $m$ distinct $m^\textrm{th}$ roots of $z^m$. Thus the map $f$ causes $\C$ to `cover itself $m$ times', and those coverings meet at the fixed point $0$. But $f^{-1}\l(0\r)=\l\{0\r\}$ has only $1$ element, which prevents $f$ to be a $n$-sheeted covering of $\C$. To remedy this, we count $0$ \textit{with multiplicity $m$}; see Chapter \ref{cpt:covering_spaces_analytic_continuation} for a more formal discussion. Since $F$ is locally represented by $f$, and $\tpl{U_1,\phi_1}$ is centered at $p$, we see that $m$ counts the multiplicity at which neighbors of $p$ are mapped to $F\l(p\r)$.}
+    \begin{remark}\footnote{Consider the power function $f\l(z\r)\coloneqq z^m$ where $m\coloneqq\mult_p\!\l(F\r)$. Then, for all $z\in\C^*$, we see that $f^{-1}\l(z\r)$ has exactly $m$ elements given by the $m$ distinct $m^\textrm{th}$ roots of $z^m$. Thus the map $f$ causes $\C$ to `cover itself $m$ times', and those coverings meet at the fixed point $0$. But $f^{-1}\l(0\r)=\l\{0\r\}$ has only $1$ element, which prevents $f$ to be a $n$-sheeted covering of $\C$. To remedy this, we count $0$ \textit{with multiplicity $m$}; see Chapter \ref{CS} for a more formal discussion. Since $F$ is locally represented by $f$, and $\tpl{U_1,\phi_1}$ is centered at $p$, we see that $m$ counts the multiplicity at which neighbors of $p$ are mapped to $F\l(p\r)$.}
         We give a simple way of computing $\mult_p\!\l(F\r)$ that does not involve casting $F$ into Local Normal Form, or even having to find local coordinates centered at $p$ and $F\l(p\r)$. Indeed, let $\tpl{U_1,\phi_1}$ and $\tpl{U_2,\phi_2}$ be charts around $p$ and $F\l(p\r)$, say with $z_0\coloneqq\phi_1\l(p\r)$ and $w_0\coloneqq\phi_2\l(F\l(p\r)\r)$. Letting $f\coloneqq\phi_2\circ F\circ\phi_1^{-1}$, we see that $f\l(z_0\r)=w_0$ and hence its power series representation has the form
         \begin{equation*}
             f\l(z\r)=f\l(z_0\r)+\sum_{i\geq m}c_i\l(z-z_0\r)^i
         \end{equation*}
         for some $m\geq1$ with $c_m\neq0$. Then, since $z-z_0$ and $w-w_0=f\l(z\r)-f\l(z_0\r)$ are local coordinates centered at $p$ and $F\l(p\r)$, respectively, we see from the above proof that $\mult_p\!\l(F\r)=m$. Thus to compute $\mult_p\!\l(F\r)$, it suffices to case $F$ into local coordinates $\l(U_1,\phi_1\r)$ around $p$ and $\l(U_2,\phi_2\r)$ around $F\l(p\r)$ and find the lowest non-zero power of the Taylor series of $f\coloneqq\phi_2\circ F\circ\phi_1^{-1}$.\exqed
     \end{remark}
-    \begin{proposition}\label{1.2:prp:multiplicity_and_order}
+    \begin{proposition}\label{RS:prp:multiplicity_and_order}
         Let $f$ be a meromorphic function on a Riemann surface $X$ and let $F:X\to\RS$ be its associated holomorphic map. Fix $p\in X$.
         \begin{itemize}
             \item If $p$ is a not a pole of $f$, then $\mult_p\!\l(F\r)=-\ord_p\!\l(f-f\l(p\r)\r)$.

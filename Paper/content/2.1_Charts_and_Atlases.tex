@@ -36,8 +36,8 @@
         \end{itemize}
     \end{example}
     \subsection{The Riemann Sphere $\RS$}
-    A particularly important Riemann surface is the Riemann sphere\footnote{Showing that \textit{every} Riemann surface that is topologically a sphere is biholomorphic to $\RS$ is a highly non-trivial task, and it will be the main goal of this paper to establish this fact.} $\RS$, which admits several constructions. Here, we give three; see Example \ref{1.2:exa:biholomorphisms_between_Riemann_spheres} for a proof that they are all biholomorphic (in the sense of Definition $\ref{1.2:def:biholomorphic_Riemann_surfaces}$).
-    \begin{example}[One-point Compactification of $\C$]\label{1.1:exa:one_point_compactification_of_C}
+    A particularly important Riemann surface is the Riemann sphere\footnote{Showing that \textit{every} Riemann surface that is topologically a sphere is biholomorphic to $\RS$ is a highly non-trivial task, and it will be the main goal of this paper to establish this fact.} $\RS$, which admits several constructions. Here, we give three; see Example \ref{RS:exa:biholomorphisms_between_Riemann_spheres} for a proof that they are all biholomorphic (in the sense of Definition $\ref{RS:def:biholomorphic_Riemann_surfaces}$).
+    \begin{example}[One-point Compactification of $\C$]\label{RS:exa:one_point_compactification_of_C}
         Let $\infty$ be a symbol not belonging to $\C$ and set $\C_\infty\!\coloneqq\C\cup\l\{\infty\r\}$. We declare a set $U\subseteq\C_\infty\!$ to be open if either $U\subseteq\C$ is open or $U=K^c\cup\l\{\infty\r\}$ for some compact subset $K\subseteq\C$.\footnote{This makes $\C_\infty\!$, equipped with the collection $\tau$ of all such open sets, a second-countable Hausdorff space. Indeed, the fact that $\tau$ is a topology on $\C_\infty\!$ follows from De Morgan's Laws and the Heine-Borel Theorem. It is trivially Hausdorff, and it is second-countable since we may append, to any countable basis for the standard topology of $\C$, the countable collection $\l\{B\l(0,r\r)^c\cup\l\{\infty\r\}\r\}_{r\in\Q^+}$.} We employ two charts
         \begin{equation*}
             \begin{alignedat}{2}
@@ -59,7 +59,7 @@
         \end{equation*}
         is holomorphic, so the atlas $\l\{\tpl{U_1,\phi_1},\tpl{U_2,\phi_2}\r\}$ defines a complex structure on $\C_\infty\!$.\exqed
     \end{example}
-    \begin{example}[Stereographic Projection]\label{1.1:exa:stereographic_projection}
+    \begin{example}[Stereographic Projection]\label{RS:exa:stereographic_projection}
         Consider the unit sphere $S^2\subseteq\R^3$ as a topological subspace of $\R^3$, which makes it a second-countable Hausdorff space. Identifying the plane $w=0$ as $\C$, we employ the charts
         \begin{equation*}
             \begin{alignedat}{2}
@@ -73,7 +73,7 @@
         \end{equation*}
         Observe that $U_1\cap U_2=S^2\comp\l\{\tpl{0,0,\pm1}\r\}$ and $\phi_2\circ\phi_1^{-1}:\C^\ast\to\C^\ast:z\mapsto1/z$, which is holomorphic, so the atlas $\l\{\tpl{U_1,\phi_1},\tpl{U_2,\phi_2}\r\}$ defines a complex structure on $\RS$.\exqed
     \end{example}
-    \begin{example}[Complex Projective Line]\label{1.1:exa:complex_projective_line}
+    \begin{example}[Complex Projective Line]\label{RS:exa:complex_projective_line}
         Consider the equivalence relation $\sim$ on $\C^2\comp\l\{\tpl{0,0}\r\}$ defined by $\tpl{z_1,w_1}\sim\tpl{z_2,w_2}$ iff $\tpl{z_1,w_1}=\lambda\tpl{z_2,w_2}$ for some $\lambda\in\C^\ast$. Set $\P^1\coloneqq\l(\C^2\comp\l\{\tpl{0,0}\r\}\r)/\!\sim$ and equip it with the quotient topology. Since $\sim$ is an open equivalence relation whose graph is closed in $\l(\C^2\comp\l\{\tpl{0,0}\r\}\r)^2$, we see that $\P^1$ is a second-countable Hausdorff space.\footnote{See \cite[][Section 7.5]{tu} for details on the quotient topology.} Denoting the equivalence class of $\tpl{z,w}$ by $\proje{z:w}$, we employ the charts
         \begin{equation*}
             \begin{alignedat}{2}
@@ -89,7 +89,7 @@
     \end{example}
     \subsection{Complex Tori}
     Recall that a torus is any manifold homeomorphic to $T^2\coloneqq S^1\times S^1$, which admits a representation as a quotient $\C/\Gamma$ by the lattice $\Gamma\coloneqq\Z\oplus\Z$. Thus (by definition) there is only one torus up to homeomorphism, but it turns out that we can equip it with many different complex structures.\footnote{They manifest by quotienting $\C$ by different lattices, and we shall derive a criterion on $\Gamma_1\coloneqq\Z\omega_1\oplus\Z\omega_2$ and $\Gamma_2\coloneqq\Z\eta_1\oplus\Z\eta_2$ for the tori $\C/\Gamma_1$ and $\C/\Gamma_2$ to be biholomorphic.}
-    \begin{example}[Complex Tori]\label{1.1:exa:tori}
+    \begin{example}[Complex Tori]\label{RS:exa:tori}
         Let $\omega_1,\omega_2\in\C$ be linearly independent over $\R$ and consider the lattice $\Gamma\coloneqq\Z\omega_1\oplus\Z\omega_2$. Then the quotient $\C/\Gamma$ is a torus in the topological sense since the map
         \begin{equation*}
             \phi:\C/\Gamma\to T^2\ \ \ \ \ \ \ \ \textrm{mapping}\ \ \ \ \ \ \ \ \l[z\r]\mapsto\big(e^{2\pi i\lambda_1},e^{2\pi i\lambda_2}\big),

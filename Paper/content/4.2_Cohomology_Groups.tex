@@ -58,7 +58,7 @@
             \check{H}\l(r\r):\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(\mf{B},\ms{F}\r)\ \ \ \ \textrm{mapping}\ \ \ \ \l[f_{ij}\r]\mapsto\l[\tilde{r}\l(f_{ij}\r)\r].\exqedin
         \end{equation*}
     \end{remark}
-    \begin{proposition}\label{3.2:prp:lifted_refinement_independent_of_refining_map}
+    \begin{proposition}\label{CC:prp:lifted_refinement_independent_of_refining_map}
         In the above notation, the map $\check{H}^\mf{A}_\mf{B}\coloneqq\check{H}\l(r\r)$ is independent of $r$ and is injective.
     \end{proposition}
     \begin{proof}
@@ -85,7 +85,7 @@
         on $U_i\cap U_j\cap V_k$. Note that both $f_{ij}$ and $h_i-h_j$ are defined on $U_i\cap U_j$, and since they coincide on the restriction to $V_k$, uniqueness of the glueing gives us $f_{ij}=h_i-h_j$ on $U_i\cap U_j$. Thus $\tpl{f_{ij}}=\delta^0\!\l(h_i\r)$, so $\tpl{f_{ij}}$ splits.\qed
     \end{proof}
     \begin{remark}
-        If $\mf{C}\preceq\mf{B}\preceq\mf{A}$ are open coverings of $X$, we have that $\check{H}^\mf{B}_\mf{C}\circ\check{H}^\mf{A}_\mf{B}=\check{H}^\mf{A}_\mf{C}$. This\footnote{Both constructions are special cases of the so-called \textit{direct limit}; see \cite[][Chapter III]{maclane}.} allows us to give a construction of $\check{H}^1\!\l(X,\ms{F}\r)$ similar to that of Definition \ref{2.2:def:stalk}.\exqed
+        If $\mf{C}\preceq\mf{B}\preceq\mf{A}$ are open coverings of $X$, we have that $\check{H}^\mf{B}_\mf{C}\circ\check{H}^\mf{A}_\mf{B}=\check{H}^\mf{A}_\mf{C}$. This\footnote{Both constructions are special cases of the so-called \textit{direct limit}; see \cite[][Chapter III]{maclane}.} allows us to give a construction of $\check{H}^1\!\l(X,\ms{F}\r)$ similar to that of Definition \ref{CS:def:stalk}.\exqed
     \end{remark}
     \begin{definition}
         The \uldef{$1^\textrm{st}$ cohomology group of $\ms{F}$} is the Abelian group
@@ -94,7 +94,7 @@
         \end{equation*}
         where $\sim$ is the equivalence relation on the disjoint union, defined, for all $\xi\in\check{H}^1\!\l(\mf{A},\ms{F}\r)$ and $\xi'\in\check{H}^1\!\l(\mf{A}',\ms{F}\r)$, by $\xi\sim\xi'$ iff there exists a refinement $\mf{B}\preceq\mf{A},\mf{A}'$ such that $\check{H}^\mf{A}_\mf{B}\!\l(\xi\r)=\check{H}^{\mf{A}'}_\mf{B}\!\!\l(\xi'\r)$.
     \end{definition}
-    \footnote{Note that $\check{H}^1\!\l(X,\ms{F}\r)$ vanishes iff $\check{H}^1\!\l(\mf{A},\ms{F}\r)=0$ for all open coverings $\mf{A}$ of $X$. Indeed, the converse direction is trivial. For the forward, let $\mf{A}$ be an open covering of $X$. By Proposition \ref{3.2:prp:lifted_refinement_independent_of_refining_map}, the canonical maps $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(\mf{B},\ms{F}\r)$ are injective for all open coverings $\mf{B}\preceq\mf{A}$. Descending into the quotient, the induced map $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(X,\ms{F}\r)$ is also injective, from which the result follows.}
+    \footnote{Note that $\check{H}^1\!\l(X,\ms{F}\r)$ vanishes iff $\check{H}^1\!\l(\mf{A},\ms{F}\r)=0$ for all open coverings $\mf{A}$ of $X$. Indeed, the converse direction is trivial. For the forward, let $\mf{A}$ be an open covering of $X$. By Proposition \ref{CC:prp:lifted_refinement_independent_of_refining_map}, the canonical maps $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(\mf{B},\ms{F}\r)$ are injective for all open coverings $\mf{B}\preceq\mf{A}$. Descending into the quotient, the induced map $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(X,\ms{F}\r)$ is also injective, from which the result follows.}
     \vspace{-0.05in}
     \begin{proposition}\label{prp:3.2:vanishing_of_sheaf_differentiable}
         Let $X$ be a Riemann surface and consider the sheaf of differentiable functions $\DIFF$ on $X$. Then $\check{H}^1\!\l(X,\DIFF\r)=0$.
@@ -114,7 +114,7 @@
         \end{equation*}
         on $U_i\cap U_j$, so $\tpl{f_{ij}}=\tpl{g_i-g_j}=\delta^0\!\l(g_i\r)$ splits.\qed
     \end{proof}
-    \begin{proposition}[Leray]\label{3.2:prp:leray}
+    \begin{proposition}[Leray]\label{CC:prp:leray}
         If $\ms{F}$ is a sheaf of Abelian groups on a topological space $X$ and $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ is an open covering of $X$ such that $\check{H}^1\!\l(U_i,\ms{F}\r)$ vanishes for every $i\in I$, then
         \begin{equation*}
             \check{H}^1\!\l(X,\ms{F}\r)\iso\check{H}^1\!\l(\mf{A},\ms{F}\r).
@@ -122,7 +122,7 @@
         Such a covering $\mf{A}$ of $X$ is called a \uldef{Leray covering of $X$}.
     \end{proposition}
     \begin{proof}
-        Let $\mf{B}\coloneqq\l\{V_k\r\}_{k\in K}$ be an open covering of $X$ with $\mf{B}\preceq\mf{A}$, so there exists a refining map $r:K\to I$. We claim that $\check{H}^\mf{A}_\mf{B}$ is an isomorphism, from which the result follows by descending into the quotient. By Proposition \ref{3.2:prp:lifted_refinement_independent_of_refining_map}, this map is injective, and to show that it is surjective, we must show that every cocycle $\tpl{f_{kl}}\in\check{Z}^1\!\l(\mf{B},\ms{F}\r)$ admits a cocycle $\tpl{F_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ such that
+        Let $\mf{B}\coloneqq\l\{V_k\r\}_{k\in K}$ be an open covering of $X$ with $\mf{B}\preceq\mf{A}$, so there exists a refining map $r:K\to I$. We claim that $\check{H}^\mf{A}_\mf{B}$ is an isomorphism, from which the result follows by descending into the quotient. By Proposition \ref{CC:prp:lifted_refinement_independent_of_refining_map}, this map is injective, and to show that it is surjective, we must show that every cocycle $\tpl{f_{kl}}\in\check{Z}^1\!\l(\mf{B},\ms{F}\r)$ admits a cocycle $\tpl{F_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ such that
         \begin{equation*}
             \tpl{F_{r\l(k\r),r\l(l\r)}}-\tpl{f_{kl}}\in\check{B}^1\!\l(\mf{B},\ms{F}\r).
         \end{equation*}

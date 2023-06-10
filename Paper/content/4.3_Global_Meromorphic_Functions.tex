@@ -11,7 +11,7 @@
         \begin{equation*}
             f\l(z\r)\coloneqq-\frac{1}{2\pi i}\int_{\C}\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\wedge\d\bar{\zeta}.
         \end{equation*}
-        We need to show that this integral converges and depends differentiably on $z$. Since $g$ is compactly supported, the integrand only has a pole at $0$ and so it suffices to show that the integral over a disk $D_\epsilon\coloneqq\bar{B_\epsilon}\coloneqq\bar{B\l(0,\epsilon\r)}$ converges. Indeed, we change\footnote{Formally, we appeal to Proposition \ref{3.1:prp:change_of_variables_in_C}.} to polar coordinates to see that
+        We need to show that this integral converges and depends differentiably on $z$. Since $g$ is compactly supported, the integrand only has a pole at $0$ and so it suffices to show that the integral over a disk $D_\epsilon\coloneqq\bar{B_\epsilon}\coloneqq\bar{B\l(0,\epsilon\r)}$ converges. Indeed, we change\footnote{Formally, we appeal to Proposition \ref{CC:prp:change_of_variables_in_C}.} to polar coordinates to see that
         \begin{equation*}
             \int_{ D_\epsilon}\!\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\wedge\d\bar{\zeta}=\int_{0}^{\epsilon}\int_{0}^{2\pi}g\big(z-re^{i\theta}\big)e^{-i\theta}\,\d r\d\theta,
         \end{equation*}
@@ -81,7 +81,7 @@
         \end{equation*}
         is exact. The only nontrivial claim to verify is that $\bar{\partial}$ is surjective, which is precisely the statement of the above theorem.\exqed
     \end{remark}
-    \begin{corollary}\label{3.3:cor:vanishing_of_H_Riemann_sphere}
+    \begin{corollary}\label{CC:cor:vanishing_of_H_Riemann_sphere}
         The $1^\textrm{st}$ cohomology groups $\check{H}^1\!\l(\C,\HOLO\r)$ and $\check{H}^1\big(\RS,\HOLO\big)$ vanish.
     \end{corollary}
     \begin{proof}
@@ -93,11 +93,11 @@
         \begin{equation*}
             f_{ij}=g_i-g_j=\tilde{g}_i-\tilde{g}_j
         \end{equation*}
-        so $\tpl{f_{ij}}$ splits. For the Riemann sphere, consider the cover $\mf{A}\coloneqq\l\{U_1,U_2\r\}$ given in Example \ref{1.1:exa:one_point_compactification_of_C}. Since $U_1,U_2\iso\C$, we see from the vanishing of $\check{H}^1\!\l(\C,\HOLO\r)$ that $\mf{A}$ is a Leray covering of $X$, so
+        so $\tpl{f_{ij}}$ splits. For the Riemann sphere, consider the cover $\mf{A}\coloneqq\l\{U_1,U_2\r\}$ given in Example \ref{RS:exa:one_point_compactification_of_C}. Since $U_1,U_2\iso\C$, we see from the vanishing of $\check{H}^1\!\l(\C,\HOLO\r)$ that $\mf{A}$ is a Leray covering of $X$, so
         \begin{equation*}
             \check{H}^1\big(\RS,\HOLO\big)\iso\check{H}^1\!\l(\mf{A},\HOLO\r)
         \end{equation*}
-        by Proposition \ref{3.2:prp:leray}. Thus it suffices to show that any cocycle $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\HOLO\r)$ splits; i.e. it suffices\footnote{The cases for $f_{ii}$ are trivial and $f_{21}=-f_{12}$.} to find functions $f_i\in\HOLO\l(U_i\r)$ such that $f_{12}=f_1-f_2$ on $U_1\cap U_2=\C^\ast$. Note that $f_{12}$ is not necessarily holomorphic at $0$, so it admits a Laurent series expansion $f\l(z\r)=\sum_{n=-\infty}^{\infty}c_nz^n$ on $\C^\ast$. Then the series $f_1\!\l(z\r)\coloneqq\sum_{n=0}^{\infty}c_nz^n$ and $f_2\!\l(z\r)\coloneqq\sum_{n=-\infty}^{-1}c_nz^n$ converges on $U_1$ and $U_2$, respectively, so $f_i\in\HOLO\l(U_i\r)$. Clearly $f_{12}=f_1-f_2$.\qed
+        by Proposition \ref{CC:prp:leray}. Thus it suffices to show that any cocycle $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\HOLO\r)$ splits; i.e. it suffices\footnote{The cases for $f_{ii}$ are trivial and $f_{21}=-f_{12}$.} to find functions $f_i\in\HOLO\l(U_i\r)$ such that $f_{12}=f_1-f_2$ on $U_1\cap U_2=\C^\ast$. Note that $f_{12}$ is not necessarily holomorphic at $0$, so it admits a Laurent series expansion $f\l(z\r)=\sum_{n=-\infty}^{\infty}c_nz^n$ on $\C^\ast$. Then the series $f_1\!\l(z\r)\coloneqq\sum_{n=0}^{\infty}c_nz^n$ and $f_2\!\l(z\r)\coloneqq\sum_{n=-\infty}^{-1}c_nz^n$ converges on $U_1$ and $U_2$, respectively, so $f_i\in\HOLO\l(U_i\r)$. Clearly $f_{12}=f_1-f_2$.\qed
     \end{proof}
     \begin{remark}
         Let $X$ be a compact Riemann surface and consider the vector space structure on $\check{H}^1\!\l(X,\HOLO\r)$ induced from $\HOLO$. We appeal to the following theorems.
@@ -108,7 +108,7 @@
         \end{itemize}
     \end{remark}
     \subsection{Existence of Global Meromorphic Functions}
-    \begin{theorem}\label{3.3:thm:global_meromorphic_functions}
+    \begin{theorem}\label{CC:thm:global_meromorphic_functions}
         Let $X$ be a compact Riemann surface of genus $g$ and fix $p\in X$. Then there exists a meromorphic function $f\in\MERO\l(X\r)$ which has a pole at $p$ of order between $1$ and $g+1$, and is holomorphic everywhere else.
     \end{theorem}
     \begin{proof}

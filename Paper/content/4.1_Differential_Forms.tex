@@ -16,7 +16,7 @@
     \begin{remark}
         Let $\DIFF\l(W\r)$ denote the $\C$-algebra of all differentiable functions $f:W\to\C$ on $W$. Together with the usual restriction mappings, we obtain a sheaf $\DIFF$ of $\C$-algebras consisting of all differentiable functions on $X$.\exqed
     \end{remark}
-    \begin{definition}\label{3.1:def:partial_derivative}
+    \begin{definition}\label{CC:def:partial_derivative}
         Fix a chart $\tpl{U,z}$ of $X$. The \uldef{partial derivative operator w.r.t. $\tpl{U,z}$} is the operator
         \begin{equation*}
             \frac{\partial}{\partial z}:\DIFF\l(U\r)\to\DIFF\l(U\r)\ \ \ \ \ \ \ \ \textrm{\it{mapping}}\ \ \ \ \ \ \ \ f\mapsto\frac{\partial}{\partial z}\!\l(f\circ z^{-1}\r).
@@ -236,7 +236,7 @@
         Thus $\d\omega=0$ iff $\partial f/\partial\bar{z}=0$, so every holomorphic $1$-form is closed and every closed $1$-form of type $\l(1,0\r)$ is holomorphic.\qed
     \end{proof}
     \subsection{Integration of $2$-forms}
-    Similarly to how we defined partial derivatives on a chart $\tpl{U,z}$ of $X$ in Definition \ref{3.1:def:partial_derivative} by pulling back the partial derivative on $\C$, we first discuss integration of a $2$-form $\omega$ on an open set $V\subseteq\C$ and then pull it back to Riemann surfaces.\\\ \\
+    Similarly to how we defined partial derivatives on a chart $\tpl{U,z}$ of $X$ in Definition \ref{CC:def:partial_derivative} by pulling back the partial derivative on $\C$, we first discuss integration of a $2$-form $\omega$ on an open set $V\subseteq\C$ and then pull it back to Riemann surfaces.\\\ \\
     Let $\omega$ of a differentiable $2$-form on an open subset $V\subseteq\C$, say with\footnote{We take the standard chart on $\C$, so $x+iy=\id_\C$.} $\omega=f\d x\wedge\d y$ for some $f\in\DIFF\l(V\r)$. If $f$ vanishes outside a compact subset of $V$, define\footnote{The right-hand side is the usual double integral on $\C$, which simply `erases the wedges'.}
     \begin{equation*}
         \int_V\omega=\int_Vf\,\d x\wedge\d y\coloneqq\int_Vf\,\d x\,\d y.
@@ -251,7 +251,7 @@
             \end{aligned}
         \end{equation*}
     \end{definition}
-    \begin{proposition}\label{3.1:prp:change_of_variables_in_C}
+    \begin{proposition}\label{CC:prp:change_of_variables_in_C}
         Let $U,V\subseteq\C$ be open and let $\phi:U\to V$ be biholomorphic. Then, for any differentiable $2$-form $\omega$ on $V$, $\int_V\omega=\int_U\phi^\ast\omega$.
     \end{proposition}
     \begin{proof}
@@ -283,7 +283,7 @@
     \begin{proof}
         (Well-definition). First, note that the forms $\omega_i\coloneqq\psi_i\omega$ can all be restricted\footnote{Indeed, $\Supp\l(\omega_i\r)\subseteq U_i$.} to $U_i$, so we have to check that each integral of $\omega_i$ over $U_i$ is independent of the chart $\phi_i$, and that the integral of $\omega$ over $X$ is independent of $\l\{U_i\r\}$ and its partition of unity $\l\{\psi_i\r\}$.
         \begin{itemize}
-            \item (Independence of $\phi_i$). Note that $\big(\phi_i^{-1}\big)^\ast\omega$ is a differentiable $2$-form on $V_i$. Let\footnote{We assume that the domain of $\tilde{\phi}_i$ is also $U_i$; otherwise take the intersection.} $\tilde{\phi}_i$ be another chart of $U_i$ and set $\tilde{V}_i\coloneqq\tilde{\phi}\l(U_i\r)$. The transition map $\phi_i\circ\tilde{\phi}_i^{-1}:\tilde{V}_i\to V_i$ is biholomorphic, so we have by Proposition \ref{3.1:prp:change_of_variables_in_C} that\footnote{The fact that pullbacks are anti-multiplicative is clear by expanding the definition.}
+            \item (Independence of $\phi_i$). Note that $\big(\phi_i^{-1}\big)^\ast\omega$ is a differentiable $2$-form on $V_i$. Let\footnote{We assume that the domain of $\tilde{\phi}_i$ is also $U_i$; otherwise take the intersection.} $\tilde{\phi}_i$ be another chart of $U_i$ and set $\tilde{V}_i\coloneqq\tilde{\phi}\l(U_i\r)$. The transition map $\phi_i\circ\tilde{\phi}_i^{-1}:\tilde{V}_i\to V_i$ is biholomorphic, so we have by Proposition \ref{CC:prp:change_of_variables_in_C} that\footnote{The fact that pullbacks are anti-multiplicative is clear by expanding the definition.}
                 \begin{equation*}
                     \int_{V_i}\!\big(\phi_i^{-1}\big)^\ast\omega_i=\int_{\tilde{V}_i}\!\big(\phi_i\circ\tilde{\phi}_i^{-1}\big)^\ast\big(\phi_i^{-1}\big)^\ast\omega_i=\int_{\tilde{V}_i}\!\big(\tilde{\phi}_i^{-1}\big)^\ast\phi_i^\ast\big(\phi_i^{-1}\big)^\ast\omega=\int_{\tilde{V}_i}\!\big(\tilde{\phi}_i^{-1}\big)^\ast\omega.
                 \end{equation*}

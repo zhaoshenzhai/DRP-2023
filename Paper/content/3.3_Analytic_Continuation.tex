@@ -6,7 +6,7 @@
     \begin{definition}
         A germ $\hat{\eta}\in\HOLO_q$ is said to be the \uldef{analytic continuation of $\eta_0$ along $\alpha$} if there exist a family $\eta_t\in\HOLO_{\alpha\l(t\r)}\!\l[p\r]$ of germs for all $t\in\l[0,1\r]$ with $\hat{\eta}=\eta_1$ such that for all $\tau\in\l[0,1\r]$, there exists a neighborhood $T\subseteq\l[0,1\r]$ of $\tau$, an open set $U\subseteq X$ with $\alpha\l(T\r)\subseteq U$, and a function $f\in\HOLO\l[p\r]\l(U\r)$ such that $\l[f\r]_{\alpha\l(t\r)}=\eta_t$ for all $t\in T$.
     \end{definition}
-    \begin{proposition}\label{2.3:prp:analytic_continuation_iff_lifting}
+    \begin{proposition}\label{CS:prp:analytic_continuation_iff_lifting}
         A germ $\hat{\eta}\in\HOLO_q$ is an analytic continuation of $\eta_0$ along $\alpha$ iff there exists a lifting $\tilde{\alpha}:\l[0,1\r]\to\l|\HOLO\l[p\r]\r|$ such that $\tilde{\alpha}\l(0\r)=\eta_0$ and $\tilde{\alpha}\l(1\r)=\hat{\eta}$.
     \end{proposition}
     \begin{proof}
@@ -27,9 +27,9 @@
         Let $\alpha_0,\alpha_1:\l[0,1\r]\to X$ be homotopic curves from $p$ to $q$. If the germ $\eta_0\in\HOLO_p\!\l[p\r]$ admits an analytic continuation along every deformation of $\alpha_0$ to $\alpha_1$, then the analytic continuations of $\eta_0$ along $\alpha_0$ and $\alpha_1$ coincide.
     \end{corollary}
     \begin{proof}
-        By Propositions \ref{2.2:prp:basis_stalk} and \ref{2.2:prp:stalk_topology_Hausdorff}, $\l|\HOLO\l[p\r]\r|$ is Hausdorff whose projection $\pi:\l|\HOLO\l[p\r]\r|\to X$ is a local homeomorphism. Since each deformation admits a lifting starting at $\eta_0$, the\footnote{This is a standard result in algebraic topology. For a proof, see \cite[][Proposition 4.10]{forster}.} liftings $\tilde{\alpha}_0$ and $\tilde{\alpha}_1$ have the same endpoints; that is, the analytic continuations along $\alpha_0$ and $\alpha_1$ coincide.\qed
+        By Propositions \ref{CS:prp:basis_stalk} and \ref{CS:prp:stalk_topology_Hausdorff}, $\l|\HOLO\l[p\r]\r|$ is Hausdorff whose projection $\pi:\l|\HOLO\l[p\r]\r|\to X$ is a local homeomorphism. Since each deformation admits a lifting starting at $\eta_0$, the\footnote{This is a standard result in algebraic topology. For a proof, see \cite[][Proposition 4.10]{forster}.} liftings $\tilde{\alpha}_0$ and $\tilde{\alpha}_1$ have the same endpoints; that is, the analytic continuations along $\alpha_0$ and $\alpha_1$ coincide.\qed
     \end{proof}
-    \begin{corollary}\label{2.3:thm:analytically_continue_to_global_function}
+    \begin{corollary}\label{CS:thm:analytically_continue_to_global_function}
         Suppose $X$ is simply-connected. If the germ $\eta_0\in\HOLO_p\!\l[p\r]$ admits an analytic continuation along every curve starting at $p$, then there exists a unique (globally-defined) function $f\in\HOLO\l[p\r]\l(X\r)$ with $\l[f\r]_p=\eta_0$.
     \end{corollary}
     \begin{proof}
@@ -40,7 +40,7 @@
     \end{remark}
     \subsection{Existence of Analytic Continuations}
     In this section, we let $E\subseteq\l|\HOLO\l[p\r]\r|$ be the connected component of the Étalé space of $\HOLO\l[p\r]$ containing $\eta_0$ and write $\pi:E\to X$ as the restricted projection map.
-    \begin{theorem}\label{2.3:thm:existence_of_analytic_continuation}
+    \begin{theorem}\label{CS:thm:existence_of_analytic_continuation}
         If $\pi$ is a covering map, then for any $q\in X$ and any curve $\alpha:\l[0,1\r]\to X$ with $\alpha\l(0\r)=p$ and $\alpha\l(1\r)=q$, there exists an analytic continuation $\hat{\eta}\in\HOLO_q\!\l[p\r]$ of $\eta_0$ along $\alpha$.
     \end{theorem}
     \begin{proof}

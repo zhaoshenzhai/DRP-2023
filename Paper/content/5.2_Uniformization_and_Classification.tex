@@ -6,7 +6,7 @@
         Every simply-connected Riemann surface $X$ is biholomorphic to either the Riemann sphere $\RS$, the complex plane $\C$, or the upper-half plane $\H$.
     \end{theorem}
     \begin{proofsketch}\footnote{This sketch follows \cite{peter}. The existence of such a meromorphic function $f$ is more involved and uses tools from Dolbeault cohomology.}
-        As in Theorem \ref{4.1:thm:simply-connect_compact_biholomorphic_Riemann_sphere}, fix $p\in X$ and let $f\in\HOLO\l[p\r]\l(X\r)$ be meromorphic with a single simple pole. Let $F:X\to\RS$ be its associated holomorphic map, so $F\l(p\r)=\infty$. We outline the rest of the proof.\footnote{These claims are nontrivial and are beyond the scope of this paper.}
+        As in Theorem \ref{MS:thm:simply-connect_compact_biholomorphic_Riemann_sphere}, fix $p\in X$ and let $f\in\HOLO\l[p\r]\l(X\r)$ be meromorphic with a single simple pole. Let $F:X\to\RS$ be its associated holomorphic map, so $F\l(p\r)=\infty$. We outline the rest of the proof.\footnote{These claims are nontrivial and are beyond the scope of this paper.}
         \begin{itemize}
             \item First, it can be shown that $\Im F\l(x\r)\to0$ as `$x\to\infty$' in $X$. That is, for every $\epsilon>0$, there is a large enough compact subset $K$ of $X$ such that $\Im F\l(x\r)<\epsilon$ for all $x\in X\comp K$.
                 \vspace{-0.05in}
@@ -14,7 +14,7 @@
         \end{itemize}
         Thus $X\iso\im F=\RS\comp I$ for some $I\subseteq\R$. By simply-connectedness of $X$, we see that $I$ is connected and hence we have three possibilities.
         \begin{itemize}
-            \item If $I=\em$, then $F:X\to\RS$ is a biholomorphism, which reduces to Theorem \ref{4.1:thm:simply-connect_compact_biholomorphic_Riemann_sphere}.
+            \item If $I=\em$, then $F:X\to\RS$ is a biholomorphism, which reduces to Theorem \ref{MS:thm:simply-connect_compact_biholomorphic_Riemann_sphere}.
                 \vspace{-0.05in}
             \item If $I$ is a singleton, then $\RS\comp I\iso\C$, so $X\iso\C$.
                 \vspace{-0.05in}
@@ -42,7 +42,7 @@
         Suppose $X$ is a connected manifold. Then there exists a connected, simply-connected manifold $\tilde{X}$ and a covering map $\pi:\tilde{X}\to X$.
     \end{theorem}
     \begin{example}
-        Recall from Example \ref{2.1:exa:covering_of_torus} that for any lattice $\Gamma\subseteq\C$, the projection $\pi:\C\to\C/\Gamma$ is a covering map. Since $\C$ is simply-connected, we see that $\pi$ is the universal covering of $\C/\Gamma$.\exqed
+        Recall from Example \ref{CS:exa:covering_of_torus} that for any lattice $\Gamma\subseteq\C$, the projection $\pi:\C\to\C/\Gamma$ is a covering map. Since $\C$ is simply-connected, we see that $\pi$ is the universal covering of $\C/\Gamma$.\exqed
     \end{example}
     \begin{remark}
         For any Riemann surface $X$, let\footnote{In fact, every Riemann surface admits a Riemannian metric of constant curvature, either of $1$, $0$, or $-1$. We wish to study the connection between the conformal and metric structures on Riemann surfaces in the future.} $\tilde{X}$ be its simply-connected universal covering. If $\tilde{X}\iso\RS$ (resp. $\C$, $\H$), then $X$ is said to be \textit{elliptic} (resp. \textit{parabolic}, \textit{hyperbolic}).
