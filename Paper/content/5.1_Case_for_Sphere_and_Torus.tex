@@ -1,10 +1,10 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
-    For any genus $g$, we let\side{This defines $\mc{M}_g$ as a set, but it turns out that they can all be equipped with a natural complex structure.} $\mc{M}_g$ denote the \textit{moduli space} of compact Riemann surfaces of genus $g$; that is, the set of all Riemann surfaces of genus $g$ up to biholomorphism. Using the language and machinery developed in Chapters \ref{cpt:Riemann_surfaces}, \ref{cpt:covering_spaces_analytic_continuation}, and \ref{cpt:sheaf_cohomology}, we compute $\mc{M}_0$ and $\mc{M}_1$, which are the moduli spaces of the sphere $S^2$ and the torus $T^2$, respectively.\\\ \\
+    For any genus $g$, we let\footnote{This defines $\mc{M}_g$ as a set, but it turns out that they can all be equipped with a natural complex structure.} $\mc{M}_g$ denote the \textit{moduli space} of compact Riemann surfaces of genus $g$; that is, the set of all Riemann surfaces of genus $g$ up to biholomorphism. Using the language and machinery developed in Chapters \ref{cpt:Riemann_surfaces}, \ref{cpt:covering_spaces_analytic_continuation}, and \ref{cpt:sheaf_cohomology}, we compute $\mc{M}_0$ and $\mc{M}_1$, which are the moduli spaces of the sphere $S^2$ and the torus $T^2$, respectively.\\\ \\
     We conclude with a brief discussion of the \textit{Uniformization Theorem} and the \textit{Classification of Riemann Surfaces}.
     \section{Case for $g=0$ and $g=1$}
     \subsection{Moduli Space of $S^2$}\label{sec:moduli_space_of_sphere}
-    We show that the moduli space of the sphere $S^2$ is a point. That is, there\side{It turns out that this is an easy corollary of the Riemann-Roch Theorem, but its proof is beyond the scope of this paper. Here, we present a more elementary proof.} is a \textit{unique} complex structure on the sphere.
+    We show that the moduli space of the sphere $S^2$ is a point. That is, there\footnote{It turns out that this is an easy corollary of the Riemann-Roch Theorem, but its proof is beyond the scope of this paper. Here, we present a more elementary proof.} is a \textit{unique} complex structure on the sphere.
     \begin{theorem}\label{4.1:thm:simply-connect_compact_biholomorphic_Riemann_sphere}
         Every simply-connected compact Riemann surface $X$ is biholomorphic to the Riemann sphere $\RS$.
     \end{theorem}
@@ -15,7 +15,7 @@
         This is part of the \textit{Uniformization Theorem}, which states that every simply-connected Riemann surface is biholomorphic to either the Riemann sphere $\RS$, the complex plane $\C$, or the upper-half plane $\H$ of $\C$. A brief discussion and proof sketch is given in Section \ref{sec:uniformization}.\exqed
     \end{remark}
     \subsection{Moduli Space of $T^2$}
-    We show that the moduli space of the torus $T^2$ is\side{The complex structure on $\H$ induces a complex structure on the quotient $\H/\!\PSL{2}{\Z}$. This justifies the term `moduli \textit{space}', as opposed to `moduli \textit{set}'.} $\H/\!\PSL{2}{\Z}$ where $\H$ is the upper-half plane of $\C$ and $\PSL{2}{\Z}\coloneqq\SL_2\!\l(\Z\r)\!/\!\l\{\pm I\r\}$ is the \textit{modular group}, which acts on $\H$ via
+    We show that the moduli space of the torus $T^2$ is\footnote{The complex structure on $\H$ induces a complex structure on the quotient $\H/\!\PSL{2}{\Z}$. This justifies the term `moduli \textit{space}', as opposed to `moduli \textit{set}'.} $\H/\!\PSL{2}{\Z}$ where $\H$ is the upper-half plane of $\C$ and $\PSL{2}{\Z}\coloneqq\SL_2\!\l(\Z\r)\!/\!\l\{\pm I\r\}$ is the \textit{modular group}, which acts on $\H$ via
     \begin{equation*}
         \begin{pmatrix}
             a & b \\
@@ -51,7 +51,7 @@
     \end{proof}
     \begin{lemma}
         Any torus $\C/\Gamma$ is biholomorphic to $X_\tau\!\coloneqq\C/\!\l(\Z+\tau\Z\r)$ for some $\tau\in\H$.
-    \end{lemma}\side[-0.15in]{Intuitively, scaling and rotating the lattice, which are biholomorphisms of the plane, should preserve the complex structure on the torus. Thus only one complex parameter is needed to generate the torus, which we choose to be the ratio $\tau\coloneqq\omega_2/\omega_1$.}\vspace{-0.08in}
+    \end{lemma}\footnote{Intuitively, scaling and rotating the lattice, which are biholomorphisms of the plane, should preserve the complex structure on the torus. Thus only one complex parameter is needed to generate the torus, which we choose to be the ratio $\tau\coloneqq\omega_2/\omega_1$.}\vspace{-0.08in}
     \begin{proof}
         Let $\Gamma\coloneqq\Z\omega_1\oplus\Z\omega_2$ and set $\alpha\coloneqq1/\omega_1$ and $\tau\coloneqq\omega_2/\omega_1$. Then $\Im\tau\neq0$, lest $\omega_1,\omega_2$ be linearly dependent over $\R$. Without loss of generality, suppose that $\Im\tau>0$; if not, take $\tau\coloneqq\bar{\omega_2}/\omega_1$. Then, since
         \begin{equation*}
@@ -90,7 +90,7 @@
                 \C/\Gamma \ar[r, "\phi"] & \C/\Gamma'
             \end{tikzcd}           
         \end{equation*}
-        commutes. Fix\side{This proof follows \cite[][Proposition 1.3.2]{diamond}. For an alternative proof, see \cite[][Lemma 2.8]{i&t}.} $\lambda\in\Gamma$ and consider the map $f_\lambda\!\l(z\r)\coloneqq\tilde{\phi}\l(z+\lambda\r)-\tilde{\phi}\l(z\r)$. Then, since $z+\lambda+\Gamma=z+\Gamma$, we see that $\phi\l(z+\lambda+\Gamma\r)=\phi\l(z+\Gamma\r)$ and hence the commutativity of the diagram forces $\tilde{\phi}\l(z+\lambda\r)+\Gamma'=\tilde{\phi}\l(z\r)+\Gamma'$. Thus $f_\lambda\!\l(z\r)\in\Gamma'$ for all $z\in\C$, so, since $f_\lambda$ is a continuous map into a discrete set, it must be constant. Differentiating gives us $f_\lambda'\l(z\r)=\tilde{\phi}'\l(z+\lambda\r)-\tilde{\phi}'\l(z\r)=0$, so $\tilde{\phi}'\l(z+\lambda\r)=\tilde{\phi}'\l(z\r)$ for all $z\in\C$. But $\lambda\in\Gamma$ is arbitrary, so $\tilde{\phi}'$ is $\Gamma$-periodic. Thus $\tilde{\phi}'$ is a bounded entire function and hence is constant by Liouville's Theorem. This shows that $\tilde{\phi}\l(z\r)=\alpha z+\beta$ for some $\alpha,\beta\in\C$ with $\alpha\neq0$. Without loss of generality, assume that $\beta=0$. We now claim that $\alpha\Gamma=\Gamma'$.
+        commutes. Fix\footnote{This proof follows \cite[][Proposition 1.3.2]{diamond}. For an alternative proof, see \cite[][Lemma 2.8]{i&t}.} $\lambda\in\Gamma$ and consider the map $f_\lambda\!\l(z\r)\coloneqq\tilde{\phi}\l(z+\lambda\r)-\tilde{\phi}\l(z\r)$. Then, since $z+\lambda+\Gamma=z+\Gamma$, we see that $\phi\l(z+\lambda+\Gamma\r)=\phi\l(z+\Gamma\r)$ and hence the commutativity of the diagram forces $\tilde{\phi}\l(z+\lambda\r)+\Gamma'=\tilde{\phi}\l(z\r)+\Gamma'$. Thus $f_\lambda\!\l(z\r)\in\Gamma'$ for all $z\in\C$, so, since $f_\lambda$ is a continuous map into a discrete set, it must be constant. Differentiating gives us $f_\lambda'\l(z\r)=\tilde{\phi}'\l(z+\lambda\r)-\tilde{\phi}'\l(z\r)=0$, so $\tilde{\phi}'\l(z+\lambda\r)=\tilde{\phi}'\l(z\r)$ for all $z\in\C$. But $\lambda\in\Gamma$ is arbitrary, so $\tilde{\phi}'$ is $\Gamma$-periodic. Thus $\tilde{\phi}'$ is a bounded entire function and hence is constant by Liouville's Theorem. This shows that $\tilde{\phi}\l(z\r)=\alpha z+\beta$ for some $\alpha,\beta\in\C$ with $\alpha\neq0$. Without loss of generality, assume that $\beta=0$. We now claim that $\alpha\Gamma=\Gamma'$.
         \begin{itemize}
             \item Indeed, for all $z\in\alpha\Gamma$, we have $z/\alpha\in\Gamma$ and so $z/\alpha+\Gamma=0+\Gamma$. Applying $\phi$ to both sides and comparing gives
                 \begin{equation*}
@@ -119,7 +119,7 @@
         \begin{equation*}
             \tau'=-\frac{b\alpha+a\alpha\tau}{ad-bc}=\l(\frac{-b}{ad-bc}\r)\alpha+\l(\frac{-a}{ad-bc}\r)\alpha\tau
         \end{equation*}
-        But $\tau'\in\alpha\Gamma$, which forces $ad-bc=\pm1$. A little algebra now shows that\side{Let $\tau\coloneqq e+fi$ and $\tau'\coloneqq g+hi$ and expand.}
+        But $\tau'\in\alpha\Gamma$, which forces $ad-bc=\pm1$. A little algebra now shows that\footnote{Let $\tau\coloneqq e+fi$ and $\tau'\coloneqq g+hi$ and expand.}
         \begin{equation*}
             \Im\tau'=\frac{ad-bc}{\l|c\tau+d\r|^2}\l(\Im\tau\r)>0,
         \end{equation*}

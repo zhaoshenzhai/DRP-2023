@@ -8,7 +8,7 @@
     \begin{definition}
         Let $X$ and $Y$ be Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. A point $p\in X$ is said to be a \uldef{ramification point of $F$} if $\l.F\r|_U$ is not injective for any neighborhood $U$ of $p$, in which case $F\l(p\r)\in Y$ is said to be a \uldef{critical value of $F$}. If $F$ has no ramification points, then $F$ is said to be an \uldef{unbranched holomorphic map}.
     \end{definition}
-    \side[-0.56in]{It is immediate that $F$ is unbranched iff it is a local homeomorphism. Indeed, if $F$ is unbranched, then for every $p\in X$ there exists a neighborhood $U$ of $p$ such that $\l.F\r|_U$ is injective. By the Open Mapping Theorem, $F$ is open and hence $\l.F\r|_U$ maps $U$ homeomorphically to the open set $F\l(U\r)$. Conversely, if $F$ is a local homeomorphism, then for every $p\in X$ there exists a neighborhood $U$ of $p$ that is mapped homeomorphically onto an open set in $Y$. In particular, $\l.F\r|_U$ is injective, so $F$ is unbranched at $p$.}
+    \footnote{It is immediate that $F$ is unbranched iff it is a local homeomorphism. Indeed, if $F$ is unbranched, then for every $p\in X$ there exists a neighborhood $U$ of $p$ such that $\l.F\r|_U$ is injective. By the Open Mapping Theorem, $F$ is open and hence $\l.F\r|_U$ maps $U$ homeomorphically to the open set $F\l(U\r)$. Conversely, if $F$ is a local homeomorphism, then for every $p\in X$ there exists a neighborhood $U$ of $p$ that is mapped homeomorphically onto an open set in $Y$. In particular, $\l.F\r|_U$ is injective, so $F$ is unbranched at $p$.}
     \begin{proposition}\label{2.1:prp:ramification_iff_mult_2}
         Let $X$ and $Y$ be Riemann surfaces and fix $p\in X$. A non-constant holomorphic map $F:X\to Y$ has a ramification point at $p$ iff $\mult_p\!\l(F\r)\geq2$.
     \end{proposition}
@@ -21,7 +21,7 @@
     \begin{proposition}
         Let $X$, $Y$ and $Z$ be Riemann surfaces and let $F:X\to Y$ be a holomorphic map. Then any lifting $\tilde{F}:X\to Z$ of $F$ w.r.t. an unbranched holomorphic map $\pi:Z\to Y$ is a holomorphic map.
     \end{proposition}
-    \side[-0.44in]{Recall that a continuous map $\tilde{F}$ is a \ul{lifting of $F$} \ul{w.r.t. $P$} if the diagram
+    \footnote{Recall that a continuous map $\tilde{F}$ is a \ul{lifting of $F$} \ul{w.r.t. $P$} if the diagram
         \begin{equation*}
             \begin{tikzcd}[ampersand replacement=\&]
                 \& Z \ar[d, "\pi"] \\
@@ -38,7 +38,7 @@
         so $\tilde{F}|_U=\cchi\circ\l.F\r|_U$. Then $p\in U$ and $\tilde{F}|_U$ is a composition of two holomorphic maps, so $\tilde{F}$ is holomorphic at $p$.\qed
     \end{proof}
     \subsection{Proper and Covering Maps}
-    In this section, we gather some basic results on the theory of covering maps from topology. Throughout this section and the next, $E$ and $X$ are locally-compact topological spaces.\side[0.28in]{The assumption that $E$ and $X$ are locally compact ensures that all proper maps are closed; that is, then send closed sets to closed sets.}
+    In this section, we gather some basic results on the theory of covering maps from topology. Throughout this section and the next, $E$ and $X$ are locally-compact topological spaces.\footnote{The assumption that $E$ and $X$ are locally compact ensures that all proper maps are closed; that is, then send closed sets to closed sets.}
     \begin{definition}
         A map $\pi:E\to X$ is said to be \uldef{proper} if the preimage of every compact set is compact.
     \end{definition}
@@ -52,7 +52,7 @@
         A map $\pi:E\to X$ is said to be a \uldef{covering map} if every point $p\in X$ has a neighborhood $U$ such that $\pi^{-1}\l(U\r)=\bigcup_{j\in J}V_j$ where $V_j$ are disjoint open sets in $E$, each homeomorphic to $U$ via $\l.\pi\r|_{V_j}$.
     \end{definition}
     \begin{example}
-        Let $m\geq2$ be a natural number and consider the power map $f:\C^\ast\to\C^\ast$ mapping $z\mapsto z^m$. We claim that $f$ is a covering map, so take $b\in\C^\ast$ and let $a\in\C^\ast$ be any one of its $m^\textrm{th}$ roots. Since $f$ is a unbranched, there exist neighborhoods $V_0$ of $a$ and $U$ of $b$ such that $\l.f\r|_{V_0}:V_0\to U$ is a homeomorphism. It is clear then that\side{Indeed, for all $c\in f^{-1}\l(U\r)$, $f\l(c\r)\in U$ and so there exists some $a'\in V_0$ such that $f\l(a'\r)=f\l(c\r)$. Then $c=\omega^ja'$ for some $0\leq j\leq m-1$, so $c\in\omega^jV_0$. Conversely, if $c\in\omega^jV_0$ for some $0\leq j\leq m-1$, then $c=\omega^ja'$ for some $a'\in V_0$ and hence $f\l(c\r)=f\l(\omega^ja'\r)=f\l(a'\r)\in U$.}
+        Let $m\geq2$ be a natural number and consider the power map $f:\C^\ast\to\C^\ast$ mapping $z\mapsto z^m$. We claim that $f$ is a covering map, so take $b\in\C^\ast$ and let $a\in\C^\ast$ be any one of its $m^\textrm{th}$ roots. Since $f$ is a unbranched, there exist neighborhoods $V_0$ of $a$ and $U$ of $b$ such that $\l.f\r|_{V_0}:V_0\to U$ is a homeomorphism. It is clear then that\footnote{Indeed, for all $c\in f^{-1}\l(U\r)$, $f\l(c\r)\in U$ and so there exists some $a'\in V_0$ such that $f\l(a'\r)=f\l(c\r)$. Then $c=\omega^ja'$ for some $0\leq j\leq m-1$, so $c\in\omega^jV_0$. Conversely, if $c\in\omega^jV_0$ for some $0\leq j\leq m-1$, then $c=\omega^ja'$ for some $a'\in V_0$ and hence $f\l(c\r)=f\l(\omega^ja'\r)=f\l(a'\r)\in U$.}
         \vspace{-0.05in}
         \begin{equation*}
             f^{-1}\l(U\r)=\bigcup_{j=0}^{m-1}\omega^jV_0,
@@ -60,7 +60,7 @@
         where $\omega$ is an $m^\textrm{th}$ root of unity, and since $f^{-1}\l(b\r)$ is discrete, the sets $V_j\coloneqq\omega^jV_0$ can be made small enough so that they are pairwise disjoint. Then each $\l.f\r|_{V_j}:V_j\to U$ is a homeomorphism, as desired.\exqed
     \end{example}
     \begin{example}
-        For any lattice $\Gamma\subseteq\C$, the projection $\pi:\C\to\C/\Gamma$ is a covering map. Indeed, take $z+\Gamma\in\C/\Gamma$ and let $w\in\C$ be such that $\pi\l(w\r)=z+\Gamma$. Since $\pi$ is unbranched, there exist neighborhoods $V$ of $w$ and $U$ of $z+\Gamma$ such that $\l.\pi\r|_{V}:V\to U$ is a homeomorphism. Then clearly\side{Similarly, for all $z\in\pi^{-1}\!\l(U\r)$, $\pi\l(z\r)\in U$ and so there exists some $w'\in V$ such that $\pi\l(z\r)=\pi\l(w'\r)$. Then $z+\Gamma=w'+\Gamma$, so $z=w'+\lambda$ for some $\lambda\in\Gamma$. Conversely, if $z\in\lambda+V$ for some $\lambda\in\Gamma$, then $z=w'+\lambda$ for some $w'\in V$ and hence $\pi\l(z\r)=\pi\l(\omega'+\lambda\r)=\pi\l(w\r)\in U$.}
+        For any lattice $\Gamma\subseteq\C$, the projection $\pi:\C\to\C/\Gamma$ is a covering map. Indeed, take $z+\Gamma\in\C/\Gamma$ and let $w\in\C$ be such that $\pi\l(w\r)=z+\Gamma$. Since $\pi$ is unbranched, there exist neighborhoods $V$ of $w$ and $U$ of $z+\Gamma$ such that $\l.\pi\r|_{V}:V\to U$ is a homeomorphism. Then clearly\footnote{Similarly, for all $z\in\pi^{-1}\!\l(U\r)$, $\pi\l(z\r)\in U$ and so there exists some $w'\in V$ such that $\pi\l(z\r)=\pi\l(w'\r)$. Then $z+\Gamma=w'+\Gamma$, so $z=w'+\lambda$ for some $\lambda\in\Gamma$. Conversely, if $z\in\lambda+V$ for some $\lambda\in\Gamma$, then $z=w'+\lambda$ for some $w'\in V$ and hence $\pi\l(z\r)=\pi\l(\omega'+\lambda\r)=\pi\l(w\r)\in U$.}
         \begin{equation*}
             \pi^{-1}\l(U\r)=\bigcup_{\lambda\in\Gamma}\l(\lambda+V\r)
         \end{equation*}
@@ -85,7 +85,7 @@
         Every covering map $\pi:E\to X$ has the curve lifting property.
     \end{proposition}
     \begin{proof}
-        Let\side{The idea of this proof is to split $\alpha\l(\l[0,1\r]\r)$ into (overlapping) paths $\alpha\l(\l[t_{k-1},t_k\r]\r)$ and construct the lifting $\tilde{\alpha}$ inductively: Given a lifting $\tilde{\alpha}$ defined up to some boundary $t_{k-1}$, we define it on the next interval $\l[t_{k-1},t_k\r]$ by lifting $\alpha$ (restricted to $\l[t_{k-1},t_k\r]$) via $\cchi$. This gives us a `chain' of paths, which when joined together gives us a global lifting of $\alpha$.\\\ \\
+        Let\footnote{The idea of this proof is to split $\alpha\l(\l[0,1\r]\r)$ into (overlapping) paths $\alpha\l(\l[t_{k-1},t_k\r]\r)$ and construct the lifting $\tilde{\alpha}$ inductively: Given a lifting $\tilde{\alpha}$ defined up to some boundary $t_{k-1}$, we define it on the next interval $\l[t_{k-1},t_k\r]$ by lifting $\alpha$ (restricted to $\l[t_{k-1},t_k\r]$) via $\cchi$. This gives us a `chain' of paths, which when joined together gives us a global lifting of $\alpha$.\\\ \\
         The base case of this induction simply sets $\tilde{\alpha}\l(0\r)\coloneqq\zeta_0$ in order to start-off this process.} $\alpha:\l[0,1\r]\to X$ be a curve and let $\zeta_0\in E$ be a point such that $\pi\l(\zeta_0\r)=\alpha\l(0\r)$. Consider any open cover $\l\{U_i\r\}$ of $\alpha\l(\l[0,1\r]\r)$ where each $U_i$ is a connected open set in $\alpha\l(\l[0,1\r]\r)$. Thus $\l\{\alpha^{-1}\!\l(U_i\r)\r\}$ is an open cover of $\l[0,1\r]$, so it admits a finite subcover $\l\{\l(t_i,t_{i+1}\r)\r\}_{i=1}^n\coloneqq\l\{\alpha^{-1}\l(U_i\r)\r\}_{i=1}^n$. Reindexing if necessary, we obtain a partition
         \begin{equation*}
             0\eqqcolon t_0<t_1<\cdots<t_n\coloneqq1
@@ -94,7 +94,7 @@
         \begin{itemize}
             \item The base case for when $k=0$ is trivial by defining $\tilde{\alpha}\l(0\r)\coloneqq\zeta_0$.
         \end{itemize}
-        Suppose now that the lifting $\l.\tilde{\alpha}\r|_{\l[0,t_{k-1}\r]}:\l[0,t_{k-1}\r]\to E$ has been constructed for some $k\geq1$. Then\side{
+        Suppose now that the lifting $\l.\tilde{\alpha}\r|_{\l[0,t_{k-1}\r]}:\l[0,t_{k-1}\r]\to E$ has been constructed for some $k\geq1$. Then\footnote{
             \begin{equation*}
                 \begin{tikzcd}[ampersand replacement=\&]
                     \& E \ar[d, "\pi"] \\
@@ -105,7 +105,7 @@
         \begin{equation*}
             \l.\tilde{\alpha}\r|_{\l[t_{k-1},t_k\r]}\coloneqq\cchi\circ\l.\alpha\r|_{\l[t_{k-1},t_k\r]}.
         \end{equation*}
-        Clearly\side{$\tilde{\alpha}\l(t_{k-1}\r)=\cchi\l(\alpha\l(t_{k-1}\r)\r)=\cchi\l(\pi\l(\tilde{\alpha}\l(t_{k-1}\r)\r)\r)$ on the appropriate restrictions.}, $\tilde{\alpha}\!\l(t_{k-1}\r)$ agrees with our existing lifting, which makes the piecewise-defined map $\l.\alpha\r|_{\l[0,t_k\r]}$ a lifting of $\l.\alpha\r|_{\l[0,t_k\r]}$ w.r.t. $\pi$.\qed
+        Clearly\footnote{$\tilde{\alpha}\l(t_{k-1}\r)=\cchi\l(\alpha\l(t_{k-1}\r)\r)=\cchi\l(\pi\l(\tilde{\alpha}\l(t_{k-1}\r)\r)\r)$ on the appropriate restrictions.}, $\tilde{\alpha}\!\l(t_{k-1}\r)$ agrees with our existing lifting, which makes the piecewise-defined map $\l.\alpha\r|_{\l[0,t_k\r]}$ a lifting of $\l.\alpha\r|_{\l[0,t_k\r]}$ w.r.t. $\pi$.\qed
     \end{proof}
     \begin{corollary}\label{2.1:cor:fiber_cardinalities_coincide}
         Suppose that $X$ is path-connected and let $\pi:E\to X$ be a covering map. Then, for any $p_1,p_2\in X$, the sets $\pi^{-1}\!\l(p_1\r)$ and $\pi^{-1}\!\l(p_2\r)$ are equinumerous.
@@ -130,13 +130,13 @@
             \deg F=\sum_{p\in F^{-1}\!\l(q\r)}\mult_p\!\l(F\r).
         \end{equation*}
     \end{theorem}
-    \side[-0.73in]{Instead of simply counting the elements in the fiber, we need count them \textit{with multiplicities}.}
+    \footnote{Instead of simply counting the elements in the fiber, we need count them \textit{with multiplicities}.}
     \vspace{-0.1in}
     \begin{proof}
         If $q$ is not a critical point, then Proposition \ref{2.1:prp:ramification_iff_mult_2} shows that $\mult_p\!\l(F\r)=1$ for any $p\in F^{-1}\!\l(p\r)$. Then $\deg F=\l|F^{-1}\!\l(q\r)\r|$, which agrees with our definition.\\\ \\
-        Otherwise, $q$ is a critical point of $F$\side{Although $q$ is a critical point of $F$, every point in a small enough neighborhood around it is not a critical point.}. Since $F^{-1}\!\l(q\r)$ is compact, we see that $F^{-1}\!\l(q\r)=\l\{p_1,\dots,p_n\r\}$ for some $p_i\in X$. Fix $1\leq j\leq n$ and set $m_j\coloneqq\mult_{p_j}\!\l(F\r)$. We claim that there exist neighborhoods $U_j$ of $p_j$ and $V_j$ of $q$ such that $\l|F^{-1}\!\l(r\r)\cap U_j\r|=m_j$ for all $r\in V_j\comp\l\{q\r\}$.
+        Otherwise, $q$ is a critical point of $F$\footnote{Although $q$ is a critical point of $F$, every point in a small enough neighborhood around it is not a critical point.}. Since $F^{-1}\!\l(q\r)$ is compact, we see that $F^{-1}\!\l(q\r)=\l\{p_1,\dots,p_n\r\}$ for some $p_i\in X$. Fix $1\leq j\leq n$ and set $m_j\coloneqq\mult_{p_j}\!\l(F\r)$. We claim that there exist neighborhoods $U_j$ of $p_j$ and $V_j$ of $q$ such that $\l|F^{-1}\!\l(r\r)\cap U_j\r|=m_j$ for all $r\in V_j\comp\l\{q\r\}$.
         \begin{itemize}
-            \item By Theorem \ref{1.2:thm:local_normal_form}, there exist charts $\tpl{U_j,\phi_j}$ of $X$ centered at $p_j$ and $\tpl{V_j,\psi_j}$ of $Y$ centered $q$ such that $F$ acts as the power function $f\l(z\r)\coloneqq z^{m_j}$ on $\phi_j\!\l(U_j\r)$. Take\side{Note that $V_j$ can be taken small enough so that $r$ is \textit{not} a critical value of $F$.} $r\in V_j\comp\l\{q\r\}$ and set $w\coloneqq\psi_j\!\l(r\r)\neq0$. Then $\l|f^{-1}\!\l(w\r)\r|=m_j$, so we have
+            \item By Theorem \ref{1.2:thm:local_normal_form}, there exist charts $\tpl{U_j,\phi_j}$ of $X$ centered at $p_j$ and $\tpl{V_j,\psi_j}$ of $Y$ centered $q$ such that $F$ acts as the power function $f\l(z\r)\coloneqq z^{m_j}$ on $\phi_j\!\l(U_j\r)$. Take\footnote{Note that $V_j$ can be taken small enough so that $r$ is \textit{not} a critical value of $F$.} $r\in V_j\comp\l\{q\r\}$ and set $w\coloneqq\psi_j\!\l(r\r)\neq0$. Then $\l|f^{-1}\!\l(w\r)\r|=m_j$, so we have
                 \begin{equation*}
                     \l|F^{-1}\!\l(r\r)\cap U_j\r|=\l|\phi_j\l(F^{-1}\l(r\r)\r)\r|=\l|\phi_j\l(F^{-1}\!\l(\psi_j^{-1}\!\l(w\r)\r)\r)\r|=\l|f^{-1}\!\l(w\r)\r|=m_j.
                 \end{equation*}

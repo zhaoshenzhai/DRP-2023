@@ -10,7 +10,7 @@
         \end{equation*}
     \end{definition}
     \begin{remark}
-        For $n=0$, the group $\check{C}^0\!\l(\mf{A},\ms{F}\r)$ contains all tuples $\tpl{f_i}$ where each $f_i$ is defined on $U_i$. For $n=1$, the group $\check{C}^1\!\l(\mf{A},\ms{F}\r)$ contains all tuples $\tpl{f_{ij}}$ where each $f_{ij}$ is defined on the pairwise intersection $U_i\cap U_j$. The following discussion formalizes our rough intuition of `chaining' open sets whose `boundary'\side{Here, `boundary' is not the topological boundary.} are their pairwise intersections.\exqed
+        For $n=0$, the group $\check{C}^0\!\l(\mf{A},\ms{F}\r)$ contains all tuples $\tpl{f_i}$ where each $f_i$ is defined on $U_i$. For $n=1$, the group $\check{C}^1\!\l(\mf{A},\ms{F}\r)$ contains all tuples $\tpl{f_{ij}}$ where each $f_{ij}$ is defined on the pairwise intersection $U_i\cap U_j$. The following discussion formalizes our rough intuition of `chaining' open sets whose `boundary'\footnote{Here, `boundary' is not the topological boundary.} are their pairwise intersections.\exqed
     \end{remark}
     \begin{definition}
         For all $n\in\N$, the \uldef{$n^\textrm{th}$ coboundary operator w.r.t. $\mf{A}$} is the map
@@ -27,21 +27,21 @@
         \end{equation*}
         is called the \uldef{$n^\textrm{th}$ cohomology group of $\ms{F}$ w.r.t. $\mf{A}$}.
     \end{definition}
-    \side[-0.9in]{The `hat' notation represents a deletion. Also, $\rho$ is the appropriate restriction mapping of $\ms{F}$.\\\ \\
+    \footnote{The `hat' notation represents a deletion. Also, $\rho$ is the appropriate restriction mapping of $\ms{F}$.\\\ \\
     Note that $\check{B}^0\!\l(\mf{A},\ms{F}\r)=0$ since $\check{C}^{-1}\!\l(\mf{A},\ms{F}\r)=0$.}
     \vspace{-0.05in}
     \begin{remark}
         A calculation shows that $\check{B}^n\!\l(\mf{A},\ms{F}\r)\subseteq\check{Z}^n\!\l(\mf{A},\ms{F}\r)$, so the quotient makes sense. In particular, $\delta^{n+1}\circ\delta^n=0$.\exqed
     \end{remark}
     \begin{remark}
-        For $n=0$, we have $\delta^0\!\l(f_i\r)=\tpl{f_j-f_i}$ for all $\tpl{f_i}\in\check{C}^0\!\l(\mf{A},\ms{F}\r)$. This gives us a glueing condition, that if\side{Indeed, if $\tpl{f_i}\in\check{C}^0\!\l(\mf{A},\ms{F}\r)$, then $\rho\l(f_i\r)=\rho\l(f_j\r)$ for all $i,j$. Henceforth, we suppress the restriction maps $\rho$ for ease of notation, but will always mention on which domain the relation is valid on.} $\tpl{f_i}\in\check{Z}^0\!\l(\mf{A},\ms{F}\r)$, then the sheaf axioms furnish a unique $f\in\ms{F}\l(X\r)$ such that $\rho^X_{U_i}\!\l(f\r)=f_i$ for all $i$. Thus
+        For $n=0$, we have $\delta^0\!\l(f_i\r)=\tpl{f_j-f_i}$ for all $\tpl{f_i}\in\check{C}^0\!\l(\mf{A},\ms{F}\r)$. This gives us a glueing condition, that if\footnote{Indeed, if $\tpl{f_i}\in\check{C}^0\!\l(\mf{A},\ms{F}\r)$, then $\rho\l(f_i\r)=\rho\l(f_j\r)$ for all $i,j$. Henceforth, we suppress the restriction maps $\rho$ for ease of notation, but will always mention on which domain the relation is valid on.} $\tpl{f_i}\in\check{Z}^0\!\l(\mf{A},\ms{F}\r)$, then the sheaf axioms furnish a unique $f\in\ms{F}\l(X\r)$ such that $\rho^X_{U_i}\!\l(f\r)=f_i$ for all $i$. Thus
         \begin{equation*}
             \check{H}^0\!\l(\mf{A},\ms{F}\r)=\check{Z}^0\!\l(\mf{A},\ms{F}\r)\iso\ms{F}\l(X\r),
         \end{equation*}
         so $\check{H}^0\!\l(\mf{A},\ms{F}\r)$ is independent of the covering $\mf{A}$ and we may define the \ul{$0^\textrm{th}$ cohomology group of $\ms{F}$} as $\check{H}^0\!\l(X,\ms{F}\r)\coloneqq\ms{F}\l(X\r)$.\exqed
     \end{remark}
     \begin{remark}
-        For $n=1$\side{The construction of the $1^\textrm{st}$ cohomology group $\check{H}^1\!\l(X,\ms{F}\r)$ is more involved. We will not need the general construction for $\check{H}^n\!\l(X,\ms{F}\r)$, but they can be done similarly as in the $n=1$ case. With some machinery, we can also define the $n^\textrm{th}$ \textit{De Rham} and \textit{Dolbeault} cohomology groups, which relate to $\check{H}^n\!\l(X,\ms{F}\r)$. See \cite[][Section IX.4]{miranda}.}, we have $\delta^1\!\l(f_{ij}\r)=\tpl{f_{jk}-f_{ik}+f_{ij}}$ for all $\tpl{f_{ij}}\in\check{C}^1\!\l(\mf{A},\ms{F}\r)$. Elements $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ satisfy the \textit{cocycle condition}, which states $f_{ik}=f_{ij}+f_{jk}$ on $U_i\cap U_j\cap U_k$ for all $i,j,k$. In particular, it implies that $f_{ii}=0$ for all $i$ and $f_{ij}=-f_{ji}$ on $U_i\cap U_j$ for all $i,j$. Note that every splitting cocycle is a cocycle, but not every cocycle splits. In other words, $\check{H}^1\!\l(\mf{A},\ms{F}\r)$ measures how $1$-cocycles fail to split. The next section defines the $1^\textrm{st}$ cohomology group of $\ms{F}$, independent of the covering $\mf{A}$.\exqed
+        For $n=1$\footnote{The construction of the $1^\textrm{st}$ cohomology group $\check{H}^1\!\l(X,\ms{F}\r)$ is more involved. We will not need the general construction for $\check{H}^n\!\l(X,\ms{F}\r)$, but they can be done similarly as in the $n=1$ case. With some machinery, we can also define the $n^\textrm{th}$ \textit{De Rham} and \textit{Dolbeault} cohomology groups, which relate to $\check{H}^n\!\l(X,\ms{F}\r)$. See \cite[][Section IX.4]{miranda}.}, we have $\delta^1\!\l(f_{ij}\r)=\tpl{f_{jk}-f_{ik}+f_{ij}}$ for all $\tpl{f_{ij}}\in\check{C}^1\!\l(\mf{A},\ms{F}\r)$. Elements $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ satisfy the \textit{cocycle condition}, which states $f_{ik}=f_{ij}+f_{jk}$ on $U_i\cap U_j\cap U_k$ for all $i,j,k$. In particular, it implies that $f_{ii}=0$ for all $i$ and $f_{ij}=-f_{ji}$ on $U_i\cap U_j$ for all $i,j$. Note that every splitting cocycle is a cocycle, but not every cocycle splits. In other words, $\check{H}^1\!\l(\mf{A},\ms{F}\r)$ measures how $1$-cocycles fail to split. The next section defines the $1^\textrm{st}$ cohomology group of $\ms{F}$, independent of the covering $\mf{A}$.\exqed
     \end{remark}
     \subsection{Refinements and $\check{H}^1\!\l(X,\ms{F}\r)$}
     In this section, we specialize to when $n=1$.
@@ -85,7 +85,7 @@
         on $U_i\cap U_j\cap V_k$. Note that both $f_{ij}$ and $h_i-h_j$ are defined on $U_i\cap U_j$, and since they coincide on the restriction to $V_k$, uniqueness of the glueing gives us $f_{ij}=h_i-h_j$ on $U_i\cap U_j$. Thus $\tpl{f_{ij}}=\delta^0\!\l(h_i\r)$, so $\tpl{f_{ij}}$ splits.\qed
     \end{proof}
     \begin{remark}
-        If $\mf{C}\preceq\mf{B}\preceq\mf{A}$ are open coverings of $X$, we have that $\check{H}^\mf{B}_\mf{C}\circ\check{H}^\mf{A}_\mf{B}=\check{H}^\mf{A}_\mf{C}$. This\side{Both constructions are special cases of the so-called \textit{direct limit}; see \cite[][Chapter III]{maclane}.} allows us to give a construction of $\check{H}^1\!\l(X,\ms{F}\r)$ similar to that of Definition \ref{2.2:def:stalk}.\exqed
+        If $\mf{C}\preceq\mf{B}\preceq\mf{A}$ are open coverings of $X$, we have that $\check{H}^\mf{B}_\mf{C}\circ\check{H}^\mf{A}_\mf{B}=\check{H}^\mf{A}_\mf{C}$. This\footnote{Both constructions are special cases of the so-called \textit{direct limit}; see \cite[][Chapter III]{maclane}.} allows us to give a construction of $\check{H}^1\!\l(X,\ms{F}\r)$ similar to that of Definition \ref{2.2:def:stalk}.\exqed
     \end{remark}
     \begin{definition}
         The \uldef{$1^\textrm{st}$ cohomology group of $\ms{F}$} is the Abelian group
@@ -94,13 +94,13 @@
         \end{equation*}
         where $\sim$ is the equivalence relation on the disjoint union, defined, for all $\xi\in\check{H}^1\!\l(\mf{A},\ms{F}\r)$ and $\xi'\in\check{H}^1\!\l(\mf{A}',\ms{F}\r)$, by $\xi\sim\xi'$ iff there exists a refinement $\mf{B}\preceq\mf{A},\mf{A}'$ such that $\check{H}^\mf{A}_\mf{B}\!\l(\xi\r)=\check{H}^{\mf{A}'}_\mf{B}\!\!\l(\xi'\r)$.
     \end{definition}
-    \side[-1.08in]{Note that $\check{H}^1\!\l(X,\ms{F}\r)$ vanishes iff $\check{H}^1\!\l(\mf{A},\ms{F}\r)=0$ for all open coverings $\mf{A}$ of $X$. Indeed, the converse direction is trivial. For the forward, let $\mf{A}$ be an open covering of $X$. By Proposition \ref{3.2:prp:lifted_refinement_independent_of_refining_map}, the canonical maps $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(\mf{B},\ms{F}\r)$ are injective for all open coverings $\mf{B}\preceq\mf{A}$. Descending into the quotient, the induced map $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(X,\ms{F}\r)$ is also injective, from which the result follows.}
+    \footnote{Note that $\check{H}^1\!\l(X,\ms{F}\r)$ vanishes iff $\check{H}^1\!\l(\mf{A},\ms{F}\r)=0$ for all open coverings $\mf{A}$ of $X$. Indeed, the converse direction is trivial. For the forward, let $\mf{A}$ be an open covering of $X$. By Proposition \ref{3.2:prp:lifted_refinement_independent_of_refining_map}, the canonical maps $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(\mf{B},\ms{F}\r)$ are injective for all open coverings $\mf{B}\preceq\mf{A}$. Descending into the quotient, the induced map $\check{H}^1\!\l(\mf{A},\ms{F}\r)\to\check{H}^1\!\l(X,\ms{F}\r)$ is also injective, from which the result follows.}
     \vspace{-0.05in}
     \begin{proposition}\label{prp:3.2:vanishing_of_sheaf_differentiable}
         Let $X$ be a Riemann surface and consider the sheaf of differentiable functions $\DIFF$ on $X$. Then $\check{H}^1\!\l(X,\DIFF\r)=0$.
     \end{proposition}
     \begin{proof}
-        Let $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ be an open covering of $X$ and let $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\DIFF\r)$ be a cocycle; it suffices to show that $\tpl{f_{ij}}$ splits, for then $\check{H}^1\!\l(\mf{A},\DIFF\r)=0$ and we are done by the remark above. To do so, we use the fact that there exists\side{For a proof, see \cite[][Theorem 2.23]{lee}. Note that the functions $\psi_i$ are \textit{not necessarily} holomorphic.} a partition of unity subordinate to $\mf{A}$; that is, a family $\l\{\psi_i\r\}_{i\in I}$ of differentiable functions such that:
+        Let $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ be an open covering of $X$ and let $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\DIFF\r)$ be a cocycle; it suffices to show that $\tpl{f_{ij}}$ splits, for then $\check{H}^1\!\l(\mf{A},\DIFF\r)=0$ and we are done by the remark above. To do so, we use the fact that there exists\footnote{For a proof, see \cite[][Theorem 2.23]{lee}. Note that the functions $\psi_i$ are \textit{not necessarily} holomorphic.} a partition of unity subordinate to $\mf{A}$; that is, a family $\l\{\psi_i\r\}_{i\in I}$ of differentiable functions such that:
         \begin{itemize}
             \item $\Supp\l(\psi_i\r)\coloneqq\bar{\l\{p\in X\mid\psi\l(p\r)\neq0\r\}}\subseteq U_i$ for every $i\in I$.
                 \vspace{-0.05in}
@@ -126,7 +126,7 @@
         \begin{equation*}
             \tpl{F_{r\l(k\r),r\l(l\r)}}-\tpl{f_{kl}}\in\check{B}^1\!\l(\mf{B},\ms{F}\r).
         \end{equation*}
-        For each $i\in I$, consider the open cover $U_i\cap\mf{B}\coloneqq\l\{U_i\cap V_k\r\}_{k\in K}$ of $U_i$. Since $\check{H}^1\!\l(U_i,\ms{F}\r)=0$, we see that $\check{H}^1\!\l(U_i\cap\mf{B},\ms{F}\r)=0$. Restricting to $U_i$, we see that $\tpl{f_{kl}}\in\check{Z}^1\!\l(U_i\cap\mf{B},\ms{F}\r)$ and hence there exist $g_{ik}\in\ms{F}\l(U_i\cap V_k\r)$ such that $f_{kl}=g_{ik}-g_{il}$ on $U_i\cap V_k\cap V_l$ for all $i\in I$ and $k,l\in K$. Using this result on two fixed $i,j\in I$ and equating, we see that $g_{jk}-g_{ik}=g_{jl}-g_{il}$ on $U_i\cap U_j\cap V_k\cap V_l$. This glues to an element $F_{ij}\in\ms{F}\l(U_i\cap U_j\r)$ such that $F_{ij}=g_{jk}-g_{ik}$ on $U_i\cap U_j\cap V_k$ for all $k\in K$, and a computation shows that $\tpl{F_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$. Observe then that\side[0.25in]{Here, we instantiated the relation $f_{kl}=g_{ik}-g_{il}$ with $i\coloneqq r\l(l\r)$.}
+        For each $i\in I$, consider the open cover $U_i\cap\mf{B}\coloneqq\l\{U_i\cap V_k\r\}_{k\in K}$ of $U_i$. Since $\check{H}^1\!\l(U_i,\ms{F}\r)=0$, we see that $\check{H}^1\!\l(U_i\cap\mf{B},\ms{F}\r)=0$. Restricting to $U_i$, we see that $\tpl{f_{kl}}\in\check{Z}^1\!\l(U_i\cap\mf{B},\ms{F}\r)$ and hence there exist $g_{ik}\in\ms{F}\l(U_i\cap V_k\r)$ such that $f_{kl}=g_{ik}-g_{il}$ on $U_i\cap V_k\cap V_l$ for all $i\in I$ and $k,l\in K$. Using this result on two fixed $i,j\in I$ and equating, we see that $g_{jk}-g_{ik}=g_{jl}-g_{il}$ on $U_i\cap U_j\cap V_k\cap V_l$. This glues to an element $F_{ij}\in\ms{F}\l(U_i\cap U_j\r)$ such that $F_{ij}=g_{jk}-g_{ik}$ on $U_i\cap U_j\cap V_k$ for all $k\in K$, and a computation shows that $\tpl{F_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$. Observe then that\footnote{Here, we instantiated the relation $f_{kl}=g_{ik}-g_{il}$ with $i\coloneqq r\l(l\r)$.}
         \begin{equation*}
             F_{r\l(k\r),r\l(l\r)}-f_{kl}=\l(g_{r\l(l\r),k}-g_{r\l(k\r),k}\r)-\l(g_{r\l(l\r),k}-g_{r\l(l\r),l}\r)=g_{r\l(l\r),l}-g_{r\l(k\r),k}
         \end{equation*}

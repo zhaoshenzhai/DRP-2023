@@ -5,12 +5,12 @@
     \begin{theorem}[Uniformization]
         Every simply-connected Riemann surface $X$ is biholomorphic to either the Riemann sphere $\RS$, the complex plane $\C$, or the upper-half plane $\H$.
     \end{theorem}
-    \begin{proofsketch}\side[0.1in]{This sketch follows \cite{peter}. The existence of such a meromorphic function $f$ is more involved and uses tools from Dolbeault cohomology.}
-        As in Theorem \ref{4.1:thm:simply-connect_compact_biholomorphic_Riemann_sphere}, fix $p\in X$ and let $f\in\HOLO\l[p\r]\l(X\r)$ be meromorphic with a single simple pole. Let $F:X\to\RS$ be its associated holomorphic map, so $F\l(p\r)=\infty$. We outline the rest of the proof.\side[0.23in]{These claims are nontrivial and are beyond the scope of this paper.}
+    \begin{proofsketch}\footnote{This sketch follows \cite{peter}. The existence of such a meromorphic function $f$ is more involved and uses tools from Dolbeault cohomology.}
+        As in Theorem \ref{4.1:thm:simply-connect_compact_biholomorphic_Riemann_sphere}, fix $p\in X$ and let $f\in\HOLO\l[p\r]\l(X\r)$ be meromorphic with a single simple pole. Let $F:X\to\RS$ be its associated holomorphic map, so $F\l(p\r)=\infty$. We outline the rest of the proof.\footnote{These claims are nontrivial and are beyond the scope of this paper.}
         \begin{itemize}
             \item First, it can be shown that $\Im F\l(x\r)\to0$ as `$x\to\infty$' in $X$. That is, for every $\epsilon>0$, there is a large enough compact subset $K$ of $X$ such that $\Im F\l(x\r)<\epsilon$ for all $x\in X\comp K$.
                 \vspace{-0.05in}
-            \item It can also be shown that $\im F$ is open, contains the `top and bottom halves' of\side[0.01in]{That is, $\l\{x\in X\mid\Im\phi\l(z\r)\neq0\r\}\subseteq\im F$.} $\RS$, and is a biholomorphism onto its image.
+            \item It can also be shown that $\im F$ is open, contains the `top and bottom halves' of\footnote{That is, $\l\{x\in X\mid\Im\phi\l(z\r)\neq0\r\}\subseteq\im F$.} $\RS$, and is a biholomorphism onto its image.
         \end{itemize}
         Thus $X\iso\im F=\RS\comp I$ for some $I\subseteq\R$. By simply-connectedness of $X$, we see that $I$ is connected and hence we have three possibilities.
         \begin{itemize}
@@ -33,7 +33,7 @@
             \end{tikzcd}
         \end{equation*}
     \end{definition}
-    \side[-1.23in]{As with all `universal properties', the universal covering of $X$ is unique up to isomorphism.}
+    \footnote{As with all `universal properties', the universal covering of $X$ is unique up to isomorphism.}
     \vspace{-0.05in}
     \begin{remark}
         Note that $\sigma$ is the lifting of of $\pi$ along $\pi'$. Recall that if $E$ is simply-connected, such a lifting exists and is unique, so in this case \textit{any} covering map is the universal covering of $X$. We quote the following theorem that guarantees the existence of such a simply-connected space.\exqed
@@ -45,12 +45,12 @@
         Recall from Example \ref{2.1:exa:covering_of_torus} that for any lattice $\Gamma\subseteq\C$, the projection $\pi:\C\to\C/\Gamma$ is a covering map. Since $\C$ is simply-connected, we see that $\pi$ is the universal covering of $\C/\Gamma$.\exqed
     \end{example}
     \begin{remark}
-        For any Riemann surface $X$, let\side[0.01in]{In fact, every Riemann surface admits a Riemannian metric of constant curvature, either of $1$, $0$, or $-1$. We wish to study the connection between the conformal and metric structures on Riemann surfaces in the future.} $\tilde{X}$ be its simply-connected universal covering. If $\tilde{X}\iso\RS$ (resp. $\C$, $\H$), then $X$ is said to be \textit{elliptic} (resp. \textit{parabolic}, \textit{hyperbolic}).
+        For any Riemann surface $X$, let\footnote{In fact, every Riemann surface admits a Riemannian metric of constant curvature, either of $1$, $0$, or $-1$. We wish to study the connection between the conformal and metric structures on Riemann surfaces in the future.} $\tilde{X}$ be its simply-connected universal covering. If $\tilde{X}\iso\RS$ (resp. $\C$, $\H$), then $X$ is said to be \textit{elliptic} (resp. \textit{parabolic}, \textit{hyperbolic}).
         \begin{itemize}
             \item Since $\RS$ is simply-connected, it is the universal covering of itself and hence $\RS$ is elliptic.
                 \vspace{-0.05in}
             \item Since $\C$ is the universal covering of any torus $\C/\Gamma$, we see that $\C/\Gamma$ is parabolic.
         \end{itemize}
-        It turns out that the universal covering for any compact Riemann surfaces with $g>1$ is $\H$, so they are all hyperbolic. This is a curious fact (which we do not understand) that, moreover, has an analogue for three-dimensional real manifolds (called \textit{$3$-manifolds}). Indeed, \textit{Thurston's Geometrization Conjecture}\side[0.02in]{Proven by Grigori Perelman in 2003, for which he was awarded the Fields Medal.} states that all $3$-manifolds can be decomposed into pieces, each having one of eight different geometric structures, and the richest of the eight geometries turns out to be the hyperbolic $3$-manifold.\exqed
+        It turns out that the universal covering for any compact Riemann surfaces with $g>1$ is $\H$, so they are all hyperbolic. This is a curious fact (which we do not understand) that, moreover, has an analogue for three-dimensional real manifolds (called \textit{$3$-manifolds}). Indeed, \textit{Thurston's Geometrization Conjecture}\footnote{Proven by Grigori Perelman in 2003, for which he was awarded the Fields Medal.} states that all $3$-manifolds can be decomposed into pieces, each having one of eight different geometric structures, and the richest of the eight geometries turns out to be the hyperbolic $3$-manifold.\exqed
     \end{remark}
 \end{document}

@@ -11,11 +11,11 @@
         \begin{equation*}
             f\l(z\r)\coloneqq-\frac{1}{2\pi i}\int_{\C}\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\wedge\d\bar{\zeta}.
         \end{equation*}
-        We need to show that this integral converges and depends differentiably on $z$. Since $g$ is compactly supported, the integrand only has a pole at $0$ and so it suffices to show that the integral over a disk $D_\epsilon\coloneqq\bar{B_\epsilon}\coloneqq\bar{B\l(0,\epsilon\r)}$ converges. Indeed, we change\side{Formally, we appeal to Proposition \ref{3.1:prp:change_of_variables_in_C}.} to polar coordinates to see that
+        We need to show that this integral converges and depends differentiably on $z$. Since $g$ is compactly supported, the integrand only has a pole at $0$ and so it suffices to show that the integral over a disk $D_\epsilon\coloneqq\bar{B_\epsilon}\coloneqq\bar{B\l(0,\epsilon\r)}$ converges. Indeed, we change\footnote{Formally, we appeal to Proposition \ref{3.1:prp:change_of_variables_in_C}.} to polar coordinates to see that
         \begin{equation*}
             \int_{ D_\epsilon}\!\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\wedge\d\bar{\zeta}=\int_{0}^{\epsilon}\int_{0}^{2\pi}g\big(z-re^{i\theta}\big)e^{-i\theta}\,\d r\d\theta,
         \end{equation*}
-        which is convergent\side{Here, we use the fact that $g$ is bounded.}. Now, to show that $f\in\DIFF\l(\C\r)$, we expand the definition of $f$ into
+        which is convergent\footnote{Here, we use the fact that $g$ is bounded.}. Now, to show that $f\in\DIFF\l(\C\r)$, we expand the definition of $f$ into
         \begin{equation*}
             f\l(z\r)=-\frac{1}{2\pi i}\lim\limits_{\epsilon\to0}\int_{\C\comp B_\epsilon}\!\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\wedge\d\bar{\zeta}.
         \end{equation*}
@@ -23,7 +23,7 @@
         \begin{equation*}
             \l.\frac{\partial f}{\partial\bar{z}}\r|_z=-\frac{1}{2\pi i}\lim\limits_{\epsilon\to0}\int_{\C\comp B_\epsilon}\!\frac{1}{\zeta}\l.\frac{\partial g}{\partial\bar{z}}\r|_{z-\zeta}\d\zeta\wedge\d\bar{\zeta}.
         \end{equation*}
-        Using $\d=\partial+\bar{\partial}$ and expanding the definitions, we have that\side[0.9in]{Use the Product Rule and that $1/\zeta$ is holomorphic away from $0$.}
+        Using $\d=\partial+\bar{\partial}$ and expanding the definitions, we have that\footnote{Use the Product Rule and that $1/\zeta$ is holomorphic away from $0$.}
         \begin{equation*}
             \begin{aligned}
                 \d\l(\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\r)&=\partial\l(\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\r)+\bar{\partial}\l(\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\r) \\
@@ -35,7 +35,7 @@
         \begin{equation*}
             \l.\frac{\partial f}{\partial\bar{z}}\r|_z=\frac{1}{2\pi i}\lim\limits_{\epsilon\to0}\int_{C\comp B_\epsilon}\!\d\l(\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\r)=\frac{1}{2\pi i}\lim\limits_{\epsilon\to0}\int_{\l|\zeta\r|=\epsilon}\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta.
         \end{equation*}
-        This integral can be calculated in polar coordinates as $\zeta=\epsilon e^{i\theta}$ for $0\leq\theta<2\pi$, so\side[0.3in]{$\d\zeta=\frac{\partial\zeta}{\partial\theta}\,\d\theta=\epsilon ie^{i\theta}\d\theta$.}
+        This integral can be calculated in polar coordinates as $\zeta=\epsilon e^{i\theta}$ for $0\leq\theta<2\pi$, so\footnote{$\d\zeta=\frac{\partial\zeta}{\partial\theta}\,\d\theta=\epsilon ie^{i\theta}\d\theta$.}
         \begin{equation*}
             \int_{\l|\zeta\r|=\epsilon}\!\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta=\int_{0}^{2\pi}\frac{g\big(z-\epsilon e^{i\theta}\big)}{\epsilon e^{i\theta}}\,\epsilon ie^{i\theta}\,\d\theta=i\int_{0}^{2\pi}g\big(z-\epsilon e^{i\theta}\big)\,\d\theta.
         \end{equation*}
@@ -44,17 +44,17 @@
             \l.\frac{\partial f}{\partial\bar{z}}\r|_z=\frac{1}{2\pi}\lim\limits_{\epsilon\to0}\int_{0}^{2\pi}g\big(z-\epsilon e^{i\theta}\big)\,\d\theta,
         \end{equation*}
         which is the average value of $g\l(z\r)$ on the circle of radius $\epsilon$ around $z$. In the limit $\epsilon\to0$, we see that $\partial f/\partial\bar{z}=g$ and hence $\bar{\partial}f=g\,\d\bar{z}$.\\\ \\
-        Now, for the general case, we consider an increasing sequence of radii $\l\{R_n\r\}$ such that $R_n\to\infty$ and their associated balls $B_n\coloneqq B\l(0,R_n\r)$. For all $n$, there exists\side{For instance, take bump functions.} a function $\psi_n\in\DIFF\l(\C\r)$ such that $\Supp\l(\psi_n\r)\subseteq B_{n+1}$ and $\l.\psi_n\r|_{B_n}=1$. Extending $\psi_ng$ by zero outside $B_{n+1}$, they become differentiable functions in $\C$ with compact supports and hence $\bar{\partial}f_n=\psi_ng\,\d\bar{z}$ for some $f_n\in\DIFF\l(\C\r)$. We shall inductively construct a new sequence $\big\{\tilde{f}_n\big\}$ of differentiable functions on $\C$ such that
+        Now, for the general case, we consider an increasing sequence of radii $\l\{R_n\r\}$ such that $R_n\to\infty$ and their associated balls $B_n\coloneqq B\l(0,R_n\r)$. For all $n$, there exists\footnote{For instance, take bump functions.} a function $\psi_n\in\DIFF\l(\C\r)$ such that $\Supp\l(\psi_n\r)\subseteq B_{n+1}$ and $\l.\psi_n\r|_{B_n}=1$. Extending $\psi_ng$ by zero outside $B_{n+1}$, they become differentiable functions in $\C$ with compact supports and hence $\bar{\partial}f_n=\psi_ng\,\d\bar{z}$ for some $f_n\in\DIFF\l(\C\r)$. We shall inductively construct a new sequence $\big\{\tilde{f}_n\big\}$ of differentiable functions on $\C$ such that
         \begin{enumerate}
             \item $\bar{\partial}\tilde{f}_n=g\,\d\bar{z}$ on $B_n$ and
                 \vspace{-0.05in}
-            \item $\big\|\tilde{f}_{n+1}-\tilde{f}_n\big\|_{B_n}\!\leq 2^{-n}$\side{$\l\|f\r\|_K\coloneqq\sup_{x\in K}\l|f\l(x\r)\r|$ is the supremum norm.}.
+            \item $\big\|\tilde{f}_{n+1}-\tilde{f}_n\big\|_{B_n}\!\leq 2^{-n}$\footnote{$\l\|f\r\|_K\coloneqq\sup_{x\in K}\l|f\l(x\r)\r|$ is the supremum norm.}.
         \end{enumerate}
         Set $\tilde{f}_1\coloneqq f_1$ and suppose that the functions $\tilde{f}_1,\dots,\tilde{f}_n$ are defined. Then
         \begin{equation*}
             \bar{\partial}\big(f_{n+1}-\tilde{f}_n\big)=\bar{\partial}f_{n+1}-\bar\partial\tilde{f}_n=\l(\psi_{n+1}g-g\r)\d\bar{z}=0
         \end{equation*}
-        on $B_n$, so the function $f_{n+1}-\tilde{f}_n$ is holomorphic on $B_n$. Thus there exists a polynomial $p\in\C\l[z\r]$\side{Say, some Taylor polynomial.} such that
+        on $B_n$, so the function $f_{n+1}-\tilde{f}_n$ is holomorphic on $B_n$. Thus there exists a polynomial $p\in\C\l[z\r]$\footnote{Say, some Taylor polynomial.} such that
         \begin{equation*}
             \big\|f_{n+1}-\tilde{f}_n-p\big\|_{B_n}\!\leq 2^{-n},
         \end{equation*}
@@ -73,7 +73,7 @@
         on $B_n$. But this holds for all $n$, so $f\in\DIFF\l(\C\r)$ with $\bar{\partial}f=g\,\d\bar{z}$ globally.\qed
     \end{proof}
     \begin{remark}
-        This theorem (which we call \textit{Dolbeault's Theorem}) is a special case of the $\bar{\partial}$-Poincaré Lemma. Indeed, we can reformulate the theorem by saying that the sequence of sheaves\side[0.3in]{Here, $\iota$ is the inclusion sheaf morphism.}
+        This theorem (which we call \textit{Dolbeault's Theorem}) is a special case of the $\bar{\partial}$-Poincaré Lemma. Indeed, we can reformulate the theorem by saying that the sequence of sheaves\footnote{Here, $\iota$ is the inclusion sheaf morphism.}
         \begin{equation*}
             \begin{tikzcd}
                 0 \ar[r] & \HOLO \ar[r, "\iota", hookrightarrow] & \DIFF \ar[r, "\bar{\partial}", twoheadrightarrow] & \DIFF^{\l(0,1\r)} \ar[r] & 0
@@ -97,12 +97,12 @@
         \begin{equation*}
             \check{H}^1\big(\RS,\HOLO\big)\iso\check{H}^1\!\l(\mf{A},\HOLO\r)
         \end{equation*}
-        by Proposition \ref{3.2:prp:leray}. Thus it suffices to show that any cocycle $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\HOLO\r)$ splits; i.e. it suffices\side{The cases for $f_{ii}$ are trivial and $f_{21}=-f_{12}$.} to find functions $f_i\in\HOLO\l(U_i\r)$ such that $f_{12}=f_1-f_2$ on $U_1\cap U_2=\C^\ast$. Note that $f_{12}$ is not necessarily holomorphic at $0$, so it admits a Laurent series expansion $f\l(z\r)=\sum_{n=-\infty}^{\infty}c_nz^n$ on $\C^\ast$. Then the series $f_1\!\l(z\r)\coloneqq\sum_{n=0}^{\infty}c_nz^n$ and $f_2\!\l(z\r)\coloneqq\sum_{n=-\infty}^{-1}c_nz^n$ converges on $U_1$ and $U_2$, respectively, so $f_i\in\HOLO\l(U_i\r)$. Clearly $f_{12}=f_1-f_2$.\qed
+        by Proposition \ref{3.2:prp:leray}. Thus it suffices to show that any cocycle $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\HOLO\r)$ splits; i.e. it suffices\footnote{The cases for $f_{ii}$ are trivial and $f_{21}=-f_{12}$.} to find functions $f_i\in\HOLO\l(U_i\r)$ such that $f_{12}=f_1-f_2$ on $U_1\cap U_2=\C^\ast$. Note that $f_{12}$ is not necessarily holomorphic at $0$, so it admits a Laurent series expansion $f\l(z\r)=\sum_{n=-\infty}^{\infty}c_nz^n$ on $\C^\ast$. Then the series $f_1\!\l(z\r)\coloneqq\sum_{n=0}^{\infty}c_nz^n$ and $f_2\!\l(z\r)\coloneqq\sum_{n=-\infty}^{-1}c_nz^n$ converges on $U_1$ and $U_2$, respectively, so $f_i\in\HOLO\l(U_i\r)$. Clearly $f_{12}=f_1-f_2$.\qed
     \end{proof}
     \begin{remark}
         Let $X$ be a compact Riemann surface and consider the vector space structure on $\check{H}^1\!\l(X,\HOLO\r)$ induced from $\HOLO$. We appeal to the following theorems.
         \begin{itemize}
-            \item The dimension $g\coloneqq\dim_\C\check{H}^1\!\l(X,\HOLO\r)$ is finite\side{See \cite[][Section 14]{forster} for a proof.} and is referred to as the \ul{genus of $X$}. The above theorem states that $\RS$ has genus $0$.
+            \item The dimension $g\coloneqq\dim_\C\check{H}^1\!\l(X,\HOLO\r)$ is finite\footnote{See \cite[][Section 14]{forster} for a proof.} and is referred to as the \ul{genus of $X$}. The above theorem states that $\RS$ has genus $0$.
                 \vspace{-0.05in}
             \item The genus of $X$ depends only on the smooth manifold structure on $X$. In particular, since $\check{H}^1\big(\RS,\HOLO\big)$ vanishes, the genus of any simply-connected compact Riemann surface $X$ is $0$.\exqed
         \end{itemize}
@@ -112,7 +112,7 @@
         Let $X$ be a compact Riemann surface of genus $g$ and fix $p\in X$. Then there exists a meromorphic function $f\in\MERO\l(X\r)$ which has a pole at $p$ of order between $1$ and $g+1$, and is holomorphic everywhere else.
     \end{theorem}
     \begin{proof}
-        Let $\tpl{U_1,z}$ be a chart of $X$ centered at $p$ and set $U_2\coloneqq X\comp\l\{p\r\}$, so $\mf{A}\coloneqq\l\{U_1,U_2\r\}$ is an open cover of $X$. For each $1\leq i\leq g+1$, consider the holomorphic function $z^{-i}$ on $U_1\cap U_2=U_1\comp\l\{p\r\}$. This gives us ($g+1$)-many cocycles $\tpl{z^{-i}}\in\check{Z}^1\!\l(\mf{A},\HOLO\r)$, but since $\dim\check{H}^1\!\l(X,\HOLO\r)=g$, they are linearly dependent\side[0.35in]{Here, we have linear dependence in the quotient $\check{H}^1\!\l(\mf{A},\HOLO\r)$, whose $0$ is a splitting cocycle.}. Thus there are constants $c_1,\dots,c_{g+1}\in\C$, not all zero, such that
+        Let $\tpl{U_1,z}$ be a chart of $X$ centered at $p$ and set $U_2\coloneqq X\comp\l\{p\r\}$, so $\mf{A}\coloneqq\l\{U_1,U_2\r\}$ is an open cover of $X$. For each $1\leq i\leq g+1$, consider the holomorphic function $z^{-i}$ on $U_1\cap U_2=U_1\comp\l\{p\r\}$. This gives us ($g+1$)-many cocycles $\tpl{z^{-i}}\in\check{Z}^1\!\l(\mf{A},\HOLO\r)$, but since $\dim\check{H}^1\!\l(X,\HOLO\r)=g$, they are linearly dependent\footnote{Here, we have linear dependence in the quotient $\check{H}^1\!\l(\mf{A},\HOLO\r)$, whose $0$ is a splitting cocycle.}. Thus there are constants $c_1,\dots,c_{g+1}\in\C$, not all zero, such that
         \begin{equation*}
             \sum_{i=1}^{g+1}c_iz^{-i}=f_2-f_1
         \end{equation*}
