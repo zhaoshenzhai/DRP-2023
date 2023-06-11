@@ -2,8 +2,8 @@
 
 \begin{document}
     \section{Overview and Main Results}
-    Complex analysis in the plane $\C$ is an extremely rich theory with many important features, but is topologically not very interesting. On the other hand, general topological spaces are too badly-behaved for any reasonable analysis to be done, so a middle-ground must be found. To leverage the desired properties of $\C$, we restrict the class of topological spaces of study to those with a local neighborhood around every point that looks like a deformed patch of $\C$, but whose global behaviour can be quite different. The choice in which a topological space is made to look locally like $\C$ is called a \textit{complex structure}, and, in general, there are many such choices. A topological space $X$, equipped with a particular choice of complex structure, is called a \textit{Riemann surface}.\\\ \\
-    Take the torus $T^2$ as a motivating example. Around every point $p\in T^2$, we can find a small enough neighborhood $U$ of $p$ that deforms reversibly onto an open subset of $\C$. The figure below shows two ways of doing so.
+    Complex analysis in the plane is an extremely rich theory with many important features, but is topologically not very interesting. On the other hand, general topological spaces are too badly-behaved for any reasonable analysis to be done, so a middle-ground must be found. To leverage the desired properties of $\C$, we restrict the class of topological spaces of study to those with a local neighborhood around every point that looks like a deformed patch of $\C$, but whose global behaviour can be quite different. The choice in which a topological space is made to look locally like $\C$ is called a \textit{complex structure}, and, in general, there are many such choices. A topological space $X$, equipped with a particular choice of complex structure, is called a \textit{Riemann surface}.\\\ \\
+    As a motivating example, take the torus $T^2$. Around every point $p\in T^2$, we can find a small enough neighborhood $U$ of $p$ that deforms reversibly onto an open subset of $\C$. The figure below shows two ways of doing so.
     \begin{center}
         \begin{tikzpicture}[scale=1.2]
             \draw (0,0) ellipse (1.6 and 0.9);
@@ -14,14 +14,14 @@
             \begin{scope}[rotate=30, xshift=-0.7cm, yshift=-0.15cm]
                 \fill (0,0) circle (0.008in) node[xshift=-0.15cm, yshift=-0.12cm]{\small$p$};
                 \fill (0,0) circle (0) node[xshift=-0.35cm, yshift=0.3cm]{\small$U$};
-                \draw[dash pattern={on 2pt off 2pt}] (0,0) ellipse (0.3 and 0.2);
+                \draw[dash pattern={on 2pt off 1pt}] (0,0) ellipse (0.3 and 0.2);
             \end{scope}
             \begin{scope}[xshift=-1.9cm, yshift=-2cm]
                 \draw[lightgray, step=0.2] (-0.1,-0.1) grid (0.95,0.95);
                 \draw[->] (-0.1,0) -- (1,0);
                 \draw[->] (0,-0.1) -- (0,1);
                 \begin{scope}[rotate=-5]
-                    \draw[dash pattern={on 2pt off 3pt}] (0.4,0.45) ellipse (0.2 and 0.25);
+                    \draw[dash pattern={on 2pt off 1pt}] (0.4,0.45) ellipse (0.2 and 0.25);
                 \end{scope}
             \end{scope}
             \begin{scope}[xshift=-0.25cm, yshift=-2cm]
@@ -38,7 +38,7 @@
                 \draw[->] (-0.1,0) -- (1,0);
                 \draw[->] (0,-0.1) -- (0,1);
                 \begin{scope}[rotate=-20]
-                    \draw[dash pattern={on 2pt off 3pt}] (0.26,0.55) ellipse (0.2 and 0.25);
+                    \draw[dash pattern={on 2pt off 1pt}] (0.26,0.55) ellipse (0.2 and 0.25);
                 \end{scope}
             \end{scope}
             \draw[->] (-0.9,-0.5) to[out=200, in=80] node[xshift=-0.2cm, yshift=-0.1cm]{\small$\phi$} (-1.3,-1.2);
