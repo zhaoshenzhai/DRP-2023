@@ -1,34 +1,38 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
-    \section{Charts and Atlases}
-    We assume that the reader is familiar with the basic notions of real manifolds. The case for complex manifolds is similar, so our exposition will be brief.
+    We begin with some basic definitions and constructions relating to Riemann surfaces that will be used throughout this paper. This chapter requires some background in topology and complex analysis, all of which can be found in classical texts such as \cite{munkres} and \cite{lang}. For an introduction to topology focused on (real) manifolds, see \cite{leeTM}.
+    \section{Charts and Atlases}\label{sec:charts_and_atlases}
+    We first formalize what we mean for a topological space to `locally look like a patch of $\C$'. In this section, let $X$ be a connected second-countable Hausdorff space.
     \begin{definition}
-        Let $X$ be a second-countable Hausdorff space. A \uldef{$d$-dimensional complex} \uldef{chart of $X$} is a pair $\tpl{U,\phi}$ where $\phi:U\to V$ is a homeomorphism from an open subset $U\subseteq X$ onto an open subset $V\subseteq\C^d$ for some $d$. Two $d$-dimensional charts $\l(U_1,\phi_1\r)$ and $\l(U_2,\phi_2\r)$ are said to be \uldef{holomorphically compatible} if either $U_1\cap U_2=\em$, or the map
+        A \uldef{complex chart of $X$} is a pair $\tpl{U,\phi}$ where $\phi:U\to V$ is a homeomorphism from an open subset $U\subseteq X$ onto an open subset $V\subseteq\C$. Two charts $\l(U_1,\phi_1\r)$ and $\l(U_2,\phi_2\r)$ are said to be \uldef{compatible} if either $U_1\cap U_2=\em$, or the map
         \begin{equation*}
-            \phi_2\circ\phi_1^{-1}:\phi_1\l(U_1\cap U_2\r)\to\phi_2\l(U_1\cap U_2\r)
+            \phi_2\circ\phi_1^{-1}:\phi_1\l(U_1\cap U_2\r)\to\phi_2\l(U_1\cap U_2\r),
         \end{equation*}
-        is biholomorphic. A \uldef{$d$-dimensional complex atlas on $X$} is a collection $\mf{A}\coloneqq\l\{\l(U_i,\phi_i\r)\r\}_{i\in I}$ of $d$-dimensional complex charts such that every two charts $\l(U_i,\phi_i\r)$ and $\l(U_j,\phi_j\r)$ are holomorphically compatible and $X=\bigcup_{i\in I}U_i$.
+        called the \uldef{transition map}, is biholomorphic. A \uldef{complex atlas on $X$} is a collection $\mf{A}\coloneqq\l\{\l(U_i,\phi_i\r)\r\}_{i\in I}$ of pairwise compatible complex charts that cover $X$.
     \end{definition}
-    \footnote{Charts provide us a way of making $X$ $\textrm{`}$look like$\textrm{'}$ an open set in $\C^d$. Indeed, they provide local coordinates for every point in $X$ in such a way that the $\textrm{`}$change of coordinates$\textrm{'}$ map $\phi_2\circ\phi_1^{-1}$ ensures that local notions of functions in $\C^d$ are well-defined on $X$ too.
-        \begin{equation*}
-            \begin{tikzcd}[ampersand replacement=\&, column sep=0.1in]
-                \& U_1\cap U_2 \ar[dl, "\phi_1"'] \ar[dr, "\phi_2"] \\
-                \phi_1(U_1\cap U_2) \ar[rr, "\phi_2\circ\phi_1^{-1}"'] \& \& \phi_2(U_1\cap U_2)
-            \end{tikzcd}       
-        \end{equation*}
-    It is clear that one only needs $\phi_2\circ\phi_1^{-1}$ to be holomorphic for it to be biholomorphic.\\\ \\
-    It is sometimes convenient to write $\tpl{U,z}$ for a chart on $X$ instead, where now $z=x+iy$ is said to be a \ul{local coordinate system} of $X$.}
     \begin{remark}
-        Two atlases $\mf{A}$ and $\mf{B}$ on a manifold $X$ are said to be \ul{analytically equivalent} if every chart in $\mf{A}$ is compatible with every chart in $\mf{B}$. By Zorn's Lemma, every atlas $\mf{A}$ of a manifold $X$ is contained in a unique maximal atlas on $X$. Moreover, two atlases are equivalent iff they are contained in the same maximal atlas, which justifies the following definition.\exqed
+        Charts provide \textit{local coordinates} for every point in $X$ in such a way that the transition maps $\phi_j\circ\phi_i^{-1}$ respect the analytic structure of $\C$. Within the same atlas $\mf{A}$, those charts give us different coordinate representations for points in $U_i\cap U_j$, and since no chart is distinguished from the others, we can only define notions using local coordinates if they are invariant under the transition map.
+        \begin{equation*}
+            \begin{tikzcd}[column sep=0.1in]
+                & U_i\cap U_j \ar[dl, "\phi_i"'] \ar[dr, "\phi_j"] \\
+                \phi_i(U_i\cap U_j) \ar[rr, "\phi_j\circ\phi_i^{-1}"'] & & \phi_j(U_i\cap U_j)
+            \end{tikzcd}
+        \end{equation*}
+        It is a classical result in complex analysis that the inverse of a holomorphic map is also holomorphic, so $\phi_j\circ\phi_i^{-1}$ is biholomorphic iff $\phi_i\circ\phi_j^{-1}$ is, which is convenient when checking that a collection of charts form an atlas. Lastly, we remark that it is sometimes convenient to write $\tpl{U,z}$ for $\tpl{U,\phi}$, which can be decomposed into $z=x+iy$ by taking the real and imaginary parts of $\phi$.\exqed
     \end{remark}
     \begin{definition}
-        Let $X$ be a second-countable Hausdorff space. A \uldef{$d$-dimensional complex} \uldef{structure} on $X$ is a $d$-dimensional maximal atlas $\mf{A}$ on $X$, or, equivalently, an equivalence class of $d$-dimensional complex atlases on $X$. The pair $\tpl{X,\mf{A}}$ is then called a \uldef{$d$-dimensional} \uldef{complex manifold}.
+        Two complex atlases $\mf{A}$ and $\mf{B}$ on $X$ are said to be \uldef{equivalent} if every chart of $\mf{A}$ is compatible with every chart in $\mf{B}$.
     \end{definition}
-    \footnote{To give a complex structure $\mf{A}$ to $X$, it suffices to give $X$ a complex atlas since it extends to a \textit{unique} complex structure.}
+    \begin{remark}
+        By Zorn's Lemma, every atlas $\mf{A}$ of a manifold $X$ is contained in a unique maximal atlas on $X$ (see, for instance, \cite[][Proposition 1.17]{leeSM}). Moreover, two atlases are equivalent iff they are contained in the same maximal atlas, which justifies the following definition.\exqed
+    \end{remark}
     \begin{definition}
-        A \uldef{Riemann surface} is a connected $1$-dimensional complex manifold.
+        A \uldef{complex structure} on $X$ is a  maximal atlas $\mf{A}$ on $X$, or, equivalently, an equivalence class of complex atlases on $X$. The pair $\tpl{X,\mf{A}}$ is then called a \uldef{Riemann surface}.
     \end{definition}
-    \begin{example}\footnote{Every Riemann surface can be regarded as a (connected) $2$-dimensional real manifold by $\textrm{`}$forgetting$\textrm{'}$ its complex structure.}
+    \begin{remark}
+        Every Riemann surface can be regarded as a (connected) $2$-dimensional real manifold by $\textrm{`}$forgetting$\textrm{'}$ its complex structure. Since orientations are invariant under biholomorphisms, and in particular transition maps, the local orientation of $\C$ pulls-back via charts to a local orientation at each point $p\in X$. Since charts cover $X$, these local orientations induce a global orientation on $X$. Thus all Riemann surfaces are orientable, so, by the Classification of Surfaces, the closed Riemann surfaces are classified by their genus. Note, however, that this is a \textit{topological} classification, and does not give any information about the complex structure on $X$.\exqed
+    \end{remark}
+    \begin{example}
         Some elementary examples of Riemann surfaces.
         \begin{itemize}
             \item The complex plane $\C$, equipped with its standard topology, can be given a complex structure $\mf{A}$ by choosing the atlas containing a single chart $\tpl{\C,\id_\C}$. We may, however, also give $\C$ a different complex structure $\mf{A}'$ by choosing the chart map $\phi:z\mapsto\bar{z}$ instead. Indeed, $\mf{A}\neq\mf{A}'$ since the map $\phi\circ\id_\C^{-1}=\phi$ is not holomorphic and hence the atlases $\l\{\tpl{\C,\id_\C}\r\}$ and $\l\{\tpl{\C,\phi}\r\}$ are not equivalent. This example generalizes to any domain $D\subseteq\C$.
