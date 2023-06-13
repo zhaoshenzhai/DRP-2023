@@ -113,7 +113,7 @@
     \begin{proof}
         Since $X$ is path-connected, there exists a curve $\alpha:\l[0,1\r]\to X$ from $p_1$ to $p_2$. We define a map $\phi:\pi^{-1}\!\l(p_1\r)\to\pi^{-1}\!\l(p_2\r)$ as follows. Every $\zeta\in\pi^{-1}\!\l(p_1\r)$ induces a unique lifting $\tilde{\alpha}:\l[0,1\r]\to E$ such that $\tilde{\alpha}\l(0\r)=\zeta$, and since $\pi\l(\tilde{\alpha}\l(1\r)\r)=\alpha\l(1\r)=p_2$, we have $\tilde{\alpha}\l(1\r)\in\pi^{-1}\!\l(p_2\r)$. Hence we define $\phi\l(\zeta\r)\coloneqq\tilde{\alpha}\l(1\r)$. The uniqueness of liftings ensures that $\phi$ is well-defined and bijective, so $\pi^{-1}\!\l(p_1\r)$ and $\pi^{-1}\!\l(p_2\r)$ are equinumerous.\qed
     \end{proof}
-    \subsection{Degrees and Multiplicities}
+    \subsection{Degrees and Multiplicities}\label{CS:sec:degrees_and_multiplicities}
     Throughout this section, $X$ and $Y$ are Riemann surfaces and $F:X\to Y$ is a non-constant proper holomorphic map.
     \begin{definition}
         The \uldef{degree of $F$}, denoted $\deg F$, is the cardinality of the fiber $F^{-1}\!\l(q\r)$ of any non-critical point $q\in Y$.
@@ -124,7 +124,7 @@
     \begin{remark}
         Let $n\coloneqq\deg F$. Then $n$ is referred to as the \ul{number of sheets of $F$} and $F$ is said to be an \ul{$n$-sheeted holomorphic covering map}.\exqed
     \end{remark}
-    \begin{theorem}
+    \begin{theorem}\label{CS:thm:degree_sum_of_multiplicities}
         Fix an arbitrary $q\in Y$. Then $\deg F$ is the sum of the multiplicities at each $p\in F^{-1}\!\l(q\r)$ of $F$. That is,
         \begin{equation*}
             \deg F=\sum_{p\in F^{-1}\!\l(q\r)}\mult_p\!\l(F\r).

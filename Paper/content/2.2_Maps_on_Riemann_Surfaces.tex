@@ -176,17 +176,10 @@
         Thus if $f$ is a meromorphic function on $\RS$, then $\sum_{z\in\RS}\ord_z\!\l(f\r)=0$. In fact, this holds for all compact Riemann surfaces, which we prove in TODO.\exqed
     \end{remark}
     \subsection{Local Normal Form and the Multiplicity}
+    Holomorphic maps have some remarkable `local' properties, one of which is presented here. Roughly speaking, every holomorphic map $F:X\to Y$ looks locally like a power map $z\mapsto z^m$ for some unique $m\geq1$. Summing this local invariant over the fiber $F^{-1}\!\l(q\r)$ for any $q\in Y$ gives us the \textit{degree of $F$}, a global invariant independent of $q$, which we prove in Section \ref{CS:sec:degrees_and_multiplicities} using tools from covering spaces.
     \begin{theorem}[Local Normal Form]\label{RS:thm:local_normal_form}
         Let $X$ and $Y$ be Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. Then, for every $p\in X$, there exists a unique $m\geq1$ such that for any chart $\tpl{U_2,\phi_2}$ of $Y$ centered at $F\l(p\r)$, there exists a chart $\tpl{U_1,\phi_1}$ of $X$ centered at $p$ such that $\phi_2\circ F\circ\phi_1^{-1}:z\mapsto z^m$ for all $z\in\phi_1\l(U_1\r)$.
     \end{theorem}
-    \footnote{This theorem also give easy proofs of some elementary properties of holomorphic maps, which we collect here; see \cite[][Section 1.2]{forster} for details. Throughout, $F:X\to Y$ is a non-constant holomorphic map between Riemann surfaces $X$ and $Y$.
-        \begin{itemize}
-            \item $F$ is an open map.
-            \item If $F$ is injective, then it is biholomorphic onto its image.
-            \item If $Y=\C$, then $\l|F\r|$ does not attain its maximum.
-            \item If $X$ is compact, then $F$ is surjective and $Y$ is compact.
-        \end{itemize}
-        Together, the last two claims give an alternative proof for Proposition \ref{RS:prp:holomorphic_compact_constant}.}\vspace{-0.05in}
     \begin{proof}
         Let $\tpl{U_2,\phi_2}$ be a chart of $Y$ centered at $F\l(p\r)$ and consider any chart $\tpl{V,\psi}$ of $X$ centered at $p$. Then the function $h\coloneqq\phi_2\circ F\circ\psi^{-1}$ is holomorphic, so it admits a power series representation $h\l(w\r)=\sum_{i=0}^{\infty}c_iw^i$ for all $w\in\psi\l(V\r)$. Note that $h\l(0\r)=\phi_2\l(F\l(p\r)\r)=0$, so $c_0=0$. Let $m\geq1$ be the smallest integer such that $c_m\neq0$, so
         \begin{equation*}
@@ -201,7 +194,23 @@
     \begin{definition}
         With the above notation, the unique $m\geq1$ such that there are local coordinates around $p$ and $F\l(p\r)$ where $F$ acts like $z\mapsto z^m$ is called the \uldef{multiplicity of $F$ at $p$}, denoted $\mult_p\!\l(F\r)$.
     \end{definition}
-    \begin{remark}\footnote{Consider the power function $f\l(z\r)\coloneqq z^m$ where $m\coloneqq\mult_p\!\l(F\r)$. Then, for all $z\in\C^*$, we see that $f^{-1}\l(z\r)$ has exactly $m$ elements given by the $m$ distinct $m^\textrm{th}$ roots of $z^m$. Thus the map $f$ causes $\C$ to `cover itself $m$ times', and those coverings meet at the fixed point $0$. But $f^{-1}\l(0\r)=\l\{0\r\}$ has only $1$ element, which prevents $f$ to be a $n$-sheeted covering of $\C$. To remedy this, we count $0$ \textit{with multiplicity $m$}; see Chapter \ref{CS} for a more formal discussion. Since $F$ is locally represented by $f$, and $\tpl{U_1,\phi_1}$ is centered at $p$, we see that $m$ counts the multiplicity at which neighbors of $p$ are mapped to $F\l(p\r)$.}
+    \begin{remark}
+        Consider the power function $f\l(z\r)\coloneqq z^m$ where $m\coloneqq\mult_p\!\l(F\r)$. Then, for all $z\in\C^*$, we see that $f^{-1}\l(z\r)$ has exactly $m$ elements given by the $m$ distinct $m^\textrm{th}$ roots of $z^m$. Thus the map $f$ causes $\C$ to `cover itself $m$ times', and those coverings meet at the fixed point $0$. But $f^{-1}\l(0\r)=\l\{0\r\}$ has only $1$ element, which prevents $f$ to be a $m$-sheeted covering of $\C$. To remedy this, we count $0$ \textit{with multiplicity}; see Chapter \ref{CS} for a more formal discussion. Since $F$ is locally represented by $f$, and $\tpl{U_1,\phi_1}$ is centered at $p$, we see that $m$ counts the multiplicity at which neighbors of $p$ are mapped to $F\l(p\r)$.\exqed
+    \end{remark}
+    \begin{remark}
+        This theorem also give easy proofs of some elementary properties of holomorphic maps, which we collect here; see \cite[][Section 1.2]{forster} for details. Throughout, $F:X\to Y$ is a non-constant holomorphic map between Riemann surfaces $X$ and $Y$.
+        \begin{itemize}
+            \item $F$ is an open map.
+                \vspace{-0.05in}
+            \item If $F$ is injective, then it is biholomorphic onto its image.
+                \vspace{-0.05in}
+            \item If $Y=\C$, then $\l|F\r|$ does not attain its maximum.
+                \vspace{-0.05in}
+            \item If $X$ is compact, then $F$ is surjective and $Y$ is compact.
+        \end{itemize}
+        Together, the last two claims give an alternative proof for Proposition \ref{RS:prp:holomorphic_compact_constant}.\exqed
+    \end{remark}
+    \begin{remark}
         We give a simple way of computing $\mult_p\!\l(F\r)$ that does not involve casting $F$ into Local Normal Form, or even having to find local coordinates centered at $p$ and $F\l(p\r)$. Indeed, let $\tpl{U_1,\phi_1}$ and $\tpl{U_2,\phi_2}$ be charts around $p$ and $F\l(p\r)$, say with $z_0\coloneqq\phi_1\l(p\r)$ and $w_0\coloneqq\phi_2\l(F\l(p\r)\r)$. Letting $f\coloneqq\phi_2\circ F\circ\phi_1^{-1}$, we see that $f\l(z_0\r)=w_0$ and hence its power series representation has the form
         \begin{equation*}
             f\l(z\r)=f\l(z_0\r)+\sum_{i\geq m}c_i\l(z-z_0\r)^i
@@ -237,14 +246,9 @@
                 1/f\l(x\r) & \textrm{else}
             \end{dcases}
         \end{equation*}
-        is holomorphic. Let $\tpl{U,\phi}$ be a chart of $X$ and consider the chart $\tpl{\RS\comp\l\{0\r\},\psi}$ of $\RS$ defined by\footnote{
-        \begin{equation*}
-            \psi\l(z\r)\coloneqq
-            \begin{dcases}
-                0 & \textrm{if }z=\infty \\
-                1/z & \textrm{else.}
-            \end{dcases}
-        \end{equation*}
-        } $\psi\l(z\r)\coloneqq1/z$. Then $\widetilde{f}=\psi\circ F$ on $U$, so $\widetilde{f}_\phi\!\coloneqq\widetilde{f}\circ\phi^{-1}=\psi\circ F\circ\phi^{-1}$ on $\phi\l(U\r)$. By the same argument as above, we see that $\mult_p\!\l(F\r)=-\ord_p(\widetilde{f})$. Now $\ord_p\l(f\r)=-\ord_p(\widetilde{f})$, so the result follows.\qed
+        is holomorphic. Let $\tpl{U,\phi}$ be a chart of $X$ and consider the chart $\big(\RS\comp\l\{0\r\},\psi\big)$ of $\RS$ defined by $\psi\l(z\r)\coloneqq1/z$ for all $z\in\C^\ast$ and $\psi\l(\infty\r)\coloneqq0$. Then $\widetilde{f}=\psi\circ F$ on $U$, so $\widetilde{f}_\phi\!\coloneqq\widetilde{f}\circ\phi^{-1}=\psi\circ F\circ\phi^{-1}$ on $\phi\l(U\r)$. By the same argument as above, we see that $\mult_p\!\l(F\r)=-\ord_p(\widetilde{f})$. Now $\ord_p\!\l(f\r)=-\ord_p(\widetilde{f})$, so the result follows.\qed
     \end{proof}
+    \begin{remark}
+        This relation between the order of meromorphic functions and the multiplicity of their associated holomorphic maps will be used to derive a criterion for $F:X\to\RS$ to be a biholomorphism. In fact, Corollary \ref{CS:cor:exists_meromorphic_implies_biholomorphic_Riemann_sphere} states that if $X$ is compact and $f:X\to\C$ has a single simple pole, then $F$ is a biholomorphism.\exqed
+    \end{remark}
 \end{document}
