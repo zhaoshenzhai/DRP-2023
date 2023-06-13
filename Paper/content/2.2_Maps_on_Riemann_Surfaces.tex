@@ -1,108 +1,96 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
     \section{Maps on Riemann Surfaces}\label{sec:maps_on_Riemann_surfaces}
+    We extend the notions of holomorphic and meromorphic functions from complex analysis to Riemann surfaces. We also define holomorphic maps \textit{between} Riemann surfaces, which formalizes what we mean for two Riemann surfaces to be `the same'. Lastly, we study the connection between meromorphic functions $f:X\to\C$ and their associated holomorphic maps $F:X\to\RS$.
     \subsection{Holomorphic Functions and Maps}
     \begin{definition}
         Let $X$ be a Riemann surface and let $W\subseteq X$ be open. For a fixed $p\in W$, a function $f:W\to\C$ is said to be \uldef{holomorphic at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ is holomorphic at $\phi\l(p\r)$. If $f$ is holomorphic at every point of $W$, then $f$ is said to be \uldef{holomorphic on $W$}.
     \end{definition}
-    \begin{remark}\footnote{Defining some property $P$ of $f$ using charts by transporting $f$ to a function $f\circ\phi^{-1}$ on a subset of $\C$, and borrowing $P$ from $f\circ\phi^{-1}$, will be a common theme. However, one must check that $P$ is \textit{independent of charts}; that is, if $f\circ\phi^{-1}$ satisfies $P$, then so does $f\circ\psi^{-1}$ for any other chart $\tpl{V,\psi}$.}
-        It must be checked that $\textrm{`}$being holomorphic$\textrm{'}$ does not depend on the choice of chart. This is indeed the case, for if $\tpl{V,\psi}$ is another chart containing $p$, then, since
+    \begin{remark}
+        It must be checked that $\textrm{`}$being holomorphic$\textrm{'}$ does not depend on the choice of chart. This is indeed the case, for if $\tpl{V,\psi}$ is another chart containing $p$, then the diagram
         \begin{equation}\label{RS:eqn:holomorphic_function_well_defined}
-            f\circ\psi^{-1}=f\circ\l(\phi^{-1}\circ\phi\r)\circ\psi^{-1}=\l(f\circ\phi^{-1}\r)\circ\l(\phi\circ\psi^{-1}\r):\psi\l(U\cap V\r)\to\C
-        \end{equation}\footnote{
-            \begin{equation*}
-                \begin{tikzcd}[ampersand replacement=\&, column sep = 0.1in]
-                    \phi\l(U\cap V\r) \ar[drrrr, "f\circ\phi^{-1}", bend left = 20] \\
-                    \& U\cap V \ar[ul, "\phi"'] \ar[dl, "\psi"] \ar[rrr, "f"] \& \& \& \C \\
-                    \psi\l(U\cap V\r) \ar [urrrr, "f\circ\psi^{-1}"', bend right = 20]
-                \end{tikzcd}
-            \end{equation*}
-        }
-        on the intersection $U\cap V$, we see that $f\circ\psi^{-1}:\psi\l(V\r)\to\C$ is also holomorphic at $p$.\exqed
+            \begin{tikzcd}[column sep = 0.1in]
+                \phi\l(U\cap V\r) \ar[drrrr, "f\circ\phi^{-1}", bend left = 20] \\
+                & U\cap V \ar[ul, "\phi"'] \ar[dl, "\psi"] \ar[rrr, "f"] & & & \C \\
+                \psi\l(U\cap V\r) \ar [urrrr, "f\circ\psi^{-1}"', bend right = 20]
+            \end{tikzcd}
+        \end{equation}
+        commutes. Thus $f\circ\psi^{-1}=\l(f\circ\phi^{-1}\r)\circ\l(\phi\circ\psi^{-1}\r)$, and since the transition map $\phi\circ\psi^{-1}$ is holomorphic, we see that $f\circ\phi^{-1}$ is holomorphic at $\phi\l(p\r)$ iff $f\circ\psi^{-1}$ is holomorphic at $\psi\l(p\r)$, as desired.\exqed
     \end{remark}
     \begin{example}\label{RS:exa:elementary_holomorphic_functions}
         Some elementary examples of holomorphic functions.
         \begin{itemize}
-            \item Any holomorphic function $f:W\to\C$ from an open set $W\subseteq\C$, considering $\C$ as a Riemann surface with the standard chart $\l(\C,\id_\C\r)$, is holomorphic in the classical sense.
+            \item If $X=\C$ with the standard chart $\tpl{\C,\id_\C}$, then any holomorphic function $f:W\to\C$ from an open set $W\subseteq\C$ is holomorphic in the classical sense.
+                \vspace{-0.05in}
             \item Any chart map $\phi:U\to\C$ of a Riemann surface is (tautologically) holomorphic in the above sense.
-            \item If $f,g:W\to\C$ are both holomorphic at some $p\in W$, then\footnote{This makes the set $\HOLO\l(W\r)$ of all holomorphic functions $f:W\to\C$ into a $\C$-algebra.} so are $f\pm g$ and $f\cdot g$. If $g\l(p\r)\neq0$, then so is $f/g$.\exqed
+                \vspace{-0.05in}
+            \item If $f,g:W\to\C$ are both holomorphic at some $p\in W$, then so are $f\pm g$, $f\cdot g$, and $\lambda f$ for any $\lambda\in\C$. This makes the set $\HOLO\l(W\r)$ of all holomorphic functions $f:W\to\C$ into a $\C$-algebra. Lastly, if $g\l(p\r)\neq0$, then $f/g$ is also holomorphic at $p$.\exqed
         \end{itemize}
     \end{example}
     \begin{definition}
         Let $X$ and $Y$ be Riemann surfaces and let $W\subseteq X$ be open. For a fixed $p\in W$, a mapping $F:W\to Y$ is said to be \uldef{holomorphic at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ and a chart $\tpl{V,\psi}$ of $Y$ containing $F\l(p\r)$ such that $\psi\circ F\circ\phi^{-1}\!\!:\phi\l(U\r)\to\psi\l(V\r)$ is holomorphic at $\phi\l(p\r)$. If $F$ is holomorphic at every point of $W$, then $F$ is \uldef{holomorphic on $W$}.
-    \end{definition}\footnote{For $Y\coloneqq\C$ regarded as a Riemann surface, this definition agrees with the above. Again, we must check that $\textrm{`}$being holomorphic$\textrm{'}$ is well-defined, but it follows from the commutativity of the diagram below.
+    \end{definition}
+    \begin{remark}
+        For $Y\coloneqq\C$ regarded as a Riemann surface, this definition agrees with the above. Again, we must check that $\textrm{`}$being holomorphic$\textrm{'}$ is well-defined, but it follows from the commutativity of the diagram below and a similar argument as above.
         \begin{equation*}
-            \begin{tikzcd}[ampersand replacement=\&, column sep = 0.05in]
-                \phi_1\!\l(U_1\cap U_2\r) \ar[rrrrrrr, "\psi_1\circ F\circ\phi_1^{-1}", bend left = 10] \ar[dd, "\phi_2\circ\phi_1^{-1}"'] \& \& \& \& \& \& \& \psi_1\!\l(V_1\cap V_2\r) \ar[dd, "\psi_2\circ\psi_1^{-1}"] \\
-                \& \hspace{-0.23in}U_1\cap U_2 \ar[ul, "\phi_1"'] \ar [dl, "\phi_2"] \ar[rrrrr, "F"] \& \& \& \& \& V_1\cap V_2\hspace{-0.23in} \ar[ur, "\psi_1"] \ar[dr, "\psi_2"'] \\
-                \phi_2\!\l(U_1\cap U_2\r) \ar[rrrrrrr, "\psi_2\circ F\circ\phi_2^{-1}"', bend right = 10] \& \& \& \& \& \& \& \psi_2\!\l(V_1\cap V_2\r)
+            \begin{tikzcd}[column sep = 0.05in]
+                \phi_1\!\l(U_1\cap U_2\r) \ar[rrrrrrr, "\psi_1\circ F\circ\phi_1^{-1}", bend left = 10] \ar[dd, "\phi_2\circ\phi_1^{-1}"'] & & & & & & & \psi_1\!\l(V_1\cap V_2\r) \ar[dd, "\psi_2\circ\psi_1^{-1}"] \\
+                & \hspace{-0.23in}U_1\cap U_2 \ar[ul, "\phi_1"'] \ar [dl, "\phi_2"] \ar[rrrrr, "F"] & & & & & V_1\cap V_2\hspace{-0.23in} \ar[ur, "\psi_1"] \ar[dr, "\psi_2"'] \\
+                \phi_2\!\l(U_1\cap U_2\r) \ar[rrrrrrr, "\psi_2\circ F\circ\phi_2^{-1}"', bend right = 10] & & & & & & & \psi_2\!\l(V_1\cap V_2\r)
             \end{tikzcd}
-        \end{equation*}}
+        \end{equation*}
+        We make the convention that lower-case letters $f,g,h,\dots$ are \textit{functions} from a Riemann surface into $\C$, while upper-case letters $F,G,H,\dots$ are \textit{maps} between Riemann surfaces.\exqed
+    \end{remark}
     \begin{example}
-        It is easy to show that the identity map $\id_X$ on a Riemann surface $X$ is a holomorphic map. Furthermore, for all Riemann surfaces $X$, $Y$ and $Z$ and holomorphic maps $F:X\to Y$ and $G:Y\to Z$, their composite $G\circ F:X\to Z$ is also a holomorphic map. This shows that the collection of all Riemann surfaces is a \textit{category}.\exqed
+        For a Riemann surface $X$, the identity $\id_X$ is a holomorphic map. Furthermore, for all Riemann surfaces $X$, $Y$, and $Z$, and all holomorphic maps $F:X\to Y$ and $G:Y\to Z$, the composite $G\circ F:X\to Z$ is also a holomorphic map. Note that if $F:X\to Y$ is an invertible holomorphic map, then its inverse $F^{-1}:Y\to X$ is also holomorphic. Indeed, if $\tpl{U,\phi}$ and $\tpl{V,\psi}$ are charts around $p$ and $F\l(p\r)$, respectively, making $\psi\circ F\circ\phi^{-1}$ holomorphic (in the classical sense) at $\phi\l(p\r)$, then its inverse $\phi\circ F^{-1}\circ\psi^{-1}$ is also holomorphic (in the classical sense) at $\psi\l(p\r)$. Thus $F^{-1}$ is holomorphic at $F\l(p\r)$, as desired, and justifies the following definition.\exqed
     \end{example}
     \begin{definition}\label{RS:def:biholomorphic_Riemann_surfaces}
-        Let $X$ and $Y$ be Riemann surfaces. A \uldef{biholomorphism between $X$ and $Y$} is an invertible holomorphic map $F:X\to Y$ whose inverse $F^{-1}:Y\to X$ is also holomorphic. Two Riemann surfaces $X$ and $Y$ are said to be \uldef{biholomorphic} if there exists a biholomorphism $F:X\to Y$.
+        Let $X$ and $Y$ be Riemann surfaces. A \uldef{biholomorphism between $X$ and $Y$} is an invertible holomorphic map $F:X\to Y$. Two Riemann surfaces $X$ and $Y$ are said to be \uldef{biholomorphic} if there exists a biholomorphism $F:X\to Y$.
     \end{definition}
     \begin{example}[Biholomorphisms between Riemann spheres]\label{RS:exa:biholomorphisms_between_Riemann_spheres}
-        Let $\C_\infty$, $S^2$, and $\P^1$ denote the three constructions for the Riemann sphere $\RS$ presented in Examples \ref{RS:exa:one_point_compactification_of_C}, \ref{RS:exa:stereographic_projection}, and \ref{RS:exa:complex_projective_line}, respectively. We claim that the maps\footnote{Take $G\l(0,0,1\r)\coloneqq\infty$.}
+        Let $\C_\infty$, $S^2$, and $\P^1$ denote the three constructions for the Riemann sphere $\RS$ presented in Examples \ref{RS:exa:one_point_compactification_of_C}, \ref{RS:exa:stereographic_projection}, and \ref{RS:exa:complex_projective_line}, respectively. We claim that the maps
         \begin{equation*}
-            F:S^2\to\P^1:\tpl{x,y,w}\mapsto\proje{1-w:x+iy}\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ G:S^2\to\C_\infty:\tpl{x,y,w}\mapsto\frac{x+iy}{1-w}
+            F:S^2\to\P^1:\tpl{x,y,w}\mapsto\proje{1-w:x+iy}\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ G:S^2\to\C_\infty:\tpl{x,y,w}\mapsto
+            \begin{dcases}
+                \frac{x+iy}{1-w} & \textrm{if }w\neq1 \\
+                \infty & \textrm{else}
+            \end{dcases}
         \end{equation*}
-        are biholomorphisms, which shows that all three constructions are biholomorphic.\footnote{Since the collection of Riemann surfaces form a category, the $\textrm{`}$is isomorphic to$\textrm{'}$ relation is an equivalence relation. Thus we are justified to call all three constructions $\textrm{`}$the$\textrm{'}$ Riemann sphere, and, henceforth, we shall denote all three by $\RS$.} Indeed $F$ is holomorphic since with the charts
+        are biholomorphisms, which shows that all three constructions are biholomorphic. Indeed $F$ is holomorphic since with the charts
         \begin{equation*}
             \begin{alignedat}{2}
                 U&\coloneqq S^2\comp\l\{\l(0,0,1\r)\r\}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ &&\phi:U\to\C:\tpl{x,y,w}\mapsto\frac{x+iy}{1-w} \\
                 V&\coloneqq\P^1\comp\l\{\proje{0:w}\mid w\in\C\r\}&&\psi:V\to\C:\proje{z:w}\mapsto\frac{w}{z},
             \end{alignedat}
         \end{equation*}
-        we see that\footnote{A similar calculation shows that $G$ is biholomorphic. Indeed, we choose the same chart $\tpl{U,\phi}$, and choose $V\coloneqq\C_\infty\comp\l\{\infty\r\}=\C$ with $\psi\coloneqq\id_\C$. Then $\l(\psi\circ G\circ\phi^{-1}\r)\!\l(z\r)=z$ for all $z\in\phi\l(U\r)=\C$, and $G$ is invertible with inverse
-            \begin{equation*}
-                G^{-1}\!\l(z\r)\coloneqq
-                \begin{dcases}
-                    \phi^{-1}\!\l(z\r) & \textrm{if }z\in\C \\
-                    \tpl{0,0,1} & \textrm{else.}
-                \end{dcases}
-            \end{equation*}}
+        we see that
         \begin{equation*}
-            \begin{aligned}
-                \l(\psi\circ F\circ\phi^{-1}\r)\l(z\r)&=\psi\l(F\l(\frac{2\Re z}{\l|z\r|^2+1},\frac{2\Im z}{\l|z\r|^2+1},\frac{\l|z\r|^2-1}{\l|z\r|^2+1}\r)\r) \\
-                                                      &=\psi\l(\proje{1-\frac{\l|z\r|^2-1}{\l|z\r|^2+1}:\frac{2z}{\l|z\r|^2+1}}\r) \\
-                                                      &=\psi\l(\proje{1:z}\r) \\
-                                                      &=z
-            \end{aligned}
+            \l(\psi\circ F\circ\phi^{-1}\r)\l(z\r)=\psi\l(F\l(\frac{2\Re z}{\l|z\r|^2+1},\frac{2\Im z}{\l|z\r|^2+1},\frac{\l|z\r|^2-1}{\l|z\r|^2+1}\r)\!\r)=\psi\l(\proje{1-\frac{\l|z\r|^2-1}{\l|z\r|^2+1}:\frac{2z}{\l|z\r|^2+1}}\r)=\psi\l(\proje{1:z}\r)=z
         \end{equation*}
-        for all $z\in\phi\l(U\r)=\C$, which is clearly holomorphic. Furthermore, it can be checked that $F$ is invertible with inverse
+        for all $z\in\phi\l(U\r)=\C$, which is clearly holomorphic. Furthermore, it can be checked that $F$ is invertible with a well-defined inverse
         \begin{equation*}
             F^{-1}\l(\proje{z:w}\r)\coloneqq\frac{\tpl{2\Re\l(z\bar{w}\r),2\Im\l(z\bar{w}\r),\l|z\r|^2-\l|w\r|^2}}{\l|z\r|^2+\l|w\r|^2},
         \end{equation*}
-        which is well-defined, and since $\l(\psi\circ F\circ\phi^{-1}\r)^{-1}=\phi\circ F^{-1}\circ\psi^{-1}$, we see that $F^{-1}$ is holomorphic too.\exqed
+        so $F$ is a biholomorphism. For $G$, we take the same chart $\tpl{U,\phi}$ as above and choose $V\coloneqq\C_\infty\comp\l\{\infty\r\}=\C$ and $\psi\coloneqq\id_\C$. A similar calculation then shows that $\l(\psi\circ G\circ\phi^{-1}\r)\l(z\r)=z$ for all $z\in\phi\l(U\r)=\C$, and that $G$ is invertible with inverse $G^{-1}\!\l(z\r)\coloneqq\phi^{-1}\!\l(z\r)$ if $z\in\C$ and $G^{-1}\!\l(\infty\r)\coloneqq\tpl{0,0,1}$.\exqed
     \end{example}
     \begin{proposition}\label{RS:prp:holomorphic_compact_constant}
         Any holomorphic function $f:X\to\C$ on a compact Riemann surface $X$ is constant.
     \end{proposition}
     \begin{proof}
-        Since $f$ is holomorphic, the function $\l|f\r|:X\to\R$ defined by $\l|f\r|\l(x\r)\coloneqq\l|f\l(x\r)\r|$ is continuous on $X$. But $X$ is compact, so $\l|f\r|$ achieves its maximum at some point $p\in X$. Choosing a connected\footnote{Such a connected $U$ can always be found since we may let $V$ be a chart around $p$ and choose $\epsilon>0$ small enough so that $U\coloneqq B\l(p,\epsilon\r)\subseteq V$.} chart $\tpl{U,\phi}$ centered at $p$, we see that $f\circ\phi:U\to\C$ is holomorphic. Then $\l|f\circ\phi\r|:U\to\R$ has a local maximum at $0$, so, since $U$ is connected, $f\circ\phi$ is constant by the Maximum Principle. Then $f$ is locally constant around $p$, so, since $X$ is connected, $f$ is constant on $X$.\qed
+        Since $f$ is holomorphic, the function $\l|f\r|:X\to\R$ defined by $\l|f\r|\l(x\r)\coloneqq\l|f\l(x\r)\r|$ is continuous on $X$. But $X$ is compact, so $\l|f\r|$ achieves its maximum at some point $p\in X$. Choosing a connected chart $\tpl{U,\phi}$ centered at $p$, we see that $f\circ\phi:U\to\C$ is holomorphic. Then $\l|f\circ\phi\r|:U\to\R$ has a local maximum at $0$, so, since $U$ is connected, $f\circ\phi$ is constant by the Maximum Principle. Then $f$ is locally constant around $p$, so, since $X$ is connected, $f$ is constant on $X$.\qed
     \end{proof}
     \subsection{Singularities of Functions}
-    Throughout this section, let $X$ be a Riemann surface, let $p\in X$, and let $f:W\to\C$ be defined and holomorphic on a punctured neighborhood $W$ of $p$.\footnote{That is, let $f$ be defined and holomorphic on $B\l(p,\epsilon\r)\comp\l\{p\r\}$ for some $\epsilon>0$.} As above, we can study the behaviour of $f$ at $p$ from its chart representation $f\circ\phi^{-1}$.
+    Throughout this section, let $X$ be a Riemann surface, let $p\in X$, and let $f:W\to\C$ be defined and holomorphic on a punctured neighborhood $W$ of $p$. As above, we can study the behaviour of $f$ at $p$ from its chart representation $f\circ\phi^{-1}$.
     \begin{definition}
-        Let $f:W\to\C$ be a holomorphic function in a punctured neighborhood of $p$. We say that $f$ has a \uldef{removable singularity} (resp. \uldef{pole}, \uldef{essential singularity}) \uldef{at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ has a removable singularity (resp. pole, essential singularity) at $\phi\l(p\r)$.
-    \end{definition}\footnote{We recall those notions from complex analysis. Let $f:W\subseteq\C\to\C$ be a holomorphic function (in the regular sense) in a punctured neighborhood of $p$. Suppose that $f$ is not holomorphic at $p$.
-        \begin{itemize}
-            \item If $\lim_{z\to p}f\l(z\r)$ exists, then $f$ has a \ul{removable singularity at $p$}.
-            \item If $\lim_{z\to p}f\l(z\r)=\pm\infty$, then $f$ has a \ul{pole at $p$}. This is equivalent to the existence of some $n>0$ such that the limit $\lim_{z\to p}\l(z-p\r)^nf\l(z\r)$ exists. See Definition \ref{RS:def:order}.
-            \item Otherwise, $f$ has an \ul{essential singularity} \ul{at $p$}.
-        \end{itemize}
-    }
-    \vspace{-0.05in}
+        Let $f:W\to\C$ be a holomorphic function on a punctured neighborhood of $p$. We say that $f$ has a \uldef{removable singularity} (resp. \uldef{pole}, \uldef{essential singularity}) at $p$ if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ has a removable singularity (resp. pole, essential singularity) at $\phi\l(p\r)$.
+    \end{definition}
     \begin{proof}
-        (Well-definition). Equation (\ref{RS:eqn:holomorphic_function_well_defined}) shows that those notions are chart independent; the composition of $f\circ\phi^{-1}$ having a singularity at $p$ with a transition map that is holomorphic at $p$ yields a function with the same type of singularity at $p$.\qed
+        (Well-definedness). The commutativity of (\ref{RS:eqn:holomorphic_function_well_defined}) shows that those notions are chart independent; the composition of $f\circ\phi^{-1}$ having a singularity at $p$ with a transition map that is holomorphic at $p$ yields a function with the same type of singularity at $p$.\qed
     \end{proof}
     \begin{remark}
         Functions having an essential singularity at $p$ are very ill-behaved. Indeed, this occurs iff $\l|f\l(x\r)\r|$ has a non-zero oscillation near $p$. Other singularities behave much better:
         \begin{itemize}
-            \item A removable singularity occurs iff $\l|f\l(x\r)\r|$ is bounded in a neighborhood of $p$, and can be $\textrm{`}$filled in$\textrm{'}$ by defining $\tilde{f}\l(p\r)\coloneqq\lim_{x\to p}f\l(x\r)$. This makes $\tilde{f}:\tilde{W}\to\C$ into\footnote{$\tilde{W}\coloneqq W\cup\l\{p\r\}$.} a holomorphic function.
+            \item A removable singularity occurs iff $\l|f\l(x\r)\r|$ is bounded in a neighborhood of $p$, and can be $\textrm{`}$filled in$\textrm{'}$ by defining $\widetilde{f}\l(p\r)\coloneqq\lim_{x\to p}f\l(x\r)$. This extends, by Riemann's Removable Singularities Theorem, to a holomorphic function $\widetilde{f}:W\cup\l\{p\r\}\to\C$.
             \vspace{-0.08in}
             \item A pole occurs iff $\l|f\l(x\r)\r|\to\infty$ as $x\to p$, which can also be $\textrm{`}$filled in$\textrm{'}$ by defining the map
                 \begin{equation*}
@@ -112,33 +100,40 @@
                         f\l(x\r) & \textrm{else}
                     \end{dcases}
                 \end{equation*}
-                that extends the codomain of $f$ to the Riemann sphere $\RS$;\footnote{Here, we consider $\RS=\C_\infty$.} it is clear that $F$ is holomorphic.
+                that extends the codomain of $f$ to the Riemann sphere\footnote{Here, we consider $\RS=\C_\infty$.} $\RS$; since $\l|f\l(x\r)\r|\to\infty$ as $x\to p$, we see that $F$ is continuous. To show that $F$ is holomorphic, let $\tpl{U,\phi}$ and $\tpl{V,\psi}$ be charts around $x$ and $F\l(x\r)$, respectively. Since $f$ is holomorphic on $U\comp\l\{p\r\}$, we see that $\psi\circ F\circ\phi^{-1}$ is holomorphic on $\phi\l(U\r)\comp\phi\l(p\r)$. Observe that $\phi\l(p\r)$ is a removable singularity of $\psi\circ F\circ\phi^{-1}$, which can be extended as above to make $\psi\circ F\circ\phi^{-1}$ holomorphic on $\phi\l(U\r)$.
         \end{itemize}
-        Thus we see that every such function $f:W\to\C$ having pole at $p$ can be holomorphically extended to a map $F:W\to\RS$. Conversely, every holomorphic map $F:W\to\RS$ (that is not identically infinity) can be regarded as a function $f:W\comp F^{-1}\l(\infty\r)\to\C$ that is holomorphic everywhere except where $F\l(x\r)=\infty$, in which case it either has a pole. This motivates the following definition.\exqed
+        Thus we see that every such function $f:W\to\C$ having pole at $p$ can be holomorphically extended to a map $F:W\to\RS$. Conversely, every holomorphic map $F:W\to\RS$ (that is not identically infinity) can be regarded as a function $f:W\comp F^{-1}\l(\infty\r)\to\C$ that is holomorphic everywhere except where $F\l(x\r)=\infty$, in which case it has a pole. This motivates the following definition.\exqed
     \end{remark}
     \begin{definition}
         A function $f:W\to\C$ is said to be \uldef{meromorphic at $p$} if it does not have an essential singularity at $p$; that is, if it is either holomorphic, has a removable singularity, or has a pole at $p$. If $f$ is meromorphic at every point of $W$, then $f$ is \uldef{meromorphic on $W$}.
-    \end{definition}\footnote{As in Example \ref{RS:exa:elementary_holomorphic_functions}, if $f,g:W\to\C$ are both meromorphic at $p$, then so are $f\pm g$ and $f\cdot g$. If $g$ is not identically $0$, then so is $f/g$. This makes the set $\MERO\l(W\r)$ of all meromorphic functions $f:W\to\C$ into a $\C$-algebra.}
+    \end{definition}
     \begin{remark}
         The previous remark can now be rephrased by saying that the set of all meromorphic functions $f:W\to\C$ are in one-to-one correspondence with the set of all holomorphic maps $F:W\to\RS$ (which are not identically infinity). That is, meromorphic functions are the holomorphic maps to the Riemann sphere.\exqed
     \end{remark}
+    \begin{example}
+        As in Example \ref{RS:exa:elementary_holomorphic_functions}, if $f,g:W\to\C$ are both meromorphic at $p$, then so are $f\pm g$ and $f\cdot g$. Furthermore, $g$ is not identically $0$, then so is $f/g$. This makes the set $\MERO\l(W\r)$ of all meromorphic functions $f:W\to\C$ into a field.\exqed
+    \end{example}
+    \begin{proposition}\label{RS:prp:meromorphic_Riemann_sphere_rational}
+        Every meromorphic function on $\RS$ is a rational function.
+    \end{proposition}
+    \begin{proof}
+        Let $f:\RS\to\C$ be meromorphic. Since $\RS$ is compact, the discreteness of poles imply that $f$ has finitely-many poles. Without loss of generality, assume that $\infty$ is not a pole of $f$ (since we may consider $1/f$ instead). Now, for each pole $\lambda_i\in\C$ of $f$, consider its principal part
+        \begin{equation*}
+            h_i\!\l(z\r)=\sum_{\mathclap{j=-m_i}}^{-1}c_{ij}\l(z-\lambda_i\r)^j
+        \end{equation*}
+        for some $m_i>1$. Then the function $g\coloneqq f-\sum_ih_i$ is holomorphic function on $\RS$, and since $\RS$ is compact, it is constant by Proposition \ref{RS:prp:holomorphic_compact_constant}. Thus $f=g+\sum_ih_i$, which is a rational function.\qed
+    \end{proof}
     \begin{definition}\label{RS:def:order}
         Let $f:W\to\C$ be meromorphic at $p$ and consider its Laurent series $f_\phi\!\l(z\r)\coloneqq\l(f\circ\phi^{-1}\r)\l(z\r)=\sum_{i}c_i\l(z-z_0\r)^i$ under a chart $\l(U,\phi\r)$ of $X$ with $z_0\coloneqq\phi\l(p\r)$. The \uldef{order of $f$ at $p$} is
         \begin{equation*}
             \ord_p\!\l(f\r)\coloneqq\min\l\{n\in\Z\mid0\neq\l(z-z_0\r)^n\!f_\phi\!\l(z\r)\in\HOLO\l(W\r)\r\}.
         \end{equation*}
     \end{definition}
-    \footnote{Note that $f$, being meromorphic, ensures that its Laurent series has finitely-many negative terms, so the definition makes sense. If $f$ is not meromorphic, we take $\ord_p\!\l(f\r)\coloneqq\infty$.\\\ \\
-        The arithmetic of $\ord_p$ is straightforward. Indeed, if $f,g:W\to\C$ are meromorphic at $p$, then
-        \begin{itemize}
-            \item $\ord_p\!\l(fg\r)=\ord_p\!\l(f\r)+\ord_p\!\l(g\r)$.
-            \item $\ord_p\!\l(f/g\r)=\ord_p\!\l(f\r)-\ord_p\!\l(g\r)$, if $g\neq0$.
-            \item $\ord_p\!\l(1/f\r)=-\ord_p\!\l(f\r)$, if $f\neq0$.
-            \item $\ord_p\!\l(f\pm g\r)\geq\min\l\{\ord_p\!\l(f\r),\ord_p\!\l(g\r)\r\}$.
-        \end{itemize}
-    }\vspace{-0.05in}
+    \begin{remark}
+        Note that $f$, being meromorphic, ensures that its Laurent series has finitely-many negative terms, so the definition makes sense. If $f$ is not meromorphic, we take $\ord_p\!\l(f\r)\coloneqq\infty$.\exqed
+    \end{remark}
     \begin{proof}
-        (Well-definition). Let $z$ be the local coordinates given by $\l(U,\phi\r)$ and suppose that $\l(V,\psi\r)$ is another chart with $w_0\coloneqq\psi\l(p\r)$ giving another local coordinate $w$. Then the transition function $T\coloneqq\phi\circ\psi^{-1}$ is holomorphic, so it admits a power series representation
+        (Well-definedness). Let $z$ be the local coordinates given by $\l(U,\phi\r)$ and suppose that $\l(V,\psi\r)$ is another chart with $w_0\coloneqq\psi\l(p\r)$ giving another local coordinate $w$. Then the transition function $T\coloneqq\phi\circ\psi^{-1}$ is holomorphic, so it admits a power series representation
         \begin{equation*}
             z=T\l(w\r)=\sum_{n\geq0}a_n\l(w-w_0\r)^n=z_0+\sum_{n\geq1}a_n\l(w-w_0\r)^n.
         \end{equation*}
@@ -149,22 +144,19 @@
         whose lowest order term is $c_{-n_0}a_1^{-n_0}\l(w-w_0\r)^{-n_0}$. Observe that $b_{-n_0}\coloneqq c_{-n_0}a_1^{-n_0}\neq0$, so the order of $f$ at $p$ computed via $w$ is also $n_0$.\qed
     \end{proof}
     \begin{remark}
+        The arithmetic of $\ord_p$ is straightforward. Indeed, if $f,g:W\to\C$ are meromorphic at $p$, then
+        \begin{itemize}
+            \item $\ord_p\!\l(fg\r)=\ord_p\!\l(f\r)+\ord_p\!\l(g\r)$.
+                \vspace{-0.05in}
+            \item $\ord_p\!\l(f/g\r)=\ord_p\!\l(f\r)-\ord_p\!\l(g\r)$, if $g\neq0$.
+                \vspace{-0.05in}
+            \item $\ord_p\!\l(f\pm g\r)\geq\min\l\{\ord_p\!\l(f\r),\ord_p\!\l(g\r)\r\}$.\exqed
+        \end{itemize}
         The order $\ord_p\!\l(f\r)$ can be used to classify the behaviour of $f$ at $p$. Indeed, it is readily verified that $f$ is holomorphic at $p$ iff $\ord_p\!\l(f\r)\leq0$, in which case $f\l(p\r)=0$ iff $\ord_p\!\l(f\r)<0$. Similarly, $f$ has a pole at $p$ iff $\ord_p\!\l(f\r)>0$, so $f$ has neither a zero nor a pole at $p$ iff $\ord_p\!\l(f\r)=0$. This motivates the following definition.\exqed
     \end{remark}
     \begin{definition}
-        Let $f:W\to\C$ be meromorphic at $p$. We say that $f$ has a \uldef{zero} (resp. \uldef{pole}) \uldef{of order $n$ at $p$} if $\ord_p\!\l(f\r)=n<0$ (resp. $n>0$).
+        Let $f:W\to\C$ be meromorphic at $p$. We say that $f$ has a \uldef{pole of order $n$ at $p$} if $\ord_p\!\l(f\r)=n>0$, and a \uldef{zero of order $n$ at $p$} if $\ord_p\!\l(f\r)=n<0$.
     \end{definition}
-    \subsection{Meromorphic Functions on $\RS$}
-    \begin{proposition}\label{RS:prp:meromorphic_Riemann_sphere_rational}
-        Every meromorphic function on $\RS$ is a rational function.
-    \end{proposition}
-    \begin{proof}
-        Let $f:\RS\to\C$ be meromorphic. Since $\RS$ is compact, it has finitely-many poles.\footnote{Otherwise, the set of poles would have a limit point, contradicting the discreteness of poles.} W.l.o.g., assume that $\infty$ is not a pole of $f$ (since we may consider $1/f$ instead). Now, for each pole $\lambda_i\in\C$ of $f$, consider its principle part
-        \begin{equation*}
-            h_i\!\l(z\r)=\sum_{\mathclap{j=-m_i}}^{-1}c_{ij}\l(z-\lambda_i\r)^j
-        \end{equation*}
-        for some $m_i>1$. Then the function $g\coloneqq f-\sum_ih_i$ is holomorphic function on $\RS$, and since $\RS$ is compact, it is constant by Proposition \ref{RS:prp:holomorphic_compact_constant}. Thus $f=g+\sum_ih_i$, which is a rational function.\qed
-    \end{proof}
     \begin{example}
         Let $f:\RS\to\C$ be meromorphic, so $f\l(z\r)=p\l(z\r)\!/q\l(z\r)$ for some $p,q\in\C\l[z\r]$. Then $f$ is holomorphic at all points $z\in\C$ such that $q\l(z\r)\neq0$, and has a pole otherwise. Also, $f\l(\infty\r)\in\C$ if $\deg p=\deg q$, vanishes if $\deg p<\deg q$, and has a pole otherwise. In any case, $f$ is meromorphic on $\RS$. To compute $\ord_z\!\l(f\r)$ at all $z\in\RS$, we split $p$ and $q$ into linear factors to write $f$ uniquely as
         \begin{equation*}
@@ -181,10 +173,7 @@
         Lastly, it is clear that $\ord_z\!\l(f\r)=0$ for all $z\neq \lambda_i,\infty$.\exqed
     \end{example}
     \begin{remark}
-        Together with the above computation, this shows that if $f$ is a meromorphic function on $\RS$, then $\sum_{z\in\RS}\ord_z\!\l(f\r)=0$. In fact, this holds for all compact Riemann surfaces.\exqed
-    \end{remark}
-    \begin{remark}
-        We may rephrase the proposition by saying that the automorphisms on $\RS$ are all rational functions.\exqed
+        Thus if $f$ is a meromorphic function on $\RS$, then $\sum_{z\in\RS}\ord_z\!\l(f\r)=0$. In fact, this holds for all compact Riemann surfaces, which we prove in TODO.\exqed
     \end{remark}
     \subsection{Local Normal Form and the Multiplicity}
     \begin{theorem}[Local Normal Form]\label{RS:thm:local_normal_form}
@@ -240,9 +229,9 @@
         \begin{equation*}
             0\neq\l(z-z_0\r)^{-m}\!\l(f-f\l(p\r)\r)_\phi\!\l(z\r)\in\HOLO\l(U\r),
         \end{equation*}
-        so $\ord_p\!\l(f-f\l(p\r)\r)=-m$. Suppose now that $p$ is a pole of $f$, so $F\l(p\r)=\infty$. Since $\lim_{z\to p}1/f\l(z\r)=0$, we may let $p\in U\subseteq X$ be small enough so that the function $\tilde{f}:U\to\C$ defined by
+        so $\ord_p\!\l(f-f\l(p\r)\r)=-m$. Suppose now that $p$ is a pole of $f$, so $F\l(p\r)=\infty$. Since $\lim_{z\to p}1/f\l(z\r)=0$, we may let $p\in U\subseteq X$ be small enough so that the function $\widetilde{f}:U\to\C$ defined by
         \begin{equation*}
-            \tilde{f}\l(x\r)\coloneqq
+            \widetilde{f}\l(x\r)\coloneqq
             \begin{dcases}
                 0 & \textrm{if }x=p \\
                 1/f\l(x\r) & \textrm{else}
@@ -256,6 +245,6 @@
                 1/z & \textrm{else.}
             \end{dcases}
         \end{equation*}
-        } $\psi\l(z\r)\coloneqq1/z$. Then $\tilde{f}=\psi\circ F$ on $U$, so $\tilde{f}_\phi\!\coloneqq\tilde{f}\circ\phi^{-1}=\psi\circ F\circ\phi^{-1}$ on $\phi\l(U\r)$. By the same argument as above, we see that $\mult_p\!\l(F\r)=-\ord_p(\tilde{f})$. Now $\ord_p\l(f\r)=-\ord_p(\tilde{f})$, so the result follows.\qed
+        } $\psi\l(z\r)\coloneqq1/z$. Then $\widetilde{f}=\psi\circ F$ on $U$, so $\widetilde{f}_\phi\!\coloneqq\widetilde{f}\circ\phi^{-1}=\psi\circ F\circ\phi^{-1}$ on $\phi\l(U\r)$. By the same argument as above, we see that $\mult_p\!\l(F\r)=-\ord_p(\widetilde{f})$. Now $\ord_p\l(f\r)=-\ord_p(\widetilde{f})$, so the result follows.\qed
     \end{proof}
 \end{document}
