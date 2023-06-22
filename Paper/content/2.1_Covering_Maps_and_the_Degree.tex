@@ -48,32 +48,32 @@
         Thus $\pi^{-1}\!\l(p\r)=\l\{\zeta_1,\dots,\zeta_n\r\}$ for some $\zeta_j\in E$. Letting $W_j\coloneqq W_{\zeta_j}$ as above, we see that $\coprod_{j=1}^{n}W_j$ is a neighborhood of $\pi^{-1}\!\l(p\r)$. By Proposition \ref{CS:prp:proper_give_neighborhoods}, there is a neighborhood $U$ of $p$ such that $\pi^{-1}\!\l(U\r)\subseteq\coprod_{j=1}^{n}W_j$, so $\pi^{-1}\!\l(U\r)=\coprod_{j=1}^{n}V_j$ where the sets $V_j\coloneqq W_j\cap\pi^{-1}\!\l(U\r)$ are all disjoint and each $\l.\pi\r|_{V_j}:V_j\to U$ is a homeomorphism.\qed
     \end{proof}
     \subsection{Ramification Points and the Degree}
-    Throughout this section, let $F:X\to Y$ be a (non-constant) proper holomorphic map between Riemann surfaces $X$ and $Y$. We extend Proposition \ref{CS:prp:fiber_cardinalities_coincide} to $F$, which is `almost' a covering map, and define the \textit{degree} of $F$.
+    Throughout this section, let $F:Y\to X$ be a (non-constant) proper holomorphic map between Riemann surfaces $X$ and $Y$. We extend Proposition \ref{CS:prp:fiber_cardinalities_coincide} to $F$, which is `almost' a covering map, and define the \textit{degree} of $F$.
     \begin{definition}
-        A point $p\in X$ is said to be a \uldef{ramification/branch point of $F$} if $\l.F\r|_U$ is not injective for any neighborhood $U$ of $p$, in which case $F\l(p\r)\in Y$ is said to be a \uldef{critical point of $F$}. If $F$ has no ramification points, then $F$ is said to be an \uldef{unbranched holomorphic map}.
+        A point $q\in Y$ is said to be a \uldef{ramification/branch point of $F$} if $\l.F\r|_V$ is not injective for any neighborhood $V$ of $q$, in which case $F\l(q\r)\in X$ is said to be a \uldef{critical point of $F$}. If $F$ has no ramification points, then $F$ is said to be an \uldef{unbranched holomorphic map}.
     \end{definition}
     \begin{remark}
-        It is immediate that $F$ is unbranched iff it is a local homeomorphism. Indeed, if $F$ is unbranched, then for every $p\in X$ there exists a neighborhood $U$ of $p$ such that $\l.F\r|_U$ is injective. By the Open Mapping Theorem, $F$ is open and hence $\l.F\r|_U$ maps $U$ homeomorphically to the open set $F\l(U\r)$. Conversely, if $F$ is a local homeomorphism, then for every $p\in X$ there exists a neighborhood $U$ of $p$ that is mapped homeomorphically onto an open set in $Y$. Thus $\l.F\r|_U$ is injective, so $F$ is unbranched at $p$.\\\ \\
+        It is immediate that $F$ is unbranched iff it is a local homeomorphism. Indeed, if $F$ is unbranched, then for every $q\in Y$ there exists a neighborhood $V$ of $q$ such that $\l.F\r|_V$ is injective. By the Open Mapping Theorem, $F$ is open and hence $\l.F\r|_V$ maps $V$ homeomorphically to the open set $F\l(V\r)$. Conversely, if $F$ is a local homeomorphism, then for every $q\in Y$ there exists a neighborhood $V$ of $q$ that is mapped homeomorphically onto an open set in $X$. Thus $\l.F\r|_V$ is injective, so $F$ is unbranched at $q$.\\\ \\
         In particular, this shows that every covering map is unbranched. Conversely, Proposition \ref{CS:prp:proper_local_covering} shows that every unbranched proper map is a covering map, so all fibers are equinumerous. On the other hand, if $F$ is branched, then it is a covering map over $X$ with all ramification points removed. Including the ramification points, however, the fibers of $F$ are \textit{not necessarily} equinumerous anymore, but the next best thing happens and we only need to count the fibers \textit{with multiplicity}. First, we need a lemma.\exqed
     \end{remark}
     \begin{lemma}\label{CS:lem:ramification_iff_mult_2}
-        For all $p\in X$, the map $F:X\to Y$ has a ramification point at $p$ iff $\mult_p\!\l(F\r)\geq2$.
+        For all $q\in Y$, the map $F:Y\to X$ has a ramification point at $q$ iff $\mult_q\!\l(F\r)\geq2$.
     \end{lemma}
     \begin{proof}
-        By Theorem \ref{RS:thm:local_normal_form}, there exist charts $\tpl{U,\phi}$ centered at $p$ and $\tpl{V,\psi}$ centered at $F\l(p\r)$ such that $f\coloneqq\psi\circ F\circ\phi^{-1}$ is the power map $z\mapsto z^m$ where $m\coloneqq\mult_p\!\l(F\r)$. Since $\phi$ and $\psi$ are, in particular, injections, we see that $F$ is locally injective at $p$ iff $f$ is locally injective at $0$. But this occurs precisely when $m=\mult_p\!\l(F\r)<2$, so the result follows.\qed
+        By Theorem \ref{RS:thm:local_normal_form}, there exist charts $\tpl{V,\psi}$ centered at $q$ and $\tpl{U,\phi}$ centered at $F\l(q\r)$ such that $f\coloneqq\phi\circ F\circ\psi^{-1}$ is the power map $z\mapsto z^m$ where $m\coloneqq\mult_q\!\l(F\r)$. Since $\phi$ and $\psi$ are, in particular, injections, we see that $F$ is locally injective at $q$ iff $f$ is locally injective at $0$. But this occurs precisely when $m=\mult_q\!\l(F\r)<2$, so the result follows.\qed
     \end{proof}
     \begin{defthm}\label{CS:thm:degree_sum_of_multiplicities}
-        The \uldef{degree of $F$} is the cardinality of any fiber $F^{-1}\!\l(q\r)$ for $q\in X$, counted with multiplicity. That is, $\deg F\coloneqq\sum_{p\in F^{-1}\!\l(q\r)}\mult_p\!\l(F\r)$ is independent of $q\in X$.
+        The \uldef{degree of $F$} is the cardinality of any fiber $F^{-1}\!\l(p\r)$ for $p\in X$, counted with multiplicity. That is, $\deg F\coloneqq\sum_{q\in F^{-1}\!\l(p\r)}\mult_q\!\l(F\r)$ is independent of $p\in X$.
     \end{defthm}
     \begin{proof}
-        For non-critical points $q\in Y$, Lemma \ref{CS:lem:ramification_iff_mult_2} shows that $\mult_p\!\l(F\r)=1$ for any $p\in F^{-1}\!\l(p\r)$. Then $\deg F=\l|F^{-1}\!\l(q\r)\r|$, and since Proposition \ref{CS:prp:proper_local_covering} shows that $F$ is a covering map when all ramification points are removed, it is, by Proposition \ref{CS:prp:fiber_cardinalities_coincide}, constant over all non-critical points.\\\ \\
-        Otherwise, let $q$ is a critical point of $F$. Since $F^{-1}\!\l(q\r)$ is compact, it is finite by Discreteness of Preimages, say $F^{-1}\!\l(q\r)=\l\{p_1,\dots,p_n\r\}$ for $p_i\in X$. Fix $1\leq j\leq n$ and set $m_j\coloneqq\mult_{p_j}\!\l(F\r)$. We claim that there exist neighborhoods $U_j$ of $p_j$ and $V_j$ of $q$ such that $\l|F^{-1}\!\l(r\r)\cap U_j\r|=m_j$ for all $r\in V_j\comp\l\{q\r\}$. Indeed, by Theorem \ref{RS:thm:local_normal_form}, there exist charts $\tpl{U_j,\phi_j}$ of $X$ centered at $p_j$ and $\tpl{V_j,\psi_j}$ of $Y$ centered $q$ such that $F$ acts as the power function $f\l(z\r)\coloneqq z^{m_j}$ on $\phi_j\!\l(U_j\r)$. Since the set of ramification points of $F$ is discrete, we may choose $V_j$ small enough so that every $r\in V_j\comp\l\{q\r\}$ is unramified. Take $r\in V_j\comp\l\{q\r\}$ and set $w\coloneqq\psi_j\!\l(r\r)\neq0$. Then $\l|f^{-1}\!\l(w\r)\r|=m_j$, so we have
+        For non-critical points $p\in X$, Lemma \ref{CS:lem:ramification_iff_mult_2} shows that $\mult_q\!\l(F\r)=1$ for any $q\in F^{-1}\!\l(p\r)$. Then $\deg F=\l|F^{-1}\!\l(p\r)\r|$, and since Proposition \ref{CS:prp:proper_local_covering} shows that $F$ is a covering map when all ramification points are removed, it is, by Proposition \ref{CS:prp:fiber_cardinalities_coincide}, constant over all non-critical points.\\\ \\
+        Otherwise, let $p$ be a critical point of $F$. Since $F^{-1}\!\l(p\r)$ is compact, it is finite by Discreteness of Preimages, say $F^{-1}\!\l(p\r)=\l\{q_1,\dots,q_n\r\}$ for $q_i\in Y$. Fix $1\leq j\leq n$ and set $m_j\coloneqq\mult_{q_j}\!\l(F\r)$. We claim that there exist neighborhoods $V_j$ of $q_j$ and $U_j$ of $p$ such that $\l|F^{-1}\!\l(r\r)\cap V_j\r|=m_j$ for all $r\in U_j\comp\l\{p\r\}$. Indeed, by Theorem \ref{RS:thm:local_normal_form}, there exist charts $\tpl{V_j,\psi_j}$ of $Y$ centered at $q_j$ and $\tpl{U_j,\phi_j}$ of $X$ centered $p$ such that $F$ acts as the power function $f\l(z\r)\coloneqq z^{m_j}$ on $\psi_j\!\l(V_j\r)$. Since the set of ramification points of $F$ is discrete, we may choose $U_j$ small enough so that every $r\in U_j\comp\l\{p\r\}$ is unramified. Take $r\in U_j\comp\l\{p\r\}$ and set $w\coloneqq\phi_j\!\l(r'\r)\neq0$. Then $\l|f^{-1}\!\l(w\r)\r|=m_j$, so we have
         \begin{equation*}
-            \l|F^{-1}\!\l(r\r)\cap U_j\r|=\l|\phi_j\l(F^{-1}\!\l(r\r)\r)\r|=\l|\phi_j\l(F^{-1}\!\l(\psi_j^{-1}\!\l(w\r)\r)\r)\r|=\l|f^{-1}\!\l(w\r)\r|=m_j.
+            \l|F^{-1}\!\l(r\r)\cap V_j\r|=\l|\psi_j\l(F^{-1}\!\l(r\r)\r)\r|=\l|\psi_j\l(F^{-1}\!\l(\phi_j^{-1}\!\l(w\r)\r)\r)\r|=\l|f^{-1}\!\l(w\r)\r|=m_j.
         \end{equation*}
-        Now, since $U_j$ is a neighborhood of $p_j$, we see that $F^{-1}\!\l(V_j\r)\subseteq U_j$ by restricting $V_j$ in accordance with Proposition \ref{CS:prp:proper_give_neighborhoods}, if necessary. Then, with $V\coloneqq\bigcap_{i=1}^{n}V_i$, we see that $F^{-1}\!\l(V\r)\subseteq\coprod_{i=1}^{n}U_i$ where the sets $U_i$ are all disjoint. Take any $r\in V\comp\l\{q\r\}$. Then $r\in V_i\comp\l\{q\r\}$ for all $1\leq i\leq n$, so
+        Now, since $V_j$ is a neighborhood of $q_j$, we see that $F^{-1}\!\l(U_j\r)\subseteq V_j$ by restricting $U_j$ in accordance with Proposition \ref{CS:prp:proper_give_neighborhoods}, if necessary. Then, with $U\coloneqq\bigcap_{i=1}^{n}U_i$, we see that $F^{-1}\!\l(U\r)\subseteq\coprod_{i=1}^{n}V_i$ where the sets $V_i$ are all disjoint. Take any $r\in U\comp\l\{p\r\}$. Then $r\in U_i\comp\l\{p\r\}$ for all $1\leq i\leq n$, so
         \begin{equation*}
-            \l|F^{-1}\!\l(r\r)\r|=\l|F^{-1}\!\l(r\r)\cap\bigcup_{i=1}^{n}U_i\r|=\l|\bigcup_{i=1}^{n}\l(F^{-1}\!\l(r\r)\cap U_i\r)\r|=\sum_{i=1}^{n}\l|F^{-1}\!\l(r\r)\cap U_i\r|=\sum_{i=1}^{n}m_i.
+            \l|F^{-1}\!\l(r\r)\r|=\l|F^{-1}\!\l(r\r)\cap\bigcup_{i=1}^{n}V_i\r|=\l|\bigcup_{i=1}^{n}\l(F^{-1}\!\l(r\r)\cap V_i\r)\r|=\sum_{i=1}^{n}\l|F^{-1}\!\l(r\r)\cap V_i\r|=\sum_{i=1}^{n}m_i.
         \end{equation*}
         But $r$ is not a critical point of $F$, so $\deg F=\l|F^{-1}\!\l(r\r)\r|=\sum_{i=1}^{n}m_i$ and the result follows.\qed
     \end{proof}
@@ -81,14 +81,14 @@
         We extend Example \ref{CS:exa:power_map} by considering the same power map $z\mapsto z^m$ for $m\geq2$, this time as a map $f:\C\to\C$. Away from $0$, the map $f$ is a proper local homeomorphism as before, so the cardinality of any fiber is $m$. At $0$, we see that $\mult_0\!\l(f\r)=m\geq2$, so $f$ has a ramification point at $0$. Counting multiplicities, the cardinality of $f^{-1}\!\l(0\r)$ is $m$, so $\deg f=m$.\exqed
     \end{example}
     \begin{corollary}
-        If $X$ is compact, then a holomorphic map $F:X\to Y$ is a biholomorphism iff $\deg F=1$.
+        If $Y$ is compact, then a holomorphic map $F:Y\to X$ is a biholomorphism iff $\deg F=1$.
     \end{corollary}
     \begin{proof}
-        Since $X$ is compact, we see that $F$ is proper surjection. Observe that $F$ is an injective iff it has no critical points, and by Lemma \ref{CS:lem:ramification_iff_mult_2}, this occurs iff $\mult_p\!\l(F\r)=1$ for all $p\in X$.
+        Since $Y$ is compact, we see that $F$ is proper surjection. Observe that $F$ is an injective iff it has no critical points, and by Lemma \ref{CS:lem:ramification_iff_mult_2}, this occurs iff $\mult_q\!\l(F\r)=1$ for all $q\in Y$.
         \begin{itemize}
-            \item ($\Rightarrow$) If $F$ is an injection, then $\l|f^{-1}\!\l(p\r)\r|=1$ for all $p\in X$. Thus $\deg F=1$.
+            \item ($\Rightarrow$) If $F$ is an injection, then $\l|f^{-1}\!\l(q\r)\r|=1$ for all $q\in Y$. Thus $\deg F=1$.
                 \vspace{-0.05in}
-            \item ($\Leftarrow$): Since $\mult_p\!\l(F\r)\geq1$ for all $p\in X$, the above theorem forces $\mult_p\!\l(F\r)=1$.\qed
+            \item ($\Leftarrow$): Since $\mult_q\!\l(F\r)\geq1$ for all $q\in Y$, the above theorem forces $\mult_q\!\l(F\r)=1$.\qed
         \end{itemize}
     \end{proof}
     \begin{corollary}\label{CS:cor:exists_meromorphic_implies_biholomorphic_Riemann_sphere}
