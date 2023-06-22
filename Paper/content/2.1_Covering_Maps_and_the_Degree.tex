@@ -1,9 +1,60 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
-    This chapter assumes that the reader is familiar with the basic notions of liftings and homotopy of curves from algebraic topology, for which we refer the reader to \cite[][Chapter 1]{hatcher}.
-    \section{Covering Maps and the Degree}
-    We devote this section to develop the tools necessary to define the \textit{degree} of a proper holomorphic map, which, intuitively, is the \textit{number of sheets} in which it covers its image. However, there are points in the image which are not covered `uniformly', and they must be taken care of separately.\\\ \\
-    Using the theory of degrees, we prove a criterion for a compact Riemann surface $X$ to be biholomorphic to the Riemann sphere $\RS$, which will be used in Section \ref{sec:moduli_space_of_sphere} to calculate the moduli space of $\RS$.
+    We develop the basics of covering space theory. More specifically, Section \ref{CS:sec:covering_maps_degree} develops the notion of the \textit{degree} to derive a criterion for a compact Riemann surface $X$ to be biholomorphic to the Riemann sphere $\RS$, and Section \ref{CS:sec:covering_transformations} derives the \textit{Lifting Criterion} from algebraic topology. Those tools will be used in Sections \ref{MS:sec:moduli_space_of_sphere} and \ref{MS:cor:moduli_space_torus} to compute the moduli spaces of $S^2$ and $T^2$, respectively. This chapter requires some background on homotopies of curves, for which we refer the reader to \cite[][Section 1.1]{hatcher}. Section \ref{CS:sec:covering_transformations} roughly follows \cite[][Section 1.3.1]{hatcher}, so the reader will benefit from reading it concurrently.
+    \section{Covering Maps and the Degree}\label{CS:sec:covering_maps_degree}
+    We devote this section to develop the tools necessary to define the \textit{degree} of a proper holomorphic map, which, intuitively, is the \textit{number of sheets} in which it covers its image. However, there are points in the image which are not covered `evenly', so they must be counted with multiplicity.
+    \subsection{Proper and Covering Maps}
+    We first gather some basic results on the theory of covering spaces from topology. Throughout this section and the next, let $E$ and $X$ be locally-compact topological spaces.
+    \begin{definition}
+        A map $\pi:E\to X$ is said to be a \uldef{covering map} if every point $p\in X$ admits a neighborhood $U$ such that $\pi^{-1}\l(U\r)=\coprod_{j\in J}V_j$ where $V_j$ are disjoint open sets in $E$, each homeomorphic to $U$ via $\l.\pi\r|_{V_j}$. In this case, we say that $U$ is \uldef{covered evenly by $\pi$} and that $E$ is a \uldef{covering space of $X$}.
+    \end{definition}
+    \begin{proposition}\label{CS:prp:fiber_cardinalities_coincide}
+        Let $\pi:E\to X$ be a covering map. If $X$ is connected, then, for any $p_1,p_2\in X$, the fibers $\pi^{-1}\!\l(p_1\r)$ and $\pi^{-1}\!\l(p_2\r)$ are equinumerous.
+    \end{proposition}
+    \begin{proof}
+        Let $\l\{U_i\r\}$ be an evenly-covered open cover of $X$, so $\pi^{-1}\!\l(U_i\r)=\coprod_{j\in J}V_{ij}$ for disjoint open sets $V_{ij}\subseteq E$ where each $\l.\pi\r|_{V_{ij}}:V_{ij}\to U_i$ is a homeomorphism. Fix $x_0\in X$, say $x_0\in U_0$, and consider the set $S\coloneqq\l\{x\in X\mid\l|\pi^{-1}\!\l(x\r)\r|=\l|\pi^{-1}\!\l(x_0\r)\r|\r\}$. We claim that $S$ is both open and closed, so $S=X$ and we are done.
+        \begin{itemize}
+            \item Take $x\in S$, say $x\in U_i$ for some $i\in I$. For all $x'\in U_i$, the set $\pi^{-1}\!\l(x'\r)\cap V_{ij}$ is a singleton for all $j\in J$, so $\l|\pi^{-1}\!\l(x'\r)\r|=\l|J\r|$. Thus $x'\in S$, so $U_i\subseteq S$.
+            \item Take $x\in X\comp S$, so $\l|\pi^{-1}\!\l(x\r)\r|\neq\l|\pi^{-1}\!\l(x_0\r)\r|$ and hence $x\not\in U_0$. Thus $x\in U_i$ for some $i\neq0$, and for all $x'\in U_i$, the fiber $\pi^{-1}\!\l(x'\r)$ is not equinumerous with $\pi^{-1}\!\l(x_0\r)$. Thus $U_i\subseteq X\comp S$.\qed
+        \end{itemize}
+        % Since $X$ is path-connected, there exists a curve $\alpha:\l[0,1\r]\to X$ from $p_1$ to $p_2$. We define a map $\phi:\pi^{-1}\!\l(p_1\r)\to\pi^{-1}\!\l(p_2\r)$ as follows. Every $\zeta\in\pi^{-1}\!\l(p_1\r)$ induces a unique lifting $\tilde{\alpha}:\l[0,1\r]\to E$ such that $\tilde{\alpha}\l(0\r)=\zeta$, and since $\pi\l(\tilde{\alpha}\l(1\r)\r)=\alpha\l(1\r)=p_2$, we have $\tilde{\alpha}\l(1\r)\in\pi^{-1}\!\l(p_2\r)$. Hence we define $\phi\l(\zeta\r)\coloneqq\tilde{\alpha}\l(1\r)$. The uniqueness of liftings ensures that $\phi$ is well-defined and bijective, so $\pi^{-1}\!\l(p_1\r)$ and $\pi^{-1}\!\l(p_2\r)$ are equinumerous.\qed
+    \end{proof}
+    \begin{example}
+        Let $m\geq2$ be a natural number and consider the power map $f:\C^\ast\to\C^\ast$ mapping $z\mapsto z^m$. We claim that $f$ is a covering map, so take $b\in\C^\ast$ and let $a\in\C^\ast$ be any one of its $m^\textrm{th}$ roots. Since $f$ is a local homeomorphism, there exist neighborhoods $V_0$ of $a$ and $U$ of $b$ such that $\l.f\r|_{V_0}:V_0\to U$ is a homeomorphism. We claim that
+        \begin{equation*}
+            f^{-1}\!\l(U\r)=\coprod_{j=0}^{m-1}\omega^jV_0,
+        \end{equation*}
+        where $\omega$ is an $m^\textrm{th}$ root of unity. Indeed, for all $f\l(c\r)\in U$, there exists some $a'\in V_0$ such that $f\l(a'\r)=f\l(c\r)$. Then $c=\omega^ja'$ for some $0\leq j\leq m-1$, so $c\in\omega^jV_0$. Conversely, if $c\in\omega^jV_0$ for some $0\leq j\leq m-1$, then $c=\omega^ja'$ for some $a'\in V_0$ and hence $f\l(c\r)=f\l(\omega^ja'\r)=f\l(a'\r)\in U$. Now, since $f^{-1}\!\l(b\r)$ is discrete, the sets $V_j\coloneqq\omega^jV_0$ can be made small enough so that they are pairwise disjoint. Then each $\l.f\r|_{V_j}:V_j\to U$ is a homeomorphism, as desired.\exqed
+    \end{example}
+    \begin{example}
+        For any lattice $\Gamma\subseteq\C$, the projection $\pi:\C\to\C/\Gamma$ is a covering map. Indeed, take $z+\Gamma\in\C/\Gamma$ and let $w\in\C$ be such that $\pi\l(w\r)=z+\Gamma$. Since $\pi$ is a local homeomorphism\footnote{This follows directly from our construction of $\C/\Gamma$.}, there exist neighborhoods $V$ of $w$ and $U$ of $z+\Gamma$ such that $\l.\pi\r|_{V}:V\to U$ is a homeomorphism. We similarly claim that
+        \begin{equation*}
+            \pi^{-1}\!\l(U\r)=\coprod_{\lambda\in\Gamma}\l(\lambda+V\r).
+        \end{equation*}
+        Indeed, for all $\pi\l(z\r)\in U$, there exists some $w'\in V$ such that $\pi\l(z\r)=\pi\l(w'\r)$. Then $z+\Gamma=w'+\Gamma$, so $z=w'+\lambda$ for some $\lambda\in\Gamma$. Conversely, if $z\in\lambda+V$ for some $\lambda\in\Gamma$, then $z=w'+\lambda$ for some $w'\in V$ and hence $\pi\l(z\r)=\pi\l(\omega'+\lambda\r)=\pi\l(w\r)\in U$. Now, the sets $V_\lambda\coloneqq\lambda+V$ are all disjoint and each $\l.\pi\r|_{V_\lambda}:V_\lambda\to U$ is a homeomorphism, as desired.\exqed
+    \end{example}
+    \begin{definition}
+        A map $\pi:E\to X$ is said to be \uldef{proper} if the preimage of every compact set is compact.
+    \end{definition}
+    \begin{proposition}\label{CS:prp:proper_give_neighborhoods}
+        For a proper map $\pi:E\to X$, every $p\in X$ and every neighborhood $V$ of $\pi^{-1}\!\l(p\r)$ admits a neighborhood $U$ of $p$ such that $\pi^{-1}\!\l(U\r)\subseteq V$.
+    \end{proposition}
+    \begin{proof}
+        Since $E\comp V$ is closed and $\pi$ is proper, we see that $\pi\l(E\comp V\r)$ is closed too. Clearly $p\not\in\pi\l(E\comp V\r)\eqqcolon W$, so $U\coloneqq X\comp W$ is a neighborhood of $p$. Then $\pi^{-1}\!\l(U\r)\subseteq V$, since for all $\pi\l(\zeta\r)\in U$, we see that $\pi\l(\zeta\r)\not\in\pi\l(E\comp V\r)$ and so $\zeta\not\in E\comp V$.\qed
+    \end{proof}
+    \begin{proposition}\label{CS:prp:proper_local_covering}
+        Any proper local homeomorphism is a covering map.
+    \end{proposition}
+    \begin{proof}
+        Let $\pi:E\to X$ be a proper local homeomorphism and take $p\in X$. We claim that $\pi^{-1}\l(p\r)$ is finite.
+        \begin{itemize}
+            \item For each $\zeta\in\pi^{-1}\l(p\r)$, there exist neighborhoods $W_\zeta$ of $\zeta$ and $U$ of $p$ such that $\l.\pi\r|_{W_\zeta}:W_\zeta\to U$ is a homeomorphism. Then the sets $W_\zeta$ must be disjoint, for if $\zeta'\in W_\zeta\cap W_{\zeta'}$ for some $\zeta'\neq\zeta$, then $\l.\pi\r|_{W_\zeta}\!\l(\zeta\r)=p=\l.\pi\r|_{W_\zeta}\!\l(\zeta'\r)$, contradicting that $\l.\pi\r|_{W_\zeta}$ is a homeomorphism. Thus $\pi^{-1}\!\l(p\r)$ must be finite, lest the cover $\l\{W_\zeta\r\}$ admits no finite subcover.
+        \end{itemize}
+        Thus $\pi^{-1}\l(p\r)=\l\{\zeta_1,\dots,\zeta_n\r\}$ for some $\zeta_j\in E$. Letting $W_j\coloneqq W_{\zeta_j}$ as above, we see that $\coprod_{j=1}^{n}W_j$ is a neighborhood of $\pi^{-1}\l(p\r)$. By Proposition \ref{CS:prp:proper_give_neighborhoods}, there is a neighborhood $U$ of $p$ such that $\pi^{-1}\l(U\r)\subseteq\coprod_{j=1}^{n}W_j$, so $\pi^{-1}\l(U\r)=\coprod_{j=1}^{n}V_j$ where the sets $V_j\coloneqq W_j\cap\pi^{-1}\l(U\r)$ are all disjoint and each $V_j$ is homeomorphic to $U$ via $\l.\pi\r|_{V_j}$.\qed
+    \end{proof}
+    \subsection{Degrees and Multiplicities}
+
+    % ============== OLD ==============
     \subsection{Ramification and Critical Points}
     \begin{definition}
         Let $X$ and $Y$ be Riemann surfaces and let $F:X\to Y$ be a non-constant holomorphic map. A point $p\in X$ is said to be a \uldef{ramification point of $F$} if $\l.F\r|_U$ is not injective for any neighborhood $U$ of $p$, in which case $F\l(p\r)\in Y$ is said to be a \uldef{critical value of $F$}. If $F$ has no ramification points, then $F$ is said to be an \uldef{unbranched holomorphic map}.
@@ -36,45 +87,6 @@
             \l.F\r|_U=(\pi\circ\tilde{F})|_U=\l.\pi\r|_W\circ\tilde{F}|_U,
         \end{equation*}
         so $\tilde{F}|_U=\cchi\circ\l.F\r|_U$. Then $p\in U$ and $\tilde{F}|_U$ is a composition of two holomorphic maps, so $\tilde{F}$ is holomorphic at $p$.\qed
-    \end{proof}
-    \subsection{Proper and Covering Maps}
-    In this section, we gather some basic results on the theory of covering maps from topology. Throughout this section and the next, $E$ and $X$ are locally-compact topological spaces.\footnote{The assumption that $E$ and $X$ are locally compact ensures that all proper maps are closed; that is, then send closed sets to closed sets.}
-    \begin{definition}
-        A map $\pi:E\to X$ is said to be \uldef{proper} if the preimage of every compact set is compact.
-    \end{definition}
-    \begin{proposition}\label{RS:prp:proper_give_neighborhoods}
-        Let $\pi:E\to X$ be a proper map. Then for every $p\in X$ and every neighborhood $V$ of $\pi^{-1}\l(p\r)$, there exists a neighborhood $U$ of $p$ such that $\pi^{-1}\!\l(U\r)\subseteq V$.
-    \end{proposition}
-    \begin{proof}
-        Since $V$ is open, the set $E\comp V$ is closed. Since $\pi$ is proper, it is closed and hence $\pi\l(E\comp V\r)$ is closed too. Clearly $p\not\in\pi\l(E\comp V\r)\eqqcolon W$, so $U\coloneqq X\comp W$ is a neighborhood of $p$; we claim that $\pi^{-1}\l(U\r)\subseteq V$. Indeed, for all $\pi\l(\zeta\r)\in U$, we see that $\pi\l(\zeta\r)\not\in\pi\l(E\comp V\r)$ and so $\zeta\not\in E\comp V$.\qed
-    \end{proof}
-    \begin{definition}
-        A map $\pi:E\to X$ is said to be a \uldef{covering map} if every point $p\in X$ has a neighborhood $U$ such that $\pi^{-1}\l(U\r)=\bigcup_{j\in J}V_j$ where $V_j$ are disjoint open sets in $E$, each homeomorphic to $U$ via $\l.\pi\r|_{V_j}$.
-    \end{definition}
-    \begin{example}
-        Let $m\geq2$ be a natural number and consider the power map $f:\C^\ast\to\C^\ast$ mapping $z\mapsto z^m$. We claim that $f$ is a covering map, so take $b\in\C^\ast$ and let $a\in\C^\ast$ be any one of its $m^\textrm{th}$ roots. Since $f$ is a unbranched, there exist neighborhoods $V_0$ of $a$ and $U$ of $b$ such that $\l.f\r|_{V_0}:V_0\to U$ is a homeomorphism. It is clear then that\footnote{Indeed, for all $c\in f^{-1}\l(U\r)$, $f\l(c\r)\in U$ and so there exists some $a'\in V_0$ such that $f\l(a'\r)=f\l(c\r)$. Then $c=\omega^ja'$ for some $0\leq j\leq m-1$, so $c\in\omega^jV_0$. Conversely, if $c\in\omega^jV_0$ for some $0\leq j\leq m-1$, then $c=\omega^ja'$ for some $a'\in V_0$ and hence $f\l(c\r)=f\l(\omega^ja'\r)=f\l(a'\r)\in U$.}
-        \vspace{-0.05in}
-        \begin{equation*}
-            f^{-1}\l(U\r)=\bigcup_{j=0}^{m-1}\omega^jV_0,
-        \end{equation*}
-        where $\omega$ is an $m^\textrm{th}$ root of unity, and since $f^{-1}\l(b\r)$ is discrete, the sets $V_j\coloneqq\omega^jV_0$ can be made small enough so that they are pairwise disjoint. Then each $\l.f\r|_{V_j}:V_j\to U$ is a homeomorphism, as desired.\exqed
-    \end{example}
-    \begin{example}
-        For any lattice $\Gamma\subseteq\C$, the projection $\pi:\C\to\C/\Gamma$ is a covering map. Indeed, take $z+\Gamma\in\C/\Gamma$ and let $w\in\C$ be such that $\pi\l(w\r)=z+\Gamma$. Since $\pi$ is unbranched, there exist neighborhoods $V$ of $w$ and $U$ of $z+\Gamma$ such that $\l.\pi\r|_{V}:V\to U$ is a homeomorphism. Then clearly\footnote{Similarly, for all $z\in\pi^{-1}\!\l(U\r)$, $\pi\l(z\r)\in U$ and so there exists some $w'\in V$ such that $\pi\l(z\r)=\pi\l(w'\r)$. Then $z+\Gamma=w'+\Gamma$, so $z=w'+\lambda$ for some $\lambda\in\Gamma$. Conversely, if $z\in\lambda+V$ for some $\lambda\in\Gamma$, then $z=w'+\lambda$ for some $w'\in V$ and hence $\pi\l(z\r)=\pi\l(\omega'+\lambda\r)=\pi\l(w\r)\in U$.}
-        \begin{equation*}
-            \pi^{-1}\l(U\r)=\bigcup_{\lambda\in\Gamma}\l(\lambda+V\r)
-        \end{equation*}
-        where the sets $V_\lambda\coloneqq\lambda+V$ are all disjoint and each $\l.\pi\r|_{V_\lambda}:V_\lambda\to U$ is a homeomorphism.\exqed
-    \end{example}
-    \begin{proposition}\label{CS:prp:proper_local_covering}
-        Any proper local homeomorphism is a covering map.
-    \end{proposition}
-    \begin{proof}
-        Let $\pi:E\to X$ be a proper local homeomorphism and take $p\in X$. We claim that $\pi^{-1}\l(p\r)$ is finite.
-        \begin{itemize}
-            \item For each $\zeta\in\pi^{-1}\l(p\r)$, there exist neighborhoods $W_\zeta$ of $\zeta$ and $U$ of $p$ such that $\l.\pi\r|_{W_\zeta}:W_\zeta\to U$ is a homeomorphism. Then the sets $W_\zeta$ must be disjoint, for if $\zeta'\in W_\zeta$ for some $\zeta'\neq\zeta$, then $\l.\pi\r|_{W_\zeta}\!\l(\zeta\r)=p=\l.\pi\r|_{W_\zeta}\!\l(\zeta'\r)$, contradicting that $\l.\pi\r|_{W_\zeta}$ is a homeomorphism. Thus $\pi^{-1}\l(p\r)$ must be finite, lest the cover $\l\{W_\zeta\r\}$ admits no finite subcover.
-        \end{itemize}
-        Thus $\pi^{-1}\l(p\r)=\l\{\zeta_1,\dots,\zeta_n\r\}$ for some $\zeta_j\in E$. Letting $W_j\coloneqq W_{\zeta_j}$ as above, we see that $\bigcup_{j=1}^{n}W_j$ is a neighborhood of $\pi^{-1}\l(p\r)$. By Proposition \ref{RS:prp:proper_give_neighborhoods}, there is a neighborhood $U$ of $p$ such that $\pi^{-1}\l(U\r)\subseteq\bigcup_{j=1}^{n}W_j$, so $\pi^{-1}\l(U\r)=\bigcup_{j=1}^{n}V_j$ where the sets $V_j\coloneqq W_j\cap\pi^{-1}\l(U\r)$ are all disjoint and each $\l.\pi\r|_{V_j}:V_j\to U$ is a homeomorphism.\qed
     \end{proof}
     \subsection{Liftings of Curves}
     This section develops some technical tools to define the \textit{number of sheets} of a covering, which in turn is used to define the \textit{degree} of a proper holomorphic map.
@@ -141,7 +153,7 @@
                     \l|F^{-1}\!\l(r\r)\cap U_j\r|=\l|\phi_j\l(F^{-1}\l(r\r)\r)\r|=\l|\phi_j\l(F^{-1}\!\l(\psi_j^{-1}\!\l(w\r)\r)\r)\r|=\l|f^{-1}\!\l(w\r)\r|=m_j.
                 \end{equation*}
         \end{itemize}
-        Since $U_j$ is a neighborhood of $p_j$, we see that $F^{-1}\!\l(V_j\r)\subseteq U_j$ by restricting $V_j$ in accordance with Proposition \ref{RS:prp:proper_give_neighborhoods}, if necessary. Then, with $V\coloneqq\bigcap_{i=1}^{n}V_i$, we see that $F^{-1}\!\l(V\r)\subseteq\bigcup_{i=1}^{n}U_i$ where the sets $U_i$ are all disjoint. Take any $r\in V\comp\l\{q\r\}$. Then $r\in V_i\comp\l\{q\r\}$ for all $1\leq i\leq n$, so
+        Since $U_j$ is a neighborhood of $p_j$, we see that $F^{-1}\!\l(V_j\r)\subseteq U_j$ by restricting $V_j$ in accordance with Proposition \ref{CS:prp:proper_give_neighborhoods}, if necessary. Then, with $V\coloneqq\bigcap_{i=1}^{n}V_i$, we see that $F^{-1}\!\l(V\r)\subseteq\bigcup_{i=1}^{n}U_i$ where the sets $U_i$ are all disjoint. Take any $r\in V\comp\l\{q\r\}$. Then $r\in V_i\comp\l\{q\r\}$ for all $1\leq i\leq n$, so
         \begin{equation*}
             \l|F^{-1}\!\l(r\r)\r|=\l|F^{-1}\!\l(r\r)\cap\bigcup_{i=1}^{n}U_i\r|=\l|\bigcup_{i=1}^{n}\l(F^{-1}\!\l(r\r)\cap U_i\r)\r|=\sum_{i=1}^{n}\l|F^{-1}\!\l(r\r)\cap U_i\r|=\sum_{i=1}^{n}m_i.
         \end{equation*}

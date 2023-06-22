@@ -1,8 +1,7 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
-    \section{Analytic Continuation}
+    \section{Analytic Continuation of Germs along Curves}
     We now restrict to when $X$ is a Riemann surface with a fixed point $p\in X$. For convenience, we write\footnote{Thus if $U\subseteq X$ is an open set containing $p$, then any $f\in\HOLO_p\!\l[p\r]\l(U\r)$ has at most a single simple pole. Otherwise, if $p\not\in U$, then $f$ is holomorphic.} $\HOLO\l[p\r]\coloneqq\HOLO\l[D\r]$ where $D$ is the divisor on $X$ defined by $D\l(p\r)\coloneqq1$ and zero everywhere else. Throughout, $\alpha:\l[0,1\r]\to X$ is a curve with $p=\alpha\l(0\r)$ and $q\coloneqq\alpha\l(1\r)\neq p$, and $\eta_0\in\HOLO_p\!\l[p\r]$ is a fixed germ.
-    \subsection{Analytic Continuation of Germs along Curves}
     \begin{definition}
         A germ $\hat{\eta}\in\HOLO_q$ is said to be the \uldef{analytic continuation of $\eta_0$ along $\alpha$} if there exist a family $\eta_t\in\HOLO_{\alpha\l(t\r)}\!\l[p\r]$ of germs for all $t\in\l[0,1\r]$ with $\hat{\eta}=\eta_1$ such that for all $\tau\in\l[0,1\r]$, there exists a neighborhood $T\subseteq\l[0,1\r]$ of $\tau$, an open set $U\subseteq X$ with $\alpha\l(T\r)\subseteq U$, and a function $f\in\HOLO\l[p\r]\l(U\r)$ such that $\l[f\r]_{\alpha\l(t\r)}=\eta_t$ for all $t\in T$.
     \end{definition}
@@ -37,41 +36,5 @@
     \end{proof}
     \begin{remark}
         Let $U\subseteq X$ be any open set containing $p$ and consider any function $f_0\in\HOLO\l[p\r]\l(U\r)$. We have reduced the problem of analytically continuing $f_0$ to a global function $f\in\HOLO[p]\l(X\r)$ with $\l.f\r|_U=f_0$ into finding analytic continuations of $\l[f_0\r]_p$ along every curve starting at $p$. We shall establish this fact under (under some conditions) in the next section.\exqed
-    \end{remark}
-    \subsection{Existence of Analytic Continuations}
-    In this section, we let $E\subseteq\l|\HOLO\l[p\r]\r|$ be the connected component of the Étalé space of $\HOLO\l[p\r]$ containing $\eta_0$ and write $\pi:E\to X$ as the restricted projection map.
-    \begin{theorem}\label{CS:thm:existence_of_analytic_continuation}
-        If $\pi$ is a covering map, then for any $q\in X$ and any curve $\alpha:\l[0,1\r]\to X$ with $\alpha\l(0\r)=p$ and $\alpha\l(1\r)=q$, there exists an analytic continuation $\hat{\eta}\in\HOLO_q\!\l[p\r]$ of $\eta_0$ along $\alpha$.
-    \end{theorem}
-    \begin{proof}
-        Define a complex structure $\mf{A}$ on $E$, that makes $\pi$ locally biholomorphic, as follows.
-        \begin{itemize}
-            \item For any $\zeta\in E$, let $\tpl{U_0,\phi}$ be a chart of $X$ around $\pi\l(\zeta\r)$. Since $\pi$ is a local homeomorphism, there exist neighborhoods $V\subseteq E$ of $\zeta$ and $U\subseteq U_0$ of $\pi\l(\zeta\r)$ such that $\l.\pi\r|_V:V\to U$ is a homeomorphism. Set $\psi\coloneqq\phi\circ\l.\pi\r|_V$, so $\tpl{V,\psi}$ is a chart on $E$ around $\zeta$. Let $\mf{A}$ be the collection of all such charts, which defines an atlas on $E$ since for any pair of charts $\tpl{V_1,\psi_1},\tpl{V_2,\psi_2}\in\mf{A}$ with $V_1\cap V_2\neq\em$, there exist charts $\tpl{U_1,\phi_1}$ and $\tpl{U_2,\phi_2}$ of $X$ such that
-                \begin{equation*}
-                    \psi_2\circ\psi_1^{-1}=\l(\phi_2\circ\l.\pi\r|_{V_2}\r)\circ\l(\phi_1\circ\l.\pi\r|_{V_1}\r)^{-1}=\phi_2\circ\l(\l.\pi\r|_{V_2}\circ\l.\pi\r|_{V_1}^{-1}\r)\circ\phi_1^{-1},
-                \end{equation*}
-                when restricted to $\psi_1\!\l(V_1\cap V_2\r)$, reduces to $\phi_2\circ\phi_1^{-1}$. This shows that the charts $\tpl{V_1,\psi_1}$ and $\tpl{V_2,\psi_2}$ are holomorphically compatible, as desired. Furthermore, we claim that $\pi:E\to X$ is locally biholomorphic w.r.t. $\mf{A}$. Indeed, for any $\zeta\in E$, there exist charts $\tpl{V,\psi}$ of $E$ around $\zeta$ and $\tpl{U_0,\phi}$ of $X$ around $\pi\l(\zeta\r)$ such that $\psi=\phi\circ\l.\pi\r|_V$. Then $\phi\circ\l.\pi\r|_V\circ\psi^{-1}=\id_V$, which is holomorphic, so $\pi$ is locally biholomorphic.
-        \end{itemize}
-        We now define a family $\eta_t\in\HOLO_{\alpha\l(t\r)}\!\l[p\r]$ for $t\in\l[0,1\r]$ as follows. For all $t\in\l[0,1\r]$, let\footnote{Such a $\zeta_t$ exists since $\pi$ is a covering map. However, it need not be unique; we let $\zeta_t$ be \textit{any} such germ. Thus an analytic continuation of $\eta_0$ along $\alpha$ need not be unique in general.} $\zeta_t\in E$ be such that $\pi\l(\zeta_t\r)=\alpha\l(t\r)$. Then there exist neighborhoods $V_t$ around $\zeta_t$ and $U_t$ around $\alpha\l(t\r)$ such that $\l.\pi\r|_{V_t}:V_t\to U_t$ is a biholomorphism. Let $\cchi_t\coloneqq\l.\pi\r|_{V_t}^{-1}$ and define $\eta_t\coloneqq\l(\cchi_t\circ\alpha\r)\l(t\r)\in\HOLO_{\alpha\l(t\r)}\!\l[p\r]$. Observe that $\hat{\eta}\coloneqq\eta_1\in\HOLO_q\!\l[p\r]$, which we claim is the analytic continuation of $\eta_0$ along $\alpha$.
-        \begin{equation*}
-            \begin{tikzcd}[column sep=0.5in, row sep=0.3in]
-                E \ar[d, "\pi"'] & V_t \ar[l, hook] \ar[r, "\l.\ell\r|_{V_t}"] \ar[d, "\l.\pi\r|_{V_t}", bend left=10] & \C \\
-                X & U_t \ar[l, hook] \ar[u, "\cchi_t", bend left=10] \ar[ur, "f_t"'] & \l[0,1\r] \ar[l, "\alpha"']
-            \end{tikzcd}
-        \end{equation*}
-        \begin{itemize}
-            \item We first construct a function $\ell:E\to\C$ as follows. For $\zeta\in E$, consider any chart $\tpl{U_0,\phi}$ of $X$ around $\pi\l(\zeta\r)$ and any function $g\in\HOLO\l[p\r]\l(U_0\r)$ such that $\zeta=\l[g\r]_{\pi\l(\zeta\r)}$. Set\footnote{This is well-defined.} $\ell\l(\zeta\r)\coloneqq g\l(\pi\l(\zeta\r)\r)$. We claim that $\ell$ has at most a single simple pole at $\eta_0$. Indeed, for any $\zeta\in E$, the chart $\tpl{V,\psi}$ as defined above that makes $\l.\pi\r|_V:V\to U$ a homeomorphism ensures that
-                \begin{equation*}
-                    \ell\circ\psi^{-1}=\l(\ell\circ\l.\pi\r|_V^{-1}\r)\circ\phi^{-1}=g\circ\phi^{-1},
-                \end{equation*}
-                which is meromorphic with at most a single simple pole at $\phi\l(p\r)$; we have $\ell\l(\eta_0\r)=g\l(p\r)$.
-        \end{itemize}
-        Take $\tau\in\l[0,1\r]$ and consider $\cchi_\tau:U_\tau\to V_\tau$ as defined above. Since $U_\tau$ is open, the continuity of $\alpha$ furnishes a neighborhood $T_\tau\subseteq\l[0,1\r]$ of $\tau$ such that $\alpha\l(T_\tau\r)\subseteq U_\tau$. Set $f_\tau\coloneqq\l.\ell\r|_{V_\tau}\circ\cchi_\tau$, which is in $\HOLO\l[p\r]\l(U_\tau\r)$ since $\cchi_\tau$ is holomorphic and $\ell$ is meromorphic with at most a single simple pole at $\eta_0$. It remains to show that $\l[f_t\r]_{\alpha\l(t\r)}=\eta_t$ for all $t\in T$. But this is clear since $\pi\bigl(\l[f_t\r]_{\alpha\l(t\r)}\bigr)=\alpha\l(t\r)\in U_t$ and $\l.\pi\r|_{V_t}:V_t\to U_t$ is invertible, so
-        \begin{equation*}
-            \l[f_t\r]_{\alpha\l(t\r)}=\l(\l.\pi\r|_{V_t}^{-1}\circ\alpha\r)\l(t\r)=\l(\cchi_t\circ\alpha\r)\l(t\r)=\eta_t.\qedin
-        \end{equation*}
-    \end{proof}
-    \begin{remark}
-        In fact\footnote{See \cite[][Exercise 7.2]{forster}.}, the existence of analytic continuations of $\eta_0$ along every curve $\alpha$ starting at $p$ is equivalent to $\pi:E\to X$ being a covering map. However, $\pi$ is not always a covering map\footnote{For instance, the \href{https://en.wikipedia.org/wiki/Lacunary_function}{Lacunary function} does not admit an analytic continuation anywhere outside its radius of convergence.}, so in practice one considers a specific function germ $\eta_0$ and studies its corresponding Étalé space $E$. Ultimately, we think that this boils down to solving a system of PDEs (with boundary conditions being the glueing conditions), but further investigation is needed.\exqed
     \end{remark}
 \end{document}
