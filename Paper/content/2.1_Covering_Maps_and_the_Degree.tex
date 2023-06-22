@@ -1,6 +1,6 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
-    We develop the basics of covering space theory. More specifically, Section \ref{CS:sec:covering_maps_degree} develops the notion of the \textit{degree} to derive a criterion for a compact Riemann surface $X$ to be biholomorphic to the Riemann sphere $\RS$, and Section \ref{CS:sec:lifting_criterion} derives the \textit{Lifting Criterion} from algebraic topology. Those tools will be used in Sections \ref{MS:sec:moduli_space_of_sphere} and \ref{MS:cor:moduli_space_torus} to compute the moduli spaces of $S^2$ and $T^2$, respectively. This chapter requires some background on homotopies of curves, for which we refer the reader to \cite[][Section 1.1]{hatcher}, and Section \ref{CS:sec:lifting_criterion} roughly follows \cite[][Section 1.3.1]{hatcher}, so the reader will benefit from reading it concurrently.
+    We develop the basics of covering space theory. More specifically, Section \ref{CS:sec:covering_maps_degree} develops the notion of the \textit{degree} to derive a criterion for a compact Riemann surface $X$ to be biholomorphic to the Riemann sphere $\RS$, and Section \ref{CS:sec:lifting_criterion} derives the \textit{Lifting Criterion} from algebraic topology. Those tools will be used in Sections \ref{MS:sec:moduli_space_of_sphere} and \ref{MS:cor:moduli_space_torus} to compute the moduli spaces of $S^2$ and $T^2$, respectively. Section \ref{CS:sec:lifting_criterion} requires some background on homotopies of curves, the fundamental group, and induced homomorphisms, for which we refer the reader to \cite[][Chapter 1]{hatcher}.
     \section{Covering Maps and the Degree}\label{CS:sec:covering_maps_degree}
     We devote this section to develop the tools necessary to define the \textit{degree} of a proper holomorphic map, which, intuitively, is the \textit{number of sheets} in which it covers its image. However, there are points in the image which are not covered `evenly', so they must be counted with multiplicity.
     \subsection{Proper and Covering Maps}
@@ -100,53 +100,4 @@
     \begin{remark}
         This criterion finally reduces to problem of showing that the moduli space of $S^2$ is a point to showing that every Riemann surface $X$ that is topologically the sphere admits a meromorphic function $f:X\to\C$ with a single simple pole. We dedicate Chapter \ref{CC} to find such a meromorphic function.\exqed
     \end{remark}
-    \section{The Lifting Criterion}\label{CS:sec:lifting_criterion}
-    \begin{proposition}
-        Let $X$, $Y$ and $Z$ be Riemann surfaces and let $F:X\to Y$ be a holomorphic map. Then any lifting $\tilde{F}:X\to Z$ of $F$ w.r.t. an unbranched holomorphic map $\pi:Z\to Y$ is a holomorphic map.
-    \end{proposition}
-    \footnote{Recall that a continuous map $\tilde{F}$ is a \ul{lifting of $F$} \ul{w.r.t. $P$} if the diagram
-        \begin{equation*}
-            \begin{tikzcd}[ampersand replacement=\&]
-                \& Z \ar[d, "\pi"] \\
-                X \ar[ur, "\tilde{F}"] \ar[r, "F"'] \& Y
-            \end{tikzcd}
-        \end{equation*}
-        commutes.}
-    \vspace{-0.1in}
-    \begin{proof}
-        Take $p\in X$ and set $r\coloneqq\tilde{F}\l(p\r)$ and $q\coloneqq\pi\l(r\r)=F\l(p\r)$. Since $\pi$ is unbranched, there exists a neighborhood $W$ of $r$ such that $\l.\pi\r|_W:W\to Y$ is holomorphic, so it is biholomorphic onto its image $V\coloneqq\pi\l(W\r)$. Let $\cchi\coloneqq\l.\pi\r|_W^{-1}:V\to W $. Since $\tilde{F}$ is continuous, its inverse image $U\coloneqq\tilde{F}^{-1}\!\l(W\r)$ is open. Observe that
-        \begin{equation*}
-            \l.F\r|_U=(\pi\circ\tilde{F})|_U=\l.\pi\r|_W\circ\tilde{F}|_U,
-        \end{equation*}
-        so $\tilde{F}|_U=\cchi\circ\l.F\r|_U$. Then $p\in U$ and $\tilde{F}|_U$ is a composition of two holomorphic maps, so $\tilde{F}$ is holomorphic at $p$.\qed
-    \end{proof}
-    \begin{definition}
-        A function $\pi:E\to X$ is said to have the \uldef{curve lifting property} if for every curve $\alpha:\l[0,1\r]\to X$ and every point $\zeta_0\in E$ with $\pi\l(\zeta_0\r)=\alpha\l(0\r)$, there exists a lifting $\tilde{\alpha}:\l[0,1\r]\to E$ w.r.t. $\pi$ such that $\tilde{\alpha}\l(0\r)=\zeta_0$.
-    \end{definition}
-    \begin{proposition}
-        Every covering map $\pi:E\to X$ has the curve lifting property.
-    \end{proposition}
-    \begin{proof}
-        Let\footnote{The idea of this proof is to split $\alpha\l(\l[0,1\r]\r)$ into (overlapping) paths $\alpha\l(\l[t_{k-1},t_k\r]\r)$ and construct the lifting $\tilde{\alpha}$ inductively: Given a lifting $\tilde{\alpha}$ defined up to some boundary $t_{k-1}$, we define it on the next interval $\l[t_{k-1},t_k\r]$ by lifting $\alpha$ (restricted to $\l[t_{k-1},t_k\r]$) via $\cchi$. This gives us a `chain' of paths, which when joined together gives us a global lifting of $\alpha$.\\\ \\
-        The base case of this induction simply sets $\tilde{\alpha}\l(0\r)\coloneqq\zeta_0$ in order to start-off this process.} $\alpha:\l[0,1\r]\to X$ be a curve and let $\zeta_0\in E$ be a point such that $\pi\l(\zeta_0\r)=\alpha\l(0\r)$. Consider any open cover $\l\{U_i\r\}$ of $\alpha\l(\l[0,1\r]\r)$ where each $U_i$ is a connected open set in $\alpha\l(\l[0,1\r]\r)$. Thus $\l\{\alpha^{-1}\!\l(U_i\r)\r\}$ is an open cover of $\l[0,1\r]$, so it admits a finite subcover $\l\{\l(t_i,t_{i+1}\r)\r\}_{i=1}^n\coloneqq\l\{\alpha^{-1}\!\l(U_i\r)\r\}_{i=1}^n$. Reindexing if necessary, we obtain a partition
-        \begin{equation*}
-            0\eqqcolon t_0<t_1<\cdots<t_n\coloneqq1
-        \end{equation*}
-        of $\l[0,1\r]$ such that $\alpha\l(\l[t_{i-1},t_i\r]\r)\subseteq U_i$ for all $1\leq i\leq n$. Now, since $\pi$ is a covering map, there exist disjoint open sets $V_{ij}$ in $E$, each homeomorphic to $U_i$ via $\l.\pi\r|_{V_{ij}}$, such that $\pi^{-1}\!\l(U_i\r)=\bigcup_{j\in J_i}V_{ij}$. We now construct a lifting $\l.\tilde{\alpha}\r|_{\l[0,t_k\r]}:\l[0,t_k\r]\to E$ by induction on $k\in\N$.
-        \begin{itemize}
-            \item The base case for when $k=0$ is trivial by defining $\tilde{\alpha}\l(0\r)\coloneqq\zeta_0$.
-        \end{itemize}
-        Suppose now that the lifting $\l.\tilde{\alpha}\r|_{\l[0,t_{k-1}\r]}:\l[0,t_{k-1}\r]\to E$ has been constructed for some $k\geq1$. Then\footnote{
-            \begin{equation*}
-                \begin{tikzcd}[ampersand replacement=\&]
-                    \& E \ar[d, "\pi"] \\
-                    \l[0,1\r] \ar[r, "\alpha"'] \ar[ur, "\tilde{\alpha}"] \& X
-                \end{tikzcd}
-            \end{equation*}
-        } $\alpha\l(t_{k-1}\r)=\pi\l(\tilde{\alpha}\l(t_{k-1}\r)\r)\in U_k$, so there exists some $j\in J_k$ such that $\tilde{\alpha}\l(t_{k-1}\r)\in V_{kj}$. Letting $\cchi:U_k\to V_{kj}$ be the inverse of $\l.\pi\r|_{V_{kj}}:V_{kj}\to U_k$, we set
-        \begin{equation*}
-            \l.\tilde{\alpha}\r|_{\l[t_{k-1},t_k\r]}\coloneqq\cchi\circ\l.\alpha\r|_{\l[t_{k-1},t_k\r]}.
-        \end{equation*}
-        Clearly\footnote{$\tilde{\alpha}\l(t_{k-1}\r)=\cchi\l(\alpha\l(t_{k-1}\r)\r)=\cchi\l(\pi\l(\tilde{\alpha}\l(t_{k-1}\r)\r)\r)$ on the appropriate restrictions.}, $\tilde{\alpha}\!\l(t_{k-1}\r)$ agrees with our existing lifting, which makes the piecewise-defined map $\l.\alpha\r|_{\l[0,t_k\r]}$ a lifting of $\l.\alpha\r|_{\l[0,t_k\r]}$ w.r.t. $\pi$.\qed
-    \end{proof}
 \end{document}
