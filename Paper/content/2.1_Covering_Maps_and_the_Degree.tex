@@ -1,6 +1,6 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
-    We develop the basics of covering space theory. More specifically, Section \ref{CS:sec:covering_maps_degree} develops the notion of the \textit{degree} to derive a criterion for a compact Riemann surface $X$ to be biholomorphic to the Riemann sphere $\RS$, and Section \ref{CS:sec:lifting_criterion} derives the \textit{Lifting Criterion} from algebraic topology. Those tools will be used in Sections \ref{MS:sec:moduli_space_of_sphere} and \ref{MS:cor:moduli_space_torus} to compute the moduli spaces of $S^2$ and $T^2$, respectively. Section \ref{CS:sec:lifting_criterion} requires some background on homotopies of curves, the fundamental group, and induced homomorphisms, for which we refer the reader to \cite[][Chapter 1]{hatcher}.
+    We develop the basics of covering space theory. More specifically, Section \ref{CS:sec:covering_maps_degree} develops the notion of the \textit{degree} to derive a criterion for a compact Riemann surface $X$ to be biholomorphic to the Riemann sphere $\RS$, and Section \ref{CS:sec:liftings_of_maps} studies the liftings of mappings along covering maps. Those tools will be used in Sections \ref{MS:sec:moduli_space_of_sphere} and \ref{MS:cor:moduli_space_torus} to compute the moduli spaces of $S^2$ and $T^2$, respectively. Section \ref{CS:sec:liftings_of_maps} requires some background on homotopies of paths, for which we refer the reader to \cite[][Chapter 1]{hatcher}.
     \section{Covering Maps and the Degree}\label{CS:sec:covering_maps_degree}
     We devote this section to develop the tools necessary to define the \textit{degree} of a proper holomorphic map, which, intuitively, is the \textit{number of sheets} in which it covers its image. However, there are points in the image which are not covered `evenly', so they must be counted with multiplicity.
     \subsection{Proper and Covering Maps}
@@ -24,7 +24,7 @@
         \end{equation*}
         where $\omega$ is an $m^\textrm{th}$ root of unity. Indeed, for all $f\l(c\r)\in U$, there exists some $a'\in V_0$ such that $f\l(a'\r)=f\l(c\r)$. Then $c=\omega^ja'$ for some $0\leq j\leq m-1$, so $c\in\omega^jV_0$. Conversely, if $c\in\omega^jV_0$ for some $0\leq j\leq m-1$, then $c=\omega^ja'$ for some $a'\in V_0$ and hence $f\l(c\r)=f\l(\omega^ja'\r)=f\l(a'\r)\in U$. Now, since $f^{-1}\!\l(b\r)$ is discrete, the sets $V_j\coloneqq\omega^jV_0$ can be made small enough so that they are pairwise disjoint. Then each $\l.f\r|_{V_j}:V_j\to U$ is a homeomorphism, as desired.\exqed
     \end{example}
-    \begin{example}
+    \begin{example}\label{CS:exa:torus_covering_map}
         For any lattice $\Gamma\subseteq\C$, the projection $\pi:\C\to\C/\Gamma$ is a covering map. Indeed, take $z+\Gamma\in\C/\Gamma$ and let $w\in\C$ be such that $\pi\l(w\r)=z+\Gamma$. Since $\pi$ is a local homeomorphism\footnote{This follows directly from our construction of complex tori in Example \ref{RS:exa:tori}, where for every $w\in\C$, a small enough neighborhood $V$ was found so that $\l.\pi\r|_V$ is injective.}, there exist neighborhoods $V$ of $w$ and $U$ of $z+\Gamma$ such that $\l.\pi\r|_{V}:V\to U$ is a homeomorphism. We similarly claim that
         \begin{equation*}
             \pi^{-1}\!\l(U\r)=\coprod_{\lambda\in\Gamma}\l(\lambda+V\r).
