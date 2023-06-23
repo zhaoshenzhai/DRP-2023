@@ -1,8 +1,72 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
-    \section{$\check{\textrm{C}}$ech Cohomology Groups}
-    Throughout this section, let $X$ be a topological space, $\ms{F}$ a sheaf of Abelian groups on $X$, and $\mf{A}\coloneqq\l\{U_i\r\}$ an open covering of $X$.
+    \section{Sheaves and their Cohomology Groups}
+    Unless otherwise stated, in this section, $X$ denotes a topological space with $\tau$ its system of open sets. Our exposition on sheaves roughly follows \cite[][Section 6]{forster} and \cite[][Chapter IX]{miranda}.
+    \subsection{Presheaves and Sheaves}
+    \begin{definition}
+        A \uldef{presheaf of Abelian groups on $X$} is a pair $\tpl{\ms{F},\rho}$ consisting of
+        \begin{itemize}
+            \item a family $\ms{F}\coloneqq\l\{\ms{F}\l(U\r)\r\}$ of Abelian groups $\ms{F}\l(U\r)$ for every $U\in\tau$,
+                \vspace{-0.05in}
+            \item a family $\rho\coloneqq\l\{\rho^U_V\r\}$ of group homomorphisms $\rho^U_V:\ms{F}\l(U\r)\to\ms{F}\l(V\r)$ for every $U,V\in\tau$ with $V\subseteq U$,
+        \end{itemize}
+        such that the following two properties hold:
+        \begin{itemize}
+            \item For every $U\in\tau$, we have $\rho^U_U=\id_{\ms{F}\l(U\r)}$.
+                \vspace{-0.05in}
+            \item For every $U,V,W\in\tau$ with $W\subseteq V\subseteq U$, we have $\rho^V_W\circ\rho^U_V=\rho^U_W$.
+        \end{itemize}
+    \end{definition}
+    \begin{remark}\footnote{Analogously, we define the presheaf of sets, rings, vector spaces, algebras, etc, on a topological space $X$.\\\ \\More generally, fix any category $\cat{C}$. A \ul{$\cat{C}$-valued} \ul{presheaf on $X$} is simply a contravariant functor $\ms{F}:\tau\to\cat{C}$ where $\tau$ is the preorder category induced by $\tpl{\tau,\subseteq}$. Although many statements are simplified when phrased categorically, no category theory background is needed for this paper. We refer the interested reader to \cite{maclane}.}
+        Presheaves give us a way of tracking data associated with open sets of a topological space in such a way that makes restricting to a smaller open set $V\subseteq U$ well-behaved. Consider, for instance, a Riemann surface $X$ and the presheaf of all holomorphic functions $\HOLO$ on $X$.
+        \begin{itemize}
+            \item To every open set $U\subseteq X$\footnote{Similarly, consider the (multiplicative) group $\HOLO^\ast\!\l(U\r)$ of all holomorphic functions $f:U\to\C^\ast$, which defines a presheaf $\HOLO^\ast$ of Abelian groups. We define $\MERO^\ast\!\l(U\r)$ similarly, but instead restrict to all meromorphic functions $f:U\to\C$ that do not vanish identically on any connected-component of $U$.} we consider the $\C$-algebra $\HOLO\l(U\r)$ of all holomorphic functions $f:U\to\C$. For any open $V\subseteq U$, we define $\rho^U_V\!\l(f\r)\coloneqq\l.f\r|_V$. The two properties are then trivial, which respectively states that restricting to the domain does nothing, and that restricting once to $V$ and then to $W\subseteq V$ yields the same function as restricting to $W$ directly.
+        \end{itemize}
+        Similarly, we have the presheaf of all meromorphic functions $\MERO$ on $X$. However, those two examples are much more than presheaves since global information about elements in $\ms{F}\l(X\r)$ can be obtained locally by `restricting' to $U$. The notion of a sheaf makes this precise.\exqed
+    \end{remark}
+    \begin{definition}
+        A presheaf $\ms{F}$ on $X$ is said to be a \uldef{sheaf} if for every open set $U\subseteq X$ and every family $\l\{U_i\r\}_{i\in I}$ of open subsets that cover $U$, the following two properties hold:
+        \begin{itemize}
+            \item (Identity): For every $f,g\in\ms{F}\l(U\r)$, if $\rho^U_{U_i}\!\l(f\r)=\rho^U_{U_i}\!\l(g\r)$ for every $i\in I$, then $f=g$.
+                \vspace{-0.05in}
+            \item (Gluing): For every family $\l\{f_i\r\}_{i\in I}$ with $f_i\in\ms{F}\l(U_i\r)$, if $\rho^{U_i}_{U_i\cap U_j}\!\l(f_i\r)=\rho^{U_j}_{U_i\cap U_j}\!\l(f_j\r)$ for all $i,j\in I$, then there is some $f\in\ms{F}\l(U\r)$ such that $\rho^U_{U_i}\!\l(f\r)=f_i$ for every $i\in I$.
+        \end{itemize}
+    \end{definition}
+    \footnote{It is immediate that $\HOLO$, $\HOLO^\ast$, $\MERO$, and $\MERO^\ast$ are all sheaves on $X$. Indeed, if we have a family $\l\{f_i\r\}$ that agree on all pairwise common domains, then there exists a globally defined function $f$ whose restrictions are $f_i$'s. We only need to show that this globally defined function is of the `right type', but this can be checked easily.}
+    \vspace{-0.05in}
+    \begin{example}
+        We give an example of a presheaf that is \textit{not} a sheaf. Let $X$ be a normed $\R$-vector space. For all $U\subseteq X$, let $\ms{B}\l(U\r)$ be the vector space of all bounded functions $f:U\to\R$.
+        \begin{itemize}
+            \item It is clear from our remarks above that $\ms{B}$ is a presheaf. In fact, since $\ms{B}\l(U\r)$ contains functions, we see that if $f,g\in\ms{B}\l(U\r)$ agree on all restrictions, then they agree on $U$.
+        \end{itemize}
+        The problem arises when we consider glueing\footnote{In other words, boundedness is a global property. To check if a function is bounded, it does \textit{not} suffice to check it on an arbitrary neighborhood.}. For instance, let $U_i\coloneqq\l\{p\in X\mid\l\|p\r\|<i\r\}$ and observe that $\l\{U_i\r\}_{i\in\R^+}$ covers $X$. Consider the family $\l\{f_i\r\}$ where each $f_i\coloneqq\id_{U_i}$, which clearly agree on their pairwise intersections. But no function $f:X\to\R$ such that $\l.f\r|_{U_i}=f_i$ for all $i\in\R^+$ can be bounded, so $\ms{B}$ is not a sheaf.\exqed
+    \end{example}
+    \begin{example}
+        We give two examples of sheaves relating to \textit{divisors}\footnote{For compact Riemann surfaces, we see that a function $D:X\to\Z$ is a divisor iff it has finite support, so its set of divisors is the free Abelian group of the points of $X$.} on a Riemann surface $X$; that is, a function $D:X\to\Z$ whose support $\l\{p\in X\mid D\l(p\r)\neq0\r\}$ is a discrete subset of $X$.
+        \begin{itemize}
+            \item Let $D$ be a divisor on $X$. For every $U\in\tau$, let $\HOLO\l[D\r]\l(U\r)$ denote the set of all meromorphic functions $f:X\to\C$ such that $\ord_p\!\l(f\r)\leq D\l(p\r)$ for all $p\in X$. The usual restriction homomorphisms make $\HOLO\l[D\r]$ is a sheaf of Abelian groups, \footnote{This construction generalizes both $\HOLO$ and $\MERO$. Intuitively, the use of divisors here allow us to `bound' the orders of the poles of $f$ at specific points $p$, thereby restricting how badly-behaved it can be.} for if $\l\{f_i\r\}$ is a family of meromorphic functions having poles bounded by $D$, then the meromorphic function $f:X\to\C$ that glues them together also has poles bounded by $D$.
+            \item For every $U\in\tau$, let $\ms{D}\l(U\r)$ denote the group of all discretely-supported functions from $U$ to $\Z$ (which are exactly the divisors on $U$). This makes $\ms{D}$ into a sheaf since for every family $\l\{D_i\r\}$, the function $D:X\to\Z$ that glues them together is also discretely-supported.\exqed
+        \end{itemize}
+    \end{example}
+    \begin{definition}
+        Let $\tpl{\ms{F},\rho}$ and $\tpl{\ms{G},\sigma}$ be two sheaves of Abelian groups on $X$. A \uldef{morphism} \uldef{of sheaves} $\eta:\ms{F}\to\ms{G}$ is a family $\l\{\eta_U\r\}_{U\in\tau}$ of group homomorphisms $\eta_U:\ms{F}\l(U\r)\to\ms{G}\l(U\r)$ such that for every $U\in\tau$ and every open set $V\subseteq U$, the following diagram commutes.
+        \begin{equation*}
+            \begin{tikzcd}
+                \ms{F}\l(U\r) \ar[r, "\eta_U"] \ar[d, "\rho^U_V"'] & \ms{G}\l(U\r) \ar[d, "\sigma^U_V"] \\
+                \ms{F}\l(V\r) \ar[r, "\eta_V"] & \ms{G}\l(V\r)
+            \end{tikzcd}
+        \end{equation*}
+    \end{definition}
+    \footnote{Phrased categorically, a morphism of sheaves is simply a natural transformation $\eta:\ms{F}\Rightarrow\ms{G}$. This makes the collection of all sheaves on $X$ into a category.}
+    \begin{example}
+        Some examples relating to divisors of a Riemann surface $X$.
+        \begin{itemize}
+            \item For divisors $D_1$ and $D_2$ of a Riemann surface $X$, we write $D_1\leq D_2$ if $D_1\!\l(p\r)\leq D_2\!\l(p\r)$ for all $p\in X$. This induces an \textit{inclusion morphism} $\iota:\HOLO\l[D_1\r]\into\HOLO\l[D_2\r]$ defined\footnote{In particular, we have the inclusion $\HOLO\into\MERO$.} by $\iota_U\!\l(f\r)\coloneqq f$ for all $U\in\tau$ and $f\in\HOLO\l[D_1\r]\l(U\r)$, which makes sense since if $D_1\leq D_2$ and the poles of $f$ are bounded by $D_1$, then they are also clearly bounded by $D_2$. This inclusion also respect restrictions, so it is indeed a morphism of sheaves.
+            \item For all $U\in\tau$, we associate to each $f\in\MERO^\ast\!\l(U\r)$ the divisor $\div f:U\to\Z:p\mapsto\ord_p\!\l(f\r)$\footnote{Such a function $\div f$ is a divisor by discreteness of zeros and poles.}. This induces a morphism of sheaves $\div:\MERO^\ast\to\ms{D}$ since for all $U\in\tau$ and all open sets $V\subseteq U$, the restriction of the divisor of any $f\in\MERO^\ast\!\l(U\r)$ coincides with the divisor of the restriction $\l.f\r|_V$.\exqed
+        \end{itemize}
+    \end{example}
     \subsection{Cochains, Coboundaries, and Cocycles}
+    Throughout this section, let $X$ be a topological space, $\ms{F}$ a sheaf of Abelian groups on $X$, and $\mf{A}\coloneqq\l\{U_i\r\}$ an open covering of $X$.
     \begin{definition}
         For all $n\in\N$, the \uldef{$n^\textrm{th}$ cochain group of $\ms{F}$ w.r.t. $\mf{A}$} is the direct product
         \begin{equation*}
