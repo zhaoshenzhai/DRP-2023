@@ -1,22 +1,6 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
-    \section{Stalks and the Étalé Space}
-    Throughout this section, $p\in X$ is a fixed point in a topological space $X$.
-    \begin{definition}\label{CS:def:stalk}
-        Let $\ms{F}$ be a presheaf of Abelian groups on $X$. The \uldef{stalk of $\ms{F}$ at $p$} is the Abelian group
-        \begin{equation*}
-            \ms{F}_p\coloneqq\raisebox{-2pt}{$\Biggl(\!$}\coprod_{U\ni p}\ms{F}\l(U\r)\!\raisebox{-2pt}{$\Biggr)$}\!\!_{\scalebox{2}{/}\sim_p}
-        \end{equation*}
-        where $\sim_p$ is the equivalence relation on the disjoint union, defined, for all $f\in\ms{F}\l(U\r)$ and $g\in\ms{F}\l(V\r)$, by $f\sim_p g$ iff there exists an open set $W\in\tau$ with $p\in W\subseteq U\cap V$ such that $\rho^U_W\!\l(f\r)=\rho^V_W\!\l(g\r)$. For any $f\in\ms{F}\l(U\r)$, its equivalence class $\l[f\r]_p$ is called the \uldef{germ of $f$ at $p$}.
-    \end{definition}
-    \footnote{The relation $\sim_p$ is transitive since $\rho^V_W\circ\rho^U_V=\rho^U_W$ for all $U,V,W\in\tau$ such that $W\subseteq V\subseteq U$.}
-    \vspace{-0.05in}
-    \begin{example}
-        Let\footnote{This construction is analogous to that of the \textit{tangent space} $T_pM$ of a (real) manifold $M$ at some point $p$.}\footnote{This equivalence relation allows us to `evaluate' a function germ $\eta\in\HOLO_p\!\l[D\r]$ as $\eta\l(p\r)\coloneqq f\l(p\r)$ where $U\ni p$ is any open set and $f\in\HOLO\l[D\r]\l(U\r)$ is any function such that $\eta=\l[f\r]_p$.} $D$ be a divisor on a Riemann surface $X$ and consider the stalk $\HOLO_p\!\l[D\r]$. Fix a chart centered at $p$. Since any meromorphic function $f$ admits a Laurent series, we see that the function germ $\l[f\r]_p$ is represented by a Laurent series $\sum_{i=i_0}^{\infty}c_iz^i$ for some $i_0\geq-D\l(p\r)$ and $c_i\in\C$. Conversely, the germ of any Laurent series $\sum_{i=i_0}^{\infty}c_iz^i$ with $i_0\geq-D\l(p\r)$ and $c_i\in\C$ lifts to a meromorphic function germ $\l[f\r]_p$, so this defines a bijection\footnote{This isomorphism depends on the chosen chart map, so it is not canonical.} between $\HOLO_p\!\l[D\r]$ and the set of all such Laurent series.\exqed
-    \end{example}
-    \begin{remark}
-        The sheaf axioms guarantee that if $\ms{F}$ is a sheaf of Abelian groups on $X$ and $U\in\tau$, then an element $f\in\ms{F}\l(U\r)$ is zero iff\footnote{The forward direction is tautological.} all germs $\l[f\r]_p$, for $p\in U$ vanish. Indeed, let $0\in\ms{F}\l(U\r)$ denote the zero element, so $f\sim_p0$ for all $p\in U$ furnishes a family $\l\{W_p\r\}$ of open sets $W_p\subseteq U$ containing $p$ such that $\rho^U_{W_p}\!\l(f\r)=\rho^U_{W_p}\!\l(0\r)$. This family covers $U$, so $f=0$ by the first sheaf axiom.\exqed
-    \end{remark}
+    \section{The Étalé Space}
     \begin{proposition}\label{CS:prp:basis_stalk}
         Let $\ms{F}$ be a presheaf of Abelian groups on $X$. Let $\l|\ms{F}\r|\coloneqq\coprod_{p\in X}\ms{F}_p$ and consider the projection $\pi:\l|\ms{F}\r|\to X$ mapping each $\eta\in\ms{F}_p$ to $p$. Then the system $\mc{B}$ of all sets
         \begin{equation*}
