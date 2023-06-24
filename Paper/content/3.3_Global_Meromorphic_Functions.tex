@@ -1,7 +1,7 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
     \section{Global Meromorphic Functions}\label{CC:sec:global_meromorphic_functions}
-    In this section, we prove the existence of certain (non-constant) meromorphic functions on a compact Riemann surface using the vanishing of $\check{H}^1\big(\RS,\HOLO\big)$. The crucial step of the proof is the following lemma.
+    In this section, we show that $\check{H}^1\big(\RS,\HOLO\big)$ vanishes which proves the existence of certain meromorphic functions on a compact Riemann surface. The crucial step of the proof is the following lemma.
     \subsection{Dolbeault's Lemma}
     \begin{lemma}[Dolbeault]
         For any function $g\in\DIFF\l(\C\r)$, there exists a differentiable function $f\in\DIFF\l(\C\r)$ such that $\bar{\partial}f=g\d\bar{z}$.
@@ -105,39 +105,21 @@
         The $1^\textrm{st}$ cohomology groups $\check{H}^1\!\l(\C,\HOLO\r)$ and $\check{H}^1\big(\RS,\HOLO\big)$ vanish.
     \end{theorem}
     \begin{proof}
-        We first prove that $\check{H}^1\!\l(\C,\HOLO\r)$ vanishes, for which it suffices to take any open covering $\mf{A}\coloneqq\l\{U_i\r\}$ of $\C$ and show that every cocycle $\tpl{f_{ij}}\in\check{Z}^1\!\l(\C,\HOLO\r)$ splits. Indeed, since $\check{Z}^1\!\l(\mf{A},\HOLO\r)\subseteq\check{Z}^1\!\l(\mf{A},\DIFF\r)$ and $\check{H}^1\!\l(\C,\DIFF\r)$ vanishes by Lemma \ref{CC:lem:vanishing_of_sheaf_differentiable}, there exists a cochain $\tpl{g_i}\in\check{C}^0\!\l(\mf{A},\DIFF\r)$ such that $f_{ij}=g_i-g_j$ on $U_i\cap U_j$. But $\bar{\partial}f_{ij}=0$, so $\bar{\partial}g_i=\bar{\partial}g_j$ on $U_i\cap U_j$ for all $i,j$ and hence glues to a global function $h\in\DIFF\l(\C\r)$ such that $\l.h\r|_{U_i}\d\bar{z}=\bar{\partial}g_i$. Dolbeault's Lemma then furnishes some $g\in\DIFF\l(\C\r)$ such that $\bar{\partial}g=h\,\d\bar{z}$. Define
-        \begin{equation*}
-            \tilde{g}_i\coloneqq g_i-g,
-        \end{equation*}
-        and since $\bar{\partial}\tilde{g}_i=\bar{\partial} g_i-\bar{\partial}g=0$ on $U_i$, we see that $\tpl{\tilde{g}_i}\in\check{C}^0\!\l(\mf{A},\HOLO\r)$. Observe that
-        \begin{equation*}
-            f_{ij}=g_i-g_j=\tilde{g}_i-\tilde{g}_j
-        \end{equation*}
-        so $\tpl{f_{ij}}$ splits. For the Riemann sphere, consider the cover $\mf{A}\coloneqq\l\{U_1,U_2\r\}$ given in Example \ref{RS:exa:one_point_compactification_of_C}. Since $U_1,U_2\iso\C$, we see from the vanishing of $\check{H}^1\!\l(\C,\HOLO\r)$ that $\mf{A}$ is a Leray covering of $X$, so
-        \begin{equation*}
-            \check{H}^1\big(\RS,\HOLO\big)\iso\check{H}^1\!\l(\mf{A},\HOLO\r)
-        \end{equation*}
-        by Proposition \ref{CC:prp:leray}. Thus it suffices to show that any cocycle $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\HOLO\r)$ splits; i.e. it suffices\footnote{The cases for $f_{ii}$ are trivial and $f_{21}=-f_{12}$.} to find functions $f_i\in\HOLO\l(U_i\r)$ such that $f_{12}=f_1-f_2$ on $U_1\cap U_2=\C^\ast$. Note that $f_{12}$ is not necessarily holomorphic at $0$, so it admits a Laurent series expansion $f\l(z\r)=\sum_{n=-\infty}^{\infty}c_nz^n$ on $\C^\ast$. Then the series $f_1\!\l(z\r)\coloneqq\sum_{n=0}^{\infty}c_nz^n$ and $f_2\!\l(z\r)\coloneqq\sum_{n=-\infty}^{-1}c_nz^n$ converges on $U_1$ and $U_2$, respectively, so $f_i\in\HOLO\l(U_i\r)$. Clearly $f_{12}=f_1-f_2$.\qed
+        We first prove that $\check{H}^1\!\l(\C,\HOLO\r)$ vanishes, for which it suffices to take any open covering $\mf{A}\coloneqq\l\{U_i\r\}$ of $\C$ and show that every cocycle $\tpl{f_{ij}}\in\check{Z}^1\!\l(\C,\HOLO\r)$ splits. Indeed, since $\check{Z}^1\!\l(\mf{A},\HOLO\r)\subseteq\check{Z}^1\!\l(\mf{A},\DIFF\r)$ and $\check{H}^1\!\l(\C,\DIFF\r)$ vanishes by Lemma \ref{CC:lem:vanishing_of_sheaf_differentiable}, there exists a cochain $\tpl{g_i}\in\check{C}^0\!\l(\mf{A},\DIFF\r)$ such that $f_{ij}=g_i-g_j$ on $U_i\cap U_j$. But $\bar{\partial}f_{ij}=0$, so $\bar{\partial}g_i=\bar{\partial}g_j$ on $U_i\cap U_j$ for all $i,j$ and hence glues to a global function $h\in\DIFF\l(\C\r)$ such that $\l.h\r|_{U_i}\d\bar{z}=\bar{\partial}g_i$. Dolbeault's Lemma then furnishes some $g\in\DIFF\l(\C\r)$ such that $\bar{\partial}g=h\,\d\bar{z}$. Define $\tilde{g}_i\coloneqq g_i-g$, and since $\bar{\partial}\tilde{g}_i=\bar{\partial} g_i-\bar{\partial}g=0$ on $U_i$, we see that $\tpl{\tilde{g}_i}\in\check{C}^0\!\l(\mf{A},\HOLO\r)$. Observe that $f_{ij}=g_i-g_j=\tilde{g}_i-\tilde{g}_j$ so $\tpl{f_{ij}}$ splits.\\\ \\
+        For the Riemann sphere, consider the cover $\mf{A}\coloneqq\l\{U_1,U_2\r\}$ given in Example \ref{RS:exa:one_point_compactification_of_C}. Since $U_1,U_2\iso\C$, we see from the vanishing of $\check{H}^1\!\l(\C,\HOLO\r)$ that $\mf{A}$ is a Leray covering of $X$, so $\check{H}^1\big(\RS,\HOLO\big)\iso\check{H}^1\!\l(\mf{A},\HOLO\r)$ by Proposition \ref{CC:prp:leray}. Thus it suffices to show that any cocycle $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\HOLO\r)$ splits; by symmetry, it suffices to find functions $f_i\in\HOLO\l(U_i\r)$ such that $f_{12}=f_1-f_2$ on $U_1\cap U_2=\C^\ast$. Note that $f_{12}$ is not necessarily holomorphic at $0$, so it admits a Laurent series expansion $\sum_{n=-\infty}^{\infty}c_nz^n$ on $\C^\ast$. But the series $f_1\!\l(z\r)\coloneqq\sum_{n=0}^{\infty}c_nz^n$ and $f_2\!\l(z\r)\coloneqq\sum_{n=-\infty}^{-1}c_nz^n$ converge on $U_1$ and $U_2$, respectively, so $f_i\in\HOLO\l(U_i\r)$. Clearly $f_{12}=f_1-f_2$, as desired.\qed
     \end{proof}
     \begin{remark}
         Let $X$ be a compact Riemann surface and consider the vector space structure on $\check{H}^1\!\l(X,\HOLO\r)$ induced from $\HOLO$. We appeal to the following theorems.
         \begin{itemize}
-            \item The dimension $g\coloneqq\dim_\C\check{H}^1\!\l(X,\HOLO\r)$ is finite\footnote{See \cite[][Section 14]{forster} for a proof.} and is referred to as the \ul{genus of $X$}. The above theorem states that $\RS$ has genus $0$.
+            \item The dimension $g\coloneqq\dim\check{H}^1\!\l(X,\HOLO\r)$ is finite\footnote{See \cite[][Section 14]{forster} for a proof.} and is referred to as the \ul{genus of $X$}. The above theorem states that $\RS$ has genus $0$.
                 \vspace{-0.05in}
             \item The genus of $X$ depends only on the smooth manifold structure on $X$. In particular, since $\check{H}^1\big(\RS,\HOLO\big)$ vanishes, the genus of any simply-connected compact Riemann surface $X$ is $0$.\exqed
         \end{itemize}
     \end{remark}
     \begin{corollary}\label{CC:cor:global_meromorphic_functions}
-        Let $X$ be a compact Riemann surface of genus $g$ and fix $p\in X$. Then there exists a meromorphic function $f\in\MERO\l(X\r)$ which has a pole at $p$ of order between $1$ and $g+1$, and is holomorphic everywhere else.
+        Let $X$ be a simply-connected compact Riemann surface and fix $p\in X$. Then there exists a meromorphic function $f\in\MERO\l(X\r)$ which has a pole of order $1$ at $p$ and is holomorphic everywhere else.
     \end{corollary}
     \begin{proof}
-        Let $\tpl{U_1,z}$ be a chart of $X$ centered at $p$ and set $U_2\coloneqq X\comp\l\{p\r\}$, so $\mf{A}\coloneqq\l\{U_1,U_2\r\}$ is an open cover of $X$. For each $1\leq i\leq g+1$, consider the holomorphic function $z^{-i}$ on $U_1\cap U_2=U_1\comp\l\{p\r\}$. This gives us ($g+1$)-many cocycles $\tpl{z^{-i}}\in\check{Z}^1\!\l(\mf{A},\HOLO\r)$, but since $\dim\check{H}^1\!\l(X,\HOLO\r)=g$, they are linearly dependent\footnote{Here, we have linear dependence in the quotient $\check{H}^1\!\l(\mf{A},\HOLO\r)$, whose $0$ is a splitting cocycle.}. Thus there are constants $c_1,\dots,c_{g+1}\in\C$, not all zero, such that
-        \begin{equation*}
-            \sum_{i=1}^{g+1}c_iz^{-i}=f_2-f_1
-        \end{equation*}
-        on $U_1\cap U_2$ for some $f_i\in\HOLO\l(U_i\r)$. Observe that the function $f\coloneqq f_1+\sum_{i=1}^{g+1}c_iz^{-i}$ agrees with $f_2$ on $U_1\cap U_2$, so they glue to a global function $f\in\MERO\l(X\r)$ which has a pole at $p$ of order between $1$ and $g+1$ and is holomorphic everywhere else.\qed
+        Let $\tpl{U_1,z}$ be a chart of $X$ centered at $p$ and set $U_2\coloneqq X\comp\l\{p\r\}$, so $\mf{A}\coloneqq\l\{U_1,U_2\r\}$ is an open cover of $X$. Consider the holomorphic function $z^{-1}$ on $U_1\cap U_2=U_1\comp\l\{p\r\}$. Since $X$ is simply-connected, it has genus $0$ and hence $\check{H}^1\!\l(X,\HOLO\r)$ vanishes. Thus the cocycle $\tpl{z^{-1}}\in\check{Z}^1\!\l(\mf{A},\HOLO\r)$ splits, so there exist functions $f_i\in\HOLO\l(U_i\r)$ such that $z^{-1}=f_2-f_1$. Observe that $f_1+z^{-1}$ agrees with $f_2$ on $U_1\cap U_2$, so they glue to a global function $f\in\MERO\l(X\r)$ which has a pole of order $1$ at $p$ and is holomorphic everywhere else.\qed
     \end{proof}
-    \begin{remark}
-        By our remarks regarding the genus above, we see that every simply-connected compact Riemann surface $X$ admits a global meromorphic function $f\in\HOLO\l[p\r]\!\l(X\r)$ for any $p\in X$.\exqed
-    \end{remark}
 \end{document}
