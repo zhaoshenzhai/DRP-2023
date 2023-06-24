@@ -1,36 +1,30 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
     \section{Differential Forms}\label{CC:sec:differential_forms}
-    Throughout this section, let $W\subseteq X$ be an open subset of a Riemann surface $X$ and fix $p\in W$.
-    \subsection{The Cotangent Space}
-    For an open set $V\subseteq\C$, we let $\DIFF\l(V\r)$ denote the $\C$-algebra of all functions $f:V\to\C$ that are differentiable w.r.t. the real coordinates $x$ and $y$, which we simple call \ul{differentiable}\footnote{By `differentiable', we always mean infinitely-differentiable; i.e., smooth.}. Using the partial derivative operators $\partial/\partial x$ and $\partial/\partial y$, we define
+    Due to the Cauchy-Riemann equations, the theory of \textit{complex differential forms} departs from that of real differential forms and has a unique relationship with so-called \textit{holomorphic forms}. Those objects thus play an important role in the structure on holomorphic functions, so we devote this section to formalize some basic notions. Throughout this section, let $W\subseteq X$ be an open subset of a Riemann surface $X$ and fix $p\in W$.
+    \subsection{The Complexified Cotangent Space}
+    For an open set $V\subseteq\C$, we let $\DIFF\l(V\r)$ denote the $\C$-algebra of all functions $f:V\to\C$ that are infinitely-differentiable with respect to the real coordinates $x$ and $y$, which we simple call \textit{differentiable}. Using the partial derivative operators $\partial/\partial x$ and $\partial/\partial y$ on $\DIFF\l(V\r)$, we define the operators
     \begin{equation*}
-        \frac{\partial}{\partial z}\coloneqq\frac{1}{2}\l(\frac{\partial}{\partial x}-i\frac{\partial}{\partial y}\r)\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ \frac{\partial}{\partial\bar{z}}\coloneqq\frac{1}{2}\l(\frac{\partial}{\partial x}+i\frac{\partial}{\partial y}\r).
+        \frac{\partial}{\partial z}\coloneqq\frac{1}{2}\l(\frac{\partial}{\partial x}-i\frac{\partial}{\partial y}\r)\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ \frac{\partial}{\partial\bar{z}}\coloneqq\frac{1}{2}\l(\frac{\partial}{\partial x}+i\frac{\partial}{\partial y}\r)
     \end{equation*}
-    In this language, the Cauchy-Riemann equations state that $\HOLO\l(V\r)=\ker\partial/\partial\bar{z}$. We now lift these notions to a Riemann surface $X$.
+    on $\DIFF\l(V\r)$, where Cauchy-Riemann equations now reads $\HOLO\l(V\r)=\ker\partial/\partial\bar{z}$. We now lift these notions to a Riemann surface $X$.
     \begin{definition}
         A function $f:W\to\C$ is said to be \uldef{differentiable at $p$} if there is a chart $\tpl{U,z}$ of $X$ around $p$ such that $f\circ z^{-1}:z\l(U\r)\to\C$ is differentiable at $z\l(p\r)$. If $f$ is differentiable at every point of $W$, then $f$ is said to be \uldef{differentiable on $W$}.
     \end{definition}
-    \footnote{As with holomorphic functions, differentiability is chart-independent.}
-    \vspace{-0.05in}
     \begin{remark}
-        Let $\DIFF\l(W\r)$ denote the $\C$-algebra of all differentiable functions $f:W\to\C$ on $W$. Together with the usual restriction mappings, we obtain a sheaf $\DIFF$ of $\C$-algebras consisting of all differentiable functions on $X$.\exqed
-    \end{remark}
-    \begin{definition}\label{CC:def:partial_derivative}
-        Fix a chart $\tpl{U,z}$ of $X$. The \uldef{partial derivative operator w.r.t. $\tpl{U,z}$} is the operator
+        As with holomorphic functions, differentiability is chart-independent. Let $\DIFF\l(W\r)$ denote the $\C$-algebra of all differentiable functions on $W$, which, together with the usual restriction mappings, forms a sheaf $\DIFF$. We may, as in $\C$, define the \textit{partial derivative operators}, but this time with respect to a chart $\tpl{U,z}$ instead of $x$ and $y$. More precisely, for a fixed chart $\tpl{U,z}$, we define
         \begin{equation*}
-            \frac{\partial}{\partial z}:\DIFF\l(U\r)\to\DIFF\l(U\r)\ \ \ \ \ \ \ \ \textrm{\it{mapping}}\ \ \ \ \ \ \ \ f\mapsto\frac{\partial}{\partial z}\!\l(f\circ z^{-1}\r).
+            \frac{\partial}{\partial z}:\DIFF\l(U\r)\to\DIFF\l(U\r)\ \ \ \ \ \ \ \ \textrm{mapping}\ \ \ \ \ \ \ \ f\mapsto\frac{\partial\l(f\circ z^{-1}\r)}{\partial z}
         \end{equation*}
-        Similarly, we define $\partial/\partial x$, $\partial/\partial y$, and $\partial/\partial\bar{z}$.
-    \end{definition}
-    \footnote{That is, we define $\partial f/\partial z$ by pulling back the regular partial derivative $\partial/\partial z$ for the function $f\circ z^{-1}$ on $\C$. Again, this is chart-independent.}
+        by pulling back the regular partial derivative $\partial/\partial z$ on $\C$. We similarly define the operators $\partial/\partial\bar{z}$, $\partial/\partial x$, and $\partial/\partial y$ on $\DIFF\l(U\r)$.\exqed
+    \end{remark}
     \begin{definition}
-        Let $\mf{m}_p\subseteq\DIFF_p$ be the ideal of all differentiable functions vanishing at $p$ and let $\mf{m}_p^2$ be its product. The \uldef{cotangent space of $X$ at $p$} is the quotient space $T_p^\ast X\coloneqq\mf{m}_p/\mf{m}^2_p$. If $U\ni p$ is open and $f\in\DIFF\l(U\r)$, we define the \uldef{differential of $f$ at $p$} as
+        Let $\mf{m}_p\subseteq\DIFF_p$ be the ideal of all differentiable function germs vanishing at $p$. The \ul{(complexified) $\!\!\!\!$ \footnotemark cotangent space of $X$ at $p$} is the quotient space $T_{p,\C}^\ast X\coloneqq\mf{m}_p/\mf{m}^2_p$. For a function $f\in\DIFF\l(W\r)$, we define its \uldef{differential at $p$} as
         \begin{equation*}
             \d_pf\coloneqq\l[f-f\l(p\r)\r]_{\mf{m}_p^2}\in T_p^\ast X.
         \end{equation*}
     \end{definition}
-    \footnote{That is, let $\mf{m}_p$ contain all germs $\l[f\r]_p$ such that $f\l(p\r)=0$ and let $\mf{m}^2_p$ contain all germs $\l[h\r]_p$ such that $h=\sum_if_ig_i$ for some $f_i,g_i\in\mf{m}_p$.}
+    \footnotetext{hi}
     \begin{proposition}
         Let $\tpl{U,z}$ be a chart of $X$ around $p$. Then $\l\{\d_px,\d_py\r\}$ and $\l\{\d_pz,\d_p\bar{z}\r\}$ are both bases for $T_p^\ast X$, and if $f\in\DIFF\l(W\r)$, then
         \begin{equation*}
