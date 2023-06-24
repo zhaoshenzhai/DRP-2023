@@ -1,29 +1,29 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
     \section{Global Meromorphic Functions}\label{CC:sec:global_meromorphic_functions}
-    In this section, we prove the existence of certain (non-constant) meromorphic functions on a compact Riemann surface. Together with the vanishing of $\check{H}^1\big(\RS,\HOLO\big)$, we prove that every simply-connected compact Riemann surface admits a meromorphic function with a single simple pole.
-    \subsection{Vanishing of $\check{H}^1\big(\RS,\HOLO\big)$}
-    \begin{theorem}[Dolbeault]
-        For any differentiable function $g\in\DIFF\l(\C\r)$, there exists a differentiable function $f\in\DIFF\l(\C\r)$ such that $\bar{\partial}f=g\d\bar{z}$.
-    \end{theorem}
+    In this section, we prove the existence of certain (non-constant) meromorphic functions on a compact Riemann surface using the vanishing of $\check{H}^1\big(\RS,\HOLO\big)$. The crucial step of the proof is the following lemma.
+    \subsection{Dolbeault's Lemma}
+    \begin{lemma}[Dolbeault]
+        For any function $g\in\DIFF\l(\C\r)$, there exists a differentiable function $f\in\DIFF\l(\C\r)$ such that $\bar{\partial}f=g\d\bar{z}$.
+    \end{lemma}
     \begin{proof}
-        We first prove for when $g$ is compactly supported. In this case, define $f:\C\to\C$ by
+        We first prove the lemma for when $g$ is compactly supported. In this case, define $f:\C\to\C$ by
         \begin{equation*}
             f\l(z\r)\coloneqq-\frac{1}{2\pi i}\int_{\C}\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\wedge\d\bar{\zeta}.
         \end{equation*}
-        We need to show that this integral converges and depends differentiably on $z$. Since $g$ is compactly supported, the integrand only has a pole at $0$ and so it suffices to show that the integral over a disk $D_\epsilon\coloneqq\bar{B_\epsilon}\coloneqq\bar{B\l(0,\epsilon\r)}$ converges. Indeed, we change\footnote{Formally, we appeal to Proposition \ref{CC:prp:change_of_variables_in_C}.} to polar coordinates to see that
+        We need to show that this integral converges and depends differentiably on $z$. Since $g$ is compactly supported, the integrand only has a pole at $0$ and so it suffices to show that the integral over a disk $D_\epsilon\coloneqq\bar{B_\epsilon}\coloneqq\bar{B\l(0,\epsilon\r)}$ converges. Indeed, we use Proposition \ref{CC:prp:change_of_variables_in_C} to change to polar coordinates to see that
         \begin{equation*}
             \int_{ D_\epsilon}\!\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\wedge\d\bar{\zeta}=\int_{0}^{\epsilon}\int_{0}^{2\pi}g\big(z-re^{i\theta}\big)e^{-i\theta}\,\d r\d\theta,
         \end{equation*}
-        which is convergent\footnote{Here, we use the fact that $g$ is bounded.}. Now, to show that $f\in\DIFF\l(\C\r)$, we expand the definition of $f$ into
+        which is convergent since $g$ is bounded. Now, to show that $f\in\DIFF\l(\C\r)$, we expand the definition of $f$ into
         \begin{equation*}
             f\l(z\r)=-\frac{1}{2\pi i}\lim\limits_{\epsilon\to0}\int_{\C\comp B_\epsilon}\!\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\wedge\d\bar{\zeta}.
         \end{equation*}
-        The uniform convergence of the integral allows us to differentiate under the integral sign, so $f\in\DIFF\l(\C\r)$. We do so explicitly for the operator $\partial/\partial\bar{z}$ to obtain
+        The uniform convergence of the integral allows us to differentiate under the integral sign, so $f\in\DIFF\l(\C\r)$. Finally, to show that $f$ solves the differential equation, we do so explicitly for the operator $\partial/\partial\bar{z}$ to obtain
         \begin{equation*}
             \l.\frac{\partial f}{\partial\bar{z}}\r|_z=-\frac{1}{2\pi i}\lim\limits_{\epsilon\to0}\int_{\C\comp B_\epsilon}\!\frac{1}{\zeta}\l.\frac{\partial g}{\partial\bar{z}}\r|_{z-\zeta}\d\zeta\wedge\d\bar{\zeta}.
         \end{equation*}
-        Using $\d=\partial+\bar{\partial}$ and expanding the definitions, we have that\footnote{Use the Product Rule and that $1/\zeta$ is holomorphic away from $0$.}
+        Using $\d=\partial+\bar{\partial}$ and using the fact that $1/\zeta$ is holomorphic away from $0$, we see that
         \begin{equation*}
             \begin{aligned}
                 \d\l(\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\r)&=\partial\l(\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\r)+\bar{\partial}\l(\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\r) \\
@@ -35,7 +35,7 @@
         \begin{equation*}
             \l.\frac{\partial f}{\partial\bar{z}}\r|_z=\frac{1}{2\pi i}\lim\limits_{\epsilon\to0}\int_{C\comp B_\epsilon}\!\d\l(\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta\r)=\frac{1}{2\pi i}\lim\limits_{\epsilon\to0}\int_{\l|\zeta\r|=\epsilon}\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta.
         \end{equation*}
-        This integral can be calculated in polar coordinates as $\zeta=\epsilon e^{i\theta}$ for $0\leq\theta<2\pi$, so\footnote{$\d\zeta=\frac{\partial\zeta}{\partial\theta}\,\d\theta=\epsilon ie^{i\theta}\d\theta$.}
+        This integral can be calculated in polar coordinates as $\zeta=\epsilon e^{i\theta}$ for $0\leq\theta<2\pi$, so
         \begin{equation*}
             \int_{\l|\zeta\r|=\epsilon}\!\frac{g\l(z-\zeta\r)}{\zeta}\,\d\zeta=\int_{0}^{2\pi}\frac{g\big(z-\epsilon e^{i\theta}\big)}{\epsilon e^{i\theta}}\,\epsilon ie^{i\theta}\,\d\theta=i\int_{0}^{2\pi}g\big(z-\epsilon e^{i\theta}\big)\,\d\theta.
         \end{equation*}
@@ -44,23 +44,24 @@
             \l.\frac{\partial f}{\partial\bar{z}}\r|_z=\frac{1}{2\pi}\lim\limits_{\epsilon\to0}\int_{0}^{2\pi}g\big(z-\epsilon e^{i\theta}\big)\,\d\theta,
         \end{equation*}
         which is the average value of $g\l(z\r)$ on the circle of radius $\epsilon$ around $z$. In the limit $\epsilon\to0$, we see that $\partial f/\partial\bar{z}=g$ and hence $\bar{\partial}f=g\,\d\bar{z}$.\\\ \\
-        Now, for the general case, we consider an increasing sequence of radii $\l\{R_n\r\}$ such that $R_n\to\infty$ and their associated balls $B_n\coloneqq B\l(0,R_n\r)$. For all $n$, there exists\footnote{For instance, take bump functions.} a function $\psi_n\in\DIFF\l(\C\r)$ such that $\Supp\l(\psi_n\r)\subseteq B_{n+1}$ and $\l.\psi_n\r|_{B_n}=1$. Extending $\psi_ng$ by zero outside $B_{n+1}$, they become differentiable functions in $\C$ with compact supports and hence $\bar{\partial}f_n=\psi_ng\,\d\bar{z}$ for some $f_n\in\DIFF\l(\C\r)$. We shall inductively construct a new sequence $\big\{\tilde{f}_n\big\}$ of differentiable functions on $\C$ such that
+        Now, for the general case, we consider an increasing sequence of radii $\l\{R_n\r\}$ converging to infinity and their associated balls $B_n\coloneqq B\l(0,R_n\r)$. For all $n$, there exists a function $\psi_n\in\DIFF\l(\C\r)$ such that $\Supp\l(\psi_n\r)\subseteq B_{n+1}$ and $\l.\psi_n\r|_{B_n}=\id$; for instance, take bump functions. Extending $\psi_ng$ by zero outside $B_{n+1}$, they become differentiable functions in $\C$ with compact supports and hence $\bar{\partial}f_n=\psi_ng\,\d\bar{z}$ for some $f_n\in\DIFF\l(\C\r)$. We shall inductively construct a new sequence $\big\{\tilde{f}_n\big\}$ of differentiable functions on $\C$ such that
         \begin{enumerate}
             \item $\bar{\partial}\tilde{f}_n=g\,\d\bar{z}$ on $B_n$ and
                 \vspace{-0.05in}
-            \item $\big\|\tilde{f}_{n+1}-\tilde{f}_n\big\|_{B_n}\!\leq 2^{-n}$\footnote{$\l\|f\r\|_K\coloneqq\sup_{x\in K}\l|f\l(x\r)\r|$ is the supremum norm.}.
+            \item $\big\|\tilde{f}_{n+1}-\tilde{f}_n\big\|_{B_n}\!\leq 2^{-n}$.
         \end{enumerate}
+        Here, $\l\|f\r\|_{B_n}\!\coloneqq\sup_{x\in B_n}\!\l|f\l(x\r)\r|$ is the supremum norm.
         Set $\tilde{f}_1\coloneqq f_1$ and suppose that the functions $\tilde{f}_1,\dots,\tilde{f}_n$ are defined. Then
         \begin{equation*}
             \bar{\partial}\big(f_{n+1}-\tilde{f}_n\big)=\bar{\partial}f_{n+1}-\bar\partial\tilde{f}_n=\l(\psi_{n+1}g-g\r)\d\bar{z}=0
         \end{equation*}
-        on $B_n$, so the function $f_{n+1}-\tilde{f}_n$ is holomorphic on $B_n$. Thus there exists a polynomial $p\in\C\l[z\r]$\footnote{Say, some Taylor polynomial.} such that
+        on $B_n$, so the function $f_{n+1}-\tilde{f}_n$ is holomorphic on $B_n$. Thus there exists a polynomial $p\in\C\l[z\r]$ such that
         \begin{equation*}
             \big\|f_{n+1}-\tilde{f}_n-p\big\|_{B_n}\!\leq 2^{-n},
         \end{equation*}
         so take $\tilde{f}_{n+1}\coloneqq f_{n+1}-p\in\DIFF\l(\C\r)$. This satisfies (2), and since
         \begin{equation*}
-            \bar{\partial}\tilde{f}_{n+1}=\bar{\partial}f_{n+1}=\psi_{n+1}g=g
+            \bar{\partial}\tilde{f}_{n+1}=\bar{\partial}f_{n+1}=\psi_{n+1}g\d\bar{z}=g\d\bar{z}
         \end{equation*}
         on $B_{n+1}$, we see that (1) holds too. By (2), the (pointwise) limit $\tilde{f}_n\!\l(z\r)$ converges to some $f\l(z\r)$, where we claim that  $f\in\DIFF\l(\C\r)$ and that $\bar{\partial}f=g\,\d\bar{z}$. Note that the series
         \begin{equation*}
@@ -73,19 +74,38 @@
         on $B_n$. But this holds for all $n$, so $f\in\DIFF\l(\C\r)$ with $\bar{\partial}f=g\,\d\bar{z}$ globally.\qed
     \end{proof}
     \begin{remark}
-        This theorem (which we call \textit{Dolbeault's Theorem}) is a special case of the $\bar{\partial}$-Poincaré Lemma. Indeed, we can reformulate the theorem by saying that the sequence of sheaves\footnote{Here, $\iota$ is the inclusion sheaf morphism.}
+        Dolbeault's Lemma is a special case of the $\bar{\partial}$-Poincaré Lemma. Indeed, we can reformulate the theorem by saying that the sequence of sheaves
         \begin{equation*}
             \begin{tikzcd}
                 0 \ar[r] & \HOLO \ar[r, "\iota", hookrightarrow] & \DIFF \ar[r, "\bar{\partial}", twoheadrightarrow] & \DIFF^{\l(0,1\r)} \ar[r] & 0
             \end{tikzcd}
         \end{equation*}
-        is exact. The only nontrivial claim to verify is that $\bar{\partial}$ is surjective, which is precisely the statement of the above theorem.\exqed
+        is exact. The only nontrivial claim to verify is that $\bar{\partial}$ is surjective, which is precisely the statement of the lemma.\exqed
     \end{remark}
-    \begin{corollary}\label{CC:cor:vanishing_of_H_Riemann_sphere}
-        The $1^\textrm{st}$ cohomology groups $\check{H}^1\!\l(\C,\HOLO\r)$ and $\check{H}^1\big(\RS,\HOLO\big)$ vanish.
-    \end{corollary}
+    \subsection{Vanishing of $\check{H}^1\big(\RS,\HOLO\big)$}
+    \begin{lemma}\label{CC:lem:vanishing_of_sheaf_differentiable}
+        Let $X$ be a Riemann surface and consider the sheaf of differentiable functions $\DIFF$ on $X$. Then $\check{H}^1\!\l(X,\DIFF\r)=0$.
+    \end{lemma}
     \begin{proof}
-        We first prove that $\check{H}^1\!\l(\C,\HOLO\r)$ vanishes, for which it suffices to take any open covering $\mf{A}\coloneqq\l\{U_i\r\}$ of $\C$ and show that every cocycle $\tpl{f_{ij}}\in\check{Z}^1\!\l(\C,\HOLO\r)$ splits. Indeed, since $\check{Z}^1\!\l(\mf{A},\HOLO\r)\subseteq\check{Z}^1\!\l(\mf{A},\DIFF\r)$ and $\check{H}^1\!\l(\C,\DIFF\r)$ vanishes by Proposition \ref{prp:3.2:vanishing_of_sheaf_differentiable}, there exists a cochain $\tpl{g_i}\in\check{C}^0\!\l(\mf{A},\DIFF\r)$ such that $f_{ij}=g_i-g_j$ on $U_i\cap U_j$. But $\bar{\partial}f_{ij}=0$, so $\bar{\partial}g_i=\bar{\partial}g_j$ on $U_i\cap U_j$ for all $i,j$ and hence glues to a global function $h\in\DIFF\l(\C\r)$ such that $\l.h\r|_{U_i}\d\bar{z}=\bar{\partial}g_i$. Dolbeault's Theorem then furnishes some $g\in\DIFF\l(\C\r)$ such that $\bar{\partial}g=h\,\d\bar{z}$. Define
+        Let $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ be an open covering of $X$ and let $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\DIFF\r)$ be a cocycle; it suffices to show that $\tpl{f_{ij}}$ splits, for then $\check{H}^1\!\l(\mf{A},\DIFF\r)=0$ and we are done since $\mf{A}$ is arbitrary. To do so, we use the fact that there exists a partition of unity subordinate to $\mf{A}$; that is, a family $\l\{\psi_i\r\}_{i\in I}$ of differentiable functions such that:
+        \begin{itemize}
+            \item $\Supp\l(\psi_i\r)\coloneqq\bar{\l\{p\in X\mid\psi\l(p\r)\neq0\r\}}\subseteq U_i$ for every $i\in I$.
+                \vspace{-0.05in}
+            \item Every point in $X$ admits a neighborhood whose intersection with $\l\{\Supp\l(\psi_i\r)\r\}_{i\in I}$ is finite.
+                \vspace{-0.05in}
+            \item $\sum_{i\in I}\psi_i=\id$.
+        \end{itemize}
+        Consider the function $\psi_jf_{ij}$ on $U_i\cap U_j$, which may be differentiably extended to $U_i$ by zero outside $\Supp\l(\psi_j\r)$. Consider the function $g_i\coloneqq\sum_{j\in I}\psi_jf_{ij}\in\DIFF\l(U_i\r)$, which is legal since there is a neighborhood around every point of $U_i$ such that $\psi_jf_{ij}=0$ for all but finitely-many $j\in I$. Observe that
+        \begin{equation*}
+            g_i-g_j=\sum_{k\in I}\psi_k\l(f_{ik}-f_{jk}\r)=\sum_{k\in I}\psi_k\l(f_{ik}+f_{kj}\r)=\sum_{k\in I}\psi_kf_{ij}=f_{ij}
+        \end{equation*}
+        on $U_i\cap U_j$, so $\tpl{f_{ij}}=\tpl{g_i-g_j}=\delta^0\!\l(g_i\r)$ splits.\qed
+    \end{proof}
+    \begin{theorem}\label{CC:thm:vanishing_of_H_Riemann_sphere}
+        The $1^\textrm{st}$ cohomology groups $\check{H}^1\!\l(\C,\HOLO\r)$ and $\check{H}^1\big(\RS,\HOLO\big)$ vanish.
+    \end{theorem}
+    \begin{proof}
+        We first prove that $\check{H}^1\!\l(\C,\HOLO\r)$ vanishes, for which it suffices to take any open covering $\mf{A}\coloneqq\l\{U_i\r\}$ of $\C$ and show that every cocycle $\tpl{f_{ij}}\in\check{Z}^1\!\l(\C,\HOLO\r)$ splits. Indeed, since $\check{Z}^1\!\l(\mf{A},\HOLO\r)\subseteq\check{Z}^1\!\l(\mf{A},\DIFF\r)$ and $\check{H}^1\!\l(\C,\DIFF\r)$ vanishes by Lemma \ref{CC:lem:vanishing_of_sheaf_differentiable}, there exists a cochain $\tpl{g_i}\in\check{C}^0\!\l(\mf{A},\DIFF\r)$ such that $f_{ij}=g_i-g_j$ on $U_i\cap U_j$. But $\bar{\partial}f_{ij}=0$, so $\bar{\partial}g_i=\bar{\partial}g_j$ on $U_i\cap U_j$ for all $i,j$ and hence glues to a global function $h\in\DIFF\l(\C\r)$ such that $\l.h\r|_{U_i}\d\bar{z}=\bar{\partial}g_i$. Dolbeault's Lemma then furnishes some $g\in\DIFF\l(\C\r)$ such that $\bar{\partial}g=h\,\d\bar{z}$. Define
         \begin{equation*}
             \tilde{g}_i\coloneqq g_i-g,
         \end{equation*}
@@ -107,10 +127,9 @@
             \item The genus of $X$ depends only on the smooth manifold structure on $X$. In particular, since $\check{H}^1\big(\RS,\HOLO\big)$ vanishes, the genus of any simply-connected compact Riemann surface $X$ is $0$.\exqed
         \end{itemize}
     \end{remark}
-    \subsection{Existence of Global Meromorphic Functions}
-    \begin{theorem}\label{CC:thm:global_meromorphic_functions}
+    \begin{corollary}\label{CC:cor:global_meromorphic_functions}
         Let $X$ be a compact Riemann surface of genus $g$ and fix $p\in X$. Then there exists a meromorphic function $f\in\MERO\l(X\r)$ which has a pole at $p$ of order between $1$ and $g+1$, and is holomorphic everywhere else.
-    \end{theorem}
+    \end{corollary}
     \begin{proof}
         Let $\tpl{U_1,z}$ be a chart of $X$ centered at $p$ and set $U_2\coloneqq X\comp\l\{p\r\}$, so $\mf{A}\coloneqq\l\{U_1,U_2\r\}$ is an open cover of $X$. For each $1\leq i\leq g+1$, consider the holomorphic function $z^{-i}$ on $U_1\cap U_2=U_1\comp\l\{p\r\}$. This gives us ($g+1$)-many cocycles $\tpl{z^{-i}}\in\check{Z}^1\!\l(\mf{A},\HOLO\r)$, but since $\dim\check{H}^1\!\l(X,\HOLO\r)=g$, they are linearly dependent\footnote{Here, we have linear dependence in the quotient $\check{H}^1\!\l(\mf{A},\HOLO\r)$, whose $0$ is a splitting cocycle.}. Thus there are constants $c_1,\dots,c_{g+1}\in\C$, not all zero, such that
         \begin{equation*}
