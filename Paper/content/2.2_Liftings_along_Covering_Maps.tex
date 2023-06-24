@@ -65,7 +65,7 @@
             \item Otherwise, $V_1\neq V_2$ and hence they are disjoint. Then, since $\widetilde{F}_i\!\l(V\r)\subseteq V_i$ for $i=1,2$, we see that $\widetilde{F}_1\!\l(q'\r)\neq\widetilde{F}_2\!\l(q'\r)$ for all $q'\in V$. This shows that $Y\comp S$ is open, whence $S$ is closed too.\qed
         \end{itemize}
     \end{proof}
-    \begin{proposition}
+    \begin{proposition}\label{CS:prp:lift_maps}
         Fix $q_0\in Y$ and let $\zeta_0\in\pi^{-1}\!\l(F\l(q_0\r)\r)$. If $Y$ is simply-connected and locally path-connected, then every map $F:Y\to X$ admits a unique lift $\widetilde{F}:Y\to E$ such that $\widetilde{F}\l(q_0\r)=\zeta_0$.
     \end{proposition}
     \begin{proof}
@@ -102,7 +102,7 @@
             \item (Continuity). Let $q\in Y$, $p\coloneqq F\l(q\r)$, $\zeta\coloneqq\widetilde{F}\l(q\r)$, and let $V_0$ be a neighborhood of $\zeta$. For an evenly-covered neighborhood $U$ of $p$, let $V_\zeta$ denote the sheet above $U$ containing $\zeta$. Set $V\coloneqq V_0\cap V_\zeta$, so $\pi$ is a homeomorphism when restricted to $V$. Thus $\pi\l(V\r)$ is open, so by continuity $F^{-1}\!\l(\pi\l(V\r)\r)$ is open too. By local path-connectedness of $Y$, this set contains a path-connected neighborhood $W$ of $q$. We claim that $\widetilde{F}\l(W\r)\subseteq V$, so take $w\in W$ and let $\sigma$ be a path from $q$ to $w$ contained in $W$. Then $F_\sigma$ is a path in $F\l(W\r)\subseteq\pi\l(V\r)$ starting at $p$, which lifts to a path $\widetilde{F}_\sigma$ in $V$ starting at $\zeta$. But since the end point of $\widetilde{F}_\gamma$ constructed above is $\zeta=\widetilde{F}\l(q\r)$, the concatenation of $\widetilde{F}_\gamma\ast\widetilde{F}_\sigma$ is well-defined and is a path starting at $\zeta_0$. This path lifts $F\circ\l(\gamma\ast\sigma\r)$, and since $\gamma\ast\sigma$ is a path from $q_0$ to $w$, we see that $\widetilde{F}\l(w\r)$ is the end point of $\widetilde{F}_\gamma\ast\widetilde{F}_\sigma$. But this end point is $\widetilde{F}_\gamma\!\l(1\r)$, which lies in $V$.\qed
         \end{itemize}
     \end{proof}
-    \begin{example}
+    \begin{example}\label{CS:exa:lift_torus}
         Let $\phi:\C/\Gamma\to\C/\Gamma'$ be a holomorphic map between complex tori. By Example \ref{CS:exa:torus_covering_map}, the projection $\pi:\C\to\C/\Gamma$ is an unbranched holomorphic map, and since $\C$ is simply-connected (and locally path-connected), the map $\phi\circ\pi:\C\to\C/\Gamma'$ admits a unique holomorphic lift $\widetilde{\phi}:\C\to\C$ along the projection $\pi'\!:\C\to\C/\Gamma'$.
         \begin{equation*}
             \begin{tikzcd}
@@ -110,6 +110,6 @@
                 \C/\Gamma \ar[r, "\phi"] & \C/\Gamma'
             \end{tikzcd}
         \end{equation*}
-        If $\phi$ is a biholomorphism, then lifting $\phi^{-1}$ too gives us a unique biholomorphism $\widetilde{\phi}:\C\to\C$. A classical result from complex analysis then forces $\widetilde{\phi}\l(z\r)=\alpha z+\beta$ for some $\alpha,\beta\in\C$ with $\alpha\neq0$. This result tightly constrains the behaviour of biholomorphisms between complex tori, which will be useful when computing the moduli space of $T^2$.\exqed
+        If $\phi$ is a biholomorphism, then lifting $\phi^{-1}$ too gives us a unique biholomorphism $\widetilde{\phi}:\C\to\C$. A classical result from complex analysis then forces $\widetilde{\phi}\l(z\r)=\alpha z+\beta$ for some $\alpha,\beta\in\C$ with $\alpha\neq0$. This result tightly constrains the behaviour of biholomorphisms between complex tori, which we leverage in the proof of Theorem \ref{MS:thm:moduli_space_torus}.\exqed
     \end{example}
 \end{document}
