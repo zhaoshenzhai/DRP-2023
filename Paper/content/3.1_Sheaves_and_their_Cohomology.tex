@@ -5,7 +5,7 @@
     Unless otherwise stated, let $X$ be a topological space with $\mc{T}$ its system of open sets. Our exposition on sheaves and their cohomology roughly follows \cite[][Sections 6 \& 12]{forster} and \cite[][Chapter IX]{miranda}.
     \subsection{Presheaves, Sheaves, and Stalks}
     \begin{definition}
-        A \uldef{presheaf of Abelian groups on $X$} is a pair $\tpl{\ms{F},\rho}$ consisting of
+        A \ul{presheaf of Abelian groups on $X$} is a pair $\tpl{\ms{F},\rho}$ consisting of
         \begin{itemize}
             \item[$\blob$] a family $\ms{F}\coloneqq\l\{\ms{F}\l(U\r)\r\}$ of Abelian groups $\ms{F}\l(U\r)$ for every $U\in\mc{T}$,
                 \vspace{-0.05in}
@@ -24,7 +24,7 @@
         Similarly, we have the presheaf of all meromorphic functions $\MERO$ on $X$. Other examples include the presheaf $\HOLO^\ast$ and $\MERO^\ast$ of \textit{multiplicative} Abelian groups defined respectively by holomorphic functions $f:U\to\C^\ast$ and meromorphic functions on $U$ that do not vanish identically on any connected component of $U$. However, those examples are much more than presheaves since global information about elements in $\ms{F}\l(X\r)$ can be obtained locally by `restricting' to locally $U$. The notion of a \textit{sheaf} makes this precise.\exqed
     \end{remark}
     \begin{definition}
-        A presheaf $\ms{F}$ on $X$ is said to be a \uldef{sheaf} if for every open set $U\subseteq X$ and every family $\l\{U_i\r\}_{i\in I}$ of open subsets that cover $U$, the following two properties hold:
+        A presheaf $\ms{F}$ on $X$ is said to be a \ul{sheaf} if for every open set $U\subseteq X$ and every family $\l\{U_i\r\}_{i\in I}$ of open subsets that cover $U$, the following two properties hold:
         \begin{itemize}
             \item[$\blob$] (Identity): For every $f,g\in\ms{F}\l(U\r)$, if $\rho^U_{U_i}\!\l(f\r)=\rho^U_{U_i}\!\l(g\r)$ for every $i\in I$, then $f=g$.
                 \vspace{-0.1in}
@@ -45,7 +45,7 @@
         \end{itemize}
     \end{example}
     \begin{definition}
-        Let $\tpl{\ms{F},\rho}$ and $\tpl{\ms{G},\sigma}$ be two sheaves of Abelian groups on $X$. A \uldef{morphism of sheaves} $\eta:\ms{F}\to\ms{G}$ is a family $\l\{\eta_U\r\}_{U\in\mc{T}}$ of group homomorphisms $\eta_U:\ms{F}\l(U\r)\to\ms{G}\l(U\r)$ such that for every $U\in\mc{T}$ and every open set $V\subseteq U$, the following diagram commutes.
+        Let $\tpl{\ms{F},\rho}$ and $\tpl{\ms{G},\sigma}$ be two sheaves of Abelian groups on $X$. A \ul{morphism of sheaves} $\eta:\ms{F}\to\ms{G}$ is a family $\l\{\eta_U\r\}_{U\in\mc{T}}$ of group homomorphisms $\eta_U:\ms{F}\l(U\r)\to\ms{G}\l(U\r)$ such that for every $U\in\mc{T}$ and every open set $V\subseteq U$, the following diagram commutes.
         \begin{equation*}
             \begin{tikzcd}
                 \ms{F}\l(U\r) \ar[r, "\eta_U"] \ar[d, "\rho^U_V"'] & \ms{G}\l(U\r) \ar[d, "\sigma^U_V"] \\
@@ -61,11 +61,11 @@
         \end{itemize}
     \end{example}
     \begin{definition}\label{CS:def:stalk}
-        Let $\ms{F}$ be a presheaf of Abelian groups on $X$ and fix $p\in X$. The \uldef{stalk of $\ms{F}$ at $p$} is the Abelian group
+        Let $\ms{F}$ be a presheaf of Abelian groups on $X$ and fix $p\in X$. The \ul{stalk of $\ms{F}$ at $p$} is the Abelian group
         \begin{equation*}
             \ms{F}_p\coloneqq\raisebox{-2pt}{$\Biggl(\!$}\coprod_{U\ni p}\ms{F}\l(U\r)\!\raisebox{-2pt}{$\Biggr)$}\!\!_{\scalebox{2}{/}\sim_p}
         \end{equation*}
-        where $\sim_p$ is the equivalence relation\footnotemark on the disjoint union, defined, for all $f\in\ms{F}\l(U\r)$ and $g\in\ms{F}\l(V\r)$, by $f\sim_p g$ iff there exists an open set $W\in\mc{T}$ with $p\in W\subseteq U\cap V$ such that $\rho^U_W\!\l(f\r)=\rho^V_W\!\l(g\r)$. For $f\in\ms{F}\l(U\r)$, its equivalence class $\l[f\r]_p$ is called the \uldef{germ of $f$ at $p$}.
+        where $\sim_p$ is the equivalence relation\footnotemark on the disjoint union, defined, for all $f\in\ms{F}\l(U\r)$ and $g\in\ms{F}\l(V\r)$, by $f\sim_p g$ iff there exists an open set $W\in\mc{T}$ with $p\in W\subseteq U\cap V$ such that $\rho^U_W\!\l(f\r)=\rho^V_W\!\l(g\r)$. For $f\in\ms{F}\l(U\r)$, its equivalence class $\l[f\r]_p$ is called the \ul{germ of $f$ at $p$}.
     \end{definition}
     \footnotetext{The relation $\sim_p$ is transitive since $\rho^V_W\circ\rho^U_V=\rho^U_W$ for all $U,V,W\in\mc{T}$ such that $W\subseteq V\subseteq U$. This condition on $\rho$ is known as a \textit{directed system}, which all admit a \textit{direct limit} whose construction is formally similar to that of $\ms{F}_p$. We refer the interested reader to \cite[][Chapter III]{maclane}.}
     \vspace{-0.05in}
@@ -78,7 +78,7 @@
     \subsection{$\check{\textrm{C}}$ech Cohomology Groups}
     We define the \textit{first $\mathit{\check{C}}$\!ech cohomology group} $\check{H}^1\!\l(X,\ms{F}\r)$ of a sheaf $\ms{F}$ of Abelian groups on $X$ by first defining it on an open cover $\mf{A}$ of $X$, which refines via a direct limit, and then prove the \textit{Leray Criterion} to calculate such groups. Throughout this section, let $\ms{F}$ be a sheaf of Abelian groups on $X$ and let $\mf{A}\coloneqq\l\{U_i\r\}$ be an open covering of $X$.
     \begin{definition}
-        For all $n\in\N$, the \uldef{$n^\textrm{th}$ cochain group of $\ms{F}$ (w.r.t. $\mf{A}$)} is the direct product
+        For all $n\in\N$, the \ul{$n^\textrm{th}$ cochain group of $\ms{F}$ (w.r.t. $\mf{A}$)} is the direct product
         \begin{equation*}
             \check{C}^n\!\l(\mf{A},\ms{F}\r)\coloneqq\prod_{\tpl{i_0,\dots,i_n}}\ms{F}\l(U_{i_0}\cap\cdots\cap U_{i_n}\r).
         \end{equation*}
@@ -87,15 +87,15 @@
         For $n=0$, the group $\check{C}^0\!\l(\mf{A},\ms{F}\r)$ contains tuples $\tpl{f_i}$ where each $f_i$ is defined on $U_i$. For $n=1$, the group $\check{C}^1\!\l(\mf{A},\ms{F}\r)$ contains tuples $\tpl{f_{ij}}$ where each $f_{ij}$ is defined on $U_i\cap U_j$. Intuitively, $\tpl{f_i}$ induces an element $\tpl{g_{ij}}\in\check{C}^1\!\l(\mf{A},\ms{F}\r)$ by setting $g_{ij}\coloneqq f_j-f_i$, which `chains' $\tpl{f_i}$ on $U_i\cap U_j$ by measuring their difference. The following definition formalizes this intuition.\exqed
     \end{remark}
     \begin{definition}
-        For all $n\in\N$, the \uldef{$n^\textrm{th}$ coboundary operator} is the map $\delta^n\!:\check{C}^n\!\l(\mf{A},\ms{F}\r)\to\check{C}^{n+1}\!\l(\mf{A},\ms{F}\r)$ mapping $\l(f_{i_0,\dots,i_n}\r)$ to the cochain $\l(g_{i_0,\dots,i_{n+1}}\r)$ defined by\footnotemark
+        For all $n\in\N$, the \ul{$n^\textrm{th}$ coboundary operator} is the map $\delta^n\!:\check{C}^n\!\l(\mf{A},\ms{F}\r)\to\check{C}^{n+1}\!\l(\mf{A},\ms{F}\r)$ mapping $\l(f_{i_0,\dots,i_n}\r)$ to the cochain $\l(g_{i_0,\dots,i_{n+1}}\r)$ defined by\footnotemark
         \begin{equation*}
             g_{i_0,\dots,i_{n+1}}\coloneqq\sum_{k=0}^{n+1}\l(-1\r)^k\rho\l(f_{i_0,\dots,\widehat{i_k},\dots,i_{n+1}}\r).
         \end{equation*}
-        Define the \uldef{$n^\textrm{th}$ cocycle group} $\check{Z}^n\!\l(\mf{A},\ms{F}\r)\coloneqq\ker\delta^n$ and the \uldef{$n^\textrm{th}$ splitting cocycle group} $\check{B}^n\!\l(\mf{A},\ms{F}\r)\coloneqq\im\delta^{n-1}$, whose quotient
+        Define the \ul{$n^\textrm{th}$ cocycle group} $\check{Z}^n\!\l(\mf{A},\ms{F}\r)\coloneqq\ker\delta^n$ and the \ul{$n^\textrm{th}$ splitting cocycle group} $\check{B}^n\!\l(\mf{A},\ms{F}\r)\coloneqq\im\delta^{n-1}$, whose quotient
         \begin{equation*}
             \check{H}^n\!\l(\mf{A},\ms{F}\r)\coloneqq\check{Z}^n\!\l(\mf{A},\ms{F}\r)/\check{B}^n\!\l(\mf{A},\ms{F}\r)
         \end{equation*}
-        is called the \uldef{$n^\textrm{th}$ cohomology group of $\ms{F}$ (w.r.t. $\mf{A}$)}.
+        is called the \ul{$n^\textrm{th}$ cohomology group of $\ms{F}$ (w.r.t. $\mf{A}$)}.
     \end{definition}
     \footnotetext{The `hat' notation represents a deletion. Also, $\rho$ is the appropriate restriction mapping of $\ms{F}$.}
     \vspace{-0.05in}
@@ -113,7 +113,7 @@
         For $n=1$, we have $\delta^1\!\l(f_{ij}\r)=\tpl{f_{jk}-f_{ik}+f_{ij}}$ for all $\tpl{f_{ij}}\in\check{C}^1\!\l(\mf{A},\ms{F}\r)$. Elements $\tpl{f_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ satisfy the \textit{cocycle condition}, which states $f_{ik}=f_{ij}+f_{jk}$ on $U_i\cap U_j\cap U_k$ for all $i,j,k$. In particular, it implies that $f_{ii}=0$ for all $i$ and $f_{ij}=-f_{ji}$ on $U_i\cap U_j$ for all $i,j$. Note that every splitting cocycle is a cocycle, but not every cocycle splits. In other words, $\check{H}^1\!\l(\mf{A},\ms{F}\r)$ measures how $1$-cocycles fail to split. We now define the $1^\textrm{st}$ cohomology group of $\ms{F}$ by `refining' the open cover $\mf{A}$.\exqed
     \end{remark}
     \begin{definition}
-        Let $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ and $\mf{B}\coloneqq\l\{V_k\r\}_{k\in K}$ be open coverings of $X$. We say that \uldef{$\mf{B}$ is finer than $\mf{A}$}, and write $\mf{B}\preceq\mf{A}$, if there exists a \uldef{refining map} $r:K\to I$ such that $V_k\subseteq U_{r\l(k\r)}$ for all $k\in K$.
+        Let $\mf{A}\coloneqq\l\{U_i\r\}_{i\in I}$ and $\mf{B}\coloneqq\l\{V_k\r\}_{k\in K}$ be open coverings of $X$. We say that \ul{$\mf{B}$ is finer than $\mf{A}$}, and write $\mf{B}\preceq\mf{A}$, if there exists a \ul{refining map} $r:K\to I$ such that $V_k\subseteq U_{r\l(k\r)}$ for all $k\in K$.
     \end{definition}
     \begin{remark}
         The refining map $r$ induces a map $\tilde{r}:\check{Z}^1\!\l(\mf{A},\ms{F}\r)\to\check{Z}^1\!\l(\mf{B},\ms{F}\r)$ by sending $\tpl{f_{ij}}$ into $\tpl{g_{kl}}$ defined by $g_{kl}\coloneqq f_{r\l(k\r),r\l(l\r)}$ on $V_k\cap V_l$ for all $k,l\in K$. Observe that if $\delta^1_\mf{A}\!\l(f_{ij}\r)=0$, then $f_{i_1i_3}=f_{i_1i_2}+f_{i_2i_3}$ on $U_{i_1}\cap U_{i_2}\cap U_{i_3}$ for all $i_1,i_2,i_3\in I$. In particular, we have $f_{r\l(k_1\r),r\l(k_3\r)}=f_{r\l(k_1\r),r\l(k_2\r)}+f_{r\l(k_2\r),r\l(k_3\r)}$ on $V_{k_1}\cap V_{k_2}\cap V_{k_3}$ for all $k_1,k_2,k_3\in K$, so $\delta^1_\mf{B}\!\l(\tilde{r}\l(f_{ij}\r)\r)=0$. Thus $\tilde{r}$ sends splitting cocycles into splitting cocycles, so we may descend $\tilde{r}$ into the quotient, giving us a map
@@ -147,7 +147,7 @@
         If $\mf{C}\preceq\mf{B}\preceq\mf{A}$ are open coverings of $X$, we have that $\check{H}^\mf{B}_\mf{C}\circ\check{H}^\mf{A}_\mf{B}=\check{H}^\mf{A}_\mf{C}$. This allows us to give a construction of $\check{H}^1\!\l(X,\ms{F}\r)$ that is formally similar to that of stalks (see Definition \ref{CS:def:stalk} and its associated footnote).\exqed
     \end{remark}
     \begin{definition}
-        The \uldef{$1^\textrm{st}$ cohomology group of $\ms{F}$} is the Abelian group
+        The \ul{$1^\textrm{st}$ cohomology group of $\ms{F}$} is the Abelian group
         \begin{equation*}
             \check{H}^1\!\l(X,\ms{F}\r)\coloneqq\raisebox{-2pt}{$\Biggl(\!$}\coprod_{\mf{A}}\check{H}^1\!\l(\mf{A},\ms{F}\r)\!\raisebox{-2pt}{$\Biggr)$}\!\!_{\scalebox{2}{/}\sim}
         \end{equation*}
@@ -179,7 +179,7 @@
         \begin{equation*}
             \check{H}^1\!\l(X,\ms{F}\r)\iso\check{H}^1\!\l(\mf{A},\ms{F}\r).
         \end{equation*}
-        Such a covering $\mf{A}$ of $X$ is called a \uldef{Leray covering of $X$}.
+        Such a covering $\mf{A}$ of $X$ is called a \ul{Leray covering of $X$}.
     \end{proposition}
     \begin{proof}
         Let $\mf{B}\coloneqq\l\{V_k\r\}_{k\in K}$ be an open covering of $X$ with $\mf{B}\preceq\mf{A}$, so there exists a refining map $r:K\to I$. We claim that $\check{H}^\mf{A}_\mf{B}$ is an isomorphism, from which the result follows by descending into the quotient. By Proposition \ref{CC:prp:lifted_refinement_independent_of_refining_map}, this map is injective, and to show that it is surjective, we must show that every cocycle $\tpl{f_{kl}}\in\check{Z}^1\!\l(\mf{B},\ms{F}\r)$ admits a cocycle $\tpl{F_{ij}}\in\check{Z}^1\!\l(\mf{A},\ms{F}\r)$ such that

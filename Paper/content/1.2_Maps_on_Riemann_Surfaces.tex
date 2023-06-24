@@ -4,7 +4,7 @@
     We extend the notions of holomorphic and meromorphic functions from complex analysis to Riemann surfaces. We also define holomorphic maps \textit{between} Riemann surfaces, which formalizes what we mean for two Riemann surfaces to be `the same'. Lastly, we study the connection between meromorphic functions $f:X\to\C$ and their associated holomorphic maps $F:X\to\RS$.
     \subsection{Holomorphic Functions and Maps}
     \begin{definition}
-        Let $X$ be a Riemann surface and let $W\subseteq X$ be open. For a fixed $p\in W$, a function $f:W\to\C$ is said to be \uldef{holomorphic at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ is holomorphic at $\phi\l(p\r)$. If $f$ is holomorphic at every point of $W$, then $f$ is said to be \uldef{holomorphic on $W$}.
+        Let $X$ be a Riemann surface and let $W\subseteq X$ be open. For a fixed $p\in W$, a function $f:W\to\C$ is said to be \ul{holomorphic at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ is holomorphic at $\phi\l(p\r)$. If $f$ is holomorphic at every point of $W$, then $f$ is said to be \ul{holomorphic on $W$}.
     \end{definition}
     \begin{remark}
         It must be checked that $\textrm{`}$being holomorphic$\textrm{'}$ does not depend on the choice of chart. This is indeed the case, for if $\tpl{V,\psi}$ is another chart containing $p$, then the diagram
@@ -28,7 +28,7 @@
         \end{itemize}
     \end{example}
     \begin{definition}
-        Let $X$ and $Y$ be Riemann surfaces and let $W\subseteq X$ be open. For a fixed $p\in W$, a mapping $F:W\to Y$ is said to be \uldef{holomorphic at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ and a chart $\tpl{V,\psi}$ of $Y$ containing $F\l(p\r)$ such that $\psi\circ F\circ\phi^{-1}\!\!:\phi\l(U\r)\to\psi\l(V\r)$ is holomorphic at $\phi\l(p\r)$. If $F$ is holomorphic at every point of $W$, then $F$ is \uldef{holomorphic on $W$}.
+        Let $X$ and $Y$ be Riemann surfaces and let $W\subseteq X$ be open. For a fixed $p\in W$, a mapping $F:W\to Y$ is said to be \ul{holomorphic at $p$} if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ and a chart $\tpl{V,\psi}$ of $Y$ containing $F\l(p\r)$ such that $\psi\circ F\circ\phi^{-1}\!\!:\phi\l(U\r)\to\psi\l(V\r)$ is holomorphic at $\phi\l(p\r)$. If $F$ is holomorphic at every point of $W$, then $F$ is \ul{holomorphic on $W$}.
     \end{definition}
     \begin{remark}
         For $Y\coloneqq\C$ regarded as a Riemann surface, this definition agrees with the above. Again, we must check that $\textrm{`}$being holomorphic$\textrm{'}$ is well-defined, but it follows from the commutativity of the diagram below and a similar argument as above.
@@ -45,7 +45,7 @@
         For a Riemann surface $X$, the identity $\id_X$ is a holomorphic map. Furthermore, for all Riemann surfaces $X$, $Y$, and $Z$, and all holomorphic maps $F:X\to Y$ and $G:Y\to Z$, the composite $G\circ F:X\to Z$ is also a holomorphic map. Note that if $F:X\to Y$ is an invertible holomorphic map, then its inverse $F^{-1}:Y\to X$ is also holomorphic. Indeed, if $\tpl{U,\phi}$ and $\tpl{V,\psi}$ are charts around $p$ and $F\l(p\r)$, respectively, making $\psi\circ F\circ\phi^{-1}$ holomorphic (in the classical sense) at $\phi\l(p\r)$, then its inverse $\phi\circ F^{-1}\circ\psi^{-1}$ is also holomorphic (in the classical sense) at $\psi\l(p\r)$. Thus $F^{-1}$ is holomorphic at $F\l(p\r)$, as desired, and justifies the following definition.\exqed
     \end{example}
     \begin{definition}\label{RS:def:biholomorphic_Riemann_surfaces}
-        Let $X$ and $Y$ be Riemann surfaces. A \uldef{biholomorphism between $X$ and $Y$} is an invertible holomorphic map $F:X\to Y$. Two Riemann surfaces $X$ and $Y$ are said to be \uldef{biholomorphic} if there exists a biholomorphism $F:X\to Y$.
+        Let $X$ and $Y$ be Riemann surfaces. A \ul{biholomorphism between $X$ and $Y$} is an invertible holomorphic map $F:X\to Y$. Two Riemann surfaces $X$ and $Y$ are said to be \ul{biholomorphic} if there exists a biholomorphism $F:X\to Y$.
     \end{definition}
     \begin{example}[Biholomorphisms between Riemann spheres]\label{RS:exa:biholomorphisms_between_Riemann_spheres}
         Let $\C_\infty$, $S^2$, and $\P^1$ denote the three constructions for the Riemann sphere $\RS$ presented in Examples \ref{RS:exa:one_point_compactification_of_C}, \ref{RS:exa:stereographic_projection}, and \ref{RS:exa:complex_projective_line}, respectively. We claim that the maps
@@ -82,7 +82,7 @@
     \subsection{Singularities of Functions}
     Throughout this section, let $X$ be a Riemann surface, let $p\in X$, and let $f:W\to\C$ be defined and holomorphic on a punctured neighborhood $W$ of $p$. As above, we can study the behaviour of $f$ at $p$ from its chart representation $f\circ\phi^{-1}$.
     \begin{definition}
-        Let $f:W\to\C$ be a holomorphic function on a punctured neighborhood of $p$. We say that $f$ has a \uldef{removable singularity} (resp. \uldef{pole}, \uldef{essential singularity}) at $p$ if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ has a removable singularity (resp. pole, essential singularity) at $\phi\l(p\r)$.
+        Let $f:W\to\C$ be a holomorphic function on a punctured neighborhood of $p$. We say that $f$ has a \ul{removable singularity} (resp. \ul{pole}, \ul{essential singularity}) at $p$ if there exists a chart $\tpl{U,\phi}$ of $X$ containing $p$ such that $f\circ\phi^{-1}:\phi\l(U\r)\to\C$ has a removable singularity (resp. pole, essential singularity) at $\phi\l(p\r)$.
     \end{definition}
     \begin{proof}
         (Well-definedness). The commutativity of the diagram in Equation (\ref{RS:eqn:holomorphic_function_well_defined}) shows that those notions are chart independent; the composition of $f\circ\phi^{-1}$ having a singularity at $p$ with a transition map that is holomorphic at $p$ yields a function with the same type of singularity at $p$.\qed
@@ -105,7 +105,7 @@
         Thus we see that every such function $f:W\to\C$ having pole at $p$ can be holomorphically extended to a map $F:W\to\RS$. Conversely, every holomorphic map $F:W\to\RS$ (that is not identically infinity) can be regarded as a function $f:W\comp F^{-1}\l(\infty\r)\to\C$ that is holomorphic everywhere except where $F\l(x\r)=\infty$, in which case it has a pole. This motivates the following definition.\exqed
     \end{remark}
     \begin{definition}
-        A function $f:W\to\C$ is said to be \uldef{meromorphic at $p$} if it does not have an essential singularity at $p$; that is, if it is either holomorphic, has a removable singularity, or has a pole at $p$. If $f$ is meromorphic at every point of $W$, then $f$ is \uldef{meromorphic on $W$}.
+        A function $f:W\to\C$ is said to be \ul{meromorphic at $p$} if it does not have an essential singularity at $p$; that is, if it is either holomorphic, has a removable singularity, or has a pole at $p$. If $f$ is meromorphic at every point of $W$, then $f$ is \ul{meromorphic on $W$}.
     \end{definition}
     \begin{remark}
         The previous remark can now be rephrased by saying that the set of all meromorphic functions $f:W\to\C$ are in one-to-one correspondence with the set of all holomorphic maps $F:W\to\RS$ (which are not identically infinity). That is, meromorphic functions are the holomorphic maps to the Riemann sphere.\exqed
@@ -124,7 +124,7 @@
         for some $m_i>1$. Then the function $g\coloneqq f-\sum_ih_i$ is holomorphic function on $\RS$, and since $\RS$ is compact, it is constant by Proposition \ref{RS:prp:holomorphic_compact_constant}. Thus $f=g+\sum_ih_i$, which is a rational function.\qed
     \end{proof}
     \begin{definition}\label{RS:def:order}
-        Let $f:W\to\C$ be meromorphic at $p$ and consider its Laurent series $f_\phi\!\l(z\r)\coloneqq\l(f\circ\phi^{-1}\r)\l(z\r)=\sum_{i}c_i\l(z-z_0\r)^i$ under a chart $\l(U,\phi\r)$ of $X$ with $z_0\coloneqq\phi\l(p\r)$. The \uldef{order of $f$ at $p$} is
+        Let $f:W\to\C$ be meromorphic at $p$ and consider its Laurent series $f_\phi\!\l(z\r)\coloneqq\l(f\circ\phi^{-1}\r)\l(z\r)=\sum_{i}c_i\l(z-z_0\r)^i$ under a chart $\l(U,\phi\r)$ of $X$ with $z_0\coloneqq\phi\l(p\r)$. The \ul{order of $f$ at $p$} is
         \begin{equation*}
             \ord_p\!\l(f\r)\coloneqq\min\l\{n\in\Z\mid0\neq\l(z-z_0\r)^n\!f_\phi\!\l(z\r)\in\HOLO\l(W\r)\r\}.
         \end{equation*}
@@ -155,7 +155,7 @@
         The order $\ord_p\!\l(f\r)$ can be used to classify the behaviour of $f$ at $p$. Indeed, it is readily verified that $f$ is holomorphic at $p$ iff $\ord_p\!\l(f\r)\leq0$, in which case $f\l(p\r)=0$ iff $\ord_p\!\l(f\r)<0$. Similarly, $f$ has a pole at $p$ iff $\ord_p\!\l(f\r)>0$, so $f$ has neither a zero nor a pole at $p$ iff $\ord_p\!\l(f\r)=0$. This motivates the following definition.\exqed
     \end{remark}
     \begin{definition}
-        Let $f:W\to\C$ be meromorphic at $p$. We say that $f$ has a \uldef{pole of order $n$ at $p$} if $\ord_p\!\l(f\r)=n>0$, and a \uldef{zero of order $n$ at $p$} if $\ord_p\!\l(f\r)=n<0$.
+        Let $f:W\to\C$ be meromorphic at $p$. We say that $f$ has a \ul{pole of order $n$ at $p$} if $\ord_p\!\l(f\r)=n>0$, and a \ul{zero of order $n$ at $p$} if $\ord_p\!\l(f\r)=n<0$.
     \end{definition}
     \begin{example}
         Let $f:\RS\to\C$ be meromorphic, so $f\l(z\r)=p\l(z\r)\!/q\l(z\r)$ for some $p,q\in\C\l[z\r]$. Then $f$ is holomorphic at all points $z\in\C$ such that $q\l(z\r)\neq0$, and has a pole otherwise. Also, $f\l(\infty\r)\in\C$ if $\deg p=\deg q$, vanishes if $\deg p<\deg q$, and has a pole otherwise. In any case, $f$ is meromorphic on $\RS$. To compute $\ord_z\!\l(f\r)$ at all $z\in\RS$, we split $p$ and $q$ into linear factors to write $f$ uniquely as
@@ -192,7 +192,7 @@
         for all $z\in\phi_1\l(U_1\r)$. To show uniqueness, it suffices to show that such an $m$ is chart-independent. But this is clear, for if a different chart $U_2'$ is chosen such that $F$ acts as $z\mapsto z^n$ for some neighborhood $U_1'$ of $p$, then $z^n=z^m$ on $\phi_1\l(U_1\r)\cap\phi_1'\l(U_1'\r)$ forces $n=m$.\qed
     \end{proof}
     \begin{definition}
-        With the above notation, the unique $m\geq1$ such that there are local coordinates around $p$ and $F\l(p\r)$ where $F$ acts like $z\mapsto z^m$ is called the \uldef{multiplicity of $F$ at $p$}, denoted $\mult_p\!\l(F\r)$.
+        With the above notation, the unique $m\geq1$ such that there are local coordinates around $p$ and $F\l(p\r)$ where $F$ acts like $z\mapsto z^m$ is called the \ul{multiplicity of $F$ at $p$}, denoted $\mult_p\!\l(F\r)$.
     \end{definition}
     \begin{remark}
         Consider the power function $f\l(z\r)\coloneqq z^m$ where $m\coloneqq\mult_p\!\l(F\r)$. Then, for all $z\in\C^*$, we see that $f^{-1}\l(z\r)$ has exactly $m$ elements given by the $m$ distinct $m^\textrm{th}$ roots of $z^m$. Thus the map $f$ causes $\C$ to `cover itself $m$ times', and those coverings meet at the fixed point $0$. But $f^{-1}\l(0\r)=\l\{0\r\}$ has only $1$ element, which prevents $f$ to be a $m$-sheeted covering of $\C$. To remedy this, we count $0$ \textit{with multiplicity}; see Chapter \ref{CS} for a more formal discussion. Since $F$ is locally represented by $f$, and $\tpl{U_1,\phi_1}$ is centered at $p$, we see that $m$ counts the multiplicity at which neighbors of $p$ are mapped to $F\l(p\r)$.\exqed

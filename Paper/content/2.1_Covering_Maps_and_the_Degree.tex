@@ -6,7 +6,7 @@
     \subsection{Proper and Covering Maps}
     We first gather some basic results on the theory of covering spaces from topology. Throughout this section, let $E$ and $X$ be locally-compact topological spaces. This assumption ensures that proper maps are closed.
     \begin{definition}
-        A map $\pi:E\to X$ is said to be \uldef{proper} if the preimage of every compact set is compact.
+        A map $\pi:E\to X$ is said to be \ul{proper} if the preimage of every compact set is compact.
     \end{definition}
     \begin{proposition}\label{CS:prp:proper_give_neighborhoods}
         For a proper map $\pi:E\to X$, every $p\in X$ and every neighborhood $V$ of $\pi^{-1}\!\l(p\r)$ admits a neighborhood $U$ of $p$ such that $\pi^{-1}\!\l(U\r)\subseteq V$.
@@ -15,7 +15,7 @@
         Since $E\comp V$ is closed and $\pi$ is proper, we see that $\pi\l(E\comp V\r)$ is closed too. Clearly $p\not\in\pi\l(E\comp V\r)\eqqcolon W$, so $U\coloneqq X\comp W$ is a neighborhood of $p$. Then $\pi^{-1}\!\l(U\r)\subseteq V$, since for all $\pi\l(\zeta\r)\in U$, we see that $\pi\l(\zeta\r)\not\in\pi\l(E\comp V\r)$ and so $\zeta\not\in E\comp V$.\qed
     \end{proof}
     \begin{definition}
-        A map $\pi:E\to X$ is said to be a \uldef{covering map} if every point $p\in X$ admits a neighborhood $U$ such that $\pi^{-1}\!\l(U\r)=\coprod_{j\in J}V_j$ where $V_j$ are disjoint open sets in $E$, each homeomorphic to $U$ via $\l.\pi\r|_{V_j}$. In this case, we say that $U$ is \uldef{evenly-covered by $\l\{V_j\r\}$} and that $E$ is a \uldef{covering space of $X$}.
+        A map $\pi:E\to X$ is said to be a \ul{covering map} if every point $p\in X$ admits a neighborhood $U$ such that $\pi^{-1}\!\l(U\r)=\coprod_{j\in J}V_j$ where $V_j$ are disjoint open sets in $E$, each homeomorphic to $U$ via $\l.\pi\r|_{V_j}$. In this case, we say that $U$ is \ul{evenly-covered by $\l\{V_j\r\}$} and that $E$ is a \ul{covering space of $X$}.
     \end{definition}
     \begin{example}\label{CS:exa:power_map}
         Let $m\geq2$ be a natural number and consider the power map $f:\C^\ast\to\C^\ast$ mapping $z\mapsto z^m$. We claim that $f$ is a covering map, so take $b\in\C^\ast$ and let $a\in\C^\ast$ be any one of its $m^\textrm{th}$ roots. Since $f$ is a local homeomorphism, there exist neighborhoods $V_0$ of $a$ and $U$ of $b$ such that $\l.f\r|_{V_0}:V_0\to U$ is a homeomorphism. We claim that
@@ -50,7 +50,7 @@
     \subsection{Ramification Points and the Degree}
     Throughout this section, let $F:Y\to X$ be a (non-constant) proper holomorphic map between Riemann surfaces $X$ and $Y$. We extend Proposition \ref{CS:prp:fiber_cardinalities_coincide} to $F$, which is `almost' a covering map, and define the \textit{degree} of $F$.
     \begin{definition}
-        A point $q\in Y$ is said to be a \uldef{ramification/branch point of $F$} if $\l.F\r|_V$ is not injective for any neighborhood $V$ of $q$, in which case $F\l(q\r)\in X$ is said to be a \uldef{critical point of $F$}. If $F$ has no ramification points, then $F$ is said to be an \uldef{unbranched holomorphic map}.
+        A point $q\in Y$ is said to be a \ul{ramification/branch point of $F$} if $\l.F\r|_V$ is not injective for any neighborhood $V$ of $q$, in which case $F\l(q\r)\in X$ is said to be a \ul{critical point of $F$}. If $F$ has no ramification points, then $F$ is said to be an \ul{unbranched holomorphic map}.
     \end{definition}
     \begin{remark}
         It is immediate that $F$ is unbranched iff it is a local homeomorphism. Indeed, if $F$ is unbranched, then for every $q\in Y$ there exists a neighborhood $V$ of $q$ such that $\l.F\r|_V$ is injective. By the Open Mapping Theorem, $F$ is open and hence $\l.F\r|_V$ maps $V$ homeomorphically to the open set $F\l(V\r)$. Conversely, if $F$ is a local homeomorphism, then for every $q\in Y$ there exists a neighborhood $V$ of $q$ that is mapped homeomorphically onto an open set in $X$. Thus $\l.F\r|_V$ is injective, so $F$ is unbranched at $q$.\\\ \\
@@ -63,7 +63,7 @@
         By Theorem \ref{RS:thm:local_normal_form}, there exist charts $\tpl{V,\psi}$ centered at $q$ and $\tpl{U,\phi}$ centered at $F\l(q\r)$ such that $f\coloneqq\phi\circ F\circ\psi^{-1}$ is the power map $z\mapsto z^m$ where $m\coloneqq\mult_q\!\l(F\r)$. Since $\phi$ and $\psi$ are, in particular, injections, we see that $F$ is locally injective at $q$ iff $f$ is locally injective at $0$. But this occurs precisely when $m=\mult_q\!\l(F\r)<2$, so the result follows.\qed
     \end{proof}
     \begin{defthm}\label{CS:thm:degree_sum_of_multiplicities}
-        The \uldef{degree of $F$} is the cardinality of any fiber $F^{-1}\!\l(p\r)$ for $p\in X$, counted with multiplicity. That is, $\deg F\coloneqq\sum_{q\in F^{-1}\!\l(p\r)}\mult_q\!\l(F\r)$ is independent of $p\in X$.
+        The \ul{degree of $F$} is the cardinality of any fiber $F^{-1}\!\l(p\r)$ for $p\in X$, counted with multiplicity. That is, $\deg F\coloneqq\sum_{q\in F^{-1}\!\l(p\r)}\mult_q\!\l(F\r)$ is independent of $p\in X$.
     \end{defthm}
     \begin{proof}
         For non-critical points $p\in X$, Lemma \ref{CS:lem:ramification_iff_mult_2} shows that $\mult_q\!\l(F\r)=1$ for any $q\in F^{-1}\!\l(p\r)$. Then $\deg F=\l|F^{-1}\!\l(p\r)\r|$, and since Proposition \ref{CS:prp:proper_local_covering} shows that $F$ is a covering map when all ramification points are removed, it is, by Proposition \ref{CS:prp:fiber_cardinalities_coincide}, constant over all non-critical points.\\\ \\
