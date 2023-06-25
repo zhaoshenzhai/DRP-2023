@@ -60,7 +60,7 @@
             \item For all $U\in\mc{T}$, we associate to each $f\in\MERO^\ast\!\l(U\r)$ the function $\div f:U\to\Z:p\mapsto\ord_p\!\l(f\r)$, which is a divisor by discreteness of zeros and poles. This induces a morphism of sheaves $\div:\MERO^\ast\to\ms{D}$ since for all $U\in\mc{T}$ and all open sets $V\subseteq U$, the restriction of the divisor of any $f\in\MERO^\ast\!\l(U\r)$ coincides with the divisor of the restriction $\l.f\r|_V$.\exqed
         \end{itemize}
     \end{example}
-    \begin{definition}\label{CS:def:stalk}
+    \begin{definition}\label{CC:def:stalk}
         Let $\ms{F}$ be a presheaf of Abelian groups on $X$ and fix $p\in X$. The \ul{stalk of $\ms{F}$ at $p$} is the Abelian group
         \begin{equation*}
             \ms{F}_p\coloneqq\raisebox{-2pt}{$\Biggl(\!$}\coprod_{U\ni p}\ms{F}\l(U\r)\!\raisebox{-2pt}{$\Biggr)$}\!\!_{\scalebox{2}{/}\sim_p}
@@ -144,7 +144,7 @@
         on $U_i\cap U_j\cap V_k$. Note that both $f_{ij}$ and $h_i-h_j$ are defined on $U_i\cap U_j$, and since they coincide on the restriction to $V_k$, uniqueness of the glueing gives us $f_{ij}=h_i-h_j$ on $U_i\cap U_j$. Thus $\tpl{f_{ij}}=\delta^0\!\l(h_i\r)$, so $\tpl{f_{ij}}$ splits.\qed
     \end{proof}
     \begin{remark}
-        If $\mf{C}\preceq\mf{B}\preceq\mf{A}$ are open coverings of $X$, we have that $\check{H}^\mf{B}_\mf{C}\circ\check{H}^\mf{A}_\mf{B}=\check{H}^\mf{A}_\mf{C}$. This allows us to give a construction of $\check{H}^1\!\l(X,\ms{F}\r)$ that is formally similar to that of stalks (see Definition \ref{CS:def:stalk} and its associated footnote).\exqed
+        If $\mf{C}\preceq\mf{B}\preceq\mf{A}$ are open coverings of $X$, we have that $\check{H}^\mf{B}_\mf{C}\circ\check{H}^\mf{A}_\mf{B}=\check{H}^\mf{A}_\mf{C}$. This allows us to give a construction of $\check{H}^1\!\l(X,\ms{F}\r)$ that is formally similar to that of stalks (see Definition \ref{CC:def:stalk} and its associated footnote).\exqed
     \end{remark}
     \begin{definition}
         The \ul{$1^\textrm{st}$ cohomology group of $\ms{F}$} is the Abelian group

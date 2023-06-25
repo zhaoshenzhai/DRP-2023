@@ -1,6 +1,6 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
-    \begin{proposition}\label{CS:prp:basis_stalk}
+    \begin{proposition}\label{A:prp:basis_stalk}
         Let $\ms{F}$ be a presheaf of Abelian groups on $X$. Let $\l|\ms{F}\r|\coloneqq\coprod_{p\in X}\ms{F}_p$ and consider the projection $\pi:\l|\ms{F}\r|\to X$ mapping each $\eta\in\ms{F}_p$ to $p$. Then the system $\mc{B}$ of all sets
         \begin{equation*}
             \l[U,f\r]\coloneqq\bigl\{\l[f\r]_p\,\l|\,p\in U\bigr\}\r.\subseteq\l|\ms{F}\r|
@@ -26,7 +26,7 @@
         A presheaf $\ms{F}$ of Abelian groups on $X$ is said to satisfy the \ul{Identity Theorem} if for all $U\in\tau$ and all $f,g\in\ms{F}\l(U\r)$, if there is some $p\in U$ such that $\l[f\r]_p=\l[g\r]_p$, then $f=g$ (on $U$).
     \end{definition}
     \footnote{In particular, this holds for all $\HOLO\l[D\r]$. In contrast, the sheaf of smooth functions $\DIFF$ (see Section \ref{CC:sec:differential_forms}) does \textit{not} satisfy the Identity Theorem.}
-    \begin{proposition}\label{CS:prp:stalk_topology_Hausdorff}
+    \begin{proposition}\label{A:prp:stalk_topology_Hausdorff}
         If $X$ is a locally-connected Hausdorff space and $\ms{F}$ is a presheaf of Abelian groups on $X$ that satisfy the Identity Theorem, then $\l|\ms{F}\r|$ is Hausdorff.
     \end{proposition}
     \begin{proof}
@@ -40,7 +40,7 @@
     \begin{definition}
         A germ $\hat{\eta}\in\HOLO_q$ is said to be the \ul{analytic continuation of $\eta_0$ along $\alpha$} if there exist a family $\eta_t\in\HOLO_{\alpha\l(t\r)}\!\l[p\r]$ of germs for all $t\in\l[0,1\r]$ with $\hat{\eta}=\eta_1$ such that for all $\tau\in\l[0,1\r]$, there exists a neighborhood $T\subseteq\l[0,1\r]$ of $\tau$, an open set $U\subseteq X$ with $\alpha\l(T\r)\subseteq U$, and a function $f\in\HOLO\l[p\r]\l(U\r)$ such that $\l[f\r]_{\alpha\l(t\r)}=\eta_t$ for all $t\in T$.
     \end{definition}
-    \begin{proposition}\label{CS:prp:analytic_continuation_iff_lifting}
+    \begin{proposition}\label{A:prp:analytic_continuation_iff_lifting}
         A germ $\hat{\eta}\in\HOLO_q$ is an analytic continuation of $\eta_0$ along $\alpha$ iff there exists a lifting $\tilde{\alpha}:\l[0,1\r]\to\l|\HOLO\l[p\r]\r|$ such that $\tilde{\alpha}\l(0\r)=\eta_0$ and $\tilde{\alpha}\l(1\r)=\hat{\eta}$.
     \end{proposition}
     \begin{proof}
@@ -61,9 +61,9 @@
         Let $\alpha_0,\alpha_1:\l[0,1\r]\to X$ be homotopic curves from $p$ to $q$. If the germ $\eta_0\in\HOLO_p\!\l[p\r]$ admits an analytic continuation along every deformation of $\alpha_0$ to $\alpha_1$, then the analytic continuations of $\eta_0$ along $\alpha_0$ and $\alpha_1$ coincide.
     \end{corollary}
     \begin{proof}
-        By Propositions \ref{CS:prp:basis_stalk} and \ref{CS:prp:stalk_topology_Hausdorff}, $\l|\HOLO\l[p\r]\r|$ is Hausdorff whose projection $\pi:\l|\HOLO\l[p\r]\r|\to X$ is a local homeomorphism. Since each deformation admits a lifting starting at $\eta_0$, the\footnote{This is a standard result in algebraic topology. For a proof, see \cite[][Proposition 4.10]{forster}.} liftings $\tilde{\alpha}_0$ and $\tilde{\alpha}_1$ have the same endpoints; that is, the analytic continuations along $\alpha_0$ and $\alpha_1$ coincide.\qed
+        By Propositions \ref{A:prp:basis_stalk} and \ref{A:prp:stalk_topology_Hausdorff}, $\l|\HOLO\l[p\r]\r|$ is Hausdorff whose projection $\pi:\l|\HOLO\l[p\r]\r|\to X$ is a local homeomorphism. Since each deformation admits a lifting starting at $\eta_0$, the\footnote{This is a standard result in algebraic topology. For a proof, see \cite[][Proposition 4.10]{forster}.} liftings $\tilde{\alpha}_0$ and $\tilde{\alpha}_1$ have the same endpoints; that is, the analytic continuations along $\alpha_0$ and $\alpha_1$ coincide.\qed
     \end{proof}
-    \begin{corollary}\label{CS:thm:analytically_continue_to_global_function}
+    \begin{corollary}\label{A:thm:analytically_continue_to_global_function}
         Suppose $X$ is simply-connected. If the germ $\eta_0\in\HOLO_p\!\l[p\r]$ admits an analytic continuation along every curve starting at $p$, then there exists a unique (globally-defined) function $f\in\HOLO\l[p\r]\l(X\r)$ with $\l[f\r]_p=\eta_0$.
     \end{corollary}
     \begin{proof}
@@ -73,7 +73,7 @@
         Let $U\subseteq X$ be any open set containing $p$ and consider any function $f_0\in\HOLO\l[p\r]\l(U\r)$. We have reduced the problem of analytically continuing $f_0$ to a global function $f\in\HOLO[p]\l(X\r)$ with $\l.f\r|_U=f_0$ into finding analytic continuations of $\l[f_0\r]_p$ along every curve starting at $p$. We shall establish this fact under (under some conditions) in the next section.\exqed
     \end{remark}
     In this section, we let $E\subseteq\l|\HOLO\l[p\r]\r|$ be the connected component of the Étalé space of $\HOLO\l[p\r]$ containing $\eta_0$ and write $\pi:E\to X$ as the restricted projection map.
-    \begin{theorem}\label{CS:thm:existence_of_analytic_continuation}
+    \begin{theorem}\label{A:thm:existence_of_analytic_continuation}
         If $\pi$ is a covering map, then for any $q\in X$ and any curve $\alpha:\l[0,1\r]\to X$ with $\alpha\l(0\r)=p$ and $\alpha\l(1\r)=q$, there exists an analytic continuation $\hat{\eta}\in\HOLO_q\!\l[p\r]$ of $\eta_0$ along $\alpha$.
     \end{theorem}
     \begin{proof}
