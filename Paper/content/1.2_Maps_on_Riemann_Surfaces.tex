@@ -60,7 +60,7 @@
         \begin{equation*}
             \begin{alignedat}{2}
                 U&\coloneqq S^2\comp\l\{\l(0,0,1\r)\r\}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ &&\phi:U\to\C:\tpl{x,y,w}\mapsto\frac{x+iy}{1-w} \\
-                V&\coloneqq\P^1\comp\l\{\proje{0:w}\mid w\in\C\r\}&&\psi:V\to\C:\proje{z:w}\mapsto\frac{w}{z},
+                V&\coloneqq\P^1\comp\l\{\proje{0:w}\st w\in\C\r\}&&\psi:V\to\C:\proje{z:w}\mapsto\frac{w}{z},
             \end{alignedat}
         \end{equation*}
         we see that
@@ -126,7 +126,7 @@
     \begin{definition}\label{RS:def:order}
         Let $f:W\to\C$ be meromorphic at $p$ and consider its Laurent series $f_\phi\!\l(z\r)\coloneqq\l(f\circ\phi^{-1}\r)\l(z\r)=\sum_{i}c_i\l(z-z_0\r)^i$ under a chart $\l(U,\phi\r)$ of $X$ with $z_0\coloneqq\phi\l(p\r)$. The \ul{order of $f$ at $p$} is
         \begin{equation*}
-            \ord_p\!\l(f\r)\coloneqq\min\l\{n\in\Z\mid0\neq\l(z-z_0\r)^n\!f_\phi\!\l(z\r)\in\HOLO\l(W\r)\r\}.
+            \ord_p\!\l(f\r)\coloneqq\min\l\{n\in\Z\st0\neq\l(z-z_0\r)^n\!f_\phi\!\l(z\r)\in\HOLO\l(W\r)\r\}.
         \end{equation*}
     \end{definition}
     \begin{remark}
