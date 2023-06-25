@@ -1,0 +1,65 @@
+\documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
+\begin{document}
+    For any genus $g$, we let $\mc{M}_g$ denote the \textit{moduli space} of compact Riemann surfaces of genus $g$, defined as the set of all Riemann surfaces of genus $g$ up to biholomorphism. Using the language and machinery developed in Chapters \ref{RS}, \ref{CS}, and \ref{CC}, we compute $\mc{M}_0$ and $\mc{M}_1$, which are the moduli spaces of the sphere $S^2$ and the torus $T^2$, respectively.\\\ \\
+    We conclude with a brief discussion of the \textit{Uniformization Theorem} and the \textit{Classification of Riemann Surfaces}.
+    \section{Simply-connected Riemann Surfaces}
+    The \textit{Uniformization Theorem} states that every simply-connected Riemann surface is biholomorphic to either the Riemann sphere $\RS$, the complex plane $\C$, or the upper-half plane $\H$ of $\C$. In the compact case, this is precisely the statement that there is a \textit{unique} complex structure on the sphere, which we prove below. The non-compact case requires tools that we have yet to develop, so only a proof sketch is given.
+    \subsection{Moduli Space of $S^2$}\label{MS:sec:moduli_space_of_sphere}
+    We show that the moduli space of the sphere $S^2$ is a point\footnote{This result is an easy corollary of the Riemann-Roch Theorem, but its proof is beyond the scope of this paper. We refer the interested reader to \cite[][Section 16]{forster}.}. That is, there is a \textit{unique} complex structure on the sphere.
+    \begin{theorem}\label{MS:thm:simply-connect_compact_biholomorphic_Riemann_sphere}
+        Every simply-connected compact Riemann surface $X$ is biholomorphic to the Riemann sphere $\RS$.
+    \end{theorem}
+    \begin{proof}
+        The Classification Theorem of Surfaces shows that such a Riemann surface $X$, being simply-connected and compact, is homeomorphic to the sphere $\RS$. Theorem \ref{CC:thm:vanishing_of_H_Riemann_sphere} shows that $\check{H}^1\big(\RS,\HOLO\big)$ vanishes, and since the genus is a topological invariant, we see that $\check{H}^1\!\l(X,\HOLO\r)$ vanishes too. Hence $X$ has genus $0$, so for any fixed point $p\in X$, Corollary \ref{CC:cor:global_meromorphic_functions} furnishes a meromorphic function $f\in\MERO\l(X\r)$ with a single simple pole at $p$. Thus $X\iso\RS$ by Corollary \ref{CS:cor:exists_meromorphic_implies_biholomorphic_Riemann_sphere}, as desired.\qed
+    \end{proof}
+    \subsection{The Uniformization Theorem}
+    \begin{theorem}[Uniformization]
+        Every simply-connected Riemann surface $X$ is biholomorphic to either the Riemann sphere $\RS$, the complex plane $\C$, or the upper-half plane $\H\coloneqq\l\{z\in\C\mid\Im z>0\r\}$.
+    \end{theorem}
+    \begin{proofsketch}
+        This sketch follows \cite{peter}. Fix $p\in X$. Using tools from Dolbeault cohomology, let $f\in\MERO\l(X\r)$ be a meromorphic function with a single simple pole at $p$. Let $F:X\to\RS$ be its associated holomorphic map, so $F\l(p\r)=\infty$.
+        \begin{itemize}
+            \item First, it can be shown that $\Im F\l(x\r)\to0$ as `$x\to\infty$' in $X$. That is, for every $\epsilon>0$, there is a large enough compact subset $K$ of $X$ such that $\Im F\l(x\r)<\epsilon$ for all $x\in X\comp K$.
+                \vspace{-0.05in}
+            \item It can also be shown that $\im F$ is open, contains the `top and bottom halves' of $\RS$, and is a biholomorphism onto its image.
+        \end{itemize}
+        Thus $X\iso\im F=\RS\comp I$ for some $I\subseteq\R$. By simply-connectedness of $X$, we see that $I$ is connected and hence we have three possibilities.
+        \begin{itemize}
+            \item If $I=\em$, then $F:X\to\RS$ is a biholomorphism, which reduces to Theorem \ref{MS:thm:simply-connect_compact_biholomorphic_Riemann_sphere}.
+                \vspace{-0.05in}
+            \item If $I$ is a singleton, then $\RS\comp I\iso\C$, so $X\iso\C$.
+                \vspace{-0.05in}
+            \item If $I$ is an interval $\l[a,b\r]$, we may without loss of generality take $a=0$ and $b=\infty$. Then the (usual branch of the) square root function sends $\RS\comp\l[0,\infty\r]$ to $\H$.\qed
+        \end{itemize}
+    \end{proofsketch}
+    \begin{remark}
+        It turns out that one can construct a simply-connected Riemann surface $\widetilde{X}$ from any Riemann surface $X$. Since $\widetilde{X}$ is exactly one of three types, this leads to a classification of Riemann surfaces.\exqed
+    \end{remark}
+    \begin{definition}
+        Let $X$ and $E$ be connected topological spaces. A covering map $\pi:E\to X$ if said to be the \ul{universal covering of $X$} if for every covering $\pi':E'\to X$ on a connected topological space $E'$ and every $e\in E$ and $e'\in E'$ such that $\pi\l(e\r)=\pi'\l(e'\r)$, there exists a unique continuous map $\sigma:E\to E'$ with $\sigma\l(e\r)=e'$ making the below diagram commute.
+        \begin{equation*}
+            \begin{tikzcd}
+                E \ar[rr, "\ex!\sigma", dashed] \ar[dr, "\pi"'] & & E' \ar[dl, "\pi'"] \\
+                                                    & X
+            \end{tikzcd}
+        \end{equation*}
+    \end{definition}
+    \begin{remark}
+        As with all `universal properties', the universal covering of $X$ is unique up to isomorphism. Note that $\sigma$ is the lifting of of $\pi$ along $\pi'$, so if $E$ is simply-connected, then by Proposition \ref{CS:prp:lift_maps} such a lifting exists and is unique. In this case, \textit{any} covering map is the universal covering of $X$. We quote the following theorem that guarantees the existence of such a simply-connected space.\exqed
+    \end{remark}
+    \begin{theorem}[{\cite[][Theorem 5.3]{forster}}]
+        Suppose $X$ is a connected manifold. Then there exists a connected, simply-connected manifold $\widetilde{X}$ and a covering map $\pi:\widetilde{X}\to X$.
+    \end{theorem}
+    \begin{example}
+        Recall from Example \ref{CS:exa:torus_covering_map} that for any lattice $\Gamma\subseteq\C$, the projection $\pi:\C\to\C/\Gamma$ is a covering map. Since $\C$ is simply-connected, we see that $\pi$ is the universal covering of $\C/\Gamma$.\exqed
+    \end{example}
+    \begin{remark}
+        For any Riemann surface $X$, let $\widetilde{X}$ be its simply-connected universal covering. If $\widetilde{X}\iso\RS$ (resp. $\C$, $\H$), then $X$ is said to be \textit{elliptic} (resp. \textit{parabolic}, \textit{hyperbolic})\footnote{This classification is similar to that of Riemannian manifolds. In fact, every Riemann surface admits a Riemannian metric of constant curvature, either of $1$, $0$, or $-1$, which respectively correspond to the curvatures of $\RS$, $\C$, and $\H$ when equipped with the appropriate metrics.}.
+        \begin{itemize}
+            \item Since $\RS$ is simply-connected, it is the universal covering of itself and hence $\RS$ is elliptic.
+                \vspace{-0.05in}
+            \item Since $\C$ is the universal covering of any torus $\C/\Gamma$, we see that $\C/\Gamma$ is parabolic.
+        \end{itemize}
+        It turns out that the universal covering for any compact Riemann surfaces with $g>1$ is $\H$, so they are all hyperbolic\footnote{This fact has an analogue for three-dimensional real manifolds (called \textit{$3$-manifolds}). Indeed, \textit{Thurston's Geometrization Conjecture} (proven by Grigori Perelman in 2003, for which he was awarded the Fields Medal) states that all $3$-manifolds can be decomposed into pieces, each having one of eight different geometric structures, and the richest of the eight geometries turns out to be the hyperbolic $3$-manifold.}.\exqed
+    \end{remark}
+\end{document}

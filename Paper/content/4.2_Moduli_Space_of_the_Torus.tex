@@ -1,20 +1,6 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
-    For any genus $g$, we let $\mc{M}_g$ denote the \textit{moduli space} of compact Riemann surfaces of genus $g$, defined as the set of all Riemann surfaces of genus $g$ up to biholomorphism. Using the language and machinery developed in Chapters \ref{RS}, \ref{CS}, and \ref{CC}, we compute $\mc{M}_0$ and $\mc{M}_1$, which are the moduli spaces of the sphere $S^2$ and the torus $T^2$, respectively.\\\ \\
-    We conclude with a brief discussion of the \textit{Uniformization Theorem} and the \textit{Classification of Riemann Surfaces}.
-    \section{Case for $g=0$ and $g=1$}
-    \subsection{Moduli Space of $S^2$}\label{MS:sec:moduli_space_of_sphere}
-    We show that the moduli space of the sphere $S^2$ is a point\footnote{This result is an easy corollary of the Riemann-Roch Theorem, but its proof is beyond the scope of this paper. We refer the interested reader to \cite[][Section 16]{forster}.}. That is, there is a \textit{unique} complex structure on the sphere.
-    \begin{theorem}\label{MS:thm:simply-connect_compact_biholomorphic_Riemann_sphere}
-        Every simply-connected compact Riemann surface $X$ is biholomorphic to the Riemann sphere $\RS$.
-    \end{theorem}
-    \begin{proof}
-        The Classification Theorem of Surfaces shows that such a Riemann surface $X$, being simply-connected and compact, is homeomorphic to the sphere $\RS$. Theorem \ref{CC:thm:vanishing_of_H_Riemann_sphere} shows that $\check{H}^1\big(\RS,\HOLO\big)$ vanishes, and since the genus is a topological invariant, we see that $\check{H}^1\!\l(X,\HOLO\r)$ vanishes too. Hence $X$ has genus $0$, so for any fixed point $p\in X$, Corollary \ref{CC:cor:global_meromorphic_functions} furnishes a meromorphic function $f\in\MERO\l(X\r)$ with a single simple pole at $p$. Thus $X\iso\RS$ by Corollary \ref{CS:cor:exists_meromorphic_implies_biholomorphic_Riemann_sphere}, as desired.\qed
-    \end{proof}
-    \begin{remark}
-        This is part of the \textit{Uniformization Theorem}, which states that every simply-connected Riemann surface is biholomorphic to either the Riemann sphere $\RS$, the complex plane $\C$, or the upper-half plane $\H$ of $\C$. A brief discussion and proof sketch is given in Section \ref{sec:uniformization}.\exqed
-    \end{remark}
-    \subsection{Moduli Space of $T^2$}
+    \section{Moduli Space of $T^2$}
     We show that the moduli space of the torus $T^2$ is $\H/\!\PSL{2}{\Z}$, where $\H$ is the upper-half plane of $\C$ and $\PSL{2}{\Z}\coloneqq\SL_2\!\l(\Z\r)\!/\!\l\{\pm I\r\}$ is the \textit{modular group}, which acts on $\H$ via
     \begin{equation*}
         \begin{pmatrix}
@@ -108,4 +94,7 @@
         \end{equation*}
         so $ad-bc=1$. Thus $\tau'$ lies in the orbit of $\tau$, as desired.\qed
     \end{proof}
+    \begin{remark}
+        
+    \end{remark}
 \end{document}
