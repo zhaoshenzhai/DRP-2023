@@ -24,7 +24,7 @@
             \item ($\Leftarrow$): Take $z_1,z_2\in\C$ such that $z_1+\Gamma'=z_2+\Gamma'$, so $z_1-z_2\in\Gamma'\subseteq\alpha\Gamma$ and hence $z_1/\alpha-z_2/\alpha=\l(z_1-z_2\r)\!/\alpha\in\Gamma$. Then $z_1/\alpha+\Gamma=z_2/\alpha+\Gamma$, so $\phi^{-1}$ is well-defined.\qed
         \end{itemize}
     \end{proof}
-    \begin{lemma}
+    \begin{lemma}\label{MS:lem:moduli_space_torus_2}
         Any torus $\C/\Gamma$ is biholomorphic to $X_\tau\!\coloneqq\C/\!\l(\Z+\tau\Z\r)$ for some $\tau\in\H$.
     \end{lemma}
     \begin{remark}
@@ -40,7 +40,7 @@
     \begin{theorem}\label{MS:thm:moduli_space_torus}
         For any $\tau,\tau'\in\H$, the tori $X_{\tau}$ and $X_{\tau'}$ are biholomorphic iff $\tau$ and $\tau'$ lie in the same orbit of the action of $\PSL{2}{\Z}$ on $\H$.
     \end{theorem}
-    \begin{corollary}\label{MS:cor:moduli_space_torus}
+    \begin{corollary}
         The moduli space of $T^2$ is $\H/\!\PSL{2}{\Z}$.
     \end{corollary}
     \begin{proof}
@@ -92,6 +92,6 @@
         \begin{equation*}
             \Im\tau'=\frac{ad-bc}{\l|c\tau+d\r|^2}\l(\Im\tau\r)>0,
         \end{equation*}
-        so $ad-bc=1$. Thus $\tau'$ lies in the orbit of $\tau$, as desired.\qed
+        so $ad-bc=1$. Thus $\tau'$ lies in the orbit of $\tau$, as desired. Finally, the corollary follows from Lemma \ref{MS:lem:moduli_space_torus_2}.\qed
     \end{proof}
 \end{document}
