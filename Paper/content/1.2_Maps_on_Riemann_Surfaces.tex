@@ -249,10 +249,10 @@
         is holomorphic. Let $\tpl{U,\phi}$ be a chart of $X$ and consider the chart $\big(\RS\comp\l\{0\r\},\psi\big)$ of $\RS$ defined by $\psi\l(z\r)\coloneqq1/z$ for all $z\in\C^\ast$ and $\psi\l(\infty\r)\coloneqq0$. Then $\widetilde{f}=\psi\circ F$ on $U$, so $\widetilde{f}_\phi\!\coloneqq\widetilde{f}\circ\phi^{-1}=\psi\circ F\circ\phi^{-1}$ on $\phi\l(U\r)$. By the same argument as above, we see that $\mult_p\!\l(F\r)=-\ord_p(\widetilde{f})$. Now $\ord_p\!\l(f\r)=-\ord_p(\widetilde{f})$, so the result follows.\qed
     \end{proof}
     \begin{remark}
-        Let $F:X\to Y$ be a (non-constant) holomorphic map from a compact Riemann surfaces $X$ to a Riemann surface $Y$. Define the \textit{degree of $F$} to be $\deg F\coloneqq\sum_{p\in F^{-1}\l(q\r)}\mult_p\!\l(F\r)$ for any $q\in Y$, which we prove in Theorem \ref{CS:thm:degree_sum_of_multiplicities} to be independent of $q$. Using this invariant, we give an application of the previous result, which extends the computation in Example \ref{RS:exa:order_Riemann_sphere_zero} to all compact Riemann surfaces $X$.\exqed
+        Let $F:X\to Y$ be a non-constant holomorphic map from a compact Riemann surfaces $X$ to a Riemann surface $Y$. Define the \textit{degree of $F$} to be $\deg F\coloneqq\sum_{p\in F^{-1}\l(q\r)}\mult_p\!\l(F\r)$ for any $q\in Y$, which we prove in Theorem \ref{CS:thm:degree_sum_of_multiplicities} to be independent of $q$. Using this invariant, we give an application of the previous result, which extends the computation in Example \ref{RS:exa:order_Riemann_sphere_zero} to all compact Riemann surfaces $X$.\exqed
     \end{remark}
     \begin{proposition}\label{RS:prp:order_compact_zero}
-        Let $f$ be a (non-constant) meromorphic function on a compact Riemann surface $X$. Then $\sum_p\ord_p\!\l(f\r)=0$.
+        If $f$ is a non-constant meromorphic function on a compact Riemann surface $X$, then $\sum_p\ord_p\!\l(f\r)=0$.
     \end{proposition}
     \begin{proof}
         Let $F:X\to\RS$ be its associated holomorphic map and consider the points $\l\{x_i\r\}$ and $\l\{y_j\r\}$ of $X$ mapping to $0$ and $\infty$, respectively. By Theorem \ref{CS:thm:degree_sum_of_multiplicities}, the degree of $F$ is an invariant, so
