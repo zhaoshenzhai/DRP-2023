@@ -1,18 +1,18 @@
 \documentclass[../Moduli_Spaces_of_Riemann_Surfaces.tex]{subfiles}
 \begin{document}
-    Let $X$ be a simply-connected compact Riemann surface and fix $p\in X$. An inspection of the proof of Corollary \ref{CC:cor:global_meromorphic_functions} shows that a meromorphic function $f\in\MERO\l(X\r)$ with a single simple pole at $p$ can be found by consider the function $z^{-1}$ on a deleted neighborhood of $p$ and `patching it' with functions that agree on the intersection of their domains, which can be found using tools from cohomology. Before we learnt this method, we originally wanted to extend $z^{-1}$ to a global meromorphic function using \textit{analytic continuation}. We present our attempt below, which was only partially successful.
+    Let $X$ be a simply-connected compact Riemann surface and fix $p\in X$. An inspection of the proof of Corollary \ref{CC:cor:global_meromorphic_functions} shows that a meromorphic function $f\in\MERO\l(X\r)$ with a single simple pole at $p$ can be found by consider the function $z^{-1}$ on a deleted neighborhood of $p$ and `patching it' with functions that agree on the intersection of their domains, which can be found using tools from cohomology. Before we learnt this method, we originally wanted to extend $z^{-1}$ to a global meromorphic function using \textit{analytic continuation}. Although this method was not successful, we still present our attempt below.
     \begin{proposition}\label{A:prp:basis_stalk}
         Let $\ms{F}$ be a presheaf of Abelian groups on $X$. Let $\l|\ms{F}\r|\coloneqq\coprod_{p\in X}\ms{F}_p$ and consider the projection $\pi:\l|\ms{F}\r|\to X$ mapping each $\eta\in\ms{F}_p$ to $p$. Then the system $\mc{B}$ of all sets
         \begin{equation*}
             \l[U,f\r]\coloneqq\bigl\{\l[f\r]_p\,\l|\,p\in U\bigr\}\r.\subseteq\l|\ms{F}\r|
         \end{equation*}
-        for $U\in\tau$ and $f\in\ms{F}\l(U\r)$ is a basis for a topology on $\l|\ms{F}\r|$ and $\pi$ is a local homeomorphism.
+        for $U\in\mc{T}$ and $f\in\ms{F}\l(U\r)$ is a basis for a topology on $\l|\ms{F}\r|$ and $\pi$ is a local homeomorphism.
     \end{proposition}
     \begin{proof}
         We first verify that $\mc{B}$ is a basis.
         \begin{enumerate}
-            \item[(1)] Take $\eta\in\l|\ms{F}\r|$, so there exists an open set $U\in\tau$ such that $\eta=\l[f\r]_p$ for some $f\in\ms{F}\l(U\r)$ and $p\in U$. Observe that $\eta\in\l[U,f\r]$.
-            \item[(2)] Take $\l[U,f\r],\l[V,g\r]\in\mc{B}$ and $\eta\in\l[U,f\r]\cap\l[V,g\r]$. Then there exists a point $p\in X$ such that $\eta=\l[f\r]_p=\l[g\r]_p$, which furnishes an open set $W\in\tau$ with $p\in W\subseteq U\cap V$ such that $\rho^U_W\!\l(f\r)=\rho^V_W\!\l(g\r)\eqqcolon h$. Then $\eta=\l[h\r]_p$ with $h\in W$, so $\eta\in\l[W,h\r]\subseteq\l[U,f\r]\cap\l[V,g\r]$.
+            \item[(1)] Take $\eta\in\l|\ms{F}\r|$, so there exists an open set $U\in\mc{T}$ such that $\eta=\l[f\r]_p$ for some $f\in\ms{F}\l(U\r)$ and $p\in U$. Observe that $\eta\in\l[U,f\r]$.
+            \item[(2)] Take $\l[U,f\r],\l[V,g\r]\in\mc{B}$ and $\eta\in\l[U,f\r]\cap\l[V,g\r]$. Then there exists a point $p\in X$ such that $\eta=\l[f\r]_p=\l[g\r]_p$, which furnishes an open set $W\in\mc{T}$ with $p\in W\subseteq U\cap V$ such that $\rho^U_W\!\l(f\r)=\rho^V_W\!\l(g\r)\eqqcolon h$. Then $\eta=\l[h\r]_p$ with $h\in W$, so $\eta\in\l[W,h\r]\subseteq\l[U,f\r]\cap\l[V,g\r]$.
         \end{enumerate}
         To show that $\pi$ is a local homeomorphism, fix $\eta\in\l|\ms{F}\r|$, say with $p\coloneqq\pi\l(\eta\r)$. By (1), there exists some $\l[U,f\r]\in\mc{B}$ containing $\eta$; we claim that $\l.\pi\r|_{\l[U,f\r]}:\l[U,f\r]\to U$ is a homeomorphism.
         \begin{itemize}
@@ -24,7 +24,7 @@
         The \ul{Étalé space} of a presheaf $\ms{F}$ of Abelian groups on $X$ is the topological space $\l|\ms{F}\r|$ equipped the projection $\pi:\l|\ms{F}\r|\to X$.
     \end{definition}
     \begin{definition}
-        A presheaf $\ms{F}$ of Abelian groups on $X$ is said to satisfy the \ul{Identity Theorem} if for all $U\in\tau$ and all $f,g\in\ms{F}\l(U\r)$, if there is some $p\in U$ such that $\l[f\r]_p=\l[g\r]_p$, then $f=g$ (on $U$).
+        A presheaf $\ms{F}$ of Abelian groups on $X$ is said to satisfy the \ul{Identity Theorem} if for all $U\in\mc{T}$ and all $f,g\in\ms{F}\l(U\r)$, if there is some $p\in U$ such that $\l[f\r]_p=\l[g\r]_p$, then $f=g$ (on $U$).
     \end{definition}
     \footnote{In particular, this holds for all $\HOLO\l[D\r]$. In contrast, the sheaf of smooth functions $\DIFF$ (see Section \ref{CC:sec:differential_forms}) does \textit{not} satisfy the Identity Theorem.}
     \begin{proposition}\label{A:prp:stalk_topology_Hausdorff}
