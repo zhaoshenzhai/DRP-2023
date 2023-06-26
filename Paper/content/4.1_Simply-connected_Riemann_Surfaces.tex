@@ -10,20 +10,20 @@
         Every simply-connected compact Riemann surface $X$ is biholomorphic to the Riemann sphere $\RS$.
     \end{theorem}
     \begin{proof}
-        The Classification Theorem of Surfaces shows that such a Riemann surface $X$, being simply-connected and compact, is homeomorphic to the sphere $\RS$. Theorem \ref{CC:thm:vanishing_of_H_Riemann_sphere} shows that $\check{H}^1\big(\RS,\HOLO\big)$ vanishes, and since the genus is a topological invariant, we see that $\check{H}^1\!\l(X,\HOLO\r)$ vanishes too. Hence $X$ has genus $0$, so for any fixed point $p\in X$, Corollary \ref{CC:cor:global_meromorphic_functions} furnishes a meromorphic function $f\in\MERO\l(X\r)$ with a single simple pole at $p$. Thus $X\iso\RS$ by Corollary \ref{CS:cor:exists_meromorphic_implies_biholomorphic_Riemann_sphere}, as desired.\qed
+        The Classification Theorem of Surfaces shows that such a Riemann surface $X$, being simply-connected and compact, is homeomorphic to the sphere $S^2$. Theorem \ref{CC:thm:vanishing_of_H_Riemann_sphere} shows that $\check{H}^1\big(\RS,\HOLO\big)$ vanishes, and since the genus is a topological invariant, we see that $\check{H}^1\!\l(X,\HOLO\r)$ vanishes too. Hence $X$ has genus $0$, so for any fixed point $p\in X$, Corollary \ref{CC:cor:global_meromorphic_functions} furnishes a meromorphic function $f\in\MERO\l(X\r)$ with a single simple pole at $p$. Thus $X\iso\RS$ by Corollary \ref{CS:cor:exists_meromorphic_implies_biholomorphic_Riemann_sphere}, as desired.\qed
     \end{proof}
     \subsection{The Uniformization Theorem}
     \begin{theorem}[Uniformization]
         Every simply-connected Riemann surface $X$ is biholomorphic to either the Riemann sphere $\RS$, the complex plane $\C$, or the upper-half plane $\H\coloneqq\l\{z\in\C\st\Im z>0\r\}$.
     \end{theorem}
     \begin{proofsketch}
-        This sketch follows \cite{peter}. Fix $p\in X$. Using tools from Dolbeault cohomology, there exists a meromorphic function $f\in\MERO\l(X\r)$ with a single simple pole at $p$. Let $F:X\to\RS$ be its associated holomorphic map, so $F\l(p\r)=\infty$.
+        This sketch follows \cite{peter}. Fix $p\in X$. Using tools from Dolbeault cohomology, we obtain a meromorphic function $f\in\MERO\l(X\r)$ with a single simple pole at $p$. Let $F:X\to\RS$ be its associated holomorphic map, so $F\l(p\r)=\infty$.
         \begin{itemize}
             \item First, it can be shown that $\Im F\l(x\r)\to0$ as `$x\to\infty$' in $X$. That is, for every $\epsilon>0$, there is a large enough compact subset $K$ of $X$ such that $\Im F\l(x\r)<\epsilon$ for all $x\in X\comp K$.
                 \vspace{-0.05in}
             \item It can also be shown that $\im F$ is open, contains the `top and bottom halves' of $\RS$, and is a biholomorphism onto its image.
         \end{itemize}
-        Thus $X\iso\im F=\RS\comp I$ for some $I\subseteq\R$. By simply-connectedness of $X$, we see that $I$ is connected and hence we have three possibilities.
+        Thus $X\iso\im F=\RS\comp I$ for some $I\subseteq\R$. By simple-connectedness of $X$, we see that $I$ is connected and hence we have three possibilities.
         \begin{itemize}
             \item If $I=\em$, then $F:X\to\RS$ is a biholomorphism, which reduces to Theorem \ref{MS:thm:simply-connect_compact_biholomorphic_Riemann_sphere}.
                 \vspace{-0.05in}
