@@ -157,7 +157,7 @@
     \begin{definition}
         Let $f:W\to\C$ be meromorphic at $p$. We say that $f$ has a \ul{pole of order $n$ at $p$} if $\ord_p\!\l(f\r)=n>0$, and a \ul{zero of order $n$ at $p$} if $\ord_p\!\l(f\r)=n<0$.
     \end{definition}
-    \begin{example}
+    \begin{example}\label{RS:exa:order_Riemann_sphere_zero}
         Let $f:\RS\to\C$ be meromorphic, so $f\l(z\r)=p\l(z\r)\!/q\l(z\r)$ for some $p,q\in\C\l[z\r]$. Then $f$ is holomorphic at all points $z\in\C$ such that $q\l(z\r)\neq0$, and has a pole otherwise. Also, $f\l(\infty\r)\in\C$ if $\deg p=\deg q$, vanishes if $\deg p<\deg q$, and has a pole otherwise. In any case, $f$ is meromorphic on $\RS$. To compute $\ord_z\!\l(f\r)$ at all $z\in\RS$, we split $p$ and $q$ into linear factors to write $f$ uniquely as
         \begin{equation*}
             f\l(z\r)=c\prod\l(z-\lambda_i\r)^{\alpha_i}
@@ -173,7 +173,7 @@
         Lastly, it is clear that $\ord_z\!\l(f\r)=0$ for all $z\neq \lambda_i,\infty$.\exqed
     \end{example}
     \begin{remark}
-        Thus if $f$ is a meromorphic function on $\RS$, then $\sum_{z\in\RS}\ord_z\!\l(f\r)=0$. In fact, this holds for all compact Riemann surfaces, which we prove in TODO.\exqed
+        Thus if $f$ is a meromorphic function on $\RS$, then $\sum_z\ord_z\!\l(f\r)=0$. In fact, this holds for all compact Riemann surfaces, which we prove in Proposition \ref{RS:prp:order_compact_zero} with the tools from Chapter \ref{CS}.\exqed
     \end{remark}
     \subsection{Local Normal Form and the Multiplicity}
     Holomorphic maps have some remarkable `local' properties, one of which, called the \textit{Local Normal Form}, is presented here. Roughly speaking, every holomorphic map $F:X\to Y$ looks locally like a power map $z\mapsto z^m$ for some unique $m\geq1$. Summing this local invariant over the fiber $F^{-1}\!\l(q\r)$ for any $q\in Y$ gives us the \textit{degree of $F$}, a global invariant independent of $q$, which we prove in Section \ref{CS:sec:covering_maps_degree} using tools from covering spaces.
@@ -195,7 +195,7 @@
         With the above notation, the unique $m\geq1$ such that there are local coordinates around $p$ and $F\l(p\r)$ where $F$ acts like $z\mapsto z^m$ is called the \ul{multiplicity of $F$ at $p$}, denoted $\mult_p\!\l(F\r)$.
     \end{definition}
     \begin{remark}
-        Consider the power function $f\l(z\r)\coloneqq z^m$ where $m\coloneqq\mult_p\!\l(F\r)$. Then, for all $z\in\C^*$, we see that $f^{-1}\l(z\r)$ has exactly $m$ elements given by the $m$ distinct $m^\textrm{th}$ roots of $z^m$. Thus the map $f$ causes $\C$ to `cover itself $m$ times', and those coverings meet at the fixed point $0$. But $f^{-1}\l(0\r)=\l\{0\r\}$ has only $1$ element, which prevents $f$ to be a $m$-sheeted covering of $\C$. To remedy this, we count $0$ \textit{with multiplicity}; see Chapter \ref{CS} for a more formal discussion. Since $F$ is locally represented by $f$, and $\tpl{U_1,\phi_1}$ is centered at $p$, we see that $m$ counts the multiplicity at which neighbors of $p$ are mapped to $F\l(p\r)$.\exqed
+        Consider the power function $f\l(z\r)\coloneqq z^m$ where $m\coloneqq\mult_p\!\l(F\r)$. Then, for all $z\in\C^*$, we see that $f^{-1}\!\l(z\r)$ has exactly $m$ elements given by the $m$ distinct $m^\textrm{th}$ roots of $z^m$. Thus the map $f$ causes $\C$ to `cover itself $m$ times', and those coverings meet at the fixed point $0$. But $f^{-1}\!\l(0\r)=\l\{0\r\}$ has only $1$ element, which prevents $f$ to be a $m$-sheeted covering of $\C$. To remedy this, we count $0$ \textit{with multiplicity}; see Chapter \ref{CS} for a more formal discussion. Since $F$ is locally represented by $f$, and $\tpl{U_1,\phi_1}$ is centered at $p$, we see that $m$ counts the multiplicity at which neighbors of $p$ are mapped to $F\l(p\r)$.\exqed
     \end{remark}
     \begin{remark}
         This theorem also give easy proofs of some elementary properties of holomorphic maps, which we collect here; see \cite[][Section 1.2]{forster} for details. Throughout, $F:X\to Y$ is a non-constant holomorphic map between Riemann surfaces $X$ and $Y$.
@@ -249,6 +249,20 @@
         is holomorphic. Let $\tpl{U,\phi}$ be a chart of $X$ and consider the chart $\big(\RS\comp\l\{0\r\},\psi\big)$ of $\RS$ defined by $\psi\l(z\r)\coloneqq1/z$ for all $z\in\C^\ast$ and $\psi\l(\infty\r)\coloneqq0$. Then $\widetilde{f}=\psi\circ F$ on $U$, so $\widetilde{f}_\phi\!\coloneqq\widetilde{f}\circ\phi^{-1}=\psi\circ F\circ\phi^{-1}$ on $\phi\l(U\r)$. By the same argument as above, we see that $\mult_p\!\l(F\r)=-\ord_p(\widetilde{f})$. Now $\ord_p\!\l(f\r)=-\ord_p(\widetilde{f})$, so the result follows.\qed
     \end{proof}
     \begin{remark}
-        This relation between the order of meromorphic functions and the multiplicity of their associated holomorphic maps will be used to derive a criterion for $F:X\to\RS$ to be a biholomorphism. In fact, Corollary \ref{CS:cor:exists_meromorphic_implies_biholomorphic_Riemann_sphere} states that if $X$ is compact and if there exists a meromorphic function $f:X\to\C$ has a single simple pole, then $F$ is a biholomorphism.\exqed
+        Let $F:X\to Y$ be a (non-constant) holomorphic map from a compact Riemann surfaces $X$ to a Riemann surface $Y$. Define the \textit{degree of $F$} to be $\deg F\coloneqq\sum_{p\in F^{-1}\l(q\r)}\mult_p\!\l(F\r)$ for any $q\in Y$, which we prove in Theorem \ref{CS:thm:degree_sum_of_multiplicities} to be independent of $q$. Using this invariant, we give an application of the previous result, which extends the computation in Example \ref{RS:exa:order_Riemann_sphere_zero} to all compact Riemann surfaces $X$.\exqed
     \end{remark}
+    \begin{proposition}\label{RS:prp:order_compact_zero}
+        Let $f$ be a (non-constant) meromorphic function on a compact Riemann surface $X$. Then $\sum_p\ord_p\!\l(f\r)=0$.
+    \end{proposition}
+    \begin{proof}
+        Let $F:X\to\RS$ be its associated holomorphic map and consider the points $\l\{x_i\r\}$ and $\l\{y_j\r\}$ of $X$ mapping to $0$ and $\infty$, respectively. By Theorem \ref{CS:thm:degree_sum_of_multiplicities}, the degree of $F$ is an invariant, so
+        \begin{equation*}
+            \deg F=\sum_i\mult_{x_i}\!\l(F\r)=\sum_j\mult_{y_j}\!\l(F\r).
+        \end{equation*}
+        Note that $\l\{x_i\r\}$ and $\l\{y_j\r\}$ are precisely the zeros and poles of $f$, and any other point $p\in X$ has zero order. By Proposition \ref{RS:prp:multiplicity_and_order}, we see that $\ord_{x_i}\!\l(f\r)=\mult_{x_i}\!\l(F\r)$ and $\ord_{y_j}\!\l(f\r)=-\mult_{y_j}\!\l(F\r)$, so
+        \begin{equation*}
+            \sum_p\ord_p\!\l(f\r)=\sum_i\ord_{x_i}\!\l(f\r)+\sum_j\ord_{y_j}\!\l(f\r)=\sum_i\mult_{x_i}\!\l(F\r)-\sum_j\mult_{y_j}\!\l(F\r)=0,
+        \end{equation*}
+        as desired.\qed
+    \end{proof}
 \end{document}

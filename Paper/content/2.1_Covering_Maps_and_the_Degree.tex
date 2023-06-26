@@ -63,7 +63,7 @@
         By Theorem \ref{RS:thm:local_normal_form}, there exist charts $\tpl{V,\psi}$ centered at $q$ and $\tpl{U,\phi}$ centered at $F\l(q\r)$ such that $f\coloneqq\phi\circ F\circ\psi^{-1}$ is the power map $z\mapsto z^m$ where $m\coloneqq\mult_q\!\l(F\r)$. Since $\phi$ and $\psi$ are, in particular, injections, we see that $F$ is locally injective at $q$ iff $f$ is locally injective at $0$. But this occurs precisely when $m=\mult_q\!\l(F\r)<2$, so the result follows.\qed
     \end{proof}
     \begin{defthm}\label{CS:thm:degree_sum_of_multiplicities}
-        The \ul{degree of $F$} is the cardinality of any fiber $F^{-1}\!\l(p\r)$ for $p\in X$, counted with multiplicity. That is, $\deg F\coloneqq\sum_{q\in F^{-1}\!\l(p\r)}\mult_q\!\l(F\r)$ is independent of $p\in X$.
+        The \ul{degree of $F$} is the cardinality of any fiber $F^{-1}\!\l(p\r)$ for $p\in X$, counted with multiplicity. That is, $\deg F\coloneqq\sum_{q\in F^{-1}\l(p\r)}\mult_q\!\l(F\r)$ is independent of $p\in X$.
     \end{defthm}
     \begin{proof}
         For non-critical points $p\in X$, Lemma \ref{CS:lem:ramification_iff_mult_2} shows that $\mult_q\!\l(F\r)=1$ for any $q\in F^{-1}\!\l(p\r)$. Then $\deg F=\l|F^{-1}\!\l(p\r)\r|$, and since Proposition \ref{CS:prp:proper_local_covering} shows that $F$ is a covering map when all ramification points are removed, it is, by Proposition \ref{CS:prp:fiber_cardinalities_coincide}, constant over all non-critical points.\\\ \\

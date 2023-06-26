@@ -30,7 +30,7 @@
         A \ul{complex structure} on $X$ is a  maximal atlas $\mf{A}$ on $X$, or, equivalently, an equivalence class of complex atlases on $X$. The pair $\tpl{X,\mf{A}}$ is then called a \ul{Riemann surface}.
     \end{definition}
     \begin{remark}
-        Every Riemann surface can be regarded as a (connected) $2$-dimensional real manifold by $\textrm{`}$forgetting$\textrm{'}$ its complex structure. Since orientations are invariant under biholomorphisms, and in particular transition maps, the local orientation of $\C$ pulls-back via charts to a local orientation at each point $p\in X$. Since charts cover $X$, these local orientations induce a global orientation on $X$. Thus all Riemann surfaces are orientable, so, by the Classification of Surfaces, the closed Riemann surfaces are classified by their genus. Note, however, that this is a \textit{topological} classification, and does not give any information about the complex structure on $X$.\exqed
+        Every Riemann surface can be regarded as a (connected) $2$-dimensional real manifold by $\textrm{`}$forgetting$\textrm{'}$ its complex structure. Since orientations are invariant under biholomorphisms, and in particular under transition maps, the local orientation of $\C$ pulls-back via charts to a local orientation at each point $p\in X$. Since charts cover $X$, these local orientations induce a global orientation on $X$. Thus all Riemann surfaces are orientable, so, by the Classification of Surfaces, the closed Riemann surfaces are classified by their genus. Note, however, that this is a \textit{topological} classification, and does not give any information about the complex structure on $X$.\exqed
     \end{remark}
     \begin{example}
         Some elementary examples of Riemann surfaces.
@@ -55,7 +55,7 @@
         \end{equation*}
         Clearly $\phi_1$ is a homeomorphism. Since $\phi_2$ is invertible with $\phi_2^{-1}\!\l(z\r)\coloneqq1/z$ for all $z\in\C^\ast$ and $\phi_2^{-1}\!\l(0\r)\coloneqq\infty$, and
         \begin{equation*}
-            \lim\limits_{z\to\infty}\phi_2\!\l(z\r)=0=\phi_2\!\l(\infty\r)\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ \lim\limits_{z\to0}\phi_2^{-1}\!\l(z\r)=\infty=\phi_2^{-1}\l(0\r),
+            \lim\limits_{z\to\infty}\phi_2\!\l(z\r)=0=\phi_2\!\l(\infty\r)\ \ \ \ \ \ \ \ \textrm{and}\ \ \ \ \ \ \ \ \lim\limits_{z\to0}\phi_2^{-1}\!\l(z\r)=\infty=\phi_2^{-1}\!\l(0\r),
         \end{equation*}
         we see that $\phi_2$ is a homeomorphism too. Furthermore, $\phi_2\circ\phi_1^{-1}:\C^\ast\to\C^\ast:z\mapsto1/z$ is holomorphic, so the atlas $\l\{\tpl{U_1,\phi_1},\tpl{U_2,\phi_2}\r\}$ defines a complex structure on $\C_\infty\!$.\exqed
     \end{example}
@@ -94,8 +94,8 @@
         \begin{equation*}
             \phi:\C/\Gamma\to S^1\times S^1\ \ \ \ \ \ \ \ \textrm{mapping}\ \ \ \ \ \ \ \ \l[z\r]\mapsto\big(e^{2\pi i\lambda_1},e^{2\pi i\lambda_2}\big)
         \end{equation*}
-        where $z=\lambda_1\omega_1+\lambda_2\omega_2$ for unique $\lambda_1,\lambda_2\in\R$, is a homeomorphism. Indeed, $\phi$ is well-defined since for any $\lambda_1\omega_1+\lambda_2\omega_2\sim\mu_1\omega_1+\mu_2\omega_2$ in $\C$, we have $\l(\lambda_1-\mu_1\r)\omega_1+\l(\lambda_2-\mu_2\r)\omega_2\in\Gamma$ and so $\lambda_i-\mu_i\in\Z$ for $i=1,2$. The fact that it is a homeomorphism is clear. This makes $\C/\Gamma$ a second-countable Hausdorff space, which we now endow with the following complex structure.\\\ \\
-        Since $\Gamma$ is discrete, there exists some $\epsilon>0$ such that $\epsilon<\l|\omega\r|/2$ for every non-zero $\omega\in\Gamma$.\footnote{This exposition follows \cite[][Section I.2]{miranda}.} Fix any such $\epsilon$, which ensures that no two points in any open ball with radius $\epsilon$ can be equivalent. Indeed, take any $z\in\C$ and $w_1,w_2\in B\l(z,\epsilon\r)\eqqcolon V_z$. For $w_1\sim w_2$, we need some $n,m\in\Z$ such that $w_1-w_2=n\omega_1+m\omega_2$. But
+        where $z=\lambda_1\omega_1+\lambda_2\omega_2$ for unique $\lambda_1,\lambda_2\in\R$, is a homeomorphism. Indeed, $\phi$ is well-defined since for any $\lambda_1\omega_1+\lambda_2\omega_2\sim\mu_1\omega_1+\mu_2\omega_2$ in $\C$, we have $\l(\lambda_1-\mu_1\r)\omega_1+\l(\lambda_2-\mu_2\r)\omega_2\in\Gamma$ and so $\lambda_i-\mu_i\in\Z$ for $i=1,2$. The fact that it is a homeomorphism is clear. This makes $\C/\Gamma$ a second-countable Hausdorff space, which we now endow with the following complex structure\footnote{This exposition follows \cite[][Section I.2]{miranda}.}.\\\ \\
+        Since $\Gamma$ is discrete, there exists some $\epsilon>0$ such that $\epsilon<\l|\omega\r|/2$ for every non-zero $\omega\in\Gamma$. Fix any such $\epsilon$, which ensures that no two points in any open ball with radius $\epsilon$ can be equivalent. Indeed, take any $z\in\C$ and $w_1,w_2\in B\l(z,\epsilon\r)\eqqcolon V_z$. For $w_1\sim w_2$, we need some $n,m\in\Z$ such that $w_1-w_2=n\omega_1+m\omega_2$. But
         \begin{equation*}
             \l|w_1-w_2\r|\leq\l|z-w_1\r|+\l|z-w_2\r|<2\epsilon<\l|n\omega_1+m\omega_2\r|
         \end{equation*}
